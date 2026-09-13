@@ -1,0 +1,30 @@
+{
+  "id": "dog.skeletal.tarsus",
+  "system": "dog.skeletal",
+  "nav": "Ossa tarsi",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.tarsus.L",
+    "dog.skeletal.tarsus.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-hind-limb-specimen-01",
+    "wm-dog-hind-limb-specimen-02",
+    "wm-dog-tibia-fibula-fracture-01"
+  ],
+  "related": [
+    "dog.skeletal.tibia",
+    "dog.skeletal.fibula",
+    "dog.skeletal.metatarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

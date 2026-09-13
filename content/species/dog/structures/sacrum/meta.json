@@ -1,0 +1,27 @@
+{
+  "id": "dog.skeletal.sacrum",
+  "system": "dog.skeletal",
+  "nav": "Os sacrum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.sacrum"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-pelvis-specimen-dorsal-01",
+    "wm-dog-pelvis-specimen-caudal-01",
+    "wm-dog-pelvis-vd-02"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

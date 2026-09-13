@@ -1,0 +1,29 @@
+{
+  "id": "dog.skeletal.fibula",
+  "system": "dog.skeletal",
+  "nav": "Fibula",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.fibula.L",
+    "dog.skeletal.fibula.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-hind-limb-specimen-02",
+    "wm-dog-tibia-fibula-fracture-01"
+  ],
+  "related": [
+    "dog.skeletal.tibia",
+    "dog.skeletal.tarsus",
+    "dog.skeletal.femur"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

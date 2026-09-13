@@ -1,0 +1,5 @@
+# Content changes need review from someone with veterinary training before
+# a structure or pathology can be marked "reviewed". Add reviewers per species.
+/content/species/dog/   @ketbome
+/content/pathologies/   @ketbome
+/models/                @ketbome

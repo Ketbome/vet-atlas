@@ -1,0 +1,7 @@
+{
+  "id": "dog",
+  "scientificName": "Canis lupus familiaris",
+  "name": { "es": "Perro", "en": "Dog" },
+  "status": "published",
+  "systems": ["dog.skeletal"]
+}

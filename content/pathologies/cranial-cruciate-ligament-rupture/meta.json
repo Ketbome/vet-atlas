@@ -1,0 +1,33 @@
+{
+  "id": "cranial-cruciate-ligament-rupture",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tibia"
+  ],
+  "media": [
+    "wm-dog-stifle-tplo-lat-01",
+    "wm-dog-ccl-rupture-surgery-01",
+    "wm-dog-stifle-specimen-01"
+  ],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Muir P (ed). Advances in the Canine Cranial Cruciate Ligament, 2nd ed. Wiley-Blackwell",
+      "year": 2018
+    },
+    {
+      "title": "American College of Veterinary Surgeons: Cranial cruciate ligament disease",
+      "url": "https://www.acvs.org/small-animal/cranial-cruciate-ligament-disease"
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

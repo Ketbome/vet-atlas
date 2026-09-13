@@ -1,0 +1,31 @@
+{
+  "id": "hip-dysplasia",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.femur",
+    "dog.skeletal.os-coxae"
+  ],
+  "media": [
+    "wm-dog-hip-dysplasia-vd-01",
+    "wm-dog-hip-dysplasia-oa-vd-01",
+    "wm-dog-hip-dysplasia-norberg-01",
+    "wm-dog-hips-normal-vd-01",
+    "wm-dog-hip-joint-specimen-01"
+  ],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Orthopedic Foundation for Animals: Hip dysplasia",
+      "url": "https://ofa.org/diseases/hip-dysplasia/"
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "dog.skeletal.tibia",
+  "system": "dog.skeletal",
+  "nav": "Tibia",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.tibia.L",
+    "dog.skeletal.tibia.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "cranial-cruciate-ligament-rupture",
+    "patellar-luxation",
+    "osteosarcoma"
+  ],
+  "media": [
+    "wm-dog-hind-limb-specimen-01",
+    "wm-dog-stifle-specimen-01",
+    "wm-dog-tibia-fibula-fracture-01",
+    "wm-dog-stifle-tplo-lat-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.patella",
+    "dog.skeletal.fibula",
+    "dog.skeletal.tarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

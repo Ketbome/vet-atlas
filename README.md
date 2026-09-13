@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vet Atlas
 
-## Getting Started
+Open, multilingual 3D veterinary anatomy for students. Models are split into
+selectable structures; each structure has its Latin (NAV) name, a description,
+the diseases that affect it and real images (specimens, radiographs,
+histology).
 
-First, run the development server:
+Working name. Non-commercial. Code MIT, content CC BY-SA 4.0.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+## Status
+
+- Dog, skeletal system, pelvic limb: 9 structures, 6 pathologies, es/en.
+- The 3D model is a **schematic placeholder** until the LMU Munich scans are
+  integrated (see `models/README.md`).
+
+## Stack
+
+Next.js 16 (App Router, static generation), TypeScript, Tailwind 4 + shadcn/ui,
+next-intl, React Three Fiber + drei, Zustand, Zod, Fuse.js, MDX.
+No database: content lives in the repo and is validated in CI.
+
+## Run
+
+```
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`pnpm validate` checks content integrity and mesh names. `pnpm lint`,
+`pnpm typecheck`, `pnpm build` as usual.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/[locale]/               routes (home, species, system viewer, structure, pathology)
+components/viewer/          3D viewer (R3F): scene, model, controls, tree, store
+components/atlas/           site chrome, search, MDX rendering, badges
+content/                    species, systems, structures, pathologies, media, sources
+lib/content/                Zod schemas, loaders, search index
+models/                     pipeline docs, manifest, Blender sources (LFS)
+public/models/              GLB files served in development
+scripts/                    validate-content, build-placeholder-model
+messages/                   UI strings per locale
+docs/                       plan and design notes
+```
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `CONTRIBUTING.md`. Content fixes are one-file PRs; the "Edit on GitHub"
+link on every page opens the right file.

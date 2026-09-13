@@ -1,0 +1,113 @@
+{
+  "site": {
+    "name": "Vet Atlas",
+    "tagline": "Anatomía veterinaria en 3D, abierta y para estudiar",
+    "disclaimer": "Material de estudio. No reemplaza el diagnóstico ni la consulta veterinaria.",
+    "nonCommercial": "Proyecto sin fines comerciales. Código MIT, contenido CC BY-SA 4.0, medios de terceros con su licencia original.",
+    "editOnGithub": "Editar en GitHub",
+    "github": "Repositorio"
+  },
+  "nav": {
+    "species": "Especies",
+    "search": "Buscar",
+    "searchHint": "Busca un hueso, una patología…",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "Explora la anatomía animal estructura por estructura",
+    "lead": "Modelos 3D divididos en piezas seleccionables. Cada pieza con su nombre en latín, su descripción, las patologías que la afectan y cómo se ve en la vida real.",
+    "start": "Empezar con {species}",
+    "available": "Disponible",
+    "soon": "Próximamente",
+    "structuresCount": "{count, plural, one {# estructura} other {# estructuras}}",
+    "pathologiesCount": "{count, plural, one {# patología} other {# patologías}}",
+    "howTo": "Cómo se usa",
+    "howToSteps": {
+      "search": "Busca con <kbd>⌘K</kbd> o escribe el nombre en cualquier idioma.",
+      "click": "Toca una pieza del modelo para abrir su ficha.",
+      "layers": "Oculta sistemas o aísla una pieza para verla sola."
+    }
+  },
+  "species": {
+    "systems": "Sistemas",
+    "systemSoon": "En preparación"
+  },
+  "viewer": {
+    "loading": "Cargando modelo…",
+    "noWebgl": "Tu navegador no puede mostrar 3D. Puedes seguir leyendo las fichas.",
+    "presets": "Vista",
+    "preset": {
+      "lateral-left": "Lateral izquierda",
+      "lateral-right": "Lateral derecha",
+      "dorsal": "Dorsal",
+      "ventral": "Ventral",
+      "cranial": "Craneal",
+      "caudal": "Caudal"
+    },
+    "reset": "Restablecer vista",
+    "isolate": "Aislar",
+    "showAll": "Mostrar todo",
+    "layers": "Capas",
+    "opacity": "Opacidad",
+    "placeholder": "Modelo provisional: formas esquemáticas mientras se integran los escaneos reales.",
+    "attribution": "Modelo: {source}, {license}",
+    "hint": "Arrastra para girar · rueda para acercar · clic en una pieza para abrir su ficha",
+    "deselect": "Quitar selección"
+  },
+  "structure": {
+    "nav": "Nomina Anatomica Veterinaria",
+    "description": "Descripción",
+    "pathologies": "Patologías",
+    "media": "Imágenes",
+    "noPathologies": "Todavía no hay patologías enlazadas a esta estructura.",
+    "noMedia": "Todavía no hay imágenes para esta estructura. ¿Tienes fotos de piezas o radiografías con licencia libre? Contribuye.",
+    "related": "Estructuras relacionadas",
+    "inSystem": "Estructuras de {system}",
+    "affects": "Afecta a",
+    "species": "Especies",
+    "untranslated": "Esta ficha aún no está traducida al español; se muestra en inglés. Ayuda a traducirla.",
+    "laterality": {
+      "paired": "Par (izquierdo y derecho)",
+      "single": "Impar"
+    },
+    "filter": "Filtrar estructuras…"
+  },
+  "review": {
+    "draft": "Borrador sin revisión veterinaria",
+    "reviewed": "Revisado por {by}",
+    "draftHelp": "El contenido puede tener errores. Se publica para que la comunidad lo revise."
+  },
+  "pathology": {
+    "title": "Patología",
+    "category": {
+      "congenital": "Congénita / del desarrollo",
+      "degenerative": "Degenerativa",
+      "traumatic": "Traumática",
+      "neoplastic": "Neoplásica",
+      "infectious": "Infecciosa",
+      "metabolic": "Metabólica",
+      "inflammatory": "Inflamatoria"
+    },
+    "references": "Referencias",
+    "affectedStructures": "Estructuras afectadas"
+  },
+  "media": {
+    "type": {
+      "photo": "Fotografía",
+      "histology": "Histología",
+      "radiograph": "Radiografía",
+      "ct": "Tomografía",
+      "illustration": "Ilustración"
+    },
+    "stain": "Tinción {stain}",
+    "magnification": "{value}x",
+    "source": "Fuente"
+  },
+  "search": {
+    "placeholder": "Buscar hueso, patología o nombre en latín…",
+    "empty": "Sin resultados para «{query}».",
+    "structures": "Estructuras",
+    "pathologies": "Patologías",
+    "hint": "Escribe para buscar. Enter abre la ficha."
+  }
+}

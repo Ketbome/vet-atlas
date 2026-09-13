@@ -1,0 +1,41 @@
+{
+  "id": "dog.skeletal.femur",
+  "system": "dog.skeletal",
+  "nav": "Os femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.femur.L",
+    "dog.skeletal.femur.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "hip-dysplasia",
+    "legg-calve-perthes",
+    "osteosarcoma",
+    "femoral-fracture",
+    "patellar-luxation",
+    "cranial-cruciate-ligament-rupture"
+  ],
+  "media": [
+    "wm-dog-hip-joint-specimen-01",
+    "wm-dog-hind-limb-specimen-01",
+    "wm-dog-pelvis-lateral-01",
+    "wm-dog-hips-normal-vd-01",
+    "wm-dog-osteosarcoma-femur-lat-01",
+    "wm-bone-compact-he-01",
+    "wm-bone-compact-ground-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.patella",
+    "dog.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

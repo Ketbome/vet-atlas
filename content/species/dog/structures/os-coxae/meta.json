@@ -1,0 +1,34 @@
+{
+  "id": "dog.skeletal.os-coxae",
+  "system": "dog.skeletal",
+  "nav": "Os coxae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.os-coxae.L",
+    "dog.skeletal.os-coxae.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "hip-dysplasia"
+  ],
+  "media": [
+    "wm-dog-pelvis-specimen-dorsal-01",
+    "wm-dog-pelvis-specimen-caudal-01",
+    "wm-dog-hip-joint-specimen-01",
+    "wm-dog-pelvis-vd-02",
+    "wm-dog-hips-normal-vd-01",
+    "wm-dog-hip-dysplasia-norberg-01"
+  ],
+  "related": [
+    "dog.skeletal.sacrum",
+    "dog.skeletal.femur"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "osteosarcoma",
+  "category": "neoplastic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tibia"
+  ],
+  "media": [
+    "wm-dog-osteosarcoma-femur-lat-01"
+  ],
+  "references": [
+    {
+      "title": "Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen's Small Animal Clinical Oncology, 6th ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "American College of Veterinary Surgeons: Osteosarcoma",
+      "url": "https://www.acvs.org/small-animal/osteosarcoma"
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

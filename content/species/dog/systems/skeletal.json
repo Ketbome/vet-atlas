@@ -1,0 +1,14 @@
+{
+  "id": "dog.skeletal",
+  "species": "dog",
+  "slug": "skeletal",
+  "name": { "es": "Sistema esquelético", "en": "Skeletal system" },
+  "status": "published",
+  "model": { "file": "/models/dog/skeletal.glb", "source": "placeholder", "placeholder": true },
+  "color": "#E9E2D3",
+  "regions": [
+    { "id": "axial", "name": { "es": "Esqueleto axial", "en": "Axial skeleton" } },
+    { "id": "pelvic-limb", "name": { "es": "Miembro pélvico", "en": "Pelvic limb" } },
+    { "id": "thoracic-limb", "name": { "es": "Miembro torácico", "en": "Thoracic limb" } }
+  ]
+}

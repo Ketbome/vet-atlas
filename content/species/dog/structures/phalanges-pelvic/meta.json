@@ -1,0 +1,14 @@
+{
+  "id": "dog.skeletal.phalanges-pelvic",
+  "system": "dog.skeletal",
+  "nav": "Ossa digitorum pedis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": ["dog.skeletal.phalanges-pelvic.L", "dog.skeletal.phalanges-pelvic.R"],
+  "fidelity": "illustrative",
+  "camera": { "preset": "lateral-left", "zoom": 1.8 },
+  "pathologies": [],
+  "media": [],
+  "related": ["dog.skeletal.metatarsus", "dog.skeletal.tarsus"],
+  "review": { "status": "draft" }
+}

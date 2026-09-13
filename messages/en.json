@@ -1,0 +1,113 @@
+{
+  "site": {
+    "name": "Vet Atlas",
+    "tagline": "Open 3D veterinary anatomy, built for studying",
+    "disclaimer": "Study material. Not a substitute for diagnosis or veterinary consultation.",
+    "nonCommercial": "Non-commercial project. Code MIT, content CC BY-SA 4.0, third-party media under their original license.",
+    "editOnGithub": "Edit on GitHub",
+    "github": "Repository"
+  },
+  "nav": {
+    "species": "Species",
+    "search": "Search",
+    "searchHint": "Search a bone, a disease…",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Explore animal anatomy one structure at a time",
+    "lead": "3D models split into selectable parts. Every part comes with its Latin name, a description, the diseases that affect it and how it looks in real life.",
+    "start": "Start with {species}",
+    "available": "Available",
+    "soon": "Coming soon",
+    "structuresCount": "{count, plural, one {# structure} other {# structures}}",
+    "pathologiesCount": "{count, plural, one {# disease} other {# diseases}}",
+    "howTo": "How it works",
+    "howToSteps": {
+      "search": "Search with <kbd>⌘K</kbd> or type a name in any language.",
+      "click": "Tap a part of the model to open its entry.",
+      "layers": "Hide systems or isolate a part to see it alone."
+    }
+  },
+  "species": {
+    "systems": "Systems",
+    "systemSoon": "In preparation"
+  },
+  "viewer": {
+    "loading": "Loading model…",
+    "noWebgl": "Your browser cannot display 3D. You can keep reading the entries.",
+    "presets": "View",
+    "preset": {
+      "lateral-left": "Left lateral",
+      "lateral-right": "Right lateral",
+      "dorsal": "Dorsal",
+      "ventral": "Ventral",
+      "cranial": "Cranial",
+      "caudal": "Caudal"
+    },
+    "reset": "Reset view",
+    "isolate": "Isolate",
+    "showAll": "Show all",
+    "layers": "Layers",
+    "opacity": "Opacity",
+    "placeholder": "Placeholder model: schematic shapes until the real scans are integrated.",
+    "attribution": "Model: {source}, {license}",
+    "hint": "Drag to rotate · scroll to zoom · click a part to open its entry",
+    "deselect": "Clear selection"
+  },
+  "structure": {
+    "nav": "Nomina Anatomica Veterinaria",
+    "description": "Description",
+    "pathologies": "Diseases",
+    "media": "Images",
+    "noPathologies": "No diseases are linked to this structure yet.",
+    "noMedia": "No images for this structure yet. Got photos of specimens or radiographs under a free license? Contribute.",
+    "related": "Related structures",
+    "inSystem": "Structures of {system}",
+    "affects": "Affects",
+    "species": "Species",
+    "untranslated": "This entry is not translated to English yet; showing the Spanish version. Help translate it.",
+    "laterality": {
+      "paired": "Paired (left and right)",
+      "single": "Unpaired"
+    },
+    "filter": "Filter structures…"
+  },
+  "review": {
+    "draft": "Draft, not yet reviewed by a veterinarian",
+    "reviewed": "Reviewed by {by}",
+    "draftHelp": "Content may contain errors. It is published so the community can review it."
+  },
+  "pathology": {
+    "title": "Disease",
+    "category": {
+      "congenital": "Congenital / developmental",
+      "degenerative": "Degenerative",
+      "traumatic": "Traumatic",
+      "neoplastic": "Neoplastic",
+      "infectious": "Infectious",
+      "metabolic": "Metabolic",
+      "inflammatory": "Inflammatory"
+    },
+    "references": "References",
+    "affectedStructures": "Affected structures"
+  },
+  "media": {
+    "type": {
+      "photo": "Photograph",
+      "histology": "Histology",
+      "radiograph": "Radiograph",
+      "ct": "CT scan",
+      "illustration": "Illustration"
+    },
+    "stain": "{stain} stain",
+    "magnification": "{value}x",
+    "source": "Source"
+  },
+  "search": {
+    "placeholder": "Search a bone, a disease or a Latin name…",
+    "empty": "No results for “{query}”.",
+    "structures": "Structures",
+    "pathologies": "Diseases",
+    "hint": "Type to search. Enter opens the entry."
+  }
+}

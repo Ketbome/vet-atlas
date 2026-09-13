@@ -1,0 +1,31 @@
+{
+  "id": "dog.skeletal.patella",
+  "system": "dog.skeletal",
+  "nav": "Patella",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.patella.L",
+    "dog.skeletal.patella.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "patellar-luxation"
+  ],
+  "media": [
+    "wm-dog-stifle-specimen-01",
+    "wm-dog-pelvis-lateral-01",
+    "wm-dog-stifle-tplo-lat-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

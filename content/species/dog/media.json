@@ -1,0 +1,234 @@
+[
+  {
+    "id": "wm-dog-hip-dysplasia-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bilateral_hip_dysplasia.JPG/1280px-Bilateral_hip_dysplasia.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de cadera de un cachorro Labrador Retriever con displasia bilateral; la cabeza femoral izquierda apenas está cubierta por el acetábulo.",
+      "en": "Ventrodorsal hip radiograph of a Labrador Retriever puppy with bilateral hip dysplasia; the left femoral head is barely covered by the acetabulum."
+    }
+  },
+  {
+    "id": "wm-dog-hip-dysplasia-oa-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Hip_dysplasia_with_arthritis_20060122.JPG/1280px-Hip_dysplasia_with_arthritis_20060122.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de un Brittany Spaniel macho de 11 años con displasia de cadera bilateral y osteoartrosis secundaria, con remodelación de las cabezas femorales.",
+      "en": "Ventrodorsal radiograph of an 11-year-old male Brittany Spaniel with bilateral hip dysplasia and secondary osteoarthritis, showing remodeling of the femoral heads."
+    }
+  },
+  {
+    "id": "wm-dog-hip-dysplasia-norberg-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Hueftgelenksdysplasie_Norberg.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de un Rottweiler con displasia de cadera; el ángulo de Norberg medido es inferior a 105° en ambas articulaciones (97° y 95°).",
+      "en": "Ventrodorsal radiograph of a Rottweiler with hip dysplasia; the measured Norberg angle is below 105° in both joints (97° and 95°)."
+    }
+  },
+  {
+    "id": "wm-dog-hips-normal-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Normal_canine_hips.JPG/1280px-Normal_canine_hips.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de una pelvis canina normal: ambas cabezas femorales están bien cubiertas por el acetábulo.",
+      "en": "Ventrodorsal radiograph of a normal canine pelvis: both femoral heads are well seated in the acetabula."
+    }
+  },
+  {
+    "id": "wm-dog-pelvis-vd-02",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Golden_Doodle_dog_hip_xray_posterior_view.jpg/1280px-Golden_Doodle_dog_hip_xray_posterior_view.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Gvolk, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal con miembros extendidos de un Goldendoodle de unos 27 kg: se observan sacro, huesos coxales, fémures, rótulas y tibias proximales.",
+      "en": "Extended-leg ventrodorsal radiograph of a ~60 lb Goldendoodle showing the sacrum, os coxae, femurs, patellae and proximal tibiae."
+    }
+  },
+  {
+    "id": "wm-dog-pelvis-lateral-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Golden_Doodle_hip_xray_side_view.jpg/1280px-Golden_Doodle_hip_xray_side_view.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Gvolk, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de la pelvis y los miembros pélvicos de un Goldendoodle, con ambos fémures y las articulaciones de la rodilla (rótula, fabelas y tibia proximal) superpuestas.",
+      "en": "Lateral radiograph of the pelvis and pelvic limbs of a Goldendoodle, with both femurs and stifle joints (patella, fabellae and proximal tibia) superimposed."
+    }
+  },
+  {
+    "id": "wm-dog-osteosarcoma-femur-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Canine_osteosarcoma.JPG/1280px-Canine_osteosarcoma.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral del fémur distal de un perro con osteosarcoma: la zona radiolúcida corresponde a destrucción ósea por el tumor.",
+      "en": "Lateral radiograph of the distal femur of a dog with osteosarcoma: the radiolucent area corresponds to bone destruction by the tumor."
+    }
+  },
+  {
+    "id": "wm-dog-femur-interlocking-nail-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Interlocking_Nail_Xray_Innovative_Animal_Products.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Sunstriae (released into the public domain), via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía de un fémur canino fracturado estabilizado con un clavo intramedular bloqueado y tornillos transversales.",
+      "en": "Radiograph of a fractured canine femur stabilized with an interlocking intramedullary nail and transverse locking screws."
+    }
+  },
+  {
+    "id": "wm-dog-tibia-fibula-fracture-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fracture_tibia%2Bfibula.jpg/1280px-Fracture_tibia%2Bfibula.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Fourrure (boulesdefourrure.fr), via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografías craneocaudal y lateral de un cachorro con fractura diafisaria de tibia y fíbula con una gran esquirla, antes de la reducción.",
+      "en": "Craniocaudal and lateral radiographs of a puppy with a diaphyseal tibia and fibula fracture with a large fragment, before reduction."
+    }
+  },
+  {
+    "id": "wm-dog-stifle-tplo-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Tplo_roentgen_01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Dr. Helmut Steger, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de la rodilla de un perro tras una osteotomía niveladora de la meseta tibial (TPLO) por rotura del ligamento cruzado craneal; se ve la placa fijada a la tibia proximal.",
+      "en": "Lateral radiograph of a dog's stifle after tibial plateau leveling osteotomy (TPLO) for cranial cruciate ligament rupture; the plate is fixed to the proximal tibia."
+    }
+  },
+  {
+    "id": "wm-dog-ccl-rupture-surgery-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kreuzband-op-situs.jpg/1280px-Kreuzband-op-situs.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Imagen intraoperatoria de la rodilla de un perro con rotura del ligamento cruzado craneal; el muñón del ligamento se sostiene con una pinza.",
+      "en": "Intraoperative view of a dog's stifle with a ruptured cranial cruciate ligament; the ligament stump is held with forceps."
+    }
+  },
+  {
+    "id": "wm-dog-hind-limb-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Dog_hind_limb_2.JPG/1280px-Dog_hind_limb_2.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0 1.0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto articulado del miembro pélvico de un perro (colección de la Universidad Estatal de Moscú): fémur, rótula, tibia, fíbula, tarso, metatarso y falanges.",
+      "en": "Articulated skeleton of a dog's pelvic limb (Moscow State University collection): femur, patella, tibia, fibula, tarsus, metatarsus and phalanges."
+    }
+  },
+  {
+    "id": "wm-dog-hind-limb-specimen-02",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Dog_hind_limb_1.JPG/1280px-Dog_hind_limb_1.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0 1.0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Ambos miembros pélvicos de un perro en vista lateral, con el fémur, la tibia y la fíbula extendidos hasta el pie.",
+      "en": "Both pelvic limbs of a dog in lateral view, with femur, tibia and fibula laid out down to the pes."
+    }
+  },
+  {
+    "id": "wm-dog-pelvis-specimen-dorsal-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Dog_pelvis.JPG/1280px-Dog_pelvis.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0 1.0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Pelvis ósea de perro en vista dorsal: alas del ilion, sacro articulado con las últimas vértebras lumbares y vértebras caudales.",
+      "en": "Dog bony pelvis in dorsal view: iliac wings, sacrum articulated with the last lumbar vertebrae, and caudal vertebrae."
+    }
+  },
+  {
+    "id": "wm-dog-pelvis-specimen-caudal-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dog_pelvis.jpg/1280px-Dog_pelvis.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Pelvis y sacro de perro preparados por maceración (Museo de Anatomía Veterinaria FMVZ USP), vista caudal mostrando el canal pélvico.",
+      "en": "Dog pelvis and sacrum prepared by maceration (Museum of Veterinary Anatomy FMVZ USP), caudal view showing the pelvic canal."
+    }
+  },
+  {
+    "id": "wm-dog-hip-joint-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Dog_hip_%28coxae%29_joint.jpg/1280px-Dog_hip_%28coxae%29_joint.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Articulación coxofemoral de perro fijada en formol: fémur completo articulado con el acetábulo del hueso coxal.",
+      "en": "Formalin-fixed dog hip joint: whole femur articulated with the acetabulum of the os coxae."
+    }
+  },
+  {
+    "id": "wm-dog-stifle-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Knee_joint_of_dog.jpg/1280px-Knee_joint_of_dog.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Articulación de la rodilla de perro disecada y liofilizada: fémur distal, rótula, ligamentos y tibia con fíbula.",
+      "en": "Dissected, freeze-dried dog stifle joint: distal femur, patella, ligaments, and tibia with fibula."
+    }
+  },
+  {
+    "id": "wm-bone-compact-he-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Osso_por_Descalcifica%C3%A7%C3%A3o2_%E2%80%93_HE_%E2%80%93_100x.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Guido Fregapani, via Wikimedia Commons",
+    "caption": {
+      "es": "Hueso compacto descalcificado teñido con H&E (100x): 1 conducto de Volkmann, 2 conducto de Havers, 3 laminillas, 4 laguna osteocitaria.",
+      "en": "Decalcified compact bone stained with H&E (100x): 1 Volkmann's canal, 2 Haversian canal, 3 lamellae, 4 osteocyte lacuna."
+    },
+    "stain": "H&E",
+    "magnification": 100
+  },
+  {
+    "id": "wm-bone-compact-ground-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Compact_bone_histology_2014.jpg/1280px-Compact_bone_histology_2014.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Athikhun.suw, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte por desgaste de hueso compacto (10x) con osteonas: conductos de Havers, lagunas con osteocitos, canalículos y conducto de Volkmann señalados.",
+      "en": "Ground section of compact bone (10x) showing osteons: Haversian canals, osteocyte lacunae, canaliculi and a Volkmann's canal are labeled."
+    },
+    "stain": "Ground section (unstained)",
+    "magnification": 10
+  }
+]

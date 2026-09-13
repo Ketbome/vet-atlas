@@ -1,0 +1,30 @@
+{
+  "id": "femoral-fracture",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.femur"
+  ],
+  "media": [
+    "wm-dog-femur-interlocking-nail-01"
+  ],
+  "references": [
+    {
+      "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
+      "year": 2006
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. Thieme",
+      "year": 2005
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

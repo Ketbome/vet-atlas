@@ -1,0 +1,10 @@
+{
+  "dog/skeletal.glb": {
+    "source": "placeholder",
+    "license": "CC BY-SA 4.0",
+    "author": "Vet Atlas contributors",
+    "url": "https://github.com/ketbome/vet-atlas",
+    "generatedBy": "scripts/build-placeholder-model.ts",
+    "placeholder": true
+  }
+}
