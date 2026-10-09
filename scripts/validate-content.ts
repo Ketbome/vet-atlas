@@ -5,6 +5,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { NodeIO } from "@gltf-transform/core";
+import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
+import { MeshoptDecoder } from "meshoptimizer";
 import { loadContent, readDoc } from "../lib/content/load";
 import { meshKey } from "../lib/content/mesh";
 
@@ -39,6 +41,7 @@ for (const s of db.structures) {
   }
   if (path.basename(s.dir) !== s.id.split(".")[2]) errors.push(`structure ${s.id}: folder name must be ${s.id.split(".")[2]}`);
   for (const m of s.meshes) if (!m.startsWith(s.id)) errors.push(`structure ${s.id}: mesh ${m} must start with the structure id`);
+  if (s.source && !sourceIds.has(s.source)) errors.push(`structure ${s.id}: unknown source ${s.source}`);
   for (const p of s.pathologies) if (!pathologyIds.has(p)) errors.push(`structure ${s.id}: unknown pathology ${p}`);
   for (const m of s.media) if (!mediaIds.has(m)) errors.push(`structure ${s.id}: unknown media ${m}`);
   for (const r of s.related) if (!structureIds.has(r)) errors.push(`structure ${s.id}: unknown related ${r}`);
@@ -64,7 +67,7 @@ for (const m of db.media) {
   if (m.type === "histology" && !m.stain) warnings.push(`media ${m.id}: histology without stain`);
 }
 
-const io = new NodeIO();
+const io = new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({ "meshopt.decoder": MeshoptDecoder });
 for (const sys of db.systems) {
   const file = path.join(process.cwd(), "public", sys.model.file);
   if (!fs.existsSync(file)) {

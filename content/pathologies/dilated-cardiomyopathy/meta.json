@@ -1,0 +1,25 @@
+{
+  "id": "dilated-cardiomyopathy",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.heart",
+    "dog.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Wess G, Domenech O, Dukes-McEwan J, Häggström J, Gordon S. European Society of Veterinary Cardiology screening guidelines for dilated cardiomyopathy in Doberman Pinschers. J Vet Cardiol 19:405-415",
+      "year": 2017
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dog.muscular.sternocephalicus",
+  "system": "dog.muscular",
+  "nav": "M. sternocephalicus",
+  "region": "neck",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.sternocephalicus.L",
+    "dog.muscular.sternocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A2392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.manubrium",
+    "dog.skeletal.skull",
+    "dog.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

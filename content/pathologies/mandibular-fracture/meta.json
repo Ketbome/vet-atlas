@@ -1,0 +1,28 @@
+{
+  "id": "mandibular-fracture",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.mandible"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
+      "year": 2006
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

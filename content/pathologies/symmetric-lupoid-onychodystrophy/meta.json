@@ -1,0 +1,24 @@
+{
+  "id": "symmetric-lupoid-onychodystrophy",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.claws"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

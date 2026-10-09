@@ -1,0 +1,30 @@
+{
+  "id": "dog.skeletal.vertebra-l1",
+  "system": "dog.skeletal",
+  "nav": "Vertebra lumbalis I",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebra-l1"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [
+    "intervertebral-disc-disease"
+  ],
+  "media": [
+    "wm-dog-spine-thoracolumbar-lat-01",
+    "wm-dog-skeleton-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.vertebra-c7",
+    "dog.skeletal.sacrum",
+    "dog.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -10,6 +10,11 @@
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts",
     "models:placeholder": "tsx scripts/build-placeholder-model.ts",
+    "models:dog": "tsx scripts/build-dog-skeletal.ts",
+    "models:dog-integumentary": "tsx scripts/build-dog-integumentary.ts",
+    "models:dog-muscular": "tsx scripts/build-dog-muscular.ts",
+    "models:dog-visceral": "tsx scripts/build-dog-visceral.ts",
+    "brand": "tsx scripts/build-brand.ts",
     "test": "vitest run"
   },
   "dependencies": {
@@ -45,7 +50,9 @@
     "@types/three": "^0.186.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "meshoptimizer": "1.2.0",
     "tailwindcss": "^4",
+    "three-mesh-bvh": "0.8.3",
     "tsx": "^4.23.13",
     "typescript": "^5",
     "vitest": "^5.0.0"

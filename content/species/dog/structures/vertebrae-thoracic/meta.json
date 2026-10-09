@@ -1,0 +1,43 @@
+{
+  "id": "dog.skeletal.vertebrae-thoracic",
+  "system": "dog.skeletal",
+  "nav": "Vertebrae thoracicae",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebrae-thoracic.t1",
+    "dog.skeletal.vertebrae-thoracic.t2",
+    "dog.skeletal.vertebrae-thoracic.t3",
+    "dog.skeletal.vertebrae-thoracic.t4",
+    "dog.skeletal.vertebrae-thoracic.t5",
+    "dog.skeletal.vertebrae-thoracic.t6",
+    "dog.skeletal.vertebrae-thoracic.t7",
+    "dog.skeletal.vertebrae-thoracic.t8",
+    "dog.skeletal.vertebrae-thoracic.t9",
+    "dog.skeletal.vertebrae-thoracic.t10",
+    "dog.skeletal.vertebrae-thoracic.t11",
+    "dog.skeletal.vertebrae-thoracic.t12",
+    "dog.skeletal.vertebrae-thoracic.t13"
+  ],
+  "fidelity": "modeled",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "intervertebral-disc-disease"
+  ],
+  "media": [
+    "wm-dog-vertebrae-sisson-01",
+    "wm-dog-spine-thoracolumbar-lat-01",
+    "wm-dog-skeleton-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.vertebra-c7",
+    "dog.skeletal.ribs",
+    "dog.skeletal.vertebra-l1"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

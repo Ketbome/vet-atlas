@@ -1,0 +1,34 @@
+{
+  "id": "dog.visceral.spleen",
+  "system": "dog.visceral",
+  "nav": "Lien",
+  "region": "endocrine-lymphatic",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.spleen"
+  ],
+  "fidelity": "illustrative",
+  "color": "#6B2D46",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "gastric-dilatation-volvulus",
+    "visceral-hemangiosarcoma"
+  ],
+  "media": [
+    "wm-dog-spleen-specimen-01",
+    "wm-dog-spleen-histo-01",
+    "wm-dog-abdominal-viscera-sisson-01"
+  ],
+  "related": [
+    "dog.visceral.stomach",
+    "dog.visceral.kidneys",
+    "dog.visceral.pancreas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

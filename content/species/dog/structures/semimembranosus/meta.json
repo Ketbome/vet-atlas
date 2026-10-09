@@ -1,0 +1,34 @@
+{
+  "id": "dog.muscular.semimembranosus",
+  "system": "dog.muscular",
+  "nav": "M. semimembranosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.semimembranosus.L",
+    "dog.muscular.semimembranosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#95342B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.skeletal.tibia",
+    "dog.muscular.semitendinosus",
+    "dog.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

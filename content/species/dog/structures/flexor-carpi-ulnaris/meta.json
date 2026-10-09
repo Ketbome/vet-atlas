@@ -1,0 +1,32 @@
+{
+  "id": "dog.muscular.flexor-carpi-ulnaris",
+  "system": "dog.muscular",
+  "nav": "M. flexor carpi ulnaris",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.flexor-carpi-ulnaris.L",
+    "dog.muscular.flexor-carpi-ulnaris.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A84236",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-antebrachium-muscles-lateral-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.ulna",
+    "dog.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

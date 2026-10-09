@@ -1,0 +1,29 @@
+{
+  "id": "dog.skeletal.atlas",
+  "system": "dog.skeletal",
+  "nav": "Atlas",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.atlas"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [
+    "atlantoaxial-instability"
+  ],
+  "media": [
+    "wm-dog-vertebrae-sisson-01",
+    "wm-dog-atlas-axis-cnh-01"
+  ],
+  "related": [
+    "dog.skeletal.skull",
+    "dog.skeletal.vertebra-c7"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "myxomatous-mitral-valve-disease",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.heart",
+    "dog.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med 33:1127-1140",
+      "year": 2019
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

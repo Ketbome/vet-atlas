@@ -1,0 +1,31 @@
+{
+  "id": "dog.skeletal.skull",
+  "system": "dog.skeletal",
+  "nav": "Cranium",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.skull"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [
+    "brachycephalic-obstructive-airway-syndrome",
+    "craniomandibular-osteopathy"
+  ],
+  "media": [
+    "wm-dog-skull-specimen-lateral-01",
+    "wm-dog-skull-diagram-01",
+    "wm-dog-skull-base-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.mandible",
+    "dog.skeletal.atlas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

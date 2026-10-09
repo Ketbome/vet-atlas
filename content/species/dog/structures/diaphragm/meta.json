@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.diaphragm",
+  "system": "dog.muscular",
+  "nav": "Diaphragma",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "dog.muscular.diaphragm"
+  ],
+  "fidelity": "illustrative",
+  "color": "#AE4A3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "diaphragmatic-hernia"
+  ],
+  "media": [
+    "wm-dog-diaphragm-specimen-01",
+    "wm-dog-diaphragm-diagram-01",
+    "wm-dog-thorax-lateral-01"
+  ],
+  "related": [
+    "dog.skeletal.ribs",
+    "dog.skeletal.vertebra-l1",
+    "dog.muscular.rectus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

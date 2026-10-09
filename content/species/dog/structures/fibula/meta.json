@@ -8,7 +8,7 @@
     "dog.skeletal.fibula.L",
     "dog.skeletal.fibula.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

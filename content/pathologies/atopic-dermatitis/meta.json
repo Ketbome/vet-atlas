@@ -1,0 +1,28 @@
+{
+  "id": "atopic-dermatitis",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Olivry T, DeBoer DJ, Favrot C, et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Res 11:210",
+      "year": 2015
+    },
+    {
+      "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

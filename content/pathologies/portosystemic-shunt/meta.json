@@ -1,0 +1,27 @@
+{
+  "id": "portosystemic-shunt",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.liver",
+    "dog.visceral.great-vessels",
+    "dog.visceral.brain",
+    "dog.visceral.urinary-bladder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Berent AC, Tobias KM. Portosystemic vascular anomalies. Vet Clin North Am Small Anim Pract 39:513-541",
+      "year": 2009
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

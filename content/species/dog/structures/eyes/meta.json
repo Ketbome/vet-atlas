@@ -1,0 +1,37 @@
+{
+  "id": "dog.integumentary.eyes",
+  "system": "dog.integumentary",
+  "nav": "Oculus",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "dog.integumentary.eyes.L",
+    "dog.integumentary.eyes.R"
+  ],
+  "fidelity": "modeled",
+  "source": "lovadahn-canine-model",
+  "color": "#1E1714",
+  "material": "organ",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 2.5
+  },
+  "pathologies": [
+    "entropion",
+    "third-eyelid-gland-prolapse",
+    "keratoconjunctivitis-sicca",
+    "corneal-ulcer"
+  ],
+  "media": [
+    "wm-dog-brain-eyeballs-specimen-01",
+    "wm-dog-third-eyelid-01",
+    "wm-dog-visual-pathway-01"
+  ],
+  "related": [
+    "dog.integumentary.skin",
+    "dog.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

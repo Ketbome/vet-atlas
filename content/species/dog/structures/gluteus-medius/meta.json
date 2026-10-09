@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.gluteus-medius",
+  "system": "dog.muscular",
+  "nav": "M. gluteus medius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gluteus-medius.L",
+    "dog.muscular.gluteus-medius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13B31",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.gluteus-superficialis",
+    "dog.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

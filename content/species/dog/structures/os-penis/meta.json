@@ -1,0 +1,28 @@
+{
+  "id": "dog.skeletal.os-penis",
+  "system": "dog.skeletal",
+  "nav": "Os penis",
+  "region": "visceral",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.os-penis"
+  ],
+  "fidelity": "scan",
+  "source": "sketchfab-dog-baculum",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-os-penis-specimen-01",
+    "wm-dog-os-penis-specimen-02",
+    "wm-dog-urethral-calculi-os-penis-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

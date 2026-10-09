@@ -1,0 +1,30 @@
+{
+  "id": "dog.skeletal.metacarpus",
+  "system": "dog.skeletal",
+  "nav": "Ossa metacarpalia",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.metacarpus.L",
+    "dog.skeletal.metacarpus.R"
+  ],
+  "fidelity": "scan",
+  "source": "scan-the-world-dog-front-leg",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-manus-skeleton-sisson-01",
+    "wm-dog-manus-bones-specimen-01",
+    "wm-dog-forepaw-dachshund-01"
+  ],
+  "related": [
+    "dog.skeletal.carpus",
+    "dog.skeletal.phalanges-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

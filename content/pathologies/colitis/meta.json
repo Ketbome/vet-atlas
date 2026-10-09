@@ -1,0 +1,24 @@
+{
+  "id": "colitis",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.large-intestine"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

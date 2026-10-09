@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.rectus-abdominis",
+  "system": "dog.muscular",
+  "nav": "M. rectus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.rectus-abdominis.L",
+    "dog.muscular.rectus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9F3B32",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.manubrium",
+    "dog.skeletal.os-coxae",
+    "dog.muscular.obliquus-externus-abdominis",
+    "dog.muscular.pectorales"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

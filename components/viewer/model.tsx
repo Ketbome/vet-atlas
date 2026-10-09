@@ -2,86 +2,91 @@
 /* eslint-disable react-hooks/immutability -- three.js objects are mutated in place on purpose */
 
 import { useEffect, useLayoutEffect, useRef } from "react";
-import { useGLTF, useCursor } from "@react-three/drei";
-import type { ThreeEvent } from "@react-three/fiber";
-import { Color, Mesh, MeshStandardMaterial, type Object3D } from "three";
+import { useGLTF } from "@react-three/drei";
+import { Box3, Color, Mesh, type MeshPhysicalMaterial, Vector3, type Object3D } from "three";
 import { useViewerStore } from "./store";
+import { setOpacity, setSelected, tissueMaterial } from "./materials";
+import { syncFur } from "./fur";
+import type { ViewerSystem } from "./types";
 
 type Props = {
-  url: string;
-  color: string;
+  system: ViewerSystem;
   meshToStructure: Record<string, string>;
   selected: string | null;
-  onSelect: (structureId: string) => void;
   onSceneReady: (scene: Object3D) => void;
+  // Piece view: only the selected structure is drawn, in its natural colour.
+  solo?: boolean;
 };
 
-const SELECTED = new Color("#6A5DC7");
-const HOVERED = new Color("#B4ABE6");
-const GLOW = new Color("#4B3F8F");
-const NONE = new Color("#000000");
+// Hover warms the tissue slightly toward the ochre mark ink; selection keeps
+// the tissue colour and gets an ochre rim light instead.
+const MARK = new Color("#C8902E");
 
-export function Model({ url, color, meshToStructure, selected, onSelect, onSceneReady }: Props) {
-  const { scene } = useGLTF(url);
+// Exploded view pushes each visible mesh away from the centre of the visible
+// set, proportionally to its distance, up to EXPLODE times that distance.
+const EXPLODE = 1.2;
+
+export function Model({ system, meshToStructure, selected, onSceneReady, solo = false }: Props) {
+  const { scene } = useGLTF(system.url);
   const hovered = useViewerStore((s) => s.hovered);
   const isolate = useViewerStore((s) => s.isolate);
-  const opacity = useViewerStore((s) => s.opacity);
-  const setHovered = useViewerStore((s) => s.setHovered);
+  const dim = useViewerStore((s) => s.dim);
+  const explode = useViewerStore((s) => s.explode);
+  const fur = useViewerStore((s) => s.fur);
+  const layer = useViewerStore((s) => s.layers[system.systemId]);
 
   const meshes = useRef<Mesh[]>([]);
 
   useLayoutEffect(() => {
     const list: Mesh[] = [];
-    const base = new Color(color);
+    scene.updateMatrixWorld(true);
     scene.traverse((obj) => {
-      if (!(obj instanceof Mesh)) return;
+      // Fur shells are children of the skin mesh with their own material.
+      if (!(obj instanceof Mesh) || obj.userData.furShell) return;
       obj.userData.structureId = meshToStructure[obj.name] ?? null;
-      obj.material = new MeshStandardMaterial({ color: base, roughness: 0.8, metalness: 0 });
+      const color = system.meshColors[obj.name] ?? system.color;
+      const kind = system.meshMaterials[obj.name] ?? system.material;
+      obj.material = tissueMaterial(kind, color, obj.geometry.hasAttribute("color"));
+      obj.userData.skin = kind === "skin";
+      obj.userData.base = new Color(color);
+      obj.userData.home ??= obj.position.clone();
+      obj.userData.center ??= new Box3().setFromObject(obj).getCenter(new Vector3());
       list.push(obj);
     });
     meshes.current = list;
     onSceneReady(scene);
-  }, [scene, color, meshToStructure, onSceneReady]);
+  }, [scene, system, meshToStructure, onSceneReady]);
+
+  const layerOpacity = solo ? 1 : (layer?.opacity ?? 1);
 
   useEffect(() => {
-    const base = new Color(color);
     for (const mesh of meshes.current) {
       const id = mesh.userData.structureId as string | null;
-      const material = mesh.material as MeshStandardMaterial;
+      const material = mesh.material as MeshPhysicalMaterial;
+      const base = mesh.userData.base as Color;
       const isSelected = id !== null && id === selected;
       const isHovered = id !== null && id === hovered && !isSelected;
-      material.color.copy(isSelected ? SELECTED : isHovered ? HOVERED : base);
-      material.emissive.copy(isSelected ? GLOW : NONE);
-      material.emissiveIntensity = isSelected ? 0.25 : 0;
-      const dim = !isSelected && opacity < 1;
-      material.transparent = dim;
-      material.opacity = dim ? opacity : 1;
-      material.depthWrite = !dim;
-      material.needsUpdate = true;
-      mesh.visible = !(isolate && selected && !isSelected);
+      const highlight = isSelected && !solo;
+      material.color.copy(base);
+      if (isHovered) material.color.lerp(MARK, 0.2);
+      setSelected(material, highlight);
+      const opacity = Math.min(layerOpacity, !isSelected && selected ? dim : 1);
+      setOpacity(material, opacity);
+      if (mesh.userData.skin) syncFur(mesh, fur && opacity >= 1 && mesh.visible);
+      mesh.visible = solo ? isSelected : !(isolate && selected && !isSelected);
     }
-  }, [selected, hovered, isolate, opacity, color, scene, meshToStructure]);
+  }, [selected, hovered, isolate, dim, layerOpacity, scene, meshToStructure, solo, fur]);
 
-  useCursor(hovered !== null);
+  useEffect(() => {
+    const visible = meshes.current.filter((m) => m.visible);
+    const middle = new Vector3();
+    for (const m of visible) middle.add(m.userData.center as Vector3);
+    if (visible.length) middle.divideScalar(visible.length);
+    for (const mesh of meshes.current) {
+      const offset = (mesh.userData.center as Vector3).clone().sub(middle).multiplyScalar(explode * EXPLODE);
+      mesh.position.copy(mesh.userData.home as Vector3).add(offset);
+    }
+  }, [explode, selected, isolate, solo, scene]);
 
-  function structureOf(e: ThreeEvent<PointerEvent | MouseEvent>) {
-    const hit = e.intersections.find((i) => i.object.visible);
-    return (hit?.object.userData.structureId as string | null) ?? null;
-  }
-
-  return (
-    <primitive
-      object={scene}
-      onPointerMove={(e: ThreeEvent<PointerEvent>) => {
-        e.stopPropagation();
-        setHovered(structureOf(e));
-      }}
-      onPointerOut={() => setHovered(null)}
-      onClick={(e: ThreeEvent<MouseEvent>) => {
-        e.stopPropagation();
-        const id = structureOf(e);
-        if (id) onSelect(id);
-      }}
-    />
-  );
+  return <primitive object={scene} visible={solo || layer?.visible !== false} />;
 }

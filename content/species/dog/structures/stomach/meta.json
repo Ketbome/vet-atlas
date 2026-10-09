@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.stomach",
+  "system": "dog.visceral",
+  "nav": "Ventriculus (gaster)",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.stomach"
+  ],
+  "fidelity": "modeled",
+  "color": "#D58E7C",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "gastric-dilatation-volvulus",
+    "gastrointestinal-foreign-body"
+  ],
+  "media": [
+    "wm-dog-stomach-specimen-01",
+    "wm-dog-stomach-sisson-01",
+    "wm-dog-stomach-histo-01"
+  ],
+  "related": [
+    "dog.visceral.esophagus",
+    "dog.visceral.liver",
+    "dog.visceral.spleen",
+    "dog.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

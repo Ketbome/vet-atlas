@@ -17,9 +17,10 @@ export function LocaleSwitch() {
           key={l}
           href={pathname}
           locale={l}
+          hrefLang={l}
           aria-current={l === locale ? "true" : undefined}
           className={cn(
-            "rounded-[5px] px-2 py-1 font-medium uppercase tracking-wide transition-colors",
+            "grid h-8 min-w-9 place-items-center rounded-[5px] px-2 font-medium uppercase tracking-wide transition-colors",
             l === locale ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
           )}
         >

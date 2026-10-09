@@ -1,0 +1,29 @@
+{
+  "id": "dog.skeletal.manubrium",
+  "system": "dog.skeletal",
+  "nav": "Manubrium sterni",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.manubrium"
+  ],
+  "fidelity": "scan",
+  "source": "lmu-vetanat",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-skeleton-specimen-01",
+    "wm-dog-skeleton-ellenberger-01"
+  ],
+  "related": [
+    "dog.skeletal.sternum",
+    "dog.skeletal.ribs",
+    "dog.skeletal.vertebra-c7"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

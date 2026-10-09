@@ -1,0 +1,32 @@
+{
+  "id": "dog.skeletal.ulna",
+  "system": "dog.skeletal",
+  "nav": "Ulna",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.ulna.L",
+    "dog.skeletal.ulna.R"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "elbow-dysplasia",
+    "panosteitis"
+  ],
+  "media": [
+    "wm-dog-forelimb-bones-specimen-01",
+    "wm-dog-humerus-radius-ulna-sisson-01",
+    "wm-dog-elbow-dysplasia-01"
+  ],
+  "related": [
+    "dog.skeletal.radius",
+    "dog.skeletal.humerus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

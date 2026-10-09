@@ -1,0 +1,37 @@
+{
+  "id": "dog.skeletal.vertebrae-lumbar",
+  "system": "dog.skeletal",
+  "nav": "Vertebrae lumbales II-VII",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebrae-lumbar.l2",
+    "dog.skeletal.vertebrae-lumbar.l3",
+    "dog.skeletal.vertebrae-lumbar.l4",
+    "dog.skeletal.vertebrae-lumbar.l5",
+    "dog.skeletal.vertebrae-lumbar.l6",
+    "dog.skeletal.vertebrae-lumbar.l7"
+  ],
+  "fidelity": "modeled",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "intervertebral-disc-disease",
+    "degenerative-lumbosacral-stenosis"
+  ],
+  "media": [
+    "wm-dog-lumbar-sacrum-sisson-01",
+    "wm-dog-lumbosacral-vd-01",
+    "wm-dog-spine-thoracolumbar-lat-01"
+  ],
+  "related": [
+    "dog.skeletal.vertebra-l1",
+    "dog.skeletal.sacrum",
+    "dog.skeletal.vertebrae-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

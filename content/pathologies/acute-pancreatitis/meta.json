@@ -1,0 +1,26 @@
+{
+  "id": "acute-pancreatitis",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.pancreas",
+    "dog.visceral.small-intestine",
+    "dog.visceral.liver"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Xenoulis PG. Diagnosis of pancreatitis in dogs and cats. J Small Anim Pract 56:13-26",
+      "year": 2015
+    },
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "urolithiasis",
+  "category": "metabolic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.urinary-bladder",
+    "dog.visceral.kidneys"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Lulich JP, Berent AC, Adams LG, et al. ACVIM small animal consensus recommendations on the treatment and prevention of uroliths in dogs and cats. J Vet Intern Med 30:1564-1574",
+      "year": 2016
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,11 +1,21 @@
+import { MARK_PATH } from "./mark-path";
+
+// The mark is the lateral silhouette of the atlas's own scanned dog skull
+// (scripts/build-brand.ts), bone on an ink plate.
 export function Logo({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" className={className} aria-hidden="true" fill="none">
-      <rect x="1" y="1" width="30" height="30" rx="7" className="fill-primary" />
-      <path
-        d="M9 10.5a2.5 2.5 0 0 1 5 0v1.2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1.2a2.5 2.5 0 0 1 5 0c0 1.4-.9 2.4-2 2.8v5.4c1.1.4 2 1.4 2 2.8a2.5 2.5 0 0 1-5 0v-1.2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v1.2a2.5 2.5 0 0 1-5 0c0-1.4.9-2.4 2-2.8v-5.4c-1.1-.4-2-1.4-2-2.8Z"
-        className="fill-primary-foreground"
-      />
+    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
+      <rect width="100" height="100" rx="22" className="fill-ink" />
+      <path d={MARK_PATH} transform="translate(9 9) scale(0.82)" className="fill-background" />
+    </svg>
+  );
+}
+
+// Bare skull, for use on top of other surfaces (e.g. the home plate).
+export function Mark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
+      <path d={MARK_PATH} fill="currentColor" />
     </svg>
   );
 }

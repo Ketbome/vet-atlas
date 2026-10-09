@@ -1,0 +1,24 @@
+{
+  "id": "infraspinatus-contracture",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.muscular.infraspinatus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
+      "year": 2006
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

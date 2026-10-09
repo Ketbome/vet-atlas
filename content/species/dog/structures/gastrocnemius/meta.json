@@ -1,0 +1,37 @@
+{
+  "id": "dog.muscular.gastrocnemius",
+  "system": "dog.muscular",
+  "nav": "M. gastrocnemius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gastrocnemius.lateral.L",
+    "dog.muscular.gastrocnemius.lateral.R",
+    "dog.muscular.gastrocnemius.medial.L",
+    "dog.muscular.gastrocnemius.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9D382E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "common-calcaneal-tendon-injury"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tarsus",
+    "dog.muscular.flexor-digitorum-superficialis-pelvic",
+    "dog.muscular.biceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

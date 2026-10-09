@@ -1,0 +1,32 @@
+{
+  "id": "dog.muscular.tibialis-cranialis",
+  "system": "dog.muscular",
+  "nav": "M. tibialis cranialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.tibialis-cranialis.L",
+    "dog.muscular.tibialis-cranialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B1493B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-pelvic-limb-arteries-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.tibia",
+    "dog.skeletal.metatarsus",
+    "dog.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

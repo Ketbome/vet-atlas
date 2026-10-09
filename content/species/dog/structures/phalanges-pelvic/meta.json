@@ -4,11 +4,26 @@
   "nav": "Ossa digitorum pedis",
   "region": "pelvic-limb",
   "laterality": "paired",
-  "meshes": ["dog.skeletal.phalanges-pelvic.L", "dog.skeletal.phalanges-pelvic.R"],
-  "fidelity": "illustrative",
-  "camera": { "preset": "lateral-left", "zoom": 1.8 },
+  "meshes": [
+    "dog.skeletal.phalanges-pelvic.L",
+    "dog.skeletal.phalanges-pelvic.R"
+  ],
+  "fidelity": "scan",
+  "source": "greyhound-pelvic-limb-ct",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
   "pathologies": [],
-  "media": [],
-  "related": ["dog.skeletal.metatarsus", "dog.skeletal.tarsus"],
-  "review": { "status": "draft" }
+  "media": [
+    "wm-dog-pes-skeleton-sisson-01",
+    "wm-dog-pes-bones-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.metatarsus",
+    "dog.skeletal.tarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
 }

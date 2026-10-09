@@ -8,7 +8,7 @@
     "dog.skeletal.femur.L",
     "dog.skeletal.femur.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8
@@ -19,7 +19,8 @@
     "osteosarcoma",
     "femoral-fracture",
     "patellar-luxation",
-    "cranial-cruciate-ligament-rupture"
+    "cranial-cruciate-ligament-rupture",
+    "panosteitis"
   ],
   "media": [
     "wm-dog-hip-joint-specimen-01",

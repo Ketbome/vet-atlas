@@ -15,7 +15,7 @@ export function PathologyList({ items, emptyText }: { items: PathologySummary[];
           <Link href={href} className="group block py-3 outline-none first:pt-0 focus-visible:ring-3 focus-visible:ring-ring/50">
             <div className="flex items-center gap-2">
               <span className="font-medium group-hover:text-primary">{title}</span>
-              <Badge variant="outline" className="text-[10px] font-normal text-muted-foreground">
+              <Badge variant="outline" className="border-eosin/40 text-xs font-normal text-eosin">
                 {t(`category.${pathology.category}`)}
               </Badge>
             </div>

@@ -1,0 +1,24 @@
+{
+  "id": "diaphragmatic-hernia",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.muscular.diaphragm"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

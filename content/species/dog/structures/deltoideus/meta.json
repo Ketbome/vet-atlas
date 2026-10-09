@@ -1,0 +1,35 @@
+{
+  "id": "dog.muscular.deltoideus",
+  "system": "dog.muscular",
+  "nav": "M. deltoideus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.deltoideus.scapular.L",
+    "dog.muscular.deltoideus.scapular.R",
+    "dog.muscular.deltoideus.acromial.L",
+    "dog.muscular.deltoideus.acromial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13A30",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.scapula",
+    "dog.skeletal.humerus",
+    "dog.muscular.infraspinatus",
+    "dog.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "dog.visceral.heart",
+  "system": "dog.visceral",
+  "nav": "Cor",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.heart"
+  ],
+  "fidelity": "scan",
+  "color": "#9A2D26",
+  "source": "pixelbeaker-canine-heart",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "myxomatous-mitral-valve-disease",
+    "dilated-cardiomyopathy",
+    "patent-ductus-arteriosus",
+    "visceral-hemangiosarcoma"
+  ],
+  "media": [
+    "wm-dog-heart-left-labeled-01",
+    "wm-dog-heart-cleared-specimen-01",
+    "wm-dog-cardiac-muscle-histo-01"
+  ],
+  "related": [
+    "dog.visceral.lungs",
+    "dog.visceral.great-vessels",
+    "dog.visceral.trachea"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

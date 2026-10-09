@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.latissimus-dorsi",
+  "system": "dog.muscular",
+  "nav": "M. latissimus dorsi",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.latissimus-dorsi.L",
+    "dog.muscular.latissimus-dorsi.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B8584A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.3
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-thoracic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.ribs",
+    "dog.muscular.trapezius",
+    "dog.muscular.obliquus-externus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

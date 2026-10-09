@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# downloaded source models
+/.cache/
+
+# python env for scripts/ct
+/.venv/
+__pycache__/
+
+# local agent tooling
+/.claude/
+/.agents/
+/.impeccable/

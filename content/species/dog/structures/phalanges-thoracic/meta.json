@@ -1,0 +1,30 @@
+{
+  "id": "dog.skeletal.phalanges-thoracic",
+  "system": "dog.skeletal",
+  "nav": "Ossa digitorum manus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.phalanges-thoracic.L",
+    "dog.skeletal.phalanges-thoracic.R"
+  ],
+  "fidelity": "scan",
+  "source": "scan-the-world-dog-front-leg",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-manus-skeleton-sisson-01",
+    "wm-dog-manus-bones-specimen-01",
+    "wm-dog-forepaw-ml-01"
+  ],
+  "related": [
+    "dog.skeletal.metacarpus",
+    "dog.skeletal.carpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

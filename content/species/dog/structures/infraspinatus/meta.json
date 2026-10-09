@@ -1,0 +1,35 @@
+{
+  "id": "dog.muscular.infraspinatus",
+  "system": "dog.muscular",
+  "nav": "M. infraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.infraspinatus.L",
+    "dog.muscular.infraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#973329",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "infraspinatus-contracture"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.scapula",
+    "dog.skeletal.humerus",
+    "dog.muscular.supraspinatus",
+    "dog.muscular.deltoideus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

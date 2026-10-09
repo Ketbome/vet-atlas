@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Libre_Caslon_Display, Libre_Caslon_Text, Schibsted_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -9,21 +9,22 @@ import { SiteHeader } from "@/components/atlas/site-header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "../globals.css";
 
-const heading = Bricolage_Grotesque({
+// Plate typography: Caslon for headings and Latin NAV names, as in the
+// classic anatomy atlases; a sturdy grotesk for labels and UI.
+const display = Libre_Caslon_Display({
   subsets: ["latin"],
-  variable: "--font-heading",
-  axes: ["opsz"],
+  weight: "400",
+  variable: "--font-display",
 });
-const sans = IBM_Plex_Sans({
+const heading = Libre_Caslon_Text({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "700"],
   style: ["normal", "italic"],
-  variable: "--font-sans",
+  variable: "--font-heading",
 });
-const mono = IBM_Plex_Mono({
+const sans = Schibsted_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  variable: "--font-sans",
 });
 
 export function generateStaticParams() {
@@ -53,7 +54,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const searchIndex = getSearchIndex(locale);
 
   return (
-    <html lang={locale} className={`${heading.variable} ${sans.variable} ${mono.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang={locale} className={`${display.variable} ${heading.variable} ${sans.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

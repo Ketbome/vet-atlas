@@ -1,0 +1,29 @@
+{
+  "id": "dog.skeletal.mandible",
+  "system": "dog.skeletal",
+  "nav": "Mandibula",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.mandible"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "mandibular-fracture",
+    "craniomandibular-osteopathy"
+  ],
+  "media": [
+    "wm-dog-mandible-lateral-01",
+    "wm-dog-mandible-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

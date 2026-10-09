@@ -1,0 +1,24 @@
+{
+  "id": "keratoconjunctivitis-sicca",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.eyes"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Gelatt KN (ed). Veterinary Ophthalmology, 6th ed. Wiley-Blackwell",
+      "year": 2021
+    },
+    {
+      "title": "Maggs DJ, Miller PE, Ofri R. Slatter's Fundamentals of Veterinary Ophthalmology, 6th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

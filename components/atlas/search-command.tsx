@@ -15,7 +15,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Kbd } from "@/components/ui/kbd";
+import { ShortcutKbd } from "./shortcut-kbd";
 
 export function SearchCommand({ items }: { items: SearchItem[] }) {
   const t = useTranslations("search");
@@ -76,9 +76,8 @@ export function SearchCommand({ items }: { items: SearchItem[] }) {
       >
         <SearchIcon className="size-4 shrink-0" />
         <span className="truncate">{tn("searchHint")}</span>
-        <span className="ml-auto hidden items-center gap-1 sm:flex">
-          <Kbd>⌘</Kbd>
-          <Kbd>K</Kbd>
+        <span className="ml-auto hidden items-center sm:flex">
+          <ShortcutKbd />
         </span>
       </button>
 
@@ -91,9 +90,11 @@ export function SearchCommand({ items }: { items: SearchItem[] }) {
             <CommandGroup heading={t("structures")}>
               {structures.map((r) => (
                 <CommandItem key={r.id} value={r.id} onSelect={() => go(r.href)}>
-                  <BoneIcon className="text-muted-foreground" />
+                  <BoneIcon className="text-muted-foreground" aria-hidden="true" />
                   <span className="font-medium">{r.title}</span>
-                  <span className="nav-latin ml-auto truncate text-xs text-muted-foreground">{r.subtitle}</span>
+                  <span lang="la" className="nav-latin ml-auto truncate text-xs text-muted-foreground">
+                    {r.subtitle}
+                  </span>
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -102,7 +103,7 @@ export function SearchCommand({ items }: { items: SearchItem[] }) {
             <CommandGroup heading={t("pathologies")}>
               {pathologies.map((r) => (
                 <CommandItem key={r.id} value={r.id} onSelect={() => go(r.href)}>
-                  <StethoscopeIcon className="text-eosin" />
+                  <StethoscopeIcon className="text-eosin" aria-hidden="true" />
                   <div className="min-w-0">
                     <div className="font-medium">{r.title}</div>
                     <div className="truncate text-xs text-muted-foreground">{r.subtitle}</div>

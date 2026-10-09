@@ -1,0 +1,26 @@
+{
+  "id": "gastric-dilatation-volvulus",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.stomach",
+    "dog.visceral.spleen",
+    "dog.visceral.great-vessels"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

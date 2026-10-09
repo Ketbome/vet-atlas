@@ -11,7 +11,14 @@ Zod; the 3D viewer is React Three Fiber.
 - `pnpm dev` / `pnpm build`
 - `pnpm validate` content integrity + GLB mesh names (run after touching content or models)
 - `pnpm lint`, `pnpm next typegen && pnpm typecheck`
-- `pnpm models:placeholder` regenerate the schematic GLB
+- `pnpm models:dog` / `models:dog-integumentary` / `models:dog-muscular` /
+  `models:dog-visceral` rebuild one
+  system GLB under `public/models/dog/` (needs `SKETCHFAB_TOKEN` in `.env.local`; sources
+  cached in `.cache/models/`). Rebuild skeletal first: the others anchor on its bones.
+- `pnpm brand` regenerates the logo mark and app icons from the scanned skull
+  (`components/atlas/mark-path.ts`, `app/icon.svg`, `app/apple-icon.png`)
+- CT steps live in `scripts/ct/*.py`; set up once with
+  `python3.14 -m venv .venv && .venv/bin/pip install -r scripts/ct/requirements.txt`
 
 ## Layout
 
@@ -20,6 +27,12 @@ Zod; the 3D viewer is React Three Fiber.
 - `lib/content/load.ts` is the only reader of `content/`. Add fields in
   `lib/content/schema.ts` first.
 - Mesh names in GLBs = structure id with `.` → `_` (`lib/content/mesh.ts`).
+- One GLB per species+system, all in one frame (metres, Y up, faces -Z, left = -X).
+  Shared build helpers in `scripts/lib/glb.ts`. Systems are a dissection stack
+  (`order`: skin 0 → bone 3, `material` sets the surface finish); the viewer
+  loads the studied system plus any visible layer, and picks across all of them.
+  `/[locale]/3d/...` shows one piece. Structure `color` overrides the system colour.
+- Structure folders are shared by all systems of a species: slugs must be unique.
 - UI strings in `messages/*.json`; translatable content in `<locale>.mdx`.
 
 ## Rules

@@ -1,0 +1,31 @@
+{
+  "id": "dog.skeletal.vertebra-c7",
+  "system": "dog.skeletal",
+  "nav": "Vertebra cervicalis VII",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebra-c7"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [
+    "intervertebral-disc-disease",
+    "cervical-spondylomyelopathy"
+  ],
+  "media": [
+    "wm-dog-skeleton-specimen-01",
+    "wm-dog-skeleton-ellenberger-01"
+  ],
+  "related": [
+    "dog.skeletal.atlas",
+    "dog.skeletal.vertebra-l1",
+    "dog.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

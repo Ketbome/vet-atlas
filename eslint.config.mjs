@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Downloaded models and local dev tools (gitignored).
+    ".cache/**",
+    ".venv/**",
   ]),
 ]);
 

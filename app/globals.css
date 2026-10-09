@@ -8,12 +8,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
   --font-heading: var(--font-heading);
+  --font-display: var(--font-display);
+  --color-mark: var(--mark);
+  --color-ink: var(--ink);
+  --color-rule: var(--rule);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-eosin: var(--eosin);
   --color-eosin-soft: var(--eosin-soft);
-  --color-bone: var(--bone);
   --color-viewer-bg: var(--viewer-bg);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -53,80 +56,87 @@
 }
 
 :root {
-  --background: oklch(0.966 0.004 106);
-  --foreground: oklch(0.23 0.012 260);
-  --card: oklch(0.995 0.002 106);
-  --card-foreground: oklch(0.23 0.012 260);
-  --popover: oklch(0.995 0.002 106);
-  --popover-foreground: oklch(0.23 0.012 260);
-  --primary: oklch(0.42 0.13 290);
-  --primary-foreground: oklch(0.985 0.005 290);
-  --secondary: oklch(0.93 0.006 106);
-  --secondary-foreground: oklch(0.3 0.012 260);
-  --muted: oklch(0.93 0.006 106);
-  --muted-foreground: oklch(0.52 0.012 250);
-  --accent: oklch(0.92 0.03 290);
-  --accent-foreground: oklch(0.3 0.1 290);
+  /* Plate paper and printing ink. --mark is the ochre used for selection
+     and focus; eosin stays reserved for pathology. */
+  --background: oklch(0.966 0.005 85);
+  --foreground: oklch(0.25 0.03 55);
+  --ink: oklch(0.25 0.03 55);
+  --rule: oklch(0.8 0.012 85);
+  --mark: oklch(0.66 0.13 70);
+  --card: oklch(0.984 0.004 85);
+  --card-foreground: oklch(0.25 0.03 55);
+  --popover: oklch(0.984 0.004 85);
+  --popover-foreground: oklch(0.25 0.03 55);
+  --primary: oklch(0.27 0.032 55);
+  --primary-foreground: oklch(0.97 0.005 85);
+  --secondary: oklch(0.935 0.007 85);
+  --secondary-foreground: oklch(0.3 0.03 55);
+  --muted: oklch(0.935 0.007 85);
+  --muted-foreground: oklch(0.47 0.02 60);
+  --accent: oklch(0.925 0.035 80);
+  --accent-foreground: oklch(0.36 0.07 65);
   --destructive: oklch(0.55 0.17 5);
-  --border: oklch(0.87 0.006 106);
-  --input: oklch(0.87 0.006 106);
-  --ring: oklch(0.55 0.12 290);
-  --chart-1: oklch(0.42 0.13 290);
+  --border: oklch(0.875 0.008 85);
+  --input: oklch(0.86 0.008 85);
+  --ring: oklch(0.62 0.12 70);
+  --chart-1: oklch(0.27 0.032 55);
   --chart-2: oklch(0.6 0.15 5);
-  --chart-3: oklch(0.7 0.1 150);
-  --chart-4: oklch(0.75 0.12 60);
+  --chart-3: oklch(0.66 0.13 70);
+  --chart-4: oklch(0.55 0.08 160);
   --chart-5: oklch(0.5 0.05 250);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.955 0.005 106);
-  --sidebar-foreground: oklch(0.23 0.012 260);
-  --sidebar-primary: oklch(0.42 0.13 290);
-  --sidebar-primary-foreground: oklch(0.985 0.005 290);
-  --sidebar-accent: oklch(0.92 0.03 290);
-  --sidebar-accent-foreground: oklch(0.3 0.1 290);
-  --sidebar-border: oklch(0.87 0.006 106);
-  --sidebar-ring: oklch(0.55 0.12 290);
-  --eosin: oklch(0.6 0.16 5);
+  --radius: 0.3rem;
+  --sidebar: oklch(0.955 0.006 85);
+  --sidebar-foreground: oklch(0.25 0.03 55);
+  --sidebar-primary: oklch(0.27 0.032 55);
+  --sidebar-primary-foreground: oklch(0.97 0.005 85);
+  --sidebar-accent: oklch(0.925 0.035 80);
+  --sidebar-accent-foreground: oklch(0.36 0.07 65);
+  --sidebar-border: oklch(0.875 0.008 85);
+  --sidebar-ring: oklch(0.62 0.12 70);
+  --eosin: oklch(0.55 0.16 5);
   --eosin-soft: oklch(0.94 0.03 5);
-  --bone: #E9E2D3;
-  --viewer-bg: oklch(0.94 0.006 106);
+  --viewer-bg: oklch(0.938 0.007 85);
 }
 
 .dark {
-  --background: oklch(0.19 0.008 250);
-  --foreground: oklch(0.93 0.005 106);
-  --card: oklch(0.23 0.008 250);
-  --card-foreground: oklch(0.93 0.005 106);
-  --popover: oklch(0.23 0.008 250);
-  --popover-foreground: oklch(0.93 0.005 106);
-  --primary: oklch(0.76 0.1 290);
-  --primary-foreground: oklch(0.19 0.008 250);
-  --secondary: oklch(0.28 0.008 250);
-  --secondary-foreground: oklch(0.93 0.005 106);
-  --muted: oklch(0.28 0.008 250);
-  --muted-foreground: oklch(0.68 0.01 250);
-  --accent: oklch(0.32 0.05 290);
-  --accent-foreground: oklch(0.9 0.05 290);
+  /* Graphite light table. */
+  --background: oklch(0.185 0.006 70);
+  --foreground: oklch(0.92 0.008 85);
+  --ink: oklch(0.92 0.008 85);
+  --rule: oklch(0.42 0.012 60);
+  --mark: oklch(0.78 0.12 75);
+  --card: oklch(0.215 0.006 70);
+  --card-foreground: oklch(0.92 0.008 85);
+  --popover: oklch(0.225 0.006 70);
+  --popover-foreground: oklch(0.92 0.008 85);
+  --primary: oklch(0.92 0.008 85);
+  --primary-foreground: oklch(0.2 0.012 60);
+  --secondary: oklch(0.26 0.006 70);
+  --secondary-foreground: oklch(0.92 0.008 85);
+  --muted: oklch(0.26 0.006 70);
+  --muted-foreground: oklch(0.7 0.012 60);
+  --accent: oklch(0.31 0.04 75);
+  --accent-foreground: oklch(0.88 0.07 80);
   --destructive: oklch(0.7 0.15 5);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.7 0.1 290);
-  --chart-1: oklch(0.76 0.1 290);
+  --border: oklch(1 0 0 / 11%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.74 0.11 75);
+  --chart-1: oklch(0.92 0.008 85);
   --chart-2: oklch(0.72 0.14 5);
-  --chart-3: oklch(0.75 0.1 150);
-  --chart-4: oklch(0.8 0.12 60);
+  --chart-3: oklch(0.78 0.12 75);
+  --chart-4: oklch(0.7 0.08 160);
   --chart-5: oklch(0.6 0.05 250);
-  --sidebar: oklch(0.21 0.008 250);
-  --sidebar-foreground: oklch(0.93 0.005 106);
-  --sidebar-primary: oklch(0.76 0.1 290);
-  --sidebar-primary-foreground: oklch(0.19 0.008 250);
-  --sidebar-accent: oklch(0.32 0.05 290);
-  --sidebar-accent-foreground: oklch(0.9 0.05 290);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.7 0.1 290);
+  --sidebar: oklch(0.2 0.006 70);
+  --sidebar-foreground: oklch(0.92 0.008 85);
+  --sidebar-primary: oklch(0.92 0.008 85);
+  --sidebar-primary-foreground: oklch(0.2 0.012 60);
+  --sidebar-accent: oklch(0.31 0.04 75);
+  --sidebar-accent-foreground: oklch(0.88 0.07 80);
+  --sidebar-border: oklch(1 0 0 / 11%);
+  --sidebar-ring: oklch(0.74 0.11 75);
   --eosin: oklch(0.74 0.13 5);
   --eosin-soft: oklch(0.3 0.05 5);
-  --bone: #D8D0BE;
-  --viewer-bg: oklch(0.16 0.008 250);
+  --viewer-bg: oklch(0.16 0.006 70);
 }
 
 @layer base {
@@ -144,7 +154,10 @@
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
     text-wrap: balance;
+    letter-spacing: -0.01em;
   }
+  /* Tabular figures wherever numbers are compared (values, counts). */
+  .tabular { font-variant-numeric: tabular-nums; }
 }
 
 /* Long-form content rendered from MDX */
@@ -170,12 +183,31 @@
 .doc li + li { margin-top: 0.3em; }
 .doc li::marker { color: var(--muted-foreground); }
 .doc strong { font-weight: 600; }
-.doc em { font-style: italic; color: color-mix(in oklch, var(--foreground) 85%, var(--primary)); }
-.doc a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.doc em { font-family: var(--font-heading); font-style: italic; }
+.doc a { color: inherit; text-decoration: underline; text-decoration-color: var(--mark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .doc p { text-wrap: pretty; }
 
-.nav-latin { font-style: italic; letter-spacing: 0.005em; }
+/* Latin NAV names are always the atlas italic. */
+.nav-latin { font-family: var(--font-heading); font-style: italic; letter-spacing: 0; }
+
+/* Small-caps plate label: figure numbers, region names, view names. */
+.plate-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* Browser surfaces carry the palette too */
+::selection { background: color-mix(in oklch, var(--mark) 35%, transparent); }
+::placeholder { color: var(--muted-foreground); }
+input, textarea { caret-color: var(--mark); }
+:focus-visible { outline-color: var(--ring); }
+* { scrollbar-color: color-mix(in oklch, var(--foreground) 22%, transparent) transparent; scrollbar-width: thin; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+

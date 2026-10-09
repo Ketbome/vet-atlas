@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.tensor-fasciae-latae",
+  "system": "dog.muscular",
+  "nav": "M. tensor fasciae latae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.tensor-fasciae-latae.L",
+    "dog.muscular.tensor-fasciae-latae.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B85A47",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.gluteus-medius",
+    "dog.muscular.quadriceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

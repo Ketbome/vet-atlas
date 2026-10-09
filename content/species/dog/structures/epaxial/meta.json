@@ -1,0 +1,30 @@
+{
+  "id": "dog.muscular.epaxial",
+  "system": "dog.muscular",
+  "nav": "M. iliocostalis, M. longissimus et M. transversospinalis (musculi epaxiales)",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.epaxial.L",
+    "dog.muscular.epaxial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#963630",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.1
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "dog.skeletal.vertebra-l1",
+    "dog.skeletal.vertebra-c7",
+    "dog.skeletal.sacrum",
+    "dog.skeletal.ribs",
+    "dog.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dog.muscular.semitendinosus",
+  "system": "dog.muscular",
+  "nav": "M. semitendinosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.semitendinosus.L",
+    "dog.muscular.semitendinosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24A3D",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [
+    "common-calcaneal-tendon-injury",
+    "fibrotic-myopathy"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.tibia",
+    "dog.muscular.biceps-femoris",
+    "dog.muscular.semimembranosus",
+    "dog.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

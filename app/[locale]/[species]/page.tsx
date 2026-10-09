@@ -22,29 +22,43 @@ export default async function SpeciesPage({ params }: PageProps<"/[locale]/[spec
   if (!sp) notFound();
   const t = await getTranslations("species");
   const th = await getTranslations("home");
-  const systems = loadContent().systems.filter((s) => s.species === sp.id);
+  const systems = loadContent()
+    .systems.filter((s) => s.species === sp.id)
+    .sort((a, b) => a.order - b.order);
 
   return (
     <>
-      <main className="mx-auto w-full max-w-[1100px] px-4 py-10">
-        <p className="nav-latin text-sm text-muted-foreground">{sp.scientificName}</p>
-        <h1 className="mt-1 text-3xl font-semibold tracking-tight">{localeName(sp.name, locale)}</h1>
-        <h2 className="mt-8 text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("systems")}</h2>
-        <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <main id="content" className="mx-auto w-full max-w-[1100px] px-4 py-10 sm:px-6 lg:py-14">
+        <h1 className="font-display text-[44px] leading-none text-ink">{localeName(sp.name, locale)}</h1>
+        <p lang="la" className="nav-latin mt-2 text-xl text-muted-foreground">
+          {sp.scientificName}
+        </p>
+
+        <h2 className="plate-label mt-10">{t("systems")}</h2>
+        <p className="mt-1 max-w-[60ch] text-sm text-muted-foreground">{t("stackHint")}</p>
+        {/* The systems as the dissection stack: superficial on top, bone at the base. */}
+        <ol className="mt-4 border-t border-rule">
           {systems.map((s) => {
             const count = getStructuresOfSystem(s.id).length;
             return (
               <li key={s.id}>
-                <Link href={systemHref(s)} className="block rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/50 hover:bg-accent/30">
-                  <span className="block font-heading text-lg font-semibold">{localeName(s.name, locale)}</span>
-                  <span className="mt-1 block text-sm text-muted-foreground">
+                <Link
+                  href={systemHref(s)}
+                  className="group grid grid-cols-[0.5rem_minmax(0,1fr)_auto] items-center gap-x-4 border-b border-border py-4 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                >
+                  <span className="h-10 w-2 rounded-[1px]" style={{ background: s.color }} aria-hidden="true" />
+                  <span className="min-w-0">
+                    <span className="block font-heading text-2xl text-ink group-hover:underline group-hover:decoration-mark group-hover:underline-offset-4">{localeName(s.name, locale)}</span>
+                    <span className="plate-label">{th(`layerOf`, { n: s.order + 1, total: systems.length })}</span>
+                  </span>
+                  <span className="tabular text-sm text-muted-foreground">
                     {s.status === "published" ? th("structuresCount", { count }) : t("systemSoon")}
                   </span>
                 </Link>
               </li>
             );
           })}
-        </ul>
+        </ol>
       </main>
       <SiteFooter />
     </>

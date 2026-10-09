@@ -1,0 +1,36 @@
+{
+  "id": "dog.muscular.biceps-brachii",
+  "system": "dog.muscular",
+  "nav": "M. biceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.biceps-brachii.L",
+    "dog.muscular.biceps-brachii.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B9533F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "biceps-tenosynovitis"
+  ],
+  "media": [
+    "wm-dog-thoracic-limb-muscles-medial-01",
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-forelimb-muscles-cuyer-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.scapula",
+    "dog.skeletal.humerus",
+    "dog.skeletal.radius",
+    "dog.muscular.brachialis",
+    "dog.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

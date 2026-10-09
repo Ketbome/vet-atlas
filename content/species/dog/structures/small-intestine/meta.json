@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.small-intestine",
+  "system": "dog.visceral",
+  "nav": "Intestinum tenue",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.small-intestine"
+  ],
+  "fidelity": "scan",
+  "color": "#E2A28C",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "acute-pancreatitis",
+    "canine-parvoviral-enteritis",
+    "gastrointestinal-foreign-body"
+  ],
+  "media": [
+    "wm-dog-ileum-specimen-01",
+    "wm-dog-small-intestine-histo-01",
+    "wm-dog-abdominal-viscera-sisson-01"
+  ],
+  "related": [
+    "dog.visceral.stomach",
+    "dog.visceral.large-intestine",
+    "dog.visceral.pancreas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

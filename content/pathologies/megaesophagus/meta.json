@@ -1,0 +1,25 @@
+{
+  "id": "megaesophagus",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.esophagus",
+    "dog.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

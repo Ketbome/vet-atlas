@@ -1,0 +1,25 @@
+{
+  "id": "benign-prostatic-hyperplasia",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.prostate",
+    "dog.visceral.large-intestine"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Johnston SD, Root Kustritz MV, Olson PNS. Canine and Feline Theriogenology. Saunders",
+      "year": 2001
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

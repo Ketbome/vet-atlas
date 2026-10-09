@@ -1,0 +1,28 @@
+{
+  "id": "superficial-pyoderma",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Hillier A, Lloyd DH, Weese JS, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases). Vet Dermatol 25(3):163-e43",
+      "year": 2014
+    },
+    {
+      "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

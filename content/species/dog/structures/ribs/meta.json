@@ -1,0 +1,58 @@
+{
+  "id": "dog.skeletal.ribs",
+  "system": "dog.skeletal",
+  "nav": "Costae",
+  "region": "axial",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.ribs.1.L",
+    "dog.skeletal.ribs.1.R",
+    "dog.skeletal.ribs.2.L",
+    "dog.skeletal.ribs.2.R",
+    "dog.skeletal.ribs.3.L",
+    "dog.skeletal.ribs.3.R",
+    "dog.skeletal.ribs.4.L",
+    "dog.skeletal.ribs.4.R",
+    "dog.skeletal.ribs.5.L",
+    "dog.skeletal.ribs.5.R",
+    "dog.skeletal.ribs.6.L",
+    "dog.skeletal.ribs.6.R",
+    "dog.skeletal.ribs.7.L",
+    "dog.skeletal.ribs.7.R",
+    "dog.skeletal.ribs.8.L",
+    "dog.skeletal.ribs.8.R",
+    "dog.skeletal.ribs.9.L",
+    "dog.skeletal.ribs.9.R",
+    "dog.skeletal.ribs.10.L",
+    "dog.skeletal.ribs.10.R",
+    "dog.skeletal.ribs.11.L",
+    "dog.skeletal.ribs.11.R",
+    "dog.skeletal.ribs.12.L",
+    "dog.skeletal.ribs.12.R",
+    "dog.skeletal.ribs.13.L",
+    "dog.skeletal.ribs.13.R"
+  ],
+  "fidelity": "modeled",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "flail-chest",
+    "pectus-excavatum"
+  ],
+  "media": [
+    "wm-dog-ribs-specimen-01",
+    "wm-dog-thorax-vd-01",
+    "wm-dog-skeleton-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.vertebrae-thoracic",
+    "dog.skeletal.sternum",
+    "dog.skeletal.manubrium",
+    "dog.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

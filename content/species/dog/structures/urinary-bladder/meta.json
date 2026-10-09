@@ -1,0 +1,34 @@
+{
+  "id": "dog.visceral.urinary-bladder",
+  "system": "dog.visceral",
+  "nav": "Vesica urinaria",
+  "region": "urinary",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.urinary-bladder"
+  ],
+  "fidelity": "illustrative",
+  "color": "#E8C6A4",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [
+    "portosystemic-shunt",
+    "urolithiasis"
+  ],
+  "media": [
+    "wm-dog-urinary-bladder-specimen-01",
+    "wm-dog-urinary-bladder-histo-01",
+    "wm-dog-bladder-struvite-lat-01"
+  ],
+  "related": [
+    "dog.visceral.kidneys",
+    "dog.visceral.prostate",
+    "dog.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

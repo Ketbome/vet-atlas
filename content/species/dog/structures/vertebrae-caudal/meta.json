@@ -1,0 +1,46 @@
+{
+  "id": "dog.skeletal.vertebrae-caudal",
+  "system": "dog.skeletal",
+  "nav": "Vertebrae caudales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebrae-caudal.cd1",
+    "dog.skeletal.vertebrae-caudal.cd2",
+    "dog.skeletal.vertebrae-caudal.cd3",
+    "dog.skeletal.vertebrae-caudal.cd4",
+    "dog.skeletal.vertebrae-caudal.cd5",
+    "dog.skeletal.vertebrae-caudal.cd6",
+    "dog.skeletal.vertebrae-caudal.cd7",
+    "dog.skeletal.vertebrae-caudal.cd8",
+    "dog.skeletal.vertebrae-caudal.cd9",
+    "dog.skeletal.vertebrae-caudal.cd10",
+    "dog.skeletal.vertebrae-caudal.cd11",
+    "dog.skeletal.vertebrae-caudal.cd12",
+    "dog.skeletal.vertebrae-caudal.cd13",
+    "dog.skeletal.vertebrae-caudal.cd14",
+    "dog.skeletal.vertebrae-caudal.cd15",
+    "dog.skeletal.vertebrae-caudal.cd16",
+    "dog.skeletal.vertebrae-caudal.cd17",
+    "dog.skeletal.vertebrae-caudal.cd18",
+    "dog.skeletal.vertebrae-caudal.cd19"
+  ],
+  "fidelity": "scan",
+  "source": "greyhound-pelvic-limb-ct",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-skeleton-specimen-01",
+    "wm-dog-skeleton-ellenberger-01"
+  ],
+  "related": [
+    "dog.skeletal.sacrum",
+    "dog.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

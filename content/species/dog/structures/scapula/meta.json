@@ -1,0 +1,33 @@
+{
+  "id": "dog.skeletal.scapula",
+  "system": "dog.skeletal",
+  "nav": "Scapula",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.scapula.L",
+    "dog.skeletal.scapula.R"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "shoulder-osteochondrosis",
+    "biceps-tenosynovitis"
+  ],
+  "media": [
+    "wm-dog-scapula-lateral-01",
+    "wm-dog-scapula-medial-01",
+    "wm-dog-scapula-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.ribs",
+    "dog.skeletal.vertebra-c7"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

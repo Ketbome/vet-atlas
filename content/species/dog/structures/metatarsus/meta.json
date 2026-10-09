@@ -4,11 +4,26 @@
   "nav": "Ossa metatarsalia",
   "region": "pelvic-limb",
   "laterality": "paired",
-  "meshes": ["dog.skeletal.metatarsus.L", "dog.skeletal.metatarsus.R"],
-  "fidelity": "illustrative",
-  "camera": { "preset": "lateral-left", "zoom": 1.8 },
+  "meshes": [
+    "dog.skeletal.metatarsus.L",
+    "dog.skeletal.metatarsus.R"
+  ],
+  "fidelity": "scan",
+  "source": "greyhound-pelvic-limb-ct",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
   "pathologies": [],
-  "media": [],
-  "related": ["dog.skeletal.tarsus", "dog.skeletal.phalanges-pelvic"],
-  "review": { "status": "draft" }
+  "media": [
+    "wm-dog-pes-skeleton-sisson-01",
+    "wm-dog-pes-bones-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.tarsus",
+    "dog.skeletal.phalanges-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
 }

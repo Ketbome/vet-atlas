@@ -1,0 +1,29 @@
+{
+  "id": "craniomandibular-osteopathy",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.mandible",
+    "dog.skeletal.skull"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Zachary JF. Pathologic Basis of Veterinary Disease, 6th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
+      "year": 2020
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

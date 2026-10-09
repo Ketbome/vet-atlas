@@ -1,0 +1,35 @@
+{
+  "id": "dog.muscular.brachiocephalicus",
+  "system": "dog.muscular",
+  "nav": "M. brachiocephalicus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.brachiocephalicus.cleidobrachialis.L",
+    "dog.muscular.brachiocephalicus.cleidobrachialis.R",
+    "dog.muscular.brachiocephalicus.cleidocephalicus.L",
+    "dog.muscular.brachiocephalicus.cleidocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A8402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.skull",
+    "dog.muscular.sternocephalicus",
+    "dog.muscular.omotransversarius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

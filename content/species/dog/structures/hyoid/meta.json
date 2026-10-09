@@ -1,0 +1,26 @@
+{
+  "id": "dog.skeletal.hyoid",
+  "system": "dog.skeletal",
+  "nav": "Apparatus hyoideus",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.hyoid"
+  ],
+  "fidelity": "scan",
+  "source": "vetagro-sup-anatomy",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "dog.skeletal.mandible",
+    "dog.skeletal.skull",
+    "dog.skeletal.atlas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

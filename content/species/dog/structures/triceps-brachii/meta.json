@@ -1,0 +1,37 @@
+{
+  "id": "dog.muscular.triceps-brachii",
+  "system": "dog.muscular",
+  "nav": "M. triceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.triceps-brachii.long.L",
+    "dog.muscular.triceps-brachii.long.R",
+    "dog.muscular.triceps-brachii.lateral.L",
+    "dog.muscular.triceps-brachii.lateral.R",
+    "dog.muscular.triceps-brachii.medial.L",
+    "dog.muscular.triceps-brachii.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A9443A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-antebrachium-muscles-lateral-01",
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-forelimb-muscles-cuyer-lateral-01"
+  ],
+  "related": [
+    "dog.skeletal.scapula",
+    "dog.skeletal.humerus",
+    "dog.skeletal.ulna",
+    "dog.muscular.biceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

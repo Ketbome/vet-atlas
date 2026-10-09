@@ -1,0 +1,33 @@
+{
+  "id": "common-calcaneal-tendon-injury",
+  "category": "traumatic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.muscular.gastrocnemius",
+    "dog.muscular.flexor-digitorum-superficialis-pelvic",
+    "dog.muscular.biceps-femoris",
+    "dog.muscular.semitendinosus",
+    "dog.muscular.gracilis",
+    "dog.skeletal.tarsus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Evans HE, de Lahunta A. Miller's Anatomy of the Dog, 4th ed. Elsevier",
+      "year": 2013
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

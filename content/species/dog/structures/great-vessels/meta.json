@@ -1,0 +1,34 @@
+{
+  "id": "dog.visceral.great-vessels",
+  "system": "dog.visceral",
+  "nav": "Aorta et vena cava caudalis",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.great-vessels"
+  ],
+  "fidelity": "modeled",
+  "color": "#B02A24",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "patent-ductus-arteriosus",
+    "gastric-dilatation-volvulus",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-dog-aorta-caudal-vena-cava-sisson-01",
+    "wm-dog-heart-left-labeled-01"
+  ],
+  "related": [
+    "dog.visceral.heart",
+    "dog.visceral.kidneys",
+    "dog.visceral.liver"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

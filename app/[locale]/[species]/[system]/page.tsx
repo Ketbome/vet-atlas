@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getSpecies, getStructuresOfSystem, getSystem, localeName, readDoc, structureHref } from "@/lib/content/load";
-import { Kbd } from "@/components/ui/kbd";
+import { Breadcrumb } from "@/components/atlas/breadcrumb";
+import { ShortcutKbd } from "@/components/atlas/shortcut-kbd";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/[species]/[system]">): Promise<Metadata> {
   const { locale, species, system: slug } = await params;
@@ -21,46 +22,55 @@ export default async function SystemPage({ params }: PageProps<"/[locale]/[speci
   if (!system || !sp) notFound();
   const t = await getTranslations("home");
   const ts = await getTranslations("structure");
+  const tSite = await getTranslations("site");
   const structures = getStructuresOfSystem(system.id);
   const pathologyIds = new Set(structures.flatMap((s) => s.pathologies));
 
   return (
-    <div className="p-5 lg:p-6">
-      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{localeName(sp.name, locale)}</p>
-      <h1 className="mt-1 text-2xl font-semibold tracking-tight">{localeName(system.name, locale)}</h1>
-      <p className="mt-2 text-sm text-muted-foreground">
+    <div className="flex min-h-full flex-col p-4 sm:p-5 lg:p-6">
+      <Breadcrumb items={[{ href: `/${sp.id}`, label: localeName(sp.name, locale) }]} />
+      <h1 className="mt-2 font-display text-[32px] leading-tight text-ink">{localeName(system.name, locale)}</h1>
+      <p className="tabular mt-1 text-sm text-muted-foreground">
         {t("structuresCount", { count: structures.length })} · {t("pathologiesCount", { count: pathologyIds.size })}
       </p>
 
-      <ol className="mt-6 space-y-3 text-sm">
-        <li className="flex gap-3">
-          <span className="mt-0.5 size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">1</span>
-          <span>{t.rich("howToSteps.search", { kbd: (chunks) => <Kbd>{chunks}</Kbd> })}</span>
-        </li>
-        <li className="flex gap-3">
-          <span className="mt-0.5 size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">2</span>
-          <span>{t("howToSteps.click")}</span>
-        </li>
-        <li className="flex gap-3">
-          <span className="mt-0.5 size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">3</span>
-          <span>{t("howToSteps.layers")}</span>
-        </li>
-      </ol>
+      <dl className="mt-6 grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2.5 border-y border-border py-4 text-sm">
+        <dt className="plate-label pt-0.5">{t("howTo.find")}</dt>
+        <dd>{t.rich("howToSteps.search", { kbd: () => <ShortcutKbd /> })}</dd>
+        <dt className="plate-label pt-0.5">{t("howTo.open")}</dt>
+        <dd>{t("howToSteps.click")}</dd>
+        <dt className="plate-label pt-0.5">{t("howTo.dissect")}</dt>
+        <dd>{t("howToSteps.layers")}</dd>
+      </dl>
 
-      <h2 className="mt-8 text-sm font-semibold">{ts("inSystem", { system: localeName(system.name, locale) })}</h2>
-      <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-1">
-        {structures.map((s) => {
-          const doc = readDoc(s.dir, locale);
-          return (
-            <li key={s.id}>
-              <Link href={structureHref(s)} className="flex items-baseline justify-between gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-muted">
-                <span>{doc?.title ?? s.nav}</span>
-                <span className="nav-latin text-xs text-muted-foreground">{s.nav}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <h2 className="mt-8 font-heading text-lg text-ink">{ts("inSystem", { system: localeName(system.name, locale) })}</h2>
+      {system.regions.map((region) => {
+        const items = structures.filter((s) => s.region === region.id);
+        if (items.length === 0) return null;
+        return (
+          <section key={region.id} className="mt-4">
+            <h3 className="font-heading text-base italic text-ink">{localeName(region.name, locale)}</h3>
+            <ul className="mt-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+              {items.map((s) => {
+                const doc = readDoc(s.dir, locale);
+                return (
+                  <li key={s.id}>
+                    <Link href={structureHref(s)} className="flex min-h-10 items-baseline gap-2.5 border-b border-border px-1 py-2 text-sm hover:bg-muted lg:min-h-9 lg:py-1.5">
+                      <span className="size-2.5 shrink-0 translate-y-px rounded-[2px] border border-ink/15" style={{ background: s.color ?? system.color }} aria-hidden="true" />
+                      <span className="min-w-0 flex-1">{doc?.title ?? s.nav}</span>
+                      <span lang="la" className="nav-latin max-w-[50%] truncate text-right text-xs text-muted-foreground" title={s.nav}>
+                        {s.nav}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+
+      <p className="mt-auto max-w-[60ch] pt-8 text-xs text-muted-foreground">{tSite("disclaimer")}</p>
     </div>
   );
 }

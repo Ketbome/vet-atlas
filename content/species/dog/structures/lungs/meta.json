@@ -1,0 +1,39 @@
+{
+  "id": "dog.visceral.lungs",
+  "system": "dog.visceral",
+  "nav": "Pulmones",
+  "region": "respiratory",
+  "laterality": "paired",
+  "meshes": [
+    "dog.visceral.lungs.L",
+    "dog.visceral.lungs.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#E3A3A0",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "myxomatous-mitral-valve-disease",
+    "dilated-cardiomyopathy",
+    "patent-ductus-arteriosus",
+    "megaesophagus",
+    "canine-infectious-respiratory-disease-complex",
+    "aspiration-pneumonia"
+  ],
+  "media": [
+    "wm-dog-lungs-trachea-specimen-01",
+    "wm-dog-lungs-corrosion-cast-01",
+    "wm-dog-thorax-lateral-01"
+  ],
+  "related": [
+    "dog.visceral.trachea",
+    "dog.visceral.heart",
+    "dog.muscular.diaphragm"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

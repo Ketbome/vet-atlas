@@ -1,0 +1,32 @@
+{
+  "id": "dog.visceral.pancreas",
+  "system": "dog.visceral",
+  "nav": "Pancreas",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.pancreas"
+  ],
+  "fidelity": "illustrative",
+  "color": "#E5BE8A",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "acute-pancreatitis"
+  ],
+  "media": [
+    "wm-dog-pancreas-histo-01",
+    "wm-dog-pancreas-gray-01"
+  ],
+  "related": [
+    "dog.visceral.small-intestine",
+    "dog.visceral.stomach",
+    "dog.visceral.spleen"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

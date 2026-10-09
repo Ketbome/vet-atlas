@@ -1,0 +1,34 @@
+{
+  "id": "dog.muscular.temporalis",
+  "system": "dog.muscular",
+  "nav": "M. temporalis",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.temporalis.L",
+    "dog.muscular.temporalis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A3402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [
+    "masticatory-muscle-myositis"
+  ],
+  "media": [
+    "wm-dog-masticatory-muscles-cuyer-01",
+    "wm-dog-head-vessels-sisson-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.skull",
+    "dog.skeletal.mandible",
+    "dog.muscular.masseter"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

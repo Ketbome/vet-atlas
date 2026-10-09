@@ -2,9 +2,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRightIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { loadContent, localeName, systemHref } from "@/lib/content/load";
+import { buildViewerModel } from "@/lib/content/view";
 import { SiteFooter } from "@/components/atlas/site-footer";
-import { Kbd } from "@/components/ui/kbd";
-import { Badge } from "@/components/ui/badge";
+import { HeroViewer } from "@/components/atlas/hero-viewer";
+import { ShortcutKbd } from "@/components/atlas/shortcut-kbd";
 
 const upcoming = [
   { id: "cat", scientificName: "Felis catus", name: { es: "Gato", en: "Cat" } },
@@ -12,21 +13,29 @@ const upcoming = [
   { id: "horse", scientificName: "Equus caballus", name: { es: "Caballo", en: "Horse" } },
 ];
 
+function roman(n: number) {
+  return ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"][n - 1] ?? String(n);
+}
+
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
   const db = loadContent();
   const published = db.species.filter((s) => s.status === "published");
+  // The frontispiece shows the skeleton: the base every other layer sits on.
+  const featured =
+    db.systems.find((s) => s.species === published[0]?.id && s.status === "published" && s.material === "bone") ??
+    db.systems.find((s) => s.species === published[0]?.id && s.status === "published");
 
   return (
     <>
-      <main className="mx-auto w-full max-w-[1100px] px-4">
-        <section className="grid gap-8 py-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:py-20">
+      <main id="content" className="mx-auto w-full max-w-[1180px] px-4 sm:px-6">
+        <section className="grid gap-10 py-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:py-16">
           <div>
-            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight lg:text-[56px]">{t("title")}</h1>
-            <p className="mt-5 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">{t("lead")}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <h1 className="font-display text-[44px] leading-[1.02] tracking-[-0.02em] text-ink sm:text-[56px] lg:text-[68px]">{t("title")}</h1>
+            <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-muted-foreground">{t("lead")}</p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               {published.map((sp) => {
                 const system = db.systems.find((s) => s.species === sp.id);
                 if (!system) return null;
@@ -34,7 +43,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   <Link
                     key={sp.id}
                     href={systemHref(system)}
-                    className="inline-flex h-11 items-center gap-2 rounded-md bg-primary px-5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/85 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                    className="inline-flex h-12 items-center gap-2 rounded-[3px] bg-primary px-6 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/85 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                   >
                     {t("start", { species: localeName(sp.name, locale) })}
                     <ArrowRightIcon className="size-4" />
@@ -42,59 +51,69 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 );
               })}
               <span className="hidden text-sm text-muted-foreground sm:inline">
-                <Kbd>⌘</Kbd> <Kbd>K</Kbd>
+                <ShortcutKbd />
               </span>
             </div>
           </div>
 
-          <ol className="space-y-3 rounded-lg border border-border bg-card p-5 text-sm">
-            <li className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("howTo")}</li>
-            <li className="flex gap-3">
-              <span className="size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">1</span>
-              <span>{t.rich("howToSteps.search", { kbd: (chunks) => <Kbd>{chunks}</Kbd> })}</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">2</span>
-              <span>{t("howToSteps.click")}</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="size-5 shrink-0 rounded-full bg-primary text-center text-[11px] font-semibold leading-5 text-primary-foreground">3</span>
-              <span>{t("howToSteps.layers")}</span>
-            </li>
-          </ol>
+          {featured && (
+            <HeroViewer
+              model={buildViewerModel(featured, locale)}
+              caption={t("plateCaption", {
+                latin: published[0].scientificName,
+                system: localeName(featured.name, locale),
+              })}
+            />
+          )}
         </section>
 
-        <section className="border-t border-border py-10">
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {published.map((sp) => {
-              const systems = db.systems.filter((s) => s.species === sp.id);
+        <section aria-labelledby="index-title" className="border-t border-rule py-10">
+          <h2 id="index-title" className="plate-label">
+            {t("index")}
+          </h2>
+          <ol className="mt-4">
+            {published.map((sp, i) => {
+              const systems = db.systems.filter((s) => s.species === sp.id).sort((a, b) => a.order - b.order);
+              const first = systems.find((s) => s.material === "bone") ?? systems[0];
               const structures = db.structures.filter((st) => systems.some((s) => s.id === st.system)).length;
               const pathologies = db.pathologies.filter((p) => p.species.includes(sp.id)).length;
               return (
                 <li key={sp.id}>
-                  <Link href={`/${sp.id}`} className="block h-full rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/50 hover:bg-accent/30">
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="font-heading text-xl font-semibold">{localeName(sp.name, locale)}</span>
-                      <Badge className="bg-chart-3/20 text-foreground">{t("available")}</Badge>
-                    </div>
-                    <span className="nav-latin mt-0.5 block text-sm text-muted-foreground">{sp.scientificName}</span>
-                    <span className="mt-3 block text-sm text-muted-foreground">
+                  <Link
+                    href={first ? systemHref(first) : `/${sp.id}`}
+                    className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-3 border-b border-border py-4 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_auto]"
+                  >
+                    <span className="font-heading text-sm italic text-muted-foreground">{roman(i + 1)}</span>
+                    <span>
+                      <span className="font-heading text-2xl text-ink group-hover:underline group-hover:decoration-mark group-hover:underline-offset-4">{localeName(sp.name, locale)}</span>{" "}
+                      <span lang="la" className="nav-latin text-base text-muted-foreground">
+                        {sp.scientificName}
+                      </span>
+                    </span>
+                    <span className="hidden text-sm text-muted-foreground sm:block">
+                      {systems.map((s) => localeName(s.name, locale)).join(" · ")}
+                    </span>
+                    <span className="tabular text-sm text-foreground">
                       {t("structuresCount", { count: structures })} · {t("pathologiesCount", { count: pathologies })}
                     </span>
                   </Link>
                 </li>
               );
             })}
-            {upcoming.map((sp) => (
-              <li key={sp.id} className="rounded-lg border border-dashed border-border p-4 text-muted-foreground">
-                <div className="flex items-start justify-between gap-2">
-                  <span className="font-heading text-xl font-semibold">{localeName(sp.name, locale)}</span>
-                  <Badge variant="outline">{t("soon")}</Badge>
-                </div>
-                <span className="nav-latin mt-0.5 block text-sm">{sp.scientificName}</span>
+            {upcoming.map((sp, i) => (
+              <li key={sp.id} className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-3 border-b border-border py-4 text-muted-foreground sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_auto]">
+                <span className="font-heading text-sm italic">{roman(published.length + i + 1)}</span>
+                <span>
+                  <span className="font-heading text-2xl">{localeName(sp.name, locale)}</span>{" "}
+                  <span lang="la" className="nav-latin text-base">
+                    {sp.scientificName}
+                  </span>
+                </span>
+                <span className="hidden sm:block" />
+                <span className="text-sm">{t("soon")}</span>
               </li>
             ))}
-          </ul>
+          </ol>
         </section>
       </main>
       <SiteFooter />

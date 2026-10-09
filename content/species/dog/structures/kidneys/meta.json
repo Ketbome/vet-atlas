@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.kidneys",
+  "system": "dog.visceral",
+  "nav": "Renes",
+  "region": "urinary",
+  "laterality": "paired",
+  "meshes": [
+    "dog.visceral.kidneys.L",
+    "dog.visceral.kidneys.R"
+  ],
+  "fidelity": "scan",
+  "color": "#7A3428",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "chronic-kidney-disease",
+    "urolithiasis"
+  ],
+  "media": [
+    "wm-dog-kidneys-specimen-01",
+    "wm-dog-kidneys-corrosion-cast-01",
+    "wm-pig-kidney-glomerulus-histo-01"
+  ],
+  "related": [
+    "dog.visceral.urinary-bladder",
+    "dog.visceral.great-vessels",
+    "dog.skeletal.vertebra-l1"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

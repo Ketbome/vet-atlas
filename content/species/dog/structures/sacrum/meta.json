@@ -7,19 +7,24 @@
   "meshes": [
     "dog.skeletal.sacrum"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
+  "source": "greyhound-pelvic-limb-ct",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8
   },
-  "pathologies": [],
+  "pathologies": [
+    "degenerative-lumbosacral-stenosis"
+  ],
   "media": [
     "wm-dog-pelvis-specimen-dorsal-01",
     "wm-dog-pelvis-specimen-caudal-01",
     "wm-dog-pelvis-vd-02"
   ],
   "related": [
-    "dog.skeletal.os-coxae"
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.vertebrae-lumbar",
+    "dog.skeletal.vertebrae-caudal"
   ],
   "review": {
     "status": "draft"

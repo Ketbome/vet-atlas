@@ -8,7 +8,7 @@
     "dog.skeletal.tibia.L",
     "dog.skeletal.tibia.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8
@@ -16,7 +16,8 @@
   "pathologies": [
     "cranial-cruciate-ligament-rupture",
     "patellar-luxation",
-    "osteosarcoma"
+    "osteosarcoma",
+    "panosteitis"
   ],
   "media": [
     "wm-dog-hind-limb-specimen-01",

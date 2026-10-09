@@ -230,5 +230,1144 @@
     },
     "stain": "Ground section (unstained)",
     "magnification": 10
+  },
+  {
+    "id": "wm-dog-superficial-muscles-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/A_text-book_of_veterinary_anatomy_%28Page_319%29_BHL18587443.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_319%29_BHL18587443.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 230: músculos superficiales del perro tras retirar el panículo carnoso, en vista lateral y con leyenda numerada.",
+      "en": "Page from Sisson's textbook (1910) with fig. 230: superficial muscles of the dog after removal of the panniculus carnosus, lateral view with a numbered legend."
+    }
+  },
+  {
+    "id": "wm-dog-superficial-muscles-cuyer-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Artistic_anatomy_of_animals_%28Page_141%29_BHL22847536.jpg/1280px-Artistic_anatomy_of_animals_%28Page_141%29_BHL22847536.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Édouard Cuyer and George Haywood, via Wikimedia Commons",
+    "caption": {
+      "es": "Fig. 68 de Cuyer, Artistic anatomy of animals: capa muscular superficial del perro en vista lateral, con leyenda numerada en terminología antigua.",
+      "en": "Fig. 68 from Cuyer's Artistic anatomy of animals: superficial muscle layer of the dog in lateral view, with a numbered legend in older terminology."
+    }
+  },
+  {
+    "id": "wm-dog-ventral-muscles-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/A_text-book_of_veterinary_anatomy_%28Page_320%29_BHL18587444.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_320%29_BHL18587444.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 231: músculos ventrales de la cabeza, el cuello y el tórax del perro; también señala la glándula tiroides.",
+      "en": "Page from Sisson's textbook (1910) with fig. 231: ventral muscles of the head, neck and thorax of the dog; the thyroid gland is also labeled."
+    }
+  },
+  {
+    "id": "wm-dog-thoracic-limb-muscles-medial-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/A_text-book_of_veterinary_anatomy_%28Page_321%29_BHL18587445.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_321%29_BHL18587445.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 232: músculos del miembro torácico del perro en vista medial, con rótulos.",
+      "en": "Page from Sisson's textbook (1910) with fig. 232: muscles of the dog's thoracic limb in medial view, labeled."
+    }
+  },
+  {
+    "id": "wm-dog-antebrachium-muscles-lateral-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/A_text-book_of_veterinary_anatomy_%28Page_322%29_BHL18587446.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_322%29_BHL18587446.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 233: músculos del antebrazo y la mano del perro en vista lateral, incluidos tríceps, braquial y extensores del carpo y los dedos.",
+      "en": "Page from Sisson's textbook (1910) with fig. 233: muscles of the dog's forearm and manus in lateral view, including the triceps, brachialis and the carpal and digital extensors."
+    }
+  },
+  {
+    "id": "wm-dog-pelvic-limb-muscles-medial-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/A_text-book_of_veterinary_anatomy_%28Page_327%29_BHL18587451.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_327%29_BHL18587451.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 236: músculos del miembro pelviano del perro en vista medial, con leyenda.",
+      "en": "Page from Sisson's textbook (1910) with fig. 236: muscles of the dog's pelvic limb in medial view, with a legend."
+    }
+  },
+  {
+    "id": "wm-dog-pelvic-limb-arteries-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/A_text-book_of_veterinary_anatomy_%28Page_639%29_BHL18587763.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_639%29_BHL18587763.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 492: arterias del miembro pelviano del perro en vista medial, junto con los músculos del muslo y la pierna rotulados.",
+      "en": "Page from Sisson's textbook (1910) with fig. 492: arteries of the dog's pelvic limb in medial view, with the thigh and leg muscles labeled."
+    }
+  },
+  {
+    "id": "wm-dog-masticatory-muscles-cuyer-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Artistic_anatomy_of_animals_%28Page_233%29_BHL22847628.jpg/1280px-Artistic_anatomy_of_animals_%28Page_233%29_BHL22847628.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Édouard Cuyer and George Haywood, via Wikimedia Commons",
+    "caption": {
+      "es": "Fig. 89 de Cuyer, Artistic anatomy of animals: músculos masticadores del perro (masetero y temporal) en una disección profunda de la cabeza.",
+      "en": "Fig. 89 from Cuyer's Artistic anatomy of animals: masticatory muscles of the dog (masseter and temporalis) in a deep dissection of the head."
+    }
+  },
+  {
+    "id": "wm-dog-head-vessels-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/A_text-book_of_veterinary_anatomy_%28Page_634%29_BHL18587758.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_634%29_BHL18587758.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 486: vasos superficiales de la cabeza del perro; también rotula los músculos masetero y temporal.",
+      "en": "Page from Sisson's textbook (1910) with fig. 486: superficial vessels of the dog's head; the masseter and temporalis muscles are also labeled."
+    }
+  },
+  {
+    "id": "wm-dog-forelimb-muscles-lateral-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/202410_Muscles_of_canine_right_forelimb_lateral.svg/1280px-202410_Muscles_of_canine_right_forelimb_lateral.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "DataBase Center for Life Science (DBCLS), via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema sin rótulos de la musculatura del miembro torácico derecho del perro en vista lateral.",
+      "en": "Unlabeled diagram of the musculature of the dog's right thoracic limb in lateral view."
+    }
+  },
+  {
+    "id": "wm-dog-forelimb-muscles-cuyer-lateral-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Artistic_anatomy_of_animals_%28Page_178%29_BHL22847573.jpg/1280px-Artistic_anatomy_of_animals_%28Page_178%29_BHL22847573.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Édouard Cuyer and George Haywood, via Wikimedia Commons",
+    "caption": {
+      "es": "Fig. 73 de Cuyer, Artistic anatomy of animals: músculos del miembro torácico izquierdo del perro en vista lateral, con leyenda numerada.",
+      "en": "Fig. 73 from Cuyer's Artistic anatomy of animals: muscles of the dog's left thoracic limb in lateral view, with a numbered legend."
+    }
+  },
+  {
+    "id": "wm-dog-forelimb-muscles-cuyer-medial-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Artistic_anatomy_of_animals_%28Page_190%29_BHL22847585.jpg/1280px-Artistic_anatomy_of_animals_%28Page_190%29_BHL22847585.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Édouard Cuyer and George Haywood, via Wikimedia Commons",
+    "caption": {
+      "es": "Fig. 76 de Cuyer, Artistic anatomy of animals: músculos del miembro torácico izquierdo del perro en vista medial, con leyenda numerada.",
+      "en": "Fig. 76 from Cuyer's Artistic anatomy of animals: muscles of the dog's left thoracic limb in medial view, with a numbered legend."
+    }
+  },
+  {
+    "id": "wm-dog-hind-paw-tendons-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/A_text-book_of_veterinary_anatomy_%28Page_207%29_BHL18587331.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_207%29_BHL18587331.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 170: ligamentos y tendones de la pata pelviana del perro en vista plantar, incluido el tendón del flexor digital superficial.",
+      "en": "Page from Sisson's textbook (1910) with fig. 170: ligaments and tendons of the dog's hind paw in plantar view, including the superficial digital flexor tendon."
+    }
+  },
+  {
+    "id": "wm-dog-skeletal-muscle-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Dogskeletalmsuscle100x6.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Músculo esquelético de perro al microscopio óptico (100x): fibras musculares en corte transversal agrupadas en fascículos.",
+      "en": "Dog skeletal muscle under the light microscope (100x): muscle fibers in cross-section grouped into fascicles."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-vertebrae-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/A_text-book_of_veterinary_anatomy_%28Page_152%29_BHL18587276.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_152%29_BHL18587276.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con el atlas, el axis, la sexta vértebra cervical y la cuarta vértebra torácica del perro (figs. 116-119).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's atlas, axis, sixth cervical vertebra and fourth thoracic vertebra (figs. 116-119)."
+    }
+  },
+  {
+    "id": "wm-dog-lumbar-sacrum-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/A_text-book_of_veterinary_anatomy_%28Page_153%29_BHL18587277.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_153%29_BHL18587277.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la cuarta vértebra lumbar en vista lateral y el sacro en vista dorsal del perro (figs. 120-121).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's fourth lumbar vertebra in lateral view and the sacrum in dorsal view (figs. 120-121)."
+    }
+  },
+  {
+    "id": "wm-dog-skull-base-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/A_text-book_of_veterinary_anatomy_%28Page_154%29_BHL18587278.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_154%29_BHL18587278.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 122: base del cráneo del perro sin mandíbula, con leyenda de huesos y forámenes.",
+      "en": "Page from Sisson's textbook (1910) with fig. 122: base of the dog's skull without the mandible, with a legend of bones and foramina."
+    }
+  },
+  {
+    "id": "wm-dog-scapula-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/A_text-book_of_veterinary_anatomy_%28Page_162%29_BHL18587286.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_162%29_BHL18587286.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la escápula del perro en vista lateral y costal (figs. 128-129).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's scapula in lateral and costal views (figs. 128-129)."
+    }
+  },
+  {
+    "id": "wm-dog-humerus-radius-ulna-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/A_text-book_of_veterinary_anatomy_%28Page_163%29_BHL18587287.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_163%29_BHL18587287.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con el húmero izquierdo y el radio y la ulna izquierdos del perro (figs. 130-131).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's left humerus and left radius and ulna (figs. 130-131)."
+    }
+  },
+  {
+    "id": "wm-dog-manus-skeleton-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/A_text-book_of_veterinary_anatomy_%28Page_164%29_BHL18587288.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_164%29_BHL18587288.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 132: esqueleto de la parte distal del miembro torácico del perro, con carpianos, metacarpianos y falanges numerados.",
+      "en": "Page from Sisson's textbook (1910) with fig. 132: skeleton of the distal thoracic limb of the dog, with carpal bones, metacarpals and phalanges numbered."
+    }
+  },
+  {
+    "id": "wm-dog-pes-skeleton-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/A_text-book_of_veterinary_anatomy_%28Page_167%29_BHL18587291.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_167%29_BHL18587291.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 137: esqueleto de la parte distal del miembro pelviano del perro, con tarsianos, metatarsianos y falanges.",
+      "en": "Page from Sisson's textbook (1910) with fig. 137: skeleton of the distal pelvic limb of the dog, with tarsal bones, metatarsals and phalanges."
+    }
+  },
+  {
+    "id": "wm-dog-atlas-axis-cnh-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Cambridge_Natural_History_Mammalia_Fig_191.png",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Frank E. Beddard, via Wikimedia Commons",
+    "caption": {
+      "es": "Atlas del perro en vista ventral (A) y axis en vista lateral (B), con la apófisis odontoides y el canal vertebroarterial señalados.",
+      "en": "Atlas of the dog in ventral view (A) and axis in lateral view (B), with the odontoid process and the vertebrarterial canal marked."
+    }
+  },
+  {
+    "id": "wm-dog-skeleton-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Mutt_dog._%E2%80%9CCanis_lupus_familiaris%E2%80%9D_01.jpg/1280px-Mutt_dog._%E2%80%9CCanis_lupus_familiaris%E2%80%9D_01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto completo de un perro mestizo preparado por maceración, en vista lateral.",
+      "en": "Complete skeleton of a mixed-breed dog prepared by maceration, in lateral view."
+    }
+  },
+  {
+    "id": "wm-dog-skeleton-ellenberger-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Ellenberger_Leisering_Anatomy_Atlas_Dog.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Wilhelm Ellenberger, via Wikimedia Commons",
+    "caption": {
+      "es": "Lámina del atlas de Ellenberger-Leisering (1908) con el esqueleto completo del perro dentro de la silueta corporal.",
+      "en": "Plate from the Ellenberger-Leisering atlas (1908) showing the complete skeleton of the dog within the body outline."
+    }
+  },
+  {
+    "id": "wm-dog-skull-specimen-lateral-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Dog_skull._Canis_lupus_familiaris_08.jpg/1280px-Dog_skull._Canis_lupus_familiaris_08.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo de perro macerado con la mandíbula articulada, en vista lateral.",
+      "en": "Macerated dog skull with the mandible articulated, in lateral view."
+    }
+  },
+  {
+    "id": "wm-dog-skull-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Skull_of_a_dog_diagram.svg/1280px-Skull_of_a_dog_diagram.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Przemek Maksim, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema del cráneo del perro en vista lateral con cada hueso en un color (maxilar, frontal, lagrimal, nasal, parietal, occipital, mandíbula, entre otros).",
+      "en": "Lateral diagram of the dog's skull with each bone in a different color (maxilla, frontal, lacrimal, nasal, parietal, occipital, mandible and others)."
+    }
+  },
+  {
+    "id": "wm-dog-mandible-lateral-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mandibule_de_CN_1.png/1280px-Mandibule_de_CN_1.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Hemimandíbula de perro en vista lateral (colección de osteología de la Universidad Libre de Bruselas).",
+      "en": "Dog hemimandible in lateral view (osteology collection of the Université libre de Bruxelles)."
+    }
+  },
+  {
+    "id": "wm-dog-mandible-medial-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mandibule_de_CN_2.png/1280px-Mandibule_de_CN_2.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Hemimandíbula de perro en vista medial (colección de osteología de la Universidad Libre de Bruselas).",
+      "en": "Dog hemimandible in medial view (osteology collection of the Université libre de Bruxelles)."
+    }
+  },
+  {
+    "id": "wm-dog-skull-cervical-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Dog_crane_-_left_view.jpg/1280px-Dog_crane_-_left_view.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo de perro con la mandíbula y la columna cervical articuladas, en vista lateral izquierda.",
+      "en": "Dog skull with the mandible and cervical spine articulated, in left lateral view."
+    }
+  },
+  {
+    "id": "wm-dog-humerus-cranial-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/202503_Canine_humerus_cranial_view.svg/1280px-202503_Canine_humerus_cranial_view.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "DataBase Center for Life Science (DBCLS), via Wikimedia Commons",
+    "caption": {
+      "es": "Ilustración del húmero del perro en vista craneal.",
+      "en": "Illustration of the dog's humerus in cranial view."
+    }
+  },
+  {
+    "id": "wm-dog-humerus-caudal-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/202503_Canine_humerus_caudal_view.svg/1280px-202503_Canine_humerus_caudal_view.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "DataBase Center for Life Science (DBCLS), via Wikimedia Commons",
+    "caption": {
+      "es": "Ilustración del húmero del perro en vista caudal, con la fosa del olécranon.",
+      "en": "Illustration of the dog's humerus in caudal view, showing the olecranon fossa."
+    }
+  },
+  {
+    "id": "wm-dog-scapula-lateral-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/202503_Right_canine_scapula_lateral_surface.svg/1280px-202503_Right_canine_scapula_lateral_surface.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "DataBase Center for Life Science (DBCLS), via Wikimedia Commons",
+    "caption": {
+      "es": "Ilustración de la escápula derecha del perro, cara lateral, con la espina escapular.",
+      "en": "Illustration of the dog's right scapula, lateral surface, showing the scapular spine."
+    }
+  },
+  {
+    "id": "wm-dog-scapula-medial-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/202503_Right_canine_scapula_medial_surface.svg/1280px-202503_Right_canine_scapula_medial_surface.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "DataBase Center for Life Science (DBCLS), via Wikimedia Commons",
+    "caption": {
+      "es": "Ilustración de la escápula derecha del perro, cara medial (costal).",
+      "en": "Illustration of the dog's right scapula, medial (costal) surface."
+    }
+  },
+  {
+    "id": "wm-dog-forelimb-bones-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dog_fore_limb_1.JPG/1280px-Dog_fore_limb_1.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Huesos del miembro torácico de un perro articulados: escápula, húmero, radio, ulna y huesos de la mano (colección de la Universidad Estatal de Moscú).",
+      "en": "Articulated bones of a dog's thoracic limb: scapula, humerus, radius, ulna and bones of the manus (Moscow State University collection)."
+    }
+  },
+  {
+    "id": "wm-dog-manus-bones-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Dog_hand.JPG/1280px-Dog_hand.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto de la mano de un perro con los huesos del carpo, los metacarpianos y las falanges articulados (colección de la Universidad Estatal de Moscú).",
+      "en": "Skeleton of a dog's manus with the carpal bones, metacarpals and phalanges articulated (Moscow State University collection)."
+    }
+  },
+  {
+    "id": "wm-dog-pes-bones-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Dog_foot.JPG/1280px-Dog_foot.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto del pie de un perro con el tarso, los metatarsianos y las falanges articulados (colección de la Universidad Estatal de Moscú).",
+      "en": "Skeleton of a dog's pes with the tarsus, metatarsals and phalanges articulated (Moscow State University collection)."
+    }
+  },
+  {
+    "id": "wm-dog-ribs-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Dog_ribs.JPG/1280px-Dog_ribs.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Serie de costillas de perro articuladas (colección de la Universidad Estatal de Moscú).",
+      "en": "Articulated series of dog ribs (Moscow State University collection)."
+    }
+  },
+  {
+    "id": "wm-dog-radius-osteosarcoma-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Osteosarcoma_Radius_Canine_Leg.jpg/1280px-Osteosarcoma_Radius_Canine_Leg.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Bobjgalindo, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral del antebrazo derecho de un perro mestizo de 9 años con osteosarcoma del radio distal.",
+      "en": "Lateral radiograph of the right forearm of a 9-year-old mixed-breed dog with osteosarcoma of the distal radius."
+    }
+  },
+  {
+    "id": "wm-dog-elbow-dysplasia-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Elbowdysplasia-dog.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía del codo de un perro con displasia: escalón entre radio y ulna, fragmentación de la apófisis coronoides y artrosis de la ulna (flechas).",
+      "en": "Radiograph of a dog's elbow with dysplasia: step between radius and ulna, fragmented coronoid process and osteoarthritis of the ulna (arrows)."
+    }
+  },
+  {
+    "id": "wm-dog-forepaw-ap-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Dogs_paw_y-ray_ap.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Bahnsen, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía dorsopalmar de la mano derecha de un perro de 2 años: radio y ulna distales, huesos del carpo, metacarpianos y falanges.",
+      "en": "Dorsopalmar radiograph of the right forepaw of a 2-year-old dog: distal radius and ulna, carpal bones, metacarpals and phalanges."
+    }
+  },
+  {
+    "id": "wm-dog-forepaw-ml-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/X-ray_dogs_paw_ml.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Bahnsen, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía mediolateral de la mano derecha de un perro de 2 años, con los metacarpianos y las falanges superpuestos.",
+      "en": "Mediolateral radiograph of the right forepaw of a 2-year-old dog, with superimposed metacarpals and phalanges."
+    }
+  },
+  {
+    "id": "wm-dog-forepaw-dachshund-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/2020-Xray-frontpaw-dachshund.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Ivtorov, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía de la mano de un dachshund con el carpo, los metacarpianos y las falanges.",
+      "en": "Radiograph of a dachshund's forepaw showing the carpus, metacarpals and phalanges."
+    }
+  },
+  {
+    "id": "wm-dog-thorax-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Radiographie_thoracique_ventro-dorsale.jpg/1280px-Radiographie_thoracique_ventro-dorsale.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Ophélie Tissier, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía torácica ventrodorsal de un perro grande: costillas, columna torácica y silueta cardíaca.",
+      "en": "Ventrodorsal thoracic radiograph of a large dog: ribs, thoracic spine and cardiac silhouette."
+    }
+  },
+  {
+    "id": "wm-dog-thorax-lateral-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Radiographie_thoracique_chien.jpg/1280px-Radiographie_thoracique_chien.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Ophélie Tissier, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía torácica laterolateral de un perro grande: tráquea, silueta cardíaca, campos pulmonares, costillas y diafragma.",
+      "en": "Laterolateral thoracic radiograph of a large dog: trachea, cardiac silhouette, lung fields, ribs and diaphragm."
+    }
+  },
+  {
+    "id": "wm-dog-spine-thoracolumbar-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Welsh_corgi_cardigan_idd1_k2.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Potun muistolle, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de la columna toracolumbar de un Welsh Corgi Cardigan con dos discos intervertebrales calcificados.",
+      "en": "Lateral radiograph of the thoracolumbar spine of a Cardigan Welsh Corgi with two calcified intervertebral discs."
+    }
+  },
+  {
+    "id": "wm-dog-lumbosacral-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Dog_Ltv3.jpg/1280px-Dog_Ltv3.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Potun muistolle, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de la región lumbosacra y la pelvis de un Welsh Corgi Cardigan con una vértebra transicional lumbosacra asimétrica.",
+      "en": "Ventrodorsal radiograph of the lumbosacral region and pelvis of a Cardigan Welsh Corgi with an asymmetrical lumbosacral transitional vertebra."
+    }
+  },
+  {
+    "id": "wm-dog-os-penis-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Armand_de_Montlezun_Baculum_Pyr%C3%A9n%C3%A9es.jpg/1280px-Armand_de_Montlezun_Baculum_Pyr%C3%A9n%C3%A9es.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Didier Descouens, via Wikimedia Commons",
+    "caption": {
+      "es": "Hueso peniano de un perro de montaña de los Pirineos; la flecha roja señala el surco uretral (Muséum de Toulouse).",
+      "en": "Penile bone of a Pyrenean Mountain Dog; the red arrow marks the urethral groove (Muséum de Toulouse)."
+    }
+  },
+  {
+    "id": "wm-dog-os-penis-specimen-02",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Ospenis.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Hueso peniano de perro; la flecha indica el surco uretral.",
+      "en": "Penile bone of a dog; the arrow indicates the urethral groove."
+    }
+  },
+  {
+    "id": "wm-dog-urethral-calculi-os-penis-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Inraurethral_urolithiasis_dog.jpg/1280px-Inraurethral_urolithiasis_dog.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía de un perro macho con obstrucción uretral por tres cálculos (flechas) situados justo proximales al hueso peniano.",
+      "en": "Radiograph of a male dog with urethral obstruction caused by three calculi (arrows) just proximal to the penile bone."
+    }
+  },
+  {
+    "id": "wm-dog-paw-pads-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Paw_and_pads.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Amos T Fairchild, via Wikimedia Commons",
+    "caption": {
+      "es": "Cara palmar de la mano de un perro: A, uña; B, almohadillas digitales; C, almohadilla metacarpiana; D, espolón; E, almohadilla carpiana.",
+      "en": "Palmar aspect of a dog's forepaw: A, claw; B, digital pads; C, metacarpal pad; D, dewclaw; E, carpal pad."
+    }
+  },
+  {
+    "id": "wm-dog-claw-trim-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Corte_unas.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 3.0",
+    "attribution": "Damian Galan Kaiser, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema de la uña del perro que indica la zona de corte en su extremo distal.",
+      "en": "Diagram of a dog's claw indicating the trimming zone at its distal end."
+    }
+  },
+  {
+    "id": "wm-rat-skin-he-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Rat_skin_%28derma%29.jpg/1280px-Rat_skin_%28derma%29.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Angelina Koch, via Wikimedia Commons",
+    "caption": {
+      "es": "Piel de rata (tejido de mamífero), H-E: epidermis, dermis con folículos pilosos y glándulas sebáceas.",
+      "en": "Rat skin (mammalian tissue), H&E: epidermis and dermis with hair follicles and sebaceous glands."
+    },
+    "stain": "H&E"
+  },
+  {
+    "id": "wm-mammal-skin-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Mammalian_Skin_Low_power_showing_hai_follicles.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Circa24, via Wikimedia Commons",
+    "caption": {
+      "es": "Piel de mamífero a bajo aumento, con epidermis, dermis y numerosos folículos pilosos.",
+      "en": "Mammalian skin at low power, with epidermis, dermis and numerous hair follicles."
+    }
+  },
+  {
+    "id": "wm-dog-third-eyelid-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Nickhaut_Hundeauge.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kreuzschnabel, via Wikimedia Commons",
+    "caption": {
+      "es": "Ojo de perro con la membrana nictitante (tercer párpado) visible en el ángulo medial.",
+      "en": "Dog's eye with the nictitating membrane (third eyelid) visible at the medial canthus."
+    }
+  },
+  {
+    "id": "wm-dog-visual-pathway-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Sehbahn.png/1280px-Sehbahn.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Sabine Sahr, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema de la vía visual del perro: nervios ópticos, quiasma, tractos ópticos, cuerpo geniculado lateral, radiación óptica y corteza visual.",
+      "en": "Diagram of the dog's visual pathway: optic nerves, chiasm, optic tracts, lateral geniculate body, optic radiation and visual cortex."
+    }
+  },
+  {
+    "id": "wm-dog-brain-eyeballs-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Dog_brain_and_eyeballs.jpg/1280px-Dog_brain_and_eyeballs.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Encéfalo de perro fijado en formol junto con ambos globos oculares unidos por los nervios ópticos.",
+      "en": "Formalin-fixed dog brain together with both eyeballs attached by the optic nerves."
+    }
+  },
+  {
+    "id": "wm-dog-brain-base-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/A_text-book_of_veterinary_anatomy_%28Page_724%29_BHL18587848.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_724%29_BHL18587848.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la base del encéfalo del perro y el tronco encefálico en vista dorsal (figs. 539-540).",
+      "en": "Page from Sisson's textbook (1910) showing the base of the dog's brain and the brainstem in dorsal view (figs. 539-540)."
+    }
+  },
+  {
+    "id": "wm-dog-cerebellum-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Cerebellum_histology.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Juoj8, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte histológico de cerebelo de perro con las capas celulares numeradas.",
+      "en": "Histological section of dog cerebellum with the cell layers numbered."
+    }
+  },
+  {
+    "id": "wm-dog-esophagus-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Dogesophagus100x2.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Esófago de perro (100x): epitelio escamoso estratificado plegado, submucosa y capa muscular.",
+      "en": "Dog esophagus (100x): folded stratified squamous epithelium, submucosa and muscular layer."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-megaesophagus-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Megaoesophagus_dog_marked.jpg/1280px-Megaoesophagus_dog_marked.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kalumet; derivative work by Anka Friedrich, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía torácica lateral de un setter irlandés con megaesófago idiopático; las flechas marcan las paredes del esófago dilatado.",
+      "en": "Lateral thoracic radiograph of an Irish Setter with idiopathic megaesophagus; the arrows mark the walls of the dilated esophagus."
+    }
+  },
+  {
+    "id": "wm-dog-pharynx-larynx-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/A_text-book_of_veterinary_anatomy_%28Page_427%29_BHL18587551.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_427%29_BHL18587551.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 330: corte sagital de las regiones faríngea y laríngea del perro, con el inicio del esófago.",
+      "en": "Page from Sisson's textbook (1910) with fig. 330: sagittal section of the pharyngeal and laryngeal regions of the dog, showing the beginning of the esophagus."
+    }
+  },
+  {
+    "id": "wm-dog-aorta-caudal-vena-cava-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/A_text-book_of_veterinary_anatomy_%28Page_638%29_BHL18587762.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_638%29_BHL18587762.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 491: ramas terminales de la aorta y raíces de la vena cava caudal del perro.",
+      "en": "Page from Sisson's textbook (1910) with fig. 491: terminal branches of the aorta and roots of the caudal vena cava of the dog."
+    }
+  },
+  {
+    "id": "wm-dog-heart-left-labeled-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Dog_heart_2.jpg/1280px-Dog_heart_2.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 2.5",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Corazón de perro en vista izquierda con estructuras numeradas, entre ellas ventrículos, tronco pulmonar, arco aórtico, tronco braquiocefálico y aurículas.",
+      "en": "Dog heart in left view with numbered structures, including the ventricles, pulmonary trunk, aortic arch, brachiocephalic trunk and auricles."
+    }
+  },
+  {
+    "id": "wm-dog-heart-cleared-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Dog_heart.jpg/1280px-Dog_heart.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Corazón de perro con inyección de gelatina y diafanización de Spalteholz, técnica que aclara el tejido.",
+      "en": "Dog heart prepared with gelatin injection and Spalteholz clearing, a technique that renders the tissue translucent."
+    }
+  },
+  {
+    "id": "wm-dog-cardiac-muscle-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Dogcardiacmuscle100x7.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Músculo cardíaco de perro al microscopio óptico (100x).",
+      "en": "Dog cardiac muscle under the light microscope (100x)."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-kidneys-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dog_kidney--_FMVZ_USP-11.jpg/1280px-Dog_kidney--_FMVZ_USP-11.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Riñones de perro disecados y fijados en formol, con los vasos del hilio.",
+      "en": "Dissected, formalin-fixed dog kidneys with the hilar vessels."
+    }
+  },
+  {
+    "id": "wm-dog-kidneys-corrosion-cast-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Dog_kidneys_01.jpg/1280px-Dog_kidneys_01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Molde por corrosión de la vascularización de ambos riñones de perro.",
+      "en": "Corrosion cast of the vasculature of both kidneys of a dog."
+    }
+  },
+  {
+    "id": "wm-pig-kidney-glomerulus-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mikroskopische_Aufnahme_eines_Glomerulus_in_der_Schweineniere.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "M-J-G, via Wikimedia Commons",
+    "caption": {
+      "es": "Corteza renal de cerdo (tejido de mamífero): corpúsculo renal con glomérulo, túbulos proximales y distales numerados.",
+      "en": "Pig renal cortex (mammalian tissue): renal corpuscle with glomerulus and numbered proximal and distal tubules."
+    }
+  },
+  {
+    "id": "wm-dog-cecum-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Dog_cecum.jpg/1280px-Dog_cecum.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Ciego de perro diafanizado, con su forma en espiral característica.",
+      "en": "Cleared dog cecum showing its characteristic spiral shape."
+    }
+  },
+  {
+    "id": "wm-dog-rectum-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Dogrectum40x3.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte transversal de recto de perro (40x): mucosa con glándulas intestinales, submucosa y capa muscular.",
+      "en": "Cross-section of dog rectum (40x): mucosa with intestinal glands, submucosa and muscular layer."
+    },
+    "magnification": 40
+  },
+  {
+    "id": "wm-dog-cecum-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/A_text-book_of_veterinary_anatomy_%28Page_432%29_BHL18587556.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_432%29_BHL18587556.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con el ciego del perro (fig. 337) y la desembocadura del íleon (fig. 338).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's cecum (fig. 337) and the termination of the ileum (fig. 338)."
+    }
+  },
+  {
+    "id": "wm-dog-liver-corrosion-cast-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dog_liver.jpg/1280px-Dog_liver.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Molde por corrosión de la vascularización del hígado de perro: vena porta en amarillo y venas hepáticas en azul.",
+      "en": "Corrosion cast of the dog liver vasculature: portal vein in yellow and hepatic veins in blue."
+    }
+  },
+  {
+    "id": "wm-dog-liver-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/A_text-book_of_veterinary_anatomy_%28Page_433%29_BHL18587557.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_433%29_BHL18587557.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con el hígado del perro: lóbulos separados (fig. 339) y cara visceral (fig. 340).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's liver: lobes drawn apart (fig. 339) and visceral surface (fig. 340)."
+    }
+  },
+  {
+    "id": "wm-dog-liver-injected-gray-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Gray1091.png",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Henry Vandyke Carter, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte de hígado de perro con vasos inyectados: venas interlobulillares e intralobulillares (Gray's Anatomy).",
+      "en": "Section of injected dog liver: interlobular and intralobular veins (Gray's Anatomy)."
+    }
+  },
+  {
+    "id": "wm-dog-lungs-trachea-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Lungs_and_trachea_of_canid.jpg/1280px-Lungs_and_trachea_of_canid.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Pulmones y tráquea de perro conservados por glicerinación, en vista caudodorsal.",
+      "en": "Dog lungs and trachea preserved by glycerination, in caudodorsal view."
+    }
+  },
+  {
+    "id": "wm-dog-lungs-corrosion-cast-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Dog_lungs.jpg/1280px-Dog_lungs.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Molde por corrosión de la arquitectura vascular de los pulmones de perro.",
+      "en": "Corrosion cast of the vascular architecture of dog lungs."
+    }
+  },
+  {
+    "id": "wm-dog-pancreas-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dogpancreas100x4.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Páncreas de perro (100x): parénquima exocrino formado por acinos.",
+      "en": "Dog pancreas (100x): exocrine parenchyma made up of acini."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-pancreas-gray-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Gray1105.png",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Henry Vandyke Carter, via Wikimedia Commons",
+    "caption": {
+      "es": "Dibujo histológico de páncreas de perro (x250) con alvéolos acinares y un islote celular (Gray's Anatomy).",
+      "en": "Histological drawing of dog pancreas (x250) with acinar alveoli and a cell islet (Gray's Anatomy)."
+    }
+  },
+  {
+    "id": "wm-dog-male-reproductive-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Male_repro_system_labelled.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Ruth Lawson, Otago Polytechnic, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema rotulado del aparato reproductor del perro macho, con la próstata alrededor del cuello de la vejiga.",
+      "en": "Labeled diagram of the male dog's reproductive system, with the prostate around the neck of the bladder."
+    }
+  },
+  {
+    "id": "wm-dog-ileum-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Dog_ilium.jpg/1280px-Dog_ilium.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Segmento de íleon de perro diafanizado, con los vasos del mesenterio.",
+      "en": "Cleared segment of dog ileum with mesenteric vessels."
+    }
+  },
+  {
+    "id": "wm-dog-small-intestine-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Dogsmallintestine100x1.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Intestino delgado de perro (100x): vellosidades revestidas por epitelio cilíndrico.",
+      "en": "Dog small intestine (100x): villi lined by columnar epithelium."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-abdominal-viscera-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/A_text-book_of_veterinary_anatomy_%28Page_430%29_BHL18587554.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_430%29_BHL18587554.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con la fig. 335: vísceras abdominales del perro en vista ventral (hígado, estómago, bazo e intestino delgado).",
+      "en": "Page from Sisson's textbook (1910) with fig. 335: abdominal viscera of the dog in ventral view (liver, stomach, spleen and small intestine)."
+    }
+  },
+  {
+    "id": "wm-dog-spleen-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Dog_spleen.jpg/1280px-Dog_spleen.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Bazo de perro fijado en formol.",
+      "en": "Formalin-fixed dog spleen."
+    }
+  },
+  {
+    "id": "wm-dog-spleen-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Dogspleen40x.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Bazo de perro (40x) con la cápsula y el parénquima esplénico.",
+      "en": "Dog spleen (40x) showing the capsule and splenic parenchyma."
+    },
+    "magnification": 40
+  },
+  {
+    "id": "wm-dog-stomach-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dog_stomach.jpg/1280px-Dog_stomach.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Estómago de perro fijado en formol, en vista ventral.",
+      "en": "Formalin-fixed dog stomach in ventral view."
+    }
+  },
+  {
+    "id": "wm-dog-stomach-sisson-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/A_text-book_of_veterinary_anatomy_%28Page_429%29_BHL18587553.jpg/1280px-A_text-book_of_veterinary_anatomy_%28Page_429%29_BHL18587553.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Septimus Sisson, via Wikimedia Commons",
+    "caption": {
+      "es": "Página del tratado de Sisson (1910) con el estómago del perro: cara visceral, capas musculares y zonas de la mucosa (figs. 332-334).",
+      "en": "Page from Sisson's textbook (1910) showing the dog's stomach: visceral surface, muscle layers and mucosal zones (figs. 332-334)."
+    }
+  },
+  {
+    "id": "wm-dog-stomach-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Dogstomach40x.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Pared gástrica de perro (40x) con la mucosa glandular plegada.",
+      "en": "Dog gastric wall (40x) with the folded glandular mucosa."
+    },
+    "magnification": 40
+  },
+  {
+    "id": "wm-dog-endocrine-organs-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Anatomy_and_physiology_of_animals_Main_endocrine_organs_of_the_body.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 3.0",
+    "attribution": "Ruth Lawson, Otago Polytechnic, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema de la ubicación de las principales glándulas endocrinas en el perro, entre ellas la tiroides en el cuello.",
+      "en": "Diagram of the location of the main endocrine glands in the dog, including the thyroid in the neck."
+    }
+  },
+  {
+    "id": "wm-dog-trachea-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Dogtrachea100x.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Tráquea de perro (100x) con cartílago hialino.",
+      "en": "Dog trachea (100x) showing hyaline cartilage."
+    },
+    "magnification": 100
+  },
+  {
+    "id": "wm-dog-urinary-bladder-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Dog_urinary_bladder-_FMVZ_USP-18.jpg/1280px-Dog_urinary_bladder-_FMVZ_USP-18.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Vejiga urinaria de perro fijada en formol.",
+      "en": "Formalin-fixed dog urinary bladder."
+    }
+  },
+  {
+    "id": "wm-dog-urinary-bladder-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Dogurinarybladder40x2.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "John Alan Elson, via Wikimedia Commons",
+    "caption": {
+      "es": "Pared de vejiga urinaria de perro (40x) con urotelio plegado y capa muscular.",
+      "en": "Dog urinary bladder wall (40x) with folded urothelium and muscular layer."
+    },
+    "magnification": 40
+  },
+  {
+    "id": "wm-dog-bladder-struvite-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Side_view_x-ray_of_large_struvite_stone_in_bladder_of_adult_female_bichon_frise.jpg/1280px-Side_view_x-ray_of_large_struvite_stone_in_bladder_of_adult_female_bichon_frise.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "DrewHeath, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía abdominal lateral de una perra bichón frisé adulta con un gran cálculo de estruvita en la vejiga.",
+      "en": "Lateral abdominal radiograph of an adult female Bichon Frise with a large struvite stone in the bladder."
+    }
+  },
+  {
+    "id": "wm-dog-diaphragm-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Dog_diaphragm.jpg/1280px-Dog_diaphragm.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Diafragma de perro diafanizado con la técnica de Spalteholz.",
+      "en": "Dog diaphragm cleared with the Spalteholz technique."
+    }
+  },
+  {
+    "id": "wm-dog-diaphragm-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Thorax-withdiaphragm-dog.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema lateral del tórax del perro que muestra la línea de inserción del diafragma sobre las costillas.",
+      "en": "Lateral diagram of the dog's thorax showing the line of attachment of the diaphragm on the ribs."
+    }
   }
 ]

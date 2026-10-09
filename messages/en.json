@@ -11,26 +11,36 @@
     "species": "Species",
     "search": "Search",
     "searchHint": "Search a bone, a disease…",
-    "language": "Language"
+    "language": "Language",
+    "skip": "Skip to content",
+    "github": "GitHub repository"
   },
   "home": {
     "title": "Explore animal anatomy one structure at a time",
-    "lead": "3D models split into selectable parts. Every part comes with its Latin name, a description, the diseases that affect it and how it looks in real life.",
+    "lead": "An open, free atlas of 3D models split into selectable pieces. Each piece with its Latin name, its description, the pathologies that affect it and how it looks in real life.",
     "start": "Start with {species}",
-    "available": "Available",
     "soon": "Coming soon",
     "structuresCount": "{count, plural, one {# structure} other {# structures}}",
     "pathologiesCount": "{count, plural, one {# disease} other {# diseases}}",
-    "howTo": "How it works",
+    "howTo": {
+      "find": "Find",
+      "open": "Open",
+      "dissect": "Dissect"
+    },
     "howToSteps": {
       "search": "Search with <kbd>⌘K</kbd> or type a name in any language.",
       "click": "Tap a part of the model to open its entry.",
-      "layers": "Hide systems or isolate a part to see it alone."
-    }
+      "layers": "Use Dissection to remove skin, muscles or organs and see what lies beneath."
+    },
+    "heroHint": "Tap a bone in the model to open its entry.",
+    "index": "Species index",
+    "plateCaption": "Plate I — {latin}. {system}, lateral view.",
+    "layerOf": "Layer {n} of {total}"
   },
   "species": {
     "systems": "Systems",
-    "systemSoon": "In preparation"
+    "systemSoon": "In preparation",
+    "stackHint": "From superficial to deep. In each system you can show the others as layers."
   },
   "viewer": {
     "loading": "Loading model…",
@@ -46,13 +56,55 @@
     },
     "reset": "Reset view",
     "isolate": "Isolate",
-    "showAll": "Show all",
-    "layers": "Layers",
-    "opacity": "Opacity",
+    "layers": "Structures",
     "placeholder": "Placeholder model: schematic shapes until the real scans are integrated.",
     "attribution": "Model: {source}, {license}",
-    "hint": "Drag to rotate · scroll to zoom · click a part to open its entry",
-    "deselect": "Clear selection"
+    "hint": "Drag to rotate, scroll to zoom, click a piece to open its entry.",
+    "deselect": "Clear selection",
+    "sceneLabel": "3D model. Use the structure list to select with the keyboard.",
+    "loadError": "We could not load the 3D model. You can keep reading the entries.",
+    "retry": "Retry",
+    "placeholderShort": "Placeholder model",
+    "closeList": "Close list",
+    "layerOpacity": "{layer} opacity",
+    "settings": "Display settings",
+    "pieceView": "View piece alone in 3D",
+    "pieceBack": "Back to the entry",
+    "pieceHint": "Drag to rotate · explode the parts to see them one by one",
+    "layerName": {
+      "skin": "Skin",
+      "muscle": "Muscles",
+      "organ": "Organs",
+      "bone": "Bones"
+    },
+    "dissection": "Dissection",
+    "dissectionHint": "Slide to remove layers, from skin to bone. Click a piece in any visible layer to open it.",
+    "studying": "Studying",
+    "study": "Study {layer}",
+    "showLayer": "Show {layer}",
+    "hideLayer": "Hide {layer}",
+    "explodeShort": "Explode",
+    "dim": "Fade the rest",
+    "freeView": "Free view",
+    "withLayers": "With {layers}",
+    "rose": {
+      "lateral-left": "L",
+      "lateral-right": "R",
+      "dorsal": "D",
+      "ventral": "V",
+      "cranial": "Cr",
+      "caudal": "Cd"
+    },
+    "roseLabel": "Orientation",
+    "isolateNeedsSelection": "Select a piece to isolate it",
+    "shortcuts": "Shortcuts and controls",
+    "keyViews": "Views",
+    "keyDepth": "Remove or restore layers",
+    "keyIsolate": "Isolate the piece",
+    "keyExplode": "Explode or collapse",
+    "keyReset": "Reset",
+    "keyDeselect": "Clear selection",
+    "fur": "Coat (short hair)"
   },
   "structure": {
     "nav": "Nomina Anatomica Veterinaria",
@@ -70,12 +122,18 @@
       "paired": "Paired (left and right)",
       "single": "Unpaired"
     },
-    "filter": "Filter structures…"
+    "filter": "Filter structures…",
+    "laterality_label": "Laterality",
+    "clearFilter": "Clear filter",
+    "noMatch": "Nothing matches “{query}”.",
+    "illustrative": "This piece is a schematic shape, not a scan: there is no freely licensed model for this structure yet.",
+    "modelSource": "3D model of this piece"
   },
   "review": {
     "draft": "Draft, not yet reviewed by a veterinarian",
     "reviewed": "Reviewed by {by}",
-    "draftHelp": "Content may contain errors. It is published so the community can review it."
+    "draftHelp": "Content may contain errors. It is published so the community can review it.",
+    "reviewedAnon": "Reviewed by a veterinarian"
   },
   "pathology": {
     "title": "Disease",
@@ -109,5 +167,13 @@
     "structures": "Structures",
     "pathologies": "Diseases",
     "hint": "Type to search. Enter opens the entry."
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "body": "The page could not be displayed. You can retry or go back home.",
+    "retry": "Retry",
+    "home": "Back to home",
+    "notFoundTitle": "We could not find that page",
+    "notFoundBody": "The structure or disease may have been renamed. Search with ⌘K or go back home."
   }
 }

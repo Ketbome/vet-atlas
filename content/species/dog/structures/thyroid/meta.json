@@ -1,0 +1,32 @@
+{
+  "id": "dog.visceral.thyroid",
+  "system": "dog.visceral",
+  "nav": "Glandula thyroidea",
+  "region": "endocrine-lymphatic",
+  "laterality": "paired",
+  "meshes": [
+    "dog.visceral.thyroid.L",
+    "dog.visceral.thyroid.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A3473B",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3.0
+  },
+  "pathologies": [
+    "hypothyroidism"
+  ],
+  "media": [
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-endocrine-organs-diagram-01"
+  ],
+  "related": [
+    "dog.visceral.trachea",
+    "dog.skeletal.hyoid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

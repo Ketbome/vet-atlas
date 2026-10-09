@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.obliquus-externus-abdominis",
+  "system": "dog.muscular",
+  "nav": "M. obliquus externus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.obliquus-externus-abdominis.L",
+    "dog.muscular.obliquus-externus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B65649",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.ribs",
+    "dog.skeletal.os-coxae",
+    "dog.muscular.rectus-abdominis",
+    "dog.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

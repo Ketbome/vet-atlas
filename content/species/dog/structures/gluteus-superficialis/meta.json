@@ -1,0 +1,32 @@
+{
+  "id": "dog.muscular.gluteus-superficialis",
+  "system": "dog.muscular",
+  "nav": "M. gluteus superficialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gluteus-superficialis.L",
+    "dog.muscular.gluteus-superficialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B6503F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.sacrum",
+    "dog.skeletal.femur",
+    "dog.muscular.gluteus-medius",
+    "dog.muscular.biceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

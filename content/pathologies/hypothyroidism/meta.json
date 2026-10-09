@@ -1,0 +1,25 @@
+{
+  "id": "hypothyroidism",
+  "category": "metabolic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.thyroid",
+    "dog.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Feldman EC, Nelson RW, Reusch CE, Scott-Moncrieff JCR. Canine and Feline Endocrinology, 4th ed. Elsevier",
+      "year": 2015
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

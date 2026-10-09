@@ -1,0 +1,36 @@
+{
+  "id": "dog.muscular.sartorius",
+  "system": "dog.muscular",
+  "nav": "M. sartorius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.sartorius.cranial.L",
+    "dog.muscular.sartorius.cranial.R",
+    "dog.muscular.sartorius.caudal.L",
+    "dog.muscular.sartorius.caudal.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BA5A48",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.patella",
+    "dog.skeletal.tibia",
+    "dog.muscular.quadriceps-femoris",
+    "dog.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

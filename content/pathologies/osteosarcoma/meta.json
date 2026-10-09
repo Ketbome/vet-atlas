@@ -6,7 +6,9 @@
   ],
   "structures": [
     "dog.skeletal.femur",
-    "dog.skeletal.tibia"
+    "dog.skeletal.tibia",
+    "dog.skeletal.humerus",
+    "dog.skeletal.radius"
   ],
   "media": [
     "wm-dog-osteosarcoma-femur-lat-01"

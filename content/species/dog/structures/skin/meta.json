@@ -1,0 +1,32 @@
+{
+  "id": "dog.integumentary.skin",
+  "system": "dog.integumentary",
+  "nav": "Cutis",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "dog.integumentary.skin"
+  ],
+  "fidelity": "modeled",
+  "source": "lovadahn-canine-model",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1
+  },
+  "pathologies": [
+    "hypothyroidism",
+    "atopic-dermatitis",
+    "superficial-pyoderma",
+    "demodicosis"
+  ],
+  "media": [
+    "wm-rat-skin-he-01",
+    "wm-mammal-skin-histo-01"
+  ],
+  "related": [
+    "dog.integumentary.claws"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

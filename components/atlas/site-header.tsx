@@ -15,26 +15,36 @@ type Props = {
 
 export function SiteHeader({ species, searchIndex }: Props) {
   const t = useTranslations("site");
+  const tn = useTranslations("nav");
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 h-14 border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
-      <div className="mx-auto flex h-full max-w-[1600px] items-center gap-3 px-4">
+    <header className="sticky top-0 z-40 h-14 border-b border-border bg-background">
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-foreground"
+      >
+        {tn("skip")}
+      </a>
+      <div className="mx-auto flex h-full max-w-[1600px] items-center gap-2 px-3 sm:gap-3 sm:px-4">
         <Link href="/" className="flex items-center gap-2 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50" aria-label={t("name")}>
-          <Logo className="size-7" />
-          <span className="font-heading text-[17px] font-semibold tracking-tight">{t("name")}</span>
+          <Logo className="size-8" />
+          <span className="hidden font-display text-[21px] leading-none tracking-[-0.01em] sm:inline">{t("name")}</span>
         </Link>
 
-        <nav className="ml-2 hidden items-center gap-1 md:flex" aria-label="species">
+        <nav className="ml-2 hidden items-center gap-1 md:flex" aria-label={tn("species")}>
           {species.map((s) => {
             const active = pathname.startsWith(`/${s.id}`);
             return (
               <Link
                 key={s.id}
                 href={`/${s.id}/${s.firstSystem}`}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-md px-2.5 py-1.5 text-sm transition-colors hover:bg-muted",
-                  active ? "bg-accent text-accent-foreground font-medium" : "text-muted-foreground",
+                  "relative px-2.5 py-1.5 text-sm transition-colors hover:text-foreground",
+                  active
+                    ? "font-medium text-foreground after:absolute after:inset-x-2.5 after:-bottom-[13px] after:h-0.5 after:bg-mark"
+                    : "text-muted-foreground",
                 )}
               >
                 {s.name}
@@ -50,9 +60,10 @@ export function SiteHeader({ species, searchIndex }: Props) {
         <LocaleSwitch />
         <a
           href="https://github.com/ketbome/vet-atlas"
-          className="hidden rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground sm:block"
+          className="rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
           target="_blank"
           rel="noreferrer"
+          aria-label={tn("github")}
         >
           GitHub
         </a>

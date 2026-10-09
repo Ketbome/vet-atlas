@@ -26,6 +26,8 @@ export const speciesSchema = z.object({
   systems: z.array(z.string()),
 });
 
+export const materials = ["bone", "muscle", "organ", "skin"] as const;
+
 export const systemSchema = z.object({
   id: z.string().regex(/^[a-z][a-z0-9-]*\.[a-z][a-z0-9-]*$/),
   species: z.string(),
@@ -38,6 +40,9 @@ export const systemSchema = z.object({
     placeholder: z.boolean().default(false),
   }),
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+  // Depth in the dissection stack: 0 is the most superficial layer.
+  order: z.number().int().min(0),
+  material: z.enum(materials),
   regions: z.array(z.object({ id: z.string(), name: localeText })),
 });
 
@@ -49,6 +54,10 @@ export const structureSchema = z.object({
   laterality: z.enum(["paired", "single"]),
   meshes: z.array(z.string()).min(1),
   fidelity: z.enum(["scan", "modeled", "illustrative"]).default("scan"),
+  // Overrides the system colour in the viewer (e.g. dark eyes on the skin).
+  color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  material: z.enum(materials).optional(),
+  source: z.string().optional(),
   camera: z
     .object({
       preset: cameraPreset.default("lateral-left"),

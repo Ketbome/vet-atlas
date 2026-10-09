@@ -1,0 +1,34 @@
+{
+  "id": "dog.muscular.pectorales",
+  "system": "dog.muscular",
+  "nav": "Mm. pectorales superficiales; M. pectoralis profundus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.pectorales.superficiales.L",
+    "dog.muscular.pectorales.superficiales.R",
+    "dog.muscular.pectorales.profundus.L",
+    "dog.muscular.pectorales.profundus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9E3A31",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-ventral-muscles-sisson-01",
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01"
+  ],
+  "related": [
+    "dog.skeletal.manubrium",
+    "dog.skeletal.humerus",
+    "dog.muscular.rectus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

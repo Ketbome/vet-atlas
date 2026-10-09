@@ -11,26 +11,36 @@
     "species": "Especies",
     "search": "Buscar",
     "searchHint": "Busca un hueso, una patología…",
-    "language": "Idioma"
+    "language": "Idioma",
+    "skip": "Saltar al contenido",
+    "github": "Repositorio en GitHub"
   },
   "home": {
     "title": "Explora la anatomía animal estructura por estructura",
-    "lead": "Modelos 3D divididos en piezas seleccionables. Cada pieza con su nombre en latín, su descripción, las patologías que la afectan y cómo se ve en la vida real.",
+    "lead": "Un atlas abierto y gratuito, con modelos 3D divididos en piezas seleccionables. Cada pieza con su nombre en latín, su descripción, las patologías que la afectan y cómo se ve en la vida real.",
     "start": "Empezar con {species}",
-    "available": "Disponible",
     "soon": "Próximamente",
     "structuresCount": "{count, plural, one {# estructura} other {# estructuras}}",
     "pathologiesCount": "{count, plural, one {# patología} other {# patologías}}",
-    "howTo": "Cómo se usa",
+    "howTo": {
+      "find": "Buscar",
+      "open": "Abrir",
+      "dissect": "Disecar"
+    },
     "howToSteps": {
       "search": "Busca con <kbd>⌘K</kbd> o escribe el nombre en cualquier idioma.",
       "click": "Toca una pieza del modelo para abrir su ficha.",
-      "layers": "Oculta sistemas o aísla una pieza para verla sola."
-    }
+      "layers": "Con Disección retiras la piel, los músculos o los órganos para ver lo que hay debajo."
+    },
+    "heroHint": "Toca un hueso del modelo para abrir su ficha.",
+    "index": "Índice de especies",
+    "plateCaption": "Lám. I — {latin}. {system}, vista lateral.",
+    "layerOf": "Capa {n} de {total}"
   },
   "species": {
     "systems": "Sistemas",
-    "systemSoon": "En preparación"
+    "systemSoon": "En preparación",
+    "stackHint": "De lo superficial a lo profundo. En cada sistema puedes mostrar los demás como capas."
   },
   "viewer": {
     "loading": "Cargando modelo…",
@@ -46,13 +56,55 @@
     },
     "reset": "Restablecer vista",
     "isolate": "Aislar",
-    "showAll": "Mostrar todo",
-    "layers": "Capas",
-    "opacity": "Opacidad",
+    "layers": "Estructuras",
     "placeholder": "Modelo provisional: formas esquemáticas mientras se integran los escaneos reales.",
     "attribution": "Modelo: {source}, {license}",
-    "hint": "Arrastra para girar · rueda para acercar · clic en una pieza para abrir su ficha",
-    "deselect": "Quitar selección"
+    "hint": "Arrastra para girar, rueda para acercar, clic en una pieza para abrir su ficha.",
+    "deselect": "Quitar selección",
+    "sceneLabel": "Modelo 3D. Usa la lista de estructuras para seleccionar con el teclado.",
+    "loadError": "No pudimos cargar el modelo 3D. Puedes seguir leyendo las fichas.",
+    "retry": "Reintentar",
+    "placeholderShort": "Modelo provisional",
+    "closeList": "Cerrar lista",
+    "layerOpacity": "Opacidad de {layer}",
+    "settings": "Ajustes de visualización",
+    "pieceView": "Ver pieza sola en 3D",
+    "pieceBack": "Volver a la ficha",
+    "pieceHint": "Arrastra para girar · separa las piezas para verlas una a una",
+    "layerName": {
+      "skin": "Piel",
+      "muscle": "Músculos",
+      "organ": "Órganos",
+      "bone": "Huesos"
+    },
+    "dissection": "Disección",
+    "dissectionHint": "Desliza para retirar capas, de la piel al hueso. Toca una pieza de cualquier capa visible para abrirla.",
+    "studying": "En estudio",
+    "study": "Estudiar {layer}",
+    "showLayer": "Mostrar {layer}",
+    "hideLayer": "Ocultar {layer}",
+    "explodeShort": "Separar",
+    "dim": "Atenuar el resto",
+    "freeView": "Vista libre",
+    "withLayers": "Con {layers}",
+    "rose": {
+      "lateral-left": "Izq",
+      "lateral-right": "Der",
+      "dorsal": "D",
+      "ventral": "V",
+      "cranial": "Cr",
+      "caudal": "Cd"
+    },
+    "roseLabel": "Orientación",
+    "isolateNeedsSelection": "Selecciona una pieza para aislarla",
+    "shortcuts": "Atajos y controles",
+    "keyViews": "Vistas",
+    "keyDepth": "Retirar o reponer capas",
+    "keyIsolate": "Aislar la pieza",
+    "keyExplode": "Separar o juntar",
+    "keyReset": "Restablecer",
+    "keyDeselect": "Quitar selección",
+    "fur": "Pelaje (pelo corto)"
   },
   "structure": {
     "nav": "Nomina Anatomica Veterinaria",
@@ -70,12 +122,18 @@
       "paired": "Par (izquierdo y derecho)",
       "single": "Impar"
     },
-    "filter": "Filtrar estructuras…"
+    "filter": "Filtrar estructuras…",
+    "laterality_label": "Lateralidad",
+    "clearFilter": "Limpiar filtro",
+    "noMatch": "Nada coincide con «{query}».",
+    "illustrative": "Esta pieza es una forma esquemática, no un escaneo: todavía no hay un modelo con licencia libre para esta estructura.",
+    "modelSource": "Modelo 3D de esta pieza"
   },
   "review": {
     "draft": "Borrador sin revisión veterinaria",
     "reviewed": "Revisado por {by}",
-    "draftHelp": "El contenido puede tener errores. Se publica para que la comunidad lo revise."
+    "draftHelp": "El contenido puede tener errores. Se publica para que la comunidad lo revise.",
+    "reviewedAnon": "Revisado por un veterinario"
   },
   "pathology": {
     "title": "Patología",
@@ -109,5 +167,13 @@
     "structures": "Estructuras",
     "pathologies": "Patologías",
     "hint": "Escribe para buscar. Enter abre la ficha."
+  },
+  "errors": {
+    "title": "Algo salió mal",
+    "body": "La página no se pudo mostrar. Puedes reintentar o volver al inicio.",
+    "retry": "Reintentar",
+    "home": "Volver al inicio",
+    "notFoundTitle": "No encontramos esa página",
+    "notFoundBody": "Puede que la estructura o la patología se haya renombrado. Busca con ⌘K o vuelve al inicio."
   }
 }

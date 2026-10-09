@@ -1,0 +1,38 @@
+{
+  "id": "dog.muscular.biceps-femoris",
+  "system": "dog.muscular",
+  "nav": "M. biceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.biceps-femoris.cranial.L",
+    "dog.muscular.biceps-femoris.cranial.R",
+    "dog.muscular.biceps-femoris.caudal.L",
+    "dog.muscular.biceps-femoris.caudal.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A23D33",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [
+    "common-calcaneal-tendon-injury"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-superficial-muscles-cuyer-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.patella",
+    "dog.skeletal.tibia",
+    "dog.muscular.semitendinosus",
+    "dog.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

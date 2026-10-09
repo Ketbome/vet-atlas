@@ -1,0 +1,34 @@
+{
+  "id": "dog.visceral.large-intestine",
+  "system": "dog.visceral",
+  "nav": "Intestinum crassum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.large-intestine"
+  ],
+  "fidelity": "illustrative",
+  "color": "#CF9476",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "benign-prostatic-hyperplasia",
+    "colitis"
+  ],
+  "media": [
+    "wm-dog-cecum-specimen-01",
+    "wm-dog-cecum-sisson-01",
+    "wm-dog-rectum-histo-01"
+  ],
+  "related": [
+    "dog.visceral.small-intestine",
+    "dog.visceral.urinary-bladder",
+    "dog.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

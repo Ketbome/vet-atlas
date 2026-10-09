@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.liver",
+  "system": "dog.visceral",
+  "nav": "Hepar",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.liver"
+  ],
+  "fidelity": "scan",
+  "color": "#6B2A21",
+  "source": "pixelbeaker-canine-abdomen",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "visceral-hemangiosarcoma",
+    "acute-pancreatitis",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-dog-liver-corrosion-cast-01",
+    "wm-dog-liver-sisson-01",
+    "wm-dog-liver-injected-gray-01"
+  ],
+  "related": [
+    "dog.visceral.stomach",
+    "dog.muscular.diaphragm",
+    "dog.visceral.great-vessels"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

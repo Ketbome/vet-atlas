@@ -1,0 +1,29 @@
+{
+  "id": "atlantoaxial-instability",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.atlas",
+    "dog.skeletal.axis"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell",
+      "year": 2016
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "de Lahunta A, Glass E, Kent M. de Lahunta's Veterinary Neuroanatomy and Clinical Neurology, 5th ed. Elsevier",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

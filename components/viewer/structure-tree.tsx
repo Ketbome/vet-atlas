@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import { SearchIcon } from "lucide-react";
+import { SearchIcon, XIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { ViewerModel } from "./types";
 import { useViewerStore } from "./store";
@@ -12,6 +12,7 @@ type Props = { model: ViewerModel; selected: string | null; onNavigate?: () => v
 
 export function StructureTree({ model, selected, onNavigate }: Props) {
   const t = useTranslations("structure");
+  const tv = useTranslations("viewer");
   const setHovered = useViewerStore((s) => s.setHovered);
   const hovered = useViewerStore((s) => s.hovered);
   const [filter, setFilter] = useState("");
@@ -31,21 +32,28 @@ export function StructureTree({ model, selected, onNavigate }: Props) {
   return (
     <div className="flex flex-col">
       <div className="sticky top-0 z-10 border-b border-border bg-sidebar p-2">
-        <label className="flex h-8 items-center gap-2 rounded-md border border-input bg-background px-2 text-sm focus-within:ring-3 focus-within:ring-ring/50">
-          <SearchIcon className="size-3.5 text-muted-foreground" />
+        <label className="flex h-10 items-center gap-2 rounded-md border border-input bg-background px-2.5 text-sm focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 lg:h-9">
+          <SearchIcon className="size-4 shrink-0 text-muted-foreground" />
+          <span className="sr-only">{t("filter")}</span>
           <input
-            id="structure-filter"
+            type="search"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             placeholder={t("filter")}
-            className="w-full bg-transparent outline-none placeholder:text-muted-foreground"
+            className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden"
           />
+          {filter && (
+            <button type="button" onClick={() => setFilter("")} aria-label={t("clearFilter")} className="grid size-6 place-items-center rounded text-muted-foreground hover:text-foreground">
+              <XIcon className="size-3.5" />
+            </button>
+          )}
         </label>
       </div>
-      <nav className="p-2" aria-label="structures">
+      <nav className="p-2" aria-label={tv("layers")}>
+        {groups.length === 0 && <p className="px-2 py-3 text-sm text-muted-foreground">{t("noMatch", { query: filter })}</p>}
         {groups.map(({ region, items }) => (
           <div key={region.id} className="mb-3">
-            <div className="px-2 pb-1 pt-2 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">{region.name}</div>
+            <div className="plate-label px-2 pb-1 pt-2">{region.name}</div>
             <ul>
               {items.map((s) => {
                 const active = s.id === selected;
@@ -60,16 +68,20 @@ export function StructureTree({ model, selected, onNavigate }: Props) {
                       onBlur={() => setHovered(null)}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "flex items-baseline justify-between gap-2 rounded-md px-2 py-1.5 text-sm transition-colors",
+                        "grid grid-cols-[0.625rem_minmax(0,1fr)] items-baseline gap-x-2.5 rounded-[3px] px-2 py-2 text-sm leading-snug outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/50 lg:py-1.5",
                         active
-                          ? "bg-primary text-primary-foreground"
+                          ? "bg-accent font-semibold text-accent-foreground"
                           : hovered === s.id
-                            ? "bg-accent text-accent-foreground"
+                            ? "bg-muted"
                             : "hover:bg-muted",
                       )}
                     >
-                      <span className="truncate">{s.title}</span>
-                      <span className={cn("nav-latin shrink-0 text-[11px]", active ? "text-primary-foreground/75" : "text-muted-foreground")}>{s.nav}</span>
+                      {/* Plate key: the colour the structure has on the model. */}
+                      <span className="size-2.5 translate-y-px rounded-[2px] border border-ink/15" style={{ background: s.color ?? model.color }} aria-hidden="true" />
+                      <span className="block">{s.title}</span>
+                      <span lang="la" className="nav-latin col-start-2 block text-xs font-normal text-muted-foreground">
+                        {s.nav}
+                      </span>
                     </Link>
                   </li>
                 );

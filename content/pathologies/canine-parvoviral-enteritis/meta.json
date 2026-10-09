@@ -1,0 +1,24 @@
+{
+  "id": "canine-parvoviral-enteritis",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.small-intestine"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Mylonakis ME, Kalli I, Rallis TS. Canine parvoviral enteritis: an update on the clinical diagnosis, treatment, and prevention. Vet Med (Auckl) 7:91-100",
+      "year": 2016
+    },
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

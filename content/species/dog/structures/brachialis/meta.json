@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.brachialis",
+  "system": "dog.muscular",
+  "nav": "M. brachialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.brachialis.L",
+    "dog.muscular.brachialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#943229",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-antebrachium-muscles-lateral-01",
+    "wm-dog-ventral-muscles-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.radius",
+    "dog.skeletal.ulna",
+    "dog.muscular.biceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

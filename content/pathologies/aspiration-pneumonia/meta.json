@@ -1,0 +1,25 @@
+{
+  "id": "aspiration-pneumonia",
+  "category": "inflammatory",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.lungs",
+    "dog.visceral.esophagus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

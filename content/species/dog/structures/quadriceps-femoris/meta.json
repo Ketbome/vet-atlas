@@ -1,0 +1,40 @@
+{
+  "id": "dog.muscular.quadriceps-femoris",
+  "system": "dog.muscular",
+  "nav": "M. quadriceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.quadriceps-femoris.rectus-femoris.L",
+    "dog.muscular.quadriceps-femoris.rectus-femoris.R",
+    "dog.muscular.quadriceps-femoris.vastus-lateralis.L",
+    "dog.muscular.quadriceps-femoris.vastus-lateralis.R",
+    "dog.muscular.quadriceps-femoris.vastus-medialis.L",
+    "dog.muscular.quadriceps-femoris.vastus-medialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A6402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "patellar-luxation"
+  ],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-pelvic-limb-arteries-sisson-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.patella",
+    "dog.skeletal.tibia",
+    "dog.muscular.sartorius",
+    "dog.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

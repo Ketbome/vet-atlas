@@ -7,15 +7,17 @@ export function ReviewBadge({ review }: { review: Structure["review"] }) {
   if (review.status === "reviewed") {
     return (
       <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
-        <CircleCheckIcon className="size-3.5 text-chart-3" />
-        {t("reviewed", { by: review.by ?? "" })}
+        <CircleCheckIcon className="size-3.5 text-chart-4" aria-hidden="true" />
+        {review.by ? t("reviewed", { by: review.by }) : t("reviewedAnon")}
       </p>
     );
   }
   return (
-    <p className="flex items-start gap-1.5 rounded-md border border-eosin/30 bg-eosin-soft px-2.5 py-1.5 text-xs text-foreground/80" title={t("draftHelp")}>
-      <CircleAlertIcon className="mt-0.5 size-3.5 shrink-0 text-eosin" />
-      {t("draft")}
+    <p className="flex items-start gap-2 rounded-md bg-muted px-2.5 py-2 text-xs leading-snug text-muted-foreground">
+      <CircleAlertIcon className="mt-px size-3.5 shrink-0 text-chart-3" aria-hidden="true" />
+      <span>
+        <span className="font-medium text-foreground/85">{t("draft")}.</span> {t("draftHelp")}
+      </span>
     </p>
   );
 }

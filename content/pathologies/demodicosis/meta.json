@@ -1,0 +1,28 @@
+{
+  "id": "demodicosis",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Mueller RS, Rosenkrantz W, Bensignor E, et al. Diagnosis and treatment of demodicosis in dogs and cats: clinical consensus guidelines of the World Association for Veterinary Dermatology. Vet Dermatol 31(1):5-27",
+      "year": 2020
+    },
+    {
+      "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

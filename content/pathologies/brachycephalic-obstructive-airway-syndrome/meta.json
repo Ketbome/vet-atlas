@@ -1,0 +1,25 @@
+{
+  "id": "brachycephalic-obstructive-airway-syndrome",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.trachea",
+    "dog.skeletal.skull"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Packer RMA, Hendricks A, Tivers MS, Burn CC. Impact of facial conformation on canine health: brachycephalic obstructive airway syndrome. PLoS One 10(10):e0137496",
+      "year": 2015
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

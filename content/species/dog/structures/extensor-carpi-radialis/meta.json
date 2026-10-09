@@ -1,0 +1,32 @@
+{
+  "id": "dog.muscular.extensor-carpi-radialis",
+  "system": "dog.muscular",
+  "nav": "M. extensor carpi radialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.extensor-carpi-radialis.L",
+    "dog.muscular.extensor-carpi-radialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04538",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-antebrachium-muscles-lateral-01",
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-forelimb-muscles-cuyer-lateral-01"
+  ],
+  "related": [
+    "dog.skeletal.humerus",
+    "dog.skeletal.radius",
+    "dog.muscular.extensor-digitorum-communis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

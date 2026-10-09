@@ -1,0 +1,36 @@
+{
+  "id": "dog.skeletal.sternum",
+  "system": "dog.skeletal",
+  "nav": "Sternum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.sternum.s2",
+    "dog.skeletal.sternum.s3",
+    "dog.skeletal.sternum.s4",
+    "dog.skeletal.sternum.s5",
+    "dog.skeletal.sternum.s6",
+    "dog.skeletal.sternum.s7",
+    "dog.skeletal.sternum.xiphoid"
+  ],
+  "fidelity": "modeled",
+  "source": "lmu-vetanat",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "pectus-excavatum"
+  ],
+  "media": [
+    "wm-dog-skeleton-specimen-01",
+    "wm-dog-skeleton-ellenberger-01"
+  ],
+  "related": [
+    "dog.skeletal.manubrium",
+    "dog.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

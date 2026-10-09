@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.trachea",
+  "system": "dog.visceral",
+  "nav": "Trachea",
+  "region": "respiratory",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.trachea"
+  ],
+  "fidelity": "illustrative",
+  "color": "#E6D7C3",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "tracheal-collapse",
+    "brachycephalic-obstructive-airway-syndrome",
+    "canine-infectious-respiratory-disease-complex"
+  ],
+  "media": [
+    "wm-dog-lungs-trachea-specimen-01",
+    "wm-dog-trachea-histo-01",
+    "wm-dog-thorax-lateral-01"
+  ],
+  "related": [
+    "dog.visceral.lungs",
+    "dog.visceral.esophagus",
+    "dog.visceral.thyroid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

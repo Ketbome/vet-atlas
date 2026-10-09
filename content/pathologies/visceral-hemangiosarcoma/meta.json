@@ -1,0 +1,26 @@
+{
+  "id": "visceral-hemangiosarcoma",
+  "category": "neoplastic",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.spleen",
+    "dog.visceral.heart",
+    "dog.visceral.liver"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen's Small Animal Clinical Oncology, 6th ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

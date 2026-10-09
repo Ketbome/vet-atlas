@@ -1,0 +1,24 @@
+{
+  "id": "chronic-kidney-disease",
+  "category": "degenerative",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.kidneys"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "International Renal Interest Society (IRIS). IRIS Staging of CKD",
+      "year": 2023
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "canine-infectious-respiratory-disease-complex",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.trachea",
+    "dog.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

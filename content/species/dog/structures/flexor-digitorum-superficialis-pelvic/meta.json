@@ -1,0 +1,35 @@
+{
+  "id": "dog.muscular.flexor-digitorum-superficialis-pelvic",
+  "system": "dog.muscular",
+  "nav": "M. flexor digitorum superficialis (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.flexor-digitorum-superficialis-pelvic.L",
+    "dog.muscular.flexor-digitorum-superficialis-pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A5433A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "common-calcaneal-tendon-injury"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-hind-paw-tendons-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tarsus",
+    "dog.skeletal.phalanges-pelvic",
+    "dog.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

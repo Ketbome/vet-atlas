@@ -1,0 +1,35 @@
+{
+  "id": "dog.visceral.esophagus",
+  "system": "dog.visceral",
+  "nav": "Oesophagus",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.esophagus"
+  ],
+  "fidelity": "illustrative",
+  "color": "#C9806F",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "megaesophagus",
+    "aspiration-pneumonia",
+    "gastrointestinal-foreign-body"
+  ],
+  "media": [
+    "wm-dog-esophagus-histo-01",
+    "wm-dog-megaesophagus-lat-01",
+    "wm-dog-pharynx-larynx-sisson-01"
+  ],
+  "related": [
+    "dog.visceral.trachea",
+    "dog.visceral.stomach",
+    "dog.visceral.heart"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

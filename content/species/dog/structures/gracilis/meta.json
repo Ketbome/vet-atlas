@@ -1,0 +1,36 @@
+{
+  "id": "dog.muscular.gracilis",
+  "system": "dog.muscular",
+  "nav": "M. gracilis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gracilis.L",
+    "dog.muscular.gracilis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B95646",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [
+    "common-calcaneal-tendon-injury",
+    "fibrotic-myopathy"
+  ],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01",
+    "wm-dog-pelvic-limb-muscles-medial-01",
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.tibia",
+    "dog.muscular.semitendinosus",
+    "dog.muscular.sartorius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

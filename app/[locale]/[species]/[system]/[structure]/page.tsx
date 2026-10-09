@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ExternalLinkIcon } from "lucide-react";
+import { BoxIcon, ExternalLinkIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { getMedia, getSpecies, getStructure, getSystem, loadContent, localeName, readDoc, structureHref, structureSlug } from "@/lib/content/load";
+import { getMedia, getSource, getSpecies, getStructure, getSystem, loadContent, localeName, readDoc, structureHref, structureSlug, systemHref } from "@/lib/content/load";
 import { pathologySummaries } from "@/lib/content/view";
 import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { PathologyList } from "@/components/atlas/pathology-list";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { StructureTabs } from "@/components/atlas/structure-tabs";
+import { Breadcrumb } from "@/components/atlas/breadcrumb";
 
 const REPO = "https://github.com/ketbome/vet-atlas/edit/main/content";
 
@@ -41,60 +42,71 @@ export default async function StructurePage({ params }: PageProps<"/[locale]/[sp
 
   const t = await getTranslations("structure");
   const tSite = await getTranslations("site");
+  const tViewer = await getTranslations("viewer");
   const pathologies = pathologySummaries(structure.pathologies, locale);
   const media = structure.media.map(getMedia).filter((m): m is Media => Boolean(m));
   const related = structure.related.map(getStructure).filter((r) => r !== undefined);
+  const source = structure.source ? getSource(structure.source) : undefined;
 
   return (
-    <article className="p-5 lg:p-6">
+    <article className="p-4 sm:p-5 lg:p-6">
       <header>
-        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          {localeName(sp.name, locale)} · {localeName(system.name, locale)}
-        </p>
-        <h1 className="mt-1 text-[26px] font-semibold leading-tight tracking-tight">{doc.title}</h1>
-        <p className="nav-latin mt-0.5 text-base text-muted-foreground" title={t("nav")}>
+        <Breadcrumb
+          items={[
+            { href: `/${sp.id}`, label: localeName(sp.name, locale) },
+            { href: systemHref(system), label: localeName(system.name, locale) },
+          ]}
+        />
+        <h1 className="mt-2 font-display text-[34px] leading-[1.05] text-ink">{doc.title}</h1>
+        <p lang="la" className="nav-latin mt-1 text-lg text-muted-foreground" title={t("nav")}>
           {structure.nav}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-foreground/85">{doc.summary}</p>
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-          <span>{t(`laterality.${structure.laterality}`)}</span>
-        </div>
-        <div className="mt-3">
+        <dl className="mt-3 flex flex-wrap gap-x-1.5 text-xs text-muted-foreground">
+          <dt>{t("laterality_label")}:</dt>
+          <dd className="text-foreground/80">{t(`laterality.${structure.laterality}`)}</dd>
+        </dl>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
           <ReviewBadge review={structure.review} />
+          <Link
+            href={`/3d${structureHref(structure)}`}
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs font-medium hover:bg-muted"
+          >
+            <BoxIcon className="size-3.5" aria-hidden />
+            {tViewer("pieceView")}
+          </Link>
         </div>
+        {structure.fidelity === "illustrative" && <p className="mt-2 rounded-md bg-muted px-2.5 py-1.5 text-xs text-muted-foreground">{t("illustrative")}</p>}
+        {source && (
+          <p className="mt-2 text-xs text-muted-foreground">
+            {t("modelSource")}:{" "}
+            <a href={source.url} target="_blank" rel="noreferrer" className="underline-offset-2 hover:underline">
+              {source.name}
+            </a>
+            , {source.license}
+          </p>
+        )}
         {doc.fallback && <p className="mt-2 rounded-md bg-muted px-2.5 py-1.5 text-xs text-muted-foreground">{t("untranslated")}</p>}
       </header>
 
-      <Tabs defaultValue="description" className="mt-5">
-        <TabsList className="w-full">
-          <TabsTrigger value="description" className="flex-1">{t("description")}</TabsTrigger>
-          <TabsTrigger value="pathologies" className="flex-1">
-            {t("pathologies")} <span className="ml-1 text-muted-foreground">{pathologies.length}</span>
-          </TabsTrigger>
-          <TabsTrigger value="media" className="flex-1">
-            {t("media")} <span className="ml-1 text-muted-foreground">{media.length}</span>
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="description" className="pt-4">
-          <Doc source={doc.body} />
-        </TabsContent>
-        <TabsContent value="pathologies" className="pt-4">
-          <PathologyList items={pathologies} emptyText={t("noPathologies")} />
-        </TabsContent>
-        <TabsContent value="media" className="pt-4">
-          <MediaGallery items={media} locale={locale} emptyText={t("noMedia")} />
-        </TabsContent>
-      </Tabs>
+      <StructureTabs
+        counts={{ pathologies: pathologies.length, media: media.length }}
+        description={<Doc source={doc.body} />}
+        pathologies={<PathologyList items={pathologies} emptyText={t("noPathologies")} />}
+        media={<MediaGallery items={media} locale={locale} emptyText={t("noMedia")} />}
+      />
 
       {related.length > 0 && (
         <section className="mt-8 border-t border-border pt-4">
-          <h2 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("related")}</h2>
+          <h2 className="text-sm font-semibold">{t("related")}</h2>
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {related.map((r) => (
               <li key={r.id}>
-                <Link href={structureHref(r)} className="inline-flex items-baseline gap-1.5 rounded-md border border-border px-2 py-1 text-sm hover:bg-muted">
+                <Link href={structureHref(r)} className="inline-flex min-h-9 items-baseline gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-sm hover:bg-muted">
                   {readDoc(r.dir, locale)?.title ?? r.nav}
-                  <span className="nav-latin text-xs text-muted-foreground">{r.nav}</span>
+                  <span lang="la" className="nav-latin text-xs text-muted-foreground">
+                    {r.nav}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -102,8 +114,8 @@ export default async function StructurePage({ params }: PageProps<"/[locale]/[sp
         </section>
       )}
 
-      <footer className="mt-8 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
-        <span>{tSite("disclaimer")}</span>
+      <footer className="mt-8 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="max-w-[60ch]">{tSite("disclaimer")}</span>
         <a
           href={`${REPO}/species/${species}/structures/${slug}/${doc.locale}.mdx`}
           target="_blank"

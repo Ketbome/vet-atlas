@@ -8,7 +8,8 @@
     "dog.skeletal.patella.L",
     "dog.skeletal.patella.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
+  "source": "greyhound-pelvic-limb-ct",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

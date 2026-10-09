@@ -1,0 +1,35 @@
+{
+  "id": "dog.skeletal.vertebrae-cervical",
+  "system": "dog.skeletal",
+  "nav": "Vertebrae cervicales III-VI",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "dog.skeletal.vertebrae-cervical.c3",
+    "dog.skeletal.vertebrae-cervical.c4",
+    "dog.skeletal.vertebrae-cervical.c5",
+    "dog.skeletal.vertebrae-cervical.c6"
+  ],
+  "fidelity": "modeled",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [
+    "intervertebral-disc-disease",
+    "cervical-spondylomyelopathy"
+  ],
+  "media": [
+    "wm-dog-vertebrae-sisson-01",
+    "wm-dog-skull-cervical-specimen-01",
+    "wm-dog-skeleton-specimen-01"
+  ],
+  "related": [
+    "dog.skeletal.axis",
+    "dog.skeletal.vertebra-c7",
+    "dog.skeletal.atlas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

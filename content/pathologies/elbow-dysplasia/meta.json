@@ -1,0 +1,30 @@
+{
+  "id": "elbow-dysplasia",
+  "category": "congenital",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.skeletal.ulna",
+    "dog.skeletal.humerus",
+    "dog.skeletal.radius"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
+      "year": 2006
+    },
+    {
+      "title": "Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

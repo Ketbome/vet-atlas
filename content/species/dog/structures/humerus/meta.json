@@ -1,0 +1,36 @@
+{
+  "id": "dog.skeletal.humerus",
+  "system": "dog.skeletal",
+  "nav": "Humerus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.skeletal.humerus.L",
+    "dog.skeletal.humerus.R"
+  ],
+  "fidelity": "scan",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "osteosarcoma",
+    "elbow-dysplasia",
+    "shoulder-osteochondrosis",
+    "panosteitis",
+    "biceps-tenosynovitis"
+  ],
+  "media": [
+    "wm-dog-humerus-cranial-01",
+    "wm-dog-humerus-caudal-01",
+    "wm-dog-humerus-radius-ulna-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.scapula",
+    "dog.skeletal.radius",
+    "dog.skeletal.ulna"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

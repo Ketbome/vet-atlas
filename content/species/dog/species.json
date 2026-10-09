@@ -3,5 +3,5 @@
   "scientificName": "Canis lupus familiaris",
   "name": { "es": "Perro", "en": "Dog" },
   "status": "published",
-  "systems": ["dog.skeletal"]
+  "systems": ["dog.skeletal", "dog.integumentary", "dog.muscular", "dog.visceral"]
 }
