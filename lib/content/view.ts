@@ -17,6 +17,8 @@ import {
 import type { Pathology, System } from "./schema";
 import type { PathologySummary } from "@/components/atlas/pathology-list";
 
+const modelUrl = (file: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${file}`;
+
 export function buildViewerModel(system: Entry<System>, locale: string): ViewerModel {
   const source = getSource(system.model.source);
   const species = getSpecies(system.species);
@@ -24,7 +26,7 @@ export function buildViewerModel(system: Entry<System>, locale: string): ViewerM
     systemId: system.id,
     systemName: localeName(system.name, locale),
     speciesName: species ? localeName(species.name, locale) : system.species,
-    url: system.model.file,
+    url: modelUrl(system.model.file),
     color: system.color,
     material: system.material,
     placeholder: system.model.placeholder,
@@ -60,7 +62,7 @@ export function buildViewerModel(system: Entry<System>, locale: string): ViewerM
           systemId: s.id,
           slug: s.slug,
           name: localeName(s.name, locale),
-          url: s.model.file,
+          url: modelUrl(s.model.file),
           color: s.color,
           href: systemHref(s),
           order: s.order,

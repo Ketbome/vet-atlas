@@ -3,12 +3,14 @@
 # Vet Atlas
 
 Open-source 3D veterinary anatomy atlas for students. Next.js 16 App Router,
-static generation, no database. Content is files under `content/` validated by
+static export to GitHub Pages, no database. Content is files under `content/` validated by
 Zod; the 3D viewer is React Three Fiber.
 
 ## Commands
 
 - `pnpm dev` / `pnpm build`
+- Deploy: push to `main` runs `.github/workflows/pages.yml` (`output: "export"`,
+  `NEXT_PUBLIC_BASE_PATH=/vet-atlas`). No proxy/middleware, rewrites or server features.
 - `pnpm validate` content integrity + GLB mesh names (run after touching content or models)
 - `pnpm lint`, `pnpm next typegen && pnpm typecheck`
 - `pnpm models:dog` / `models:dog-integumentary` / `models:dog-muscular` /
