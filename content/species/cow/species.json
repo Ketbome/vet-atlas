@@ -1,0 +1,7 @@
+{
+  "id": "cow",
+  "scientificName": "Bos taurus",
+  "name": { "es": "Vaca", "en": "Cow" },
+  "status": "published",
+  "systems": ["cow.skeletal", "cow.integumentary", "cow.muscular", "cow.visceral"]
+}

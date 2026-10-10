@@ -1,0 +1,25 @@
+{
+  "id": "cow.skeletal.phalanges-thoracic",
+  "system": "cow.skeletal",
+  "nav": "Ossa digitorum manus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.phalanges-thoracic.L",
+    "cow.skeletal.phalanges-thoracic.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.metacarpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

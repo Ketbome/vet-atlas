@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.masseter",
+  "system": "cow.muscular",
+  "nav": "M. masseter",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.masseter.L",
+    "cow.muscular.masseter.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04A3A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull",
+    "cow.skeletal.mandible",
+    "cow.muscular.temporalis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

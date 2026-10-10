@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.obliquus-externus-abdominis",
+  "system": "cow.muscular",
+  "nav": "M. obliquus externus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.obliquus-externus-abdominis.L",
+    "cow.muscular.obliquus-externus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B65649",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.ribs",
+    "cow.skeletal.os-coxae",
+    "cow.muscular.rectus-abdominis",
+    "cow.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

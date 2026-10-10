@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.atlas",
+  "system": "cow.skeletal",
+  "nav": "Atlas",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.atlas"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull",
+    "cow.skeletal.axis",
+    "cow.skeletal.vertebrae-cervical"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.temporalis",
+  "system": "cow.muscular",
+  "nav": "M. temporalis",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.temporalis.L",
+    "cow.muscular.temporalis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A3402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull",
+    "cow.skeletal.mandible",
+    "cow.muscular.masseter"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

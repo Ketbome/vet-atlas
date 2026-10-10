@@ -1,0 +1,24 @@
+{
+  "id": "cow.integumentary.udder",
+  "system": "cow.integumentary",
+  "nav": "Mamma (uber)",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "cow.integumentary.udder"
+  ],
+  "fidelity": "modeled",
+  "source": "thunk3d-cow",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.integumentary.skin"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

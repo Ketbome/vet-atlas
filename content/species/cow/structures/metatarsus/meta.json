@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.metatarsus",
+  "system": "cow.skeletal",
+  "nav": "Ossa metatarsalia III et IV",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.metatarsus.L",
+    "cow.skeletal.metatarsus.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.tarsus",
+    "cow.skeletal.phalanges-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

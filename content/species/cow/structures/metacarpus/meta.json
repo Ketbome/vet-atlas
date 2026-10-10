@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.metacarpus",
+  "system": "cow.skeletal",
+  "nav": "Ossa metacarpalia III et IV",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.metacarpus.L",
+    "cow.skeletal.metacarpus.R"
+  ],
+  "fidelity": "scan",
+  "source": "prinma-cow-metacarpus",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.carpus",
+    "cow.skeletal.phalanges-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

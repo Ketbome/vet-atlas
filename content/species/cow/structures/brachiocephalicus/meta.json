@@ -1,0 +1,33 @@
+{
+  "id": "cow.muscular.brachiocephalicus",
+  "system": "cow.muscular",
+  "nav": "M. brachiocephalicus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.brachiocephalicus.cleidobrachialis.L",
+    "cow.muscular.brachiocephalicus.cleidobrachialis.R",
+    "cow.muscular.brachiocephalicus.cleidocephalicus.L",
+    "cow.muscular.brachiocephalicus.cleidocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A8402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.humerus",
+    "cow.skeletal.ulna",
+    "cow.skeletal.skull",
+    "cow.muscular.sternocephalicus",
+    "cow.muscular.omotransversarius",
+    "cow.muscular.trapezius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

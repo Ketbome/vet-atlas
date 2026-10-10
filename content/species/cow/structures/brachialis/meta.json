@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.brachialis",
+  "system": "cow.muscular",
+  "nav": "M. brachialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.brachialis.L",
+    "cow.muscular.brachialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#943229",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.humerus",
+    "cow.skeletal.ulna",
+    "cow.muscular.biceps-brachii",
+    "cow.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

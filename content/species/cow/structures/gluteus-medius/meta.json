@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.gluteus-medius",
+  "system": "cow.muscular",
+  "nav": "M. gluteus medius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.gluteus-medius.L",
+    "cow.muscular.gluteus-medius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13B31",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.femur",
+    "cow.muscular.gluteus-superficialis",
+    "cow.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

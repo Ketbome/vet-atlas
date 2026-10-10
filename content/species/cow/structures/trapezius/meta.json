@@ -1,0 +1,31 @@
+{
+  "id": "cow.muscular.trapezius",
+  "system": "cow.muscular",
+  "nav": "M. trapezius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.trapezius.L",
+    "cow.muscular.trapezius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24B3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.vertebrae-cervical",
+    "cow.skeletal.vertebrae-thoracic",
+    "cow.muscular.omotransversarius",
+    "cow.muscular.latissimus-dorsi",
+    "cow.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

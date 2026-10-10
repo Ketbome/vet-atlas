@@ -1,0 +1,25 @@
+{
+  "id": "cow.skeletal.skull",
+  "system": "cow.skeletal",
+  "nav": "Cranium",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.skull"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.mandible",
+    "cow.skeletal.atlas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

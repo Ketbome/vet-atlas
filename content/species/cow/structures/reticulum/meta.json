@@ -1,0 +1,26 @@
+{
+  "id": "cow.visceral.reticulum",
+  "system": "cow.visceral",
+  "nav": "Reticulum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.reticulum"
+  ],
+  "fidelity": "scan",
+  "source": "ovc-bovine-stomach",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.rumen",
+    "cow.visceral.omasum",
+    "cow.visceral.heart"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

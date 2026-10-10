@@ -1,0 +1,51 @@
+{
+  "id": "cow.skeletal.ribs",
+  "system": "cow.skeletal",
+  "nav": "Costae",
+  "region": "axial",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.ribs.1.L",
+    "cow.skeletal.ribs.1.R",
+    "cow.skeletal.ribs.2.L",
+    "cow.skeletal.ribs.2.R",
+    "cow.skeletal.ribs.3.L",
+    "cow.skeletal.ribs.3.R",
+    "cow.skeletal.ribs.4.L",
+    "cow.skeletal.ribs.4.R",
+    "cow.skeletal.ribs.5.L",
+    "cow.skeletal.ribs.5.R",
+    "cow.skeletal.ribs.6.L",
+    "cow.skeletal.ribs.6.R",
+    "cow.skeletal.ribs.7.L",
+    "cow.skeletal.ribs.7.R",
+    "cow.skeletal.ribs.8.L",
+    "cow.skeletal.ribs.8.R",
+    "cow.skeletal.ribs.9.L",
+    "cow.skeletal.ribs.9.R",
+    "cow.skeletal.ribs.10.L",
+    "cow.skeletal.ribs.10.R",
+    "cow.skeletal.ribs.11.L",
+    "cow.skeletal.ribs.11.R",
+    "cow.skeletal.ribs.12.L",
+    "cow.skeletal.ribs.12.R",
+    "cow.skeletal.ribs.13.L",
+    "cow.skeletal.ribs.13.R"
+  ],
+  "fidelity": "modeled",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.vertebrae-thoracic",
+    "cow.skeletal.sternum",
+    "cow.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cow.visceral.rumen",
+  "system": "cow.visceral",
+  "nav": "Rumen",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.rumen"
+  ],
+  "fidelity": "scan",
+  "source": "ovc-bovine-stomach",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.reticulum",
+    "cow.visceral.omasum",
+    "cow.visceral.abomasum",
+    "cow.visceral.spleen"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

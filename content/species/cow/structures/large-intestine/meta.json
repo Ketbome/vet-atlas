@@ -1,0 +1,24 @@
+{
+  "id": "cow.visceral.large-intestine",
+  "system": "cow.visceral",
+  "nav": "Intestinum crassum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.large-intestine"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

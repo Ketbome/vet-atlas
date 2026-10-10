@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.sternocephalicus",
+  "system": "cow.muscular",
+  "nav": "M. sternocephalicus",
+  "region": "neck",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.sternocephalicus.L",
+    "cow.muscular.sternocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A2392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.sternum",
+    "cow.skeletal.skull",
+    "cow.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

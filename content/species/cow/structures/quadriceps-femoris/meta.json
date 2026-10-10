@@ -1,0 +1,35 @@
+{
+  "id": "cow.muscular.quadriceps-femoris",
+  "system": "cow.muscular",
+  "nav": "M. quadriceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.quadriceps-femoris.rectus-femoris.L",
+    "cow.muscular.quadriceps-femoris.rectus-femoris.R",
+    "cow.muscular.quadriceps-femoris.vastus-lateralis.L",
+    "cow.muscular.quadriceps-femoris.vastus-lateralis.R",
+    "cow.muscular.quadriceps-femoris.vastus-medialis.L",
+    "cow.muscular.quadriceps-femoris.vastus-medialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A6402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.femur",
+    "cow.skeletal.patella",
+    "cow.skeletal.tibia",
+    "cow.skeletal.os-coxae",
+    "cow.muscular.sartorius",
+    "cow.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

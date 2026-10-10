@@ -1,0 +1,24 @@
+{
+  "id": "cow.visceral.spleen",
+  "system": "cow.visceral",
+  "nav": "Lien",
+  "region": "endocrine-lymphatic",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.spleen"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.rumen"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

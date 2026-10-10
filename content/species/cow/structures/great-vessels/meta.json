@@ -1,0 +1,24 @@
+{
+  "id": "cow.visceral.great-vessels",
+  "system": "cow.visceral",
+  "nav": "Aorta et vena cava caudalis",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.great-vessels"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.heart"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

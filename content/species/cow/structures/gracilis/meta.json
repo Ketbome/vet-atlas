@@ -1,0 +1,30 @@
+{
+  "id": "cow.muscular.gracilis",
+  "system": "cow.muscular",
+  "nav": "M. gracilis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.gracilis.L",
+    "cow.muscular.gracilis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B95646",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.tibia",
+    "cow.muscular.semitendinosus",
+    "cow.muscular.semimembranosus",
+    "cow.muscular.sartorius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

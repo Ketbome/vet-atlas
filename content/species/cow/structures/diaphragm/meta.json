@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.diaphragm",
+  "system": "cow.muscular",
+  "nav": "Diaphragma",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "cow.muscular.diaphragm"
+  ],
+  "fidelity": "illustrative",
+  "color": "#AE4A3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.ribs",
+    "cow.skeletal.sternum",
+    "cow.skeletal.vertebrae-lumbar",
+    "cow.muscular.rectus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

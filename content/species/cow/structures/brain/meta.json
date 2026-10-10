@@ -1,0 +1,26 @@
+{
+  "id": "cow.visceral.brain",
+  "system": "cow.visceral",
+  "nav": "Encephalon",
+  "region": "nervous",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.brain.cerebrum",
+    "cow.visceral.brain.cerebellum",
+    "cow.visceral.brain.brainstem"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

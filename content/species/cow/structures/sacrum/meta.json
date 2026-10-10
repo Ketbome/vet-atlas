@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.sacrum",
+  "system": "cow.skeletal",
+  "nav": "Os sacrum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.sacrum"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.vertebrae-lumbar",
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

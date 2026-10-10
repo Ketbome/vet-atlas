@@ -1,0 +1,42 @@
+{
+  "id": "cow.skeletal.vertebrae-caudal",
+  "system": "cow.skeletal",
+  "nav": "Vertebrae caudales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.vertebrae-caudal.cd1",
+    "cow.skeletal.vertebrae-caudal.cd2",
+    "cow.skeletal.vertebrae-caudal.cd3",
+    "cow.skeletal.vertebrae-caudal.cd4",
+    "cow.skeletal.vertebrae-caudal.cd5",
+    "cow.skeletal.vertebrae-caudal.cd6",
+    "cow.skeletal.vertebrae-caudal.cd7",
+    "cow.skeletal.vertebrae-caudal.cd8",
+    "cow.skeletal.vertebrae-caudal.cd9",
+    "cow.skeletal.vertebrae-caudal.cd10",
+    "cow.skeletal.vertebrae-caudal.cd11",
+    "cow.skeletal.vertebrae-caudal.cd12",
+    "cow.skeletal.vertebrae-caudal.cd13",
+    "cow.skeletal.vertebrae-caudal.cd14",
+    "cow.skeletal.vertebrae-caudal.cd15",
+    "cow.skeletal.vertebrae-caudal.cd16",
+    "cow.skeletal.vertebrae-caudal.cd17",
+    "cow.skeletal.vertebrae-caudal.cd18"
+  ],
+  "fidelity": "illustrative",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.sacrum",
+    "cow.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

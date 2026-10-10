@@ -1,0 +1,29 @@
+{
+  "id": "cow.integumentary.hooves",
+  "system": "cow.integumentary",
+  "nav": "Ungula",
+  "region": "limbs",
+  "laterality": "paired",
+  "meshes": [
+    "cow.integumentary.hooves.L",
+    "cow.integumentary.hooves.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#3B3530",
+  "material": "bone",
+  "source": "thunk3d-cow",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.phalanges-thoracic",
+    "cow.skeletal.phalanges-pelvic",
+    "cow.integumentary.skin"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

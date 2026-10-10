@@ -1,0 +1,30 @@
+{
+  "id": "cow.muscular.sartorius",
+  "system": "cow.muscular",
+  "nav": "M. sartorius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.sartorius.L",
+    "cow.muscular.sartorius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BA5A48",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.patella",
+    "cow.skeletal.tibia",
+    "cow.muscular.quadriceps-femoris",
+    "cow.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

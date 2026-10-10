@@ -1,0 +1,26 @@
+{
+  "id": "cow.visceral.lungs",
+  "system": "cow.visceral",
+  "nav": "Pulmones",
+  "region": "respiratory",
+  "laterality": "paired",
+  "meshes": [
+    "cow.visceral.lungs.L",
+    "cow.visceral.lungs.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.trachea",
+    "cow.visceral.heart"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

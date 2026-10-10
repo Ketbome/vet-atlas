@@ -1,0 +1,34 @@
+{
+  "id": "cow.muscular.triceps-brachii",
+  "system": "cow.muscular",
+  "nav": "M. triceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.triceps-brachii.long.L",
+    "cow.muscular.triceps-brachii.long.R",
+    "cow.muscular.triceps-brachii.lateral.L",
+    "cow.muscular.triceps-brachii.lateral.R",
+    "cow.muscular.triceps-brachii.medial.L",
+    "cow.muscular.triceps-brachii.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A9443A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.humerus",
+    "cow.skeletal.ulna",
+    "cow.muscular.biceps-brachii",
+    "cow.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

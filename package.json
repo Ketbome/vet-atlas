@@ -18,6 +18,10 @@
     "models:cat-integumentary": "tsx scripts/build-cat-integumentary.ts",
     "models:cat-muscular": "tsx scripts/build-cat-muscular.ts",
     "models:cat-visceral": "tsx scripts/build-cat-visceral.ts",
+    "models:cow": "tsx scripts/build-cow-skeletal.ts",
+    "models:cow-integumentary": "tsx scripts/build-cow-integumentary.ts",
+    "models:cow-muscular": "tsx scripts/build-cow-muscular.ts",
+    "models:cow-visceral": "tsx scripts/build-cow-visceral.ts",
     "brand": "tsx scripts/build-brand.ts",
     "test": "vitest run"
   },

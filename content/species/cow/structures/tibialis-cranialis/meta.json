@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.tibialis-cranialis",
+  "system": "cow.muscular",
+  "nav": "M. tibialis cranialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.tibialis-cranialis.L",
+    "cow.muscular.tibialis-cranialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B1493B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.tibia",
+    "cow.skeletal.metatarsus",
+    "cow.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

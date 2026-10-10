@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.flexor-carpi-ulnaris",
+  "system": "cow.muscular",
+  "nav": "M. flexor carpi ulnaris",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.flexor-carpi-ulnaris.L",
+    "cow.muscular.flexor-carpi-ulnaris.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A84236",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.humerus",
+    "cow.skeletal.ulna",
+    "cow.skeletal.carpus",
+    "cow.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

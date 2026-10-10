@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.tensor-fasciae-latae",
+  "system": "cow.muscular",
+  "nav": "M. tensor fasciae latae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.tensor-fasciae-latae.L",
+    "cow.muscular.tensor-fasciae-latae.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B85A47",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.femur",
+    "cow.muscular.gluteus-medius",
+    "cow.muscular.quadriceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

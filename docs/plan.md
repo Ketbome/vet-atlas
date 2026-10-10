@@ -41,6 +41,15 @@ structures). Media and Source carry license and attribution. IDs are
   from a pixelbeaker feline CT (digestive and urinary), a Cornell feline MRI template
   (brain) and procedural shapes. 22 feline pathologies plus a cat section in 20 shared
   ones. Everything is draft.
+- **2026-10-10**: cow (chosen over the rabbit: real scans exist for its stomach and
+  heart). Skeleton cut out of a photogrammetry scan of a mounted heifer (Huis van
+  Hilde, CC BY-SA; the mount is one fused surface, segmented along the joint creases
+  by `scripts/lib/segment.ts`), with a scanned ox metacarpus (PRINMA, CC BY) and
+  modeled carpus, ribs 1–3 and 10–13, caudal sternum and tail; stomach (rumen,
+  reticulum, omasum, abomasum) from OVC Guelph (CC BY) and heart from the Visible
+  Heart Lab (CC BY), the other organs procedural; skin, udder, horns and hooves
+  warped from Thunk3D's "Cow" scan (CC BY); muscles from the cat's procedural script.
+  No pathologies yet. Everything is draft.
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies
@@ -49,7 +58,7 @@ structures). Media and Source carry license and attribution. IDs are
 - **Phase 3 (weeks 15–22)**: cat scans to replace the sculpted bones (needs
   permission, see Sources), species comparison in the viewer.
 - **Phase 4 (weeks 23–30)**: quiz mode (localStorage), PWA offline, web
-  editor that opens PRs, cow or horse.
+  editor that opens PRs, horse.
 - **Phase 5 (only if justified)**: NestJS + Postgres for accounts and teacher
   dashboards.
 
@@ -89,6 +98,15 @@ structures). Media and Source carry license and attribution. IDs are
 - MorphoSource Felis catus CT (3D Anatomy Studios, whole-body microCT): Standard
   agreement, needs permission. Would replace the sculpted skeleton and the
   procedural organs. LMU Munich has good loose cat bones, but ND: ask too.
+- Cow: Huis van Hilde "Skelet jonge koe" (Sketchfab, CC BY-SA, mounted heifer,
+  fused scan; it lacks the carpus and metacarpus, most of the tail and its ribs are
+  broken); PRINMA metacarpus (CC BY); OVCanatomy "Bovine Rumen" (CC BY, the whole
+  stomach); Visible Heart Lab "Whole Cow Heart Fixed" (CC BY); Thunk3D "Cow" (CC BY,
+  sculpt scan). Also usable later: FU Berlin bovine pelvis, MRI PAS and UNLV cow
+  skulls, RISD metatarsus (all CC BY), the ETH 1889 SOMSO bull model (CC BY). LMU
+  Munich cow bones are ND. Rabbit (checked 2026-10-10): a whole mounted skeleton
+  (Univ. Paul Sabatier, CC BY, fused) and good skulls, but no usable skin or organ
+  scans.
 - oVert / MorphoSource: dog skulls by breed, CC BY-NC.
 - Ohio State Veterinary Histology: CC BY-NC 4.0.
 - Wikimedia Commons: per-file CC BY / BY-SA / CC0.

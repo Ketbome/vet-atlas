@@ -1,0 +1,30 @@
+{
+  "id": "cow.muscular.biceps-brachii",
+  "system": "cow.muscular",
+  "nav": "M. biceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.biceps-brachii.L",
+    "cow.muscular.biceps-brachii.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B9533F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.humerus",
+    "cow.skeletal.radius",
+    "cow.muscular.brachialis",
+    "cow.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.extensor-digitorum-communis",
+  "system": "cow.muscular",
+  "nav": "M. extensor digitorum communis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.extensor-digitorum-communis.L",
+    "cow.muscular.extensor-digitorum-communis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9C392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.humerus",
+    "cow.skeletal.radius",
+    "cow.skeletal.phalanges-thoracic",
+    "cow.muscular.extensor-carpi-radialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

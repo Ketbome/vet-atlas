@@ -1,0 +1,25 @@
+{
+  "id": "cow.integumentary.skin",
+  "system": "cow.integumentary",
+  "nav": "Cutis",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "cow.integumentary.skin"
+  ],
+  "fidelity": "modeled",
+  "source": "thunk3d-cow",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.integumentary.udder",
+    "cow.integumentary.hooves"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

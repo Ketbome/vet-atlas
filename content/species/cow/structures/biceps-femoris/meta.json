@@ -1,0 +1,32 @@
+{
+  "id": "cow.muscular.biceps-femoris",
+  "system": "cow.muscular",
+  "nav": "M. biceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.biceps-femoris.cranial.L",
+    "cow.muscular.biceps-femoris.cranial.R",
+    "cow.muscular.biceps-femoris.caudal.L",
+    "cow.muscular.biceps-femoris.caudal.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A23D33",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.patella",
+    "cow.skeletal.tibia",
+    "cow.muscular.semitendinosus",
+    "cow.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

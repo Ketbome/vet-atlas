@@ -1,0 +1,39 @@
+{
+  "id": "cow.skeletal.vertebrae-thoracic",
+  "system": "cow.skeletal",
+  "nav": "Vertebrae thoracicae",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.vertebrae-thoracic.t1",
+    "cow.skeletal.vertebrae-thoracic.t2",
+    "cow.skeletal.vertebrae-thoracic.t3",
+    "cow.skeletal.vertebrae-thoracic.t4",
+    "cow.skeletal.vertebrae-thoracic.t5",
+    "cow.skeletal.vertebrae-thoracic.t6",
+    "cow.skeletal.vertebrae-thoracic.t7",
+    "cow.skeletal.vertebrae-thoracic.t8",
+    "cow.skeletal.vertebrae-thoracic.t9",
+    "cow.skeletal.vertebrae-thoracic.t10",
+    "cow.skeletal.vertebrae-thoracic.t11",
+    "cow.skeletal.vertebrae-thoracic.t12",
+    "cow.skeletal.vertebrae-thoracic.t13"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.vertebrae-cervical",
+    "cow.skeletal.vertebrae-lumbar",
+    "cow.skeletal.ribs",
+    "cow.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

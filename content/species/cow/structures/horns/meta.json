@@ -1,0 +1,28 @@
+{
+  "id": "cow.integumentary.horns",
+  "system": "cow.integumentary",
+  "nav": "Cornu",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cow.integumentary.horns.L",
+    "cow.integumentary.horns.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#8C7E6A",
+  "material": "bone",
+  "source": "thunk3d-cow",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull",
+    "cow.integumentary.skin"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.flexor-digitorum-superficialis-pelvic",
+  "system": "cow.muscular",
+  "nav": "M. flexor digitorum superficialis (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.flexor-digitorum-superficialis-pelvic.L",
+    "cow.muscular.flexor-digitorum-superficialis-pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A5433A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.femur",
+    "cow.skeletal.tarsus",
+    "cow.skeletal.phalanges-pelvic",
+    "cow.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

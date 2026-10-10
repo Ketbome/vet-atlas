@@ -1,0 +1,28 @@
+{
+  "id": "cow.muscular.supraspinatus",
+  "system": "cow.muscular",
+  "nav": "M. supraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.supraspinatus.L",
+    "cow.muscular.supraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B44A3C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.humerus",
+    "cow.muscular.infraspinatus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

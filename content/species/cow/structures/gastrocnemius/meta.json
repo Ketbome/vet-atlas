@@ -1,0 +1,32 @@
+{
+  "id": "cow.muscular.gastrocnemius",
+  "system": "cow.muscular",
+  "nav": "M. gastrocnemius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.gastrocnemius.lateral.L",
+    "cow.muscular.gastrocnemius.lateral.R",
+    "cow.muscular.gastrocnemius.medial.L",
+    "cow.muscular.gastrocnemius.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9D382E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.femur",
+    "cow.skeletal.tarsus",
+    "cow.muscular.flexor-digitorum-superficialis-pelvic",
+    "cow.muscular.biceps-femoris",
+    "cow.muscular.tibialis-cranialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

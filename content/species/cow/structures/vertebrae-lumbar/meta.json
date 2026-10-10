@@ -1,0 +1,30 @@
+{
+  "id": "cow.skeletal.vertebrae-lumbar",
+  "system": "cow.skeletal",
+  "nav": "Vertebrae lumbales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.vertebrae-lumbar.l1",
+    "cow.skeletal.vertebrae-lumbar.l2",
+    "cow.skeletal.vertebrae-lumbar.l3",
+    "cow.skeletal.vertebrae-lumbar.l4",
+    "cow.skeletal.vertebrae-lumbar.l5",
+    "cow.skeletal.vertebrae-lumbar.l6"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.vertebrae-thoracic",
+    "cow.skeletal.sacrum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

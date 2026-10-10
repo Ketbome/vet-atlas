@@ -1,0 +1,25 @@
+{
+  "id": "cow.visceral.omasum",
+  "system": "cow.visceral",
+  "nav": "Omasum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.omasum"
+  ],
+  "fidelity": "scan",
+  "source": "ovc-bovine-stomach",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.reticulum",
+    "cow.visceral.abomasum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

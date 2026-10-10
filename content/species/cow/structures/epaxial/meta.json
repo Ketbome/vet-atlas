@@ -1,0 +1,31 @@
+{
+  "id": "cow.muscular.epaxial",
+  "system": "cow.muscular",
+  "nav": "M. iliocostalis, M. longissimus et M. transversospinalis (musculi epaxiales)",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.epaxial.L",
+    "cow.muscular.epaxial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#963630",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.1
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.vertebrae-cervical",
+    "cow.skeletal.vertebrae-thoracic",
+    "cow.skeletal.vertebrae-lumbar",
+    "cow.skeletal.sacrum",
+    "cow.skeletal.ribs",
+    "cow.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

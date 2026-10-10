@@ -1,0 +1,27 @@
+{
+  "id": "cow.skeletal.humerus",
+  "system": "cow.skeletal",
+  "nav": "Humerus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.humerus.L",
+    "cow.skeletal.humerus.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.radius",
+    "cow.skeletal.ulna"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

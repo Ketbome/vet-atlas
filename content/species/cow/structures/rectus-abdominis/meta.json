@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.rectus-abdominis",
+  "system": "cow.muscular",
+  "nav": "M. rectus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.rectus-abdominis.L",
+    "cow.muscular.rectus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9F3B32",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.sternum",
+    "cow.skeletal.os-coxae",
+    "cow.muscular.obliquus-externus-abdominis",
+    "cow.muscular.pectorales"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "cow.integumentary",
+  "species": "cow",
+  "slug": "integumentary",
+  "name": {
+    "es": "Sistema tegumentario",
+    "en": "Integumentary system"
+  },
+  "status": "published",
+  "model": {
+    "file": "/models/cow/integumentary.glb",
+    "source": "thunk3d-cow",
+    "placeholder": false
+  },
+  "color": "#C29B78",
+  "order": 0,
+  "material": "skin",
+  "regions": [
+    {
+      "id": "head",
+      "name": {
+        "es": "Cabeza",
+        "en": "Head"
+      }
+    },
+    {
+      "id": "trunk",
+      "name": {
+        "es": "Tronco",
+        "en": "Trunk"
+      }
+    },
+    {
+      "id": "limbs",
+      "name": {
+        "es": "Miembros",
+        "en": "Limbs"
+      }
+    }
+  ]
+}

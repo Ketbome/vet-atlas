@@ -1,0 +1,30 @@
+{
+  "id": "cow.muscular.gluteus-superficialis",
+  "system": "cow.muscular",
+  "nav": "M. gluteus superficialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.gluteus-superficialis.L",
+    "cow.muscular.gluteus-superficialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B6503F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.sacrum",
+    "cow.skeletal.vertebrae-caudal",
+    "cow.skeletal.femur",
+    "cow.muscular.gluteus-medius",
+    "cow.muscular.biceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

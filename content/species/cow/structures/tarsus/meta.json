@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.tarsus",
+  "system": "cow.skeletal",
+  "nav": "Ossa tarsi",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.tarsus.L",
+    "cow.skeletal.tarsus.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.tibia",
+    "cow.skeletal.metatarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

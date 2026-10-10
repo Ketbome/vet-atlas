@@ -1,0 +1,25 @@
+{
+  "id": "cow.visceral.uterus",
+  "system": "cow.visceral",
+  "nav": "Uterus",
+  "region": "genital",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.uterus"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.ovaries",
+    "cow.visceral.urinary-bladder"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

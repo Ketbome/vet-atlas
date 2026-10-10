@@ -1,0 +1,24 @@
+{
+  "id": "cow.skeletal.sternum",
+  "system": "cow.skeletal",
+  "nav": "Sternum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.sternum"
+  ],
+  "fidelity": "modeled",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

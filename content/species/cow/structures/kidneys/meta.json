@@ -1,0 +1,26 @@
+{
+  "id": "cow.visceral.kidneys",
+  "system": "cow.visceral",
+  "nav": "Renes",
+  "region": "urinary",
+  "laterality": "paired",
+  "meshes": [
+    "cow.visceral.kidneys.L",
+    "cow.visceral.kidneys.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.urinary-bladder",
+    "cow.visceral.rumen"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

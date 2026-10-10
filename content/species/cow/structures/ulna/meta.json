@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.ulna",
+  "system": "cow.skeletal",
+  "nav": "Ulna",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.ulna.L",
+    "cow.skeletal.ulna.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.radius",
+    "cow.skeletal.humerus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

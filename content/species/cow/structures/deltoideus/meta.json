@@ -1,0 +1,31 @@
+{
+  "id": "cow.muscular.deltoideus",
+  "system": "cow.muscular",
+  "nav": "M. deltoideus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.deltoideus.scapular.L",
+    "cow.muscular.deltoideus.scapular.R",
+    "cow.muscular.deltoideus.acromial.L",
+    "cow.muscular.deltoideus.acromial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13A30",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.humerus",
+    "cow.muscular.infraspinatus",
+    "cow.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cow.skeletal.vertebrae-cervical",
+  "system": "cow.skeletal",
+  "nav": "Vertebrae cervicales III–VII",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.vertebrae-cervical.c3",
+    "cow.skeletal.vertebrae-cervical.c4",
+    "cow.skeletal.vertebrae-cervical.c5",
+    "cow.skeletal.vertebrae-cervical.c6",
+    "cow.skeletal.vertebrae-cervical.c7"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.axis",
+    "cow.skeletal.vertebrae-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

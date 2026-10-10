@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.serratus-ventralis",
+  "system": "cow.muscular",
+  "nav": "M. serratus ventralis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.serratus-ventralis.L",
+    "cow.muscular.serratus-ventralis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A9473C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.ribs",
+    "cow.skeletal.vertebrae-cervical",
+    "cow.muscular.trapezius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

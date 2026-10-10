@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.extensor-carpi-radialis",
+  "system": "cow.muscular",
+  "nav": "M. extensor carpi radialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.extensor-carpi-radialis.L",
+    "cow.muscular.extensor-carpi-radialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04538",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.humerus",
+    "cow.skeletal.radius",
+    "cow.skeletal.metacarpus",
+    "cow.muscular.extensor-digitorum-communis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

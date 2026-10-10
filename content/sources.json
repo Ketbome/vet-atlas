@@ -103,7 +103,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts and scripts/build-cat-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on each species' skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
+    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts, scripts/build-cat-muscular.ts and scripts/build-cow-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on each species' skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
   },
   {
     "id": "pixelbeaker-canine-abdomen",
@@ -151,7 +151,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (dog) and scripts/ct/cat_visceral.py (cat) (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
+    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (dog), scripts/ct/cat_visceral.py (cat) and scripts/ct/cow_visceral.py (cow: every organ but the stomach and heart, including the brain, liver, lungs, kidneys, uterus and ovaries) (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
   },
   {
     "id": "greyhound-pelvic-limb-ct",
@@ -248,5 +248,65 @@
       "derivatives": true
     },
     "notes": "MRI population template of domestic cats (Johnson PJ, Barry E, Luh W, Raj A, Cerda-Gonzalez S, 2019, Cornell eCommons, handle 1813/58775.2). CC0. scripts/ct/cat_brain.py meshes the T1 template and splits cerebrum, cerebellum and brainstem by watershed at the transverse fissure and the fourth ventricle; scripts/ct/cat_visceral.py fits it into the cranial cavity of the skull scan."
+  },
+  {
+    "id": "hilde-young-cow-skeleton",
+    "name": "\"Skelet jonge koe | skeleton young cow (800-1000)\" by Archeologiemuseum Huis van Hilde (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/skelet-jonge-koe-skeleton-young-cow-800-1000-f35da42a9d0243d483b437646985f757",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Photogrammetry (model by Kees Zwaan) of the mounted skeleton of a heifer of 1.5-2 years, withers 1.07 m, found at Wijk aan Zee in 1970 (collection Huis van Hilde, PNH 11492-01). License checked 2026-10-10 via the Sketchfab API. The scan is one fused surface with the stand and support wires; scripts/build-cow-skeletal.ts cuts it into bones with a seeded watershed along the joint creases, keeps the left side and the median bones and mirrors the right side. The mount lacks the carpus and metacarpus of both thoracic limbs, most of the tail and part of the sternum, and its ribs are broken: ribs 1-3 and 10-13, sternebrae 6-7, the xiphoid and caudal vertebrae 3-18 are modeled. Because of the share-alike licence the skeletal GLB is CC BY-SA 4.0."
+  },
+  {
+    "id": "prinma-cow-metacarpus",
+    "name": "\"Metacarpo de vaca/buey - VIRTARMED\" by Grupo PRINMA, Universidad de Granada (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/metacarpo-de-vacabuey-virtarmed-3ca7725a74d349d5bdc585c5fdf6075e",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Scan of an adult ox metacarpus (19th century, Cuarto Real de Santo Domingo, Granada) with age-related exostoses on the dorsal face of the distal end. License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-skeletal.ts scales it to 0.88 of the heifer's metatarsus and sets it between the modeled carpus and the digits."
+  },
+  {
+    "id": "ovc-bovine-stomach",
+    "name": "\"Bovine Rumen\" by OVCanatomy, Ontario Veterinary College (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/bovine-rumen-ec58bb93101448349c4551c89a41429c",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Model of a fixed bovine stomach by Joshua Antunes (OVC anatomy, University of Guelph), with windows cut into the rumen, omasum and abomasum. License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-visceral.ts cuts the fused surface into rumen, reticulum, omasum and abomasum along the grooves between them and scripts/ct/cow_visceral.py places it in the abdomen of the cow skeleton (scaled from the diaphragm to the pelvic inlet)."
+  },
+  {
+    "id": "vhl-cow-heart",
+    "name": "\"Whole Cow Heart Fixed\" by Visible Heart Lab, University of Minnesota (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/whole-cow-heart-fixed-c49f873ba4be4193b880bdf624957dc4",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Artec Space Spider scan of a perfusion-fixed bovine heart. License checked 2026-10-10 via the Sketchfab API. scripts/ct/cow_visceral.py places it with its long axis from the base (ventral to T4) to the apex (on the sternum at the 5th rib); its roll about that axis is not known from the scan."
+  },
+  {
+    "id": "thunk3d-cow",
+    "name": "\"Cow\" by Thunk3D (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/cow-1e35eed0788649228388b39b8ea2da13",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "3D scan of a sculpted dairy cow (one closed surface with one whole horn and a stump). License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-integumentary.ts registers it onto the cow skeleton (legs and tail along their axes, trunk, neck and head by a thin-plate-spline warp and a similarity), inflates it over the bones, muscles and organs and cuts out the udder, the horn (mirrored for the other side) and the hooves below the coronary band (fidelity \"modeled\"; hooves \"illustrative\", without the interdigital cleft)."
   }
 ]

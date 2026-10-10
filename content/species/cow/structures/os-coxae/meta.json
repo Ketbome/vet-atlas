@@ -1,0 +1,27 @@
+{
+  "id": "cow.skeletal.os-coxae",
+  "system": "cow.skeletal",
+  "nav": "Os coxae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.os-coxae.L",
+    "cow.skeletal.os-coxae.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.sacrum",
+    "cow.skeletal.femur",
+    "cow.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

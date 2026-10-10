@@ -1,0 +1,24 @@
+{
+  "id": "cow.skeletal.mandible",
+  "system": "cow.skeletal",
+  "nav": "Mandibula",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cow.skeletal.mandible"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

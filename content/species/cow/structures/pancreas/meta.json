@@ -1,0 +1,25 @@
+{
+  "id": "cow.visceral.pancreas",
+  "system": "cow.visceral",
+  "nav": "Pancreas",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.pancreas"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.liver",
+    "cow.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

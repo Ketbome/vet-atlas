@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.carpus",
+  "system": "cow.skeletal",
+  "nav": "Ossa carpi",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.carpus.L",
+    "cow.skeletal.carpus.R"
+  ],
+  "fidelity": "illustrative",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.radius",
+    "cow.skeletal.ulna",
+    "cow.skeletal.metacarpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

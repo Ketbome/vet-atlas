@@ -1,0 +1,30 @@
+{
+  "id": "cow.muscular.semimembranosus",
+  "system": "cow.muscular",
+  "nav": "M. semimembranosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.semimembranosus.L",
+    "cow.muscular.semimembranosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#95342B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.os-coxae",
+    "cow.skeletal.femur",
+    "cow.skeletal.tibia",
+    "cow.muscular.semitendinosus",
+    "cow.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

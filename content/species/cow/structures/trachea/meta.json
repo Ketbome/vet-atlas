@@ -1,0 +1,25 @@
+{
+  "id": "cow.visceral.trachea",
+  "system": "cow.visceral",
+  "nav": "Trachea",
+  "region": "respiratory",
+  "laterality": "single",
+  "meshes": [
+    "cow.visceral.trachea"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.visceral.lungs",
+    "cow.visceral.esophagus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cow.muscular.infraspinatus",
+  "system": "cow.muscular",
+  "nav": "M. infraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.muscular.infraspinatus.L",
+    "cow.muscular.infraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#973329",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.scapula",
+    "cow.skeletal.humerus",
+    "cow.muscular.supraspinatus",
+    "cow.muscular.deltoideus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

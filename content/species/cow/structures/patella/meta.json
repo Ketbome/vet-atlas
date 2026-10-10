@@ -1,0 +1,26 @@
+{
+  "id": "cow.skeletal.patella",
+  "system": "cow.skeletal",
+  "nav": "Patella",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cow.skeletal.patella.L",
+    "cow.skeletal.patella.R"
+  ],
+  "fidelity": "scan",
+  "source": "hilde-young-cow-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cow.skeletal.femur",
+    "cow.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}
