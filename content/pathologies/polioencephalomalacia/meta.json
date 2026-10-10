@@ -1,0 +1,41 @@
+{
+  "id": "polioencephalomalacia",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.brain",
+    "cow.visceral.rumen"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Apley MD. Consideration of evidence for therapeutic interventions in bovine polioencephalomalacia. Vet Clin North Am Food Anim Pract 31:151-161",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25705027/",
+      "year": 2015
+    },
+    {
+      "title": "Cammack KM, Wright CL, Austin KJ, et al. Effects of high-sulfur water and clinoptilolite on health and growth performance of steers fed forage-based diets. J Anim Sci 88:1777-1785",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20081088/",
+      "year": 2010
+    },
+    {
+      "title": "McAllister MM, Gould DH, Raisbeck MF, et al. Evaluation of ruminal sulfide concentrations and seasonal outbreaks of polioencephalomalacia in beef cattle in a feedlot. J Am Vet Med Assoc 211:1275-1279",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9373365/",
+      "year": 1997
+    },
+    {
+      "title": "Clarke LL, Hawkins IK, Rissi DR. Central nervous system diseases of cattle in Georgia, 2001-2017. J Vet Diagn Invest 31:588-593",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31179896/",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

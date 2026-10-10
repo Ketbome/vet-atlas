@@ -1,0 +1,46 @@
+{
+  "id": "interdigital-phlegmon",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.integumentary.hooves",
+    "cow.skeletal.phalanges-pelvic"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Kontturi M, Junni R, Simojoki H, et al. Bacterial species associated with interdigital phlegmon outbreaks in Finnish dairy herds. BMC Vet Res 15:44",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30696445/",
+      "year": 2019
+    },
+    {
+      "title": "Morck DW, Olson ME, Louie TJ, et al. Comparison of ceftiofur sodium and oxytetracycline for treatment of acute interdigital phlegmon (foot rot) in feedlot cattle. J Am Vet Med Assoc 212:254-257",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9448831/",
+      "year": 1998
+    },
+    {
+      "title": "Apley MD. Clinical evidence for individual animal therapy for papillomatous digital dermatitis (hairy heel wart) and infectious bovine pododermatitis (foot rot). Vet Clin North Am Food Anim Pract 31:81-95",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25705026/",
+      "year": 2015
+    },
+    {
+      "title": "Torehanov MA, Tulemissova ZK, Ibazhanova AS, et al. Comparative effectiveness of interventions for treating interdigital necrobacillosis in cattle: A network meta-analysis. Vet Med (Praha) 66:461-469",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40546813/",
+      "year": 2021
+    },
+    {
+      "title": "Checkley SL, Janzen ED, Campbell JR, et al. Efficacy of vaccination against Fusobacterium necrophorum infection for control of liver abscesses and footrot in feedlot cattle in western Canada. Can Vet J 46:1002-1007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16363327/",
+      "year": 2005
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

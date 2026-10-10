@@ -13,7 +13,10 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "mastitis",
+    "parturient-hypocalcemia"
+  ],
   "media": [],
   "related": [
     "cow.integumentary.skin"

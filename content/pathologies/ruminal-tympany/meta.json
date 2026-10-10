@@ -1,0 +1,37 @@
+{
+  "id": "ruminal-tympany",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.rumen",
+    "cow.visceral.esophagus",
+    "cow.visceral.reticulum"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Majak W, Hall JW, McCaughey WP. Pasture management strategies for reducing the risk of legume bloat in cattle. J Anim Sci 73:1493-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7665381/",
+      "year": 1995
+    },
+    {
+      "title": "Cheng KJ, McAllister TA, Popp JD, et al. A review of bloat in feedlot cattle. J Anim Sci 76:299-308",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9464911/",
+      "year": 1998
+    },
+    {
+      "title": "Gadberry S, Lalman D, White F, et al. Meta-analysis of the effects of monensin on growth and bloat of cattle on pasture. Transl Anim Sci 6:txac031",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35475114/",
+      "year": 2022
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

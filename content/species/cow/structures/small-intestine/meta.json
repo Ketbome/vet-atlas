@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 1.4
   },
-  "pathologies": [],
+  "pathologies": [
+    "neonatal-calf-diarrhea"
+  ],
   "media": [],
   "related": [
     "cow.visceral.abomasum",

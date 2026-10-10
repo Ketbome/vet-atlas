@@ -1,0 +1,47 @@
+{
+  "id": "traumatic-reticuloperitonitis",
+  "category": "traumatic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.reticulum",
+    "cow.muscular.diaphragm",
+    "cow.visceral.heart"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Braun U, Warislohner S, Torgerson P, et al. Clinical and laboratory findings in 503 cattle with traumatic reticuloperitonitis. BMC Vet Res 14:66",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29506499/",
+      "year": 2018
+    },
+    {
+      "title": "Braun U, Gerspach C, Warislohner S, et al. Ultrasonographic and radiographic findings in 503 cattle with traumatic reticuloperitonitis. Res Vet Sci 119:154-161",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29935408/",
+      "year": 2018
+    },
+    {
+      "title": "Braun U, Warislohner S, Gerspach C, et al. Treatment of 503 cattle with traumatic reticuloperitonitis. Acta Vet Scand 60:55",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30223863/",
+      "year": 2018
+    },
+    {
+      "title": "Braun U, Nuss K, Warislohner S, et al. Diagnostic reliability of clinical signs in cows with traumatic reticuloperitonitis and abomasal ulcers. BMC Vet Res 16:359",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32993659/",
+      "year": 2020
+    },
+    {
+      "title": "Braun U. Traumatic pericarditis in cattle: clinical, radiographic and ultrasonographic findings. Vet J 182:176-86",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18774315/",
+      "year": 2009
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -13,7 +13,11 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "displaced-abomasum",
+    "enzootic-bovine-leukosis",
+    "neonatal-calf-diarrhea"
+  ],
   "media": [],
   "related": [
     "cow.visceral.omasum",

@@ -1,0 +1,35 @@
+{
+  "id": "actinomycosis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.skeletal.mandible",
+    "cow.skeletal.skull"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Fubini SL, Ducharme NG. Farm Animal Surgery, 2nd ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Silva LA, Fioravanti MC, Oliveira KS, et al. Local utilization of metacresolsulfonic acid combined with streptomycin in the treatment of actinomycosis. Ann N Y Acad Sci 1026:273-276",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15604505/",
+      "year": 2004
+    },
+    {
+      "title": "Christener N, Van der Vekens E, Gurtner C, et al. [Actinomycosis in cattle - Five clinical cases]. Schweiz Arch Tierheilkd 168:88-95",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42226539/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

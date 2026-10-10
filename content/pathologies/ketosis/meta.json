@@ -1,0 +1,46 @@
+{
+  "id": "ketosis",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.liver",
+    "cow.visceral.rumen"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Duffield TF, Lissemore KD, McBride BW, et al. Impact of hyperketonemia in early lactation dairy cows on health and production. J Dairy Sci 92:571-80",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19164667/",
+      "year": 2009
+    },
+    {
+      "title": "McArt JAA, Nydam DV, Oetzel GR. Epidemiology of subclinical ketosis in early lactation dairy cattle. J Dairy Sci 95:5056-5066",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22916909/",
+      "year": 2012
+    },
+    {
+      "title": "McArt JA, Nydam DV, Oetzel GR. A field trial on the effect of propylene glycol on displaced abomasum, removal from herd, and reproduction in fresh cows diagnosed with subclinical ketosis. J Dairy Sci 95:2505-12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22541477/",
+      "year": 2012
+    },
+    {
+      "title": "Iwersen M, Falkenberg U, Voigtsberger R, et al. Evaluation of an electronic cowside test to detect subclinical ketosis in dairy cows. J Dairy Sci 92:2618-24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19447994/",
+      "year": 2009
+    },
+    {
+      "title": "Duffield TF, Rabiee AR, Lean IJ. A meta-analysis of the impact of monensin in lactating dairy cattle. Part 3. Health and reproduction. J Dairy Sci 91:2328-41",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18487655/",
+      "year": 2008
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

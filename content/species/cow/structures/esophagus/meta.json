@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 1.4
   },
-  "pathologies": [],
+  "pathologies": [
+    "ruminal-tympany"
+  ],
   "media": [],
   "related": [
     "cow.visceral.reticulum",

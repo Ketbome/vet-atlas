@@ -1,0 +1,56 @@
+{
+  "id": "sole-ulcer",
+  "category": "degenerative",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.integumentary.hooves",
+    "cow.skeletal.phalanges-pelvic",
+    "cow.skeletal.phalanges-thoracic"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Fubini SL, Ducharme NG. Farm Animal Surgery, 2nd ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Solano L, Barkema HW, Mason S, et al. Prevalence and distribution of foot lesions in dairy cattle in Alberta, Canada. J Dairy Sci 99:6828-6841",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27236761/",
+      "year": 2016
+    },
+    {
+      "title": "Bicalho RC, Machado VS, Caixeta LS. Lameness in dairy cattle: A debilitating disease or a disease of debilitated cattle? A cross-sectional study of lameness prevalence and thickness of the digital cushion. J Dairy Sci 92:3175-3184",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19757545/",
+      "year": 2009
+    },
+    {
+      "title": "Newsome RF, Green MJ, Bell NJ, et al. A prospective cohort study of digital cushion and corium thickness. Part 2: Does thinning of the digital cushion and corium lead to lameness and claw horn disruption lesions? J Dairy Sci 100:4759-4771",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28434731/",
+      "year": 2017
+    },
+    {
+      "title": "Thomas HJ, Miguel-Pacheco GG, Bollard NJ, et al. Evaluation of treatments for claw horn lesions in dairy cows in a randomized controlled trial. J Dairy Sci 98:4477-4486",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25981077/",
+      "year": 2015
+    },
+    {
+      "title": "Wilson JP, Green MJ, Randall LV, et al. Effects of routine treatment with nonsteroidal anti-inflammatory drugs at calving and when lame on the future probability of lameness and culling in dairy cows: A randomized controlled trial. J Dairy Sci 105:6041-6054",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35599027/",
+      "year": 2022
+    },
+    {
+      "title": "Sadiq MB, Ramanoon SZ, Syed-Hussain SS, et al. Treatment modalities for claw horn lesions and their effects on locomotion scores, gait properties, lesion progression, and nociceptive threshold in dairy cows: A systematic review. Res Vet Sci 181:105448",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39531868/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

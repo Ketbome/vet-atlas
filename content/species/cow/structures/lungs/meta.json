@@ -14,7 +14,10 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "bovine-respiratory-disease",
+    "bovine-tuberculosis"
+  ],
   "media": [],
   "related": [
     "cow.visceral.trachea",

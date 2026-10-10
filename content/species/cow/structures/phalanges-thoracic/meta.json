@@ -14,7 +14,9 @@
     "preset": "lateral-left",
     "zoom": 2.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "sole-ulcer"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.metacarpus"

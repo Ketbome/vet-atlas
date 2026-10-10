@@ -1,0 +1,47 @@
+{
+  "id": "subacute-ruminal-acidosis",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.rumen",
+    "cow.visceral.liver",
+    "cow.integumentary.hooves"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Garrett EF, Pereira MN, Nordlund KV, et al. Diagnostic methods for the detection of subacute ruminal acidosis in dairy cows. J Dairy Sci 82:1170-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10386303/",
+      "year": 1999
+    },
+    {
+      "title": "Kleen JL, Upgang L, Rehage J. Prevalence and consequences of subacute ruminal acidosis in German dairy herds. Acta Vet Scand 55:48",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23805878/",
+      "year": 2013
+    },
+    {
+      "title": "Khorrami B, Khiaosa-Ard R, Zebeli Q. Models to predict the risk of subacute ruminal acidosis in dairy cows based on dietary and cow factors: A meta-analysis. J Dairy Sci 104:7761-7780",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33838889/",
+      "year": 2021
+    },
+    {
+      "title": "Passos LT, Bettencourt AF, Ritt LA, et al. Systematic review of the relationship between rumen acidosis and laminitis in cattle. Res Vet Sci 161:110-117",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37356405/",
+      "year": 2023
+    },
+    {
+      "title": "Young JD, Morris P, Bryant TC, et al. Efficacy of tylosin phosphate for liver abscess control in feedlot cattle, by treatment duration: a Bayesian network meta-analysis supported by a randomized trial. J Vet Intern Med 40:aalaf048",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41742546/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

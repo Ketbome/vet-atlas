@@ -1,0 +1,43 @@
+{
+  "id": "nutritional-myodegeneration",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.muscular.semimembranosus",
+    "cow.muscular.quadriceps-femoris",
+    "cow.visceral.heart",
+    "cow.muscular.diaphragm"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Kennedy S, Rice DA, Davidson WB. Experimental myopathy in vitamin E- and selenium-depleted calves with and without added dietary polyunsaturated fatty acids as a model for nutritional degenerative myopathy in ruminant cattle. Res Vet Sci 43:384-394",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3444984/",
+      "year": 1987
+    },
+    {
+      "title": "Sanguinetti VM, Strong K, Agbese SP, et al. A systematic review of disease control strategies in beef herds, part 1: preweaned calf mortality. Anim Health Res Rev 24:75-88",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40123538/",
+      "year": 2023
+    },
+    {
+      "title": "Ceballos A, Sánchez J, Stryhn H, et al. Meta-analysis of the effect of oral selenium supplementation on milk selenium concentration in cattle. J Dairy Sci 92:324-342",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19109290/",
+      "year": 2009
+    },
+    {
+      "title": "Swecker WS Jr, Hunter KH, Shanklin RK, et al. Parenteral selenium and vitamin E supplementation of weaned beef calves. J Vet Intern Med 22:443-449",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18346143/",
+      "year": 2008
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

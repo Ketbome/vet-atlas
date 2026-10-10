@@ -1,0 +1,46 @@
+{
+  "id": "spastic-paresis",
+  "category": "congenital",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.muscular.gastrocnemius",
+    "cow.skeletal.tarsus",
+    "cow.muscular.flexor-digitorum-superficialis-pelvic"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Fubini SL, Ducharme NG. Farm Animal Surgery, 2nd ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "De Vlamynck C, Pille F, Vlaminck L. Bovine spastic paresis: current knowledge and scientific voids. Vet J 202:229-235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25201252/",
+      "year": 2014
+    },
+    {
+      "title": "Goeckmann V, Rothammer S, Medugorac I. Bovine spastic paresis: A review of the genetic background and perspectives for the future. Vet J 216:64-71",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27687928/",
+      "year": 2016
+    },
+    {
+      "title": "De Vlamynck C, Pille F, Vlaminck L. Long Term Outcome of Conservative Management or Surgical Treatment of Bovine Spastic Paresis: 79 Cases. Vet Surg 45:187-193",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26749167/",
+      "year": 2016
+    },
+    {
+      "title": "Vlaminck L, De Moor A, Martens A, et al. Partial tibial neurectomy in 113 Belgian blue calves with spastic paresis. Vet Rec 147:16-19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10975347/",
+      "year": 2000
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

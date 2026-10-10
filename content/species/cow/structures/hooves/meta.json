@@ -16,7 +16,12 @@
     "preset": "lateral-left",
     "zoom": 2.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "digital-dermatitis",
+    "interdigital-phlegmon",
+    "sole-ulcer",
+    "subacute-ruminal-acidosis"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.phalanges-thoracic",

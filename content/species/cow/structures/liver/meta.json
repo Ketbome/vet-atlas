@@ -13,7 +13,11 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "fasciolosis",
+    "ketosis",
+    "subacute-ruminal-acidosis"
+  ],
   "media": [],
   "related": [
     "cow.visceral.pancreas",

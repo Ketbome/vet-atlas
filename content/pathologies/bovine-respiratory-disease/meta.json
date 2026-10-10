@@ -1,0 +1,51 @@
+{
+  "id": "bovine-respiratory-disease",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.lungs",
+    "cow.visceral.trachea"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Scahill K, Buczinski S, Firth CL, et al. European Network for Optimization of Veterinary Antimicrobial Therapy (ENOVAT) guidelines for antimicrobial and non-steroidal anti-inflammatory drug use in bovine respiratory disease. Open Res Eur 6:296",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42798319/",
+      "year": 2026
+    },
+    {
+      "title": "Scahill K, Carmo LP, Yildiz R, et al. Efficacy of non-steroidal anti-inflammatory drug (NSAID) treatment for bovine respiratory disease: a systematic review and meta-analysis for the European Network for Optimization of Antimicrobial Therapy guidelines. Open Res Eur 6:77",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42110499/",
+      "year": 2026
+    },
+    {
+      "title": "Timsit E, Dendukuri N, Schiller I, et al. Diagnostic accuracy of clinical illness for bovine respiratory disease (BRD) diagnosis in beef cattle placed in feedlots: A systematic literature review and hierarchical Bayesian latent-class meta-analysis. Prev Vet Med 135:67-73",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27931931/",
+      "year": 2016
+    },
+    {
+      "title": "Buczinski S, Gomes V, Vergnes G, et al. Lung ultrasonography used as a diagnostic test for respiratory disease diagnosis in calves: Systematic review and meta-analysis using a Bayesian latent-class modeling approach. J Dairy Sci 109:8748-8765",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42114745/",
+      "year": 2026
+    },
+    {
+      "title": "Buczinski S, Achard D, Timsit E. Effects of calfhood respiratory disease on health and performance of dairy cattle: A systematic review and meta-analysis. J Dairy Sci 104:8214-8227",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33896639/",
+      "year": 2021
+    },
+    {
+      "title": "O'Connor AM, Hu D, Totton SC, et al. A systematic review and network meta-analysis of bacterial and viral vaccines, administered at or near arrival at the feedlot, for control of bovine respiratory disease in beef cattle. Anim Health Res Rev 20:143-162",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32081122/",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "bovine-tuberculosis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.lungs",
+    "cow.visceral.trachea"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Nuñez-Garcia J, Downs SH, Parry JE, et al. Meta-analyses of the sensitivity and specificity of ante-mortem and post-mortem diagnostic tests for bovine tuberculosis in the UK and Ireland. Prev Vet Med 153:94-107",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28347519/",
+      "year": 2018
+    },
+    {
+      "title": "Willgert K, Cliff M, Meinke S, et al. Burden of Bovine Tuberculosis on Animal Health, Welfare and Production: A Systematic Review. Transbound Emerg Dis 2025:6541298",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41098524/",
+      "year": 2025
+    },
+    {
+      "title": "Collins ÁB, Floyd S, Gordon SV, et al. Prevalence of Mycobacterium bovis in milk on dairy cattle farms: An international systematic literature review and meta-analysis. Tuberculosis (Edinb) 132:102166",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35091379/",
+      "year": 2022
+    },
+    {
+      "title": "Müller B, Dürr S, Alonso S, et al. Zoonotic Mycobacterium bovis-induced tuberculosis in humans. Emerg Infect Dis 19:899-908",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23735540/",
+      "year": 2013
+    },
+    {
+      "title": "Fromsa A, Willgert K, Srinivasan S, et al. BCG vaccination reduces bovine tuberculosis transmission, improving prospects for elimination. Science 383:eadl3962",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38547287/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

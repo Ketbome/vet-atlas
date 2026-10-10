@@ -1,0 +1,47 @@
+{
+  "id": "parturient-hypocalcemia",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.uterus",
+    "cow.integumentary.udder",
+    "cow.visceral.rumen"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Lean IJ, DeGaris PJ, McNeil DM, et al. Hypocalcemia in dairy cows: meta-analysis and dietary cation anion difference theory revisited. J Dairy Sci 89:669-84",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16428636/",
+      "year": 2006
+    },
+    {
+      "title": "Santos JEP, Lean IJ, Golder H, et al. Meta-analysis of the effects of prepartum dietary cation-anion difference on performance and health of dairy cows. J Dairy Sci 102:2134-2154",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30612801/",
+      "year": 2019
+    },
+    {
+      "title": "Reinhardt TA, Lippolis JD, McCluskey BJ, et al. Prevalence of subclinical hypocalcemia in dairy herds. Vet J 188:122-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20434377/",
+      "year": 2011
+    },
+    {
+      "title": "McArt JAA, Neves RC. Association of transient, persistent, or delayed subclinical hypocalcemia with early lactation disease, removal, and milk yield in Holstein cows. J Dairy Sci 103:690-701",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31704009/",
+      "year": 2020
+    },
+    {
+      "title": "Oetzel GR, Miller BE. Effect of oral calcium bolus supplementation on early-lactation health and milk yield in commercial dairy herds. J Dairy Sci 95:7051-65",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23040027/",
+      "year": 2012
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

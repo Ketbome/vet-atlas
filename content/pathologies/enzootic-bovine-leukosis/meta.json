@@ -1,0 +1,42 @@
+{
+  "id": "enzootic-bovine-leukosis",
+  "category": "neoplastic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.heart",
+    "cow.visceral.abomasum",
+    "cow.visceral.uterus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Ruggiero VJ, Norby B, Benitez OJ, et al. Controlling bovine leukemia virus in dairy herds by identifying and removing cows with the highest proviral load and lymphocyte counts. J Dairy Sci 102:9165-9175",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31378496/",
+      "year": 2019
+    },
+    {
+      "title": "Shrestha S, Orsel K, Droscha C, et al. Removing bovine leukemia virus-infected animals with high proviral load leads to lower within-herd prevalence and new case reduction. J Dairy Sci 107:6015-6024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38554820/",
+      "year": 2024
+    },
+    {
+      "title": "Nekouei O, VanLeeuwen J, Stryhn H, et al. Lifetime effects of infection with bovine leukemia virus on longevity and milk production of dairy cows. Prev Vet Med 133:1-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27720022/",
+      "year": 2016
+    },
+    {
+      "title": "Saeedi-Moghaddam F, Mohammaditabar M, Mozhgani SH. Bovine leukemia virus (BLV) and risk of breast cancer; a systematic review and meta-analysis. Retrovirology 21:20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39623467/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

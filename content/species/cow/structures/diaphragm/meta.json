@@ -14,7 +14,10 @@
     "preset": "lateral-left",
     "zoom": 1.4
   },
-  "pathologies": [],
+  "pathologies": [
+    "nutritional-myodegeneration",
+    "traumatic-reticuloperitonitis"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.ribs",

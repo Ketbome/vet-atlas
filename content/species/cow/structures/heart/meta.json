@@ -13,7 +13,11 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "enzootic-bovine-leukosis",
+    "nutritional-myodegeneration",
+    "traumatic-reticuloperitonitis"
+  ],
   "media": [],
   "related": [
     "cow.visceral.great-vessels",

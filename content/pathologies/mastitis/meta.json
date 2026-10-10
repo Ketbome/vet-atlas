@@ -1,0 +1,50 @@
+{
+  "id": "mastitis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.integumentary.udder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Pantoja JCF, Correia LBN, Rossi RS, et al. Association between teat-end hyperkeratosis and mastitis in dairy cows: A systematic review. J Dairy Sci 103:1843-1855",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31759610/",
+      "year": 2020
+    },
+    {
+      "title": "Dohoo IR, Smith J, Andersen S, et al. Diagnosing intramammary infections: evaluation of definitions based on a single milk sample. J Dairy Sci 94:250-61",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21183035/",
+      "year": 2011
+    },
+    {
+      "title": "Lago A, Godden SM, Bey R, et al. The selective treatment of clinical mastitis based on on-farm culture results: I. Effects on antibiotic use, milk withholding time, and short-term clinical and bacteriological outcomes. J Dairy Sci 94:4441-56",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21854917/",
+      "year": 2011
+    },
+    {
+      "title": "Nobrega DB, Naqvi SA, Dufour S, et al. Critically important antimicrobials are generally not needed to treat nonsevere clinical mastitis in lactating dairy cows: Results from a network meta-analysis. J Dairy Sci 103:10585-10603",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32896405/",
+      "year": 2020
+    },
+    {
+      "title": "Rabiee AR, Lean IJ. The effect of internal teat sealant products (Teatseal and Orbeseal) on intramammary infection, clinical mastitis, and somatic cell counts in lactating dairy cows: a meta-analysis. J Dairy Sci 96:6915-6931",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24054298/",
+      "year": 2013
+    },
+    {
+      "title": "Winder CB, Sargeant JM, Kelton DF, et al. Comparative efficacy of blanket versus selective dry-cow therapy: a systematic review and pairwise meta-analysis. Anim Health Res Rev 20:217-228",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32081118/",
+      "year": 2019
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

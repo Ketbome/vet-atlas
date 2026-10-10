@@ -1,0 +1,51 @@
+{
+  "id": "cystic-ovarian-disease",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.ovaries",
+    "cow.visceral.uterus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Fourichon C, Seegers H, Malher X. Effect of disease on reproduction in the dairy cow: a meta-analysis. Theriogenology 53:1729-59",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10968418/",
+      "year": 2000
+    },
+    {
+      "title": "Nelson ST, Martin AD, Østerås O. Risk factors associated with cystic ovarian disease in Norwegian dairy cattle. Acta Vet Scand 52:60",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21059258/",
+      "year": 2010
+    },
+    {
+      "title": "Hooijer GA, Lubbers RB, Ducro BJ, et al. Genetic parameters for cystic ovarian disease in dutch black and white dairy cattle. J Dairy Sci 84:286-91",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11210043/",
+      "year": 2001
+    },
+    {
+      "title": "Dinsmore RP, White ME, Guard CL, et al. A randomized double blind clinical trial of two GnRH analogs for the treatment of cystic ovaries in dairy cows. Cornell Vet 77:235-43",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3119289/",
+      "year": 1987
+    },
+    {
+      "title": "López-Gatius F, López-Béjar M. Reproductive performance of dairy cows with ovarian cysts after different GnRH and cloprostenol treatments. Theriogenology 58:1337-48",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12387347/",
+      "year": 2002
+    },
+    {
+      "title": "Crane MB, Bartolome J, Melendez P, et al. Comparison of synchronization of ovulation with timed insemination and exogenous progesterone as therapeutic strategies for ovarian cysts in lactating dairy cows. Theriogenology 65:1563-74",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16229884/",
+      "year": 2006
+    },
+    {
+      "title": "Noakes DE, Parkinson TJ, England GCW. Veterinary Reproduction and Obstetrics, 10th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

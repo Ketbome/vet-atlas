@@ -1,0 +1,47 @@
+{
+  "id": "neonatal-calf-diarrhea",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.small-intestine",
+    "cow.visceral.large-intestine",
+    "cow.visceral.abomasum"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Lombard J, Urie N, Garry F, et al. Consensus recommendations on calf- and herd-level passive immunity in dairy calves in the United States. J Dairy Sci 103:7611-7624",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32448583/",
+      "year": 2020
+    },
+    {
+      "title": "Raboisson D, Trillat P, Cahuzac C. Failure of Passive Immune Transfer in Calves: A Meta-Analysis on the Consequences and Assessment of the Economic Impact. PLoS One 11:e0150452",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26986832/",
+      "year": 2016
+    },
+    {
+      "title": "Bernal-Córdoba C, Branco-Lopes R, Latorre-Segura L, et al. Use of antimicrobials in the treatment of calf diarrhea: a systematic review. Anim Health Res Rev 23:101-112",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36636804/",
+      "year": 2022
+    },
+    {
+      "title": "Brainard J, Hammer CC, Hunter PR, et al. Efficacy of halofuginone products to prevent or treat cryptosporidiosis in bovine calves: a systematic review and meta-analyses. Parasitology 148:408-419",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33261668/",
+      "year": 2021
+    },
+    {
+      "title": "Higgs C, Van Noord M, Nagle JGC, et al. Dam vaccination for the prevention of neonatal diarrhea caused by enterotoxigenic E. coli in calves-a systematic review and meta-analysis. Vet Anim Sci 30:100546",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41362401/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

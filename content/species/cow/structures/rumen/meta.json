@@ -13,7 +13,13 @@
     "preset": "lateral-left",
     "zoom": 1.4
   },
-  "pathologies": [],
+  "pathologies": [
+    "ketosis",
+    "parturient-hypocalcemia",
+    "polioencephalomalacia",
+    "ruminal-tympany",
+    "subacute-ruminal-acidosis"
+  ],
   "media": [],
   "related": [
     "cow.visceral.reticulum",

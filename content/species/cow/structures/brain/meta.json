@@ -15,7 +15,9 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "polioencephalomalacia"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.skull"

@@ -19,7 +19,9 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "nutritional-myodegeneration"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.femur",

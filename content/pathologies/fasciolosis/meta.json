@@ -1,0 +1,45 @@
+{
+  "id": "fasciolosis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.liver"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Hayward AD, Skuce PJ, McNeilly TN. The influence of liver fluke infection on production in sheep and cattle: a meta-analysis. Int J Parasitol 51:913-924",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33901437/",
+      "year": 2021
+    },
+    {
+      "title": "Charlier J, Hostens M, Jacobs J, et al. Integrating fasciolosis control in the dry cow management: the effect of closantel treatment on milk production. PLoS One 7:e43216",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22916226/",
+      "year": 2012
+    },
+    {
+      "title": "Takeuchi-Storm N, Thamsborg SM, Enemark HL, et al. Association between milk yield and milk anti-Fasciola hepatica antibody levels, and the utility of bulk tank milk samples for assessing within-herd prevalence on organic dairy farms. Vet Parasitol 291:109374",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33662712/",
+      "year": 2021
+    },
+    {
+      "title": "Charlier J, De Meulemeester L, Claerebout E, et al. Qualitative and quantitative evaluation of coprological and serological techniques for the diagnosis of fasciolosis in cattle. Vet Parasitol 153:44-51",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18329811/",
+      "year": 2008
+    },
+    {
+      "title": "Kelley JM, Elliott TP, Beddoe T, et al. Current Threat of Triclabendazole Resistance in Fasciola hepatica. Trends Parasitol 32:458-469",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27049013/",
+      "year": 2016
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "actinomycosis"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.mandible",

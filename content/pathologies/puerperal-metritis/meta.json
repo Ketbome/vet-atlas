@@ -1,0 +1,45 @@
+{
+  "id": "puerperal-metritis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.uterus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sheldon IM, Lewis GS, LeBlanc S, et al. Defining postpartum uterine disease in cattle. Theriogenology 65:1516-30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16226305/",
+      "year": 2006
+    },
+    {
+      "title": "LeBlanc SJ, Duffield TF, Leslie KE, et al. Defining and diagnosing postpartum clinical endometritis and its impact on reproductive performance in dairy cows. J Dairy Sci 85:2223-36",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12362455/",
+      "year": 2002
+    },
+    {
+      "title": "Dubuc J, Duffield TF, Leslie KE, et al. Risk factors for postpartum uterine diseases in dairy cows. J Dairy Sci 93:5764-71",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21094748/",
+      "year": 2010
+    },
+    {
+      "title": "Haimerl P, Arlt S, Borchardt S, et al. Antibiotic treatment of metritis in dairy cows-A meta-analysis. J Dairy Sci 100:3783-3795",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28365115/",
+      "year": 2017
+    },
+    {
+      "title": "Dubuc J, Duffield TF, Leslie KE, et al. Randomized clinical trial of antibiotic and prostaglandin treatments for uterine health and reproductive performance in dairy cows. J Dairy Sci 94:1325-38",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21338798/",
+      "year": 2011
+    },
+    {
+      "title": "Noakes DE, Parkinson TJ, England GCW. Veterinary Reproduction and Obstetrics, 10th ed. Elsevier",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

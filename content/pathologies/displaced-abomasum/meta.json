@@ -1,0 +1,55 @@
+{
+  "id": "displaced-abomasum",
+  "category": "metabolic",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.abomasum",
+    "cow.visceral.omasum"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Fubini SL, Ducharme NG. Farm Animal Surgery, 2nd ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Duffield TF, Lissemore KD, McBride BW, et al. Impact of hyperketonemia in early lactation dairy cows on health and production. J Dairy Sci 92:571-80",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19164667/",
+      "year": 2009
+    },
+    {
+      "title": "Duffield TF, Rabiee AR, Lean IJ. A meta-analysis of the impact of monensin in lactating dairy cattle. Part 3. Health and reproduction. J Dairy Sci 91:2328-41",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18487655/",
+      "year": 2008
+    },
+    {
+      "title": "Sterner KE, Grymer J, Bartlett PC, et al. Factors influencing the survival of dairy cows after correction of left displaced abomasum. J Am Vet Med Assoc 232:1521-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18479243/",
+      "year": 2008
+    },
+    {
+      "title": "Seeger T, Kümper H, Failing K, et al. Comparison of laparoscopic-guided abomasopexy versus omentopexy via right flank laparotomy for the treatment of left abomasal displacement in dairy cows. Am J Vet Res 67:472-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16506910/",
+      "year": 2006
+    },
+    {
+      "title": "Canatan U, Aslan Canatan V. Open versus minimally invasive surgical techniques for displaced abomasum in dairy cattle: A systematic review and meta-analysis. Vet Surg 55:1177-1187",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42656013/",
+      "year": 2026
+    },
+    {
+      "title": "Boulay G, Francoz D, Doré E, et al. Preoperative cow-side lactatemia measurement predicts negative outcome in Holstein dairy cattle with right abomasal disorders. J Dairy Sci 97:212-21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24183688/",
+      "year": 2014
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 1
   },
-  "pathologies": [],
+  "pathologies": [
+    "digital-dermatitis"
+  ],
   "media": [],
   "related": [
     "cow.integumentary.udder",

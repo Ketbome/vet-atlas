@@ -15,7 +15,9 @@
     "preset": "caudal",
     "zoom": 1.5
   },
-  "pathologies": [],
+  "pathologies": [
+    "nutritional-myodegeneration"
+  ],
   "media": [],
   "related": [
     "cow.skeletal.os-coxae",

@@ -1,0 +1,46 @@
+{
+  "id": "digital-dermatitis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.integumentary.hooves",
+    "cow.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Holzhauer M, Hardenberg C, Bartels CJ, et al. Herd- and cow-level prevalence of digital dermatitis in the Netherlands and associated risk factors. J Dairy Sci 89:580-588",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16428627/",
+      "year": 2006
+    },
+    {
+      "title": "Caddey B, De Buck J. Meta-Analysis of Bovine Digital Dermatitis Microbiota Reveals Distinct Microbial Community Structures Associated With Lesions. Front Cell Infect Microbiol 11:685861",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34336713/",
+      "year": 2021
+    },
+    {
+      "title": "Cutler JH, Cramer G, Walter JJ, et al. Randomized clinical trial of tetracycline hydrochloride bandage and paste treatments for resolution of lesions and pain associated with digital dermatitis in dairy cattle. J Dairy Sci 96:7550-7557",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24140336/",
+      "year": 2013
+    },
+    {
+      "title": "Ariza JM, Relun A, Bareille N, et al. Effectiveness of collective treatments in the prevention and treatment of bovine digital dermatitis lesions: A systematic review. J Dairy Sci 100:7401-7418",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28668527/",
+      "year": 2017
+    },
+    {
+      "title": "Jacobs C, Beninger C, Hazlewood GS, et al. Effect of footbath protocols for prevention and treatment of digital dermatitis in dairy cattle: A systematic review and network meta-analysis. Prev Vet Med 164:56-71",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30771895/",
+      "year": 2019
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -49,7 +49,7 @@ structures). Media and Source carry license and attribution. IDs are
   reticulum, omasum, abomasum) from OVC Guelph (CC BY) and heart from the Visible
   Heart Lab (CC BY), the other organs procedural; skin, udder, horns and hooves
   warped from Thunk3D's "Cow" scan (CC BY); muscles from the cat's procedural script.
-  No pathologies yet. Everything is draft.
+  21 bovine pathologies with PubMed-verified key studies. Everything is draft.
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies
