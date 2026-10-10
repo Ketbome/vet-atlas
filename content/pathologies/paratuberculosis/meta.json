@@ -1,0 +1,46 @@
+{
+  "id": "paratuberculosis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.small-intestine",
+    "cow.visceral.large-intestine"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Doré E, Paré J, Côté G, et al. Risk factors associated with transmission of Mycobacterium avium subsp. paratuberculosis to calves within dairy herd: a systematic review. J Vet Intern Med 26:32-45",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22211394/",
+      "year": 2012
+    },
+    {
+      "title": "Nielsen SS, Toft N. Ante mortem diagnosis of paratuberculosis: a review of accuracies of ELISA, interferon-gamma assay and faecal culture techniques. Vet Microbiol 129:217-35",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18255239/",
+      "year": 2008
+    },
+    {
+      "title": "Liu T, Lu Y, Wang K, et al. Accuracy of ELISA for the detection of paratuberculosis in cattle: A systematic review and meta-analysis. J Dairy Sci 109:9948-9963",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42285482/",
+      "year": 2026
+    },
+    {
+      "title": "McAloon CG, Whyte P, More SJ, et al. The effect of paratuberculosis on milk yield--A systematic review and meta-analysis. J Dairy Sci 99:1449-1460",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26686704/",
+      "year": 2016
+    },
+    {
+      "title": "Feller M, Huwiler K, Stephan R, et al. Mycobacterium avium subspecies paratuberculosis and Crohn's disease: a systematic review and meta-analysis. Lancet Infect Dis 7:607-13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17714674/",
+      "year": 2007
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

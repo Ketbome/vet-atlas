@@ -1,0 +1,51 @@
+{
+  "id": "brucellosis",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.uterus",
+    "cow.integumentary.udder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Andrade RS, Oliveira MM, Bueno Filho JSS, et al. Accuracy of serological tests for bovine brucellosis: A systematic review and meta-analysis. Prev Vet Med 222:106079",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38056065/",
+      "year": 2024
+    },
+    {
+      "title": "de Oliveira MM, Pereira CR, de Oliveira IRC, et al. Efficacy of Brucella abortus S19 and RB51 vaccine strains: A systematic review and meta-analysis. Transbound Emerg Dis 69:e32-e51",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34328699/",
+      "year": 2022
+    },
+    {
+      "title": "Serpa Gonçalves M, de Oliveira MM, Andrade RS, et al. Systematic review on the effectiveness of Brucella abortus S19 and RB51 vaccine strains in field studies. Vaccine 45:126649",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39709806/",
+      "year": 2025
+    },
+    {
+      "title": "Dean AS, Crump L, Greter H, et al. Clinical manifestations of human brucellosis: a systematic review and meta-analysis. PLoS Negl Trop Dis 6:e1929",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23236528/",
+      "year": 2012
+    },
+    {
+      "title": "Laine CG, Johnson VE, Scott HM, et al. Global Estimate of Human Brucellosis Incidence. Emerg Infect Dis 29:1789-1797",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37610167/",
+      "year": 2023
+    },
+    {
+      "title": "Pereira CR, Cotrim de Almeida JVF, Cardoso de Oliveira IR, et al. Occupational exposure to Brucella spp.: A systematic review and meta-analysis. PLoS Negl Trop Dis 14:e0008164",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32392223/",
+      "year": 2020
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

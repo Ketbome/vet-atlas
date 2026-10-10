@@ -14,7 +14,8 @@
     "zoom": 1.4
   },
   "pathologies": [
-    "neonatal-calf-diarrhea"
+    "neonatal-calf-diarrhea",
+    "paratuberculosis"
   ],
   "media": [],
   "related": [

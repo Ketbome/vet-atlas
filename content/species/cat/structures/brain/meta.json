@@ -18,7 +18,9 @@
   },
   "pathologies": [
     "feline-infectious-peritonitis",
-    "portosystemic-shunt"
+    "portosystemic-shunt",
+    "rabies",
+    "feline-panleukopenia"
   ],
   "media": [
     "wm-cat-nervous-system-specimen-01",

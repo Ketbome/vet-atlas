@@ -16,7 +16,8 @@
   },
   "pathologies": [
     "bovine-respiratory-disease",
-    "bovine-tuberculosis"
+    "bovine-tuberculosis",
+    "cystic-echinococcosis"
   ],
   "media": [],
   "related": [

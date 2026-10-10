@@ -50,6 +50,11 @@ structures). Media and Source carry license and attribution. IDs are
   Heart Lab (CC BY), the other organs procedural; skin, udder, horns and hooves
   warped from Thunk3D's "Cow" scan (CC BY); muscles from the cat's procedural script.
   21 bovine pathologies with PubMed-verified key studies. Everything is draft.
+  Then 12 infectious and zoonotic diseases that were missing: distemper, rabies,
+  leptospirosis, heartworm, leishmaniosis, cystic echinococcosis, panleukopenia,
+  FeLV/FIV, periodontal disease, BVD, paratuberculosis and brucellosis. Pyometra,
+  mammary tumours, otitis externa and bovine pinkeye wait for structures the models
+  lack (uterus and mammary glands in dog and cat, ear, cow eyes).
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies

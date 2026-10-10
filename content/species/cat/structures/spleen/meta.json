@@ -14,7 +14,10 @@
     "preset": "lateral-left",
     "zoom": 2.0
   },
-  "pathologies": [],
+  "pathologies": [
+    "feline-panleukopenia",
+    "feline-retrovirus-infections"
+  ],
   "media": [
     "wm-cat-spleen-specimen-01"
   ],

@@ -1,0 +1,53 @@
+{
+  "id": "bovine-viral-diarrhea",
+  "category": "infectious",
+  "species": [
+    "cow"
+  ],
+  "structures": [
+    "cow.visceral.small-intestine",
+    "cow.visceral.esophagus",
+    "cow.visceral.uterus",
+    "cow.visceral.brain"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Newcomer BW, Walz PH, Givens MD, et al. Efficacy of bovine viral diarrhea virus vaccination to prevent reproductive disease: a meta-analysis. Theriogenology 83:360-365.e1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25447148/",
+      "year": 2015
+    },
+    {
+      "title": "Scharnböck B, Roch FF, Richter V, et al. A meta-analysis of bovine viral diarrhoea virus (BVDV) prevalences in the global cattle population. Sci Rep 8:14420",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30258185/",
+      "year": 2018
+    },
+    {
+      "title": "Hay KE, Ambrose RC, Morton JM, et al. Effects of exposure to Bovine viral diarrhoea virus 1 on risk of bovine respiratory disease in Australian feedlot cattle. Prev Vet Med 126:159-69",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26907209/",
+      "year": 2016
+    },
+    {
+      "title": "van Roon AM, Mercat M, van Schaik G, et al. Quantification of risk factors for bovine viral diarrhea virus in cattle herds: A systematic search and meta-analysis of observational studies. J Dairy Sci 103:9446-9463",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32747110/",
+      "year": 2020
+    },
+    {
+      "title": "Graham D, More SJ, O'Sullivan P, et al. The Irish Programme to Eradicate Bovine Viral Diarrhoea Virus-Organization, Challenges, and Progress. Front Vet Sci 8:674557",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34141734/",
+      "year": 2021
+    },
+    {
+      "title": "Schweizer M, Stalder H, Haslebacher A, et al. Eradication of Bovine Viral Diarrhoea (BVD) in Cattle in Switzerland: Lessons Taught by the Complex Biology of the Virus. Front Vet Sci 8:702730",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34557540/",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

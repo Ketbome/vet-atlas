@@ -17,7 +17,10 @@
     "cystic-ovarian-disease",
     "enzootic-bovine-leukosis",
     "parturient-hypocalcemia",
-    "puerperal-metritis"
+    "puerperal-metritis",
+    "leptospirosis",
+    "bovine-viral-diarrhea",
+    "brucellosis"
   ],
   "media": [],
   "related": [

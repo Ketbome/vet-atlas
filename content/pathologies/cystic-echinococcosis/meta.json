@@ -1,0 +1,52 @@
+{
+  "id": "cystic-echinococcosis",
+  "category": "infectious",
+  "species": [
+    "dog",
+    "cow"
+  ],
+  "structures": [
+    "dog.visceral.small-intestine",
+    "cow.visceral.liver",
+    "cow.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Possenti A, Manzano-Román R, Sánchez-Ovejero C, et al. Potential Risk Factors Associated with Human Cystic Echinococcosis: Systematic Review and Meta-analysis. PLoS Negl Trop Dis 10:e0005114",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27820824/",
+      "year": 2016
+    },
+    {
+      "title": "Hartnack S, Budke CM, Craig PS, et al. Latent-class methods to evaluate diagnostics tests for Echinococcus infections in dogs. PLoS Negl Trop Dis 7:e2068",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23459420/",
+      "year": 2013
+    },
+    {
+      "title": "Amarir F, Rhalem A, Sadak A, et al. Control of cystic echinococcosis in the Middle Atlas, Morocco: Field evaluation of the EG95 vaccine in sheep and cesticide treatment in dogs. PLoS Negl Trop Dis 15:e0009253",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33684115/",
+      "year": 2021
+    },
+    {
+      "title": "Tamarozzi F, Legnardi M, Fittipaldo A, et al. Epidemiological distribution of Echinococcus granulosus s.l. infection in human and domestic animal hosts in European Mediterranean and Balkan countries: A systematic review. PLoS Negl Trop Dis 14:e0008519",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32776936/",
+      "year": 2020
+    },
+    {
+      "title": "Larrieu E, Zanini F. Critical analysis of cystic echinococcosis control programs and praziquantel use in South America, 1974-2010. Rev Panam Salud Publica 31:81-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22427169/",
+      "year": 2012
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

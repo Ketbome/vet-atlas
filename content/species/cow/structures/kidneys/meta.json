@@ -14,7 +14,9 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "leptospirosis"
+  ],
   "media": [],
   "related": [
     "cow.visceral.urinary-bladder",

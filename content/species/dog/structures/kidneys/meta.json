@@ -17,7 +17,9 @@
   },
   "pathologies": [
     "chronic-kidney-disease",
-    "urolithiasis"
+    "urolithiasis",
+    "leishmaniosis",
+    "leptospirosis"
   ],
   "media": [
     "wm-dog-kidneys-specimen-01",

@@ -1,0 +1,70 @@
+{
+  "id": "leptospirosis",
+  "category": "infectious",
+  "species": [
+    "dog",
+    "cow"
+  ],
+  "structures": [
+    "dog.visceral.kidneys",
+    "dog.visceral.liver",
+    "dog.visceral.lungs",
+    "cow.visceral.kidneys",
+    "cow.visceral.uterus",
+    "cow.integumentary.udder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Sykes JE, Hartmann K, Lunn KF, et al. 2010 ACVIM small animal consensus statement on leptospirosis: diagnosis, epidemiology, treatment, and prevention. J Vet Intern Med 25:1-13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21155890/",
+      "year": 2011
+    },
+    {
+      "title": "Sykes JE, Francey T, Schuller S, et al. Updated ACVIM consensus statement on leptospirosis in dogs. J Vet Intern Med 37:1966-1982",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37861061/",
+      "year": 2023
+    },
+    {
+      "title": "Bergmann Esteves S, Moreira Santos C, Ferreira Salgado F, et al. Efficacy of commercially available vaccines against canine leptospirosis: A systematic review and meta-analysis. Vaccine 40:1722-1740",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35153090/",
+      "year": 2022
+    },
+    {
+      "title": "Moreira MF, Azócar-Aedo L, Gallardo Paffetti M, et al. Prevalence of Anti-Leptospira Antibodies in Bovines (2018-2023) and Reported Serovars and Serogroups-A Systematic Review With Meta-Analysis. Vet Med Sci 11:e70529",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40728080/",
+      "year": 2025
+    },
+    {
+      "title": "Sanhueza JM, Heuer C, West D. Contribution of Leptospira, Neospora caninum and bovine viral diarrhea virus to fetal loss of beef cattle in New Zealand. Prev Vet Med 112:90-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23932894/",
+      "year": 2013
+    },
+    {
+      "title": "Sanhueza JM, Wilson PR, Benschop J, et al. Meta-analysis of the efficacy of Leptospira serovar Hardjo vaccines to prevent urinary shedding in cattle. Prev Vet Med 153:71-76",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29653738/",
+      "year": 2018
+    },
+    {
+      "title": "Plunkett AH, Graham TW, Famula TR, et al. Effect of a monovalent vaccine against Leptospira borgpetersenii serovar Hardjo strain hardjobovis on fertility in Holstein dairy cattle. J Am Vet Med Assoc 242:1564-72",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23683023/",
+      "year": 2013
+    },
+    {
+      "title": "Kasimanickam R, Whittier WD, Collins JC, et al. A field study of the effects of a monovalent Leptospira borgpetersenii serovar Hardjo strain hardjobovis vaccine administered with oxytetracycline on reproductive performance in beef cattle. J Am Vet Med Assoc 231:1709-14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18052809/",
+      "year": 2007
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

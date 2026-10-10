@@ -18,7 +18,9 @@
     "alimentary-lymphoma",
     "gastrointestinal-foreign-body",
     "feline-infectious-peritonitis",
-    "acute-pancreatitis"
+    "acute-pancreatitis",
+    "feline-panleukopenia",
+    "feline-retrovirus-infections"
   ],
   "media": [
     "wm-cat-small-intestine-specimen-01",

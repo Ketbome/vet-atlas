@@ -16,7 +16,8 @@
   },
   "pathologies": [
     "gastric-dilatation-volvulus",
-    "visceral-hemangiosarcoma"
+    "visceral-hemangiosarcoma",
+    "leishmaniosis"
   ],
   "media": [
     "wm-dog-spleen-specimen-01",

@@ -17,7 +17,8 @@
   "pathologies": [
     "visceral-hemangiosarcoma",
     "acute-pancreatitis",
-    "portosystemic-shunt"
+    "portosystemic-shunt",
+    "leptospirosis"
   ],
   "media": [
     "wm-dog-liver-corrosion-cast-01",

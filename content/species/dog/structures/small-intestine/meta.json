@@ -17,7 +17,9 @@
   "pathologies": [
     "acute-pancreatitis",
     "canine-parvoviral-enteritis",
-    "gastrointestinal-foreign-body"
+    "gastrointestinal-foreign-body",
+    "canine-distemper",
+    "cystic-echinococcosis"
   ],
   "media": [
     "wm-dog-ileum-specimen-01",

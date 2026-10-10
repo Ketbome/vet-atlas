@@ -1,0 +1,49 @@
+{
+  "id": "canine-distemper",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.visceral.brain",
+    "dog.visceral.lungs",
+    "dog.visceral.small-intestine",
+    "dog.integumentary.eyes",
+    "dog.integumentary.skin"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Squires RA, Crawford C, Marcondes M, et al. 2024 guidelines for the vaccination of dogs and cats - compiled by the Vaccination Guidelines Group (VGG) of the World Small Animal Veterinary Association (WSAVA). J Small Anim Pract 65:277-316",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38568777/",
+      "year": 2024
+    },
+    {
+      "title": "Ellis J, Marziani E, Aziz C, et al. 2022 AAHA Canine Vaccination Guidelines. J Am Anim Hosp Assoc 58:213-230",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36049241/",
+      "year": 2022
+    },
+    {
+      "title": "Costa VGD, Saivish MV, Rodrigues RL, et al. Molecular and serological surveys of canine distemper virus: A meta-analysis of cross-sectional studies. PLoS One 14:e0217594",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31141576/",
+      "year": 2019
+    },
+    {
+      "title": "Martinez-Gutierrez M, Ruiz-Saenz J. Diversity of susceptible hosts in canine distemper virus infection: a systematic review and data synthesis. BMC Vet Res 12:78",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27170307/",
+      "year": 2016
+    },
+    {
+      "title": "Angwenyi SKS, Rooney NJ, Eisler MC. Are Domestic Dogs (Canis familiaris) the Family Scapegoats? A Systematic Review of Canine Distemper Virus in African Wildlife, 1978-2021. J Wildl Dis 61:1-16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39603253/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

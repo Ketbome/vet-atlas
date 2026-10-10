@@ -21,7 +21,10 @@
     "patent-ductus-arteriosus",
     "megaesophagus",
     "canine-infectious-respiratory-disease-complex",
-    "aspiration-pneumonia"
+    "aspiration-pneumonia",
+    "canine-distemper",
+    "dirofilariosis",
+    "leptospirosis"
   ],
   "media": [
     "wm-dog-lungs-trachea-specimen-01",

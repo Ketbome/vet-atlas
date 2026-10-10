@@ -17,7 +17,8 @@
     "zoom": 1.8
   },
   "pathologies": [
-    "symmetric-lupoid-onychodystrophy"
+    "symmetric-lupoid-onychodystrophy",
+    "leishmaniosis"
   ],
   "media": [
     "wm-dog-paw-pads-01",

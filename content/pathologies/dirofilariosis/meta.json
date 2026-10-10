@@ -1,0 +1,55 @@
+{
+  "id": "dirofilariosis",
+  "category": "infectious",
+  "species": [
+    "dog",
+    "cat"
+  ],
+  "structures": [
+    "dog.visceral.heart",
+    "dog.visceral.great-vessels",
+    "dog.visceral.lungs",
+    "cat.visceral.heart",
+    "cat.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Anvari D, Narouei E, Daryani A, et al. The global status of Dirofilaria immitis in dogs: a systematic review and meta-analysis based on published articles. Res Vet Sci 131:104-116",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32330696/",
+      "year": 2020
+    },
+    {
+      "title": "Jacobson LS, Dyer JL, Van Vlake A, et al. Comparing compressed 2-dose and 3-dose melarsomine protocols in the era of adjunctive therapy: a randomized clinical trial of 168 dogs with heartworm disease. J Am Vet Med Assoc, online ahead of print",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42685768/",
+      "year": 2026
+    },
+    {
+      "title": "Santiwattanatarm T, Sakcamduang W, Kongkaew C, et al. A systematic review and meta-analysis of non-arsenical adulticide protocols using moxidectin and doxycycline for the treatment of adult heartworm infection in dogs. Curr Res Parasitol Vector Borne Dis 9:100372",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42007372/",
+      "year": 2026
+    },
+    {
+      "title": "Curry E, Tack D, Rodriguez J, et al. Surveillance of single nucleotide polymorphisms correlated to macrocyclic lactone resistance in Dirofilaria immitis from client-owned dogs across the United States. Int J Parasitol Drugs Drug Resist 29:100604",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40779992/",
+      "year": 2025
+    },
+    {
+      "title": "Berdoulay P, Levy JK, Snyder PS, et al. Comparison of serological tests for the detection of natural heartworm infection in cats. J Am Anim Hosp Assoc 40:376-84",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15347617/",
+      "year": 2004
+    },
+    {
+      "title": "Hattendorf C, Lühken R. Vectors, host range, and spatial distribution of Dirofilaria immitis and D. repens in Europe: a systematic review. Infect Dis Poverty 14:58",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40604914/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

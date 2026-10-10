@@ -18,7 +18,9 @@
   },
   "pathologies": [
     "portosystemic-shunt",
-    "idiopathic-epilepsy"
+    "idiopathic-epilepsy",
+    "canine-distemper",
+    "rabies"
   ],
   "media": [
     "wm-dog-brain-eyeballs-specimen-01",

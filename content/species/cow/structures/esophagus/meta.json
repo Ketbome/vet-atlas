@@ -14,7 +14,8 @@
     "zoom": 1.4
   },
   "pathologies": [
-    "ruminal-tympany"
+    "ruminal-tympany",
+    "bovine-viral-diarrhea"
   ],
   "media": [],
   "related": [

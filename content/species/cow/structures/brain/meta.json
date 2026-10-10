@@ -16,7 +16,9 @@
     "zoom": 2
   },
   "pathologies": [
-    "polioencephalomalacia"
+    "polioencephalomalacia",
+    "rabies",
+    "bovine-viral-diarrhea"
   ],
   "media": [],
   "related": [

@@ -1,0 +1,54 @@
+{
+  "id": "leishmaniosis",
+  "category": "infectious",
+  "species": [
+    "dog"
+  ],
+  "structures": [
+    "dog.integumentary.skin",
+    "dog.visceral.kidneys",
+    "dog.visceral.spleen",
+    "dog.integumentary.eyes",
+    "dog.integumentary.claws"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Solano-Gallego L, Miró G, Koutinas A, et al. LeishVet guidelines for the practical management of canine leishmaniosis. Parasit Vectors 4:86",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21599936/",
+      "year": 2011
+    },
+    {
+      "title": "Saridomichelakis MN, Baneth G, Colombo S, et al. World Association for Veterinary Dermatology Consensus Statement for Diagnosis, and Evidence-Based Clinical Practice Guidelines for Treatment and Prevention of Canine Leishmaniosis. Vet Dermatol 36:723-787",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40745695/",
+      "year": 2025
+    },
+    {
+      "title": "Wylie CE, Carbonell-Antoñanzas M, Aiassa E, et al. A systematic review of the efficacy of prophylactic control measures for naturally occurring canine leishmaniosis. Part II: topically applied insecticide treatments and prophylactic medications. Prev Vet Med 117:19-27",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25062787/",
+      "year": 2014
+    },
+    {
+      "title": "Oliva G, Nieto J, Foglia Manzillo V, et al. A randomised, double-blind, controlled efficacy trial of the LiESP/QA-21 vaccine in naïve dogs exposed to two leishmania infantum transmission seasons. PLoS Negl Trop Dis 8:e3213",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25299614/",
+      "year": 2014
+    },
+    {
+      "title": "Sabaté D, Llinás J, Homedes J, et al. A single-centre, open-label, controlled, randomized clinical trial to assess the preventive efficacy of a domperidone-based treatment programme against clinical canine leishmaniasis in a high prevalence area. Prev Vet Med 115:56-63",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24698328/",
+      "year": 2014
+    },
+    {
+      "title": "Gavgani AS, Hodjati MH, Mohite H, et al. Effect of insecticide-impregnated dog collars on incidence of zoonotic visceral leishmaniasis in Iranian children: a matched-cluster randomised trial. Lancet 360:374-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12241778/",
+      "year": 2002
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

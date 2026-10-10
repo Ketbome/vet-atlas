@@ -1,0 +1,53 @@
+{
+  "id": "feline-panleukopenia",
+  "category": "infectious",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.small-intestine",
+    "cat.visceral.brain",
+    "cat.visceral.spleen"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Truyen U, Addie D, Belák S, et al. Feline panleukopenia. ABCD guidelines on prevention and management. J Feline Med Surg 11:538-546",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19481033/",
+      "year": 2009
+    },
+    {
+      "title": "Kruse BD, Unterer S, Horlacher K, et al. Prognostic factors in cats with feline panleukopenia. J Vet Intern Med 24:1271-1276",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21039863/",
+      "year": 2010
+    },
+    {
+      "title": "Porporato F, Horzinek MC, Hofmann-Lehmann R, et al. Survival estimates and outcome predictors for shelter cats with feline panleukopenia virus infection. J Am Vet Med Assoc 253:188-195",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29963955/",
+      "year": 2018
+    },
+    {
+      "title": "Patterson EV, Reese MJ, Tucker SJ, et al. Effect of vaccination on parvovirus antigen testing in kittens. J Am Vet Med Assoc 230:359-363",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17269866/",
+      "year": 2007
+    },
+    {
+      "title": "Jakel V, Cussler K, Hanschmann KM, et al. Vaccination against Feline Panleukopenia: implications from a field study in kittens. BMC Vet Res 8:62",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22613093/",
+      "year": 2012
+    },
+    {
+      "title": "Squires RA, Crawford C, Marcondes M, et al. 2024 guidelines for the vaccination of dogs and cats - compiled by the Vaccination Guidelines Group (VGG) of the World Small Animal Veterinary Association (WSAVA). J Small Anim Pract 65:277-316",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38568777/",
+      "year": 2024
+    },
+    {
+      "title": "Stone AE, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg 22:813-830",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32845224/",
+      "year": 2020
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

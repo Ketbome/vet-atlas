@@ -1,0 +1,57 @@
+{
+  "id": "feline-retrovirus-infections",
+  "category": "infectious",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.spleen",
+    "cat.visceral.small-intestine",
+    "cat.skeletal.mandible"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg 22:5-30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31916872/",
+      "year": 2020
+    },
+    {
+      "title": "Burling AN, Levy JK, Scott HM, et al. Seroprevalences of feline leukemia virus and feline immunodeficiency virus infection in cats in the United States and Canada and risk factors for seropositivity. J Am Vet Med Assoc 251:187-194",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28671491/",
+      "year": 2017
+    },
+    {
+      "title": "Spada E, Perego R, Sgamma EA, et al. Survival time and effect of selected predictor variables on survival in owned pet cats seropositive for feline immunodeficiency and leukemia virus attending a referral clinic in northern Italy. Prev Vet Med 150:38-46",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29406082/",
+      "year": 2018
+    },
+    {
+      "title": "Liem BP, Dhand NK, Pepper AE, et al. Clinical findings and survival in cats naturally infected with feline immunodeficiency virus. J Vet Intern Med 27:798-805",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23734699/",
+      "year": 2013
+    },
+    {
+      "title": "Castillo-Aliaga C, Dunham S, McCallum-Chanter H, et al. Twenty-year lifetime histories of FIV- and FeLV-infected cats in a sanctuary in the UK indicate an effect of retroviral infection on longevity. Vet Rec (online ahead of print)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42216781/",
+      "year": 2026
+    },
+    {
+      "title": "Westman ME, Malik R, Hall E, et al. The protective rate of the feline immunodeficiency virus vaccine: An Australian field study. Vaccine 34:4752-4758",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27522177/",
+      "year": 2016
+    },
+    {
+      "title": "Stone AE, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg 22:813-830",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32845224/",
+      "year": 2020
+    },
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

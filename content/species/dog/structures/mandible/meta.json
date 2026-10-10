@@ -14,7 +14,8 @@
   },
   "pathologies": [
     "mandibular-fracture",
-    "craniomandibular-osteopathy"
+    "craniomandibular-osteopathy",
+    "periodontal-disease"
   ],
   "media": [
     "wm-dog-mandible-lateral-01",

@@ -1,0 +1,59 @@
+{
+  "id": "periodontal-disease",
+  "category": "inflammatory",
+  "species": [
+    "dog",
+    "cat"
+  ],
+  "structures": [
+    "dog.skeletal.mandible",
+    "dog.skeletal.skull",
+    "cat.skeletal.mandible",
+    "cat.skeletal.skull"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Niemiec B, Gawor J, Nemec A, et al. World Small Animal Veterinary Association Global Dental Guidelines. J Small Anim Pract 67:859-987",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42687403/",
+      "year": 2026
+    },
+    {
+      "title": "O'Neill DG, Mitchell CE, Humphrey J, et al. Epidemiology of periodontal disease in dogs in the UK primary-care veterinary setting. J Small Anim Pract 62:1051-1061",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34374104/",
+      "year": 2021
+    },
+    {
+      "title": "Harvey C, Serfilippi L, Barnvos D. Effect of Frequency of Brushing Teeth on Plaque and Calculus Accumulation, and Gingivitis in Dogs. J Vet Dent 32:16-21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26197686/",
+      "year": 2015
+    },
+    {
+      "title": "Glickman LT, Glickman NW, Moore GE, et al. Association between chronic azotemic kidney disease and the severity of periodontal disease in dogs. Prev Vet Med 99:193-200",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21345505/",
+      "year": 2011
+    },
+    {
+      "title": "O'Neill DG, Blenkarn A, Brodbelt DC, et al. Periodontal disease in cats under primary veterinary care in the UK: frequency and risk factors. J Feline Med Surg 25:1098612X231158154",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36912667/",
+      "year": 2023
+    },
+    {
+      "title": "Trevejo RT, Lefebvre SL, Yang M, et al. Survival analysis to evaluate associations between periodontal disease and the risk of development of chronic azotemic kidney disease in cats evaluated at primary care veterinary hospitals. J Am Vet Med Assoc 252:710-720",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29504859/",
+      "year": 2018
+    },
+    {
+      "title": "Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc 55:49-69",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30776257/",
+      "year": 2019
+    },
+    {
+      "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
+      "year": 2020
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -14,7 +14,8 @@
   },
   "pathologies": [
     "brachycephalic-obstructive-airway-syndrome",
-    "craniomandibular-osteopathy"
+    "craniomandibular-osteopathy",
+    "periodontal-disease"
   ],
   "media": [
     "wm-dog-skull-specimen-lateral-01",

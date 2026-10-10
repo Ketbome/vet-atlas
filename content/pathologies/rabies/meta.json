@@ -1,0 +1,53 @@
+{
+  "id": "rabies",
+  "category": "infectious",
+  "species": [
+    "dog",
+    "cat",
+    "cow"
+  ],
+  "structures": [
+    "dog.visceral.brain",
+    "cat.visceral.brain",
+    "cow.visceral.brain"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
+      "year": 2021
+    },
+    {
+      "title": "Constable PD, Hinchcliff KW, Done SH, et al. Veterinary Medicine: A textbook of the diseases of cattle, horses, sheep, pigs, and goats, 11th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Hampson K, Coudeville L, Lembo T, et al. Estimating the global burden of endemic canine rabies. PLoS Negl Trop Dis 9:e0003709",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25881058/",
+      "year": 2015
+    },
+    {
+      "title": "Hampson K, Dushoff J, Cleaveland S, et al. Transmission dynamics and prospects for the elimination of canine rabies. PLoS Biol 7:e53",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19278295/",
+      "year": 2009
+    },
+    {
+      "title": "Rattanavipapong W, Thavorncharoensap M, Youngkong S, et al. The impact of transmission dynamics of rabies control: Systematic review. Vaccine 37 Suppl 1:A154-A165",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30528329/",
+      "year": 2019
+    },
+    {
+      "title": "Tepsumethanon V, Lumlertdacha B, Mitmoonpitak C, et al. Survival of naturally infected rabid dogs and cats. Clin Infect Dis 39:278-80",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15307040/",
+      "year": 2004
+    },
+    {
+      "title": "Soler-Tovar D, Escobar LE. Rabies transmitted from vampires to cattle: An overview. PLoS One 20:e0317214",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39804921/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

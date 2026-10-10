@@ -15,7 +15,9 @@
   },
   "pathologies": [
     "mastitis",
-    "parturient-hypocalcemia"
+    "parturient-hypocalcemia",
+    "leptospirosis",
+    "brucellosis"
   ],
   "media": [],
   "related": [
