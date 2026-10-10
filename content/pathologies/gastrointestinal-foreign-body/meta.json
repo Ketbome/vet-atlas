@@ -2,12 +2,16 @@
   "id": "gastrointestinal-foreign-body",
   "category": "traumatic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.small-intestine",
     "dog.visceral.stomach",
-    "dog.visceral.esophagus"
+    "dog.visceral.esophagus",
+    "cat.visceral.small-intestine",
+    "cat.visceral.stomach",
+    "cat.visceral.esophagus"
   ],
   "media": [],
   "references": [
@@ -18,6 +22,31 @@
     {
       "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
       "year": 2013
+    },
+    {
+      "title": "Hayes G. Gastrointestinal foreign bodies in dogs and cats: a retrospective study of 208 cases. J Small Anim Pract 50:576-583",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19814770/",
+      "year": 2009
+    },
+    {
+      "title": "Felts JF, Fox PR, Burk RL. Thread and sewing needles as gastrointestinal foreign bodies in the cat: a review of 64 cases. J Am Vet Med Assoc 184:56-59",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6698839/",
+      "year": 1984
+    },
+    {
+      "title": "Basher AW, Fowler JD. Conservative versus surgical management of gastrointestinal linear foreign bodies in the cat. Vet Surg 16:135-138",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3507132/",
+      "year": 1987
+    },
+    {
+      "title": "Gollnick HR, Schmiedt CW, Wallace ML, et al. Retrospective evaluation of surgical treatment of linear and discrete gastrointestinal foreign bodies in cats: 2009-2021. J Feline Med Surg 25:1098612X231178140",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37350262/",
+      "year": 2023
+    },
+    {
+      "title": "Miller AK, Regier PJ, Ham KM, et al. Linear and discrete foreign body small intestinal obstruction outcomes, complication risk factors, and single incision red rubber catheter technique success in cats. Vet Surg 53:1256-1265",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38969492/",
+      "year": 2024
     }
   ],
   "review": {

@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.supraspinatus",
+  "system": "cat.muscular",
+  "nav": "M. supraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.supraspinatus.L",
+    "cat.muscular.supraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B44A3C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-arm-muscles-wilder-01",
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-shoulder-neck-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.humerus",
+    "cat.muscular.infraspinatus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

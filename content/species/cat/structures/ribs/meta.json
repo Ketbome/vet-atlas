@@ -1,0 +1,58 @@
+{
+  "id": "cat.skeletal.ribs",
+  "system": "cat.skeletal",
+  "nav": "Costae",
+  "region": "axial",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.ribs.1.L",
+    "cat.skeletal.ribs.1.R",
+    "cat.skeletal.ribs.2.L",
+    "cat.skeletal.ribs.2.R",
+    "cat.skeletal.ribs.3.L",
+    "cat.skeletal.ribs.3.R",
+    "cat.skeletal.ribs.4.L",
+    "cat.skeletal.ribs.4.R",
+    "cat.skeletal.ribs.5.L",
+    "cat.skeletal.ribs.5.R",
+    "cat.skeletal.ribs.6.L",
+    "cat.skeletal.ribs.6.R",
+    "cat.skeletal.ribs.7.L",
+    "cat.skeletal.ribs.7.R",
+    "cat.skeletal.ribs.8.L",
+    "cat.skeletal.ribs.8.R",
+    "cat.skeletal.ribs.9.L",
+    "cat.skeletal.ribs.9.R",
+    "cat.skeletal.ribs.10.L",
+    "cat.skeletal.ribs.10.R",
+    "cat.skeletal.ribs.11.L",
+    "cat.skeletal.ribs.11.R",
+    "cat.skeletal.ribs.12.L",
+    "cat.skeletal.ribs.12.R",
+    "cat.skeletal.ribs.13.L",
+    "cat.skeletal.ribs.13.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "flail-chest",
+    "pectus-excavatum"
+  ],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-thorax-vd-01",
+    "wm-cat-skeleton-specimen-01"
+  ],
+  "related": [
+    "cat.skeletal.vertebrae-thoracic",
+    "cat.skeletal.sternum",
+    "cat.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

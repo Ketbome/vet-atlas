@@ -2,13 +2,18 @@
   "id": "portosystemic-shunt",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.liver",
     "dog.visceral.great-vessels",
     "dog.visceral.brain",
-    "dog.visceral.urinary-bladder"
+    "dog.visceral.urinary-bladder",
+    "cat.visceral.liver",
+    "cat.visceral.great-vessels",
+    "cat.visceral.brain",
+    "cat.visceral.urinary-bladder"
   ],
   "media": [],
   "references": [
@@ -19,6 +24,35 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Tillson DM, Winkler JT. Diagnosis and treatment of portosystemic shunts in the cat. Vet Clin North Am Small Anim Pract 32:881-899",
+      "year": 2002
+    },
+    {
+      "title": "Lipscomb VJ, Jones HJ, Brockman DJ. Complications and long-term outcomes of the ligation of congenital portosystemic shunts in 49 cats. Vet Rec 160:465-470",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17416722/",
+      "year": 2007
+    },
+    {
+      "title": "Weisse C, Asano K, Ishigaki K, et al. Anatomical classification of feline congenital extrahepatic portosystemic shunts based on CT angiography: A SVSTS and VIRIES multi-institutional study in 231 cats. Vet Radiol Ultrasound 65:359-368",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38597362/",
+      "year": 2024
+    },
+    {
+      "title": "Strickland R, Tivers MS, Fowkes RC, et al. Incidence and risk factors for neurological signs after attenuation of a single congenital portosystemic shunt in 50 cats. Vet Surg 50:303-311",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32691934/",
+      "year": 2021
+    },
+    {
+      "title": "Otero Balda I, Selmic LE, Stamenova P, et al. Prognostic factors for short-term survival of cats that experienced postattenuation neurologic signs after surgical attenuation of single congenital portosystemic shunts. Vet Surg 54:930-944",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40349143/",
+      "year": 2025
+    },
+    {
+      "title": "Mohammadi S, Pahlevaninezhad N, Valavi P, et al. Neurological consequences after portosystemic shunt attenuation in cats: A meta-analysis study. Vet J 306:106150",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38838770/",
+      "year": 2024
     }
   ],
   "review": {

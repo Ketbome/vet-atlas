@@ -1,0 +1,54 @@
+{
+  "id": "megacolon",
+  "category": "degenerative",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.large-intestine",
+    "cat.skeletal.sacrum"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Washabau RJ, Holt D. Pathogenesis, diagnosis, and therapy of feline idiopathic megacolon. Vet Clin North Am Small Anim Pract 29:589-603",
+      "year": 1999
+    },
+    {
+      "title": "Washabau RJ, Stalis IH. Alterations in colonic smooth muscle function in cats with idiopathic megacolon. Am J Vet Res 57:580-587",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8712528/",
+      "year": 1996
+    },
+    {
+      "title": "Rosin E, Walshaw R, Mehlhaff C, et al. Subtotal colectomy for treatment of chronic constipation associated with idiopathic megacolon in cats: 38 cases (1979-1985). J Am Vet Med Assoc 193:850-853",
+      "year": 1988
+    },
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Trevail T, Gunn-Moore D, Carrera I, et al. Radiographic diameter of the colon in normal and constipated cats and in cats with megacolon. Vet Radiol Ultrasound 52:516-520",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21599794/",
+      "year": 2011
+    },
+    {
+      "title": "Benjamin SE, Drobatz KJ. Retrospective evaluation of risk factors and treatment outcome predictors in cats presenting to the emergency room for constipation. J Feline Med Surg 22:153-160",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30834807/",
+      "year": 2020
+    },
+    {
+      "title": "Rochon J, Charles H, Biourge V, et al. A psyllium-supplemented gastrointestinal diet is effective for the management of chronic constipation in cats: a 6-month controlled clinical trial. J Feline Med Surg 28:1098612X261420519",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41631677/",
+      "year": 2026
+    },
+    {
+      "title": "Grossman RM, Sumner JP, Lopez DJ, et al. Evaluation of outcomes following subtotal colectomy for the treatment of idiopathic megacolon in cats. J Am Vet Med Assoc 259:1292-1299",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34727062/",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

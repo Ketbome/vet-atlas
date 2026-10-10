@@ -1,0 +1,35 @@
+{
+  "id": "cat.muscular.trapezius",
+  "system": "cat.muscular",
+  "nav": "M. trapezius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.trapezius.L",
+    "cat.muscular.trapezius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24B3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-trapezius-group-wilder-01",
+    "wm-cat-superficial-muscles-holding-01",
+    "wm-cat-forequarter-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.vertebrae-cervical",
+    "cat.skeletal.vertebrae-thoracic",
+    "cat.muscular.omotransversarius",
+    "cat.muscular.latissimus-dorsi",
+    "cat.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

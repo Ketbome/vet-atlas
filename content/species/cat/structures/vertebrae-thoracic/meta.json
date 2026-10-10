@@ -1,0 +1,43 @@
+{
+  "id": "cat.skeletal.vertebrae-thoracic",
+  "system": "cat.skeletal",
+  "nav": "Vertebrae thoracicae",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.vertebrae-thoracic.t1",
+    "cat.skeletal.vertebrae-thoracic.t2",
+    "cat.skeletal.vertebrae-thoracic.t3",
+    "cat.skeletal.vertebrae-thoracic.t4",
+    "cat.skeletal.vertebrae-thoracic.t5",
+    "cat.skeletal.vertebrae-thoracic.t6",
+    "cat.skeletal.vertebrae-thoracic.t7",
+    "cat.skeletal.vertebrae-thoracic.t8",
+    "cat.skeletal.vertebrae-thoracic.t9",
+    "cat.skeletal.vertebrae-thoracic.t10",
+    "cat.skeletal.vertebrae-thoracic.t11",
+    "cat.skeletal.vertebrae-thoracic.t12",
+    "cat.skeletal.vertebrae-thoracic.t13"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-thorax-vd-01",
+    "wm-cat-skeleton-specimen-01"
+  ],
+  "related": [
+    "cat.skeletal.vertebrae-cervical",
+    "cat.skeletal.vertebrae-lumbar",
+    "cat.skeletal.ribs",
+    "cat.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "cat.muscular.deltoideus",
+  "system": "cat.muscular",
+  "nav": "M. deltoideus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.deltoideus.scapular.L",
+    "cat.muscular.deltoideus.scapular.R",
+    "cat.muscular.deltoideus.acromial.L",
+    "cat.muscular.deltoideus.acromial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13A30",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-trapezius-group-wilder-01",
+    "wm-cat-forequarter-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.humerus",
+    "cat.muscular.infraspinatus",
+    "cat.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

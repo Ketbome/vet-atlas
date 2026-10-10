@@ -2,21 +2,34 @@
   "id": "urolithiasis",
   "category": "metabolic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.urinary-bladder",
-    "dog.visceral.kidneys"
+    "dog.visceral.kidneys",
+    "cat.visceral.urinary-bladder",
+    "cat.visceral.kidneys"
   ],
   "media": [],
   "references": [
     {
       "title": "Lulich JP, Berent AC, Adams LG, et al. ACVIM small animal consensus recommendations on the treatment and prevention of uroliths in dogs and cats. J Vet Intern Med 30:1564-1574",
-      "year": 2016
+      "year": 2016,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27611724/"
     },
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Berent AC. Ureteral obstructions in dogs and cats: a review of traditional and new interventional diagnostic and therapeutic options. J Vet Emerg Crit Care 21:86-103",
+      "year": 2011
+    },
+    {
+      "title": "Taylor S, Boysen S, Buffington T, et al. 2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats. J Feline Med Surg 27(2):1098612X241309176",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39935081/",
+      "year": 2025
     }
   ],
   "review": {

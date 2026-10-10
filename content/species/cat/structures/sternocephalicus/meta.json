@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.sternocephalicus",
+  "system": "cat.muscular",
+  "nav": "M. sternocephalicus",
+  "region": "neck",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.sternocephalicus.L",
+    "cat.muscular.sternocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A2392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-pectoral-muscles-wilder-01",
+    "wm-cat-ventral-trunk-muscles-mivart-01",
+    "wm-cat-serratus-ventralis-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.sternum",
+    "cat.skeletal.skull",
+    "cat.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

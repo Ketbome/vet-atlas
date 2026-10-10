@@ -1,0 +1,34 @@
+{
+  "id": "cat.skeletal.humerus",
+  "system": "cat.skeletal",
+  "nav": "Humerus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.humerus.L",
+    "cat.skeletal.humerus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "osteosarcoma"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-limbs-ct-munchkin-01",
+    "wm-cat-thorax-lateral-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.radius",
+    "cat.skeletal.ulna",
+    "cat.skeletal.clavicle"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

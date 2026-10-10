@@ -1,0 +1,53 @@
+{
+  "id": "polycystic-kidney-disease",
+  "category": "congenital",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.kidneys"
+  ],
+  "media": [
+    "wm-cat-pkd-kidney-01",
+    "wm-cat-pkd-us-01"
+  ],
+  "references": [
+    {
+      "title": "Lyons LA, Biller DS, Erdman CA, et al. Feline polycystic kidney disease mutation identified in PKD1. J Am Soc Nephrol 15:2548-2555",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15466259/",
+      "year": 2004
+    },
+    {
+      "title": "Barthez PY, Rivier P, Begon D. Prevalence of polycystic kidney disease in Persian and Persian related cats in France. J Feline Med Surg 5:345-347",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14623204/",
+      "year": 2003
+    },
+    {
+      "title": "International Renal Interest Society (IRIS). IRIS Staging of CKD",
+      "year": 2023
+    },
+    {
+      "title": "Bonazzi M, Volta A, Gnudi G, et al. Comparison between ultrasound and genetic testing for the early diagnosis of polycystic kidney disease in Persian and Exotic Shorthair cats. J Feline Med Surg 11:430-434",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19046910/",
+      "year": 2009
+    },
+    {
+      "title": "Guerra JM, Freitas MF, Daniel AG, et al. Age-based ultrasonographic criteria for diagnosis of autosomal dominant polycystic kidney disease in Persian cats. J Feline Med Surg 21:156-164",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29652208/",
+      "year": 2019
+    },
+    {
+      "title": "Enomoto T, Kobayashi S, Ishiguro N. Life table analysis of feline polycystic kidney disease in Japan. J Vet Med Sci 87:791-797",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40399101/",
+      "year": 2025
+    },
+    {
+      "title": "Ukawa H, Kida A, Ataka K, et al. Widespread genetic testing controls inherited polycystic kidney disease while avoiding inbreeding in cats. BMC Genomics 27:716",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42316006/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

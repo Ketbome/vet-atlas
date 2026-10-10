@@ -1,0 +1,31 @@
+{
+  "id": "cat.skeletal.patella",
+  "system": "cat.skeletal",
+  "nav": "Patella",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.patella.L",
+    "cat.skeletal.patella.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "patellar-luxation"
+  ],
+  "media": [
+    "wm-cat-femur-mivart-01",
+    "wm-cat-skeleton-specimen-01"
+  ],
+  "related": [
+    "cat.skeletal.femur",
+    "cat.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

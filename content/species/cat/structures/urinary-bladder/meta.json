@@ -1,0 +1,37 @@
+{
+  "id": "cat.visceral.urinary-bladder",
+  "system": "cat.visceral",
+  "nav": "Vesica urinaria",
+  "region": "urinary",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.urinary-bladder"
+  ],
+  "fidelity": "scan",
+  "color": "#E8C6A4",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [
+    "feline-idiopathic-cystitis",
+    "urethral-obstruction",
+    "urolithiasis",
+    "sacrocaudal-luxation"
+  ],
+  "media": [
+    "wm-cat-bladder-struvite-lat-01",
+    "wm-cat-urethral-catheter-01",
+    "wm-dog-urinary-bladder-histo-01"
+  ],
+  "related": [
+    "cat.visceral.kidneys",
+    "cat.visceral.prostate",
+    "cat.visceral.large-intestine",
+    "cat.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

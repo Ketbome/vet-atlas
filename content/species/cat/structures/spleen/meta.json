@@ -1,0 +1,29 @@
+{
+  "id": "cat.visceral.spleen",
+  "system": "cat.visceral",
+  "nav": "Lien",
+  "region": "endocrine-lymphatic",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.spleen"
+  ],
+  "fidelity": "scan",
+  "color": "#6B2D46",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-spleen-specimen-01"
+  ],
+  "related": [
+    "cat.visceral.stomach",
+    "cat.visceral.pancreas",
+    "cat.visceral.kidneys"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

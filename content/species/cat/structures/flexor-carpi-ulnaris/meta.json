@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.flexor-carpi-ulnaris",
+  "system": "cat.muscular",
+  "nav": "M. flexor carpi ulnaris",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.flexor-carpi-ulnaris.L",
+    "cat.muscular.flexor-carpi-ulnaris.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A84236",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.ulna",
+    "cat.skeletal.carpus",
+    "cat.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

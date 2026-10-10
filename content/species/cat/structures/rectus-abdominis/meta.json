@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.rectus-abdominis",
+  "system": "cat.muscular",
+  "nav": "M. rectus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.rectus-abdominis.L",
+    "cat.muscular.rectus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9F3B32",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-rectus-abdominis-specimen-01",
+    "wm-cat-ventral-trunk-muscles-mivart-01",
+    "wm-cat-pectoral-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.sternum",
+    "cat.skeletal.os-coxae",
+    "cat.muscular.obliquus-externus-abdominis",
+    "cat.muscular.pectorales"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "cat.skeletal.sacrum",
+  "system": "cat.skeletal",
+  "nav": "Os sacrum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.sacrum"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "sacrocaudal-luxation",
+    "megacolon"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-skeleton-diagram-01"
+  ],
+  "related": [
+    "cat.skeletal.vertebrae-lumbar",
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cat.muscular",
+  "species": "cat",
+  "slug": "muscular",
+  "name": {
+    "es": "Sistema muscular",
+    "en": "Muscular system"
+  },
+  "status": "published",
+  "model": {
+    "file": "/models/cat/muscular.glb",
+    "source": "vet-atlas-procedural-muscles",
+    "placeholder": false
+  },
+  "color": "#A3433A",
+  "order": 1,
+  "material": "muscle",
+  "regions": [
+    {
+      "id": "head",
+      "name": {
+        "es": "Cabeza",
+        "en": "Head"
+      }
+    },
+    {
+      "id": "neck",
+      "name": {
+        "es": "Cuello",
+        "en": "Neck"
+      }
+    },
+    {
+      "id": "trunk",
+      "name": {
+        "es": "Tronco",
+        "en": "Trunk"
+      }
+    },
+    {
+      "id": "thoracic-limb",
+      "name": {
+        "es": "Miembro torácico",
+        "en": "Thoracic limb"
+      }
+    },
+    {
+      "id": "pelvic-limb",
+      "name": {
+        "es": "Miembro pélvico",
+        "en": "Pelvic limb"
+      }
+    }
+  ]
+}

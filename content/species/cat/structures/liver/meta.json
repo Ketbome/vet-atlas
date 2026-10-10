@@ -1,0 +1,37 @@
+{
+  "id": "cat.visceral.liver",
+  "system": "cat.visceral",
+  "nav": "Hepar",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.liver"
+  ],
+  "fidelity": "scan",
+  "color": "#6B2A21",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "hepatic-lipidosis",
+    "feline-infectious-peritonitis",
+    "acute-pancreatitis",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-cat-liver-biliary-injected-01",
+    "wm-cat-liver-double-gallbladder-01"
+  ],
+  "related": [
+    "cat.visceral.stomach",
+    "cat.visceral.pancreas",
+    "cat.visceral.small-intestine",
+    "cat.muscular.diaphragm",
+    "cat.visceral.great-vessels"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

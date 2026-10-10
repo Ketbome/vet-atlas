@@ -1,0 +1,32 @@
+{
+  "id": "cat.skeletal.os-coxae",
+  "system": "cat.skeletal",
+  "nav": "Os coxae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.os-coxae.L",
+    "cat.skeletal.os-coxae.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "hip-dysplasia"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-skeleton-diagram-01"
+  ],
+  "related": [
+    "cat.skeletal.sacrum",
+    "cat.skeletal.femur",
+    "cat.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

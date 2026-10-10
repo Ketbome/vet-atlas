@@ -1,0 +1,28 @@
+{
+  "id": "cat.skeletal.metacarpus",
+  "system": "cat.skeletal",
+  "nav": "Ossa metacarpalia",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.metacarpus.L",
+    "cat.skeletal.metacarpus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-autopodium-skeleton-01"
+  ],
+  "related": [
+    "cat.skeletal.carpus",
+    "cat.skeletal.phalanges-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

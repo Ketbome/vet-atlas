@@ -1,0 +1,51 @@
+{
+  "id": "hyperthyroidism",
+  "category": "metabolic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.thyroid",
+    "cat.visceral.heart"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Carney HC, Ward CR, Bailey SJ, et al. 2016 AAFP Guidelines for the Management of Feline Hyperthyroidism. J Feline Med Surg 18:400-416",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27143042/",
+      "year": 2016
+    },
+    {
+      "title": "Peterson ME, Becker DV. Radioiodine treatment of 524 cats with hyperthyroidism. J Am Vet Med Assoc 207:1422-1428",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7493869/",
+      "year": 1995
+    },
+    {
+      "title": "Feldman EC, Nelson RW, Reusch CE, Scott-Moncrieff JCR, Behrend EN. Canine and Feline Endocrinology, 4th ed. Elsevier",
+      "year": 2015
+    },
+    {
+      "title": "Peterson ME, Broome MR. Thyroid scintigraphy findings in 2096 cats with hyperthyroidism. Vet Radiol Ultrasound 56:84-95",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24798491/",
+      "year": 2015
+    },
+    {
+      "title": "Peterson ME, Melián C, Nichols R. Measurement of serum concentrations of free thyroxine, total thyroxine, and total triiodothyronine in cats with hyperthyroidism and cats with nonthyroidal disease. J Am Vet Med Assoc 218:529-536",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11229503/",
+      "year": 2001
+    },
+    {
+      "title": "Peterson ME, Varela FV, Rishniw M, et al. Evaluation of Serum Symmetric Dimethylarginine Concentration as a Marker for Masked Chronic Kidney Disease in Cats With Hyperthyroidism. J Vet Intern Med 32:295-304",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29377360/",
+      "year": 2018
+    },
+    {
+      "title": "Williams TL, Elliott J, Syme HM. Association of iatrogenic hypothyroidism with azotemia and reduced survival time in cats treated for hyperthyroidism. J Vet Intern Med 24:1086-1092",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20695989/",
+      "year": 2010
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

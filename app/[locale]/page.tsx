@@ -8,7 +8,6 @@ import { HeroViewer } from "@/components/atlas/hero-viewer";
 import { ShortcutKbd } from "@/components/atlas/shortcut-kbd";
 
 const upcoming = [
-  { id: "cat", scientificName: "Felis catus", name: { es: "Gato", en: "Cat" } },
   { id: "cow", scientificName: "Bos taurus", name: { es: "Vaca", en: "Cow" } },
   { id: "horse", scientificName: "Equus caballus", name: { es: "Caballo", en: "Horse" } },
 ];

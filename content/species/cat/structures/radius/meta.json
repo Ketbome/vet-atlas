@@ -1,0 +1,32 @@
+{
+  "id": "cat.skeletal.radius",
+  "system": "cat.skeletal",
+  "nav": "Radius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.radius.L",
+    "cat.skeletal.radius.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "osteosarcoma"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-limbs-ct-munchkin-01"
+  ],
+  "related": [
+    "cat.skeletal.ulna",
+    "cat.skeletal.humerus",
+    "cat.skeletal.carpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "cat.muscular.sartorius",
+  "system": "cat.muscular",
+  "nav": "M. sartorius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.sartorius.L",
+    "cat.muscular.sartorius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BA5A48",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-medial-thigh-muscles-mivart-01",
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.patella",
+    "cat.skeletal.tibia",
+    "cat.muscular.quadriceps-femoris",
+    "cat.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.flexor-digitorum-superficialis-pelvic",
+  "system": "cat.muscular",
+  "nav": "M. flexor digitorum superficialis (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.flexor-digitorum-superficialis-pelvic.L",
+    "cat.muscular.flexor-digitorum-superficialis-pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A5433A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-deep-thigh-muscles-mivart-01",
+    "wm-cat-medial-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.femur",
+    "cat.skeletal.tarsus",
+    "cat.skeletal.phalanges-pelvic",
+    "cat.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

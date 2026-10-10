@@ -1,0 +1,30 @@
+{
+  "id": "cat.skeletal.metatarsus",
+  "system": "cat.skeletal",
+  "nav": "Ossa metatarsalia",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.metatarsus.L",
+    "cat.skeletal.metatarsus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "scottish-fold-osteochondrodysplasia"
+  ],
+  "media": [
+    "wm-cat-autopodium-skeleton-01"
+  ],
+  "related": [
+    "cat.skeletal.tarsus",
+    "cat.skeletal.phalanges-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

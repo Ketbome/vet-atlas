@@ -1,0 +1,31 @@
+{
+  "id": "cat.skeletal.scapula",
+  "system": "cat.skeletal",
+  "nav": "Scapula",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.scapula.L",
+    "cat.skeletal.scapula.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-limbs-ct-munchkin-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.clavicle",
+    "cat.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

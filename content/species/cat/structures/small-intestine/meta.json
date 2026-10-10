@@ -1,0 +1,38 @@
+{
+  "id": "cat.visceral.small-intestine",
+  "system": "cat.visceral",
+  "nav": "Intestinum tenue",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.small-intestine"
+  ],
+  "fidelity": "scan",
+  "color": "#E2A28C",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "alimentary-lymphoma",
+    "gastrointestinal-foreign-body",
+    "feline-infectious-peritonitis",
+    "acute-pancreatitis"
+  ],
+  "media": [
+    "wm-cat-small-intestine-specimen-01",
+    "wm-cat-jejunum-histo-01",
+    "wm-cat-ileum-lymphoma-01",
+    "wm-cat-barium-gi-01"
+  ],
+  "related": [
+    "cat.visceral.pancreas",
+    "cat.visceral.liver",
+    "cat.visceral.stomach",
+    "cat.visceral.large-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

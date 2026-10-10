@@ -79,7 +79,7 @@
       "derivatives": true,
       "archiveDerivatives": true
     },
-    "notes": "Derivatives must be archived back on MorphoSource. Planned for the cat skeleton."
+    "notes": "Whole-body microCT of one cat (3DAS:00001, media 000360675 and 000360846) and loose cat bones. Checked 2026-10-09: every Felis catus media uses the MorphoSource Standard use agreement (InC-NC), which forbids republishing derivatives without permission. Not used; ask 3D Anatomy Studios (Aaron Olsen) for permission before integrating."
   },
   {
     "id": "lovadahn-canine-model",
@@ -103,7 +103,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on the dog skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
+    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts and scripts/build-cat-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on each species' skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
   },
   {
     "id": "pixelbeaker-canine-abdomen",
@@ -151,7 +151,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
+    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (dog) and scripts/ct/cat_visceral.py (cat) (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
   },
   {
     "id": "greyhound-pelvic-limb-ct",
@@ -188,5 +188,65 @@
       "derivatives": true
     },
     "notes": "3D scan of an isolated os penis; scaled and placed by hand in scripts/build-dog-skeletal.ts."
+  },
+  {
+    "id": "westerly-feline-skeleton",
+    "name": "\"Feline Skeleton Dec\" by westerly (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/feline-skeleton-dec-a5d0bb8f55dc4f49b103cd20d65e0b17",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Complete feline skeleton sculpted in ZBrush from reference (not a scan), with every bone as a separate shell. License checked 2026-10-09 via the Sketchfab API. scripts/build-cat-skeletal.ts splits it into bones, rescales it to a domestic cat and replaces its skull and mandible with RISD scans (fidelity \"modeled\")."
+  },
+  {
+    "id": "risd-nature-lab",
+    "name": "Edna Lawrence Nature Lab, Rhode Island School of Design (RISD Nature Lab on Sketchfab)",
+    "url": "https://sketchfab.com/risdnaturelab",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Artec Spider structured-light scans of specimens in the Nature Lab collection. License checked 2026-10-09 via the Sketchfab API. Used for the cat (scripts/build-cat-skeletal.ts): the skull is the scanned left half of one cranium mirrored and closed at the midline (the full skull scan of the same specimen lacks teeth and zygomatic arches); the mandible is a different, smaller specimen scaled up 26% to fit. Both are registered onto the sculpted feline skeleton and decimated."
+  },
+  {
+    "id": "lovadahn-cat-model",
+    "name": "\"Cat Model\" by Lova Dahn (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/cat-model-f79fccece2d2403586ac7407c4fe582b",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Hand-sculpted, retopologised domestic cat base mesh with separate eyes and claws, by the author of the dog base mesh. License checked 2026-10-09 via the Sketchfab API. scripts/build-cat-integumentary.ts registers the body onto the cat skeleton with a thin-plate-spline warp driven by skeletal landmarks (fidelity \"modeled\")."
+  },
+  {
+    "id": "pixelbeaker-feline-digestive",
+    "name": "\"Normal Feline Anatomy – Digestive System\" by pixelbeaker (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/normal-feline-anatomy-digestive-system-ab92a2a9d9024447b0ed4c080ad17106",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "CT segmentation of one cat (abdomen). License checked 2026-10-09 via the Sketchfab API. Its material labels are partly wrong: \"Pancreas\" is the spleen, the pancreas is one of the \"Liver\" objects and \"Stomach\" includes the abdominal esophagus and descending duodenum. scripts/build-cat-visceral.ts and scripts/ct/cat_visceral.py use the liver, stomach, small intestine, colon, spleen, pancreas (body and left lobe), kidneys, urinary bladder and abdominal great vessels: surfaces closed by voxel morphology, split, registered to the cat skeleton and decimated. The right pancreatic lobe, the rectum and the thoracic great vessels are modelled (fidelity \"modeled\")."
+  },
+  {
+    "id": "cornell-feline-brain-atlas",
+    "name": "Diffusion Tensor Imaging White Matter Atlas for the Domestic Feline (Cornell eCommons)",
+    "url": "https://doi.org/10.7298/X48W3BHQ.2",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "MRI population template of domestic cats (Johnson PJ, Barry E, Luh W, Raj A, Cerda-Gonzalez S, 2019, Cornell eCommons, handle 1813/58775.2). CC0. scripts/ct/cat_brain.py meshes the T1 template and splits cerebrum, cerebellum and brainstem by watershed at the transverse fissure and the fourth ventricle; scripts/ct/cat_visceral.py fits it into the cranial cavity of the skull scan."
   }
 ]

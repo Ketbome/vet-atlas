@@ -2,11 +2,14 @@
   "id": "hip-dysplasia",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.skeletal.femur",
-    "dog.skeletal.os-coxae"
+    "dog.skeletal.os-coxae",
+    "cat.skeletal.femur",
+    "cat.skeletal.os-coxae"
   ],
   "media": [
     "wm-dog-hip-dysplasia-vd-01",
@@ -23,6 +26,31 @@
     {
       "title": "Orthopedic Foundation for Animals: Hip dysplasia",
       "url": "https://ofa.org/diseases/hip-dysplasia/"
+    },
+    {
+      "title": "Keller GG, Reed AL, Lattimer JC, et al. Hip dysplasia: a feline population study. Vet Radiol Ultrasound 40:460-464",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10528838/",
+      "year": 1999
+    },
+    {
+      "title": "Langenbach A, Green P, Giger U, et al. Relationship between degenerative joint disease and hip joint laxity by use of distraction index and Norberg angle measurement in a group of cats. J Am Vet Med Assoc 213:1439-1443",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9828940/",
+      "year": 1998
+    },
+    {
+      "title": "Loder RT, Todhunter RJ. Demographics of hip dysplasia in the Maine Coon cat. J Feline Med Surg 20:302-307",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28430011/",
+      "year": 2018
+    },
+    {
+      "title": "Low M, Eksell P, Högström K, et al. Demography, heritability and genetic correlation of feline hip dysplasia and response to selection in a health screening programme. Sci Rep 9:17164",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31748658/",
+      "year": 2019
+    },
+    {
+      "title": "Ball E, Uhlhorn M, Eksell P, et al. Repeatability of radiographic assessments for feline hip dysplasia suggest consensus scores in radiology are more uncertain than commonly assumed. Sci Rep 12:13916",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35978034/",
+      "year": 2022
     }
   ],
   "review": {

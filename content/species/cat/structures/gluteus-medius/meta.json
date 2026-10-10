@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.gluteus-medius",
+  "system": "cat.muscular",
+  "nav": "M. gluteus medius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.gluteus-medius.L",
+    "cat.muscular.gluteus-medius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13B31",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-deep-thigh-muscles-mivart-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.femur",
+    "cat.muscular.gluteus-superficialis",
+    "cat.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

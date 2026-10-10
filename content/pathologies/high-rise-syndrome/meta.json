@@ -1,0 +1,45 @@
+{
+  "id": "high-rise-syndrome",
+  "category": "traumatic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.mandible",
+    "cat.skeletal.skull",
+    "cat.visceral.lungs",
+    "cat.skeletal.phalanges-thoracic",
+    "cat.skeletal.tarsus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Whitney WO, Mehlhaff CJ. High-rise syndrome in cats. J Am Vet Med Assoc 191:1399-1403",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3692980/",
+      "year": 1987
+    },
+    {
+      "title": "Vnuk D, Pirkić B, Maticić D, et al. Feline high-rise syndrome: 119 cases (1998-2001). J Feline Med Surg 6:305-312",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15363762/",
+      "year": 2004
+    },
+    {
+      "title": "Bonner SE, Reiter AM, Lewis JR. Orofacial manifestations of high-rise syndrome in cats: a retrospective study of 84 cases. J Vet Dent 29:10-18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22792856/",
+      "year": 2012
+    },
+    {
+      "title": "Candela Andrade M, Slunsky P, Nerlich A, et al. High-rise syndrome in cats (part 1): epidemiology and risk factors. J Feline Med Surg 27:1098612X251334091",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40448315/",
+      "year": 2025
+    },
+    {
+      "title": "Candela Andrade M, Slunsky P, Nerlich A, et al. High-rise syndrome in cats (part 2): injury patterns and survival rate. J Feline Med Surg 27:1098612X251334096",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40448334/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

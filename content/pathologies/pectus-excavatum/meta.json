@@ -2,11 +2,14 @@
   "id": "pectus-excavatum",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.skeletal.sternum",
-    "dog.skeletal.ribs"
+    "dog.skeletal.ribs",
+    "cat.skeletal.sternum",
+    "cat.skeletal.ribs"
   ],
   "media": [],
   "references": [
@@ -17,6 +20,30 @@
     {
       "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Fossum TW, Boudrieau RJ, Hobson HP, Rudy RL. Surgical correction of pectus excavatum, using external splintage in two dogs and a cat. J Am Vet Med Assoc 195:91-97",
+      "year": 1989
+    },
+    {
+      "title": "Charlesworth TM, Sturgess CP. Increased incidence of thoracic wall deformities in related Bengal kittens. J Feline Med Surg 14:365-368",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22311892/",
+      "year": 2012
+    },
+    {
+      "title": "Holst BS, Mikko S, Gustavsson MH, et al. Thoracic wall deformity in Bengal cats - Morphological findings and results from a breeder questionnaire. Vet J 317:106669",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41967597/",
+      "year": 2026
+    },
+    {
+      "title": "Charlesworth TM, Schwarz T, Sturgess CP. Pectus excavatum: computed tomography and medium-term surgical outcome in a prospective cohort of 10 kittens. J Feline Med Surg 18:613-619",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26088565/",
+      "year": 2016
+    },
+    {
+      "title": "Heidgerd KM, Casale S, Van Hatten R. Outcome and complications associated with correction of pectus excavatum using external coaptation in cats less than 20 weeks of age: 25 cases (2010-2024). Vet Surg (epub ahead of print)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42591014/",
+      "year": 2026
     }
   ],
   "review": {

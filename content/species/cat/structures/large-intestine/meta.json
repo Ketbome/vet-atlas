@@ -1,0 +1,35 @@
+{
+  "id": "cat.visceral.large-intestine",
+  "system": "cat.visceral",
+  "nav": "Intestinum crassum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.large-intestine"
+  ],
+  "fidelity": "modeled",
+  "color": "#CF9476",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "megacolon",
+    "colitis"
+  ],
+  "media": [
+    "wm-cat-abdomen-lat-01",
+    "wm-cat-abdomen-vd-01",
+    "wm-dog-rectum-histo-01"
+  ],
+  "related": [
+    "cat.visceral.small-intestine",
+    "cat.visceral.urinary-bladder",
+    "cat.skeletal.sacrum",
+    "cat.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

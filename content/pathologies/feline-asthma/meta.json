@@ -1,0 +1,54 @@
+{
+  "id": "feline-asthma",
+  "category": "inflammatory",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.lungs",
+    "cat.visceral.trachea"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reinero CR. Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma. Vet J 190:28-33",
+      "year": 2011
+    },
+    {
+      "title": "Trzil JE. Feline asthma: diagnostic and treatment update. Vet Clin North Am Small Anim Pract 50:375-391",
+      "year": 2020
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Grotheer M, Hirschberger J, Hartmann K, et al. Comparison of signalment, clinical, laboratory and radiographic parameters in cats with feline asthma and chronic bronchitis. J Feline Med Surg 22:649-655",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31483195/",
+      "year": 2020
+    },
+    {
+      "title": "Gadbois J, d'Anjou MA, Dunn M, et al. Radiographic abnormalities in cats with feline bronchial disease and intra- and interobserver variability in radiographic interpretation: 40 cases (1999-2006). J Am Vet Med Assoc 234:367-375",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19210258/",
+      "year": 2009
+    },
+    {
+      "title": "Chalifoux NV, Drobatz KJ, Reineke EL. Predictors of inflammatory lower airway disease in cats presented to the emergency room in respiratory distress: a case-control study. J Feline Med Surg 23:1098-1108",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33645320/",
+      "year": 2021
+    },
+    {
+      "title": "Reinero CR, Decile KC, Byerly JR, et al. Effects of drug treatment on inflammation and hyperreactivity of airways and on immune variables in cats with experimentally induced asthma. Am J Vet Res 66:1121-1127",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16111148/",
+      "year": 2005
+    },
+    {
+      "title": "Reinero CR, Delgado C, Spinka C, et al. Enantiomer-specific effects of albuterol on airway inflammation in healthy and asthmatic cats. Int Arch Allergy Immunol 150:43-50",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19339801/",
+      "year": 2009
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "cat.integumentary",
+  "species": "cat",
+  "slug": "integumentary",
+  "name": { "es": "Sistema tegumentario", "en": "Integumentary system" },
+  "status": "published",
+  "model": { "file": "/models/cat/integumentary.glb", "source": "lovadahn-cat-model", "placeholder": false },
+  "color": "#C29B78",
+  "order": 0,
+  "material": "skin",
+  "regions": [
+    { "id": "head", "name": { "es": "Cabeza", "en": "Head" } },
+    { "id": "trunk", "name": { "es": "Tronco", "en": "Trunk" } },
+    { "id": "thoracic-limb", "name": { "es": "Miembro torácico", "en": "Thoracic limb" } },
+    { "id": "pelvic-limb", "name": { "es": "Miembro pélvico", "en": "Pelvic limb" } },
+    { "id": "tail", "name": { "es": "Cola", "en": "Tail" } }
+  ]
+}

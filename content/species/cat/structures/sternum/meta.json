@@ -1,0 +1,37 @@
+{
+  "id": "cat.skeletal.sternum",
+  "system": "cat.skeletal",
+  "nav": "Sternum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.sternum.s1",
+    "cat.skeletal.sternum.s2",
+    "cat.skeletal.sternum.s3",
+    "cat.skeletal.sternum.s4",
+    "cat.skeletal.sternum.s5",
+    "cat.skeletal.sternum.s6",
+    "cat.skeletal.sternum.s7",
+    "cat.skeletal.sternum.s8"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "pectus-excavatum"
+  ],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-skeleton-specimen-02"
+  ],
+  "related": [
+    "cat.skeletal.ribs",
+    "cat.skeletal.clavicle"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

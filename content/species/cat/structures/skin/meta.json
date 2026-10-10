@@ -1,0 +1,35 @@
+{
+  "id": "cat.integumentary.skin",
+  "system": "cat.integumentary",
+  "nav": "Cutis",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "cat.integumentary.skin"
+  ],
+  "fidelity": "modeled",
+  "source": "lovadahn-cat-model",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1
+  },
+  "pathologies": [
+    "feline-injection-site-sarcoma",
+    "dermatophytosis",
+    "feline-eosinophilic-granuloma-complex"
+  ],
+  "media": [
+    "wm-cat-vibrissae-01",
+    "wm-cat-carpal-vibrissae-01",
+    "wm-cat-paw-pads-01",
+    "wm-rat-skin-he-01",
+    "wm-mammal-skin-histo-01"
+  ],
+  "related": [
+    "cat.integumentary.claws",
+    "cat.integumentary.eyes"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

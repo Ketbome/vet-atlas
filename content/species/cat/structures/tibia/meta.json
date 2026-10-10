@@ -1,0 +1,34 @@
+{
+  "id": "cat.skeletal.tibia",
+  "system": "cat.skeletal",
+  "nav": "Tibia",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.tibia.L",
+    "cat.skeletal.tibia.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "patellar-luxation",
+    "osteosarcoma"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-limbs-ct-munchkin-01"
+  ],
+  "related": [
+    "cat.skeletal.fibula",
+    "cat.skeletal.femur",
+    "cat.skeletal.patella",
+    "cat.skeletal.tarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

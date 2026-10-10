@@ -1,0 +1,57 @@
+{
+  "id": "dermatophytosis",
+  "category": "infectious",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.integumentary.skin"
+  ],
+  "media": [
+    "wm-cat-dermatophytosis-01",
+    "wm-cat-dermatophytosis-pseudomycetoma-01"
+  ],
+  "references": [
+    {
+      "title": "Moriello KA, Coyner K, Paterson S, Mignon B. Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol 28:266-e68",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28516493/",
+      "year": 2017
+    },
+    {
+      "title": "Frymus T, Gruffydd-Jones T, Pennisi MG, et al. Dermatophytosis in cats: ABCD guidelines on prevention and management. J Feline Med Surg 15:598-604",
+      "year": 2013
+    },
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "DeTar LG, Dubrovsky V, Scarlett JM. Descriptive epidemiology and test characteristics of cats diagnosed with Microsporum canis dermatophytosis in a Northwestern US animal shelter. J Feline Med Surg 21:1198-1205",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30776947/",
+      "year": 2019
+    },
+    {
+      "title": "Moriello KA, Leutenegger CM. Use of a commercial qPCR assay in 52 high risk shelter cats for disease identification of dermatophytosis and mycological cure. Vet Dermatol 29:66-e26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28833730/",
+      "year": 2018
+    },
+    {
+      "title": "Stuntebeck RL, Moriello KA. One vs two negative fungal cultures to confirm mycological cure in shelter cats treated for Microsporum canis dermatophytosis: a retrospective study. J Feline Med Surg 22:598-601",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31268401/",
+      "year": 2020
+    },
+    {
+      "title": "DeTar L, Janke KJ, Jacobson L. Randomized, non-inferiority clinical trial of three topical dermatophytosis treatments in shelter cats. J Feline Med Surg 27(9):1098612X251360611",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41017056/",
+      "year": 2025
+    },
+    {
+      "title": "Newbury S, Moriello KA, Kwochka KW, et al. Use of itraconazole and either lime sulphur or Malaseb Concentrate Rinse to treat shelter cats naturally infected with Microsporum canis: an open field trial. Vet Dermatol 22:75-79",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20604908/",
+      "year": 2011
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

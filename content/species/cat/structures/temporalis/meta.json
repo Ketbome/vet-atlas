@@ -1,0 +1,31 @@
+{
+  "id": "cat.muscular.temporalis",
+  "system": "cat.muscular",
+  "nav": "M. temporalis",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.temporalis.L",
+    "cat.muscular.temporalis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A3402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-superficial-muscles-holding-01",
+    "wm-cat-forequarter-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.mandible",
+    "cat.muscular.masseter"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

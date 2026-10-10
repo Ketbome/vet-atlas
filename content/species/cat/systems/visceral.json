@@ -1,0 +1,20 @@
+{
+  "id": "cat.visceral",
+  "species": "cat",
+  "slug": "visceral",
+  "name": { "es": "Esplacnología (órganos)", "en": "Splanchnology (organs)" },
+  "status": "published",
+  "model": { "file": "/models/cat/visceral.glb", "source": "pixelbeaker-feline-digestive", "placeholder": false },
+  "color": "#C27D72",
+  "order": 2,
+  "material": "organ",
+  "regions": [
+    { "id": "nervous", "name": { "es": "Sistema nervioso", "en": "Nervous system" } },
+    { "id": "cardiovascular", "name": { "es": "Sistema cardiovascular", "en": "Cardiovascular system" } },
+    { "id": "respiratory", "name": { "es": "Aparato respiratorio", "en": "Respiratory system" } },
+    { "id": "digestive", "name": { "es": "Aparato digestivo", "en": "Digestive system" } },
+    { "id": "urinary", "name": { "es": "Aparato urinario", "en": "Urinary system" } },
+    { "id": "genital", "name": { "es": "Aparato genital", "en": "Genital system" } },
+    { "id": "endocrine-lymphatic", "name": { "es": "Órganos endocrinos y linfáticos", "en": "Endocrine and lymphatic organs" } }
+  ]
+}

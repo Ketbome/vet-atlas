@@ -1,0 +1,30 @@
+{
+  "id": "cat.skeletal.carpus",
+  "system": "cat.skeletal",
+  "nav": "Ossa carpi",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.carpus.L",
+    "cat.skeletal.carpus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-autopodium-skeleton-01",
+    "wm-cat-carpal-vibrissae-01"
+  ],
+  "related": [
+    "cat.skeletal.radius",
+    "cat.skeletal.ulna",
+    "cat.skeletal.metacarpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

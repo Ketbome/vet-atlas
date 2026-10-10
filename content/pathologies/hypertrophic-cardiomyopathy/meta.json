@@ -1,0 +1,56 @@
+{
+  "id": "hypertrophic-cardiomyopathy",
+  "category": "degenerative",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.heart"
+  ],
+  "media": [
+    "wm-cat-hcm-echo-01"
+  ],
+  "references": [
+    {
+      "title": "Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med 34:1062-1077",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32243654/",
+      "year": 2020
+    },
+    {
+      "title": "Meurs KM, Sanchez X, David RM, et al. A cardiac myosin binding protein C mutation in the Maine Coon cat with familial hypertrophic cardiomyopathy. Hum Mol Genet 14:3587-3593",
+      "year": 2005
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Fox PR, Keene BW, Lamb K, et al. International collaborative study to assess cardiovascular risk and evaluate long-term health in cats with preclinical hypertrophic cardiomyopathy and apparently healthy cats: The REVEAL Study. J Vet Intern Med 32:930-943",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29660848/",
+      "year": 2018
+    },
+    {
+      "title": "Payne JR, Brodbelt DC, Luis Fuentes V. Cardiomyopathy prevalence in 780 apparently healthy cats in rehoming centres (the CatScan study). J Vet Cardiol 17 Suppl 1:S244-S257",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26776583/",
+      "year": 2015
+    },
+    {
+      "title": "Payne JR, Borgeat K, Brodbelt DC, et al. Risk factors associated with sudden death vs. congestive heart failure or arterial thromboembolism in cats with hypertrophic cardiomyopathy. J Vet Cardiol 17 Suppl 1:S318-S328",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26776589/",
+      "year": 2015
+    },
+    {
+      "title": "Fox PR, Rush JE, Reynolds CA, et al. Multicenter evaluation of plasma N-terminal probrain natriuretic peptide (NT-pro BNP) as a biochemical screening test for asymptomatic (occult) cardiomyopathy in cats. J Vet Intern Med 25:1010-1016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21985136/",
+      "year": 2011
+    },
+    {
+      "title": "Schober KE, Rush JE, Luis Fuentes V, et al. Effects of pimobendan in cats with hypertrophic cardiomyopathy and recent congestive heart failure: Results of a prospective, double-blind, randomized, nonpivotal, exploratory field study. J Vet Intern Med 35:789-800",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33543810/",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

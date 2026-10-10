@@ -1,0 +1,7 @@
+{
+  "id": "cat",
+  "scientificName": "Felis catus",
+  "name": { "es": "Gato", "en": "Cat" },
+  "status": "published",
+  "systems": ["cat.skeletal", "cat.integumentary", "cat.muscular", "cat.visceral"]
+}

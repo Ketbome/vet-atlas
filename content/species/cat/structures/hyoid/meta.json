@@ -1,0 +1,27 @@
+{
+  "id": "cat.skeletal.hyoid",
+  "system": "cat.skeletal",
+  "nav": "Apparatus hyoideus",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.hyoid"
+  ],
+  "fidelity": "illustrative",
+  "source": "placeholder",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-head-radiograph-01"
+  ],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.mandible"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

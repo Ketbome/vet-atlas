@@ -1,0 +1,56 @@
+{
+  "id": "diabetes-mellitus",
+  "category": "metabolic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.pancreas"
+  ],
+  "media": [
+    "wm-cat-diabetes-glucose-01"
+  ],
+  "references": [
+    {
+      "title": "Sparkes AH, Cannon M, Church D, et al. ISFM consensus guidelines on the practical management of diabetes mellitus in cats. J Feline Med Surg 17:235-250",
+      "year": 2015
+    },
+    {
+      "title": "Behrend E, Holford A, Lathan P, Rucinsky R, Schulman R. 2018 AAHA Diabetes Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc 54:1-21",
+      "year": 2018
+    },
+    {
+      "title": "Gostelow R, Forcada Y, Graves T, et al. Systematic review of feline diabetic remission: separating fact from opinion. Vet J 202:208-221",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25312717/",
+      "year": 2014
+    },
+    {
+      "title": "Taylor S, Cannon M, Church D, et al. iCatCare 2025 consensus guidelines on the diagnosis and management of diabetes mellitus in cats. J Feline Med Surg 27:1098612X251399103",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41224734/",
+      "year": 2025
+    },
+    {
+      "title": "Niessen SJ, Forcada Y, Mantis P, et al. Studying Cat (Felis catus) Diabetes: Beware of the Acromegalic Imposter. PLoS One 10:e0127794",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26023776/",
+      "year": 2015
+    },
+    {
+      "title": "Bennett N, Greco DS, Peterson ME, et al. Comparison of a low carbohydrate-low fiber diet and a moderate carbohydrate-high fiber diet in the management of feline diabetes mellitus. J Feline Med Surg 8:73-84",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16275041/",
+      "year": 2006
+    },
+    {
+      "title": "Niessen SJM, Kooistra HS, Forcada Y, et al. Efficacy and safety of once daily oral administration of sodium-glucose cotransporter-2 inhibitor velagliflozin compared with twice daily insulin injection in diabetic cats. J Vet Intern Med 38:2099-2119",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38884190/",
+      "year": 2024
+    },
+    {
+      "title": "Behrend EN, Ward CR, Chukwu V, et al. Velagliflozin, a once-daily, liquid, oral SGLT2 inhibitor, is effective as a stand-alone therapy for feline diabetes mellitus: the SENSATION study. J Am Vet Med Assoc 262:1343-1353",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39142336/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

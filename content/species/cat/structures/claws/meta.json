@@ -1,0 +1,35 @@
+{
+  "id": "cat.integumentary.claws",
+  "system": "cat.integumentary",
+  "nav": "Unguicula",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.integumentary.claws.L",
+    "cat.integumentary.claws.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#3A322C",
+  "material": "bone",
+  "source": "lovadahn-cat-model",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-claw-protracted-01",
+    "wm-cat-claw-mechanism-01",
+    "wm-cat-claw-ligament-01",
+    "wm-cat-claw-sheaths-01",
+    "wm-cat-paw-pads-01"
+  ],
+  "related": [
+    "cat.integumentary.skin",
+    "cat.skeletal.phalanges-thoracic",
+    "cat.skeletal.phalanges-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

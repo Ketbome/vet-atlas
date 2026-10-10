@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.omotransversarius",
+  "system": "cat.muscular",
+  "nav": "M. omotransversarius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.omotransversarius.L",
+    "cat.muscular.omotransversarius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9A372E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-trapezius-group-wilder-01",
+    "wm-cat-shoulder-neck-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.atlas",
+    "cat.muscular.brachiocephalicus",
+    "cat.muscular.trapezius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

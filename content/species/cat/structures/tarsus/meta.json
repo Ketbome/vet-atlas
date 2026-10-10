@@ -1,0 +1,33 @@
+{
+  "id": "cat.skeletal.tarsus",
+  "system": "cat.skeletal",
+  "nav": "Ossa tarsi",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.tarsus.L",
+    "cat.skeletal.tarsus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "high-rise-syndrome",
+    "scottish-fold-osteochondrodysplasia"
+  ],
+  "media": [
+    "wm-cat-autopodium-skeleton-01",
+    "wm-cat-skeleton-specimen-01"
+  ],
+  "related": [
+    "cat.skeletal.tibia",
+    "cat.skeletal.fibula",
+    "cat.skeletal.metatarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "cat.visceral.heart",
+  "system": "cat.visceral",
+  "nav": "Cor",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.heart"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9A2D26",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "hypertrophic-cardiomyopathy",
+    "feline-aortic-thromboembolism",
+    "hyperthyroidism",
+    "dilated-cardiomyopathy",
+    "patent-ductus-arteriosus"
+  ],
+  "media": [
+    "wm-cat-thorax-vhs-lat-01",
+    "wm-cat-heart-cleared-specimen-01",
+    "wm-dog-cardiac-muscle-histo-01"
+  ],
+  "related": [
+    "cat.visceral.lungs",
+    "cat.visceral.great-vessels",
+    "cat.visceral.trachea",
+    "cat.visceral.thyroid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

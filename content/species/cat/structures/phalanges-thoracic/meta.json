@@ -1,0 +1,32 @@
+{
+  "id": "cat.skeletal.phalanges-thoracic",
+  "system": "cat.skeletal",
+  "nav": "Ossa digitorum manus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.phalanges-thoracic.L",
+    "cat.skeletal.phalanges-thoracic.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "high-rise-syndrome"
+  ],
+  "media": [
+    "wm-cat-autopodium-skeleton-01",
+    "wm-cat-claw-mechanism-01",
+    "wm-cat-claw-ligament-01"
+  ],
+  "related": [
+    "cat.skeletal.metacarpus",
+    "cat.integumentary.claws"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

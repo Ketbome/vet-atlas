@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.tibialis-cranialis",
+  "system": "cat.muscular",
+  "nav": "M. tibialis cranialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.tibialis-cranialis.L",
+    "cat.muscular.tibialis-cranialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B1493B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01",
+    "wm-cat-medial-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.tibia",
+    "cat.skeletal.fibula",
+    "cat.skeletal.metatarsus",
+    "cat.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "cat.visceral.esophagus",
+  "system": "cat.visceral",
+  "nav": "Oesophagus",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.esophagus"
+  ],
+  "fidelity": "illustrative",
+  "color": "#C9806F",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "gastrointestinal-foreign-body",
+    "aspiration-pneumonia"
+  ],
+  "media": [
+    "wm-cat-esophageal-needle-lat-01",
+    "wm-cat-diaphragm-specimen-01"
+  ],
+  "related": [
+    "cat.visceral.trachea",
+    "cat.visceral.stomach",
+    "cat.muscular.diaphragm"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

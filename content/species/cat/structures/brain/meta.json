@@ -1,0 +1,34 @@
+{
+  "id": "cat.visceral.brain",
+  "system": "cat.visceral",
+  "nav": "Encephalon",
+  "region": "nervous",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.brain.cerebrum",
+    "cat.visceral.brain.cerebellum",
+    "cat.visceral.brain.brainstem"
+  ],
+  "fidelity": "modeled",
+  "color": "#D8B7AA",
+  "source": "cornell-feline-brain-atlas",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3.0
+  },
+  "pathologies": [
+    "feline-infectious-peritonitis",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-cat-nervous-system-specimen-01",
+    "wm-cat-cerebral-cortex-drawing-01",
+    "wm-dog-cerebellum-histo-01"
+  ],
+  "related": [
+    "cat.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

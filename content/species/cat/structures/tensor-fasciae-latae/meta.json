@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.tensor-fasciae-latae",
+  "system": "cat.muscular",
+  "nav": "M. tensor fasciae latae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.tensor-fasciae-latae.L",
+    "cat.muscular.tensor-fasciae-latae.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B85A47",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.femur",
+    "cat.muscular.gluteus-medius",
+    "cat.muscular.quadriceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

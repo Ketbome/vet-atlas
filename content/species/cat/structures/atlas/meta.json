@@ -1,0 +1,29 @@
+{
+  "id": "cat.skeletal.atlas",
+  "system": "cat.skeletal",
+  "nav": "Atlas",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.atlas"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-thorax-lateral-01"
+  ],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.axis",
+    "cat.skeletal.vertebrae-cervical"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

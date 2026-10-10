@@ -2,10 +2,12 @@
   "id": "entropion",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.integumentary.eyes"
+    "dog.integumentary.eyes",
+    "cat.integumentary.eyes"
   ],
   "media": [],
   "references": [
@@ -16,6 +18,26 @@
     {
       "title": "Maggs DJ, Miller PE, Ofri R. Slatter's Fundamentals of Veterinary Ophthalmology, 6th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Williams DL, Kim JY. Feline entropion: a case series of 50 affected animals (2003-2008). Vet Ophthalmol 12:221-226",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19604337/",
+      "year": 2009
+    },
+    {
+      "title": "White JS, Grundon RA, Hardman C, et al. Surgical management and outcome of lower eyelid entropion in 124 cats. Vet Ophthalmol 15:231-235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22129140/",
+      "year": 2012
+    },
+    {
+      "title": "Anagrius KL, Dimopoulou M, Moe AN, et al. Facial conformation characteristics in Persian and Exotic Shorthair cats. J Feline Med Surg 23:1089-1097",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33655782/",
+      "year": 2021
+    },
+    {
+      "title": "Frejlich M, Payen G. Prevalence and characteristics of feline ulcerative keratitis and corneal sequestra in a referral population and comparison between brachycephalic and nonbrachycephalic cats. Vet Ophthalmol 29:e70048",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40739742/",
+      "year": 2026
     }
   ],
   "review": {

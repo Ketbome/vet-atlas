@@ -1,0 +1,49 @@
+{
+  "id": "femoral-capital-physeal-dysplasia",
+  "category": "degenerative",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.femur"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Craig LE. Physeal dysplasia with slipped capital femoral epiphysis in 13 cats. Vet Pathol 38:92-97",
+      "year": 2001
+    },
+    {
+      "title": "McNicholas WT Jr, Wilkens BE, Blevins WE, et al. Spontaneous femoral capital physeal fractures in adult cats: 26 cases (1996-2001). J Am Vet Med Assoc 221:1731-1736",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12494971/",
+      "year": 2002
+    },
+    {
+      "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Borak D, Wunderlin N, Brückner M, et al. Slipped capital femoral epiphysis in 17 Maine Coon cats. J Feline Med Surg 19:13-20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26265738/",
+      "year": 2017
+    },
+    {
+      "title": "Butts D, Smith AJ, Bradley K, et al. Comparison of three radiographic assessment methods for detecting slipped capital femoral epiphyses in cats: Klein's line, modified Klein's line and the S-sign. J Feline Med Surg 25:1098612X231201775",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37906175/",
+      "year": 2023
+    },
+    {
+      "title": "Vink JJWG, Hubers MWL, den Hertog E, et al. Short-Term Clinical and Radiographic Outcome after Stabilization of Femoral Capital Physeal Fractures with Cortical Positional Screws in 39 Cats. Vet Comp Orthop Traumatol 35:403-412",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36075271/",
+      "year": 2022
+    },
+    {
+      "title": "Rodiño Tilve V, Allaith S, Girling S, et al. Long-term follow up of 44 cats undergoing total hip replacement: Cases from a feline hip registry (2010-2020). Vet Surg 51:763-771",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35642440/",
+      "year": 2022
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "hepatic-lipidosis",
+  "category": "metabolic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.liver"
+  ],
+  "media": [
+    "wm-cat-hepatic-lipidosis-jaundice-01",
+    "wm-cat-hepatic-lipidosis-us-01"
+  ],
+  "references": [
+    {
+      "title": "Center SA. Feline hepatic lipidosis. Vet Clin North Am Small Anim Pract 35:225-269",
+      "year": 2005
+    },
+    {
+      "title": "Valtolina C, Favier RP. Feline hepatic lipidosis. Vet Clin North Am Small Anim Pract 47:683-702",
+      "year": 2017
+    },
+    {
+      "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Center SA, Crawford MA, Guida L, et al. A retrospective study of 77 cats with severe hepatic lipidosis: 1975-1990. J Vet Intern Med 7:349-359",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8114031/",
+      "year": 1993
+    },
+    {
+      "title": "Biourge VC, Groff JM, Munn RJ, et al. Experimental induction of hepatic lipidosis in cats. Am J Vet Res 55:1291-1302",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7802398/",
+      "year": 1994
+    },
+    {
+      "title": "Yeager AE, Mohammed H. Accuracy of ultrasonography in the detection of severe hepatic lipidosis in cats. Am J Vet Res 53:597-599",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1586035/",
+      "year": 1992
+    },
+    {
+      "title": "Kuzi S, Segev G, Kedar S, et al. Prognostic markers in feline hepatic lipidosis: a retrospective study of 71 cats. Vet Rec 181:512",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28978714/",
+      "year": 2017
+    },
+    {
+      "title": "Wallace OP, Jablonski SA, Thomas JS, et al. Association of time to start of enteral nutrition and outcome in cats with hepatic lipidosis. J Vet Intern Med 38:3144-3152",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39447212/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

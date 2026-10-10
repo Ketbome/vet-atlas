@@ -1,0 +1,61 @@
+{
+  "id": "alimentary-lymphoma",
+  "category": "neoplastic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.small-intestine"
+  ],
+  "media": [
+    "wm-cat-ileum-lymphoma-01",
+    "wm-cat-alimentary-lymphoma-us-01"
+  ],
+  "references": [
+    {
+      "title": "Barrs VR, Beatty JA. Feline alimentary lymphoma: 1. Classification, risk factors, clinical signs and non-invasive diagnostics. J Feline Med Surg 14:182-190",
+      "year": 2012
+    },
+    {
+      "title": "Barrs VR, Beatty JA. Feline alimentary lymphoma: 2. Further diagnostics, therapy and prognosis. J Feline Med Surg 14:191-201",
+      "year": 2012
+    },
+    {
+      "title": "Marsilio S, Freiche V, Johnson E, et al. ACVIM consensus statement guidelines on diagnosing and distinguishing low-grade neoplastic from inflammatory lymphocytic chronic enteropathies in cats. J Vet Intern Med 37:794-816",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37130034/",
+      "year": 2023
+    },
+    {
+      "title": "Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen's Small Animal Clinical Oncology, 6th ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Freiche V, Paulin MV, Cordonnier N, et al. Histopathologic, phenotypic, and molecular criteria to discriminate low-grade intestinal T-cell lymphoma in cats from lymphoplasmacytic enteritis. J Vet Intern Med 35:2673-2684",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34374109/",
+      "year": 2021
+    },
+    {
+      "title": "Evans SE, Bonczynski JJ, Broussard JD, et al. Comparison of endoscopic and full-thickness biopsy specimens for diagnosis of inflammatory bowel disease and alimentary tract lymphoma in cats. J Am Vet Med Assoc 229:1447-1450",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17078807/",
+      "year": 2006
+    },
+    {
+      "title": "Scott KD, Zoran DL, Mansell J, et al. Utility of endoscopic biopsies of the duodenum and ileum for diagnosis of inflammatory bowel disease and small cell lymphoma in cats. J Vet Intern Med 25:1253-1257",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22092613/",
+      "year": 2011
+    },
+    {
+      "title": "Kiselow MA, Rassnick KM, McDonough SP, et al. Outcome of cats with low-grade lymphocytic lymphoma: 41 cases (1995-2005). J Am Vet Med Assoc 232:405-410",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18241108/",
+      "year": 2008
+    },
+    {
+      "title": "Bernardo Marques G, Ponce F, Beaudu-Lange C, et al. Feline high-grade and large granular lymphocyte alimentary lymphomas treated with COP- or CHOP-based chemotherapy: a multi-centric retrospective study of 57 cases. Vet Comp Oncol 22:186-197",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38356238/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

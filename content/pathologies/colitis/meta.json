@@ -2,10 +2,12 @@
   "id": "colitis",
   "category": "inflammatory",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.visceral.large-intestine"
+    "dog.visceral.large-intestine",
+    "cat.visceral.large-intestine"
   ],
   "media": [],
   "references": [
@@ -16,6 +18,40 @@
     {
       "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Gookin JL, Hanrahan K, Levy MG. The conundrum of feline trichomonosis: the more we learn the 'trickier' it gets. J Feline Med Surg 19:261-274",
+      "year": 2017
+    },
+    {
+      "title": "Walden HS, Dykstra C, Dillon A, et al. A new species of Tritrichomonas (Sarcomastigophora: Trichomonida) from the domestic cat (Felis catus). Parasitol Res 112:2227-2235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23525691/",
+      "year": 2013
+    },
+    {
+      "title": "Gookin JL, Copple CN, Papich MG, et al. Efficacy of ronidazole for treatment of feline Tritrichomonas foetus infection. J Vet Intern Med 20:536-543",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16734086/",
+      "year": 2006
+    },
+    {
+      "title": "Foster DM, Gookin JL, Poore MF, et al. Outcome of cats with diarrhea and Tritrichomonas foetus infection. J Am Vet Med Assoc 225:888-892",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15485048/",
+      "year": 2004
+    },
+    {
+      "title": "Xenoulis PG, Lopinski DJ, Read SA, et al. Intestinal Tritrichomonas foetus infection in cats: a retrospective study of 104 cases. J Feline Med Surg 15:1098-1103",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23838083/",
+      "year": 2013
+    },
+    {
+      "title": "Guilford WG, Jones BR, Markwell PJ, et al. Food sensitivity in cats with chronic idiopathic gastrointestinal problems. J Vet Intern Med 15:7-13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11215916/",
+      "year": 2001
+    },
+    {
+      "title": "Kathrani A, Church DB, Brodbelt DC, et al. The use of hydrolysed diets for vomiting and/or diarrhoea in cats in primary veterinary practice. J Small Anim Pract 61:723-731",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32895973/",
+      "year": 2020
     }
   ],
   "review": {

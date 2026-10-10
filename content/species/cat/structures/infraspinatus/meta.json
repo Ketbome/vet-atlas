@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.infraspinatus",
+  "system": "cat.muscular",
+  "nav": "M. infraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.infraspinatus.L",
+    "cat.muscular.infraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#973329",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-arm-muscles-wilder-01",
+    "wm-cat-shoulder-neck-muscles-wilder-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.humerus",
+    "cat.muscular.supraspinatus",
+    "cat.muscular.deltoideus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

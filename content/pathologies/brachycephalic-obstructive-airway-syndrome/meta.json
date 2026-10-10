@@ -2,11 +2,14 @@
   "id": "brachycephalic-obstructive-airway-syndrome",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.trachea",
-    "dog.skeletal.skull"
+    "dog.skeletal.skull",
+    "cat.visceral.trachea",
+    "cat.skeletal.skull"
   ],
   "media": [],
   "references": [
@@ -17,6 +20,31 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Farnworth MJ, Chen R, Packer RMA, et al. Flat feline faces: is brachycephaly associated with respiratory abnormalities in the domestic cat (Felis catus)? PLoS One 11:e0161777",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27574987/",
+      "year": 2016
+    },
+    {
+      "title": "Schmidt MJ, Kampschulte M, Enderlein S, et al. The relationship between brachycephalic head features in modern Persian cats and dysmorphologies of the skull and internal hydrocephalus. J Vet Intern Med 31:1487-1501",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28833532/",
+      "year": 2017
+    },
+    {
+      "title": "Schlueter C, Budras KD, Ludewig E, et al. Brachycephalic feline noses: CT and anatomical study of the relationship between head conformation and the nasolacrimal drainage system. J Feline Med Surg 11:891-900",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19857852/",
+      "year": 2009
+    },
+    {
+      "title": "Sieslack J, Farke D, Failing K, et al. Correlation of brachycephaly grade with level of exophthalmos, reduced airway passages and degree of dental malalignment in Persian cats. PLoS One 16:e0254420",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34288937/",
+      "year": 2021
+    },
+    {
+      "title": "Gleason HE, Phillips H, McCoy AM. Influence of feline brachycephaly on respiratory, gastrointestinal, sleep, and activity abnormalities. Vet Surg 52:435-445",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36582029/",
+      "year": 2023
     }
   ],
   "review": {

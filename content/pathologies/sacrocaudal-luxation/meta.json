@@ -1,0 +1,41 @@
+{
+  "id": "sacrocaudal-luxation",
+  "category": "traumatic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.sacrum",
+    "cat.skeletal.vertebrae-caudal",
+    "cat.visceral.urinary-bladder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Smeak DD, Olmstead ML. Fracture/luxations of the sacrococcygeal area in the cat: a retrospective study of 51 cases. Vet Surg 14:319-324",
+      "url": "https://doi.org/10.1111/j.1532-950x.1985.tb00895.x",
+      "year": 1985
+    },
+    {
+      "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell",
+      "year": 2016
+    },
+    {
+      "title": "Tatton B, Jeffery N, Holmes M. Predicting recovery of urination control in cats after sacrocaudal injury: a prospective study. J Small Anim Pract 50:593-596",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19814771/",
+      "year": 2009
+    },
+    {
+      "title": "Couper E, De Decker S. Evaluation of prognostic factors for return of urinary and defecatory function in cats with sacrocaudal luxation. J Feline Med Surg 22:928-934",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31904316/",
+      "year": 2020
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

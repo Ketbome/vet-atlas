@@ -1,0 +1,52 @@
+{
+  "id": "scottish-fold-osteochondrodysplasia",
+  "category": "congenital",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.phalanges-pelvic",
+    "cat.skeletal.tarsus",
+    "cat.skeletal.metatarsus",
+    "cat.skeletal.vertebrae-caudal"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Malik R, Allan GS, Howlett CR, et al. Osteochondrodysplasia in Scottish Fold cats. Aust Vet J 77:85-92",
+      "year": 1999
+    },
+    {
+      "title": "Takanosu M, Takanosu T, Suzuki H, Suzuki K. Incomplete dominant osteochondrodysplasia in heterozygous Scottish Fold cats. J Small Anim Pract 49:197-199",
+      "year": 2008
+    },
+    {
+      "title": "Gandolfi B, Alamri S, Darby WG, et al. A dominant TRPV4 variant underlies osteochondrodysplasia in Scottish fold cats. Osteoarthritis Cartilage 24:1441-1450",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27063440/",
+      "year": 2016
+    },
+    {
+      "title": "Rorden C, Griswold MC, Moses N, et al. Radiographical Survey of Osteochondrodysplasia in Scottish Fold Cats caused by the TRPV4 gene variant. Hum Genet 140:1525-1534",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34406467/",
+      "year": 2021
+    },
+    {
+      "title": "Velie BD, Milden T, Miller H, et al. An estimation of osteochondrodysplasia prevalence in Australian Scottish Fold cats: a retrospective study using VetCompass Data. BMC Vet Res 19:252",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38031079/",
+      "year": 2023
+    },
+    {
+      "title": "Matsumoto Y, Ishii R, Ukawa H, et al. Straightened Small Pinnae in TRPV4 c.1024G>T Heterozygous Cats. Anim Genet 57:e70114",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42087835/",
+      "year": 2026
+    },
+    {
+      "title": "Ukawa H, Akashi A, Hayashi H, et al. Genetic Evidence of a Recent Decline and Crossbreed Distribution of TRPV4 c.1024G>T Variant in Domestic Cats. Anim Genet 57:e70118",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42108233/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

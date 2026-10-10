@@ -2,13 +2,18 @@
   "id": "osteosarcoma",
   "category": "neoplastic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.skeletal.femur",
     "dog.skeletal.tibia",
     "dog.skeletal.humerus",
-    "dog.skeletal.radius"
+    "dog.skeletal.radius",
+    "cat.skeletal.femur",
+    "cat.skeletal.tibia",
+    "cat.skeletal.humerus",
+    "cat.skeletal.radius"
   ],
   "media": [
     "wm-dog-osteosarcoma-femur-lat-01"
@@ -25,6 +30,35 @@
     {
       "title": "American College of Veterinary Surgeons: Osteosarcoma",
       "url": "https://www.acvs.org/small-animal/osteosarcoma"
+    },
+    {
+      "title": "Bitetto WV, Patnaik AK, Schrader SC, Mooney SC. Osteosarcoma in cats: 22 cases (1974-1984). J Am Vet Med Assoc 190:91-93",
+      "year": 1987
+    },
+    {
+      "title": "Heldmann E, Anderson MA, Wagner-Mann C. Feline osteosarcoma: 145 cases (1990-1995). J Am Anim Hosp Assoc 36:518-521",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11105889/",
+      "year": 2000
+    },
+    {
+      "title": "Dimopoulou M, Kirpensteijn J, Moens H, et al. Histologic prognosticators in feline osteosarcoma: a comparison with phenotypically similar canine osteosarcoma. Vet Surg 37:466-471",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18986314/",
+      "year": 2008
+    },
+    {
+      "title": "Nakano Y, Kagawa Y, Shimoyama Y, et al. Outcome of appendicular or scapular osteosarcoma treated by limb amputation in cats: 67 cases (1997-2018). J Am Vet Med Assoc 260(S1):S24-S28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34914624/",
+      "year": 2021
+    },
+    {
+      "title": "Marconato L, Annoni M, Massari F, et al. A retrospective Italian Society of Veterinary Oncology (SIONCOV) study of 56 cats with appendicular osteosarcoma. Vet Comp Oncol 22:198-203",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38327132/",
+      "year": 2024
+    },
+    {
+      "title": "Kimura S, Lubelski J, Wood CJ, et al. Diagnosis and clinical outcome of cats with primary appendicular bone tumors: 76 cases. J Am Vet Med Assoc 264:1005-1013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41962564/",
+      "year": 2026
     }
   ],
   "review": {

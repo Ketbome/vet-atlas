@@ -1,0 +1,35 @@
+{
+  "id": "cat.visceral.great-vessels",
+  "system": "cat.visceral",
+  "nav": "Aorta et vena cava caudalis",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.great-vessels"
+  ],
+  "fidelity": "modeled",
+  "color": "#B02A24",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "feline-aortic-thromboembolism",
+    "patent-ductus-arteriosus",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-cat-aortic-saddle-thrombus-01",
+    "wm-cat-diaphragm-specimen-01"
+  ],
+  "related": [
+    "cat.visceral.heart",
+    "cat.visceral.kidneys",
+    "cat.visceral.liver",
+    "cat.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

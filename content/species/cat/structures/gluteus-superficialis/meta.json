@@ -1,0 +1,34 @@
+{
+  "id": "cat.muscular.gluteus-superficialis",
+  "system": "cat.muscular",
+  "nav": "M. gluteus superficialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.gluteus-superficialis.L",
+    "cat.muscular.gluteus-superficialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B6503F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.sacrum",
+    "cat.skeletal.vertebrae-caudal",
+    "cat.skeletal.femur",
+    "cat.muscular.gluteus-medius",
+    "cat.muscular.biceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

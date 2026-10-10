@@ -9,7 +9,7 @@ Full version with rationale: https://claude.ai/code/artifact/6e52485c-ab1d-4d3b-
 | Stack | Next.js only, static generation | Public educational site, nothing changes at runtime. A backend (NestJS) only if accounts/progress/teacher dashboards are ever needed (phase 5). |
 | Content | JSON + MDX in the repo, Zod-validated in CI | Contribution by PR, history, review. |
 | 3D | One GLB per species+system, mesh name = structure id | The naming convention is the only contract between 3D and content. |
-| First species | Dog, skeletal system | Massey University's 3D Dog Bone Project is the only university-grade dog bone scan set with a licence that allows derivatives (CC BY-SA / CC BY-NC). LMU Munich turned out to be CC BY-NC-ND (checked 2026-09-13), so it cannot be used. Cat depends on a non-commercial MorphoSource dataset. |
+| First species | Dog, skeletal system | Massey University's 3D Dog Bone Project is the only university-grade dog bone scan set with a licence that allows derivatives (CC BY-SA / CC BY-NC). LMU Munich turned out to be CC BY-NC-ND (checked 2026-09-13), so it cannot be used. |
 | Licenses | Code MIT, own content CC BY-SA 4.0, third-party media keep theirs | Non-commercial project, so NC sources are allowed. ND sources are not. The dog skeletal GLB mixes CC BY-SA and CC BY-NC bones, so as a whole it is effectively BY-NC-SA. |
 | Hosting | GitHub Pages (static export, models included) | Free; no server, no proxy: `/` picks the locale client-side. |
 | Name | "Vet Atlas" is a working name | Domain will be `<name>.ketbome.com` until decided. |
@@ -35,13 +35,19 @@ structures). Media and Source carry license and attribution. IDs are
   visceral (16 organs: CT heart, liver, intestine, kidneys; Cornell brain atlas;
   the rest procedural). Viewer: see-through layers per system, exploded view, and a
   one-piece page at `/[locale]/3d/...`. Everything new is draft.
+- **2026-10-09**: cat with the same four systems, ahead of phase 3. Skeleton from
+  westerly's sculpted feline skeleton (CC BY, every bone separate) with a RISD skull and
+  mandible scan; skin from Lova Dahn's "Cat Model" (CC BY); muscles procedural; organs
+  from a pixelbeaker feline CT (digestive and urinary), a Cornell feline MRI template
+  (brain) and procedural shapes. 22 feline pathologies plus a cat section in 20 shared
+  ones. Everything is draft.
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies
   with radiographs/histology, Portuguese, veterinary review of the new systems,
   call for contributors in vet schools.
-- **Phase 3 (weeks 15–22)**: cat skeleton from MorphoSource, shared
-  pathologies extended, species comparison in the viewer.
+- **Phase 3 (weeks 15–22)**: cat scans to replace the sculpted bones (needs
+  permission, see Sources), species comparison in the viewer.
 - **Phase 4 (weeks 23–30)**: quiz mode (localStorage), PWA offline, web
   editor that opens PRs, cow or horse.
 - **Phase 5 (only if justified)**: NestJS + Postgres for accounts and teacher
@@ -76,7 +82,13 @@ structures). Media and Source carry license and attribution. IDs are
   one fused shell, so the sacrum cannot be separated. University of Edinburgh
   Open.Ed: dog skulls by CT, CC BY (dolichocephalic and brachycephalic); would
   need a breed-variant concept in the content model.
-- MorphoSource Felis catus CT (3D Anatomy Studios): NC, archive derivatives.
+- Cat: westerly "Feline Skeleton Dec" (Sketchfab, CC BY, sculpted, not a scan);
+  RISD Nature Lab cat skull and mandible (Sketchfab, CC BY, Artec scans); Lova Dahn
+  "Cat Model" (CC BY); pixelbeaker "Normal Feline Anatomy – Digestive System" (CC BY,
+  CT); Cornell feline DTI atlas (CC0). No open cat heart, lung or muscle scans exist.
+- MorphoSource Felis catus CT (3D Anatomy Studios, whole-body microCT): Standard
+  agreement, needs permission. Would replace the sculpted skeleton and the
+  procedural organs. LMU Munich has good loose cat bones, but ND: ask too.
 - oVert / MorphoSource: dog skulls by breed, CC BY-NC.
 - Ohio State Veterinary Histology: CC BY-NC 4.0.
 - Wikimedia Commons: per-file CC BY / BY-SA / CC0.

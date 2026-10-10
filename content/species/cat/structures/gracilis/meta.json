@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.gracilis",
+  "system": "cat.muscular",
+  "nav": "M. gracilis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.gracilis.L",
+    "cat.muscular.gracilis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B95646",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-medial-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.tibia",
+    "cat.muscular.semitendinosus",
+    "cat.muscular.semimembranosus",
+    "cat.muscular.sartorius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

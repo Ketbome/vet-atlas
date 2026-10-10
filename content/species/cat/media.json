@@ -1,0 +1,964 @@
+[
+  {
+    "id": "wm-cat-skeleton-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Felis_catus_skeleton.JPG/1280px-Felis_catus_skeleton.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC0 1.0",
+    "attribution": "Kirill Tsukanov, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto articulado de gato doméstico en vista lateral izquierda (colección del Departamento de Biología de la Universidad Estatal de Moscú).",
+      "en": "Articulated domestic cat skeleton in left lateral view (collection of the Department of Biology, Moscow State University)."
+    }
+  },
+  {
+    "id": "wm-cat-skeleton-specimen-02",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cat_skeleton.jpg/1280px-Cat_skeleton.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto de gato preparado por maceración, expuesto en el Museo de Anatomía Veterinaria de la FMVZ USP.",
+      "en": "Cat skeleton prepared by maceration, on display at the Museum of Veterinary Anatomy, FMVZ USP."
+    }
+  },
+  {
+    "id": "wm-cat-skeleton-diagram-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Skeleton_of_a_cat_diagram_ver.2.svg/1280px-Skeleton_of_a_cat_diagram_ver.2.svg.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Przemek Maksim, via Wikimedia Commons",
+    "caption": {
+      "es": "Esquema del esqueleto del gato: regiones de la columna (7 cervicales, 13 torácicas, 7 lumbares, 3 sacras y unas 20 caudales) y huesos principales de los miembros.",
+      "en": "Diagram of the cat skeleton: regions of the vertebral column (7 cervical, 13 thoracic, 7 lumbar, 3 sacral and about 20 caudal) and the main limb bones."
+    }
+  },
+  {
+    "id": "wm-cat-autopodium-skeleton-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Felis_catus_skeleton_noBG_FARBIG_22.jpg/1280px-Felis_catus_skeleton_noBG_FARBIG_22.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Auge=mit, via Wikimedia Commons",
+    "caption": {
+      "es": "Esqueleto de gato con los huesos de la mano y del pie coloreados (carpo y tarso en violeta, metacarpo y metatarso en amarillo, falanges proximales, medias y distales en verde, azul y rojo): el gato es digitígrado y apoya solo los dedos.",
+      "en": "Cat skeleton with the bones of the manus and pes coloured (carpus and tarsus violet, metacarpus and metatarsus yellow, proximal, middle and distal phalanges green, blue and red): the cat is digitigrade and stands on its digits only."
+    }
+  },
+  {
+    "id": "wm-cat-skull-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Cat_skull._Felis_catus_01.jpg/1280px-Cat_skull._Felis_catus_01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo y mandíbula de gato en vista lateral: órbita grande, arco cigomático, caninos largos y dientes carniceros.",
+      "en": "Cat skull and mandible in lateral view: large orbit, zygomatic arch, long canines and carnassial teeth."
+    }
+  },
+  {
+    "id": "wm-cat-skull-mandible-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Felis_silvestris_catus_skull_front_%E2%80%94_Sven_Volkens_03.jpg/1280px-Felis_silvestris_catus_skull_front_%E2%80%94_Sven_Volkens_03.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Sven Volkens, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo de gato en vista ventral con las dos hemimandíbulas separadas: arcada superior, bullas timpánicas y dientes inferiores (incisivos, canino, dos premolares y el molar carnicero).",
+      "en": "Cat skull in ventral view with the two hemimandibles separated: upper dental arch, tympanic bullae and lower teeth (incisors, canine, two premolars and the carnassial molar)."
+    }
+  },
+  {
+    "id": "wm-cat-skull-gape-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Cat_skull_maximum_gape_80_degrees.jpg/1280px-Cat_skull_maximum_gape_80_degrees.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Coluberssymbol, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo de gato con la mandíbula en apertura máxima (unos 80°); se aprecian la articulación temporomandibular, la apófisis coronoides y los caninos.",
+      "en": "Cat skull with the mandible at maximum gape (about 80°), showing the temporomandibular joint, the coronoid process and the canines."
+    }
+  },
+  {
+    "id": "wm-cat-skull-persian-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Skull_of_a_Persian_cat.jpg/1280px-Skull_of_a_Persian_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Chris Dodds, via Wikimedia Commons",
+    "caption": {
+      "es": "Cráneo de gato persa (braquicéfalo) en vista rostral: cara muy acortada, órbitas grandes y orientadas hacia delante y aberturas nasales estrechas.",
+      "en": "Skull of a Persian cat (brachycephalic) in rostral view: very short face, large forward-facing orbits and narrow nasal openings."
+    }
+  },
+  {
+    "id": "wm-cat-head-radiograph-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Head%C2%B4s_cat_radiography.jpg/1280px-Head%C2%B4s_cat_radiography.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Santamarcanda, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografías del cráneo en dos proyecciones ortogonales de un gato siamés macho de unos cuatro años, tomadas para buscar restos de perdigones tras la enucleación del ojo izquierdo.",
+      "en": "Skull radiographs in two orthogonal projections of a male Siamese cat about four years old, taken to look for remaining pellet fragments after enucleation of the left eye."
+    }
+  },
+  {
+    "id": "wm-cat-thorax-lateral-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Radiografia-lateral-gato.jpg/1280px-Radiografia-lateral-gato.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "AurelioAHeckert, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de tórax de una gata: vértebras cervicales y torácicas, costillas, esternebras, escápula y húmero.",
+      "en": "Lateral thoracic radiograph of a female cat: cervical and thoracic vertebrae, ribs, sternebrae, scapula and humerus."
+    }
+  },
+  {
+    "id": "wm-cat-thorax-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Radiografia-ventro-dorsal-gato.jpg/1280px-Radiografia-ventro-dorsal-gato.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "AurelioAHeckert, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal de tórax de una gata: columna torácica, pares de costillas y silueta cardíaca.",
+      "en": "Ventrodorsal thoracic radiograph of a female cat: thoracic spine, pairs of ribs and cardiac silhouette."
+    }
+  },
+  {
+    "id": "wm-cat-limbs-ct-munchkin-01",
+    "type": "ct",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Munchkin_cat_x-ray.webp/1280px-Munchkin_cat_x-ray.webp",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Struck AK, Braun M, Detering KA et al. (BMC Genetics 2020), via Wikimedia Commons",
+    "caption": {
+      "es": "Reconstrucciones 3D de TC de un gato Munchkin (a, c, e) y de un gato doméstico control (b, d, f): esqueleto completo, miembro torácico y miembro pélvico. En el Munchkin los huesos largos son más cortos y gruesos.",
+      "en": "3D CT reconstructions of a Munchkin cat (a, c, e) and a control domestic cat (b, d, f): whole skeleton, thoracic limb and pelvic limb. The Munchkin's long bones are shorter and thicker."
+    }
+  },
+  {
+    "id": "wm-cat-femur-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/The_cat_%28Page_108%29_BHL17970618.jpg/1280px-The_cat_%28Page_108%29_BHL17970618.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, The Cat (1881), via Wikimedia Commons",
+    "caption": {
+      "es": "Fémur derecho del gato en vistas craneal (A) y caudal (B), de la obra clásica de Mivart: cabeza, trocánteres, tróclea, cóndilos y fosa intercondílea.",
+      "en": "Right femur of the cat in cranial (A) and caudal (B) views, from Mivart's classic monograph: head, trochanters, trochlea, condyles and intercondylar fossa."
+    }
+  },
+  {
+    "id": "wm-cat-claw-mechanism-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Cat_claw_mechanism.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Al.maier, via Wikimedia Commons",
+    "caption": {
+      "es": "Mecanismo de la garra retráctil (rótulos en alemán): en reposo, el ligamento elástico dorsal (rojo) mantiene la falange distal y la garra levantadas; al contraerse el tendón flexor profundo (\"untere Sehne\") la falange gira y la garra sale.",
+      "en": "Retractile claw mechanism (German labels): at rest the dorsal elastic ligament (red) holds the distal phalanx and claw raised; when the deep flexor tendon (\"untere Sehne\") contracts the phalanx rotates and the claw is protruded."
+    }
+  },
+  {
+    "id": "wm-cat-claw-ligament-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cat_claw_drawing.JPG",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Rush Shippen Huidekoper, The Cat (1895), via Wikimedia Commons",
+    "caption": {
+      "es": "Grabado del dedo del gato: arriba, garra en reposo retraída por el ligamento elástico; abajo, garra extendida por la tracción del tendón flexor, con el ligamento estirado.",
+      "en": "Engraving of a cat digit: above, claw at rest held back by the elastic ligament; below, claw drawn out by the flexor tendon, with the ligament stretched."
+    }
+  },
+  {
+    "id": "wm-cat-claw-sheaths-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Shed_domestic_cat_claw_sheaths.tiff/lossless-page1-960px-Shed_domestic_cat_claw_sheaths.tiff.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Adrian J. Hunter, via Wikimedia Commons",
+    "caption": {
+      "es": "Vainas córneas desprendidas de las garras de un gato adulto (6,7×, barra de escala 1 mm): las capas externas viejas se sueltan al afilar las uñas y dejan una garra nueva y afilada debajo.",
+      "en": "Horny sheaths shed from the claws of an adult cat (6.7×, scale bar 1 mm): the old outer layers come off with scratching and leave a new, sharp claw underneath."
+    }
+  },
+  {
+    "id": "wm-cat-claw-protracted-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cat_claw_closeup.jpg/1280px-Cat_claw_closeup.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Holly Cheng, via Wikimedia Commons",
+    "caption": {
+      "es": "Garra de gato extendida al presionar la almohadilla digital: la vaina córnea es curva, comprimida lateralmente y muy afilada.",
+      "en": "Cat claw protruded by pressing the digital pad: the horny sheath is curved, laterally compressed and very sharp."
+    }
+  },
+  {
+    "id": "wm-cat-eye-slit-pupil-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Cat%27s_Eye_%28Explored%29_-_Flickr_-_siraf72.jpg/1280px-Cat%27s_Eye_%28Explored%29_-_Flickr_-_siraf72.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 2.0",
+    "attribution": "Faris Algosaibi, via Wikimedia Commons",
+    "caption": {
+      "es": "Ojo de gato con luz intensa: la pupila se contrae hasta formar una hendidura vertical.",
+      "en": "Cat eye in bright light: the pupil constricts to a vertical slit."
+    }
+  },
+  {
+    "id": "wm-cat-eye-tapetum-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Tapetum-lucidum-001.jpg/1280px-Tapetum-lucidum-001.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Mdf, via Wikimedia Commons",
+    "caption": {
+      "es": "Brillo ocular verde de un gato iluminado con flash: la luz se refleja en el tapetum lucidum del fondo del ojo.",
+      "en": "Green eyeshine of a cat lit by a camera flash: light reflected by the tapetum lucidum of the fundus."
+    }
+  },
+  {
+    "id": "wm-cat-third-eyelid-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Third_eyelid.jpg/1280px-Third_eyelid.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Gata con el tercer párpado parcialmente visible en el ángulo medial de ambos ojos.",
+      "en": "Cat with the third eyelid partly visible at the medial angle of both eyes."
+    }
+  },
+  {
+    "id": "wm-cat-vibrissae-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CatVibrissae.JPG/1280px-CatVibrissae.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Steven B. Harris, via Wikimedia Commons",
+    "caption": {
+      "es": "Vibrisas supraorbitarias y bucales (bigotes) de un gato doméstico de pelo corto iluminadas a contraluz.",
+      "en": "Supraorbital and muzzle vibrissae (whiskers) of a domestic shorthair cat, backlit."
+    }
+  },
+  {
+    "id": "wm-cat-carpal-vibrissae-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Vibrissae_on_cats_foreleg.jpg/1280px-Vibrissae_on_cats_foreleg.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Chatours, via Wikimedia Commons",
+    "caption": {
+      "es": "Vibrisas carpianas: pelos táctiles largos en la cara palmar del carpo del miembro torácico.",
+      "en": "Carpal vibrissae: long tactile hairs on the palmar aspect of the carpus of the thoracic limb."
+    }
+  },
+  {
+    "id": "wm-cat-paw-pads-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/A_tortoiseshell_cat%27s_speckled_paw-pads.jpg/1280px-A_tortoiseshell_cat%27s_speckled_paw-pads.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "GrammarFascist, via Wikimedia Commons",
+    "caption": {
+      "es": "Almohadillas del miembro torácico de una gata carey: almohadillas digitales y metacarpiana con pigmentación moteada.",
+      "en": "Pads of the thoracic limb of a tortoiseshell cat: digital and metacarpal pads with mottled pigmentation."
+    }
+  },
+  {
+    "id": "wm-cat-superficial-muscles-holding-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Superficial_muscles_of_a_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "R. E. Holding, via Wikimedia Commons",
+    "caption": {
+      "es": "Fig. VII de The Book of the Cat (Simpson, 1903): músculos superficiales del gato en vista lateral izquierda, con leyenda numerada.",
+      "en": "Fig. VII from The Book of the Cat (Simpson, 1903): superficial muscles of the cat in left lateral view, with a numbered legend."
+    }
+  },
+  {
+    "id": "wm-cat-rectus-abdominis-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Feline_Rectus_Abdominus.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 2.5",
+    "attribution": "Elizabeth Roy (Verloren Hoop), via Wikimedia Commons",
+    "caption": {
+      "es": "Músculo recto del abdomen de un gato doméstico en disección, con restos de fascia y parte del oblicuo externo a los lados.",
+      "en": "Rectus abdominis of a domestic cat in dissection, with remnants of fascia and part of the external oblique at the sides."
+    }
+  },
+  {
+    "id": "wm-cat-diaphragm-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Diaphragma-cat.jpg/1280px-Diaphragma-cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 2.5",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Diafragma de gato en disección: porción costal (1), pilar derecho de la porción lumbar (2) y centro tendinoso (3), con la aorta, el esófago, la vena cava caudal y el nervio frénico.",
+      "en": "Cat diaphragm in dissection: costal part (1), right crus of the lumbar part (2) and central tendon (3), with the aorta, oesophagus, caudal vena cava and phrenic nerve."
+    }
+  },
+  {
+    "id": "wm-cat-forequarter-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/The_cat_%28Page_136%29_BHL17970646.jpg/1280px-The_cat_%28Page_136%29_BHL17970646.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 77: músculos del lado derecho del cuarto anterior del gato, con el cefalohumeral cortado para mostrar los planos profundos.",
+      "en": "Page from Mivart (1881) with fig. 77: muscles of the right side of the cat's forequarter, with the cephalohumeral cut to show the deeper layers."
+    }
+  },
+  {
+    "id": "wm-cat-sternum-diaphragm-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/The_cat_%28Page_139%29_BHL17970649.jpg/1280px-The_cat_%28Page_139%29_BHL17970649.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 78: cara interna del esternón y los cartílagos costales del gato, con el diafragma y los músculos intercostales.",
+      "en": "Page from Mivart (1881) with fig. 78: internal aspect of the cat's sternum and costal cartilages, with the diaphragm and intercostal muscles."
+    }
+  },
+  {
+    "id": "wm-cat-ventral-trunk-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/The_cat_%28Page_140%29_BHL17970650.jpg/1280px-The_cat_%28Page_140%29_BHL17970650.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 79: músculos de la cara ventral del tronco del gato (pectorales, recto del abdomen, serrato, oblicuo externo y esternomastoideo).",
+      "en": "Page from Mivart (1881) with fig. 79: muscles of the ventral surface of the cat's trunk (pectorals, rectus abdominis, serratus, external oblique and sternomastoid)."
+    }
+  },
+  {
+    "id": "wm-cat-forelimb-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_cat_%28Page_146%29_BHL17970656.jpg/1280px-The_cat_%28Page_146%29_BHL17970656.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con las fig. 80 y 81: músculos extensores (dorsales) y flexores (ventrales) del miembro torácico del gato.",
+      "en": "Page from Mivart (1881) with figs. 80 and 81: extensor (dorsal) and flexor (ventral) muscles of the cat's thoracic limb."
+    }
+  },
+  {
+    "id": "wm-cat-thigh-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/The_cat_%28Page_154%29_BHL17970664.jpg/1280px-The_cat_%28Page_154%29_BHL17970664.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 82: músculos superficiales del muslo del gato (bíceps femoral, glúteo mayor, sartorio, semitendinoso, semimembranoso y tensor de la fascia lata).",
+      "en": "Page from Mivart (1881) with fig. 82: superficial muscles of the cat's thigh (biceps femoris, gluteus maximus, sartorius, semitendinosus, semimembranosus and tensor fasciae latae)."
+    }
+  },
+  {
+    "id": "wm-cat-deep-thigh-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/The_cat_%28Page_155%29_BHL17970665.jpg/1280px-The_cat_%28Page_155%29_BHL17970665.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 83: músculos profundos del muslo del gato con el bíceps femoral y la fascia lata cortados, y tendones de la cara lateral del tarso.",
+      "en": "Page from Mivart (1881) with fig. 83: deep muscles of the cat's thigh with the biceps femoris and fascia lata cut, and tendons of the lateral side of the tarsus."
+    }
+  },
+  {
+    "id": "wm-cat-medial-thigh-muscles-mivart-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/The_cat_%28Page_157%29_BHL17970667.jpg/1280px-The_cat_%28Page_157%29_BHL17970667.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "St. George Mivart, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Mivart (1881) con la fig. 84: músculos de la cara medial del muslo del gato, con el sartorio y el grácil cortados y reflejados.",
+      "en": "Page from Mivart (1881) with fig. 84: muscles of the medial surface of the cat's thigh, with the sartorius and gracilis cut and reflected."
+    }
+  },
+  {
+    "id": "wm-cat-trapezius-group-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_211%29_BHL20808857.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_211%29_BHL20808857.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 66: músculos superficiales del hombro y el cuello izquierdos del gato (clavotrapecio, acromiotrapecio, espinotrapecio, elevador de la clavícula y dorsal ancho).",
+      "en": "Page from Wilder and Gage (1882) with fig. 66: superficial muscles of the cat's left shoulder and neck (clavotrapezius, acromiotrapezius, spinotrapezius, levator claviculae and latissimus dorsi)."
+    }
+  },
+  {
+    "id": "wm-cat-shoulder-neck-muscles-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_218%29_BHL20808864.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_218%29_BHL20808864.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 67: segundo plano de músculos del cuello y el hombro del gato, tras reflejar los trapecios.",
+      "en": "Page from Wilder and Gage (1882) with fig. 67: second layer of muscles of the cat's neck and shoulder, after reflecting the trapezius muscles."
+    }
+  },
+  {
+    "id": "wm-cat-pectoral-muscles-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_234%29_BHL20808880.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_234%29_BHL20808880.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 72: grupo pectoral del gato parcialmente disecado (pectoantebraquial, ectopectoral, entopectoral y xifihumeral).",
+      "en": "Page from Wilder and Gage (1882) with fig. 72: the cat's pectoral group partly dissected (pectoantebrachialis, ectopectoralis, entopectoralis and xiphihumeralis)."
+    }
+  },
+  {
+    "id": "wm-cat-serratus-ventralis-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_246%29_BHL20808892.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_246%29_BHL20808892.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 73: cara medial de los músculos del hombro izquierdo del gato y cara lateral del serrato ventral y el elevador del ángulo de la escápula.",
+      "en": "Page from Wilder and Gage (1882) with fig. 73: medial aspect of the cat's left shoulder muscles and lateral aspect of the serratus ventralis and levator anguli scapulae."
+    }
+  },
+  {
+    "id": "wm-cat-arm-muscles-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_254%29_BHL20808900.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_254%29_BHL20808900.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 74: cara craneal del brazo izquierdo del gato con los músculos laterales de la escápula, el tríceps y los extensores del antebrazo.",
+      "en": "Page from Wilder and Gage (1882) with fig. 74: cranial aspect of the cat's left arm with the lateral scapular muscles, the triceps and the forearm extensors."
+    }
+  },
+  {
+    "id": "wm-cat-arm-muscles-wilder-02",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_262%29_BHL20808908.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_262%29_BHL20808908.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 75: músculos de la cara medial de la escápula y de la cara caudal del brazo y el antebrazo del gato.",
+      "en": "Page from Wilder and Gage (1882) with fig. 75: muscles of the medial aspect of the scapula and the caudal aspect of the cat's arm and forearm."
+    }
+  },
+  {
+    "id": "wm-cat-diaphragm-wilder-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_313%29_BHL20808959.jpg/1280px-Anatomical_technology_as_applied_to_the_domestic_cat_%28Page_313%29_BHL20808959.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Burt G. Wilder and Simon H. Gage, via Wikimedia Commons (Biodiversity Heritage Library)",
+    "caption": {
+      "es": "Página de Wilder y Gage (1882) con la fig. 90: vista caudal del diafragma del gato con el centro tendinoso, los pilares y las estructuras que lo atraviesan.",
+      "en": "Page from Wilder and Gage (1882) with fig. 90: caudal view of the cat's diaphragm with the central tendon, the crura and the structures passing through it."
+    }
+  },
+  {
+    "id": "wm-cat-heart-cleared-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Cat_heart_01.jpg/1280px-Cat_heart_01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Corazón de gato inyectado con gelatina y aclarado por la técnica de Spalteholz, expuesto en el Museo de Anatomía Veterinaria de la FMVZ USP; escala de 15 cm.",
+      "en": "Cat heart injected with gelatin and cleared by the Spalteholz technique, on display at the Museum of Veterinary Anatomy, FMVZ USP; 15 cm scale bar."
+    }
+  },
+  {
+    "id": "wm-cat-thorax-vhs-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vhskatze.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de tórax de un gato con la medición de la escala vertebral cardiaca: eje largo (rojo) 4,8 vértebras y eje corto (verde) 3, VHS = 7,8. La flecha blanca señala la vena pulmonar craneal.",
+      "en": "Lateral thoracic radiograph of a cat with the vertebral heart score measured: long axis (red) 4.8 vertebrae and short axis (green) 3, VHS = 7.8. The white arrow marks the cranial pulmonary vein."
+    }
+  },
+  {
+    "id": "wm-cat-aortic-saddle-thrombus-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Reitender_Thrombus_Katze.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Necropsia de un gato: la aorta abdominal terminal aparece ocupada por un trombo oscuro que se extiende hacia las arterias ilíacas (trombo \"en silla de montar\"), originado en el atrio izquierdo.",
+      "en": "Necropsy of a cat: the terminal abdominal aorta is filled by a dark thrombus extending into the iliac arteries (a \"saddle\" thrombus), which originated in the left atrium."
+    }
+  },
+  {
+    "id": "wm-cat-esophageal-needle-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/X-ray_Needle_swallowed_by_cat.JPG/1280px-X-ray_Needle_swallowed_by_cat.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de un gato con una aguja de coser alojada en el esófago; encima se ve el tubo endotraqueal.",
+      "en": "Lateral radiograph of a cat with a sewing needle lodged in the oesophagus; the endotracheal tube is visible above it."
+    }
+  },
+  {
+    "id": "wm-cat-barium-gi-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Gizmo_X-Ray_3.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 2.0",
+    "attribution": "ArtBrom, via Wikimedia Commons",
+    "caption": {
+      "es": "Estudio con contraste de bario en un gato, proyecciones ventrodorsal y lateral: el bario rellena el estómago y las asas del intestino delgado.",
+      "en": "Barium contrast study in a cat, ventrodorsal and lateral views: barium fills the stomach and the small intestinal loops."
+    }
+  },
+  {
+    "id": "wm-cat-abdomen-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Radio_abdominale_chat_-_LL_D_-_normale.jpg/1280px-Radio_abdominale_chat_-_LL_D_-_normale.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral derecha del abdomen de un gato macho castrado de 12 años con sobrepeso, sin hallazgos digestivos; el colon contiene heces. Se ve espondilosis entre T13 y L1.",
+      "en": "Right lateral abdominal radiograph of an overweight 12-year-old neutered male cat with an unremarkable digestive tract; the colon contains faeces. Spondylosis is visible between T13 and L1."
+    }
+  },
+  {
+    "id": "wm-cat-abdomen-vd-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Radio_abdominale_chat_-_ventro-dorsale_-_normale.jpg/1280px-Radio_abdominale_chat_-_ventro-dorsale_-_normale.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía ventrodorsal del abdomen del mismo gato: asas intestinales con contenido alimentario, colon descendente con heces y vejiga llena.",
+      "en": "Ventrodorsal abdominal radiograph of the same cat: intestinal loops with food content, descending colon with faeces and a full bladder."
+    }
+  },
+  {
+    "id": "wm-cat-liver-biliary-injected-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Felis_silvestris_catus_-_F%C3%A9lis_catus_-_Foie%2C_la_vesicule_biliaires_et_les_canaux_sont_injectes_-_mnhn_Paris.JPG/1280px-Felis_silvestris_catus_-_F%C3%A9lis_catus_-_Foie%2C_la_vesicule_biliaires_et_les_canaux_sont_injectes_-_mnhn_Paris.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Cédric Loury, via Wikimedia Commons",
+    "caption": {
+      "es": "Hígado de un gato siamés del Museo Nacional de Historia Natural de París, con la vesícula biliar y los conductos biliares inyectados (azul); se aprecia la lobulación profunda.",
+      "en": "Liver of a Siamese cat at the National Museum of Natural History, Paris, with the gallbladder and bile ducts injected (blue); the deep lobation is visible."
+    }
+  },
+  {
+    "id": "wm-cat-liver-double-gallbladder-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Cat_liver._Double_Gallbladder_-_Anomaly.jpg/1280px-Cat_liver._Double_Gallbladder_-_Anomaly.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Hígado de gato fijado en formol con vesícula biliar doble, una anomalía congénita que se describe con más frecuencia en el gato que en otras especies domésticas.",
+      "en": "Formalin-fixed cat liver with a double gallbladder, a congenital anomaly described more often in the cat than in other domestic species."
+    }
+  },
+  {
+    "id": "wm-cat-pancreas-labeled-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Pancreas-cat.jpg/1280px-Pancreas-cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Páncreas de un gato doméstico in situ: lóbulo derecho junto al duodeno, cuerpo y lóbulo izquierdo.",
+      "en": "Pancreas of a domestic cat in situ: right lobe along the duodenum, body and left lobe."
+    }
+  },
+  {
+    "id": "wm-cat-spleen-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Spleen-cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Bazo de un gato aislado: órgano alargado en forma de lengua.",
+      "en": "Isolated spleen of a cat: an elongated, tongue-shaped organ."
+    }
+  },
+  {
+    "id": "wm-cat-small-intestine-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cat_small_intestine.jpg/1280px-Cat_small_intestine.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva, via Wikimedia Commons",
+    "caption": {
+      "es": "Intestino delgado de gato fijado en formol, con las asas y el mesenterio, en el Museo de Anatomía Veterinaria de la FMVZ USP; escala de 15 cm.",
+      "en": "Formalin-fixed cat small intestine with its loops and mesentery, Museum of Veterinary Anatomy, FMVZ USP; 15 cm scale bar."
+    }
+  },
+  {
+    "id": "wm-cat-jejunum-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/SFEC-2012-EXP-CAT-JEJUNUM-MASSON001.JPG/1280px-SFEC-2012-EXP-CAT-JEJUNUM-MASSON001.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Merlin-UK, via Wikimedia Commons",
+    "caption": {
+      "es": "Pared del yeyuno de gato teñida con tricrómico de Masson: vellosidades de la mucosa, submucosa de tejido conjuntivo (verde) y capas musculares.",
+      "en": "Cat jejunal wall stained with Masson's trichrome: mucosal villi, connective-tissue submucosa (green) and muscular layers."
+    },
+    "stain": "Masson's trichrome"
+  },
+  {
+    "id": "wm-cat-ileum-lymphoma-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/High-grade_Lymphom_Ileum_Katze.jpg/1280px-High-grade_Lymphom_Ileum_Katze.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Segmento de íleon de un gato alterado por un linfoma; el diagnóstico histopatológico fue linfoma de alto grado.",
+      "en": "Segment of ileum from a cat affected by lymphoma; the histopathological diagnosis was high-grade lymphoma."
+    }
+  },
+  {
+    "id": "wm-cat-kidney-corrosion-cast-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/%D0%9A%D0%BE%D1%80%D1%80%D0%BE%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%B5%D0%BF%D0%B0%D1%80%D0%B0%D1%82_%D0%BF%D0%BE%D1%87%D0%BA%D0%B8_%D1%83_%D0%BA%D0%BE%D1%88%D0%BA%D0%B8.jpg/1280px-%D0%9A%D0%BE%D1%80%D1%80%D0%BE%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%B5%D0%BF%D0%B0%D1%80%D0%B0%D1%82_%D0%BF%D0%BE%D1%87%D0%BA%D0%B8_%D1%83_%D0%BA%D0%BE%D1%88%D0%BA%D0%B8.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Андрюша Романов, via Wikimedia Commons",
+    "caption": {
+      "es": "Molde por corrosión de la vascularización de un riñón de gato.",
+      "en": "Corrosion cast of the vasculature of a cat kidney."
+    }
+  },
+  {
+    "id": "wm-cat-kidney-section-histo-01",
+    "type": "histology",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/%D0%9F%D0%BE%D1%87%D0%BA%D0%B0_%D0%BA%D0%BE%D1%82%D0%B5%D0%BD%D0%BA%D0%B0.jpg/1280px-%D0%9F%D0%BE%D1%87%D0%BA%D0%B0_%D0%BA%D0%BE%D1%82%D0%B5%D0%BD%D0%BA%D0%B0.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexander Klepnev, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte longitudinal de un riñón de gatito teñido con hematoxilina-eosina: corteza y médula.",
+      "en": "Longitudinal section of a kitten kidney stained with haematoxylin and eosin: cortex and medulla."
+    },
+    "stain": "H&E"
+  },
+  {
+    "id": "wm-cat-bladder-struvite-lat-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/BladderStone.jpg/1280px-BladderStone.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "Bludwar, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral del abdomen caudal de un gato con un cálculo vesical de estruvita (flecha).",
+      "en": "Lateral radiograph of the caudal abdomen of a cat with a struvite bladder stone (arrow)."
+    }
+  },
+  {
+    "id": "wm-cat-urethral-catheter-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Blasenkatheter01.jpg/1280px-Blasenkatheter01.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Sondaje uretral de un gato macho con obstrucción uretral por urolitiasis; el pene se ha exteriorizado del prepucio.",
+      "en": "Urethral catheterisation of a male cat with urethral obstruction caused by urolithiasis; the penis has been extruded from the prepuce."
+    }
+  },
+  {
+    "id": "wm-cat-nervous-system-specimen-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nervous_system_of_a_cat_in_the_Timiryazev_Museum.jpg/1280px-Nervous_system_of_a_cat_in_the_Timiryazev_Museum.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC0",
+    "attribution": "Александр Сигачёв, via Wikimedia Commons",
+    "caption": {
+      "es": "Preparación del sistema nervioso de un gato en el Museo Timiriázev de Moscú, con el encéfalo y la médula espinal.",
+      "en": "Preparation of the nervous system of a cat at the Timiryazev Museum, Moscow, showing the brain and spinal cord."
+    }
+  },
+  {
+    "id": "wm-cat-cerebral-cortex-drawing-01",
+    "type": "illustration",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Cerebral_cortex_of_adult_cat._Wellcome_L0002047.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 4.0",
+    "attribution": "Wellcome Collection, via Wikimedia Commons",
+    "caption": {
+      "es": "Dibujo histológico de un corte tangencial de la capa plexiforme (molecular) de la corteza cerebral de un gato adulto, método de Ehrlich.",
+      "en": "Histological drawing of a tangential section of the plexiform (molecular) layer of the cerebral cortex of an adult cat, Ehrlich method."
+    }
+  },
+  {
+    "id": "wm-cat-hcm-echo-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Echocardiography_of_hypertrophic-obstructive_cardiomyopathy_in_a_domestic_cat.gif",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Ecocardiografía Doppler color (eje largo paraesternal derecho) de un gato doméstico de pelo corto con cardiomiopatía hipertrófica obstructiva: tabique engrosado, obstrucción del tracto de salida del ventrículo izquierdo e insuficiencia mitral.",
+      "en": "Colour Doppler echocardiogram (right parasternal long axis) of a domestic shorthair cat with hypertrophic obstructive cardiomyopathy: thickened septum, obstructed left ventricular outflow tract and mitral regurgitation."
+    }
+  },
+  {
+    "id": "wm-cat-ate-paraparesis-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Paraparesis-aortic_thrombosis-cat.JPG/1280px-Paraparesis-aortic_thrombosis-cat.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato con paraparesia por trombosis aórtica: los miembros pélvicos quedan extendidos y sin apoyo.",
+      "en": "Cat with paraparesis caused by aortic thrombosis: the pelvic limbs lie extended and do not bear weight."
+    }
+  },
+  {
+    "id": "wm-cat-fip-effusive-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Fip-infected-cat.JPG/1280px-Fip-infected-cat.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Phaeton68, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato scottish fold con PIF y una marcada acumulación de líquido en el abdomen, dos días antes de la eutanasia.",
+      "en": "Scottish Fold cat with FIP and marked fluid accumulation in the abdomen, two days before euthanasia."
+    }
+  },
+  {
+    "id": "wm-cat-fip-radiograph-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Fip-cat-numbered.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía lateral de un gato con PIF: opacidad difusa del tórax ventral por líquido (1), silueta cardiaca borrada por el líquido (2), tráquea (3), pulmón ventilado solo en parte (4), hígado (5), estómago (6) e intestino (7).",
+      "en": "Lateral radiograph of a cat with FIP: diffuse opacity of the ventral thorax from fluid (1), cardiac silhouette obscured by the fluid (2), trachea (3), lung only partly ventilated (4), liver (5), stomach (6) and intestine (7)."
+    }
+  },
+  {
+    "id": "wm-cat-hepatic-lipidosis-jaundice-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaundiced_cat.jpg/1280px-Jaundiced_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Sabar, via Wikimedia Commons",
+    "caption": {
+      "es": "Gata con lipidosis hepática en fase avanzada e ictericia visible en las orejas y en la membrana del ojo.",
+      "en": "Female cat with late-stage hepatic lipidosis showing jaundice on the ears and the eye membrane."
+    }
+  },
+  {
+    "id": "wm-cat-hepatic-lipidosis-us-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Sono_Hepatische_Lipidose_Katze_0.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Ecografía de un gato persa con lipidosis hepática grave: el parénquima hepático es hiperecoico, con una ecogenicidad parecida a la de la grasa que rodea al hígado.",
+      "en": "Ultrasound image of a Persian cat with severe hepatic lipidosis: the liver parenchyma is hyperechoic, with an echogenicity similar to the fat surrounding the liver."
+    }
+  },
+  {
+    "id": "wm-cat-tooth-resorption-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/FORL_1.JPG",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Joel Mills, via Wikimedia Commons",
+    "caption": {
+      "es": "Reabsorción dentaria (lesión odontoclástica reabsortiva felina) en el tercer premolar inferior (407) de un gato; la cara caudal del diente está afectada y el tejido gingival rellena en parte el defecto.",
+      "en": "Tooth resorption (feline odontoclastic resorptive lesion) of the mandibular third premolar (407) of a cat; the caudal aspect of the tooth is affected, with gingival tissue partially filling the defect."
+    }
+  },
+  {
+    "id": "wm-cat-tooth-resorption-rx-01",
+    "type": "radiograph",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/X_ray_image_of_FORL_in_a_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Radiografía dental de un gato con reabsorción dentaria (lesiones odontoclásticas reabsortivas felinas).",
+      "en": "Dental radiograph of a cat with tooth resorption (feline odontoclastic resorptive lesions)."
+    }
+  },
+  {
+    "id": "wm-cat-gingivostomatitis-caudal-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/FelinechronischeStomatitis.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Anja Bacher-Bröhling, Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato con gingivoestomatitis crónica felina: mucosa de la cavidad oral caudal enrojecida, proliferativa y ulcerada a ambos lados.",
+      "en": "Cat with feline chronic gingivostomatitis: reddened, proliferative and ulcerated mucosa of the caudal oral cavity on both sides."
+    }
+  },
+  {
+    "id": "wm-cat-gingivostomatitis-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Gingivo-stomatite_chronique_chez_un_chat_%28GSCF%29.jpg/1280px-Gingivo-stomatite_chronique_chez_un_chat_%28GSCF%29.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Dr Tissier, via Wikimedia Commons",
+    "caption": {
+      "es": "Gingivoestomatitis crónica en un gato: inflamación de la mucosa gingival a lo largo de las arcadas dentarias y su entorno inmediato.",
+      "en": "Chronic gingivostomatitis in a cat: inflammation of the gingival mucosa along the dental arches and their immediate surroundings."
+    }
+  },
+  {
+    "id": "wm-cat-fibrosarcoma-surgery-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cat_after_Fibrosarcom_op.jpg/1280px-Cat_after_Fibrosarcom_op.jpg",
+    "source": "wikimedia-commons",
+    "license": "Public domain",
+    "attribution": "WizardOfOz, via Wikimedia Commons",
+    "caption": {
+      "es": "Gata tras la cuarta escisión quirúrgica radical de un fibrosarcoma; la extensa herida sobre el cuello y la región interescapular muestra la amplitud de la resección.",
+      "en": "Cat after the fourth radical surgical excision of a fibrosarcoma; the extensive wound over the neck and interscapular region shows the width of the resection."
+    }
+  },
+  {
+    "id": "wm-cat-diabetes-glucose-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Glucose-measurement-cat.jpg/1280px-Glucose-measurement-cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 3.0",
+    "attribution": "Uwe Gille, via Wikimedia Commons",
+    "caption": {
+      "es": "Medición de la glucemia con un glucómetro portátil en una gota de sangre de la oreja de un gato diabético.",
+      "en": "Blood glucose measurement with a portable glucometer from a drop of blood from the ear of a diabetic cat."
+    }
+  },
+  {
+    "id": "wm-cat-alimentary-lymphoma-us-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Intestinal_lymphoma_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Ecografía de un asa de intestino delgado de un gato con linfoma: la flecha roja señala pared normal con sus cinco capas; la amarilla, tejido engrosado, hipoecoico y con pérdida de la estratificación normal.",
+      "en": "Ultrasound of a small intestinal loop in a cat with lymphoma: the red arrow marks normal wall with its five layers; the yellow arrow marks thickened, hypoechoic tissue with loss of normal layering."
+    }
+  },
+  {
+    "id": "wm-cat-pkd-kidney-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Polycystic_cat_kidney_%28MIS_90-6262-1%29%2C_National_Museum_of_Health_and_Medicine_%285413543139%29.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY 2.0",
+    "attribution": "National Museum of Health and Medicine, via Wikimedia Commons",
+    "caption": {
+      "es": "Riñón de gato con múltiples quistes (enfermedad renal poliquística).",
+      "en": "Cat kidney showing multiple cysts (polycystic kidney disease)."
+    }
+  },
+  {
+    "id": "wm-cat-pkd-us-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/PKD_cat.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Corte ecográfico transversal del riñón de un gato de un año y medio con enfermedad renal poliquística: numerosos quistes anecoicos de distinto tamaño.",
+      "en": "Ultrasound cross-section of the kidney of a 1.5-year-old cat with polycystic kidney disease: numerous anechoic cysts of varying size."
+    }
+  },
+  {
+    "id": "wm-cat-urethral-obstruction-us-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/FLUTD_Sono_Urethra.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Ecografía de un gato macho de un año con enfermedad obstructiva del tracto urinario inferior: uretra dilatada y concreciones hiperecoicas en la pared dorsal de la vejiga.",
+      "en": "Ultrasound of a one-year-old male cat with obstructive lower urinary tract disease: dilated urethra and hyperechoic concretions at the dorsal bladder wall."
+    }
+  },
+  {
+    "id": "wm-cat-herpesvirus-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Katzenschnupfen_Herpes.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato con enfermedad respiratoria superior (coriza felina), probablemente causada por herpesvirus: conjuntivitis con secreción ocular y nasal.",
+      "en": "Cat with upper respiratory disease (cat flu), presumably caused by herpesvirus: conjunctivitis with ocular and nasal discharge."
+    }
+  },
+  {
+    "id": "wm-cat-dermatophytosis-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Teigne.png/1280px-Teigne.png",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 4.0",
+    "attribution": "CamiRobi, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato joven sin pelo e inmunodeprimido con numerosas lesiones cutáneas en forma de anillo, identificadas por el autor como tiña.",
+      "en": "Young, immunocompromised hairless cat with numerous ring-shaped skin lesions, identified by the author as ringworm."
+    }
+  },
+  {
+    "id": "wm-cat-dermatophytosis-pseudomycetoma-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Pseudomycetoma.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Caroldermoid, via Wikimedia Commons",
+    "caption": {
+      "es": "Dermatitis granulomatosa por Microsporum canis (pseudomicetoma) en un gato persa.",
+      "en": "Granulomatous dermatitis caused by Microsporum canis (pseudomycetoma) in a Persian cat."
+    }
+  },
+  {
+    "id": "wm-cat-eosinophilic-granuloma-01",
+    "type": "photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Eosinophiles_Granulom_2.jpg",
+    "source": "wikimedia-commons",
+    "license": "CC BY-SA 2.5",
+    "attribution": "Kalumet, via Wikimedia Commons",
+    "caption": {
+      "es": "Gato con granuloma eosinofílico: tumefacción y erosión del labio inferior.",
+      "en": "Cat with an eosinophilic granuloma: swelling and erosion of the lower lip."
+    }
+  }
+]

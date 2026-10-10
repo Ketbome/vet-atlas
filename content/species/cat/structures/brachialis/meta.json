@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.brachialis",
+  "system": "cat.muscular",
+  "nav": "M. brachialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.brachialis.L",
+    "cat.muscular.brachialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#943229",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-02",
+    "wm-cat-arm-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.ulna",
+    "cat.muscular.biceps-brachii",
+    "cat.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

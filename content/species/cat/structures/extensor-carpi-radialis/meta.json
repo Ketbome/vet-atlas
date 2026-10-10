@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.extensor-carpi-radialis",
+  "system": "cat.muscular",
+  "nav": "M. extensor carpi radialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.extensor-carpi-radialis.L",
+    "cat.muscular.extensor-carpi-radialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04538",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.radius",
+    "cat.skeletal.metacarpus",
+    "cat.muscular.extensor-digitorum-communis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

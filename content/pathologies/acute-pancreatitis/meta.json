@@ -2,12 +2,16 @@
   "id": "acute-pancreatitis",
   "category": "inflammatory",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.pancreas",
     "dog.visceral.small-intestine",
-    "dog.visceral.liver"
+    "dog.visceral.liver",
+    "cat.visceral.pancreas",
+    "cat.visceral.small-intestine",
+    "cat.visceral.liver"
   ],
   "media": [],
   "references": [
@@ -18,6 +22,36 @@
     {
       "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
       "year": 2013
+    },
+    {
+      "title": "Forman MA, Steiner JM, Armstrong PJ, et al. ACVIM consensus statement on pancreatitis in cats. J Vet Intern Med 35:703-723",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33587762/",
+      "year": 2021
+    },
+    {
+      "title": "De Cock HE, Forman MA, Farver TB, et al. Prevalence and histopathologic characteristics of pancreatitis in cats. Vet Pathol 44:39-49",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17197622/",
+      "year": 2007
+    },
+    {
+      "title": "Fragkou FC, Adamama-Moraitou KK, Poutahidis T, et al. Prevalence and clinicopathological features of triaditis in a prospective case series of symptomatic and asymptomatic cats. J Vet Intern Med 30:1031-1045",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27296565/",
+      "year": 2016
+    },
+    {
+      "title": "Lee C, Kathrani A, Maddison J. Retrospective study of the diagnostic utility of Spec fPL in the assessment of 274 sick cats. J Vet Intern Med 34:1406-1412",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32452547/",
+      "year": 2020
+    },
+    {
+      "title": "Nivy R, Kaplanov A, Kuzi S, et al. A retrospective study of 157 hospitalized cats with pancreatitis in a tertiary care center: clinical, imaging and laboratory findings, potential prognostic markers and outcome. J Vet Intern Med 32:1874-1885",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30315665/",
+      "year": 2018
+    },
+    {
+      "title": "Wu YA, Lidbury JA, Sinha S, et al. Randomized open-label clinical trial comparing prednisolone and cyclosporine with a nonrandomized active control for treating presumed chronic pancreatitis in cats. J Vet Intern Med 39:e70163",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40577334/",
+      "year": 2025
     }
   ],
   "review": {

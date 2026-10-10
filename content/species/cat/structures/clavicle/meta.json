@@ -1,0 +1,29 @@
+{
+  "id": "cat.skeletal.clavicle",
+  "system": "cat.skeletal",
+  "nav": "Clavicula",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.clavicle.L",
+    "cat.skeletal.clavicle.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "placeholder",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thorax-vd-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.humerus",
+    "cat.skeletal.sternum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

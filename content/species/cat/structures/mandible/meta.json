@@ -1,0 +1,34 @@
+{
+  "id": "cat.skeletal.mandible",
+  "system": "cat.skeletal",
+  "nav": "Mandibula",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.mandible"
+  ],
+  "fidelity": "scan",
+  "source": "risd-nature-lab",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "mandibular-fracture",
+    "tooth-resorption",
+    "feline-chronic-gingivostomatitis",
+    "high-rise-syndrome"
+  ],
+  "media": [
+    "wm-cat-skull-mandible-01",
+    "wm-cat-skull-gape-01",
+    "wm-cat-skull-specimen-01"
+  ],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.hyoid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

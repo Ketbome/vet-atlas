@@ -1,0 +1,36 @@
+{
+  "id": "cat.muscular.biceps-femoris",
+  "system": "cat.muscular",
+  "nav": "M. biceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.biceps-femoris.cranial.L",
+    "cat.muscular.biceps-femoris.cranial.R",
+    "cat.muscular.biceps-femoris.caudal.L",
+    "cat.muscular.biceps-femoris.caudal.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A23D33",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-superficial-muscles-holding-01",
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.patella",
+    "cat.skeletal.tibia",
+    "cat.muscular.semitendinosus",
+    "cat.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

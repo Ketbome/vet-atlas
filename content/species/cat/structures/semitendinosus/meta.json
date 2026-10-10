@@ -1,0 +1,34 @@
+{
+  "id": "cat.muscular.semitendinosus",
+  "system": "cat.muscular",
+  "nav": "M. semitendinosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.semitendinosus.L",
+    "cat.muscular.semitendinosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24A3D",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.tibia",
+    "cat.muscular.biceps-femoris",
+    "cat.muscular.semimembranosus",
+    "cat.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

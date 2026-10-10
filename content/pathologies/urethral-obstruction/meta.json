@@ -1,0 +1,90 @@
+{
+  "id": "urethral-obstruction",
+  "category": "inflammatory",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.urinary-bladder",
+    "cat.visceral.kidneys"
+  ],
+  "media": [
+    "wm-cat-urethral-obstruction-us-01"
+  ],
+  "references": [
+    {
+      "title": "Lee JA, Drobatz KJ. Characterization of the clinical characteristics, electrolytes, acid-base, and renal parameters in male cats with urethral obstruction. J Vet Emerg Crit Care 13:227-233",
+      "year": 2003
+    },
+    {
+      "title": "Segev G, Livne H, Ranen E, Lavy E. Urethral obstruction in cats: predisposing factors, clinical, clinicopathological characteristics and prognosis. J Feline Med Surg 13:101-108",
+      "year": 2011
+    },
+    {
+      "title": "Cooper ES. Controversies in the management of feline urethral obstruction. J Vet Emerg Crit Care 25:130-137",
+      "year": 2015
+    },
+    {
+      "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Root MV, Johnston SD, Johnston GR, Olson PN. The effect of prepuberal and postpuberal gonadectomy on penile extrusion and urethral diameter in the domestic cat. Vet Radiol Ultrasound 37:363-366",
+      "url": "https://doi.org/10.1111/j.1740-8261.1996.tb01244.x",
+      "year": 1996
+    },
+    {
+      "title": "Howe LM, Slater MR, Boothe HW, et al. Long-term outcome of gonadectomy performed at an early age or traditional age in cats. JAVMA 217:1661-1665",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11110455/",
+      "year": 2000
+    },
+    {
+      "title": "Spain CV, Scarlett JM, Houpt KA. Long-term risks and benefits of early-age gonadectomy in cats. JAVMA 224:372-379",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14765796/",
+      "year": 2004
+    },
+    {
+      "title": "Porters N, Polis I, Moons CP, et al. Relationship between age at gonadectomy and health problems in kittens adopted from shelters. Vet Rec 176:572",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25820324/",
+      "year": 2015
+    },
+    {
+      "title": "Lee S, An Y, Choi Y, et al. Evaluation of total urethral thickness using ultrasonography in cats. Front Vet Sci 12:1655498",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41169683/",
+      "year": 2025
+    },
+    {
+      "title": "Jukes A, Lui M, Morton JM, et al. Associations between increased body condition score, bodyweight, age and breed with urethral obstruction in male castrated cats. Vet J 244:7-12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30825898/",
+      "year": 2019
+    },
+    {
+      "title": "Taylor S, Boysen S, Buffington T, et al. 2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats. J Feline Med Surg 27(2):1098612X241309176",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39935081/",
+      "year": 2025
+    },
+    {
+      "title": "Reineke EL, Thomas EK, Syring RS, et al. The effect of prazosin on outcome in feline urethral obstruction. J Vet Emerg Crit Care 27:387-396",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28510274/",
+      "year": 2017
+    },
+    {
+      "title": "Hanson KR, Rudloff E, Yuan L, et al. Effect of prazosin on feline recurrent urethral obstruction. J Feline Med Surg 23:1176-1182",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33749375/",
+      "year": 2021
+    },
+    {
+      "title": "Nivy R, Segev G, Rimer D, et al. A prospective randomized study of efficacy of 2 treatment protocols in preventing recurrence of clinical signs in 51 male cats with obstructive idiopathic cystitis. J Vet Intern Med 33:2117-2123",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31400046/",
+      "year": 2019
+    },
+    {
+      "title": "Skinner VJ, Zhong M, Hall EJ, et al. Azotaemia and outcomes in male cats with initial and recurrent urethral obstruction: a multicentre, retrospective study of 601 cats (2020-2024). J Feline Med Surg 28:1098612X261457846",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42187200/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "cat.skeletal.vertebrae-cervical",
+  "system": "cat.skeletal",
+  "nav": "Vertebrae cervicales III–VII",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.vertebrae-cervical.c3",
+    "cat.skeletal.vertebrae-cervical.c4",
+    "cat.skeletal.vertebrae-cervical.c5",
+    "cat.skeletal.vertebrae-cervical.c6",
+    "cat.skeletal.vertebrae-cervical.c7"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-skeleton-diagram-01"
+  ],
+  "related": [
+    "cat.skeletal.axis",
+    "cat.skeletal.vertebrae-thoracic",
+    "cat.skeletal.clavicle"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

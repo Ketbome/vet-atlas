@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.masseter",
+  "system": "cat.muscular",
+  "nav": "M. masseter",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.masseter.L",
+    "cat.muscular.masseter.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04A3A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-superficial-muscles-holding-01",
+    "wm-cat-forequarter-muscles-mivart-01",
+    "wm-cat-shoulder-neck-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.mandible",
+    "cat.muscular.temporalis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

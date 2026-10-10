@@ -1,0 +1,33 @@
+{
+  "id": "cat.visceral.pancreas",
+  "system": "cat.visceral",
+  "nav": "Pancreas",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.pancreas"
+  ],
+  "fidelity": "modeled",
+  "color": "#E5BE8A",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "acute-pancreatitis",
+    "diabetes-mellitus"
+  ],
+  "media": [
+    "wm-cat-pancreas-labeled-01",
+    "wm-dog-pancreas-histo-01"
+  ],
+  "related": [
+    "cat.visceral.small-intestine",
+    "cat.visceral.liver",
+    "cat.visceral.stomach"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

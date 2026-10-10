@@ -2,11 +2,14 @@
   "id": "aspiration-pneumonia",
   "category": "inflammatory",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.lungs",
-    "dog.visceral.esophagus"
+    "dog.visceral.esophagus",
+    "cat.visceral.lungs",
+    "cat.visceral.esophagus"
   ],
   "media": [],
   "references": [

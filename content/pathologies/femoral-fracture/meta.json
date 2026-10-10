@@ -2,10 +2,12 @@
   "id": "femoral-fracture",
   "category": "traumatic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.skeletal.femur"
+    "dog.skeletal.femur",
+    "cat.skeletal.femur"
   ],
   "media": [
     "wm-dog-femur-interlocking-nail-01"
@@ -22,6 +24,31 @@
     {
       "title": "Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. Thieme",
       "year": 2005
+    },
+    {
+      "title": "Könning T, Maarschalkerweerd RJ, Endenburg N, et al. A comparison between fixation methods of femoral diaphyseal fractures in cats - a retrospective study. J Small Anim Pract 54:248-252",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23560936/",
+      "year": 2013
+    },
+    {
+      "title": "Marturello DM, Perry KL, Déjardin LM. Clinical application of the small I-Loc interlocking nail in 30 feline fractures: A prospective study. Vet Surg 50:588-599",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33625791/",
+      "year": 2021
+    },
+    {
+      "title": "Mund GM, Bitterli T, Häußler TC, et al. Management of Feline Femoral, Tibial and Humeral Fractures Using a 3.5 mm Titanium Interlocking Nail. Vet Comp Orthop Traumatol 36:53-62",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36150695/",
+      "year": 2023
+    },
+    {
+      "title": "Bondonny L, Jacqmin M, Ferrand FX, et al. Use of a Modified Intramedullary Pinning Technique for Distal Femoral Physeal Salter-Harris Type I and II Fracture Management: A Retrospective Study of 31 Cats. Vet Comp Orthop Traumatol 37:107-114",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37907243/",
+      "year": 2024
+    },
+    {
+      "title": "Rubinos C, Meeson RL. Traumatic physeal fractures in cats: a review of 36 cases (2010-2020). J Feline Med Surg 24:98-106",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33847538/",
+      "year": 2022
     }
   ],
   "review": {

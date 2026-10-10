@@ -2,10 +2,12 @@
   "id": "flail-chest",
   "category": "traumatic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.skeletal.ribs"
+    "dog.skeletal.ribs",
+    "cat.skeletal.ribs"
   ],
   "media": [],
   "references": [
@@ -16,6 +18,26 @@
     {
       "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Kraje BJ, Kraje AC, Rohrbach BW, et al. Intrathoracic and concurrent orthopedic injury associated with traumatic rib fracture in cats: 75 cases (1980-1998). J Am Vet Med Assoc 216:51-54",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10638318/",
+      "year": 2000
+    },
+    {
+      "title": "Frykfors von Hekkel AK, Halfacree ZJ. Thoracic dog bite wounds in cats: a retrospective study of 22 cases (2005-2015). J Feline Med Surg 22:146-152",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30806527/",
+      "year": 2020
+    },
+    {
+      "title": "Mansbridge N, Kallis G, He J, et al. Physical examination and CT to assess thoracic injury in 137 cats presented to UK referral hospitals after trauma. J Feline Med Surg 26:1098612X241228050",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38415622/",
+      "year": 2024
+    },
+    {
+      "title": "Vidal PA, Boysen SR, Fordellone J, et al. Retrospective evaluation of the agreement between thoracic point-of-care ultrasound and thoracic radiographs in cats with recent trauma: 111 cats. Front Vet Sci 11:1376004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38988977/",
+      "year": 2024
     }
   ],
   "review": {

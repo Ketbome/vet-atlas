@@ -14,6 +14,10 @@
     "models:dog-integumentary": "tsx scripts/build-dog-integumentary.ts",
     "models:dog-muscular": "tsx scripts/build-dog-muscular.ts",
     "models:dog-visceral": "tsx scripts/build-dog-visceral.ts",
+    "models:cat": "tsx scripts/build-cat-skeletal.ts",
+    "models:cat-integumentary": "tsx scripts/build-cat-integumentary.ts",
+    "models:cat-muscular": "tsx scripts/build-cat-muscular.ts",
+    "models:cat-visceral": "tsx scripts/build-cat-visceral.ts",
     "brand": "tsx scripts/build-brand.ts",
     "test": "vitest run"
   },

@@ -1,0 +1,60 @@
+{
+  "id": "feline-herpesvirus-keratoconjunctivitis",
+  "category": "infectious",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.integumentary.eyes"
+  ],
+  "media": [
+    "wm-cat-herpesvirus-01"
+  ],
+  "references": [
+    {
+      "title": "Thiry E, Addie D, Belák S, et al. Feline herpesvirus infection. ABCD guidelines on prevention and management. J Feline Med Surg 11:547-555",
+      "year": 2009
+    },
+    {
+      "title": "Gould D. Feline herpesvirus-1: ocular manifestations, diagnosis and treatment options. J Feline Med Surg 13:333-346",
+      "year": 2011
+    },
+    {
+      "title": "Thomasy SM, Maggs DJ. A review of antiviral drugs and other compounds with activity against feline herpesvirus type 1. Vet Ophthalmol 19 Suppl 1:119-130",
+      "year": 2016
+    },
+    {
+      "title": "Bol S, Bunnik EM. Lysine supplementation is not effective for the prevention or treatment of feline herpesvirus 1 infection in cats: a systematic review. BMC Vet Res 11:284",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26573523/",
+      "year": 2015
+    },
+    {
+      "title": "Fontenelle JP, Powell CC, Veir JK, et al. Effect of topical ophthalmic application of cidofovir on experimentally induced primary ocular feline herpesvirus-1 infection in cats. Am J Vet Res 69:289-293",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18241028/",
+      "year": 2008
+    },
+    {
+      "title": "Thomasy SM, Lim CC, Reilly CM, et al. Evaluation of orally administered famciclovir in cats experimentally infected with feline herpesvirus type-1. Am J Vet Res 72:85-95",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21194340/",
+      "year": 2011
+    },
+    {
+      "title": "Ledbetter EC, Badanes ZI, Chan RX, et al. Comparative efficacy of topical ophthalmic ganciclovir and oral famciclovir in cats with experimental ocular feline herpesvirus-1 epithelial infection. J Ocul Pharmacol Ther 38:339-347",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35613418/",
+      "year": 2022
+    },
+    {
+      "title": "Mironovich MA, Yoon A, Marino ME, et al. Evaluation of compounded cidofovir, famciclovir, and ganciclovir for the treatment of feline herpesvirus ocular surface disease in shelter-housed cats. Vet Ophthalmol 26 Suppl 1:143-153",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36261852/",
+      "year": 2023
+    },
+    {
+      "title": "Vernau KM, Kim S, Thomasy SM, et al. Doxycycline with or without famciclovir for infectious ophthalmic and respiratory disease: a prospective, randomized, masked, placebo-controlled trial in 373 kittens. J Feline Med Surg 26:1098612X241278413",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39485362/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "cat.visceral.kidneys",
+  "system": "cat.visceral",
+  "nav": "Renes",
+  "region": "urinary",
+  "laterality": "paired",
+  "meshes": [
+    "cat.visceral.kidneys.L",
+    "cat.visceral.kidneys.R"
+  ],
+  "fidelity": "scan",
+  "color": "#7A3428",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.2
+  },
+  "pathologies": [
+    "chronic-kidney-disease",
+    "polycystic-kidney-disease",
+    "urolithiasis",
+    "urethral-obstruction",
+    "feline-infectious-peritonitis"
+  ],
+  "media": [
+    "wm-cat-kidney-corrosion-cast-01",
+    "wm-cat-kidney-section-histo-01",
+    "wm-cat-abdomen-vd-01"
+  ],
+  "related": [
+    "cat.visceral.urinary-bladder",
+    "cat.visceral.great-vessels",
+    "cat.skeletal.vertebrae-lumbar"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

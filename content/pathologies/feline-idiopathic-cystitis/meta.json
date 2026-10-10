@@ -1,0 +1,43 @@
+{
+  "id": "feline-idiopathic-cystitis",
+  "category": "inflammatory",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.urinary-bladder"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Buffington CAT. Idiopathic cystitis in domestic cats—beyond the lower urinary tract. J Vet Intern Med 25:784-796",
+      "year": 2011
+    },
+    {
+      "title": "Forrester SD, Towell TL. Feline idiopathic cystitis. Vet Clin North Am Small Anim Pract 45:783-806",
+      "year": 2015
+    },
+    {
+      "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Taylor S, Boysen S, Buffington T, et al. 2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats. J Feline Med Surg 27(2):1098612X241309176",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39935081/",
+      "year": 2025
+    },
+    {
+      "title": "Macleod B, Laven LJ, Laven RA, et al. Understanding the current evidence base for the commonly recommended management strategies for recurrent feline idiopathic cystitis: a systematic review. N Z Vet J 73:233-245",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40147044/",
+      "year": 2025
+    },
+    {
+      "title": "Kruger JM, Lulich JP, MacLeay J, et al. Comparison of foods with differing nutritional profiles for long-term management of acute nonobstructive idiopathic cystitis in cats. JAVMA 247:508-517",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26295556/",
+      "year": 2015
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

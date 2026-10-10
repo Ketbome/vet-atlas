@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.extensor-digitorum-communis",
+  "system": "cat.muscular",
+  "nav": "M. extensor digitorum communis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.extensor-digitorum-communis.L",
+    "cat.muscular.extensor-digitorum-communis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9C392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-01",
+    "wm-cat-superficial-muscles-holding-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.radius",
+    "cat.skeletal.phalanges-thoracic",
+    "cat.muscular.extensor-carpi-radialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

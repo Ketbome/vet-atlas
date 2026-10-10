@@ -2,10 +2,12 @@
   "id": "diaphragmatic-hernia",
   "category": "traumatic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.muscular.diaphragm"
+    "dog.muscular.diaphragm",
+    "cat.muscular.diaphragm"
   ],
   "media": [],
   "references": [
@@ -16,6 +18,31 @@
     {
       "title": "Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Reimer SB, Kyles AE, Filipowicz DE, et al. Long-term outcome of cats treated conservatively or surgically for peritoneopericardial diaphragmatic hernia: 66 cases (1987-2002). J Am Vet Med Assoc 224:728-732",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15002811/",
+      "year": 2004
+    },
+    {
+      "title": "Schmiedt CW, Tobias KM, Stevenson MA. Traumatic diaphragmatic hernia in cats: 34 cases (1991-2001). J Am Vet Med Assoc 222:1237-1240",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12725312/",
+      "year": 2003
+    },
+    {
+      "title": "De Bastiani D, Montinaro V, Cipolla E, et al. Complications and outcome of traumatic diaphragmatic hernia repair without post-operative chest drain: Retrospective study in 90 cats. Open Vet J 13:677-683",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37545705/",
+      "year": 2023
+    },
+    {
+      "title": "Banz AC, Gottfried SD. Peritoneopericardial diaphragmatic hernia: a retrospective study of 31 cats and eight dogs. J Am Anim Hosp Assoc 46:398-404",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21041332/",
+      "year": 2010
+    },
+    {
+      "title": "Burns CG, Bergh MS, McLoughlin MA. Surgical and nonsurgical treatment of peritoneopericardial diaphragmatic hernia in dogs and cats: 58 cases (1999-2008). J Am Vet Med Assoc 242:643-650",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23402411/",
+      "year": 2013
     }
   ],
   "review": {

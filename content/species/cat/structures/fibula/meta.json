@@ -1,0 +1,29 @@
+{
+  "id": "cat.skeletal.fibula",
+  "system": "cat.skeletal",
+  "nav": "Fibula",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.fibula.L",
+    "cat.skeletal.fibula.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-limbs-ct-munchkin-01"
+  ],
+  "related": [
+    "cat.skeletal.tibia",
+    "cat.skeletal.tarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

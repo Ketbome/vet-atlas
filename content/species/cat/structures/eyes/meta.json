@@ -1,0 +1,37 @@
+{
+  "id": "cat.integumentary.eyes",
+  "system": "cat.integumentary",
+  "nav": "Oculus",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cat.integumentary.eyes.L",
+    "cat.integumentary.eyes.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#1E1714",
+  "material": "organ",
+  "source": "lovadahn-cat-model",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 2.5
+  },
+  "pathologies": [
+    "corneal-ulcer",
+    "entropion",
+    "feline-herpesvirus-keratoconjunctivitis",
+    "feline-infectious-peritonitis"
+  ],
+  "media": [
+    "wm-cat-eye-slit-pupil-01",
+    "wm-cat-eye-tapetum-01",
+    "wm-cat-third-eyelid-01"
+  ],
+  "related": [
+    "cat.integumentary.skin",
+    "cat.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

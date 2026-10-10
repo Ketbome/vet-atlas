@@ -1,0 +1,36 @@
+{
+  "id": "cat.skeletal.skull",
+  "system": "cat.skeletal",
+  "nav": "Cranium",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.skull"
+  ],
+  "fidelity": "scan",
+  "source": "risd-nature-lab",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [
+    "brachycephalic-obstructive-airway-syndrome",
+    "tooth-resorption",
+    "feline-chronic-gingivostomatitis",
+    "high-rise-syndrome"
+  ],
+  "media": [
+    "wm-cat-skull-specimen-01",
+    "wm-cat-skull-mandible-01",
+    "wm-cat-skull-persian-01",
+    "wm-cat-head-radiograph-01"
+  ],
+  "related": [
+    "cat.skeletal.mandible",
+    "cat.skeletal.hyoid",
+    "cat.skeletal.atlas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

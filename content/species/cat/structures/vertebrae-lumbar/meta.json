@@ -1,0 +1,34 @@
+{
+  "id": "cat.skeletal.vertebrae-lumbar",
+  "system": "cat.skeletal",
+  "nav": "Vertebrae lumbales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.vertebrae-lumbar.l1",
+    "cat.skeletal.vertebrae-lumbar.l2",
+    "cat.skeletal.vertebrae-lumbar.l3",
+    "cat.skeletal.vertebrae-lumbar.l4",
+    "cat.skeletal.vertebrae-lumbar.l5",
+    "cat.skeletal.vertebrae-lumbar.l6",
+    "cat.skeletal.vertebrae-lumbar.l7"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-skeleton-specimen-01",
+    "wm-cat-skeleton-diagram-01"
+  ],
+  "related": [
+    "cat.skeletal.vertebrae-thoracic",
+    "cat.skeletal.sacrum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

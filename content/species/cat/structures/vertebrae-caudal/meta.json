@@ -1,0 +1,47 @@
+{
+  "id": "cat.skeletal.vertebrae-caudal",
+  "system": "cat.skeletal",
+  "nav": "Vertebrae caudales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "cat.skeletal.vertebrae-caudal.cd1",
+    "cat.skeletal.vertebrae-caudal.cd2",
+    "cat.skeletal.vertebrae-caudal.cd3",
+    "cat.skeletal.vertebrae-caudal.cd4",
+    "cat.skeletal.vertebrae-caudal.cd5",
+    "cat.skeletal.vertebrae-caudal.cd6",
+    "cat.skeletal.vertebrae-caudal.cd7",
+    "cat.skeletal.vertebrae-caudal.cd8",
+    "cat.skeletal.vertebrae-caudal.cd9",
+    "cat.skeletal.vertebrae-caudal.cd10",
+    "cat.skeletal.vertebrae-caudal.cd11",
+    "cat.skeletal.vertebrae-caudal.cd12",
+    "cat.skeletal.vertebrae-caudal.cd13",
+    "cat.skeletal.vertebrae-caudal.cd14",
+    "cat.skeletal.vertebrae-caudal.cd15",
+    "cat.skeletal.vertebrae-caudal.cd16",
+    "cat.skeletal.vertebrae-caudal.cd17"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "sacrocaudal-luxation",
+    "scottish-fold-osteochondrodysplasia"
+  ],
+  "media": [
+    "wm-cat-skeleton-specimen-02",
+    "wm-cat-skeleton-diagram-01"
+  ],
+  "related": [
+    "cat.skeletal.sacrum",
+    "cat.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

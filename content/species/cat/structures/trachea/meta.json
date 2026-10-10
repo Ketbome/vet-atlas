@@ -1,0 +1,33 @@
+{
+  "id": "cat.visceral.trachea",
+  "system": "cat.visceral",
+  "nav": "Trachea",
+  "region": "respiratory",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.trachea"
+  ],
+  "fidelity": "illustrative",
+  "color": "#E6D7C3",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "feline-asthma",
+    "brachycephalic-obstructive-airway-syndrome"
+  ],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-dog-trachea-histo-01"
+  ],
+  "related": [
+    "cat.visceral.lungs",
+    "cat.visceral.esophagus",
+    "cat.visceral.thyroid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

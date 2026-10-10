@@ -1,0 +1,57 @@
+{
+  "id": "feline-infectious-peritonitis",
+  "category": "infectious",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.liver",
+    "cat.visceral.kidneys",
+    "cat.visceral.small-intestine",
+    "cat.visceral.brain",
+    "cat.integumentary.eyes"
+  ],
+  "media": [
+    "wm-cat-fip-effusive-01",
+    "wm-cat-fip-radiograph-01"
+  ],
+  "references": [
+    {
+      "title": "Thayer V, Gogolski S, Felten S, et al. 2022 AAFP/EveryCat Feline Infectious Peritonitis Diagnosis Guidelines. J Feline Med Surg 24:905-933",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36002137/",
+      "year": 2022
+    },
+    {
+      "title": "Tasker S, Addie DD, Egberink H, et al. Feline Infectious Peritonitis: European Advisory Board on Cat Diseases Guidelines. Viruses 15:1847",
+      "year": 2023
+    },
+    {
+      "title": "Pedersen NC, Perron M, Bannasch M, et al. Efficacy and safety of the nucleoside analog GS-441524 for treatment of cats with naturally occurring feline infectious peritonitis. J Feline Med Surg 21:271-281",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30755068/",
+      "year": 2019
+    },
+    {
+      "title": "Ritz S, Egberink H, Hartmann K. Effect of feline interferon-omega on the survival time and quality of life of cats with feline infectious peritonitis. J Vet Intern Med 21:1193-1197",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18196725/",
+      "year": 2007
+    },
+    {
+      "title": "Zuzzi-Krebitz AM, Buchta K, Bergmann M, et al. Short treatment of 42 days with oral GS-441524 results in equal efficacy as the recommended 84-day treatment in cats suffering from feline infectious peritonitis with effusion: a prospective randomized controlled study. Viruses 16:1144",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39066306/",
+      "year": 2024
+    },
+    {
+      "title": "Brostoff T, Pires J, Rose A, et al. Treatment of non-effusive feline infectious peritonitis using oral remdesivir or GS-441524: a randomized, double-blind, non-inferiority trial. J Feline Med Surg 28:1098612X261433057",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781382/",
+      "year": 2026
+    },
+    {
+      "title": "Tasker S, Spiri AM, Hartmann K, et al. Update on treatment of feline infectious peritonitis: European Advisory Board on Cat Diseases (ABCD) guidelines. Viruses 18:452",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42043241/",
+      "year": 2026
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "cat.muscular.epaxial",
+  "system": "cat.muscular",
+  "nav": "M. iliocostalis, M. longissimus et M. transversospinalis (musculi epaxiales)",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.epaxial.L",
+    "cat.muscular.epaxial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#963630",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.1
+  },
+  "pathologies": [
+    "feline-injection-site-sarcoma"
+  ],
+  "media": [],
+  "related": [
+    "cat.skeletal.vertebrae-cervical",
+    "cat.skeletal.vertebrae-thoracic",
+    "cat.skeletal.vertebrae-lumbar",
+    "cat.skeletal.sacrum",
+    "cat.skeletal.ribs",
+    "cat.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

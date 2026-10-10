@@ -1,0 +1,54 @@
+{
+  "id": "feline-chronic-gingivostomatitis",
+  "category": "inflammatory",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.mandible",
+    "cat.skeletal.skull"
+  ],
+  "media": [
+    "wm-cat-gingivostomatitis-caudal-01",
+    "wm-cat-gingivostomatitis-01"
+  ],
+  "references": [
+    {
+      "title": "Winer JN, Arzi B, Verstraete FJM. Therapeutic management of feline chronic gingivostomatitis: a systematic review of the literature. Front Vet Sci 3:54",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27486584/",
+      "year": 2016
+    },
+    {
+      "title": "Jennings MW, Lewis JR, Soltero-Rivera MM, Brown DC, Reiter AM. Effect of tooth extraction on stomatitis in cats: 95 cases (2000-2013). J Am Vet Med Assoc 246:654-660",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25719848/",
+      "year": 2015
+    },
+    {
+      "title": "Lommer MJ. Efficacy of cyclosporine for chronic, refractory stomatitis in cats: a randomized, placebo-controlled, double-blinded clinical study. J Vet Dent 30:8-17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23757820/",
+      "year": 2013
+    },
+    {
+      "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Lobprise H, St Denis K, Anderson JG, et al. 2025 FelineVMA feline oral health and dental care guidelines. J Feline Med Surg 27(11):1098612X251398793",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41319038/",
+      "year": 2025
+    },
+    {
+      "title": "Hennet PR, Camy GA, McGahie DM, et al. Comparative efficacy of a recombinant feline interferon omega in refractory cases of calicivirus-positive cats with caudal stomatitis: a randomised, multi-centre, controlled, double-blind study in 39 cats. J Feline Med Surg 13:577-587",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21802033/",
+      "year": 2011
+    },
+    {
+      "title": "Williams VS, Schneider JL, Parrish RS, et al. Clinical field study evaluating the safety and efficacy of allogeneic uterine-derived mesenchymal stem cells for refractory feline chronic gingivostomatitis. J Feline Med Surg 27(11):1098612X251385852",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40999564/",
+      "year": 2025
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

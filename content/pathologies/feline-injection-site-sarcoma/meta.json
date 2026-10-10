@@ -1,0 +1,58 @@
+{
+  "id": "feline-injection-site-sarcoma",
+  "category": "neoplastic",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.integumentary.skin",
+    "cat.muscular.epaxial",
+    "cat.muscular.latissimus-dorsi"
+  ],
+  "media": [
+    "wm-cat-fibrosarcoma-surgery-01"
+  ],
+  "references": [
+    {
+      "title": "Hartmann K, Day MJ, Thiry E, et al. Feline injection-site sarcoma: ABCD guidelines on prevention and management. J Feline Med Surg 17:606-613",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26101312/",
+      "year": 2015
+    },
+    {
+      "title": "Phelps HA, Kuntz CA, Milner RJ, Powers BE, Bacon NJ. Radical excision with five-centimeter margins for treatment of feline injection-site sarcomas: 91 cases (1998-2002). J Am Vet Med Assoc 239:97-106",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21718202/",
+      "year": 2011
+    },
+    {
+      "title": "Stone AES, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg 22:813-830",
+      "year": 2020
+    },
+    {
+      "title": "Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen's Small Animal Clinical Oncology, 6th ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Emdin F, Naro SG, Hoang PM, et al. The incidence of vaccine-associated sarcomas in cats: a systematic review and meta-analysis. J Small Anim Pract (online ahead of print)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42532508/",
+      "year": 2026
+    },
+    {
+      "title": "Srivastav A, Kass PH, McGill LD, et al. Comparative vaccine-specific and other injectable-specific risks of injection-site sarcomas in cats. J Am Vet Med Assoc 241:595-602",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22916856/",
+      "year": 2012
+    },
+    {
+      "title": "Shaw SC, Kent MS, Gordon IK, et al. Temporal changes in characteristics of injection-site sarcomas in cats: 392 cases (1990-2006). J Am Vet Med Assoc 234:376-380",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19210260/",
+      "year": 2009
+    },
+    {
+      "title": "Müller N, Kessler M. Curative-intent radical en bloc resection using a minimum of a 3 cm margin in feline injection-site sarcomas: a retrospective analysis of 131 cases. J Feline Med Surg 20:509-519",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28696150/",
+      "year": 2018
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

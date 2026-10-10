@@ -2,13 +2,18 @@
   "id": "patellar-luxation",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.skeletal.patella",
     "dog.skeletal.femur",
     "dog.skeletal.tibia",
-    "dog.muscular.quadriceps-femoris"
+    "dog.muscular.quadriceps-femoris",
+    "cat.skeletal.patella",
+    "cat.skeletal.femur",
+    "cat.skeletal.tibia",
+    "cat.muscular.quadriceps-femoris"
   ],
   "media": [
     "wm-dog-stifle-specimen-01"
@@ -25,6 +30,26 @@
     {
       "title": "American College of Veterinary Surgeons: Patellar luxations",
       "url": "https://www.acvs.org/small-animal/patellar-luxations"
+    },
+    {
+      "title": "Loughin CA, Kerwin SC, Hosgood G, et al. Clinical signs and results of treatment in cats with patellar luxation: 42 cases (1992-2002). J Am Vet Med Assoc 228:1370-1375",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16649941/",
+      "year": 2006
+    },
+    {
+      "title": "Smith GK, Langenbach A, Green PA, et al. Evaluation of the association between medial patellar luxation and hip dysplasia in cats. J Am Vet Med Assoc 215:40-45",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10397063/",
+      "year": 1999
+    },
+    {
+      "title": "Rutherford L, Langley-Hobbs SJ, Whitelock RJ, et al. Complications associated with corrective surgery for patellar luxation in 85 feline surgical cases. J Feline Med Surg 17:312-317",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24990869/",
+      "year": 2015
+    },
+    {
+      "title": "Mills J, Jaworski J, Hargittai T. Treatment of patellar luxation with polyethylene sulcal ridge prostheses in 44 feline stifles: a retrospective study. J Feline Med Surg 26:1098612X241281456",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39660751/",
+      "year": 2024
     }
   ],
   "review": {

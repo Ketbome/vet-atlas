@@ -1,0 +1,40 @@
+{
+  "id": "cat.muscular.quadriceps-femoris",
+  "system": "cat.muscular",
+  "nav": "M. quadriceps femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.quadriceps-femoris.rectus-femoris.L",
+    "cat.muscular.quadriceps-femoris.rectus-femoris.R",
+    "cat.muscular.quadriceps-femoris.vastus-lateralis.L",
+    "cat.muscular.quadriceps-femoris.vastus-lateralis.R",
+    "cat.muscular.quadriceps-femoris.vastus-medialis.L",
+    "cat.muscular.quadriceps-femoris.vastus-medialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A6402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "patellar-luxation"
+  ],
+  "media": [
+    "wm-cat-medial-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.femur",
+    "cat.skeletal.patella",
+    "cat.skeletal.tibia",
+    "cat.skeletal.os-coxae",
+    "cat.muscular.sartorius",
+    "cat.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

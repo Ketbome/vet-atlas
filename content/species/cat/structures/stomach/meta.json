@@ -1,0 +1,35 @@
+{
+  "id": "cat.visceral.stomach",
+  "system": "cat.visceral",
+  "nav": "Ventriculus (gaster)",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "cat.visceral.stomach"
+  ],
+  "fidelity": "scan",
+  "color": "#D58E7C",
+  "source": "pixelbeaker-feline-digestive",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "gastrointestinal-foreign-body",
+    "alimentary-lymphoma"
+  ],
+  "media": [
+    "wm-cat-barium-gi-01",
+    "wm-cat-abdomen-lat-01",
+    "wm-dog-stomach-histo-01"
+  ],
+  "related": [
+    "cat.visceral.esophagus",
+    "cat.visceral.liver",
+    "cat.visceral.spleen",
+    "cat.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

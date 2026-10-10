@@ -1,0 +1,16 @@
+{
+  "id": "cat.skeletal",
+  "species": "cat",
+  "slug": "skeletal",
+  "name": { "es": "Sistema esquelético", "en": "Skeletal system" },
+  "status": "published",
+  "model": { "file": "/models/cat/skeletal.glb", "source": "westerly-feline-skeleton", "placeholder": false },
+  "color": "#F0E6D2",
+  "order": 3,
+  "material": "bone",
+  "regions": [
+    { "id": "axial", "name": { "es": "Esqueleto axial", "en": "Axial skeleton" } },
+    { "id": "pelvic-limb", "name": { "es": "Miembro pélvico", "en": "Pelvic limb" } },
+    { "id": "thoracic-limb", "name": { "es": "Miembro torácico", "en": "Thoracic limb" } }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cat.skeletal.phalanges-pelvic",
+  "system": "cat.skeletal",
+  "nav": "Ossa digitorum pedis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.skeletal.phalanges-pelvic.L",
+    "cat.skeletal.phalanges-pelvic.R"
+  ],
+  "fidelity": "modeled",
+  "source": "westerly-feline-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "scottish-fold-osteochondrodysplasia"
+  ],
+  "media": [
+    "wm-cat-autopodium-skeleton-01",
+    "wm-cat-claw-mechanism-01"
+  ],
+  "related": [
+    "cat.skeletal.metatarsus",
+    "cat.integumentary.claws"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

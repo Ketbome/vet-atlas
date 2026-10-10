@@ -1,0 +1,61 @@
+{
+  "id": "tooth-resorption",
+  "category": "degenerative",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.skeletal.mandible",
+    "cat.skeletal.skull"
+  ],
+  "media": [
+    "wm-cat-tooth-resorption-01",
+    "wm-cat-tooth-resorption-rx-01"
+  ],
+  "references": [
+    {
+      "title": "Reiter AM, Mendoza KA. Feline odontoclastic resorptive lesions: an unsolved enigma in veterinary dentistry. Vet Clin North Am Small Anim Pract 32:791-837",
+      "year": 2002
+    },
+    {
+      "title": "DuPont GA, DeBowes LJ. Comparison of periodontitis and root replacement in cat teeth with resorptive lesions. J Vet Dent 19:71-75",
+      "year": 2002
+    },
+    {
+      "title": "American Veterinary Dental College: Nomenclature (tooth resorption)",
+      "url": "https://avdc.org/avdc-nomenclature/"
+    },
+    {
+      "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
+      "year": 2020
+    },
+    {
+      "title": "Lobprise H, St Denis K, Anderson JG, et al. 2025 FelineVMA feline oral health and dental care guidelines. J Feline Med Surg 27(11):1098612X251398793",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41319038/",
+      "year": 2025
+    },
+    {
+      "title": "Lommer MJ, Verstraete FJ. Prevalence of odontoclastic resorption lesions and periapical radiographic lucencies in cats: 265 cases (1995-1998). J Am Vet Med Assoc 217:1866-1869",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11132894/",
+      "year": 2000
+    },
+    {
+      "title": "Eriksson J, Denwood M, Nielsen SS, et al. Accuracy of three diagnostic tests to detect tooth resorption in unowned unsocialised cats in Denmark. J Small Anim Pract 65:387-393",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38234230/",
+      "year": 2024
+    },
+    {
+      "title": "Vapalahti K, Neittaanmäki H, Lohi H, et al. A large case-control study indicates a breed-specific predisposition to feline tooth resorption. Vet J 305:106133",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38740176/",
+      "year": 2024
+    },
+    {
+      "title": "Girard N, Servet E, Hennet P, et al. Tooth resorption and vitamin D3 status in cats fed premium dry diets. J Vet Dent 27:142-147",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21038831/",
+      "year": 2010
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

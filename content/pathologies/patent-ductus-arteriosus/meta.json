@@ -2,12 +2,16 @@
   "id": "patent-ductus-arteriosus",
   "category": "congenital",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.heart",
     "dog.visceral.great-vessels",
-    "dog.visceral.lungs"
+    "dog.visceral.lungs",
+    "cat.visceral.heart",
+    "cat.visceral.great-vessels",
+    "cat.visceral.lungs"
   ],
   "media": [],
   "references": [
@@ -17,6 +21,21 @@
     },
     {
       "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
+      "year": 2017
+    },
+    {
+      "title": "Tidholm A, Ljungvall I, Michal J, et al. Congenital heart defects in cats: A retrospective study of 162 cats (1996-2013). J Vet Cardiol 17 Suppl 1:S215-S219",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26776580/",
+      "year": 2015
+    },
+    {
+      "title": "Schrope DP. Prevalence of congenital heart disease in 76,301 mixed-breed dogs and 57,025 mixed-breed cats. J Vet Cardiol 17:192-202",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26363941/",
+      "year": 2015
+    },
+    {
+      "title": "Bascuñán A, Thieman Mankin KM, Saunders AB, et al. Patent ductus arteriosus in cats (Felis catus): 50 cases (2000-2015). J Vet Cardiol 19:35-43",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27919727/",
       "year": 2017
     }
   ],

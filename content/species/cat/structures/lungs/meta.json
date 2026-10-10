@@ -1,0 +1,37 @@
+{
+  "id": "cat.visceral.lungs",
+  "system": "cat.visceral",
+  "nav": "Pulmones",
+  "region": "respiratory",
+  "laterality": "paired",
+  "meshes": [
+    "cat.visceral.lungs.L",
+    "cat.visceral.lungs.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#E3A3A0",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [
+    "feline-asthma",
+    "aspiration-pneumonia",
+    "high-rise-syndrome",
+    "hypertrophic-cardiomyopathy"
+  ],
+  "media": [
+    "wm-cat-thorax-lateral-01",
+    "wm-cat-thorax-vd-01",
+    "wm-cat-diaphragm-specimen-01"
+  ],
+  "related": [
+    "cat.visceral.trachea",
+    "cat.visceral.heart",
+    "cat.muscular.diaphragm"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

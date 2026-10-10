@@ -2,11 +2,14 @@
   "id": "dilated-cardiomyopathy",
   "category": "degenerative",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
     "dog.visceral.heart",
-    "dog.visceral.lungs"
+    "dog.visceral.lungs",
+    "cat.visceral.heart",
+    "cat.visceral.lungs"
   ],
   "media": [],
   "references": [
@@ -17,6 +20,30 @@
     {
       "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Pion PD, Kittleson MD, Rogers QR, et al. Myocardial failure in cats associated with low plasma taurine: a reversible cardiomyopathy. Science 237:764-768",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3616607/",
+      "year": 1987
+    },
+    {
+      "title": "Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med 34:1062-1077",
+      "year": 2020
+    },
+    {
+      "title": "Pion PD, Kittleson MD, Thomas WP, et al. Clinical findings in cats with dilated cardiomyopathy and relationship of findings to taurine deficiency. J Am Vet Med Assoc 201:267-274",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500323/",
+      "year": 1992
+    },
+    {
+      "title": "Pion PD, Kittleson MD, Thomas WP, et al. Response of cats with dilated cardiomyopathy to taurine supplementation. J Am Vet Med Assoc 201:275-284",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500324/",
+      "year": 1992
+    },
+    {
+      "title": "Hambrook LE, Bennett PF. Effect of pimobendan on the clinical outcome and survival of cats with non-taurine responsive dilated cardiomyopathy. J Feline Med Surg 14:233-239",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22412159/",
+      "year": 2012
     }
   ],
   "review": {

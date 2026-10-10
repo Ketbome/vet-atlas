@@ -2,10 +2,12 @@
   "id": "mandibular-fracture",
   "category": "traumatic",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.skeletal.mandible"
+    "dog.skeletal.mandible",
+    "cat.skeletal.mandible"
   ],
   "media": [],
   "references": [
@@ -20,6 +22,25 @@
     {
       "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
       "year": 2006
+    },
+    {
+      "title": "Bonner SE, Reiter AM, Lewis JR. Orofacial manifestations of high-rise syndrome in cats: a retrospective study of 84 cases. J Vet Dent 29:10-18",
+      "year": 2012
+    },
+    {
+      "title": "Knight R, Meeson RL. Feline head trauma: a CT analysis of skull fractures and their management in 75 cats. J Feline Med Surg 21:1120-1126",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30571454/",
+      "year": 2019
+    },
+    {
+      "title": "Mestrinho LA, Sebastião SS, Zwierucho MA, et al. CT characterisation and classification of feline temporomandibular joint trauma: a case series of 79 cats. J Feline Med Surg 24:1181-1186",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35098776/",
+      "year": 2022
+    },
+    {
+      "title": "Evenhuis JV, Vincek A, Goldschmidt S, et al. Clinical and diagnostic imaging outcomes of mandibular fracture management in 109 cats. Front Vet Sci 12:1633636",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40771948/",
+      "year": 2025
     }
   ],
   "review": {

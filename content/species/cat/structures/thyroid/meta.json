@@ -1,0 +1,30 @@
+{
+  "id": "cat.visceral.thyroid",
+  "system": "cat.visceral",
+  "nav": "Glandula thyroidea",
+  "region": "endocrine-lymphatic",
+  "laterality": "paired",
+  "meshes": [
+    "cat.visceral.thyroid.L",
+    "cat.visceral.thyroid.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A3473B",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3.0
+  },
+  "pathologies": [
+    "hyperthyroidism"
+  ],
+  "media": [],
+  "related": [
+    "cat.visceral.trachea",
+    "cat.visceral.heart",
+    "cat.visceral.esophagus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

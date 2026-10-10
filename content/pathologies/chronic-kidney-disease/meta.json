@@ -2,10 +2,12 @@
   "id": "chronic-kidney-disease",
   "category": "degenerative",
   "species": [
-    "dog"
+    "dog",
+    "cat"
   ],
   "structures": [
-    "dog.visceral.kidneys"
+    "dog.visceral.kidneys",
+    "cat.visceral.kidneys"
   ],
   "media": [],
   "references": [
@@ -16,6 +18,40 @@
     {
       "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Sparkes AH, Caney S, Chalhoub S, et al. ISFM consensus guidelines on the diagnosis and management of feline chronic kidney disease. J Feline Med Surg 18:219-239",
+      "year": 2016
+    },
+    {
+      "title": "Ross SJ, Osborne CA, Kirk CA, et al. Clinical evaluation of dietary modification for treatment of spontaneous chronic kidney disease in cats. J Am Vet Med Assoc 229:949-957",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16978113/",
+      "year": 2006
+    },
+    {
+      "title": "Taylor S, Finch N, Caney S, et al. 2026 iCatCare consensus guidelines on the diagnosis and management of chronic kidney disease in cats. J Feline Med Surg 28:1098612X261466553",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42693626/",
+      "year": 2026
+    },
+    {
+      "title": "Boyd LM, Langston C, Thompson K, et al. Survival in cats with naturally occurring chronic kidney disease (2000-2002). J Vet Intern Med 22:1111-1117",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18691369/",
+      "year": 2008
+    },
+    {
+      "title": "Syme HM, Markwell PJ, Pfeiffer D, et al. Survival of cats with naturally occurring chronic renal failure is related to severity of proteinuria. J Vet Intern Med 20:528-535",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16734085/",
+      "year": 2006
+    },
+    {
+      "title": "King JN, Gunn-Moore DA, Tasker S, et al. Tolerability and efficacy of benazepril in cats with chronic kidney disease. J Vet Intern Med 20:1054-1064",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17063696/",
+      "year": 2006
+    },
+    {
+      "title": "Sent U, Gössl R, Elliott J, et al. Comparison of Efficacy of Long-term Oral Treatment with Telmisartan and Benazepril in Cats with Chronic Kidney Disease. J Vet Intern Med 29:1479-1487",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26474314/",
+      "year": 2015
     }
   ],
   "review": {

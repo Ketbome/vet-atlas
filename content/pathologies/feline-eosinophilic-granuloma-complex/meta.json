@@ -1,0 +1,51 @@
+{
+  "id": "feline-eosinophilic-granuloma-complex",
+  "category": "inflammatory",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.integumentary.skin"
+  ],
+  "media": [
+    "wm-cat-eosinophilic-granuloma-01"
+  ],
+  "references": [
+    {
+      "title": "Buckley L, Nuttall T. Feline eosinophilic granuloma complex(ities): some clinical clarification. J Feline Med Surg 14:471-481",
+      "year": 2012
+    },
+    {
+      "title": "Wildermuth BE, Griffin CE, Rosenkrantz WS. Response of feline eosinophilic plaques and lip ulcers to amoxicillin trihydrate-clavulanate potassium therapy: a randomized, double-blind placebo-controlled prospective study. Vet Dermatol 23:110-118",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22132827/",
+      "year": 2012
+    },
+    {
+      "title": "Hobi S, Linek M, Marignac G, et al. Clinical characteristics and causes of pruritus in cats: a multicentre study on feline hypersensitivity-associated dermatoses. Vet Dermatol 22:406-413",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21410570/",
+      "year": 2011
+    },
+    {
+      "title": "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier",
+      "year": 2013
+    },
+    {
+      "title": "Santoro D, Pucheu-Haston CM, Prost C, et al. Clinical signs and diagnosis of feline atopic syndrome: detailed guidelines for a correct diagnosis. Vet Dermatol 32:26-e6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33470017/",
+      "year": 2021
+    },
+    {
+      "title": "Mueller RS, Nuttall T, Prost C, et al. Treatment of the feline atopic syndrome - a systematic review. Vet Dermatol 32:43-e8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33470011/",
+      "year": 2021
+    },
+    {
+      "title": "King S, Favrot C, Messinger L, et al. A randomized double-blinded placebo-controlled study to evaluate an effective ciclosporin dose for the treatment of feline hypersensitivity dermatitis. Vet Dermatol 23:440-e84",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22882582/",
+      "year": 2012
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

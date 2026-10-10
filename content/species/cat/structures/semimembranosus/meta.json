@@ -1,0 +1,34 @@
+{
+  "id": "cat.muscular.semimembranosus",
+  "system": "cat.muscular",
+  "nav": "M. semimembranosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.semimembranosus.L",
+    "cat.muscular.semimembranosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#95342B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-medial-thigh-muscles-mivart-01",
+    "wm-cat-thigh-muscles-mivart-01",
+    "wm-cat-deep-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.femur",
+    "cat.skeletal.tibia",
+    "cat.muscular.semitendinosus",
+    "cat.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

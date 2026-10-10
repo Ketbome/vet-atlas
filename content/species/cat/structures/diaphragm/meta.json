@@ -1,0 +1,34 @@
+{
+  "id": "cat.muscular.diaphragm",
+  "system": "cat.muscular",
+  "nav": "Diaphragma",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "cat.muscular.diaphragm"
+  ],
+  "fidelity": "illustrative",
+  "color": "#AE4A3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "diaphragmatic-hernia"
+  ],
+  "media": [
+    "wm-cat-diaphragm-specimen-01",
+    "wm-cat-diaphragm-wilder-01",
+    "wm-cat-sternum-diaphragm-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.ribs",
+    "cat.skeletal.sternum",
+    "cat.skeletal.vertebrae-lumbar",
+    "cat.muscular.rectus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

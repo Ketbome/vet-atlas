@@ -1,0 +1,55 @@
+{
+  "id": "feline-aortic-thromboembolism",
+  "category": "degenerative",
+  "species": [
+    "cat"
+  ],
+  "structures": [
+    "cat.visceral.great-vessels",
+    "cat.visceral.heart",
+    "cat.muscular.gastrocnemius"
+  ],
+  "media": [
+    "wm-cat-aortic-saddle-thrombus-01",
+    "wm-cat-ate-paraparesis-01"
+  ],
+  "references": [
+    {
+      "title": "Smith SA, Tobias AH, Jacob KA, et al. Arterial thromboembolism in cats: acute crisis in 127 cases (1992-2001) and long-term management with low-dose aspirin in 24 cases. J Vet Intern Med 17:73-83",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12564730/",
+      "year": 2003
+    },
+    {
+      "title": "Borgeat K, Wright J, Garrod O, et al. Arterial thromboembolism in 250 cats in general practice: 2004-2012. J Vet Intern Med 28:102-108",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24237457/",
+      "year": 2014
+    },
+    {
+      "title": "Hogan DF, Fox PR, Jacob K, et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: The double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol 17 Suppl 1:S306-S317",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26776588/",
+      "year": 2015
+    },
+    {
+      "title": "Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med 34:1062-1077",
+      "year": 2020
+    },
+    {
+      "title": "Klainbart S, Kelmer E, Vidmayer B, et al. Peripheral and central venous blood glucose concentrations in dogs and cats with acute arterial thromboembolism. J Vet Intern Med 28:1513-1519",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25041102/",
+      "year": 2014
+    },
+    {
+      "title": "Brainard BM, Coleman AE, Kurosawa A, et al. Therapy with clopidogrel or rivaroxaban has equivalent impacts on recurrence of thromboembolism and survival in cats following cardiogenic thromboembolism: the SUPERCAT study. J Am Vet Med Assoc 263:1-10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39693732/",
+      "year": 2025
+    },
+    {
+      "title": "Guillaumin J, DeFrancesco TC, Scansen BA, et al. Bilateral lysis of aortic saddle thrombus with early tissue plasminogen activator (BLASTT): a prospective, randomized, placebo-controlled study in feline acute aortic thromboembolism. J Feline Med Surg 24:e535-e545",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36350753/",
+      "year": 2022
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}
