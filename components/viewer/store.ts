@@ -12,8 +12,8 @@ type ViewerState = {
   // Opacity of the structures around the selected one, in the system studied.
   dim: number;
   explode: number;
-  // Short-coat fur on the skin layer (shell rendering).
-  fur: boolean;
+  // The skin is drawn see-through (a silhouette) unless asked for solid.
+  solidSkin: boolean;
   // Per system id. The system being studied is always visible.
   layers: Record<string, LayerState>;
   // Dissection depth, 0 = skin; layers above it fade out (see peel()).
@@ -26,7 +26,7 @@ type ViewerState = {
   setIsolate: (v: boolean) => void;
   setDim: (v: number) => void;
   setExplode: (v: number) => void;
-  setFur: (v: boolean) => void;
+  setSolidSkin: (v: boolean) => void;
   setLayer: (systemId: string, patch: Partial<LayerState>) => void;
   peel: (depth: number, systems: { systemId: string; order: number }[]) => void;
   focusSystem: (systemId: string, systems: { systemId: string; order: number }[]) => void;
@@ -46,6 +46,19 @@ function peeled(depth: number, systems: { systemId: string; order: number }[]) {
   return layers;
 }
 
+// The studied system on its own. The skin is a see-through silhouette, so
+// studying it also shows the skeleton inside.
+function focused(systemId: string, systems: { systemId: string; order: number }[]) {
+  const studied = systems.find((s) => s.systemId === systemId);
+  const deepest = Math.max(...systems.map((s) => s.order));
+  const layers: Record<string, LayerState> = {};
+  for (const s of systems) {
+    const show = s === studied || (studied?.order === 0 && s.order === deepest);
+    layers[s.systemId] = show ? { visible: true, opacity: 1 } : HIDDEN_LAYER;
+  }
+  return layers;
+}
+
 export const useViewerStore = create<ViewerState>((set) => ({
   hovered: null,
   isolate: false,
@@ -53,7 +66,7 @@ export const useViewerStore = create<ViewerState>((set) => ({
   // structure (the heart inside the lungs) is always seen.
   dim: 0.3,
   explode: 0,
-  fur: true,
+  solidSkin: false,
   layers: {},
   depth: 0,
   activePreset: null,
@@ -64,16 +77,14 @@ export const useViewerStore = create<ViewerState>((set) => ({
   setIsolate: (isolate) => set({ isolate }),
   setDim: (dim) => set({ dim }),
   setExplode: (explode) => set({ explode }),
-  setFur: (fur) => set({ fur }),
+  setSolidSkin: (solidSkin) => set({ solidSkin }),
   setLayer: (systemId, patch) =>
     set((s) => ({ layers: { ...s.layers, [systemId]: { ...HIDDEN_LAYER, ...s.layers[systemId], ...patch } } })),
   peel: (depth, systems) => set({ depth, layers: peeled(depth, systems) }),
   // Studying a system: it shows solid, nothing deeper, nothing covering it.
   focusSystem: (systemId, systems) => {
     const order = systems.find((s) => s.systemId === systemId)?.order ?? 0;
-    const layers: Record<string, LayerState> = {};
-    for (const s of systems) layers[s.systemId] = s.systemId === systemId ? { visible: true, opacity: 1 } : HIDDEN_LAYER;
-    set({ layers, depth: order });
+    set({ layers: focused(systemId, systems), depth: order });
   },
   requestPreset: (preset) =>
     set((s) => ({ activePreset: preset, presetRequest: { preset, nonce: (s.presetRequest?.nonce ?? 0) + 1 } })),
@@ -81,8 +92,7 @@ export const useViewerStore = create<ViewerState>((set) => ({
   setTab: (tab) => set({ tab }),
   reset: (systemId, systems) => {
     const order = systems.find((s) => s.systemId === systemId)?.order ?? 0;
-    const layers: Record<string, LayerState> = {};
-    for (const s of systems) layers[s.systemId] = s.systemId === systemId ? { visible: true, opacity: 1 } : HIDDEN_LAYER;
+    const layers = focused(systemId, systems);
     set((s) => ({ isolate: false, dim: 0.3, explode: 0, layers, depth: order, activePreset: null, resetNonce: s.resetNonce + 1 }));
   },
 }));

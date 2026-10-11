@@ -158,8 +158,8 @@ The interface is flat. Separation comes from ground shifts (paper, card, sidebar
 - **Finishes:** matte, metalness 0. Bone roughness 0.86; muscle 0.72 with soft sheen; organ 0.6 with a faint 0.06 clearcoat; skin 0.9 velvet sheen.
 - **Occlusion:** ambient occlusion baked into vertex colours carries the form, not reflections.
 - **Selection:** an ochre rim light in the tissue shader itself, strongest at grazing angles. No extra hull geometry, so nothing shows through eye sockets or the open mouth.
-- **Fur:** the skin carries a short coat by shell rendering (20 shells, 10 on coarse pointers, 7 mm): fawn with a darker dorsal saddle and lighter belly, a dark hide underneath, cleared around the eyes. Toggled from the skin row of the dissection panel; on by default.
-- **Ghost:** a faded layer turns x-ray: faces toward the viewer drop to 18% of its opacity while the silhouette holds, so inner layers read through a readable outline. Layers under 50% let clicks pass through.
+- **Skin:** no fur. The skin is a see-through silhouette (ghost at 40%) by default, so studying the integumentary system also shows the skeleton inside; eyes, claws, hooves and horns stay solid. "Opaque skin" in the skin row of the dissection panel draws it solid; a selected skin piece is always solid.
+- **Ghost:** a faded layer turns x-ray: faces toward the viewer drop to 18% of its opacity while the silhouette holds and lightens slightly, so inner layers read through a readable outline. Layers under 50% let clicks pass through.
 - **Contact shadow:** a soft floor shadow (0.38 opacity) grounds the specimen; omitted in the piece view.
 
 **The Matte Specimen Rule.** No glossy, metallic or glinting tissue. Depth reads from colour and baked occlusion.

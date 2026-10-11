@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 
 // The dissection stack: skin → muscles → organs → bones. One depth slider
-// peels layers off in order; each row can also be shown, hidden or faded.
+// peels layers off in order; each row can also be shown or hidden.
 export function DissectionPanel({ model }: { model: ViewerModel }) {
   const t = useTranslations("viewer");
   const layers = useViewerStore((s) => s.layers);
@@ -17,8 +17,8 @@ export function DissectionPanel({ model }: { model: ViewerModel }) {
   const peel = useViewerStore((s) => s.peel);
   const setLayer = useViewerStore((s) => s.setLayer);
   const focusSystem = useViewerStore((s) => s.focusSystem);
-  const fur = useViewerStore((s) => s.fur);
-  const setFur = useViewerStore((s) => s.setFur);
+  const solidSkin = useViewerStore((s) => s.solidSkin);
+  const setSolidSkin = useViewerStore((s) => s.setSolidSkin);
   const systems = model.systems;
   const max = systems.length - 1;
 
@@ -41,12 +41,11 @@ export function DissectionPanel({ model }: { model: ViewerModel }) {
           aria-label={t("dissection")}
           aria-valuetext={t(`layerName.${systems[Math.min(max, Math.round(depth))].material}`)}
         />
-        <div className="mt-1.5 flex justify-between" aria-hidden="true">
+        <div className="mt-1.5 flex justify-between">
           {systems.map((s) => (
             <button
               key={s.systemId}
               type="button"
-              tabIndex={-1}
               onClick={() => peel(s.order, systems)}
               className={cn("text-[11px] tabular hover:text-foreground", Math.round(depth) === s.order ? "font-semibold text-foreground" : "text-muted-foreground")}
             >
@@ -79,7 +78,6 @@ export function DissectionPanel({ model }: { model: ViewerModel }) {
                     </Link>
                   )}
                 </div>
-                <span className="tabular w-9 text-right text-[11px] text-muted-foreground">{state.visible ? `${Math.round(state.opacity * 100)}%` : ""}</span>
                 <button
                   type="button"
                   onClick={() => setLayer(s.systemId, { visible: !state.visible, opacity: state.visible ? state.opacity : 1 })}
@@ -92,21 +90,9 @@ export function DissectionPanel({ model }: { model: ViewerModel }) {
               </div>
               {state.visible && s.material === "skin" && (
                 <label className="flex items-center gap-2 pl-3.5 text-xs text-muted-foreground">
-                  <input type="checkbox" checked={fur} onChange={(e) => setFur(e.target.checked)} className="size-3.5 accent-[var(--mark)]" />
-                  {t("fur")}
+                  <input type="checkbox" checked={solidSkin} onChange={(e) => setSolidSkin(e.target.checked)} className="size-3.5 accent-[var(--mark)]" />
+                  {t("solidSkin")}
                 </label>
-              )}
-              {state.visible && (
-                <div className="pl-3.5 pr-10">
-                  <Slider
-                    min={0.05}
-                    max={1}
-                    step={0.05}
-                    value={[state.opacity]}
-                    onValueChange={(v) => setLayer(s.systemId, { opacity: Array.isArray(v) ? v[0] : v })}
-                    aria-label={t("layerOpacity", { layer: name })}
-                  />
-                </div>
               )}
             </li>
           );

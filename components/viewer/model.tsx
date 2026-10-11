@@ -5,8 +5,7 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Box3, Color, Mesh, type MeshPhysicalMaterial, Vector3, type Object3D } from "three";
 import { useViewerStore } from "./store";
-import { setOpacity, setSelected, tissueMaterial } from "./materials";
-import { syncFur } from "./fur";
+import { SKIN_GHOST, setOpacity, setSelected, tissueMaterial } from "./materials";
 import type { ViewerSystem } from "./types";
 
 type Props = {
@@ -32,7 +31,7 @@ export function Model({ system, meshToStructure, selected, onSceneReady, solo = 
   const isolate = useViewerStore((s) => s.isolate);
   const dim = useViewerStore((s) => s.dim);
   const explode = useViewerStore((s) => s.explode);
-  const fur = useViewerStore((s) => s.fur);
+  const solidSkin = useViewerStore((s) => s.solidSkin);
   const layer = useViewerStore((s) => s.layers[system.systemId]);
 
   const meshes = useRef<Mesh[]>([]);
@@ -41,8 +40,7 @@ export function Model({ system, meshToStructure, selected, onSceneReady, solo = 
     const list: Mesh[] = [];
     scene.updateMatrixWorld(true);
     scene.traverse((obj) => {
-      // Fur shells are children of the skin mesh with their own material.
-      if (!(obj instanceof Mesh) || obj.userData.furShell) return;
+      if (!(obj instanceof Mesh)) return;
       obj.userData.structureId = meshToStructure[obj.name] ?? null;
       const color = system.meshColors[obj.name] ?? system.color;
       const kind = system.meshMaterials[obj.name] ?? system.material;
@@ -70,12 +68,12 @@ export function Model({ system, meshToStructure, selected, onSceneReady, solo = 
       material.color.copy(base);
       if (isHovered) material.color.lerp(MARK, 0.2);
       setSelected(material, highlight);
-      const opacity = Math.min(layerOpacity, !isSelected && selected ? dim : 1);
+      let opacity = Math.min(layerOpacity, !isSelected && selected ? dim : 1);
+      if (mesh.userData.skin && !solidSkin && !isSelected && !solo) opacity = Math.min(opacity, SKIN_GHOST);
       setOpacity(material, opacity);
-      if (mesh.userData.skin) syncFur(mesh, fur && opacity >= 1 && mesh.visible);
       mesh.visible = solo ? isSelected : !(isolate && selected && !isSelected);
     }
-  }, [selected, hovered, isolate, dim, layerOpacity, scene, meshToStructure, solo, fur]);
+  }, [selected, hovered, isolate, dim, layerOpacity, scene, meshToStructure, solo, solidSkin]);
 
   useEffect(() => {
     const visible = meshes.current.filter((m) => m.visible);

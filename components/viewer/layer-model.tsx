@@ -4,8 +4,7 @@ import { useEffect, useLayoutEffect, useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Color, Mesh, type MeshPhysicalMaterial } from "three";
 import { useViewerStore } from "./store";
-import { setOpacity, tissueMaterial } from "./materials";
-import { syncFur } from "./fur";
+import { SKIN_GHOST, setOpacity, tissueMaterial } from "./materials";
 import type { ViewerSystem } from "./types";
 
 type Props = { system: ViewerSystem; opacity: number };
@@ -21,16 +20,8 @@ export function LayerModel({ system, opacity }: Props) {
   const { clone, materials } = useMemo(() => {
     const clone = scene.clone();
     const materials: MeshPhysicalMaterial[] = [];
-    // The cached scene may carry fur shells from the studied view; a layer
-    // builds its own.
-    const stale: Mesh[] = [];
     clone.traverse((obj) => {
-      if (obj instanceof Mesh && obj.userData.furShell) stale.push(obj);
-    });
-    for (const s of stale) s.removeFromParent();
-    clone.traverse((obj) => {
-      if (!(obj instanceof Mesh) || obj.userData.furShell) return;
-      delete obj.userData.fur;
+      if (!(obj instanceof Mesh)) return;
       const kind = system.meshMaterials[obj.name] ?? system.material;
       const material = tissueMaterial(kind, system.meshColors[obj.name] ?? system.color, obj.geometry.hasAttribute("color"));
       obj.userData.skin = kind === "skin";
@@ -47,23 +38,21 @@ export function LayerModel({ system, opacity }: Props) {
   useEffect(() => () => materials.forEach((m) => m.dispose()), [materials]);
 
   const hovered = useViewerStore((s) => s.hovered);
-  const fur = useViewerStore((s) => s.fur);
+  const solidSkin = useViewerStore((s) => s.solidSkin);
   useEffect(() => {
     clone.traverse((obj) => {
       if (!(obj instanceof Mesh)) return;
       const material = obj.material as MeshPhysicalMaterial;
       material.color.copy(obj.userData.base as Color);
       if (hovered && obj.userData.structureId === hovered) material.color.lerp(MARK, 0.18);
-      if (obj.userData.skin) syncFur(obj, fur && opacity >= 1);
     });
-  }, [clone, hovered, fur, opacity]);
+  }, [clone, hovered]);
 
   useLayoutEffect(() => {
-    for (const material of materials) setOpacity(material, opacity);
     clone.traverse((obj) => {
-      if (obj instanceof Mesh && obj.userData.skin) syncFur(obj, fur && opacity >= 1);
+      if (obj instanceof Mesh) setOpacity(obj.material as MeshPhysicalMaterial, obj.userData.skin && !solidSkin ? Math.min(opacity, SKIN_GHOST) : opacity);
     });
-  }, [materials, opacity, clone, fur]);
+  }, [materials, opacity, clone, solidSkin]);
 
   return <primitive object={clone} />;
 }

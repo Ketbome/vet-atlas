@@ -3,32 +3,57 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import { Box3, type Group, type Object3D } from "three";
+import { Box3, Mesh, Vector3, type Group, type Object3D } from "three";
 
 type Props = { scene: Object3D; meshKeys: string[]; title: string; nav: string };
 
 const box = new Box3();
+
+// The surface point nearest the top centre of the meshes, so the leader
+// lands on tissue even for paired or curved structures (eyes, kidneys).
+function surfaceAnchor(meshes: Object3D[]) {
+  box.makeEmpty();
+  for (const m of meshes) box.expandByObject(m);
+  const target = box.getCenter(new Vector3()).setY(box.max.y);
+  const v = new Vector3();
+  let best: { mesh: Object3D; point: Vector3 } | null = null;
+  let min = Infinity;
+  for (const m of meshes) {
+    if (!(m instanceof Mesh)) continue;
+    const position = m.geometry.getAttribute("position");
+    const step = Math.max(1, Math.floor(position.count / 4000));
+    for (let i = 0; i < position.count; i += step) {
+      v.fromBufferAttribute(position, i);
+      const d = v.clone().applyMatrix4(m.matrixWorld).distanceToSquared(target);
+      if (d < min) {
+        min = d;
+        best = { mesh: m, point: v.clone() };
+      }
+    }
+  }
+  return best;
+}
 
 // Atlas-plate label: a hairline leader from the top of the structure to its
 // name, the Latin NAV term beneath in italic. Text carries a paper halo
 // instead of a box. Follows the meshes when they move (exploded view).
 export function LeaderLabel({ scene, meshKeys, title, nav }: Props) {
   const group = useRef<Group>(null);
-  const meshes = useMemo(() => {
+  const parts = useMemo(() => {
     const keys = new Set(meshKeys);
     const list: Object3D[] = [];
     scene.traverse((o) => {
       if (keys.has(o.name)) list.push(o);
     });
-    return list;
+    scene.updateMatrixWorld(true);
+    return { list, anchor: surfaceAnchor(list) };
   }, [scene, meshKeys]);
 
   useFrame(() => {
     if (!group.current) return;
-    box.makeEmpty();
-    for (const m of meshes) if (m.visible) box.expandByObject(m);
-    group.current.visible = !box.isEmpty();
-    if (!box.isEmpty()) box.getCenter(group.current.position).setY(box.max.y);
+    const { list, anchor } = parts;
+    group.current.visible = list.some((m) => m.visible);
+    if (anchor) group.current.position.copy(anchor.point).applyMatrix4(anchor.mesh.matrixWorld);
   });
 
   return (

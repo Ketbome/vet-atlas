@@ -66,7 +66,6 @@
     "retry": "Retry",
     "placeholderShort": "Placeholder model",
     "closeList": "Close list",
-    "layerOpacity": "{layer} opacity",
     "settings": "Display settings",
     "pieceView": "View piece alone in 3D",
     "pieceBack": "Back to the entry",
@@ -104,7 +103,7 @@
     "keyExplode": "Explode or collapse",
     "keyReset": "Reset",
     "keyDeselect": "Clear selection",
-    "fur": "Coat (short hair)"
+    "solidSkin": "Opaque skin"
   },
   "structure": {
     "nav": "Nomina Anatomica Veterinaria",

@@ -33,13 +33,19 @@ export function tissueMaterial(kind: Material, color: string, occlusion: boolean
       .replace(
         "#include <opaque_fragment>",
         `float facing = abs(dot(normalize(normal), normalize(vViewPosition)));
-        if (ghost > 0.5) diffuseColor.a *= mix(1.0, 0.18, pow(facing, 1.5));
+        if (ghost > 0.5) {
+          diffuseColor.a *= mix(1.0, 0.18, pow(facing, 1.5));
+          outgoingLight = mix(outgoingLight, diffuseColor.rgb * 0.9 + 0.08, pow(1.0 - facing, 2.0) * 0.6);
+        }
         outgoingLight = mix(outgoingLight, vec3(0.78, 0.56, 0.18), rim * pow(1.0 - facing, 3.0) * 0.7);
         #include <opaque_fragment>`,
       );
   };
   return material;
 }
+
+// Opacity of the skin as a silhouette over what lies beneath it.
+export const SKIN_GHOST = 0.4;
 
 // Fades a tissue material; below full opacity it also turns into a ghost.
 export function setOpacity(material: MeshPhysicalMaterial, opacity: number) {
