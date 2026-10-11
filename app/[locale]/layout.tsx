@@ -40,8 +40,6 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
   };
 }
 
-const themeScript = `try{if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark')}catch(e){}`;
-
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
@@ -54,10 +52,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const searchIndex = getSearchIndex(locale);
 
   return (
-    <html lang={locale} className={`${display.variable} ${heading.variable} ${sans.variable} h-full antialiased`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang={locale} className={`${display.variable} ${heading.variable} ${sans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           <TooltipProvider>
