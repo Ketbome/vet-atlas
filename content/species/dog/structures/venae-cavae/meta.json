@@ -1,0 +1,32 @@
+{
+  "id": "dog.visceral.venae-cavae",
+  "system": "dog.visceral",
+  "nav": "Venae cavae",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.venae-cavae"
+  ],
+  "fidelity": "modeled",
+  "color": "#2F4785",
+  "source": "pixelbeaker-canine-heart",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [
+    "gastric-dilatation-volvulus",
+    "portosystemic-shunt"
+  ],
+  "media": [
+    "wm-dog-aorta-caudal-vena-cava-sisson-01"
+  ],
+  "related": [
+    "dog.visceral.heart",
+    "dog.visceral.aorta",
+    "dog.visceral.liver"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

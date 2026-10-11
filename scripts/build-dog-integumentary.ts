@@ -12,8 +12,8 @@
  *   3. the warp is re-solved with extra landmarks that move probe vertices
  *      out past the bones and, when public/models/dog/muscular.glb exists,
  *      the muscles (5 mm clearance), then Taubin-smoothed;
- *   4. a final push-out moves the surface past the bones and muscles still
- *      outside, spread smoothly over the mesh;
+ *   4. a final push-out moves the surface past the bones (skull and mandible
+ *      included) and muscles still outside, spread smoothly over the mesh;
  *   5. everything below the floor is clamped to y = 0.
  *
  * Source frame: metres, Y up, floor at y=0, animal faces +Z, left side +X.
@@ -307,7 +307,13 @@ const eyes: Geometry = { position: warp(eyesLeft.position), index: eyesLeft.inde
 const warped = skin.position.slice();
 // Bone inside a claw (the ungual processes) is covered by integument too.
 const inClaw = insideTest(merge([claws, mirror(claws)]));
-const pushed = pushOut(skin, contents, 0.003, inClaw);
+// The skull and mandible are pushed under the skin here (not in the warp,
+// where the head is one rigid piece). Rays of the inside test that pass
+// through an eye opening count wrong, so bone in line with the eyes is left
+// out.
+const eyeCentre = mean(Array.from({ length: eyes.position.length / 3 }, (_, i) => v3(eyes.position[i * 3], eyes.position[i * 3 + 1], eyes.position[i * 3 + 2])));
+const inEyeLine = (x: number, y: number, z: number) => Math.hypot(y - eyeCentre.y, z - eyeCentre.z) < 0.016;
+const pushed = pushOut(skin, [...contents, skull, mandible], 0.003, (x, y, z) => inClaw(x, y, z) || inEyeLine(x, y, z));
 carry(claws, warped, pushed);
 carry(eyes, warped, pushed);
 for (const g of [skin, claws]) for (let i = 1; i < g.position.length; i += 3) g.position[i] = Math.max(0, g.position[i]);

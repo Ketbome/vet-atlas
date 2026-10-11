@@ -1,0 +1,30 @@
+{
+  "id": "dog.visceral.pulmonary-veins",
+  "system": "dog.visceral",
+  "nav": "Venae pulmonales",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.pulmonary-veins"
+  ],
+  "fidelity": "scan",
+  "color": "#D0586A",
+  "source": "pixelbeaker-canine-heart",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "myxomatous-mitral-valve-disease",
+    "dilated-cardiomyopathy"
+  ],
+  "media": [],
+  "related": [
+    "dog.visceral.heart",
+    "dog.visceral.lungs",
+    "dog.visceral.pulmonary-trunk"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

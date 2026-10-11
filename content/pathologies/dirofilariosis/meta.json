@@ -7,7 +7,7 @@
   ],
   "structures": [
     "dog.visceral.heart",
-    "dog.visceral.great-vessels",
+    "dog.visceral.pulmonary-trunk",
     "dog.visceral.lungs",
     "cat.visceral.heart",
     "cat.visceral.lungs"

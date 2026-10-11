@@ -7,9 +7,9 @@
   "meshes": [
     "dog.visceral.small-intestine"
   ],
-  "fidelity": "scan",
+  "fidelity": "illustrative",
   "color": "#E2A28C",
-  "source": "pixelbeaker-canine-abdomen",
+  "source": "vet-atlas-procedural-viscera",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6

@@ -8,7 +8,7 @@
     "dog.visceral.heart"
   ],
   "fidelity": "scan",
-  "color": "#9A2D26",
+  "color": "#8E4535",
   "source": "pixelbeaker-canine-heart",
   "camera": {
     "preset": "lateral-left",
@@ -28,7 +28,9 @@
   ],
   "related": [
     "dog.visceral.lungs",
-    "dog.visceral.great-vessels",
+    "dog.visceral.aorta",
+    "dog.visceral.venae-cavae",
+    "dog.visceral.pulmonary-trunk",
     "dog.visceral.trachea"
   ],
   "review": {

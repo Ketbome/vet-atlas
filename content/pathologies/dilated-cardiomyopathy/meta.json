@@ -7,6 +7,7 @@
   ],
   "structures": [
     "dog.visceral.heart",
+    "dog.visceral.pulmonary-veins",
     "dog.visceral.lungs",
     "cat.visceral.heart",
     "cat.visceral.lungs"

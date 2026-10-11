@@ -7,7 +7,7 @@
   ],
   "structures": [
     "dog.visceral.liver",
-    "dog.visceral.great-vessels",
+    "dog.visceral.venae-cavae",
     "dog.visceral.brain",
     "dog.visceral.urinary-bladder",
     "cat.visceral.liver",

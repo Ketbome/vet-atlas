@@ -32,7 +32,7 @@ transform cannot fit both, so:
   length, C7 to L1).
 - The vertebral column of the CT dog is arched; y is measured from the
   ventral border of its vertebral bodies and mapped onto the C7-L1 line.
-- The great vessels, long and thin, go through W itself (bent along the
+- The abdominal vessels, long and thin, go through W itself (bent along the
   spine, fidelity "modeled").
 - Each other scanned organ keeps its shape: it is moved rigidly so that its centroid
   lands on W(centroid), and scaled by a per-axis factor halfway (in log space)
@@ -44,7 +44,14 @@ transform cannot fit both, so:
 
 Heart: the heart CT is registered (rotation + scale, ICP) to the heart
 remnant at the cranial edge of the abdomen CT, so it lands where that dog's
-heart was, and then follows the same organ rule.
+heart was, and then follows the same organ rule. It is split into the heart
+and its vessels (heart_parts), each its own mesh and colour: aorta, venae
+cavae, pulmonary trunk and arteries, pulmonary veins.
+
+Vessels: the heart CT's aorta joins the abdominal CT's; the abdominal caudal
+vena cava, fused with the aorta in the CT, is modelled along its right side
+and through the liver to the heart CT's; the cranial vena cava is continued
+to the thoracic inlet.
 
 Brain: fitted into the cranial cavity of our skull scan (per-axis scale to
 the cavity size, centred on it).
@@ -52,10 +59,14 @@ the cavity size, centred on it).
 Stomach (fidelity "modeled"): the scanned fundus and body plus a modelled
 pyloric part sweeping ventrally across to the scanned duodenum.
 
+Small intestine (fidelity "illustrative"): one continuous tube. The duodenum
+follows a fixed course from the pylorus; jejunum and ileum are packed into
+the space the CT loops fill (packed_tube) and end at the ileocolic junction.
+
 Procedural organs (fidelity "illustrative"): trachea and principal bronchi,
-esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and
-thyroid lobes: tubes, ribbons and ellipsoids placed from skeletal landmarks
-and from the scanned organs.
+esophagus (ending at the cardia), pancreas, spleen, large intestine, urinary
+bladder with urethra and ureters, prostate and thyroid lobes: tubes, ribbons
+and ellipsoids placed from skeletal landmarks and from the scanned organs.
 
 Skeleton landmarks used: L1, C7, manubrium (or the cranial end of a sternum
 mesh), os coxae, femur, skull, and all rib meshes (one per side or one per
@@ -71,6 +82,7 @@ import numpy as np
 from scipy import ndimage as ndi
 from scipy.spatial import cKDTree
 from skimage.measure import marching_cubes
+from skimage.segmentation import watershed
 
 # --- io ---------------------------------------------------------------------
 
@@ -514,14 +526,14 @@ def lungs_src(src):
 
 
 def heart_fit(src, heart):
-    """Rotation + scale of the heart CT onto the heart remnant of the abdomen CT."""
+    """Rotation + scale of the heart CT onto the heart remnant of the abdomen
+    CT, as a map of heart CT points to the source frame."""
     rem = [m for m in components(*node(src, "Object_23"), 20000) + components(*node(src, "Object_11"), 20000) if m[0][:, 2].max() < -1.5]
     R = np.concatenate([m[0] for m in rem])
     R = R[R[:, 2] < -2.0]
     H = heart[0]
     # Heart CT: y dorsal, +z cranial; turn it to face -z (caudal = +z).
-    M = np.diag([-1.0, 1.0, -1.0])
-    Hm = H[::5] @ M.T
+    Hm = H[::5] @ TURN.T
     sc = np.ptp(R[:, 0]) / np.ptp(Hm[Hm[:, 1] < np.median(Hm[:, 1])][:, 0])
     t0 = R[R[:, 1] < np.quantile(R[:, 1], 0.05)].mean(0) - sc * Hm[Hm[:, 1] < np.quantile(Hm[:, 1], 0.05)].mean(0)
     s, Rm, t = 1.0, np.eye(3), np.zeros(3)
@@ -537,53 +549,167 @@ def heart_fit(src, heart):
         Rm = U @ D @ Vt
         s = (S * np.diag(D)).sum() / ((a - ma) ** 2).sum(1).mean()
         t = mb - s * Rm @ ma
-    return s * (sc * (H @ M.T) + t0) @ Rm.T + t, heart[1]
+    return lambda q: s * (sc * (q @ TURN.T) + t0) @ Rm.T + t
 
 
-def trim_heart(mesh, h=0.005):
-    """One closed external heart surface with short, capped vessel roots.
+TURN = np.diag([-1.0, 1.0, -1.0])  # heart CT -> facing -z (its own inverse)
 
-    The CT heart is several nested shells (epicardium, blood pool) with gaps.
-    Inside a ball around the heart the triangles are voxelised (~0.8 mm),
-    closed to seal the gaps, and every internal cavity is filled; a stronger
-    closing in a band just inside the ball plugs the vessel lumens where the
-    ball cuts them, so the roots end in clean caps on the ball. Thin loose
-    sheets and twig-like small vessels go with an opening; the surface is smoothed lightly (source frame,
-    h in its units)."""
-    p, f = mesh
-    c = p[p[:, 1] < np.median(p[:, 1])].mean(0)
-    apex = p[p[:, 1] < np.quantile(p[:, 1], 0.3)]
-    R = np.linalg.norm(apex - c, axis=1).max() * 1.15
-    tc = p[f].mean(1)
-    sub = compact(p, f[np.linalg.norm(tc - c, axis=1) < R + 4 * h])
-    g = Grid(sub[0].min(0), sub[0].max(0), h)
-    shell = g.splat(*sub)
-    pad = 12
-    shell = np.pad(shell, pad)
-    m = ndi.binary_closing(shell, iterations=2)
-    X, Y, Z = (np.pad(a, pad, mode="edge") for a in g.coords())
-    d = np.sqrt((X - c[0]) ** 2 + (Y - c[1]) ** 2 + (Z - c[2]) ** 2)
-    band = (d > R - 14 * h) & (d < R + 2 * h)
-    m |= ndi.binary_closing(shell, iterations=9) & band
-    m = ndi.binary_fill_holes(m) & (d < R)
-    m = largest(ndi.binary_opening(m, iterations=3))
-    m = m[pad:-pad, pad:-pad, pad:-pad]
-    return taubin(main_part(g.surface(m, 1.0)), 8)
+# Heart CT turned by TURN (x left negative, y dorsal, z caudal; its units):
+# where each vessel tree leaves the heart, measured once on the segmentation
+# below. Pulmonary arteries and veins are told apart as on a radiograph:
+# arteries lateral and dorsal, veins medial, converging on the left atrium.
+VESSEL_ROOTS = {
+    "aorta": (0.02, 2.37, 1.37),  # arch, with the cranial vena cava and the azygos vein against it
+    "pulmonary-trunk": (-0.27, 2.36, 1.63),  # pulmonary trunk and left pulmonary artery
+    "right-atrium": (0.18, 2.36, 1.79),  # caudal vena cava, right pulmonary artery against it
+    "pulmonary-veins": (-0.06, 2.41, 1.97),  # left atrium
+}
+
+
+def heart_parts(mesh, h=0.008):
+    """Splits the heart CT into the heart itself and its vessels (heart CT
+    frame and units).
+
+    The CT is several open shells (epicardium, blood pool, vessel walls cut
+    by the scan box). Voxelised and closed, each slice along each axis is
+    filled (that plugs the cut vessel lumens) and then the volume. An opening
+    by a ball wider than the aorta leaves the heart without its vessels; what
+    it removes splits into one tree per vessel root (surface bumps such as
+    coronary vessels and fat go back to the heart). Trees that touch each
+    other are split by a watershed on the distance to the wall, from seeds
+    on each vessel."""
+    p = mesh[0] @ TURN
+    g = Grid(p.min(0), p.max(0), h)
+    shell = g.splat(p, mesh[1])
+    m = ndi.binary_closing(np.pad(shell, 4), iterations=2)[4:-4, 4:-4, 4:-4]
+    fill = m.copy()
+    for ax in range(3):
+        sl = np.moveaxis(m, ax, 0)
+        fill |= np.moveaxis(np.stack([ndi.binary_fill_holes(s) for s in sl]), 0, ax)
+    m = largest(ndi.binary_opening(ndi.binary_fill_holes(fill), iterations=1))
+    edt = ndi.distance_transform_edt(m)
+    core = ndi.distance_transform_edt(~(edt > 11)) <= 11.5
+    core = largest(core & m)
+    lab, n = ndi.label(m & ~ndi.binary_dilation(core, iterations=1))
+    near = ndi.binary_dilation(core, iterations=2)
+    X, Y, Z = g.coords()
+    trees = {}
+    for k, root in VESSEL_ROOTS.items():
+        d = np.linalg.norm(np.stack([X, Y, Z], -1)[near & (lab > 0)] - root, axis=1)
+        trees[k] = lab == lab[near & (lab > 0)][np.argmin(d)]
+
+    def split(tree, *seeds):
+        mk = np.zeros(m.shape, int)
+        for i, s in enumerate(seeds):
+            mk[tree & s] = i + 1
+        w = watershed(-edt, mk, mask=tree)
+        return [w == i + 1 for i in range(len(seeds))]
+
+    aorta, cranial_vc, azygos = split(
+        trees["aorta"],
+        ((Y > 2.75) & (X < 0)) | ((X < -0.05) & (Z > 1.5)),
+        (X > 0.03) & (Z < 1.22) & (Y < 2.5),
+        (X > 0.03) & (Z > 1.5),
+    )
+    caudal_vc, right_pa = split(trees["right-atrium"], (Z > 2.3) & (Y < 2.47) & (edt * h > 0.04), Y > 2.55)
+    parts = {
+        "aorta": aorta,
+        "cranial-vena-cava": cranial_vc,
+        "caudal-vena-cava": caudal_vc,
+        "pulmonary-trunk": trees["pulmonary-trunk"] | right_pa,
+        "pulmonary-veins": trees["pulmonary-veins"],
+    }
+    vessels = np.logical_or.reduce(list(parts.values()) + [azygos])
+    parts["heart"] = largest(m & ~vessels)
+    out = {}
+    for k, v in parts.items():
+        q, f = taubin(main_part(g.surface(v, 1.0)), 8)
+        out[k] = (q @ TURN, f)
+    return out
 
 
 def clear_of(heart, liver, gap=0.006, scale=0.9):
     """The large-breed heart, placed by the warp, reaches into the liver dome
     with its apex. Shrink it about its base (to a vertebral heart score close
     to 10 on this skeleton) and move it cranially until the diaphragm fits
-    between apex and liver; it stays within ribs 3-6."""
-    p, f = heart
-    base = p[p[:, 1] > np.quantile(p[:, 1], 0.7)].mean(0)
-    p = base + (p - base) * scale
+    between apex and liver; it stays within ribs 3-6. Returns the map, for
+    the heart and its vessels."""
+    base = heart[heart[:, 1] > np.quantile(heart[:, 1], 0.7)].mean(0)
+    p = base + (heart - base) * scale
     tree = cKDTree(liver)
-    for dz in np.arange(0, 0.05, 0.001):
-        if tree.query(p - [0, 0, dz])[0].min() > gap:
-            return p - [0, 0, dz], f
-    return p - [0, 0, 0.05], f
+    dz = next((d for d in np.arange(0, 0.05, 0.001) if tree.query(p - [0, 0, d])[0].min() > gap), 0.05)
+    return lambda q: base + (q - base) * scale - [0, 0, dz]
+
+
+def trunk_split(mesh, z_cava, z_cut, h=0.0008):
+    """The abdominal CT vessels are the aorta and the caudal vena cava fused
+    side by side (no gap at this resolution), with their branches and the
+    paired iliac arteries and veins. Per 1 mm slab, the trunk (its dorsal
+    12 mm) ends on the right at the wall of the vena cava; the vena cava is
+    a tube of radius r just inside it, from z_cava[0] to where the trunk
+    splits into the iliac vessels (z_cava[1] at most), and is cut out of the
+    aorta. Returns the aorta (cut cranially at z_cut, where the heart CT's
+    takes over), the vena cava centreline and r (atlas frame)."""
+    p, f = mesh
+    g = Grid(p.min(0), p.max(0), h)
+    m = g.solid(p, f, 1)
+    X, Y, Z = g.coords()
+    zs, right, top, width = [], [], [], []
+    for z in np.arange(z_cava[0], z_cava[1], 0.001):
+        sl = m & (np.abs(Z - z) < h / 2)
+        band = sl & (Y > Y[sl].max() - 0.012) & (np.abs(X) < 0.02)
+        x = np.unique(np.round(X[band] / h).astype(int))
+        if not len(x):
+            continue
+        width.append(np.ptp(x) * h)
+        # One run wider than the aorta alone: aorta and vena cava together
+        # (the vena cava reaches the trunk from the liver, ventrally).
+        if np.all(np.diff(x) <= 1) and np.ptp(x) * h > np.median(width[:10]) + 0.004:
+            zs.append(z)
+            right.append(x.max() * h)
+            top.append(Y[band].max())
+        elif zs and z - zs[-1] > 0.02:  # split into the iliac vessels
+            break
+    zs = np.array(zs)
+    right, top = ndi.median_filter(np.array(right), 9), ndi.median_filter(np.array(top), 9)
+    r = 0.004
+    line = np.stack([right - r, top - r, zs], 1)[::4]
+    q = np.stack([X[m], Y[m], Z[m]], 1)
+    d, _ = cKDTree(spline(line, 6)).query(q)
+    cut = np.zeros(m.shape, bool)
+    cut[m] = d < r + h
+    aorta = m & ~cut & (Z > z_cut)
+    return taubin(main_part(g.surface(aorta, 1.0)), 4), line, r
+
+
+def end(mesh, cranial, depth=0.004):
+    """Centre and radius of the cut end of a vessel."""
+    p = mesh[0]
+    z = p[:, 2].min() + depth if cranial else p[:, 2].max() - depth
+    s = p[np.abs(p[:, 2] - z) < 0.0015]
+    c = s.mean(0)
+    return c, np.linalg.norm((s - c)[:, :2], axis=1).mean()
+
+
+def slab(mesh, z):
+    s = mesh[0][np.abs(mesh[0][:, 2] - z) < 0.0015]
+    c = s.mean(0)
+    return c, np.linalg.norm((s - c)[:, :2], axis=1).mean()
+
+
+def clear_path(path, r, pts, gap=0.001, iters=30):
+    """Pushes a tube's centreline off nearby surfaces (points)."""
+    tree = cKDTree(pts)
+    path = path.copy()
+    for _ in range(iters):
+        d, j = tree.query(path)
+        hit = d < r + gap
+        if not hit.any():
+            break
+        away = (path[hit] - pts[j[hit]]) / np.maximum(d[hit], 1e-9)[:, None]
+        path[hit] += away * (r + gap - d[hit])[:, None] * 0.6
+        path[1:-1] = (path[:-2] + 2 * path[1:-1] + path[2:]) / 4
+    return path
 
 
 def outward(mesh):
@@ -747,6 +873,75 @@ def pelvic_canal(sk, z):
     return np.array([0.0, (top + bottom) / 2, z])
 
 
+def packed_tube(allowed, g, a, b, length, r, seed=3, iters=1500):
+    """A tube of `length` from a to b, packed into the voxel region `allowed`
+    (bead centres; already eroded by r) like the jejunum in the abdomen:
+    a chain of beads, started on a tour through evenly spread points of the
+    region and relaxed with bonds, bending stiffness, contact between beads
+    of different stretches and confinement to the region."""
+    rng = np.random.default_rng(seed)
+    inside = g.lo + np.argwhere(allowed) * g.h
+    # Tour: k points spread by k-means, visited greedily from a, ending at b,
+    # untangled by 2-opt.
+    k = max(8, int(length / (6 * r)))
+    c = inside[rng.choice(len(inside), k, replace=False)]
+    for _ in range(12):
+        lab = cKDTree(c).query(inside)[1]
+        c = np.array([inside[lab == i].mean(0) if np.any(lab == i) else c[i] for i in range(k)])
+    order, cur, left = [], a, list(range(k))
+    while left:
+        j = min(left, key=lambda i: np.linalg.norm(c[i] - cur) + 0.3 * np.linalg.norm(c[i] - b) * (len(left) < k / 4))
+        order.append(j)
+        left.remove(j)
+        cur = c[j]
+    tour = np.concatenate([[a], c[order], [b]])
+    for _ in range(20):
+        better = False
+        for i in range(1, len(tour) - 2):
+            for j in range(i + 1, len(tour) - 1):
+                d0 = np.linalg.norm(tour[i - 1] - tour[i]) + np.linalg.norm(tour[j] - tour[j + 1])
+                d1 = np.linalg.norm(tour[i - 1] - tour[j]) + np.linalg.norm(tour[i] - tour[j + 1])
+                if d1 < d0 - 1e-9:
+                    tour[i : j + 1] = tour[i : j + 1][::-1].copy()
+                    better = True
+        if not better:
+            break
+    # Beads every 0.7 r along the tour.
+    s = 0.7 * r
+    n = int(length / s)
+    seg = np.linalg.norm(np.diff(tour, axis=0), axis=1)
+    u = np.concatenate([[0], np.cumsum(seg)])
+    w = np.linspace(0, u[-1], n)
+    P = np.stack([np.interp(w, u, tour[:, d]) for d in range(3)], 1)
+    P[1:-1] += rng.normal(0, 0.2 * r, (n - 2, 3))
+    _, near = ndi.distance_transform_edt(~allowed, return_indices=True)
+    fixed = np.zeros(n, bool)
+    fixed[:3] = fixed[-3:] = True
+    ends = P[fixed].copy()
+    for _ in range(iters):
+        d = P[1:] - P[:-1]
+        L = np.linalg.norm(d, axis=1)[:, None]
+        corr = 0.5 * (L - s) / np.maximum(L, 1e-9) * d
+        P[:-1] += corr
+        P[1:] -= corr
+        P[1:-1] += 0.15 * ((P[:-2] + P[2:]) / 2 - P[1:-1])
+        pairs = cKDTree(P).query_pairs(2.1 * r, output_type="ndarray")
+        pairs = pairs[np.abs(pairs[:, 0] - pairs[:, 1]) > 3]
+        if len(pairs):
+            d = P[pairs[:, 0]] - P[pairs[:, 1]]
+            L = np.linalg.norm(d, axis=1)[:, None]
+            push = 0.5 * (2.1 * r - L) / np.maximum(L, 1e-9) * d
+            np.add.at(P, pairs[:, 0], push)
+            np.add.at(P, pairs[:, 1], -push)
+        q = np.clip(np.floor((P - g.lo) / g.h).astype(int), 0, np.array(g.shape) - 1)
+        out = ~allowed[tuple(q.T)]
+        if out.any():
+            to = g.lo + np.stack([near[i][tuple(q[out].T)] for i in range(3)], 1) * g.h
+            P[out] += 0.5 * (to - P[out])
+        P[fixed] = ends
+    return P
+
+
 def procedural(lm, out, sk, pyl):
     res = {}
     vert = (lm["L1"][2] - lm["C7"][2]) / 14
@@ -801,6 +996,20 @@ def procedural(lm, out, sk, pyl):
         hiatus,
         cardia + (hiatus - cardia) * 0.1,
     ], 14)
+    # Caudal to the heart base the esophagus runs ventral to the aorta.
+    aorta = out["dog.visceral.aorta"][0]
+    for i, q in enumerate(path_e):
+        near = aorta[(np.abs(aorta[:, 2] - q[2]) < 0.002) & (np.abs(aorta[:, 0] - q[0]) < 0.012)]
+        if q[2] > carina[2] and len(near):
+            path_e[i, 1] = min(q[1], near[:, 1].min() - 0.0065)
+    vessels = np.concatenate([out[f"dog.visceral.{k}"][0] for k in ("aorta", "venae-cavae", "heart")])
+    path_e[1:-1] = clear_path(path_e, 0.0055, vessels)[1:-1]
+    # The scanned stomach reaches dorsal to the hiatus: end at the cardia,
+    # where the esophagus first meets it.
+    sg = Grid(stomach.min(0), stomach.max(0), 0.002)
+    inside = sg.lookup(sg.solid(*out["dog.visceral.stomach"], 1), path_e)
+    if inside.any():
+        path_e = path_e[: np.argmax(inside) + 3]
     res["dog.visceral.esophagus"] = tube(path_e, 0.0055, 16)
 
     # Pancreas: body at the pylorus, right lobe along the descending duodenum
@@ -808,9 +1017,9 @@ def procedural(lm, out, sk, pyl):
     # the left kidney and spleen.
     kl = out["dog.visceral.kidneys.L"][0]
     kr = out["dog.visceral.kidneys.R"][0]
-    pyl = pyl + [0.0, -0.01, 0.008]  # body of the pancreas: caudoventral to the pylorus
-    right = spline([pyl + [-0.004, 0.004, 0.004], [kr[:, 0].mean() + 0.006, kr[:, 1].min() - 0.004, kr[:, 2].mean()], [kr[:, 0].mean() + 0.004, kr[:, 1].min() - 0.002, kr[:, 2].max() + 0.01]], 12)
-    left = spline([pyl + [-0.006, 0.004, 0.004], [-0.004, kl[:, 1].min() + 0.004, kl[:, 2].min() - 0.004], [kl[:, 0].mean(), kl[:, 1].min() + 0.012, kl[:, 2].min() + 0.004]], 12)
+    body = pyl + [0.0, -0.01, 0.008]  # caudoventral to the pylorus
+    right = spline([body + [-0.004, 0.004, 0.004], [kr[:, 0].mean() + 0.006, kr[:, 1].min() - 0.004, kr[:, 2].mean()], [kr[:, 0].mean() + 0.004, kr[:, 1].min() - 0.002, kr[:, 2].max() + 0.01]], 12)
+    left = spline([body + [-0.006, 0.004, 0.004], [-0.004, kl[:, 1].min() + 0.004, kl[:, 2].min() - 0.004], [kl[:, 0].mean(), kl[:, 1].min() + 0.012, kl[:, 2].min() + 0.004]], 12)
     res["dog.visceral.pancreas"] = merge([tube(right, np.linspace(0.006, 0.004, len(right)), 14), tube(left, np.linspace(0.0065, 0.0045, len(left)), 14)])
 
     # Spleen: head lateral to the left kidney's cranial pole, caudal to the
@@ -859,17 +1068,75 @@ def procedural(lm, out, sk, pyl):
     radii[-30:] = np.linspace(0.0085, 0.006, 30)
     res["dog.visceral.large-intestine"] = merge([tube(colon, radii, 18), tube(cecum, np.linspace(0.0075, 0.005, len(cecum)), 14)])
 
-    # Urinary bladder (moderately full) cranial to the pubis, prostate around
-    # the neck at the pelvic inlet.
+    # Urinary bladder (moderately full) cranial to the pubis: pear-shaped,
+    # a rounded apex cranioventrally, the body, and a neck narrowing into the
+    # urethra, which runs through the prostate at the pelvic inlet into the
+    # pelvic canal. The ureters leave the kidneys at the hilus, run caudally
+    # along the roof of the abdomen and enter the neck dorsally.
     neck = np.array([0.0, lm["pubis"][1] + 0.006, lm["pubis"][2] - 0.016])
     axis = np.array([0, -0.5, -1.0])
     axis /= np.linalg.norm(axis)
-    up = np.cross(axis, [1, 0, 0])
-    res["dog.visceral.urinary-bladder"] = merge([
-        ellipsoid(neck + axis * 0.04, [0.019, 0.017, 0.030], np.array([[1, 0, 0], up, axis]), 28),
-        tube(spline([neck + axis * 0.012, neck + [0, 0, 0.012]], 4), 0.004, 12),
-    ])
+    u = np.linspace(0, 1, 40)
+    body = np.where(u < 0.6, 0.004 + 0.015 * np.sin(np.pi / 2 * u / 0.6) ** 1.4, 0.019 * np.sqrt(np.clip(1 - ((u - 0.6) / 0.4) ** 2, 0, 1)))
+    body = np.maximum(body, 0.0006)
+    bladder = tube(neck + axis * (0.004 + 0.066 * u)[:, None], body, 28)
+    urethra = spline([neck + axis * 0.006, neck, neck + [0, 0.002, 0.016], neck + [0, 0.004, 0.03]], 6)
+    res["dog.visceral.urinary-bladder"] = merge([bladder, tube(urethra, 0.0032, 12)])
     res["dog.visceral.prostate"] = ellipsoid(neck + [0, 0.001, 0.008], [0.011, 0.009, 0.010], np.eye(3), 20)
+    for side, key, k in ((-1, "L", kl), (1, "R", kr)):
+        medial = k[np.abs(k[:, 0]) < np.abs(k[:, 0]).min() + 0.006]
+        hilus = medial[np.abs(medial[:, 2] - k[:, 2].mean()) < 0.008].mean(0)
+        entry = neck + axis * 0.014 + [side * 0.007, 0.008, 0]
+        ureter = spline([
+            hilus + [-side * 0.002, 0, 0],
+            [side * 0.016, hilus[1] - 0.004, k[:, 2].max() + 0.012],
+            [side * 0.014, (hilus[1] + entry[1]) / 2 + 0.006, (k[:, 2].max() + entry[2]) / 2 + 0.02],
+            entry + [side * 0.004, 0.006, -0.008],
+            entry,
+        ], 10)
+        res[f"dog.visceral.kidneys.{key}"] = merge([out[f"dog.visceral.kidneys.{key}"], tube(ureter, 0.0016, 10)])
+
+    # Small intestine. Duodenum on a fixed course: from the pylorus (cranial
+    # flexure) caudally along the right flank, lateral to the right lobe of
+    # the pancreas, the caudal flexure at the level of the iliac crests, then
+    # cranially left of the root of the mesentery to the duodenojejunal
+    # flexure at the left kidney. Jejunum and ileum: one tube packed into the
+    # space the loops fill in the CT, to the ileocolic junction.
+    r = 0.0058
+    z_cf = lm["crest"][2] - 0.014
+    y_d = kr[:, 1].min() - 0.012
+    y_a = kl[:, 1].min() - 0.006
+    duo = spline([
+        pyl,
+        pyl + [0.012, 0.004, 0.006],
+        [kr[:, 0].mean() + 0.016, y_d, kr[:, 2].mean()],
+        [kr[:, 0].mean() + 0.014, y_d - 0.004, z_cf - 0.014],
+        [0.014, y_d - 0.006, z_cf],
+        [-0.002, y_a - 0.004, z_cf - 0.01],
+        [-0.009, y_a, kl[:, 2].max() - 0.004],
+        [-0.014, y_a - 0.008, kl[:, 2].mean()],
+    ], 12)
+    walls = np.concatenate([res["dog.visceral.large-intestine"][0], res["dog.visceral.pancreas"][0], out["dog.visceral.aorta"][0], out["dog.visceral.venae-cavae"][0], kr, kl])
+    duo[2:-1] = clear_path(duo, r, walls)[2:-1]
+    ct = out["dog.visceral.small-intestine"]
+    g = Grid(ct[0].min(0) - 0.01, ct[0].max(0) + 0.01, 0.0015)
+    space = ndi.binary_closing(np.pad(g.solid(*ct, 2), 4), iterations=4)[4:-4, 4:-4, 4:-4]
+    organs = [out[f"dog.visceral.{k}"] for k in ("stomach", "liver", "kidneys.L", "kidneys.R", "aorta", "venae-cavae")]
+    organs += [res[f"dog.visceral.{k}"] for k in ("spleen", "large-intestine", "urinary-bladder", "pancreas")]
+    for m in organs + [tube(duo, r, 12)]:
+        space &= ~g.solid(*m, 1)
+    allowed = ndi.distance_transform_edt(space) * g.h > r * 1.05
+    allowed = largest(allowed)
+    dj = duo[-1]
+    ileum_end = ileocolic + [-0.004, -0.004, 0.0]
+    length = 0.4 * space.sum() * g.h**3 / (np.pi * r * r)
+    beads = packed_tube(allowed, g, dj, ileum_end, length, r)
+    jej = spline(beads[::2], 3)
+    jej = np.concatenate([duo[-6:-1], jej])
+    radii = np.full(len(jej), r)
+    radii[-int(len(jej) * 0.08):] = np.linspace(r, r * 0.85, int(len(jej) * 0.08))
+    print(f"small intestine: duodenum {np.linalg.norm(np.diff(duo, axis=0), axis=1).sum():.2f} m, jejunum and ileum {length:.2f} m")
+    res["dog.visceral.small-intestine"] = merge([tube(duo, r, 14), tube(jej, radii, 14)])
     return res
 
 
@@ -887,23 +1154,63 @@ def main(work):
     out["dog.visceral.kidneys.L"] = warp.place(kidneys[0])
     out["dog.visceral.kidneys.R"] = warp.place(kidneys[1])
     # Long and thin, so it follows the warp itself (bent along the spine).
-    out["dog.visceral.great-vessels"] = (warp(vessels[0]), vessels[1])
+    trunk = (warp(vessels[0]), vessels[1])
 
     body, duo = stomach_parts(src)
     gut = intestine(src)
     to_gut = warp.rigid(gut[0])
     out["dog.visceral.small-intestine"] = (to_gut(gut[0]), gut[1])
-    pyl = to_gut(pylorus(duo))[0]
 
-    heart = read(os.path.join(work, "heart"))["all"]
-    heart = trim_heart(outward(heart_fit(src, weld(*heart))))
-    out["dog.visceral.heart"] = clear_of(warp.place(heart), out["dog.visceral.liver"][0])
+    heart = weld(*read(os.path.join(work, "heart"))["all"])
+    fit = heart_fit(src, heart)
+    parts = {k: (fit(p), f) for k, (p, f) in heart_parts(heart).items()}
+    to = warp.rigid(parts["heart"][0])
+    move = clear_of(to(parts["heart"][0]), out["dog.visceral.liver"][0])
+    parts = {k: (move(to(p)), f) for k, (p, f) in parts.items()}
+    out["dog.visceral.heart"] = parts["heart"]
+    out["dog.visceral.pulmonary-trunk"] = parts["pulmonary-trunk"]
+    out["dog.visceral.pulmonary-veins"] = parts["pulmonary-veins"]
 
-    lungs = build_lungs(src, warp, lm, out["dog.visceral.heart"])
+    # Aorta: the heart CT's arch and descending aorta, then the abdominal
+    # CT's, joined by a short tube where they overlap. Caudal vena cava: the
+    # heart CT's stump, then a tube through the dorsal border of the liver and
+    # along the right of the abdominal aorta, where it was fused with it in
+    # the CT, to its origin at the iliac veins. Cranial vena cava: the heart
+    # CT's stump, continued to the thoracic inlet ventral and right of the
+    # trachea.
+    kr, kl = out["dog.visceral.kidneys.R"][0], out["dog.visceral.kidneys.L"][0]
+    # The heart CT's descending aorta bends ventrally at its caudal end (the
+    # scanned dog's thorax was deeper), so the join spans its last 35 mm.
+    thoracic = parts["aorta"]
+    z_end = thoracic[0][:, 2].max()
+    za, zb = z_end - 0.035, z_end + 0.01
+    p, f = thoracic
+    thoracic = compact(p, f[p[f].mean(1)[:, 2] < za])
+    abdominal, line, rc = trunk_split(trunk, (kr[:, 2].min(), lm["acet"][2]), zb)
+    a, ra = slab(thoracic, za - 0.004)
+    b, rb = slab(abdominal, zb + 0.006)
+    join = spline([a - [0, 0, 0.004], a, b, b + [0, 0, 0.004]], 8)
+    out["dog.visceral.aorta"] = merge([thoracic, abdominal, tube(join, np.linspace(ra, rb, len(join)) * 1.1, 20)])
+    a, ra = end(parts["caudal-vena-cava"], False, 0.006)
+    b = line[0]
+    path = spline([a, a + [0.001, 0.002, 0.012], (a + b) / 2 + [0.002, 0.004, 0.006]] + list(line), 8)
+    caudal = tube(path, np.interp(np.arange(len(path)), [0, 16, len(path) - 1], [ra, rc, rc]), 20)
+    a, ra = end(parts["cranial-vena-cava"], True, 0.006)
+    inlet = np.array([0.009, (lm["C7_ventral"] + lm["manubrium"][1]) / 2 - 0.01, lm["manubrium"][2] + 0.002])
+    path = spline([a, a + [0, 0.002, -0.012], inlet], 10)
+    cranial = tube(path, ra, 20)
+    out["dog.visceral.venae-cavae"] = merge([parts["cranial-vena-cava"], cranial, parts["caudal-vena-cava"], caudal])
+
+    # The lungs leave room for the heart and the mediastinal vessels; the
+    # pulmonary vessels run on into them.
+    mediastinum = merge([out[f"dog.visceral.{k}"] for k in ("heart", "aorta", "venae-cavae")])
+    lungs = build_lungs(src, warp, lm, mediastinum)
     out["dog.visceral.lungs.L"], out["dog.visceral.lungs.R"] = (main_part(m) for m in lungs)
 
     stomach = stomach_mesh(body, duo)
-    out["dog.visceral.stomach"] = warp.place(stomach)
+    to_stomach = warp.rigid(stomach[0])
+    out["dog.visceral.stomach"] = (to_stomach(stomach[0]), stomach[1])
+    pyl = to_stomach(pylorus(duo))[0]
 
     brain = read(os.path.join(work, "brain"))
     placed, _ = brain_in_skull(brain, sk["dog_skeletal_skull"])

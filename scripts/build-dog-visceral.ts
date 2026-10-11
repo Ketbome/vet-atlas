@@ -4,12 +4,15 @@
  *
  * Sources (downloaded once into .cache/models/):
  * - "3D Canine Anatomy: Normal Abdomen" (pixelbeaker, CC BY 4.0): CT
- *   segmentation of one dog from the caudal thorax to the hips. Liver, spleen,
- *   stomach (fundus and body), small intestine, kidneys, abdominal great
- *   vessels and the caudal part of the lungs come from it. Its rib cage and
- *   vertebrae are only used to register the organs to our skeleton.
+ *   segmentation of one dog from the caudal thorax to the hips. Liver,
+ *   stomach (fundus and body), kidneys, abdominal aorta and the caudal part
+ *   of the lungs come from it; the space its intestinal loops fill shapes
+ *   the modelled small intestine. Its rib cage and vertebrae are only used to
+ *   register the organs to our skeleton.
  * - "Normal Canine Heart Anatomy" (pixelbeaker, CC BY 4.0): CT segmentation
- *   of the heart and the roots of the great vessels of a large-breed dog.
+ *   of the heart and the great vessels of a large-breed dog, split into the
+ *   heart, aorta, venae cavae, pulmonary trunk and arteries, and pulmonary
+ *   veins.
  * - "Cortical Atlas of the Canine Brain" (Johnson & Barry 2019, CC0): MRI
  *   population template, meshed by scripts/ct/brain.py.
  *
@@ -44,8 +47,11 @@ const meshes: Record<string, number> = {
   "dog.visceral.brain.cerebrum": 24000,
   "dog.visceral.brain.cerebellum": 8000,
   "dog.visceral.brain.brainstem": 3000,
-  "dog.visceral.heart": 40000,
-  "dog.visceral.great-vessels": 14000,
+  "dog.visceral.heart": 30000,
+  "dog.visceral.aorta": 16000,
+  "dog.visceral.venae-cavae": 8000,
+  "dog.visceral.pulmonary-trunk": 12000,
+  "dog.visceral.pulmonary-veins": 8000,
   "dog.visceral.lungs.L": 18000,
   "dog.visceral.lungs.R": 18000,
   "dog.visceral.trachea": 4000,
@@ -53,12 +59,12 @@ const meshes: Record<string, number> = {
   "dog.visceral.stomach": 9000,
   "dog.visceral.liver": 26000,
   "dog.visceral.pancreas": 3000,
-  "dog.visceral.small-intestine": 50000,
+  "dog.visceral.small-intestine": 24000,
   "dog.visceral.large-intestine": 5000,
   "dog.visceral.spleen": 2000,
-  "dog.visceral.kidneys.L": 6000,
-  "dog.visceral.kidneys.R": 6000,
-  "dog.visceral.urinary-bladder": 2000,
+  "dog.visceral.kidneys.L": 6500,
+  "dog.visceral.kidneys.R": 6500,
+  "dog.visceral.urinary-bladder": 3000,
   "dog.visceral.prostate": 1000,
   "dog.visceral.thyroid.L": 600,
   "dog.visceral.thyroid.R": 600,

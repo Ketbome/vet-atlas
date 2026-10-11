@@ -1,0 +1,33 @@
+{
+  "id": "dog.visceral.pulmonary-trunk",
+  "system": "dog.visceral",
+  "nav": "Truncus pulmonalis et aa. pulmonales",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "dog.visceral.pulmonary-trunk"
+  ],
+  "fidelity": "scan",
+  "color": "#5574B8",
+  "source": "pixelbeaker-canine-heart",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [
+    "patent-ductus-arteriosus",
+    "dirofilariosis"
+  ],
+  "media": [
+    "wm-dog-heart-left-labeled-01"
+  ],
+  "related": [
+    "dog.visceral.heart",
+    "dog.visceral.lungs",
+    "dog.visceral.pulmonary-veins",
+    "dog.visceral.aorta"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

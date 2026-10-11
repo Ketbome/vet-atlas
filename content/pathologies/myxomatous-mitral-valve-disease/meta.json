@@ -6,6 +6,7 @@
   ],
   "structures": [
     "dog.visceral.heart",
+    "dog.visceral.pulmonary-veins",
     "dog.visceral.lungs"
   ],
   "media": [],
