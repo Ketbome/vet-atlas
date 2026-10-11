@@ -1,0 +1,68 @@
+{
+  "id": "exertional-rhabdomyolysis",
+  "category": "metabolic",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.muscular.gluteus-medius",
+    "horse.muscular.epaxial",
+    "horse.muscular.semimembranosus",
+    "horse.muscular.semitendinosus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "MacLeay JM, Sorum SA, Valberg SJ, et al. Epidemiologic analysis of factors influencing exertional rhabdomyolysis in Thoroughbreds. Am J Vet Res 60:1562-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10622169/",
+      "year": 1999
+    },
+    {
+      "title": "McKenzie EC, Valberg SJ, Godden SM, et al. Effect of oral administration of dantrolene sodium on serum creatine kinase activity after exercise in horses with recurrent exertional rhabdomyolysis. Am J Vet Res 65:74-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14719706/",
+      "year": 2004
+    },
+    {
+      "title": "Ribeiro WP, Valberg SJ, Pagan JD, et al. The effect of varying dietary starch and fat content on serum creatine kinase activity and substrate availability in equine polysaccharide storage myopathy. J Vet Intern Med 18:887-94",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15638274/",
+      "year": 2004
+    },
+    {
+      "title": "McCue ME, Valberg SJ, Miller MB, et al. Glycogen synthase (GYS1) mutation causes a novel skeletal muscle glycogenosis. Genomics 91:458-66",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18358695/",
+      "year": 2008
+    },
+    {
+      "title": "McCue ME, Valberg SJ, Lucio M, et al. Glycogen synthase 1 (GYS1) mutation in diverse breeds with polysaccharide storage myopathy. J Vet Intern Med 22:1228-33",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18691366/",
+      "year": 2008
+    },
+    {
+      "title": "Isgren CM, Upjohn MM, Fernandez-Fuente M, et al. Epidemiology of exertional rhabdomyolysis susceptibility in standardbred horses reveals associated risk factors and underlying enhanced performance. PLoS One 5:e11594",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20644724/",
+      "year": 2010
+    },
+    {
+      "title": "Norton EM, Mickelson JR, Binns MM, et al. Heritability of Recurrent Exertional Rhabdomyolysis in Standardbred and Thoroughbred Racehorses Derived From SNP Genotyping Data. J Hered 107:537-43",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27489252/",
+      "year": 2016
+    },
+    {
+      "title": "Valberg SJ, Finno CJ, Henry ML, et al. Commercial genetic testing for type 2 polysaccharide storage myopathy and myofibrillar myopathy does not correspond to a histopathological diagnosis. Equine Vet J 53:690-700",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32896939/",
+      "year": 2021
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

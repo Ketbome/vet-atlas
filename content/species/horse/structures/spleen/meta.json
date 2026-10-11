@@ -13,7 +13,10 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "colic",
+    "equine-infectious-anemia"
+  ],
   "media": [],
   "related": [
     "horse.visceral.stomach",

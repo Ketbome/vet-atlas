@@ -4,12 +4,14 @@
   "species": [
     "dog",
     "cat",
-    "cow"
+    "cow",
+    "horse"
   ],
   "structures": [
     "dog.visceral.brain",
     "cat.visceral.brain",
-    "cow.visceral.brain"
+    "cow.visceral.brain",
+    "horse.visceral.brain"
   ],
   "media": [],
   "references": [
@@ -45,6 +47,16 @@
       "title": "Soler-Tovar D, Escobar LE. Rabies transmitted from vampires to cattle: An overview. PLoS One 20:e0317214",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39804921/",
       "year": 2025
+    },
+    {
+      "title": "Oliveira FAS, Castro RJS, de Oliveira JF, et al. Geographical and temporal spread of equine rabies in Brazil. Acta Trop 227:106302",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34990596/",
+      "year": 2022
+    },
+    {
+      "title": "Green SL, Smith LL, Vernau W, et al. Rabies in horses: 21 cases (1970-1990). J Am Vet Med Assoc 200:1133-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1607322/",
+      "year": 1992
     }
   ],
   "review": {

@@ -14,7 +14,10 @@
     "preset": "lateral-left",
     "zoom": 1.8
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-osteochondrosis",
+    "proximal-suspensory-desmitis"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.tarsus",

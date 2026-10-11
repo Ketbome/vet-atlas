@@ -14,7 +14,11 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-asthma",
+    "equine-influenza",
+    "exercise-induced-pulmonary-hemorrhage"
+  ],
   "media": [],
   "related": [
     "horse.visceral.trachea",

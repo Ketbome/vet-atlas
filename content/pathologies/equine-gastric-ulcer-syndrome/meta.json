@@ -1,0 +1,46 @@
+{
+  "id": "equine-gastric-ulcer-syndrome",
+  "category": "inflammatory",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.stomach",
+    "horse.visceral.esophagus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Sykes BW, Hewetson M, Hepburn RJ, et al. European College of Equine Internal Medicine Consensus Statement--Equine Gastric Ulcer Syndrome in Adult Horses. J Vet Intern Med 29:1288-99",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26340142/",
+      "year": 2015
+    },
+    {
+      "title": "Sykes BW, Sykes KM, Hallowell GD. A comparison of three doses of omeprazole in the treatment of equine gastric ulcer syndrome: A blinded, randomised, dose-response clinical trial. Equine Vet J 47:285-90",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24761780/",
+      "year": 2015
+    },
+    {
+      "title": "Varley G, Bowen IM, Habershon-Butcher JL, et al. Misoprostol is superior to combined omeprazole-sucralfate for the treatment of equine gastric glandular disease. Equine Vet J 51:575-580",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30809869/",
+      "year": 2019
+    },
+    {
+      "title": "Mason LV, Moroney JR, Mason RJ. Prophylactic therapy with omeprazole for prevention of equine gastric ulcer syndrome (EGUS) in horses in active training: A meta-analysis. Equine Vet J 51:11-19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29665126/",
+      "year": 2019
+    },
+    {
+      "title": "Luthersson N, Nielsen KH, Harris P, et al. Risk factors associated with equine gastric ulceration syndrome (EGUS) in 201 horses in Denmark. Equine Vet J 41:625-30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19927579/",
+      "year": 2009
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

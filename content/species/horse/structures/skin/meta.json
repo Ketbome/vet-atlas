@@ -13,7 +13,10 @@
     "preset": "lateral-left",
     "zoom": 1
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-sarcoid",
+    "pituitary-pars-intermedia-dysfunction"
+  ],
   "media": [],
   "related": [
     "horse.integumentary.hooves",

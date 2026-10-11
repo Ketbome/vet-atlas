@@ -1,0 +1,57 @@
+{
+  "id": "navicular-syndrome",
+  "category": "degenerative",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.skeletal.phalanges-thoracic",
+    "horse.muscular.flexor-digitorum-profundus",
+    "horse.integumentary.hooves"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ross MW, Dyson SJ. Diagnosis and Management of Lameness in the Horse, 2nd ed. Elsevier",
+      "year": 2011
+    },
+    {
+      "title": "Denoix JM, Thibaud D, Riccio B. Tiludronate as a new therapeutic agent in the treatment of navicular disease: a double-blind placebo-controlled clinical trial. Equine Vet J 35:407-13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12880010/",
+      "year": 2003
+    },
+    {
+      "title": "Dyson S, Murray R. Magnetic resonance imaging evaluation of 264 horses with foot pain: the podotrochlear apparatus, deep digital flexor tendon and collateral ligaments of the distal interphalangeal joint. Equine Vet J 39:340-3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17722726/",
+      "year": 2007
+    },
+    {
+      "title": "Marsh CA, Schneider RK, Sampson SN, et al. Response to injection of the navicular bursa with corticosteroid and hyaluronan following high-field magnetic resonance imaging in horses with signs of navicular syndrome: 101 cases (2000-2008). J Am Vet Med Assoc 241:1353-64",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23113529/",
+      "year": 2012
+    },
+    {
+      "title": "Parkes R, Newton R, Dyson S. Is there an association between clinical features, response to diagnostic analgesia and radiological findings in horses with a magnetic resonance imaging diagnosis of navicular disease or other injuries of the podotrochlear apparatus? Vet J 204:40-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25724857/",
+      "year": 2015
+    },
+    {
+      "title": "Gutierrez-Nibeyro SD, Werpy NM, White NA 2nd, et al. Outcome of palmar/plantar digital neurectomy in horses with foot pain evaluated with magnetic resonance imaging: 50 cases (2005-2011). Equine Vet J 47:160-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24612245/",
+      "year": 2015
+    },
+    {
+      "title": "Mitchell A, Wright G, Sampson SN, et al. Clodronate improves lameness in horses without changing bone turnover markers. Equine Vet J 51:356-363",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30153345/",
+      "year": 2019
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

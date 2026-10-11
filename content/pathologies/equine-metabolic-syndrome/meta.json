@@ -1,0 +1,52 @@
+{
+  "id": "equine-metabolic-syndrome",
+  "category": "metabolic",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.integumentary.hooves",
+    "horse.visceral.pancreas",
+    "horse.visceral.small-intestine"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Durham AE, Frank N, McGowan CM, et al. ECEIM consensus statement on equine metabolic syndrome. J Vet Intern Med 33:335-349",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30724412/",
+      "year": 2019
+    },
+    {
+      "title": "Menzies-Gow NJ, Harris PA, Elliott J. Prospective cohort study evaluating risk factors for the development of pasture-associated laminitis in the United Kingdom. Equine Vet J 49:300-306",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27363591/",
+      "year": 2017
+    },
+    {
+      "title": "Knowles EJ, Elliott J, Harris PA, et al. Predictors of laminitis development in a cohort of nonlaminitic ponies. Equine Vet J 55:12-23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35263471/",
+      "year": 2023
+    },
+    {
+      "title": "Meier A, Reiche D, de Laat M, et al. The sodium-glucose co-transporter 2 inhibitor velagliflozin reduces hyperinsulinemia and prevents laminitis in insulin-dysregulated ponies. PLoS One 13:e0203655",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30212530/",
+      "year": 2018
+    },
+    {
+      "title": "Bamford NJ, Potter SJ, Baskerville CL, et al. Influence of dietary restriction and low-intensity exercise on weight loss and insulin sensitivity in obese equids. J Vet Intern Med 33:280-286",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30520164/",
+      "year": 2019
+    },
+    {
+      "title": "Karikoski NP, Horn I, McGowan TW, et al. The prevalence of endocrinopathic laminitis among horses presented for laminitis at a first-opinion/referral equine hospital. Domest Anim Endocrinol 41:111-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21696910/",
+      "year": 2011
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

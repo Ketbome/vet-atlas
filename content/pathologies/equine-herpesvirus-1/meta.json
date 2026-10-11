@@ -1,0 +1,57 @@
+{
+  "id": "equine-herpesvirus-1",
+  "category": "infectious",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.brain",
+    "horse.visceral.uterus",
+    "horse.visceral.trachea"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sellon DC, Long MT. Equine Infectious Diseases, 2nd ed. Elsevier",
+      "year": 2014
+    },
+    {
+      "title": "Lunn DP, Burgess BA, Dorman DC, et al. Updated ACVIM consensus statement on equine herpesvirus-1. J Vet Intern Med 38:1290-1299",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38497217/",
+      "year": 2024
+    },
+    {
+      "title": "Osterrieder K, Dorman DC, Burgess BA, et al. Vaccination for the prevention of equine herpesvirus-1 disease in domesticated horses: A systematic review and meta-analysis. J Vet Intern Med 38:1858-1871",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37930113/",
+      "year": 2024
+    },
+    {
+      "title": "Goehring L, Dorman DC, Osterrieder K, et al. Pharmacologic interventions for the treatment of equine herpesvirus-1 in domesticated horses: A systematic review. J Vet Intern Med 38:1892-1905",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38380685/",
+      "year": 2024
+    },
+    {
+      "title": "de la Cuesta-Torrado M, Velloso Alvarez A, Santiago-Llorente I, et al. Risk Factors and Long-Term Outcomes in Horses After the 2021 Outbreak of Equine Herpesvirus 1 Myeloencephalopathy, Valencia, Spain. J Vet Intern Med 39:e70040",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40055829/",
+      "year": 2025
+    },
+    {
+      "title": "Goehring LS, van Winden SC, van Maanen C, et al. Equine herpesvirus type 1-associated myeloencephalopathy in The Netherlands: a four-year retrospective study (1999-2003). J Vet Intern Med 20:601-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16734096/",
+      "year": 2006
+    },
+    {
+      "title": "Nugent J, Birch-Machin I, Smith KC, et al. Analysis of equid herpesvirus 1 strain variation reveals a point mutation of the DNA polymerase strongly associated with neuropathogenic versus nonneuropathogenic disease outbreaks. J Virol 80:4047-60",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16571821/",
+      "year": 2006
+    },
+    {
+      "title": "Maxwell LK, Bentz BG, Gilliam LL, et al. Efficacy of the early administration of valacyclovir hydrochloride for the treatment of neuropathogenic equine herpesvirus type-1 infection in horses. Am J Vet Res 78:1126-1139",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28945127/",
+      "year": 2017
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

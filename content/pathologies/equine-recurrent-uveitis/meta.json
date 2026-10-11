@@ -1,0 +1,50 @@
+{
+  "id": "equine-recurrent-uveitis",
+  "category": "inflammatory",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.integumentary.eyes"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Gilger BC. Equine Ophthalmology, 3rd ed. Wiley-Blackwell",
+      "year": 2016
+    },
+    {
+      "title": "Gerding JC, Gilger BC. Prognosis and impact of equine recurrent uveitis. Equine Vet J 48:290-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25891653/",
+      "year": 2016
+    },
+    {
+      "title": "Dwyer AE, Crockett RS, Kalsow CM. Association of leptospiral seroreactivity and breed with uveitis and blindness in horses: 372 cases (1986-1993). J Am Vet Med Assoc 207:1327-31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7591929/",
+      "year": 1995
+    },
+    {
+      "title": "Wollanke B, Rohrbach BW, Gerhards H. Serum and vitreous humor antibody titers in and isolation of Leptospira interrogans from horses with recurrent uveitis. J Am Vet Med Assoc 219:795-800",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11561656/",
+      "year": 2001
+    },
+    {
+      "title": "Geiger T, Gerhards H, Bjelica B, et al. Analysis of 1840 Equine Intraocular Fluid Samples for the Presence of Anti-Leptospira Antibodies and Leptospiral DNA and the Correlation to Ophthalmologic Findings in Terms of Equine Recurrent Uveitis (ERU)-A Retrospective Study. Vet Sci 9:448",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36006363/",
+      "year": 2022
+    },
+    {
+      "title": "Sandmeyer LS, Kingsley NB, Walder C, et al. Risk factors for equine recurrent uveitis in a population of Appaloosa horses in western Canada. Vet Ophthalmol 23:515-525",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32086865/",
+      "year": 2020
+    },
+    {
+      "title": "Gilger BC, Wilkie DA, Clode AB, et al. Long-term outcome after implantation of a suprachoroidal cyclosporine drug delivery device in horses with recurrent uveitis. Vet Ophthalmol 13:294-300",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20840106/",
+      "year": 2010
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

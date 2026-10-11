@@ -1,0 +1,53 @@
+{
+  "id": "pituitary-pars-intermedia-dysfunction",
+  "category": "degenerative",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.brain",
+    "horse.integumentary.skin",
+    "horse.integumentary.hooves",
+    "horse.muscular.epaxial"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Menzies-Gow NJ, Banse HE, Duff A, et al. BEVA primary care clinical guidelines: Diagnosis and management of equine pituitary pars intermedia dysfunction. Equine Vet J 56:220-242",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37795557/",
+      "year": 2024
+    },
+    {
+      "title": "Ireland JL, McGowan CM. Epidemiology of pituitary pars intermedia dysfunction: A systematic literature review of clinical presentation, disease prevalence and risk factors. Vet J 235:22-33",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29704935/",
+      "year": 2018
+    },
+    {
+      "title": "Meyer JC, Hunyadi LM, Ordóñez-Mena JM. The accuracy of ACTH as a biomarker for pituitary pars intermedia dysfunction in horses: A systematic review and meta-analysis. Equine Vet J 54:457-466",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34428330/",
+      "year": 2022
+    },
+    {
+      "title": "Tatum RC, McGowan CM, Ireland JL. Efficacy of pergolide for the management of equine pituitary pars intermedia dysfunction: A systematic review. Vet J 266:105562",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33323174/",
+      "year": 2020
+    },
+    {
+      "title": "Horn R, Bamford NJ, Afonso T, et al. Factors associated with survival, laminitis and insulin dysregulation in horses diagnosed with equine pituitary pars intermedia dysfunction. Equine Vet J 51:440-445",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30417404/",
+      "year": 2019
+    },
+    {
+      "title": "McGowan TW, Pinchbeck GP, McGowan CM. Prevalence, risk factors and clinical signs predictive for equine pituitary pars intermedia dysfunction in aged horses. Equine Vet J 45:74-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22594955/",
+      "year": 2013
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

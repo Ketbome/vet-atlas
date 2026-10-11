@@ -2,11 +2,13 @@
   "id": "cervical-spondylomyelopathy",
   "category": "degenerative",
   "species": [
-    "dog"
+    "dog",
+    "horse"
   ],
   "structures": [
     "dog.skeletal.vertebrae-cervical",
-    "dog.skeletal.vertebra-c7"
+    "dog.skeletal.vertebra-c7",
+    "horse.skeletal.vertebrae-cervical"
   ],
   "media": [],
   "references": [
@@ -21,6 +23,55 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Mayhew IG, Donawick WJ, Green SL, et al. Diagnosis and prediction of cervical vertebral malformation in thoroughbred foals based on semi-quantitative radiographic indicators. Equine Vet J 25:435-40",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8223376/",
+      "year": 1993
+    },
+    {
+      "title": "Hahn CN, Handel I, Green SL, et al. Assessment of the utility of using intra- and intervertebral minimum sagittal diameter ratios in the diagnosis of cervical vertebral malformation in horses. Vet Radiol Ultrasound 49:1-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18251286/",
+      "year": 2008
+    },
+    {
+      "title": "Levine JM, Ngheim PP, Levine GJ, et al. Associations of sex, breed, and age with cervical vertebral compressive myelopathy in horses: 811 cases (1974-2007). J Am Vet Med Assoc 233:1453-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18980501/",
+      "year": 2008
+    },
+    {
+      "title": "Levine JM, Scrivani PV, Divers TJ, et al. Multicenter case-control study of signalment, diagnostic features, and outcome associated with cervical vertebral malformation-malarticulation in horses. J Am Vet Med Assoc 237:812-22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20919847/",
+      "year": 2010
+    },
+    {
+      "title": "Hoffman CJ, Clark CK. Prognosis for racing with conservative management of cervical vertebral malformation in thoroughbreds: 103 cases (2002-2010). J Vet Intern Med 27:317-23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23480718/",
+      "year": 2013
+    },
+    {
+      "title": "Saville WJA, Reed SM, Dubey JP, et al. Interobserver Variation in the Diagnosis of Neurologic Abnormalities in the Horse. J Vet Intern Med 31:1871-1876",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28887894/",
+      "year": 2017
+    },
+    {
+      "title": "Pezzanite L, Easley J. Update on Surgical Treatment of Wobblers. Vet Clin North Am Equine Pract 35:299-309",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31147149/",
+      "year": 2019
+    },
+    {
+      "title": "Janicek JC, Grant BD, Woodie JB, et al. Multicenter results for C7-T1 ventral interbody fusion in horses using the kerf cut cylinder. Vet Surg 54:1326-1336",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40922452/",
+      "year": 2025
+    },
+    {
+      "title": "Strootmann T, Peter VG, Körner J. Radiographic Prevalence of Anatomical Variations of the Ventral Lamina of the Sixth Cervical Vertebra, C6/C7 Articular Process Joint Modelling and Competition Outcomes in Warmblood Sport Horses. Animals (Basel) 16:424",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41681407/",
+      "year": 2026
     }
   ],
   "review": {

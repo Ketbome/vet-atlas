@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-gastric-ulcer-syndrome"
+  ],
   "media": [],
   "related": [
     "horse.visceral.esophagus",

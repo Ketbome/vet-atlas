@@ -17,7 +17,9 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "cervical-spondylomyelopathy"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.axis",

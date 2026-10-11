@@ -1,0 +1,63 @@
+{
+  "id": "equine-osteochondrosis",
+  "category": "congenital",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.skeletal.tibia",
+    "horse.skeletal.tarsus",
+    "horse.skeletal.femur",
+    "horse.skeletal.metacarpus",
+    "horse.skeletal.metatarsus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ross MW, Dyson SJ. Diagnosis and Management of Lameness in the Horse, 2nd ed. Elsevier",
+      "year": 2011
+    },
+    {
+      "title": "McIlwraith CW, Nixon AJ, Wright IM. Diagnostic and Surgical Arthroscopy in the Horse, 4th ed. Elsevier",
+      "year": 2015
+    },
+    {
+      "title": "Laws EG, Richardson DW, Ross MW, et al. Racing performance of standardbreds after conservative and surgical treatment for tarsocrural osteochondrosis. Equine Vet J 25:199-202",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8508747/",
+      "year": 1993
+    },
+    {
+      "title": "Grøndahl AM, Engeland A. Influence of radiographically detectable orthopedic changes on racing performance in standardbred trotters. J Am Vet Med Assoc 206:1013-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7768708/",
+      "year": 1995
+    },
+    {
+      "title": "Dik KJ, Enzerink E, van Weeren PR. Radiographic development of osteochondral abnormalities, in the hock and stifle of Dutch Warmblood foals, from age 1 to 11 months. Equine Vet J Suppl 31:9-15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10999655/",
+      "year": 1999
+    },
+    {
+      "title": "Lepeule J, Bareille N, Robert C, et al. Association of growth, feeding practices and exercise conditions with the prevalence of Developmental Orthopaedic Disease in limbs of French foals at weaning. Prev Vet Med 89:167-77",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19329202/",
+      "year": 2009
+    },
+    {
+      "title": "Denoix JM, Jacquet S, Lepeule J, et al. Radiographic findings of juvenile osteochondral conditions detected in 392 foals using a field radiographic protocol. Vet J 197:44-51",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23643868/",
+      "year": 2013
+    },
+    {
+      "title": "Russell J, Matika O, Russell T, et al. Heritability and prevalence of selected osteochondrosis lesions in yearling Thoroughbred horses. Equine Vet J 49:282-287",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27448988/",
+      "year": 2017
+    },
+    {
+      "title": "Van Mol B, Janssens S, Oosterlinck M, et al. Genetic factors of equine osteochondrosis and fetlock osteochondral fragments: A scoping review - Part 2. Vet J 308:106258",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39442748/",
+      "year": 2024
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

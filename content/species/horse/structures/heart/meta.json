@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "exercise-induced-pulmonary-hemorrhage"
+  ],
   "media": [],
   "related": [
     "horse.visceral.great-vessels",

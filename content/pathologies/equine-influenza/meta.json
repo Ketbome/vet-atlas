@@ -1,0 +1,46 @@
+{
+  "id": "equine-influenza",
+  "category": "infectious",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.trachea",
+    "horse.visceral.lungs"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sellon DC, Long MT. Equine Infectious Diseases, 2nd ed. Elsevier",
+      "year": 2014
+    },
+    {
+      "title": "Elliott S, Olufemi OT, Daly JM. Systematic Review of Equine Influenza A Virus Vaccine Studies and Meta-Analysis of Vaccine Efficacy. Viruses 15:2337",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38140577/",
+      "year": 2023
+    },
+    {
+      "title": "Cowled B, Ward MP, Hamilton S, et al. The equine influenza epidemic in Australia: spatial and temporal descriptive analyses of a large propagating epidemic. Prev Vet Med 92:60-70",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19748691/",
+      "year": 2009
+    },
+    {
+      "title": "Firestone SM, Schemann KA, Toribio JA, et al. A case-control study of risk factors for equine influenza spread onto horse premises during the 2007 epidemic in Australia. Prev Vet Med 100:53-63",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21481961/",
+      "year": 2011
+    },
+    {
+      "title": "Barquero N, Daly JM, Newton JR. Risk factors for influenza infection in vaccinated racehorses: lessons from an outbreak in Newmarket, UK in 2003. Vaccine 25:7520-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17889409/",
+      "year": 2007
+    },
+    {
+      "title": "Whitlock F, Grewar J, Newton R. An epidemiological overview of the equine influenza epidemic in Great Britain during 2019. Equine Vet J 55:153-164",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36054725/",
+      "year": 2023
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -16,7 +16,11 @@
     "preset": "cranial",
     "zoom": 2.5
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-recurrent-uveitis",
+    "equine-sarcoid",
+    "leptospirosis"
+  ],
   "media": [],
   "related": [
     "horse.integumentary.skin",

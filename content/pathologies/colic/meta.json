@@ -1,0 +1,35 @@
+{
+  "id": "colic",
+  "category": "metabolic",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.small-intestine",
+    "horse.visceral.cecum",
+    "horse.visceral.large-colon",
+    "horse.visceral.spleen"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Auer JA, Stick JA, Kümmerle JM, et al. Equine Surgery, 5th ed. Elsevier",
+      "year": 2019
+    },
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {"title": "Curtis L, Burford JH, Thomas JS, et al. Prospective study of the primary evaluation of 1016 horses with clinical signs of abdominal pain by veterinary practitioners, and the differentiation of critical and non-critical cases. Acta Vet Scand 57:69", "url": "https://pubmed.ncbi.nlm.nih.gov/26444675/", "year": 2015},
+    {"title": "Curtis L, Burford JH, England GCW, et al. Risk factors for acute abdominal pain (colic) in the adult horse: A scoping review of risk factors, and a systematic review of the effect of management-related changes. PLoS One 14:e0219307", "url": "https://pubmed.ncbi.nlm.nih.gov/31295284/", "year": 2019},
+    {"title": "Suthers JM, Pinchbeck GL, Proudman CJ, et al. Risk factors for large colon volvulus in the UK. Equine Vet J 45:558-63", "url": "https://pubmed.ncbi.nlm.nih.gov/23414461/", "year": 2013},
+    {"title": "Suthers JM, Pinchbeck GL, Proudman CJ, et al. Survival of horses following strangulating large colon volvulus. Equine Vet J 45:219-23", "url": "https://pubmed.ncbi.nlm.nih.gov/22994687/", "year": 2013},
+    {"title": "Archer DC, Pinchbeck GK, French NP, et al. Risk factors for epiploic foramen entrapment colic: an international study. Equine Vet J 40:224-30", "url": "https://pubmed.ncbi.nlm.nih.gov/18267890/", "year": 2008},
+    {"title": "Proudman CJ, Smith JE, Edwards GB, et al. Long-term survival of equine surgical colic cases. Part 1: patterns of mortality and morbidity. Equine Vet J 34:432-7", "url": "https://pubmed.ncbi.nlm.nih.gov/12358043/", "year": 2002},
+    {"title": "Mair TS, Smith LJ. Survival and complication rates in 300 horses undergoing surgical treatment of colic. Part 1: Short-term survival following a single laparotomy. Equine Vet J 37:296-302", "url": "https://pubmed.ncbi.nlm.nih.gov/16028616/", "year": 2005},
+    {"title": "Gillen A, Kottwitz J, Munsterman A. Meta-analysis of the Effect of Treatment Strategies for Nephrosplenic Entrapment of the Large Colon. J Equine Vet Sci 92:103169", "url": "https://pubmed.ncbi.nlm.nih.gov/32797791/", "year": 2020}
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -18,7 +18,12 @@
     "preset": "lateral-left",
     "zoom": 2.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-metabolic-syndrome",
+    "laminitis",
+    "navicular-syndrome",
+    "pituitary-pars-intermedia-dysfunction"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.phalanges-thoracic",

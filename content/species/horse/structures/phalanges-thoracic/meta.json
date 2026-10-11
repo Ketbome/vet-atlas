@@ -14,7 +14,10 @@
     "preset": "lateral-left",
     "zoom": 2.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "laminitis",
+    "navicular-syndrome"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.metacarpus",

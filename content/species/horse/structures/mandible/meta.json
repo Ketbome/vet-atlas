@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 2.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "strangles"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.skull"

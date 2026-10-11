@@ -15,7 +15,12 @@
     "preset": "lateral-left",
     "zoom": 2
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-herpesvirus-1",
+    "pituitary-pars-intermedia-dysfunction",
+    "rabies",
+    "west-nile-virus-encephalitis"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.skull"

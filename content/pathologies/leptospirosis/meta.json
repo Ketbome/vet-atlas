@@ -3,7 +3,8 @@
   "category": "infectious",
   "species": [
     "dog",
-    "cow"
+    "cow",
+    "horse"
   ],
   "structures": [
     "dog.visceral.kidneys",
@@ -11,7 +12,10 @@
     "dog.visceral.lungs",
     "cow.visceral.kidneys",
     "cow.visceral.uterus",
-    "cow.integumentary.udder"
+    "cow.integumentary.udder",
+    "horse.visceral.kidneys",
+    "horse.visceral.uterus",
+    "horse.integumentary.eyes"
   ],
   "media": [],
   "references": [
@@ -62,6 +66,36 @@
       "title": "Kasimanickam R, Whittier WD, Collins JC, et al. A field study of the effects of a monovalent Leptospira borgpetersenii serovar Hardjo strain hardjobovis vaccine administered with oxytetracycline on reproductive performance in beef cattle. J Am Vet Med Assoc 231:1709-14",
       "url": "https://pubmed.ncbi.nlm.nih.gov/18052809/",
       "year": 2007
+    },
+    {
+      "title": "Concha D, Azócar-Aedo L, Ricardo T, et al. Epidemiological evidence of anti-Leptospira antibodies in horses at a global level (years 2015 to 2025): a systematic review and meta-analysis. J Equine Vet Sci 166:106058",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276309/",
+      "year": 2026
+    },
+    {
+      "title": "Donahue JM, Smith BJ, Poonacha KB, et al. Prevalence and serovars of leptospira involved in equine abortions in central Kentucky during the 1991-1993 foaling seasons. J Vet Diagn Invest 7:87-91",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7779971/",
+      "year": 1995
+    },
+    {
+      "title": "Erol E, Jackson CB, Steinman M, et al. A diagnostic evaluation of real-time PCR, fluorescent antibody and microscopic agglutination tests in cases of equine leptospiral abortion. Equine Vet J 47:171-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24750279/",
+      "year": 2015
+    },
+    {
+      "title": "Dwyer AE, Crockett RS, Kalsow CM. Association of leptospiral seroreactivity and breed with uveitis and blindness in horses: 372 cases (1986-1993). J Am Vet Med Assoc 207:1327-31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7591929/",
+      "year": 1995
+    },
+    {
+      "title": "Wollanke B, Rohrbach BW, Gerhards H. Serum and vitreous humor antibody titers in and isolation of Leptospira interrogans from horses with recurrent uveitis. J Am Vet Med Assoc 219:795-800",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11561656/",
+      "year": 2001
+    },
+    {
+      "title": "Divers TJ, Chang YF, Irby NL, et al. Leptospirosis: An important infectious disease in North American horses. Equine Vet J 51:287-292",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30629756/",
+      "year": 2019
     }
   ],
   "review": {

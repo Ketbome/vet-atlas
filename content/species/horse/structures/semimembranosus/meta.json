@@ -15,7 +15,9 @@
     "preset": "caudal",
     "zoom": 1.5
   },
-  "pathologies": [],
+  "pathologies": [
+    "exertional-rhabdomyolysis"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.os-coxae",

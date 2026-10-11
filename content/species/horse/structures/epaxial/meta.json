@@ -15,7 +15,10 @@
     "preset": "dorsal",
     "zoom": 1.1
   },
-  "pathologies": [],
+  "pathologies": [
+    "exertional-rhabdomyolysis",
+    "pituitary-pars-intermedia-dysfunction"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.vertebrae-cervical",

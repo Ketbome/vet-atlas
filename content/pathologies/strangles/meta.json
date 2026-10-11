@@ -1,0 +1,51 @@
+{
+  "id": "strangles",
+  "category": "infectious",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.skeletal.mandible",
+    "horse.visceral.trachea"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sellon DC, Long MT. Equine Infectious Diseases, 2nd ed. Elsevier",
+      "year": 2014
+    },
+    {
+      "title": "Boyle AG, Timoney JF, Newton JR, et al. Streptococcus equi Infections in Horses: Guidelines for Treatment, Control, and Prevention of Strangles-Revised Consensus Statement. J Vet Intern Med 32:633-647",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29424487/",
+      "year": 2018
+    },
+    {
+      "title": "Houben RMAC, van Maanen K, Kemp-Symonds JG, et al. Estimation of the basic reproduction number for Streptococcus equi spp. equi outbreaks by meta-analysis of strangles outbreak reports. Equine Vet J 55:506-514",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35866343/",
+      "year": 2023
+    },
+    {
+      "title": "Boyle AG, Stefanovski D, Rankin SC. Comparison of nasopharyngeal and guttural pouch specimens to determine the optimal sampling site to detect Streptococcus equi subsp equi carriers by DNA amplification. BMC Vet Res 13:75",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28335829/",
+      "year": 2017
+    },
+    {
+      "title": "Robinson C, Waller AS, Frykberg L, et al. Intramuscular vaccination with Strangvac is safe and induces protection against equine strangles caused by Streptococcus equi. Vaccine 38:4861-4868",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32507408/",
+      "year": 2020
+    },
+    {
+      "title": "Mitchell C, Steward KF, Charbonneau ARL, et al. Globetrotting strangles: the unbridled national and international transmission of Streptococcus equi between horses. Microb Genom 7:000528",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33684029/",
+      "year": 2021
+    },
+    {
+      "title": "Newton JR, Verheyen K, Talbot NC, et al. Control of strangles outbreaks by isolation of guttural pouch carriers identified using PCR and culture of Streptococcus equi. Equine Vet J 32:515-26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11093626/",
+      "year": 2000
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

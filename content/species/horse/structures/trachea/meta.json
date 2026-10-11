@@ -13,7 +13,13 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-asthma",
+    "equine-herpesvirus-1",
+    "equine-influenza",
+    "exercise-induced-pulmonary-hemorrhage",
+    "strangles"
+  ],
   "media": [],
   "related": [
     "horse.visceral.lungs",

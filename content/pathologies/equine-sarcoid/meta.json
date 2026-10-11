@@ -1,0 +1,51 @@
+{
+  "id": "equine-sarcoid",
+  "category": "neoplastic",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.integumentary.skin",
+    "horse.integumentary.eyes"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Knottenbelt DC, Patterson-Kane JC, Snalune KL. Clinical Equine Oncology. Elsevier",
+      "year": 2015
+    },
+    {
+      "title": "Offer KS, Dixon CE, Sutton DGM. Treatment of equine sarcoids: A systematic review. Equine Vet J 56:12-25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36917551/",
+      "year": 2024
+    },
+    {
+      "title": "Christen-Clottu O, Klocke P, Burger D, et al. Treatment of clinically diagnosed equine sarcoid with a mistletoe extract (Viscum album austriacus). J Vet Intern Med 24:1483-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21039860/",
+      "year": 2010
+    },
+    {
+      "title": "Beermann A, Clottu O, Reif M, et al. A randomized placebo-controlled double-blinded study comparing oral and subcutaneous administration of mistletoe extract for the treatment of equine sarcoid disease. J Vet Intern Med 38:1815-1824",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38529853/",
+      "year": 2024
+    },
+    {
+      "title": "Haspeslagh M, Jordana Garcia M, Vlaminck LEM, et al. Topical use of 5% acyclovir cream for the treatment of occult and verrucous equine sarcoids: a double-blinded placebo-controlled study. BMC Vet Res 13:296",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28985733/",
+      "year": 2017
+    },
+    {
+      "title": "Haspeslagh M, Vlaminck LE, Martens AM. Treatment of sarcoids in equids: 230 cases (2008-2013). J Am Vet Med Assoc 249:311-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27439349/",
+      "year": 2016
+    },
+    {
+      "title": "Carr EA, Théon AP, Madewell BR, et al. Bovine papillomavirus DNA in neoplastic and nonneoplastic tissues obtained from horses with and without sarcoids in the western United States. Am J Vet Res 62:741-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11341396/",
+      "year": 2001
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

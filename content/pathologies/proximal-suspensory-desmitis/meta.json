@@ -1,0 +1,57 @@
+{
+  "id": "proximal-suspensory-desmitis",
+  "category": "degenerative",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.muscular.interosseus-medius",
+    "horse.skeletal.metacarpus",
+    "horse.skeletal.metatarsus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ross MW, Dyson SJ. Diagnosis and Management of Lameness in the Horse, 2nd ed. Elsevier",
+      "year": 2011
+    },
+    {
+      "title": "Kasashima Y, Takahashi T, Smith RK, et al. Prevalence of superficial digital flexor tendonitis and suspensory desmitis in Japanese Thoroughbred flat racehorses in 1999. Equine Vet J 36:346-50",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15163043/",
+      "year": 2004
+    },
+    {
+      "title": "Crowe OM, Dyson SJ, Wright IM, et al. Treatment of chronic or recurrent proximal suspensory desmitis using radial pressure wave therapy in the horse. Equine Vet J 36:313-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15163037/",
+      "year": 2004
+    },
+    {
+      "title": "Murray RC, Dyson SJ, Tranquille C, et al. Association of type of sport and performance level with anatomical site of orthopaedic injury diagnosis. Equine Vet J Suppl 36:411-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17402457/",
+      "year": 2006
+    },
+    {
+      "title": "Imboden I, Waldern NM, Wiestner T, et al. Short term analgesic effect of extracorporeal shock wave therapy in horses with proximal palmar metacarpal/plantar metatarsal pain. Vet J 179:50-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18069025/",
+      "year": 2009
+    },
+    {
+      "title": "Dyson S, Murray R. Management of hindlimb proximal suspensory desmopathy by neurectomy of the deep branch of the lateral plantar nerve and plantar fasciotomy: 155 horses (2003-2008). Equine Vet J 44:361-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21883416/",
+      "year": 2012
+    },
+    {
+      "title": "Murray RC, Tranquille CA, Walker VA, et al. Magnetic Resonance Imaging Findings in the Proximal Metacarpal Region of 359 Horses and Proximal Metatarsal Region of 64 Horses Acquired Under Standing Sedation. J Equine Vet Sci 94:103268",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33077090/",
+      "year": 2020
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

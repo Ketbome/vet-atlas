@@ -1,0 +1,71 @@
+{
+  "id": "laminitis",
+  "category": "metabolic",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.integumentary.hooves",
+    "horse.skeletal.phalanges-thoracic",
+    "horse.skeletal.phalanges-pelvic"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ross MW, Dyson SJ. Diagnosis and Management of Lameness in the Horse, 2nd ed. Elsevier",
+      "year": 2011
+    },
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Wylie CE, Collins SN, Verheyen KL, et al. Risk factors for equine laminitis: a systematic review with quality appraisal of published evidence. Vet J 193:58-66",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22104504/",
+      "year": 2012
+    },
+    {
+      "title": "Wylie CE, Collins SN, Verheyen KL, et al. A cohort study of equine laminitis in Great Britain 2009-2011: estimation of disease frequency and description of clinical signs in 577 cases. Equine Vet J 45:681-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23489181/",
+      "year": 2013
+    },
+    {
+      "title": "Wylie CE, Collins SN, Verheyen KL, et al. Risk factors for equine laminitis: a case-control study conducted in veterinary-registered horses and ponies in Great Britain between 2009 and 2011. Vet J 198:57-69",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24070987/",
+      "year": 2013
+    },
+    {
+      "title": "Durham AE, Frank N, McGowan CM, et al. ECEIM consensus statement on equine metabolic syndrome. J Vet Intern Med 33:335-349",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30724412/",
+      "year": 2019
+    },
+    {
+      "title": "Knowles EJ, Elliott J, Harris PA, et al. Predictors of laminitis development in a cohort of nonlaminitic ponies. Equine Vet J 55:12-23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35263471/",
+      "year": 2023
+    },
+    {
+      "title": "de Laat MA, Reiche DB, Sillence MN, et al. Incidence and risk factors for recurrence of endocrinopathic laminitis in horses. J Vet Intern Med 33:1473-1482",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30972832/",
+      "year": 2019
+    },
+    {
+      "title": "Kullmann A, Holcombe SJ, Hurcombe SD, et al. Prophylactic digital cryotherapy is associated with decreased incidence of laminitis in horses diagnosed with colitis. Equine Vet J 46:554-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23927380/",
+      "year": 2014
+    },
+    {
+      "title": "Virgin JE, Goodrich LR, Baxter GM, et al. Incidence of support limb laminitis in horses treated with half limb, full limb or transfixation pin casts: a retrospective study of 113 horses (2000-2009). Equine Vet J Suppl 40:7-11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22082439/",
+      "year": 2011
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

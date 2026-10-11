@@ -1,0 +1,67 @@
+{
+  "id": "superficial-digital-flexor-tendinopathy",
+  "category": "degenerative",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.muscular.flexor-digitorum-superficialis-thoracic",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic",
+    "horse.skeletal.metacarpus"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Ross MW, Dyson SJ. Diagnosis and Management of Lameness in the Horse, 2nd ed. Elsevier",
+      "year": 2011
+    },
+    {
+      "title": "Kasashima Y, Takahashi T, Smith RK, et al. Prevalence of superficial digital flexor tendonitis and suspensory desmitis in Japanese Thoroughbred flat racehorses in 1999. Equine Vet J 36:346-50",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15163043/",
+      "year": 2004
+    },
+    {
+      "title": "Dyson SJ. Medical management of superficial digital flexor tendonitis: a comparative study in 219 horses (1992-2000). Equine Vet J 36:415-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15253082/",
+      "year": 2004
+    },
+    {
+      "title": "Ely ER, Avella CS, Price JS, et al. Descriptive epidemiology of fracture, tendon and suspensory ligament injuries in National Hunt racehorses in training. Equine Vet J 41:372-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19562899/",
+      "year": 2009
+    },
+    {
+      "title": "Godwin EE, Young NJ, Dudhia J, et al. Implantation of bone marrow-derived mesenchymal stem cells demonstrates improved outcome in horses with overstrain injury of the superficial digital flexor tendon. Equine Vet J 44:25-32",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21615465/",
+      "year": 2012
+    },
+    {
+      "title": "Reardon RJ, Boden LA, Mellor DJ, et al. Risk factors for superficial digital flexor tendinopathy in Thoroughbred racehorses in hurdle starts in the UK (2001-2009). Equine Vet J 44:564-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22372389/",
+      "year": 2012
+    },
+    {
+      "title": "Geburek F, Gaus M, van Schie HT, et al. Effect of intralesional platelet-rich plasma (PRP) treatment on clinical and ultrasonographic parameters in equine naturally occurring superficial digital flexor tendinopathies - a randomized prospective controlled clinical trial. BMC Vet Res 12:191",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27604193/",
+      "year": 2016
+    },
+    {
+      "title": "Alzola R, Easter C, Riggs CM, et al. Ultrasonographic-based predictive factors influencing successful return to racing after superficial digital flexor tendon injuries in flat racehorses: A retrospective cohort study in 469 Thoroughbred racehorses in Hong Kong. Equine Vet J 50:602-608",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29352495/",
+      "year": 2018
+    },
+    {
+      "title": "M'Cloud WRC, Guzmán KE, Panek CL, et al. Stem cells and platelet-rich plasma for the treatment of naturally occurring equine tendon and ligament injuries: a systematic review and meta-analysis. J Am Vet Med Assoc 262:S50-S60",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38471305/",
+      "year": 2024
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

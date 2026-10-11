@@ -14,7 +14,9 @@
     "preset": "lateral-left",
     "zoom": 1.8
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-osteochondrosis"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.femur",

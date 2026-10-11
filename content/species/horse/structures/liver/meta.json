@@ -13,7 +13,9 @@
     "preset": "lateral-left",
     "zoom": 1.6
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-infectious-anemia"
+  ],
   "media": [],
   "related": [
     "horse.visceral.pancreas",

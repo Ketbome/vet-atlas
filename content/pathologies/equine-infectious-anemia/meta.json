@@ -1,0 +1,46 @@
+{
+  "id": "equine-infectious-anemia",
+  "category": "infectious",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.spleen",
+    "horse.visceral.liver"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sellon DC, Long MT. Equine Infectious Diseases, 2nd ed. Elsevier",
+      "year": 2014
+    },
+    {
+      "title": "Carvelli A, Nardini R, Carnio A, et al. Equine Infectious Anaemia: The Active Surveillance of an Entire Equid Population Reduces the Occurrence of the Infection. Transbound Emerg Dis 2024:3439871",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40303092/",
+      "year": 2024
+    },
+    {
+      "title": "Scicluna MT, Issel CJ, Cook FR, et al. Is a diagnostic system based exclusively on agar gel immunodiffusion adequate for controlling the spread of equine infectious anaemia? Vet Microbiol 165:123-34",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23618837/",
+      "year": 2013
+    },
+    {
+      "title": "de Pádua BR, Dias RA, Fioravanti MCS, et al. Seroprevalence and risk factors associated with equine infectious anemia in the state of Goiás, Brazil. Prev Vet Med 209:105781",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36306642/",
+      "year": 2022
+    },
+    {
+      "title": "Borges AM, Silva LG, Nogueira MF, et al. Prevalence and risk factors for Equine Infectious Anemia in Poconé municipality, northern Brazilian Pantanal. Res Vet Sci 95:76-81",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23517766/",
+      "year": 2013
+    },
+    {
+      "title": "Cullinane A, Quinlivan M, Nelly M, et al. Diagnosis of equine infectious anaemia during the 2006 outbreak in Ireland. Vet Rec 161:647-52",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17993655/",
+      "year": 2007
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

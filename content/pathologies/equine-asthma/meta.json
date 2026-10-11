@@ -1,0 +1,57 @@
+{
+  "id": "equine-asthma",
+  "category": "inflammatory",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.lungs",
+    "horse.visceral.trachea",
+    "horse.muscular.obliquus-externus-abdominis"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Reed SM, Bayly WM, Sellon DC. Equine Internal Medicine, 4th ed. Elsevier",
+      "year": 2018
+    },
+    {
+      "title": "Couetil L, Cardwell JM, Leguillette R, et al. Equine Asthma: Current Understanding and Future Directions. Front Vet Sci 7:450",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32903600/",
+      "year": 2020
+    },
+    {
+      "title": "Couëtil LL, Cardwell JM, Gerber V, et al. Inflammatory Airway Disease of Horses--Revised Consensus Statement. J Vet Intern Med 30:503-15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26806374/",
+      "year": 2016
+    },
+    {
+      "title": "Hotchkiss JW, Reid SW, Christley RM. A survey of horse owners in Great Britain regarding horses in their care. Part 2: Risk factors for recurrent airway obstruction. Equine Vet J 39:301-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17722720/",
+      "year": 2007
+    },
+    {
+      "title": "Couëtil LL, Chilcoat CD, DeNicola DB, et al. Randomized, controlled study of inhaled fluticasone propionate, oral administration of prednisone, and environmental management of horses with recurrent airway obstruction. Am J Vet Res 66:1665-74",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16273895/",
+      "year": 2005
+    },
+    {
+      "title": "Pirie RS, Mueller HW, Engel O, et al. Inhaled ciclesonide is efficacious and well tolerated in the treatment of severe equine asthma in a large prospective European clinical trial. Equine Vet J 53:1094-1104",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33403727/",
+      "year": 2021
+    },
+    {
+      "title": "Pistocchini E, Carrillo Heredero AM, Mazan M, et al. Clinical efficacy of inhaled corticosteroids in equine asthma: A meta-analysis and number needed to treat. Pulm Pharmacol Ther 88:102342",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39645223/",
+      "year": 2025
+    },
+    {
+      "title": "Kinnison T, McGilvray TA, Couëtil LL, et al. Mild-moderate equine asthma: A scoping review of evidence supporting the consensus definition. Vet J 286:105865",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35817389/",
+      "year": 2022
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -15,7 +15,9 @@
     "preset": "caudal",
     "zoom": 1.8
   },
-  "pathologies": [],
+  "pathologies": [
+    "navicular-syndrome"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.humerus",

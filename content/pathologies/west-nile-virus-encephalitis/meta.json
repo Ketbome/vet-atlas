@@ -1,0 +1,45 @@
+{
+  "id": "west-nile-virus-encephalitis",
+  "category": "infectious",
+  "species": [
+    "horse"
+  ],
+  "structures": [
+    "horse.visceral.brain"
+  ],
+  "media": [],
+  "references": [
+    {
+      "title": "Sellon DC, Long MT. Equine Infectious Diseases, 2nd ed. Elsevier",
+      "year": 2014
+    },
+    {
+      "title": "Salazar P, Traub-Dargatz JL, Morley PS, et al. Outcome of equids with clinical signs of West Nile virus infection and factors associated with death. J Am Vet Med Assoc 225:267-74",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15323385/",
+      "year": 2004
+    },
+    {
+      "title": "Schuler LA, Khaitsa ML, Dyer NW, et al. Evaluation of an outbreak of West Nile virus infection in horses: 569 cases (2002). J Am Vet Med Assoc 225:1084-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15515988/",
+      "year": 2004
+    },
+    {
+      "title": "Epp T, Waldner C, Townsend HG. A case-control study of factors associated with development of clinical disease due to West Nile virus, Saskatchewan 2003. Equine Vet J 39:498-503",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18065306/",
+      "year": 2007
+    },
+    {
+      "title": "Metz MBC, Olufemi OT, Daly JM, et al. Systematic review and meta-analysis of seroprevalence studies of West Nile virus in equids in Europe between 2001 and 2018. Transbound Emerg Dis 68:1814-1823",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33012076/",
+      "year": 2021
+    },
+    {
+      "title": "Bowen RA, Bosco-Lauth A, Syvrud K, et al. Protection of horses from West Nile virus Lineage 2 challenge following immunization with a whole, inactivated WNV lineage 1 vaccine. Vaccine 32:5455-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25131745/",
+      "year": 2014
+    }
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

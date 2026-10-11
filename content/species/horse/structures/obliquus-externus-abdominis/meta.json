@@ -15,7 +15,9 @@
     "preset": "lateral-left",
     "zoom": 1.2
   },
-  "pathologies": [],
+  "pathologies": [
+    "equine-asthma"
+  ],
   "media": [],
   "related": [
     "horse.skeletal.ribs",
