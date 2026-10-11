@@ -27,7 +27,9 @@
     "horse.skeletal.phalanges-thoracic",
     "horse.integumentary.hooves",
     "horse.muscular.flexor-digitorum-superficialis-thoracic",
-    "horse.muscular.interosseus-medius"
+    "horse.muscular.interosseus-medius",
+    "horse.muscular.flexor-digitorum-profundus-pelvic",
+    "horse.muscular.check-ligaments"
   ],
   "review": {
     "status": "draft"

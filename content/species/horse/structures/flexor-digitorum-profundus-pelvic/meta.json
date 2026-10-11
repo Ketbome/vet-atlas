@@ -1,0 +1,34 @@
+{
+  "id": "horse.muscular.flexor-digitorum-profundus-pelvic",
+  "system": "horse.muscular",
+  "nav": "M. flexor digitorum profundus (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.flexor-digitorum-profundus-pelvic.L",
+    "horse.muscular.flexor-digitorum-profundus-pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#98372D",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.tibia",
+    "horse.skeletal.tarsus",
+    "horse.skeletal.metatarsus",
+    "horse.skeletal.phalanges-pelvic",
+    "horse.integumentary.hooves",
+    "horse.muscular.gastrocnemius",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic",
+    "horse.muscular.interosseus-medius",
+    "horse.muscular.flexor-digitorum-profundus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "horse.muscular.check-ligaments",
+  "system": "horse.muscular",
+  "nav": "Ligg. accessoria mm. flexorum digitorum",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.check-ligaments.proximal.L",
+    "horse.muscular.check-ligaments.proximal.R",
+    "horse.muscular.check-ligaments.distal.L",
+    "horse.muscular.check-ligaments.distal.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BD614F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.radius",
+    "horse.skeletal.carpus",
+    "horse.skeletal.metacarpus",
+    "horse.muscular.flexor-digitorum-superficialis-thoracic",
+    "horse.muscular.flexor-digitorum-profundus",
+    "horse.muscular.interosseus-medius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

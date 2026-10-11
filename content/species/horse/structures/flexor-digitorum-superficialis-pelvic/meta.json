@@ -25,7 +25,9 @@
     "horse.skeletal.phalanges-pelvic",
     "horse.muscular.gastrocnemius",
     "horse.muscular.tibialis-cranialis",
-    "horse.skeletal.tibia"
+    "horse.skeletal.tibia",
+    "horse.muscular.flexor-digitorum-profundus-pelvic",
+    "horse.muscular.peroneus-tertius"
   ],
   "review": {
     "status": "draft"

@@ -1,0 +1,32 @@
+{
+  "id": "horse.muscular.peroneus-tertius",
+  "system": "horse.muscular",
+  "nav": "M. fibularis tertius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.peroneus-tertius.L",
+    "horse.muscular.peroneus-tertius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BC5E4C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.femur",
+    "horse.skeletal.tibia",
+    "horse.skeletal.tarsus",
+    "horse.skeletal.metatarsus",
+    "horse.muscular.tibialis-cranialis",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic",
+    "horse.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

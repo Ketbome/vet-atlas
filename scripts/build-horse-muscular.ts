@@ -22,12 +22,15 @@
  * - the diaphragm's costal arch reaches the 18th rib dorsally;
  * - added on the thoracic limb: the superficial and deep digital flexors
  *   (bellies caudal on the forearm, tendons down the palmar metacarpus to P1/P2
- *   and to P3), and on all four limbs the interosseus medius (suspensory
- *   ligament: a flat band on the palmar/plantar Mc III/Mt III between the
- *   splint bones, splitting into two branches above the fetlock).
+ *   and to P3) with their accessory (check) ligaments; on the pelvic limb the
+ *   deep digital flexor (caudal on the tibia, over the sustentaculum tali to
+ *   P3) and the tendinous peroneus tertius; on all four limbs the interosseus
+ *   medius (suspensory ligament: a flat band on the palmar/plantar Mc III/Mt
+ *   III between the splint bones, splitting into two branches above the
+ *   fetlock).
  * Still approximate: the biceps femoris is drawn as two parts (the horse has
- * three distal branches), the peroneus tertius and the check ligaments are
- * not modeled, and the shapes and thicknesses are the cat's scaled to the
+ * three distal branches), the pelvic deep flexor is one part (no separate
+ * medial head), and the shapes and thicknesses are the cat's scaled to the
  * horse's bones.
  *
  * Other systems are read when present: the diaphragm is fitted between the
@@ -839,7 +842,7 @@ const skin = await (async () => {
   if (!fs.existsSync(SKIN)) return undefined;
   const g = (await readScaled(SKIN)).get(meshKey("horse.integumentary.skin"));
   if (!g) return undefined;
-  const inside = new Obstacles();
+  const inside = new Obstacles(0.02);
   inside.add("skin", g.position, g.index, Array.from({ length: g.position.length / 3 }, () => 0.03));
   for (const n of inside.n) n.negate();
   return inside;
@@ -1428,6 +1431,39 @@ muscle({
     }),
 });
 
+// Check ligaments: the proximal (accessory ligament of the superficial flexor)
+// from the caudomedial distal radius to its tendon above the carpus; the
+// distal (accessory ligament of the deep flexor) from the palmar carpal
+// ligament to the deep tendon at mid-metacarpus.
+muscle({
+  id: `${M}.check-ligaments.proximal`,
+  ignore: [`${M}.flexor-digitorum-superficialis-thoracic`, `${M}.flexor-digitorum-profundus`],
+  make: () =>
+    tube({
+      pts: [
+        radius.surf(0.7, rDir(-0.5, -1), 0.003),
+        radius.surf(0.82, rDir(-0.8, -0.6), 0.008),
+        lerp(radius.surf(0.75, rDir(-1, -0.1), 0.016), lerp(carpus, accessoryCarpal, 0.75), 0.6),
+      ],
+      w: P(0.008, 0.01, 0.007),
+      t: P(0.002, 0.003, 0.0025),
+      face: rDir(-0.4, -1),
+      ring: 10,
+    }),
+});
+muscle({
+  id: `${M}.check-ligaments.distal`,
+  ignore: [`${M}.flexor-digitorum-profundus`, `${M}.interosseus-medius`],
+  make: () =>
+    tube({
+      pts: [lerp(carpus, accessoryCarpal, 0.35), palmar(metacarpus, 0.12, 0.007), palmar(metacarpus, 0.28, 0.008), palmar(metacarpus, 0.42, 0.009)],
+      w: P(0.008, 0.008, 0.007, 0.005),
+      t: P(0.003, 0.003, 0.0025, 0.0015),
+      face: AXES.cau,
+      ring: 10,
+    }),
+});
+
 // Supraspinatus and infraspinatus fill the fossae on either side of the spine.
 function fossa(border: (t: number, off?: number) => V, end: V, depth: number, extra: number) {
   const ts = [0.03, 0.25, 0.5, 0.72];
@@ -1772,7 +1808,8 @@ const sacral = (i: number) => {
   p.y = topAt(k) - 0.008 - Math.max(0, i - I("s3")) * 0.006;
   return p;
 };
-const digitsHind = centroid(points(required("phalanges-pelvic")));
+const hindDigit = pastern(points(required("phalanges-pelvic")));
+const sustentaculum = tarsus.ext({ cau: 0.7, med: 1 }, 0.3, 0.6);
 const fd = (cr: number, lat: number) => fDir(cr, lat);
 // Point in the thigh at level t of the femur, `cr` metres cranial (negative: caudal) and `lat` lateral of its axis.
 const thigh = (t: number, cr: number, lat: number) => femur.at(t).addScaledVector(fCr, cr).addScaledVector(fLat, lat);
@@ -1853,6 +1890,44 @@ muscle({
     }),
 });
 
+// Deep digital flexor of the pelvic limb: the lateral and caudal tibial heads
+// caudal on the tibia, deep to the gastrocnemius; its tendon passes over the
+// sustentaculum tali, down the plantar metatarsus over the suspensory
+// ligament and on to P3 as in the thoracic limb.
+muscle({
+  id: `${M}.flexor-digitorum-profundus-pelvic`,
+  make: () =>
+    tube({
+      pts: [
+        tibia.surf(0.08, tDir(-1, 0.6), 0.004),
+        tibia.surf(0.35, tDir(-1, 0.1), 0.007),
+        tibia.surf(0.75, tDir(-1, -0.3), 0.005),
+        sustentaculum.clone().add(vec(0, 0, 0.004)),
+        palmar(metatarsus, 0.3, 0.01),
+        palmar(metatarsus, 0.8, 0.011),
+        hindDigit.p1.clone().add(vec(0, 0, 0.007)),
+        hindDigit.p2.clone().add(vec(0, 0, 0.006)),
+        hindDigit.p3.clone().add(vec(0, 0.004, 0.004)),
+      ],
+      w: [
+        [0, 0.012],
+        [0.12, 0.02],
+        [0.3, 0.012],
+        [0.4, 0.006],
+        [1, 0.005],
+      ],
+      t: [
+        [0, 0.008],
+        [0.12, 0.014],
+        [0.3, 0.008],
+        [0.4, 0.004],
+        [0.9, 0.004],
+        [1, 0.002],
+      ],
+      face: tLat,
+    }),
+});
+
 muscle({
   id: `${M}.gastrocnemius.lateral`,
   make: () =>
@@ -1896,9 +1971,11 @@ muscle({
         tibia.surf(0.3, tDir(-1, 0), 0.03),
         tibia.surf(0.7, tDir(-1, 0), 0.02),
         calcaneus.clone().add(vec(0, 0.005, 0.002)),
-        metatarsus.surf(0.4, { cau: 1 }, 0.012),
-        metatarsus.surf(0.95, { cau: 1 }, 0.012),
-        digitsHind.clone().add(vec(0, -0.002, -0.004)),
+        palmar(metatarsus, 0.4, 0.016),
+        palmar(metatarsus, 0.8, 0.017),
+        palmar(metatarsus, 1.0, 0.012),
+        hindDigit.p1.clone().add(vec(0, -0.004, 0.012)),
+        hindDigit.p2.clone().add(vec(0, 0.004, 0.008)),
       ],
       w: [
         [0, 0.008],
@@ -1932,6 +2009,35 @@ muscle({
       t: P(0.008, 0.015, 0.008, 0.004, 0.003),
       face: tLat,
     }),
+});
+// Peroneus tertius: all tendon, from the extensor fossa of the femur down the
+// cranial tibia over the tibialis cranialis; at the hock a dorsal branch to
+// the proximal Mt III and a lateral one to the calcaneus and fourth tarsal.
+muscle({
+  id: `${M}.peroneus-tertius`,
+  make: () =>
+    join(
+      tube({
+        pts: [
+          femur.surf(0.95, fd(0.3, 1), 0.002),
+          tibia.surf(0.1, tDir(0.8, 1), 0.006),
+          tibia.surf(0.45, tDir(1, 0.4), 0.012),
+          tibia.surf(0.8, tDir(1, 0.3), 0.008),
+          tibia.surf(0.98, tDir(1, 0), 0.006),
+          mtDorsal(0.06, 0),
+        ],
+        w: P(0.005, 0.008, 0.009, 0.008, 0.007, 0.005),
+        t: P(0.002, 0.0025, 0.003, 0.0025, 0.0025, 0.002),
+        face: tCr,
+        ring: 10,
+      }),
+      tube({
+        pts: [tibia.surf(0.94, tDir(1, 0.3), 0.007), tibia.surf(1, tDir(0.3, 1), 0.006), tarsus.ext({ lat: 1, cau: 0.2 }, 0.45, 0.75, 0.003)],
+        w: P(0.005, 0.005, 0.004),
+        t: P(0.002, 0.002, 0.002),
+        ring: 8,
+      }),
+    ),
 });
 
 // Sartorius: in the cat one broad sheet (the dog's two parts) from the iliac

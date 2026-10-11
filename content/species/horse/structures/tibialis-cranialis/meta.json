@@ -23,7 +23,8 @@
     "horse.muscular.gastrocnemius",
     "horse.skeletal.femur",
     "horse.skeletal.tarsus",
-    "horse.muscular.flexor-digitorum-superficialis-pelvic"
+    "horse.muscular.flexor-digitorum-superficialis-pelvic",
+    "horse.muscular.peroneus-tertius"
   ],
   "review": {
     "status": "draft"

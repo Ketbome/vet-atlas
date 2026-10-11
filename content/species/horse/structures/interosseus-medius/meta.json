@@ -28,7 +28,9 @@
     "horse.skeletal.phalanges-pelvic",
     "horse.muscular.flexor-digitorum-superficialis-thoracic",
     "horse.muscular.flexor-digitorum-profundus",
-    "horse.muscular.extensor-digitorum-communis"
+    "horse.muscular.extensor-digitorum-communis",
+    "horse.muscular.check-ligaments",
+    "horse.muscular.flexor-digitorum-profundus-pelvic"
   ],
   "review": {
     "status": "draft"

@@ -20,7 +20,9 @@
   "media": [],
   "related": [
     "horse.skeletal.tibia",
-    "horse.skeletal.metatarsus"
+    "horse.skeletal.metatarsus",
+    "horse.muscular.peroneus-tertius",
+    "horse.muscular.flexor-digitorum-profundus-pelvic"
   ],
   "review": {
     "status": "draft"

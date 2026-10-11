@@ -26,7 +26,8 @@
     "horse.skeletal.metacarpus",
     "horse.skeletal.phalanges-thoracic",
     "horse.muscular.flexor-digitorum-profundus",
-    "horse.muscular.interosseus-medius"
+    "horse.muscular.interosseus-medius",
+    "horse.muscular.check-ligaments"
   ],
   "review": {
     "status": "draft"

@@ -24,7 +24,9 @@
     "horse.skeletal.tarsus",
     "horse.muscular.flexor-digitorum-superficialis-pelvic",
     "horse.muscular.biceps-femoris",
-    "horse.muscular.tibialis-cranialis"
+    "horse.muscular.tibialis-cranialis",
+    "horse.muscular.flexor-digitorum-profundus-pelvic",
+    "horse.muscular.peroneus-tertius"
   ],
   "review": {
     "status": "draft"

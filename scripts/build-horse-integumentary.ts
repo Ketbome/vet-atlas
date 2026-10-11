@@ -16,7 +16,7 @@
  * exists, the muscles (5 mm) are inside it, and smoothed. Fidelity "modeled".
  *
  * - Hooves: the feet below the coronary band (7.5 cm above the sole of the
- *   distal phalanx). Illustrative: one capsule, no sole or frog detail.
+ *   distal phalanx), with the model's sole and frog. Illustrative.
  * - Eyes: the model's eyeballs, moved with the head.
  *
  * Output: atlas frame (metres, Y up, faces -Z, left -X).
@@ -227,26 +227,23 @@ for (const [key, part] of Object.entries(legs)) {
   const m = articulate(part, axis, v3(0, 0, -1), K);
   // The geodesic band of the leg's top reaches over the brisket, the
   // shoulder and the thigh: only the leg itself moves with it.
-  // Hoof (the lowest 9 cm of the model's foot): rigid, its sole on the
-  // distal phalanx's, its axis from the sole to the coronet along the
-  // phalanges and its toe cranial; blended into the articulated pastern over
-  // the next 8 cm.
+  // Hoof (the lowest 9 cm of the model's foot): rigid, keeping the model's
+  // slope, its sole on the distal phalanx's and its toe cranial; blended into
+  // the articulated pastern over the next 8 cm.
   const low = Math.min(...[...m.keys()].map((v) => P(v).y));
   const hoof = (() => {
     const ps = [...m.keys()].filter((v) => inLeg(part, v)).map(P).filter((p) => p.y < low + 0.1);
     const sb = mean(ps.filter((p) => p.y < low + 0.01));
-    const st = mean(ps.filter((p) => p.y > low + 0.08));
     const toe = ps.filter((p) => p.y < low + 0.02).reduce((a, p) => (p.z < a.z ? p : a));
     const bones = points(bone(`phalanges-${limb}.L`), 4000).map((p) => (sideKey === "R" ? p.clone().setX(-p.x) : p));
     const tb = mean(bones.filter((p) => p.y < Math.min(...bones.map((q) => q.y)) + 0.01)).setY(0);
-    const tt = mean(bones.filter((p) => Math.abs(p.y - 0.085) < 0.01));
     const basis = (a: V, toward: V) => {
       const ax = a.clone().normalize();
       const c = toward.clone().sub(ax.clone().multiplyScalar(toward.dot(ax))).normalize();
       return new Matrix4().makeBasis(ax, c, ax.clone().cross(c));
     };
-    const from = basis(st.clone().sub(sb), toe.clone().sub(sb).setY(0));
-    const to = basis(tt.clone().sub(tb), v3(0, 0, -1));
+    const from = basis(UP, toe.clone().sub(sb).setY(0));
+    const to = basis(UP, v3(0, 0, -1));
     const k = K;
     const r = to.multiply(from.transpose());
     return (p: V) => p.clone().sub(sb).applyMatrix4(r).multiplyScalar(k).add(tb);
@@ -275,8 +272,9 @@ function inLeg(a: ReturnType<typeof appendage>, v: number) {
   const p = P(v);
   let best = 0;
   for (let i = 1; i < a.line.length; i++) if (p.distanceToSquared(a.line[i]) < p.distanceToSquared(a.line[best])) best = i;
-  // The top bins spread over the trunk: their radius is capped at 1.5 times
-  // the leg's median.
+  // Below the carpus and hock the whole band is leg; the top bins spread
+  // over the trunk: their radius is capped at 1.5 times the leg's median.
+  if (a.line[best].y < 0.4) return true;
   const median = [...a.radius].sort((x, y) => x - y)[a.radius.length >> 1];
   return p.distanceTo(a.line[best]) < Math.min(a.radius[best], median * 1.5) * 1.3 + 0.01;
 }
@@ -464,14 +462,14 @@ function tps(list: [V, V][], lambda: number) {
   };
 }
 
-// Final position: the head moved rigidly (fading into the warp over 8 cm
+// Final position: the head moved rigidly (fading into the warp over 15 cm
 // behind the poll), the legs and tail articulated (fading into the warp near
 // their roots), the rest warped.
 const warp = tps(pairs, 0.002);
 const warped = new Float32Array(sk.nv * 3);
 for (let v = 0; v < sk.nv; v++) {
   const p = P(v);
-  const h = Math.min(1, Math.max(0, (headMap.pollZ + 0.08 - p.z) / 0.08));
+  const h = Math.min(1, Math.max(0, (headMap.pollZ + 0.15 - p.z) / 0.15));
   let q = h > 0 ? p.clone().applyMatrix4(headMap.m) : warp(p);
   if (h > 0 && h < 1) q = warp(p).lerp(q, h * h * (3 - 2 * h));
   const a = moved.get(v);
@@ -577,7 +575,8 @@ for (const [name, g] of bones) {
   for (const p of points(g, 1500)) if (p.y > 0.015) obstacles.push({ p, c, reach: /skull/.test(name) ? 0.05 : 0.03 });
 }
 for (const [name, g] of organs) if (!/brain/.test(name)) for (const p of points(g, 1500)) obstacles.push({ p, c: 0.02 });
-for (const g of muscles.values()) for (const p of points(g, 800)) obstacles.push({ p, c: 0.005 });
+// The head keeps the model's shape: its muscles are pulled inside the skin by the muscular build.
+for (const [name, g] of muscles) if (!/masseter|temporalis/.test(name)) for (const p of points(g, 800)) obstacles.push({ p, c: 0.005 });
 // Folds of the warp (where the raised neck of the model meets the withers,
 // and over the shoulders): triangles turned against their neighbours, plus
 // 2 rings around them, are relaxed towards their neighbours' average before
@@ -595,7 +594,7 @@ for (const g of muscles.values()) for (const p of points(g, 800)) obstacles.push
     const n = area(warped, t);
     const tri = [sk.I[t], sk.I[t + 1], sk.I[t + 2]];
     const avg = tri.reduce((acc, v) => acc.add(v3(normal[v * 3], normal[v * 3 + 1], normal[v * 3 + 2])), v3(0, 0, 0));
-    if (n.dot(avg) < 0) for (const v of tri) bad[v] = 1;
+    if (n.dot(avg) < 0 && tri.every((v) => P(v).z > headMap.pollZ + 0.08)) for (const v of tri) bad[v] = 1;
   }
   for (let r = 0; r < 2; r++) {
     const grow = bad.slice();
