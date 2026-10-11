@@ -22,6 +22,10 @@
     "models:cow-integumentary": "tsx scripts/build-cow-integumentary.ts",
     "models:cow-muscular": "tsx scripts/build-cow-muscular.ts",
     "models:cow-visceral": "tsx scripts/build-cow-visceral.ts",
+    "models:horse": "tsx scripts/build-horse-skeletal.ts",
+    "models:horse-integumentary": "tsx scripts/build-horse-integumentary.ts",
+    "models:horse-muscular": "tsx scripts/build-horse-muscular.ts",
+    "models:horse-visceral": "tsx scripts/build-horse-visceral.ts",
     "brand": "tsx scripts/build-brand.ts",
     "test": "vitest run"
   },

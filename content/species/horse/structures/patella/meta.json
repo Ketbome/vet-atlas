@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.patella",
+  "system": "horse.skeletal",
+  "nav": "Patella",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.patella.L",
+    "horse.skeletal.patella.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.femur",
+    "horse.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "horse.integumentary.eyes",
+  "system": "horse.integumentary",
+  "nav": "Bulbus oculi",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "horse.integumentary.eyes.L",
+    "horse.integumentary.eyes.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#1E1714",
+  "material": "organ",
+  "source": "lovadahn-equine-model",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 2.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.integumentary.skin",
+    "horse.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

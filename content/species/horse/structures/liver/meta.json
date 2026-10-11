@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.liver",
+  "system": "horse.visceral",
+  "nav": "Hepar",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.liver"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.pancreas",
+    "horse.visceral.stomach",
+    "horse.muscular.diaphragm"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "horse.skeletal.os-coxae",
+  "system": "horse.skeletal",
+  "nav": "Os coxae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.os-coxae.L",
+    "horse.skeletal.os-coxae.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.sacrum",
+    "horse.skeletal.femur",
+    "horse.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

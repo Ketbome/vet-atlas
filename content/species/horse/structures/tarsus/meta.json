@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.tarsus",
+  "system": "horse.skeletal",
+  "nav": "Ossa tarsi",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.tarsus.L",
+    "horse.skeletal.tarsus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.tibia",
+    "horse.skeletal.metatarsus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "horse.muscular.rectus-abdominis",
+  "system": "horse.muscular",
+  "nav": "M. rectus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.rectus-abdominis.L",
+    "horse.muscular.rectus-abdominis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9F3B32",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.sternum",
+    "horse.skeletal.os-coxae",
+    "horse.muscular.obliquus-externus-abdominis",
+    "horse.muscular.pectorales"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

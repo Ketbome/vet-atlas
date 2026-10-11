@@ -1,0 +1,28 @@
+{
+  "id": "horse.muscular.diaphragm",
+  "system": "horse.muscular",
+  "nav": "Diaphragma",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "horse.muscular.diaphragm"
+  ],
+  "fidelity": "illustrative",
+  "color": "#AE4A3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.lungs",
+    "horse.visceral.liver",
+    "horse.skeletal.ribs",
+    "horse.skeletal.sternum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

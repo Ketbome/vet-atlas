@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.trapezius",
+  "system": "horse.muscular",
+  "nav": "M. trapezius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.trapezius.L",
+    "horse.muscular.trapezius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24B3E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.vertebrae-cervical",
+    "horse.skeletal.vertebrae-thoracic",
+    "horse.muscular.omotransversarius",
+    "horse.muscular.latissimus-dorsi",
+    "horse.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

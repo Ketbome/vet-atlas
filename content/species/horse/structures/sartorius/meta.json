@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.sartorius",
+  "system": "horse.muscular",
+  "nav": "M. sartorius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.sartorius.L",
+    "horse.muscular.sartorius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#BA5A48",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.os-coxae",
+    "horse.skeletal.patella",
+    "horse.skeletal.tibia",
+    "horse.muscular.quadriceps-femoris",
+    "horse.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

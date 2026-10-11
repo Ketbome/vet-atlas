@@ -1,0 +1,24 @@
+{
+  "id": "horse.visceral.thyroid",
+  "system": "horse.visceral",
+  "nav": "Glandula thyroidea",
+  "region": "endocrine-lymphatic",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.thyroid"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.trachea"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

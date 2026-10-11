@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.spleen",
+  "system": "horse.visceral",
+  "nav": "Lien",
+  "region": "endocrine-lymphatic",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.spleen"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.stomach",
+    "horse.visceral.kidneys",
+    "horse.visceral.large-colon"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

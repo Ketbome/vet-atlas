@@ -1,0 +1,27 @@
+{
+  "id": "horse.visceral.large-colon",
+  "system": "horse.visceral",
+  "nav": "Colon ascendens",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.large-colon"
+  ],
+  "fidelity": "modeled",
+  "source": "ovc-equine-colon",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.cecum",
+    "horse.visceral.small-colon",
+    "horse.visceral.spleen",
+    "horse.visceral.kidneys"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

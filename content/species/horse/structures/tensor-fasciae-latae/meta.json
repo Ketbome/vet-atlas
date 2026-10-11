@@ -1,0 +1,29 @@
+{
+  "id": "horse.muscular.tensor-fasciae-latae",
+  "system": "horse.muscular",
+  "nav": "M. tensor fasciae latae",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.tensor-fasciae-latae.L",
+    "horse.muscular.tensor-fasciae-latae.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B85A47",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.os-coxae",
+    "horse.skeletal.femur",
+    "horse.muscular.gluteus-medius",
+    "horse.muscular.quadriceps-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

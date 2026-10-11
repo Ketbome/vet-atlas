@@ -1,0 +1,44 @@
+{
+  "id": "horse.skeletal.vertebrae-thoracic",
+  "system": "horse.skeletal",
+  "nav": "Vertebrae thoracicae",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.vertebrae-thoracic.t1",
+    "horse.skeletal.vertebrae-thoracic.t2",
+    "horse.skeletal.vertebrae-thoracic.t3",
+    "horse.skeletal.vertebrae-thoracic.t4",
+    "horse.skeletal.vertebrae-thoracic.t5",
+    "horse.skeletal.vertebrae-thoracic.t6",
+    "horse.skeletal.vertebrae-thoracic.t7",
+    "horse.skeletal.vertebrae-thoracic.t8",
+    "horse.skeletal.vertebrae-thoracic.t9",
+    "horse.skeletal.vertebrae-thoracic.t10",
+    "horse.skeletal.vertebrae-thoracic.t11",
+    "horse.skeletal.vertebrae-thoracic.t12",
+    "horse.skeletal.vertebrae-thoracic.t13",
+    "horse.skeletal.vertebrae-thoracic.t14",
+    "horse.skeletal.vertebrae-thoracic.t15",
+    "horse.skeletal.vertebrae-thoracic.t16",
+    "horse.skeletal.vertebrae-thoracic.t17",
+    "horse.skeletal.vertebrae-thoracic.t18"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.vertebrae-cervical",
+    "horse.skeletal.vertebrae-lumbar",
+    "horse.skeletal.ribs",
+    "horse.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "horse.visceral.lungs",
+  "system": "horse.visceral",
+  "nav": "Pulmones",
+  "region": "respiratory",
+  "laterality": "paired",
+  "meshes": [
+    "horse.visceral.lungs.L",
+    "horse.visceral.lungs.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.trachea",
+    "horse.visceral.heart",
+    "horse.muscular.diaphragm"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

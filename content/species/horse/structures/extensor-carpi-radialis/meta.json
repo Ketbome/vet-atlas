@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.extensor-carpi-radialis",
+  "system": "horse.muscular",
+  "nav": "M. extensor carpi radialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.extensor-carpi-radialis.L",
+    "horse.muscular.extensor-carpi-radialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04538",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.radius",
+    "horse.skeletal.metacarpus",
+    "horse.muscular.extensor-digitorum-communis",
+    "horse.muscular.biceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

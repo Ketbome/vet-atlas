@@ -1,0 +1,34 @@
+{
+  "id": "horse.muscular.triceps-brachii",
+  "system": "horse.muscular",
+  "nav": "M. triceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.triceps-brachii.long.L",
+    "horse.muscular.triceps-brachii.long.R",
+    "horse.muscular.triceps-brachii.lateral.L",
+    "horse.muscular.triceps-brachii.lateral.R",
+    "horse.muscular.triceps-brachii.medial.L",
+    "horse.muscular.triceps-brachii.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A9443A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.humerus",
+    "horse.skeletal.ulna",
+    "horse.muscular.biceps-brachii",
+    "horse.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

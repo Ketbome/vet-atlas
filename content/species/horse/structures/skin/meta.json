@@ -1,0 +1,25 @@
+{
+  "id": "horse.integumentary.skin",
+  "system": "horse.integumentary",
+  "nav": "Cutis",
+  "region": "trunk",
+  "laterality": "single",
+  "meshes": [
+    "horse.integumentary.skin"
+  ],
+  "fidelity": "modeled",
+  "source": "lovadahn-equine-model",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.integumentary.hooves",
+    "horse.integumentary.eyes"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

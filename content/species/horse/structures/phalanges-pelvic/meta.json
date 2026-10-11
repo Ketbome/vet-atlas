@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.phalanges-pelvic",
+  "system": "horse.skeletal",
+  "nav": "Ossa digitorum pedis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.phalanges-pelvic.L",
+    "horse.skeletal.phalanges-pelvic.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.metatarsus",
+    "horse.integumentary.hooves"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

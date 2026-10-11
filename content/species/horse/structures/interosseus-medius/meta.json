@@ -1,0 +1,34 @@
+{
+  "id": "horse.muscular.interosseus-medius",
+  "system": "horse.muscular",
+  "nav": "M. interosseus medius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.interosseus-medius.thoracic.L",
+    "horse.muscular.interosseus-medius.thoracic.R",
+    "horse.muscular.interosseus-medius.pelvic.L",
+    "horse.muscular.interosseus-medius.pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B7584A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.metacarpus",
+    "horse.skeletal.metatarsus",
+    "horse.skeletal.phalanges-thoracic",
+    "horse.skeletal.phalanges-pelvic",
+    "horse.muscular.flexor-digitorum-superficialis-thoracic",
+    "horse.muscular.flexor-digitorum-profundus",
+    "horse.muscular.extensor-digitorum-communis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

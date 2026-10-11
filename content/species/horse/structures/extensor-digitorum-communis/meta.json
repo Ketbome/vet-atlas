@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.extensor-digitorum-communis",
+  "system": "horse.muscular",
+  "nav": "M. extensor digitorum communis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.extensor-digitorum-communis.L",
+    "horse.muscular.extensor-digitorum-communis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9C392F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.radius",
+    "horse.skeletal.phalanges-thoracic",
+    "horse.muscular.extensor-carpi-radialis",
+    "horse.muscular.interosseus-medius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

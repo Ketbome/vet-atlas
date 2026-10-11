@@ -1,0 +1,32 @@
+{
+  "id": "horse.muscular.gastrocnemius",
+  "system": "horse.muscular",
+  "nav": "M. gastrocnemius",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.gastrocnemius.lateral.L",
+    "horse.muscular.gastrocnemius.lateral.R",
+    "horse.muscular.gastrocnemius.medial.L",
+    "horse.muscular.gastrocnemius.medial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9D382E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.femur",
+    "horse.skeletal.tarsus",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic",
+    "horse.muscular.biceps-femoris",
+    "horse.muscular.tibialis-cranialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "horse.skeletal.vertebrae-lumbar",
+  "system": "horse.skeletal",
+  "nav": "Vertebrae lumbales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.vertebrae-lumbar.l1",
+    "horse.skeletal.vertebrae-lumbar.l2",
+    "horse.skeletal.vertebrae-lumbar.l3",
+    "horse.skeletal.vertebrae-lumbar.l4",
+    "horse.skeletal.vertebrae-lumbar.l5",
+    "horse.skeletal.vertebrae-lumbar.l6"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.vertebrae-thoracic",
+    "horse.skeletal.sacrum"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.small-intestine",
+  "system": "horse.visceral",
+  "nav": "Intestinum tenue",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.small-intestine"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.stomach",
+    "horse.visceral.cecum",
+    "horse.visceral.pancreas"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

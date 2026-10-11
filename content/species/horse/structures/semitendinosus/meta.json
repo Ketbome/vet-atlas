@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.semitendinosus",
+  "system": "horse.muscular",
+  "nav": "M. semitendinosus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.semitendinosus.L",
+    "horse.muscular.semitendinosus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B24A3D",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.os-coxae",
+    "horse.skeletal.tibia",
+    "horse.muscular.biceps-femoris",
+    "horse.muscular.semimembranosus",
+    "horse.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

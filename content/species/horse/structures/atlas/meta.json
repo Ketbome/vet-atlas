@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.atlas",
+  "system": "horse.skeletal",
+  "nav": "Atlas",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.atlas"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 3
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.skull",
+    "horse.skeletal.axis",
+    "horse.skeletal.vertebrae-cervical"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.brain",
+  "system": "horse.visceral",
+  "nav": "Encephalon",
+  "region": "nervous",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.brain.cerebrum",
+    "horse.visceral.brain.cerebellum",
+    "horse.visceral.brain.brainstem"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

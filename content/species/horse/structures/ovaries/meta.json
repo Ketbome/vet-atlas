@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.ovaries",
+  "system": "horse.visceral",
+  "nav": "Ovaria",
+  "region": "genital",
+  "laterality": "paired",
+  "meshes": [
+    "horse.visceral.ovaries.L",
+    "horse.visceral.ovaries.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.uterus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

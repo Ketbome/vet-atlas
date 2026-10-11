@@ -103,7 +103,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts, scripts/build-cat-muscular.ts and scripts/build-cow-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on each species' skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
+    "notes": "Muscles modelled procedurally by scripts/build-dog-muscular.ts, scripts/build-cat-muscular.ts, scripts/build-cow-muscular.ts and scripts/build-horse-muscular.ts (fidelity \"illustrative\"): origins and insertions are landmarks measured on each species' skeletal model, bellies are lofted tubes and slabs following standard veterinary anatomy texts. Schematic shapes; topography (attachments, relative size, layering) is the teaching goal, not exact morphology."
   },
   {
     "id": "pixelbeaker-canine-abdomen",
@@ -151,7 +151,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (dog), scripts/ct/cat_visceral.py (cat) and scripts/ct/cow_visceral.py (cow: every organ but the stomach and heart, including the brain, liver, lungs, kidneys, uterus and ovaries) (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
+    "notes": "Organs without a usable open scan, modelled by scripts/ct/visceral.py (dog), scripts/ct/cat_visceral.py (cat), scripts/ct/cow_visceral.py (cow: every organ but the stomach and heart, including the brain, liver, lungs, kidneys, uterus and ovaries) and scripts/ct/horse_visceral.py (horse: every organ but the heart, stomach and large colon, including the cecum and small colon) (fidelity \"illustrative\"): trachea and principal bronchi, esophagus, pancreas, spleen, large intestine, urinary bladder, prostate and thyroid lobes, as tubes, ribbons and ellipsoids placed from skeletal landmarks and the scanned organs. Schematic shapes; topography is the teaching goal."
   },
   {
     "id": "greyhound-pelvic-limb-ct",
@@ -308,5 +308,77 @@
       "derivatives": true
     },
     "notes": "3D scan of a sculpted dairy cow (one closed surface with one whole horn and a stump). License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-integumentary.ts registers it onto the cow skeleton (legs and tail along their axes, trunk, neck and head by a thin-plate-spline warp and a similarity), inflates it over the bones, muscles and organs and cuts out the udder, the horn (mirrored for the other side) and the hooves below the coronary band (fidelity \"modeled\"; hooves \"illustrative\", without the interdigital cleft)."
+  },
+  {
+    "id": "diegoluga-horse-skeleton",
+    "name": "\"Horse Skeleton\" by Diego Luján García (diegoluga on Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/horse-skeleton-eaca504567604e879b8ab2cf2763025e",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Complete horse skeleton sculpted from a real skeleton the author collected and from anatomical references (not a scan), every bone a separate shell; symmetric except the limbs. License checked 2026-10-11 via the Sketchfab API. scripts/build-horse-skeletal.ts splits it into bones, mirrors the right thoracic and left pelvic limbs to the other side (the sculpt walks; the atlas stands square), rescales it to a horse of 1.6 m at the withers and replaces its skull and mandible with the Edinburgh CT (fidelity \"modeled\")."
+  },
+  {
+    "id": "edinburgh-horse-skull-ct",
+    "name": "\"Horse (Equus ferus caballus)\" by The University of Edinburgh Open.Ed, Royal (Dick) School of Veterinary Studies (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/horse-equus-ferus-caballus-ea9a974658fc4cab9860b75024f51791",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "CT reconstruction of a horse head (original CT courtesy of Dr Tobias Schwarz, prepared by Brian Mather). License checked 2026-10-11 via the Sketchfab API. scripts/build-horse-skeletal.ts splits it into skull and mandible and registers it onto the sculpted skeleton (fidelity \"scan\")."
+  },
+  {
+    "id": "lovadahn-equine-model",
+    "name": "\"Equine Model\" by Lova Dahn (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/equine-model-06efca4a943b48fdaa99973c674c8aa3",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Hand-sculpted, retopologised horse base mesh (a Friesian) by the author of the dog and cat base meshes. License checked 2026-10-11 via the Sketchfab API. scripts/build-horse-integumentary.ts registers it onto the horse skeleton (fidelity \"modeled\")."
+  },
+  {
+    "id": "unsa-horse-heart",
+    "name": "\"Heart (horse) Plastinated\" by the Veterinary Faculty, University of Sarajevo (UNSA-VF on Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/heart-horse-plastinated-fce338c614f44b5aae3ddd38226b97b7",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Photogrammetry of a plastinated horse heart with the stumps of the great vessels. License checked 2026-10-11 via the Sketchfab API. scripts/build-horse-visceral.ts scales it and places it in the thorax of the horse skeleton (fidelity \"scan\")."
+  },
+  {
+    "id": "ovc-equine-colon",
+    "name": "\"Equine Colon\" by OVCanatomy, Ontario Veterinary College (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/equine-colon-b89f51941d4e4b67a73639f3c810ad96",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Model of the equine large colon by Joshua Antunes (OVC anatomy, University of Guelph). License checked 2026-10-11 via the Sketchfab API. Placed in the abdomen of the horse skeleton by scripts/build-horse-visceral.ts (fidelity \"modeled\")."
+  },
+  {
+    "id": "shiftstudio-horse-stomach",
+    "name": "\"Horse Stomach-4\" by shiftstudio (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/horse-stomach-4-f0be7126022941999d4232e27bcbf477",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Sculpted horse stomach with the end of the esophagus and the start of the duodenum. License checked 2026-10-11 via the Sketchfab API. Placed in the abdomen of the horse skeleton by scripts/build-horse-visceral.ts (fidelity \"modeled\")."
   }
 ]

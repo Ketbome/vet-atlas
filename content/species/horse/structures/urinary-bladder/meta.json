@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.urinary-bladder",
+  "system": "horse.visceral",
+  "nav": "Vesica urinaria",
+  "region": "urinary",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.urinary-bladder"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.kidneys",
+    "horse.visceral.uterus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

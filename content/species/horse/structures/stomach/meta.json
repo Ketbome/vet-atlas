@@ -1,0 +1,27 @@
+{
+  "id": "horse.visceral.stomach",
+  "system": "horse.visceral",
+  "nav": "Ventriculus (gaster)",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.stomach"
+  ],
+  "fidelity": "modeled",
+  "source": "shiftstudio-horse-stomach",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.esophagus",
+    "horse.visceral.liver",
+    "horse.visceral.spleen",
+    "horse.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

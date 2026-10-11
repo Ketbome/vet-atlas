@@ -55,6 +55,16 @@ structures). Media and Source carry license and attribution. IDs are
   FeLV/FIV, periodontal disease, BVD, paratuberculosis and brucellosis. Pyometra,
   mammary tumours, otitis externa and bovine pinkeye wait for structures the models
   lack (uterus and mammary glands in dog and cat, ear, cow eyes).
+- **2026-10-11**: horse (moved up from phase 4). Skeleton from Diego Luján García's
+  sculpted "Horse Skeleton" (CC BY, every bone separate; the walking limbs are mirrored
+  so it stands square) with the skull and mandible from a University of Edinburgh CT
+  (CC BY); skin, hooves and eyes warped from Lova Dahn's "Equine Model" (CC BY); heart
+  from a University of Sarajevo plastinate (CC BY), stomach from shiftstudio (CC BY),
+  large colon from OVC Guelph (CC BY), the other organs procedural (cecum, small colon,
+  liver, lungs...); muscles from the cow's procedural script plus the superficial and
+  deep digital flexors and the suspensory ligament. 84 structures, 19 equine pathologies
+  with PubMed-verified key studies, and a horse section in rabies, leptospirosis and
+  cervical spondylomyelopathy. Everything is draft.
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies
@@ -63,7 +73,7 @@ structures). Media and Source carry license and attribution. IDs are
 - **Phase 3 (weeks 15–22)**: cat scans to replace the sculpted bones (needs
   permission, see Sources), species comparison in the viewer.
 - **Phase 4 (weeks 23–30)**: quiz mode (localStorage), PWA offline, web
-  editor that opens PRs, horse.
+  editor that opens PRs.
 - **Phase 5 (only if justified)**: NestJS + Postgres for accounts and teacher
   dashboards.
 
@@ -112,6 +122,14 @@ structures). Media and Source carry license and attribution. IDs are
   Munich cow bones are ND. Rabbit (checked 2026-10-10): a whole mounted skeleton
   (Univ. Paul Sabatier, CC BY, fused) and good skulls, but no usable skin or organ
   scans.
+- Horse: diegoluga "Horse Skeleton" (Sketchfab, CC BY, sculpted, not a scan); Edinburgh
+  Open.Ed horse head CT (CC BY); Lova Dahn "Equine Model" (CC BY); UNSA-VF plastinated
+  heart, shiftstudio stomach, OVCanatomy "Equine Colon" (all CC BY). Also usable later
+  (checked 2026-10-11): RISD horse skull and sacrum, ifmaker_urutai equine atlas, axis,
+  humerus, carpus, metacarpus and calcaneus, UoNVet_COI digit with navicular bone, jdb56
+  healthy and laminitic hooves, auburton2021 GI tract photogrammetry, OVC equine stifle
+  (all CC BY); no open equine brain, lung, liver or muscle scans. The Paris foal skeleton
+  (svtavernier) and AMU's coloured copy of the diegoluga skeleton are NC-SA.
 - oVert / MorphoSource: dog skulls by breed, CC BY-NC.
 - Ohio State Veterinary Histology: CC BY-NC 4.0.
 - Wikimedia Commons: per-file CC BY / BY-SA / CC0.

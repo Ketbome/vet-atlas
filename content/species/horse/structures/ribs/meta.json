@@ -1,0 +1,63 @@
+{
+  "id": "horse.skeletal.ribs",
+  "system": "horse.skeletal",
+  "nav": "Costae",
+  "region": "axial",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.ribs.1.L",
+    "horse.skeletal.ribs.1.R",
+    "horse.skeletal.ribs.2.L",
+    "horse.skeletal.ribs.2.R",
+    "horse.skeletal.ribs.3.L",
+    "horse.skeletal.ribs.3.R",
+    "horse.skeletal.ribs.4.L",
+    "horse.skeletal.ribs.4.R",
+    "horse.skeletal.ribs.5.L",
+    "horse.skeletal.ribs.5.R",
+    "horse.skeletal.ribs.6.L",
+    "horse.skeletal.ribs.6.R",
+    "horse.skeletal.ribs.7.L",
+    "horse.skeletal.ribs.7.R",
+    "horse.skeletal.ribs.8.L",
+    "horse.skeletal.ribs.8.R",
+    "horse.skeletal.ribs.9.L",
+    "horse.skeletal.ribs.9.R",
+    "horse.skeletal.ribs.10.L",
+    "horse.skeletal.ribs.10.R",
+    "horse.skeletal.ribs.11.L",
+    "horse.skeletal.ribs.11.R",
+    "horse.skeletal.ribs.12.L",
+    "horse.skeletal.ribs.12.R",
+    "horse.skeletal.ribs.13.L",
+    "horse.skeletal.ribs.13.R",
+    "horse.skeletal.ribs.14.L",
+    "horse.skeletal.ribs.14.R",
+    "horse.skeletal.ribs.15.L",
+    "horse.skeletal.ribs.15.R",
+    "horse.skeletal.ribs.16.L",
+    "horse.skeletal.ribs.16.R",
+    "horse.skeletal.ribs.17.L",
+    "horse.skeletal.ribs.17.R",
+    "horse.skeletal.ribs.18.L",
+    "horse.skeletal.ribs.18.R",
+    "horse.skeletal.ribs.arch.L",
+    "horse.skeletal.ribs.arch.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.vertebrae-thoracic",
+    "horse.skeletal.sternum",
+    "horse.skeletal.scapula"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.biceps-brachii",
+  "system": "horse.muscular",
+  "nav": "M. biceps brachii",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.biceps-brachii.L",
+    "horse.muscular.biceps-brachii.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B9533F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "cranial",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.humerus",
+    "horse.skeletal.radius",
+    "horse.muscular.brachialis",
+    "horse.muscular.triceps-brachii",
+    "horse.muscular.extensor-carpi-radialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

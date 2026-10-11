@@ -1,0 +1,29 @@
+{
+  "id": "horse.muscular.deltoideus",
+  "system": "horse.muscular",
+  "nav": "M. deltoideus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.deltoideus.L",
+    "horse.muscular.deltoideus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A13A30",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.humerus",
+    "horse.muscular.infraspinatus",
+    "horse.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

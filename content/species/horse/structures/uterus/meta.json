@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.uterus",
+  "system": "horse.visceral",
+  "nav": "Uterus",
+  "region": "genital",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.uterus"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.ovaries",
+    "horse.visceral.urinary-bladder",
+    "horse.visceral.small-colon"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

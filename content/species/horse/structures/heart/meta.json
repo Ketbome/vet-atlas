@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.heart",
+  "system": "horse.visceral",
+  "nav": "Cor",
+  "region": "cardiovascular",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.heart"
+  ],
+  "fidelity": "scan",
+  "source": "unsa-horse-heart",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.great-vessels",
+    "horse.visceral.lungs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

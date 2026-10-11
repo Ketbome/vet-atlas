@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.flexor-digitorum-superficialis-pelvic",
+  "system": "horse.muscular",
+  "nav": "M. flexor digitorum superficialis (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.flexor-digitorum-superficialis-pelvic.L",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A5433A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.femur",
+    "horse.skeletal.tarsus",
+    "horse.skeletal.phalanges-pelvic",
+    "horse.muscular.gastrocnemius",
+    "horse.muscular.tibialis-cranialis",
+    "horse.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

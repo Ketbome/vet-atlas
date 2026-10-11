@@ -1,0 +1,24 @@
+{
+  "id": "horse.skeletal.mandible",
+  "system": "horse.skeletal",
+  "nav": "Mandibula",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.mandible"
+  ],
+  "fidelity": "scan",
+  "source": "edinburgh-horse-skull-ct",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.skull"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

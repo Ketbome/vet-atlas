@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.trachea",
+  "system": "horse.visceral",
+  "nav": "Trachea",
+  "region": "respiratory",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.trachea"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.lungs",
+    "horse.visceral.esophagus",
+    "horse.visceral.thyroid"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

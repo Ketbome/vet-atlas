@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.metacarpus",
+  "system": "horse.skeletal",
+  "nav": "Ossa metacarpalia II–IV",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.metacarpus.L",
+    "horse.skeletal.metacarpus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.carpus",
+    "horse.skeletal.phalanges-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

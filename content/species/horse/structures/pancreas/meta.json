@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.pancreas",
+  "system": "horse.visceral",
+  "nav": "Pancreas",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.pancreas"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.liver",
+    "horse.visceral.small-intestine"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

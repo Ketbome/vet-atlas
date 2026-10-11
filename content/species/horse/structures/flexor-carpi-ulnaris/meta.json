@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.flexor-carpi-ulnaris",
+  "system": "horse.muscular",
+  "nav": "M. flexor carpi ulnaris",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.flexor-carpi-ulnaris.L",
+    "horse.muscular.flexor-carpi-ulnaris.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A84236",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.ulna",
+    "horse.skeletal.carpus",
+    "horse.muscular.triceps-brachii",
+    "horse.muscular.flexor-digitorum-superficialis-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

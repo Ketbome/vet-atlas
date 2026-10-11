@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.serratus-ventralis",
+  "system": "horse.muscular",
+  "nav": "M. serratus ventralis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.serratus-ventralis.L",
+    "horse.muscular.serratus-ventralis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A9473C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.ribs",
+    "horse.skeletal.vertebrae-cervical",
+    "horse.muscular.trapezius",
+    "horse.muscular.pectorales"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

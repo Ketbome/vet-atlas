@@ -1,0 +1,26 @@
+{
+  "id": "horse.visceral.kidneys",
+  "system": "horse.visceral",
+  "nav": "Renes",
+  "region": "urinary",
+  "laterality": "paired",
+  "meshes": [
+    "horse.visceral.kidneys.L",
+    "horse.visceral.kidneys.R"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.urinary-bladder",
+    "horse.visceral.spleen"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

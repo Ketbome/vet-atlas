@@ -1,0 +1,33 @@
+{
+  "id": "horse.muscular.flexor-digitorum-profundus",
+  "system": "horse.muscular",
+  "nav": "M. flexor digitorum profundus (membri thoracici)",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.flexor-digitorum-profundus.L",
+    "horse.muscular.flexor-digitorum-profundus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#98372D",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.ulna",
+    "horse.skeletal.radius",
+    "horse.skeletal.carpus",
+    "horse.skeletal.phalanges-thoracic",
+    "horse.integumentary.hooves",
+    "horse.muscular.flexor-digitorum-superficialis-thoracic",
+    "horse.muscular.interosseus-medius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

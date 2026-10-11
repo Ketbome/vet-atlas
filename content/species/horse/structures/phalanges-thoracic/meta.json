@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.phalanges-thoracic",
+  "system": "horse.skeletal",
+  "nav": "Ossa digitorum manus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.phalanges-thoracic.L",
+    "horse.skeletal.phalanges-thoracic.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.metacarpus",
+    "horse.integumentary.hooves"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.sacrum",
+  "system": "horse.skeletal",
+  "nav": "Os sacrum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.sacrum"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.vertebrae-lumbar",
+    "horse.skeletal.os-coxae",
+    "horse.skeletal.vertebrae-caudal"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

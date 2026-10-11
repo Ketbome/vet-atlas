@@ -1,0 +1,7 @@
+{
+  "id": "horse",
+  "scientificName": "Equus caballus",
+  "name": { "es": "Caballo", "en": "Horse" },
+  "status": "published",
+  "systems": ["horse.skeletal", "horse.integumentary", "horse.muscular", "horse.visceral"]
+}

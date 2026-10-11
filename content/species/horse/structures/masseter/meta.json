@@ -1,0 +1,28 @@
+{
+  "id": "horse.muscular.masseter",
+  "system": "horse.muscular",
+  "nav": "M. masseter",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.masseter.L",
+    "horse.muscular.masseter.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B04A3A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.skull",
+    "horse.skeletal.mandible",
+    "horse.muscular.temporalis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

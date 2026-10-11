@@ -1,0 +1,27 @@
+{
+  "id": "horse.skeletal.carpus",
+  "system": "horse.skeletal",
+  "nav": "Ossa carpi",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.carpus.L",
+    "horse.skeletal.carpus.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.radius",
+    "horse.skeletal.ulna",
+    "horse.skeletal.metacarpus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

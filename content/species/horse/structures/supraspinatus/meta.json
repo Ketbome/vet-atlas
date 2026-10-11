@@ -1,0 +1,28 @@
+{
+  "id": "horse.muscular.supraspinatus",
+  "system": "horse.muscular",
+  "nav": "M. supraspinatus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.supraspinatus.L",
+    "horse.muscular.supraspinatus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B44A3C",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.humerus",
+    "horse.muscular.infraspinatus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

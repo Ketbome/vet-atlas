@@ -1,0 +1,32 @@
+{
+  "id": "horse.muscular.flexor-digitorum-superficialis-thoracic",
+  "system": "horse.muscular",
+  "nav": "M. flexor digitorum superficialis (membri thoracici)",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.flexor-digitorum-superficialis-thoracic.L",
+    "horse.muscular.flexor-digitorum-superficialis-thoracic.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A4473B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.radius",
+    "horse.skeletal.carpus",
+    "horse.skeletal.metacarpus",
+    "horse.skeletal.phalanges-thoracic",
+    "horse.muscular.flexor-digitorum-profundus",
+    "horse.muscular.interosseus-medius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

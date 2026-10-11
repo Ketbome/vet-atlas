@@ -1,0 +1,30 @@
+{
+  "id": "horse.muscular.gluteus-superficialis",
+  "system": "horse.muscular",
+  "nav": "M. gluteus superficialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.gluteus-superficialis.L",
+    "horse.muscular.gluteus-superficialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B6503F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.sacrum",
+    "horse.skeletal.femur",
+    "horse.muscular.gluteus-medius",
+    "horse.muscular.biceps-femoris",
+    "horse.muscular.tensor-fasciae-latae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

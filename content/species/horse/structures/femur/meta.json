@@ -1,0 +1,27 @@
+{
+  "id": "horse.skeletal.femur",
+  "system": "horse.skeletal",
+  "nav": "Os femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.femur.L",
+    "horse.skeletal.femur.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.os-coxae",
+    "horse.skeletal.patella",
+    "horse.skeletal.tibia"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

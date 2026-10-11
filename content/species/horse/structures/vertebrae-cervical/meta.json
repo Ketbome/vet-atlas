@@ -1,0 +1,29 @@
+{
+  "id": "horse.skeletal.vertebrae-cervical",
+  "system": "horse.skeletal",
+  "nav": "Vertebrae cervicales III–VII",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.vertebrae-cervical.c3",
+    "horse.skeletal.vertebrae-cervical.c4",
+    "horse.skeletal.vertebrae-cervical.c5",
+    "horse.skeletal.vertebrae-cervical.c6",
+    "horse.skeletal.vertebrae-cervical.c7"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.axis",
+    "horse.skeletal.vertebrae-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.epaxial",
+  "system": "horse.muscular",
+  "nav": "M. iliocostalis, M. longissimus et M. transversospinalis (musculi epaxiales)",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.epaxial.L",
+    "horse.muscular.epaxial.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#963630",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.1
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.vertebrae-cervical",
+    "horse.skeletal.vertebrae-thoracic",
+    "horse.skeletal.vertebrae-lumbar",
+    "horse.skeletal.sacrum",
+    "horse.skeletal.ribs",
+    "horse.muscular.latissimus-dorsi"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

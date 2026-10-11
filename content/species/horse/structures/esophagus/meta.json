@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.esophagus",
+  "system": "horse.visceral",
+  "nav": "Oesophagus",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.esophagus"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.stomach",
+    "horse.visceral.trachea"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

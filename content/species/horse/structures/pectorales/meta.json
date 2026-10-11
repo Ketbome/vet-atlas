@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.pectorales",
+  "system": "horse.muscular",
+  "nav": "Mm. pectorales superficiales; M. pectoralis profundus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.pectorales.superficiales.L",
+    "horse.muscular.pectorales.superficiales.R",
+    "horse.muscular.pectorales.profundus.L",
+    "horse.muscular.pectorales.profundus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9E3A31",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.sternum",
+    "horse.skeletal.humerus",
+    "horse.muscular.rectus-abdominis",
+    "horse.muscular.brachiocephalicus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

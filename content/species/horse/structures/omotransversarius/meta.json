@@ -1,0 +1,29 @@
+{
+  "id": "horse.muscular.omotransversarius",
+  "system": "horse.muscular",
+  "nav": "M. omotransversarius",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.omotransversarius.L",
+    "horse.muscular.omotransversarius.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#9A372E",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.scapula",
+    "horse.skeletal.atlas",
+    "horse.muscular.brachiocephalicus",
+    "horse.muscular.trapezius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

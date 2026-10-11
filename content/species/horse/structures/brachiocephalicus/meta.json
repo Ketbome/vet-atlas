@@ -1,0 +1,33 @@
+{
+  "id": "horse.muscular.brachiocephalicus",
+  "system": "horse.muscular",
+  "nav": "M. brachiocephalicus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.brachiocephalicus.cleidobrachialis.L",
+    "horse.muscular.brachiocephalicus.cleidobrachialis.R",
+    "horse.muscular.brachiocephalicus.cleidocephalicus.L",
+    "horse.muscular.brachiocephalicus.cleidocephalicus.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#A8402F",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.ulna",
+    "horse.skeletal.skull",
+    "horse.muscular.sternocephalicus",
+    "horse.muscular.omotransversarius",
+    "horse.muscular.trapezius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

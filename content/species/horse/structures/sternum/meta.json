@@ -1,0 +1,24 @@
+{
+  "id": "horse.skeletal.sternum",
+  "system": "horse.skeletal",
+  "nav": "Sternum",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.sternum"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

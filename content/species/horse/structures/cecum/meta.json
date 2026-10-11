@@ -1,0 +1,25 @@
+{
+  "id": "horse.visceral.cecum",
+  "system": "horse.visceral",
+  "nav": "Caecum",
+  "region": "digestive",
+  "laterality": "single",
+  "meshes": [
+    "horse.visceral.cecum"
+  ],
+  "fidelity": "illustrative",
+  "source": "vet-atlas-procedural-viscera",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.visceral.small-intestine",
+    "horse.visceral.large-colon"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

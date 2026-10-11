@@ -18,9 +18,11 @@ Zod; the 3D viewer is React Three Fiber.
   system GLB under `public/models/dog/` (needs `SKETCHFAB_TOKEN` in `.env.local`; sources
   cached in `.cache/models/`). Rebuild skeletal first: the others anchor on its bones.
   Same for the cat: `pnpm models:cat` / `models:cat-integumentary` / `models:cat-muscular` /
-  `models:cat-visceral` (`public/models/cat/`), and the cow: `pnpm models:cow` /
+  `models:cat-visceral` (`public/models/cat/`), the cow: `pnpm models:cow` /
   `models:cow-visceral` / `models:cow-muscular` / `models:cow-integumentary`
-  (`public/models/cow/`, in that order).
+  (`public/models/cow/`, in that order), and the horse: `pnpm models:horse` /
+  `models:horse-visceral` / `models:horse-muscular` / `models:horse-integumentary`
+  (`public/models/horse/`, same order).
 - `pnpm brand` regenerates the logo mark and app icons from the scanned skull
   (`components/atlas/mark-path.ts`, `app/icon.svg`, `app/apple-icon.png`)
 - CT steps live in `scripts/ct/*.py`; set up once with

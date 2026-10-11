@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.scapula",
+  "system": "horse.skeletal",
+  "nav": "Scapula",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.scapula.L",
+    "horse.skeletal.scapula.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.ribs"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

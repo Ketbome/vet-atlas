@@ -1,0 +1,42 @@
+{
+  "id": "horse.skeletal.vertebrae-caudal",
+  "system": "horse.skeletal",
+  "nav": "Vertebrae caudales",
+  "region": "axial",
+  "laterality": "single",
+  "meshes": [
+    "horse.skeletal.vertebrae-caudal.cd1",
+    "horse.skeletal.vertebrae-caudal.cd2",
+    "horse.skeletal.vertebrae-caudal.cd3",
+    "horse.skeletal.vertebrae-caudal.cd4",
+    "horse.skeletal.vertebrae-caudal.cd5",
+    "horse.skeletal.vertebrae-caudal.cd6",
+    "horse.skeletal.vertebrae-caudal.cd7",
+    "horse.skeletal.vertebrae-caudal.cd8",
+    "horse.skeletal.vertebrae-caudal.cd9",
+    "horse.skeletal.vertebrae-caudal.cd10",
+    "horse.skeletal.vertebrae-caudal.cd11",
+    "horse.skeletal.vertebrae-caudal.cd12",
+    "horse.skeletal.vertebrae-caudal.cd13",
+    "horse.skeletal.vertebrae-caudal.cd14",
+    "horse.skeletal.vertebrae-caudal.cd15",
+    "horse.skeletal.vertebrae-caudal.cd16",
+    "horse.skeletal.vertebrae-caudal.cd17",
+    "horse.skeletal.vertebrae-caudal.cd18"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.sacrum",
+    "horse.skeletal.os-coxae"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

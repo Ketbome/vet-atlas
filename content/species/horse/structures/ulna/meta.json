@@ -1,0 +1,26 @@
+{
+  "id": "horse.skeletal.ulna",
+  "system": "horse.skeletal",
+  "nav": "Ulna",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.skeletal.ulna.L",
+    "horse.skeletal.ulna.R"
+  ],
+  "fidelity": "modeled",
+  "source": "diegoluga-horse-skeleton",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.radius",
+    "horse.skeletal.humerus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

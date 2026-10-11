@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.latissimus-dorsi",
+  "system": "horse.muscular",
+  "nav": "M. latissimus dorsi",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.latissimus-dorsi.L",
+    "horse.muscular.latissimus-dorsi.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B8584A",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.3
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.humerus",
+    "horse.skeletal.ribs",
+    "horse.skeletal.vertebrae-thoracic",
+    "horse.muscular.trapezius",
+    "horse.muscular.triceps-brachii",
+    "horse.muscular.obliquus-externus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

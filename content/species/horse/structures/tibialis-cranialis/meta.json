@@ -1,0 +1,31 @@
+{
+  "id": "horse.muscular.tibialis-cranialis",
+  "system": "horse.muscular",
+  "nav": "M. tibialis cranialis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "horse.muscular.tibialis-cranialis.L",
+    "horse.muscular.tibialis-cranialis.R"
+  ],
+  "fidelity": "illustrative",
+  "color": "#B1493B",
+  "source": "vet-atlas-procedural-muscles",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "horse.skeletal.tibia",
+    "horse.skeletal.metatarsus",
+    "horse.muscular.gastrocnemius",
+    "horse.skeletal.femur",
+    "horse.skeletal.tarsus",
+    "horse.muscular.flexor-digitorum-superficialis-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}
