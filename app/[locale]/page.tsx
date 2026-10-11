@@ -99,7 +99,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 </li>
               );
             })}
-            {upcoming.map((sp, i) => (
+            {upcoming.filter((sp) => !published.some((p) => p.id === sp.id)).map((sp, i) => (
               <li key={sp.id} className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-3 border-b border-border py-4 text-muted-foreground sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_auto]">
                 <span className="font-heading text-sm italic">{roman(published.length + i + 1)}</span>
                 <span>
