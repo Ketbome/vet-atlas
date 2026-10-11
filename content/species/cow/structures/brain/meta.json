@@ -4,6 +4,7 @@
   "nav": "Encephalon",
   "region": "nervous",
   "laterality": "single",
+  "color": "#D8B7AA",
   "meshes": [
     "cow.visceral.brain.cerebrum",
     "cow.visceral.brain.cerebellum",

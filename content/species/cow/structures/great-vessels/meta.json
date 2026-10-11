@@ -4,6 +4,7 @@
   "nav": "Aorta et vena cava caudalis",
   "region": "cardiovascular",
   "laterality": "single",
+  "color": "#B02A24",
   "meshes": [
     "cow.visceral.great-vessels"
   ],

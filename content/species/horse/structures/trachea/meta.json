@@ -4,6 +4,7 @@
   "nav": "Trachea",
   "region": "respiratory",
   "laterality": "single",
+  "color": "#E6D7C3",
   "meshes": [
     "horse.visceral.trachea"
   ],

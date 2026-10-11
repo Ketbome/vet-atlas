@@ -4,6 +4,7 @@
   "nav": "Glandula thyroidea",
   "region": "endocrine-lymphatic",
   "laterality": "single",
+  "color": "#A3473B",
   "meshes": [
     "cow.visceral.thyroid"
   ],

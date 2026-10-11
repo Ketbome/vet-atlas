@@ -4,6 +4,7 @@
   "nav": "Colon ascendens",
   "region": "digestive",
   "laterality": "single",
+  "color": "#CF9476",
   "meshes": [
     "horse.visceral.large-colon"
   ],

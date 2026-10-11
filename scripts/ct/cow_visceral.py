@@ -38,11 +38,12 @@ bovine topography:
   duodenum. Spleen: flat, on the left dorsal rumen against the diaphragm.
 - Kidneys lobed (fissured surface): the right ventral to T13-L2, the left
   ventral to L3-L5 and pushed right of the median plane by the rumen.
-- Small intestine coiled on the right, caudal to the omasum and abomasum
-  (in the supraomental recess); large intestine: cecum with its blind end
-  towards the pelvic inlet, spiral colon as a disc in a sagittal plane (two
-  centripetal and two centrifugal turns), descending colon and rectum under
-  the sacrum to the anus.
+- Small intestine: one tube packed into the free space on the right,
+  caudal to the omasum and abomasum (the supraomental recess); large
+  intestine: cecum with its blind end towards the pelvic inlet, spiral colon
+  as a disc in a sagittal plane (two centripetal and two centrifugal turns)
+  in the largest free space of the right flank, descending colon and a
+  rectum sagging a little at the pelvic inlet, under the sacrum to the anus.
 - Urinary bladder on the pelvic floor, uterus (body and coiled horns over the
   pubis) and ovaries at the pelvic inlet (a heifer).
 - Brain: cerebrum, cerebellum and brainstem modeled in the caudal skull from
@@ -53,6 +54,7 @@ import sys
 
 import numpy as np
 from scipy import ndimage as ndi
+from scipy.spatial import cKDTree
 
 # -I leaves the script's directory off sys.path; the helpers live next door.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -73,7 +75,7 @@ def landmarks(sk):
         near = q[np.abs(q[:, 0]) < 0.015]
         return near[:, 1].min()
 
-    lm = {"pts": pts}
+    lm = {"pts": pts, "mesh": lambda name: sk[f"cow_skeletal_{name}"]}
     verts = [f"vertebrae-thoracic_t{i}" for i in range(2, 14)] + [f"vertebrae-lumbar_l{i}" for i in range(1, 7)] + ["sacrum"]
     lm["spine_z"] = np.array([pts(n)[:, 2].mean() for n in verts])
     lm["spine_y"] = np.array([ventral(pts(n)) for n in verts])
@@ -190,11 +192,14 @@ def airways(lm):
     carina = np.array([0.0, spine(lm, T[5]) - 0.06, T[5]])
     trachea = spline([larynx, neck[0] + [0, -0.05, 0.01]] + [q + [0, -0.045, 0] for q in neck[2:]] + [inlet, (inlet + carina) / 2 + [0, 0.01, 0], carina], 10)
     r = 0.021
-    bronchi = [spline([carina, carina + [s * 0.03, -0.012, 0.025], carina + [s * 0.06, -0.03, 0.06]], 6) for s in (-1, 1)]
+    # Principal bronchi: short, curving caudoventrolaterally into the lungs
+    # and tapering; the tracheal bronchus leaves the right wall cranial to
+    # the carina for the right cranial lobe.
+    bronchi = [spline([carina, carina + [s * 0.018, -0.008, 0.016], carina + [s * 0.032, -0.024, 0.036], carina + [s * 0.04, -0.045, 0.055]], 6) for s in (-1, 1)]
     tb = np.array([0.0, spine(lm, T[3]) - 0.055, (T[2] + T[3]) / 2])
     k = int(np.argmin(np.linalg.norm(trachea - tb, axis=1)))
-    tracheal = spline([trachea[k], trachea[k] + [0.03, 0.0, 0.01], trachea[k] + [0.055, 0.005, 0.0]], 6)
-    mesh = merge([tube(trachea, r, 20)] + [tube(b, 0.013, 16) for b in bronchi] + [tube(tracheal, 0.009, 14)])
+    tracheal = spline([trachea[k] + [0.012, 0, 0], trachea[k] + [0.026, -0.006, -0.004], trachea[k] + [0.036, -0.02, -0.016]], 6)
+    mesh = merge([tube(trachea, r, 20)] + [tube(b, np.linspace(0.014, 0.008, len(b)), 16) for b in bronchi] + [tube(tracheal, np.linspace(0.009, 0.006, len(tracheal)), 14)])
     return mesh, trachea, bronchi + [tracheal], larynx, inlet, carina, neck
 
 
@@ -213,12 +218,26 @@ def thyroid(trachea, larynx):
 
 
 def esophagus(lm, larynx, neck, inlet, carina, cardia):
+    """Dorsal to the trachea in the cranial neck, left of it at the thoracic
+    inlet, then dorsal to the tracheal bifurcation and the heart base, always
+    ventral to the vertebral bodies and the longus colli (kept 1.5 cm below
+    their ventral line, so the vertebrae need not be carved out of it)."""
     T = lm["T"]
+    r = 0.014
     path = spline(
-        [larynx + [0, 0.035, -0.01], neck[0] + [0, -0.02, 0.01], neck[2] + [-0.01, -0.025, 0], neck[4] + [-0.025, -0.035, 0],
-         inlet + [-0.025, 0.035, 0.01], np.array([-0.005, spine(lm, T[3]) - 0.03, T[3]]), carina + [0.0, 0.035, 0],
-         np.array([0.0, spine(lm, T[8]) - 0.06, T[8]]), cardia + [0, 0.03, -0.04], cardia], 10)
-    return tube(path, 0.014, 16), path
+        [larynx + [0, 0.03, -0.01], neck[0] + [-0.004, -0.04, 0.01], neck[2] + [-0.012, -0.045, 0], neck[4] + [-0.025, -0.05, 0],
+         inlet + [-0.028, 0.03, 0.01], np.array([-0.012, spine(lm, T[3]) - 0.045, T[3]]), carina + [-0.004, 0.032, 0],
+         np.array([-0.004, spine(lm, T[8]) - 0.06, T[8]]), cardia + [0, 0.035, -0.05], cardia], 10)
+    # Ventral line of the vertebral bodies along the whole path: the neck
+    # landmarks, then the thoracic spine.
+    zs = np.array([q[2] for q in neck] + [lm["spine_z"][0]])
+    ys = np.array([q[1] for q in neck] + [lm["spine_y"][0]])
+    o = np.argsort(zs)
+    roof = np.where(path[:, 2] < lm["spine_z"][0], np.interp(path[:, 2], zs[o], ys[o]), spine(lm, path[:, 2]))
+    path[:, 1] = np.minimum(path[:, 1], roof - r - 0.015)
+    for _ in range(6):
+        path[1:-1] = (path[:-2] + 2 * path[1:-1] + path[2:]) / 4
+    return tube(path, r, 16), path
 
 
 def vessels(lm, base, liver_top):
@@ -254,6 +273,15 @@ def spleen(lm):
     w = halfwidth(lm, T[11])
     path = spline([np.array([-w + 0.025, spine(lm, T[13]) - 0.03, T[13] + 0.01]), np.array([-w + 0.02, spine(lm, T[11]) - 0.13, T[10]]), np.array([-w + 0.03, spine(lm, T[9]) - 0.26, T[8] - 0.01])], 12)
     width = 0.055 * np.sin(np.linspace(0.25, np.pi - 0.25, len(path))) ** 0.5
+    # Against the inside of the left ribs (1 cm off), not cut by them.
+    ribs = np.concatenate(list(lm["ribs"].values()))
+    ribs = ribs[ribs[:, 0] < 0]
+    for q in path:
+        near = ribs[(np.abs(ribs[:, 2] - q[2]) < 0.03) & (np.abs(ribs[:, 1] - q[1]) < 0.04)]
+        if len(near):
+            q[0] = max(q[0], near[:, 0].max() + 0.019)
+    for _ in range(4):
+        path[1:-1] = (path[:-2] + 2 * path[1:-1] + path[2:]) / 4
     return ribbon(path, width, 0.009, [1.0, 0, 0.2], 20)
 
 
@@ -271,56 +299,180 @@ def kidney(centre, length, axes):
     return box.surface(m | lobes, 1.1, 6)
 
 
-def coil_path(lo, hi, step, rng):
-    """Serpentine through a box: back and forth along z, stepping in x and y."""
-    pts = []
-    xs = np.arange(lo[0] + step, hi[0] - step / 2, step * 1.4)
-    ys = np.arange(lo[1] + step, hi[1] - step / 2, step * 1.3)
-    flip = False
-    for j, y in enumerate(ys):
-        for x in (xs if j % 2 == 0 else xs[::-1]):
-            zz = [lo[2] + step, hi[2] - step]
-            if flip:
-                zz = zz[::-1]
-            flip = not flip
-            for z in np.linspace(zz[0], zz[1], 5):
-                pts.append([x + rng.normal(0, step * 0.15), y + rng.normal(0, step * 0.15), z])
-    return spline(np.array(pts), 4)
+def packed_tube(allowed, g, a, b, length, r, seed=3, iters=1500):
+    """A tube of `length` from a to b, packed into the voxel region `allowed`
+    (bead centres; already eroded by r) like the jejunum in the abdomen:
+    a chain of beads, started on a tour through evenly spread points of the
+    region and relaxed with bonds, bending stiffness, contact between beads
+    of different stretches and confinement to the region (as in
+    scripts/ct/visceral.py)."""
+    rng = np.random.default_rng(seed)
+    inside = g.lo + np.argwhere(allowed) * g.h
+    k = max(8, int(length / (6 * r)))
+    c = inside[rng.choice(len(inside), k, replace=False)]
+    for _ in range(12):
+        lab = cKDTree(c).query(inside)[1]
+        c = np.array([inside[lab == i].mean(0) if np.any(lab == i) else c[i] for i in range(k)])
+    order, cur, left = [], a, list(range(k))
+    while left:
+        j = min(left, key=lambda i: np.linalg.norm(c[i] - cur) + 0.3 * np.linalg.norm(c[i] - b) * (len(left) < k / 4))
+        order.append(j)
+        left.remove(j)
+        cur = c[j]
+    tour = np.concatenate([[a], c[order], [b]])
+    for _ in range(20):
+        better = False
+        for i in range(1, len(tour) - 2):
+            for j in range(i + 1, len(tour) - 1):
+                d0 = np.linalg.norm(tour[i - 1] - tour[i]) + np.linalg.norm(tour[j] - tour[j + 1])
+                d1 = np.linalg.norm(tour[i - 1] - tour[j]) + np.linalg.norm(tour[i] - tour[j + 1])
+                if d1 < d0 - 1e-9:
+                    tour[i : j + 1] = tour[i : j + 1][::-1].copy()
+                    better = True
+        if not better:
+            break
+    s = 0.7 * r
+    n = int(length / s)
+    seg = np.linalg.norm(np.diff(tour, axis=0), axis=1)
+    u = np.concatenate([[0], np.cumsum(seg)])
+    w = np.linspace(0, u[-1], n)
+    P = np.stack([np.interp(w, u, tour[:, d]) for d in range(3)], 1)
+    P[1:-1] += rng.normal(0, 0.2 * r, (n - 2, 3))
+    _, near = ndi.distance_transform_edt(~allowed, return_indices=True)
+    fixed = np.zeros(n, bool)
+    fixed[:3] = fixed[-3:] = True
+    ends = P[fixed].copy()
+    for _ in range(iters):
+        d = P[1:] - P[:-1]
+        L = np.linalg.norm(d, axis=1)[:, None]
+        corr = 0.5 * (L - s) / np.maximum(L, 1e-9) * d
+        P[:-1] += corr
+        P[1:] -= corr
+        P[1:-1] += 0.15 * ((P[:-2] + P[2:]) / 2 - P[1:-1])
+        pairs = cKDTree(P).query_pairs(2.1 * r, output_type="ndarray")
+        pairs = pairs[np.abs(pairs[:, 0] - pairs[:, 1]) > 3]
+        if len(pairs):
+            d = P[pairs[:, 0]] - P[pairs[:, 1]]
+            L = np.linalg.norm(d, axis=1)[:, None]
+            push = 0.5 * (2.1 * r - L) / np.maximum(L, 1e-9) * d
+            np.add.at(P, pairs[:, 0], push)
+            np.add.at(P, pairs[:, 1], -push)
+        q = np.clip(np.floor((P - g.lo) / g.h).astype(int), 0, np.array(g.shape) - 1)
+        out = ~allowed[tuple(q.T)]
+        if out.any():
+            to = g.lo + np.stack([near[i][tuple(q[out].T)] for i in range(3)], 1) * g.h
+            P[out] += 0.5 * (to - P[out])
+        P[fixed] = ends
+    return P
+
+
+def route(path, allowed, g, iters=80):
+    """Bends a path (ends fixed) into the voxel region `allowed`: points
+    outside it move towards the nearest allowed voxel, then the path is
+    smoothed; points outside the grid are left alone."""
+    path = path.copy()
+    _, near = ndi.distance_transform_edt(~allowed, return_indices=True)
+    for _ in range(iters):
+        q = np.floor((path - g.lo) / g.h).astype(int)
+        ok = np.all((q >= 0) & (q < np.array(g.shape)), 1)
+        ok[[0, -1]] = False
+        idx = np.argwhere(ok)[:, 0]
+        out = idx[~allowed[tuple(q[idx].T)]]
+        if len(out):
+            to = g.lo + np.stack([near[i][tuple(q[out].T)] for i in range(3)], 1) * g.h
+            path[out] += 0.5 * (to - path[out])
+        path[1:-1] += 0.3 * ((path[:-2] + path[2:]) / 2 - path[1:-1])
+    return path
+
+
+def colon_centre(lm, occupied, box, x_range, rad):
+    """Centre of the spiral colon: the point of the right abdomen, over a
+    slab as thick as the disc, furthest from the other organs (in its
+    sagittal plane)."""
+    xs = box.g.lo[0] + box.g.h * np.arange(box.shape[0])
+    best = (-1.0, None)
+    for cx in np.arange(x_range[0], x_range[1], 0.01):
+        sel = (xs > cx - 0.012) & (xs < cx + 0.036)
+        if not sel.any():
+            continue
+        slab = occupied[sel].any(0)
+        d = ndi.distance_transform_edt(~slab) * box.g.h
+        j, k = np.unravel_index(np.argmax(d), d.shape)
+        if d[j, k] > best[0]:
+            best = (d[j, k], np.array([cx, box.g.lo[1] + box.g.h * j, box.g.lo[2] + box.g.h * k]))
+    room, c = best
+    print(f"  spiral colon: centre {np.round(c, 3)}, room {room:.3f} m")
+    return c, min(rad, room - 0.012)
 
 
 def intestines(lm, taken):
     T, L = lm["T"], lm["L"]
-    rng = np.random.default_rng(7)
     p = lm["pecten"]
-    # Small intestine: right ventral half, caudal to the omasum and abomasum.
-    lo = np.array([0.0, floor(lm, L[2]) + 0.03, T[13]])
-    hi = np.array([halfwidth(lm, L[3]) - 0.02, floor(lm, L[2]) + 0.2, p[2] - 0.07])
-    jej = coil_path(lo, hi, 0.03, rng)
-    box = box_for(lo - 0.03, hi + 0.03)
-    occupied = solid_in(box, taken, 2)
-    si = box.tube(jej, 0.016) & ~occupied
-    small = box.surface(keep_main(si, 0.02), 1.0, 6)
-    # Spiral colon: a disc in a sagittal plane, right of the mesentery,
-    # dorsal to the jejunum.
-    c = np.array([0.045, spine(lm, L[3]) - 0.16, L[3]])
+    # Right half of the abdomen, caudal to the omasum and abomasum, inside
+    # the body wall: the space the bowel shares.
+    lo = np.array([0.0, floor(lm, L[2]) + 0.02, T[13]])
+    hi = np.array([halfwidth(lm, L[3]) - 0.01, spine(lm, L[3]) - 0.03, p[2] - 0.05])
+    box = box_for(lo, hi)
+    X, Y, Z = (c.reshape(box.shape) for c in box.pts.T)
+    wall = (X < halfwidth(lm, Z) - 0.012) & (Y > floor(lm, Z) + 0.012) & (Y < spine(lm, Z) - 0.035)
+    occupied = solid_in(box, taken, 2) | ~wall
+    # Spiral colon: a disc in a sagittal plane (two centripetal and two
+    # centrifugal turns) in the largest free space of the right flank.
+    c, R = colon_centre(lm, occupied, box, (0.012, hi[0] - 0.036), 0.085)
     turns = np.linspace(0, 2 * 2 * np.pi, 160)
-    rad = 0.09 * (1 - turns / turns[-1] * 0.8)
+    rad = R * (1 - turns / turns[-1] * 0.8)
     inward = c + np.stack([np.zeros_like(turns), rad * np.cos(turns), rad * np.sin(turns)], 1)
     outward_ = c + np.stack([np.full_like(turns, 0.025), (rad[::-1] - 0.012) * np.cos(turns[::-1] + 0.4), (rad[::-1] - 0.012) * np.sin(turns[::-1] + 0.4)], 1)
-    entry = c + [0.05, 0.12, -0.07]
-    ileum_end = np.array([0.08, floor(lm, L[4]) + 0.17, L[4]])
-    cecum = spline([ileum_end, ileum_end + [0.01, 0.01, 0.08], np.array([0.07, spine(lm, L[6]) - 0.12, p[2] - 0.08])], 8)
-    proximal = spline([ileum_end, entry, inward[0]], 8)
-    rectum_z = np.linspace(L[6], lm["ox"][:, 2].max() + 0.01, 8)
+    # Cecum: from the ileocolic junction caudodorsally, its blind end towards
+    # the pelvic inlet; proximal loop of the ascending colon to the spiral.
+    ileum_end = np.array([c[0] + 0.02, c[1] - R - 0.03, c[2] + 0.04])
+    cecum = spline([ileum_end, ileum_end + [0.01, 0.015, 0.07], np.array([c[0] + 0.02, spine(lm, L[6]) - 0.11, p[2] - 0.08])], 8)
+    proximal = spline([ileum_end, ileum_end + [0.0, 0.03, -0.04], c + [0.0, R + 0.02, -0.05], inward[0]], 8)
+    # Descending colon caudally along the roof of the abdomen, then the rectum
+    # under the sacrum: a gentle ventral sag at the pelvic inlet, rising to
+    # the anus under the first caudal vertebrae.
     roof = np.concatenate([lm["pts"]("sacrum")] + [lm["pts"](f"vertebrae-caudal_cd{i}") for i in (1, 2, 3)])
+
     def under(z):
         q = roof[(np.abs(roof[:, 2] - z) < 0.02) & (np.abs(roof[:, 0]) < 0.03)]
         return (q[:, 1].min() if len(q) else spine(lm, z)) - 0.045
-    descending = spline([outward_[-1], np.array([0.02, spine(lm, L[3]) - 0.07, L[4]])] + [np.array([0.0, under(z), z]) for z in rectum_z], 8)
-    lbox = box_for(np.minimum(cecum.min(0), descending.min(0)) - 0.05, np.maximum(np.maximum(cecum.max(0), descending.max(0)), c + 0.12) + 0.05)
+
+    rz = np.linspace(L[6], lm["ox"][:, 2].max() + 0.01, 7)
+    sag = 0.035 * np.sin(np.linspace(0, np.pi, len(rz))) ** 1.5
+    rectum = [np.array([0.0, under(z) - d, z]) for z, d in zip(rz, sag)]
+    descending = spline([outward_[-1], outward_[-1] + [-0.01, 0.03, 0.03], np.array([0.015, spine(lm, L[4]) - 0.065, L[4]]), np.array([0.005, spine(lm, L[5]) - 0.06, L[5]])] + rectum, 8)
+    for _ in range(3):
+        descending[1:-1] = (descending[:-2] + 2 * descending[1:-1] + descending[2:]) / 4
+    lbox = box_for(np.minimum(cecum.min(0), descending.min(0)) - 0.05, np.maximum(np.maximum(cecum.max(0), descending.max(0)), c + R + 0.03) + 0.05)
+    # The connecting stretches are bent around the rumen, kidneys and liver.
+    # The cecum ends in the roomiest spot of the right dorsal flank towards
+    # the pelvic inlet.
+    free = ndi.distance_transform_edt(~solid_in(lbox, taken, 1)) * lbox.g.h
+    Xl, Yl, Zl = (c_.reshape(lbox.shape) for c_ in lbox.pts.T)
+    flank = (Xl > 0.01) & (Xl < halfwidth(lm, Zl) - 0.04) & (Yl > (floor(lm, Zl) + spine(lm, Zl)) / 2) & (Yl < spine(lm, Zl) - 0.05)
+    blind = np.where(flank & (Zl > L[5]) & (Zl < p[2] - 0.03), free, 0)
+    blind = lbox.g.lo + np.array(np.unravel_index(np.argmax(blind), blind.shape)) * lbox.g.h
+    cecum = spline([ileum_end, (ileum_end + blind) / 2 + [0.0, 0.02, 0.0], blind], 8)
+    cecum = route(cecum, free > 0.016, lbox.g)
+    proximal = route(proximal, free > 0.012, lbox.g)
+    descending = route(descending, free > 0.011, lbox.g)
     li = lbox.tube(cecum, np.linspace(0.03, 0.026, len(cecum))) | lbox.tube(proximal, 0.018) | lbox.tube(inward, 0.011) | lbox.tube(outward_, 0.01) | lbox.tube(descending, 0.016)
-    li &= ~solid_in(lbox, taken, 1)
+    li &= ~solid_in(lbox, taken)
     large = lbox.surface(keep_main(li, 0.02), 1.0, 6)
+    # Small intestine: one tube packed into the free ventral space, from the
+    # duodenum (caudal to the abomasum) to the ileocolic junction.
+    r = 0.014
+    space = ~occupied & ~solid_in(box, [large], 2)
+    allowed = largest(ndi.distance_transform_edt(space) * box.g.h > r * 1.05)
+    inside = box.g.lo + np.argwhere(allowed) * box.g.h
+    start = inside[np.argmin(inside[:, 2] - 0.3 * inside[:, 1])]
+    end = inside[np.argmin(np.linalg.norm(inside - ileum_end, axis=1))]
+    length = 0.35 * space.sum() * box.g.h**3 / (np.pi * r * r)
+    beads = packed_tube(allowed, box.g, start, end, length, r)
+    jej = spline(beads[::2], 3)
+    jej = np.concatenate([jej, [ileum_end]])
+    print(f"  small intestine: {length:.2f} m packed")
+    small = tube(jej, r, 14)
     return small, large
 
 
@@ -379,6 +531,9 @@ def lungs(lm, cage_pts, taken, heart, mediastinal):
     s &= ~solid_in(box, [heart], 3)
     s &= ~solid_in(box, mediastinal, 2)
     s &= ~((np.abs(X - 0.0) < 0.04) & (Y > spine(lm, Z) - 0.03))  # vertebral bodies, longus colli
+    # The ribs, in this grid: the surface smoothing turns them into shallow
+    # costal impressions instead of the saw-tooth of a fine carve.
+    s &= ~solid_in(box, [lm["mesh"](f"ribs_{k}_{side}") for k in range(1, 14) for side in "LR"] + [lm["mesh"]("sternum")])
     s &= np.abs(X + 0.008) > 0.006  # mediastinum, left of the median plane
     return {
         "lungs.L": box.surface(largest(s & (X < -0.008)), 1.6, 8),
@@ -461,7 +616,10 @@ def main(work):
     for k, m in brain(lm).items():
         out[f"cow.visceral.{k}"] = m
 
-    bones = [m for k, m in sk.items() if not any(b in k for b in ("skull", "mandible"))]
+    # Ribs, vertebrae and sternum are kept off by construction (the paths run
+    # below the vertebral bodies and inside the ribs, the lungs are cut in
+    # their own grid): carving against them bit notches into the organs.
+    bones = [m for k, m in sk.items() if not any(b in k for b in ("skull", "mandible", "ribs", "vertebrae", "sternum", "atlas", "axis", "sacrum"))]
     for k in list(out):
         if "brain" in k:
             continue

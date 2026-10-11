@@ -82,6 +82,7 @@ import numpy as np
 from scipy import ndimage as ndi
 from scipy.spatial import cKDTree
 from skimage.measure import marching_cubes
+from skimage.morphology import skeletonize
 from skimage.segmentation import watershed
 
 # --- io ---------------------------------------------------------------------
@@ -279,6 +280,27 @@ def ribbon(points, width, thick, normal, sides=20):
         n /= np.linalg.norm(n)
         b = np.cross(t[i], n)
         rings.append(pts[i] + np.cos(ang)[:, None] * n * th[i] + np.sin(ang)[:, None] * b * w[i])
+    p, f = tube(pts, 1.0, sides)
+    p[: len(pts) * sides] = np.concatenate(rings)
+    return p, f
+
+
+def curved_plate(points, width, thick, normal, curl, sides=28):
+    """Like ribbon(), but the section is bent into a shallow C: its edges
+    move `curl` (scaled with the width) against `normal`, so the face toward
+    `normal` is concave and the opposite one convex. Ends are closed by the caps of
+    tube()."""
+    pts = np.asarray(points, float)
+    t = np.gradient(pts, axis=0)
+    t /= np.linalg.norm(t, axis=1)[:, None]
+    ang = np.linspace(0, 2 * np.pi, sides, endpoint=False)
+    rings = []
+    for i in range(len(pts)):
+        n = np.asarray(normal, float) - t[i] * (np.asarray(normal, float) @ t[i])
+        n /= np.linalg.norm(n)
+        b = np.cross(t[i], n)
+        bend = -curl * (width[i] / width.max()) * np.sin(ang) ** 2
+        rings.append(pts[i] + (np.cos(ang) * thick[i] + bend)[:, None] * n + np.sin(ang)[:, None] * b * width[i])
     p, f = tube(pts, 1.0, sides)
     p[: len(pts) * sides] = np.concatenate(rings)
     return p, f
@@ -649,12 +671,16 @@ def trunk_split(mesh, z_cava, z_cut, h=0.0008):
     a tube of radius r just inside it, from z_cava[0] to where the trunk
     splits into the iliac vessels (z_cava[1] at most), and is cut out of the
     aorta. Returns the aorta (cut cranially at z_cut, where the heart CT's
-    takes over), the vena cava centreline and r (atlas frame)."""
+    takes over), the vena cava centreline and r (atlas frame).
+
+    Over the same stretch the aorta is redrawn as a tube of its own width
+    along the left of the trunk (the carve leaves it ragged), its visceral
+    branches end as stumps and short side branches are pruned."""
     p, f = mesh
     g = Grid(p.min(0), p.max(0), h)
     m = g.solid(p, f, 1)
     X, Y, Z = g.coords()
-    zs, right, top, width = [], [], [], []
+    zs, left, right, top, width = [], [], [], [], []
     for z in np.arange(z_cava[0], z_cava[1], 0.001):
         sl = m & (np.abs(Z - z) < h / 2)
         band = sl & (Y > Y[sl].max() - 0.012) & (np.abs(X) < 0.02)
@@ -666,20 +692,94 @@ def trunk_split(mesh, z_cava, z_cut, h=0.0008):
         # (the vena cava reaches the trunk from the liver, ventrally).
         if np.all(np.diff(x) <= 1) and np.ptp(x) * h > np.median(width[:10]) + 0.004:
             zs.append(z)
+            left.append(x.min() * h)
             right.append(x.max() * h)
             top.append(Y[band].max())
         elif zs and z - zs[-1] > 0.02:  # split into the iliac vessels
             break
     zs = np.array(zs)
-    right, top = ndi.median_filter(np.array(right), 9), ndi.median_filter(np.array(top), 9)
+    left, right, top = (ndi.median_filter(np.array(v), 9) for v in (left, right, top))
+    ra = np.median(width[:10]) / 2
     r = 0.004
     line = np.stack([right - r, top - r, zs], 1)[::4]
     q = np.stack([X[m], Y[m], Z[m]], 1)
     d, _ = cKDTree(spline(line, 6)).query(q)
     cut = np.zeros(m.shape, bool)
     cut[m] = d < r + h
-    aorta = m & ~cut & (Z > z_cut)
+    axis = spline(np.stack([left + ra, top - ra, zs], 1)[::4], 6)
+    trunk = g.solid(*tube(axis, ra, 20), 1)
+    aorta = (m & ~cut | trunk) & (Z > z_cut)
+    # Short side branches only around the kidneys: the iliac arteries and
+    # veins tangle into many short segments that pruning would eat.
+    fused = (Z > zs[0]) & (Z < zs[-1])
+    aorta = prune(aorta & fused, h, 0.012) | aorta & ~fused
+    # The visceral branches (celiac, mesenteric) end as stumps 15 mm below the
+    # aorta: the CT follows them into the mesentery as a tangle of twigs. The
+    # iliac arteries, which run ventrally into the pelvis, are left whole.
+    ix, iy, iz = np.nonzero(aorta)
+    mid = np.abs(g.lo[0] + h * ix) < 0.02
+    top = np.full(aorta.shape[2], -1)
+    np.maximum.at(top, iz[mid], iy[mid])
+    top = ndi.maximum_filter1d(top, int(0.02 / h))
+    drop = (iy < top[iz] - (0.012 + 0.015) / h) & (g.lo[2] + h * iz < z_cava[1] - 0.03)
+    aorta[ix[drop], iy[drop], iz[drop]] = False
+    # Carving the vena cava out leaves slivers of its wall along the aorta.
+    aorta = largest((aorta & ~fused) | ndi.binary_opening(aorta & fused, iterations=2) | trunk & (Z > z_cut))
     return taubin(main_part(g.surface(aorta, 1.0)), 4), line, r
+
+
+NEIGHBOURS = np.array([(i, j, k) for i in (-1, 0, 1) for j in (-1, 0, 1) for k in (-1, 0, 1) if (i, j, k) != (0, 0, 0)])
+
+
+def prune(mask, h, length):
+    """Drops the side branches of a vessel tree that end within `length` of
+    the wall of the vessel they leave (the CT keeps the stumps of every small
+    artery around the kidneys and the root of the mesentery). On the
+    centreline skeleton, end segments that short are removed, repeatedly,
+    with the voxels around them; branches that leave the mask through its
+    cranial or caudal end stay."""
+    sk = skeletonize(mask)
+    pts = np.argwhere(sk)
+    lab = np.full(mask.shape, -1)
+    lab[tuple(pts.T)] = np.arange(len(pts))
+    radius = ndi.distance_transform_edt(mask)[tuple(pts.T)]
+    nb = []
+    for q in pts:
+        r = q + NEIGHBOURS
+        ok = np.all((r >= 0) & (r < mask.shape), 1)
+        r = lab[tuple(r[ok].T)]
+        nb.append(r[r >= 0])
+    # Branches cut by the ends of the mask go on beyond it: keep them.
+    zi = np.nonzero(mask.any(axis=(0, 1)))[0]
+    cut_end = (pts[:, 2] <= zi.min() + radius + 2) | (pts[:, 2] >= zi.max() - radius - 2)
+    alive = np.ones(len(pts), bool)
+    changed = True
+    while changed:
+        changed = False
+        deg = np.array([alive[n].sum() for n in nb])
+        for e in np.nonzero(alive & (deg == 1) & ~cut_end)[0]:
+            path, prev, cur, run = [e], -1, e, 0.0
+            while True:
+                nxt = [n for n in nb[cur] if alive[n] and n != prev and n not in path]
+                if not nxt or deg[cur] >= 3 and cur != e:
+                    break
+                prev, cur = cur, nxt[0]
+                run += np.linalg.norm(pts[cur] - pts[prev])
+                path.append(cur)
+            if deg[cur] >= 3 and cur != e and run - radius[cur] < length / h:
+                alive[path[:-1]] = False
+                changed = True
+                break  # degrees changed: recount
+    # A voxel goes with its branch when that branch's centreline is the
+    # nearest one and the vessel that stays does not cover it.
+    vox = np.argwhere(mask)
+    _, near = cKDTree(pts).query(vox)
+    d, j = cKDTree(pts[alive]).query(vox)
+    gone = ~alive[near] & (d > radius[alive][j] + 1.0)
+    keep = mask.copy()
+    keep[tuple(vox[gone].T)] = False
+    print(f"prune: {np.count_nonzero(~alive)} of {len(pts)} centreline voxels in short branches")
+    return largest(keep)
 
 
 def end(mesh, cranial, depth=0.004):
@@ -782,6 +882,8 @@ def build_lungs(src, warp, lm, heart):
         inside_x = np.abs(sx) <= np.abs(xs).max()
         sl = cut[np.ix_(ix, iy)] & inside_x[:, None] & ((sy >= g.lo[1]) & (sy <= hi[1]))[None, :]
         s[:, :, k] |= sl
+    # The CT lung volume comes from a 1 cm grid: smooth its steps away.
+    s = ndi.gaussian_filter(s.astype(np.float32), 4.0) > 0.5
     # Stay inside the rib cage and off the median plane (mediastinum).
     W = np.interp(Z, zs, hw) - 0.002
     s &= (np.abs(X) < W) & (np.abs(X) > 0.0035)
@@ -792,7 +894,7 @@ def build_lungs(src, warp, lm, heart):
     s &= ~ndi.binary_dilation(hg, iterations=2)
     left = largest(s & (X < 0))
     right = largest(s & (X > 0))
-    return g.surface(left, 1.2), g.surface(right, 1.2)
+    return g.surface(left, 1.8), g.surface(right, 1.8)
 
 
 # --- brain ----------------------------------------------------------------------
@@ -1028,10 +1130,15 @@ def procedural(lm, out, sk, pyl):
     head = np.array([min(stomach[:, 0].min(), kl[:, 0].min()) + 0.007, kl[:, 1].max() - 0.004, kl[:, 2].min() + 0.004])
     tail = np.array([-0.012, stomach[:, 1].min() + 0.004, stomach[:, 2].max() + 0.012])
     mid = np.array([head[0] + 0.002, (head[1] + tail[1]) / 2, (head[2] + tail[2]) / 2 - 0.008])
-    path_s = spline([head, mid, tail], 14)
+    # Tongue-shaped: a narrow head, the body widening ventrally to a broad,
+    # rounded tail, bent along the greater curvature and curled around the
+    # stomach (concave visceral face, convex parietal face).
+    path_s = spline([head, (head + mid) / 2 + [-0.002, 0, -0.004], mid, (mid + tail) / 2 + [-0.002, 0, 0.003], tail], 10)
     u = np.linspace(0, 1, len(path_s))
-    width = 0.014 * np.sin(np.pi * (0.08 + 0.84 * u)) ** 0.6
-    res["dog.visceral.spleen"] = ribbon(path_s, width, 0.0045 * np.sin(np.pi * (0.08 + 0.84 * u)) ** 0.5, [1.0, 0.0, 0.0])
+    ends = np.sqrt(np.clip(np.sin(np.pi * u), 0, 1))
+    width = (0.009 + 0.008 * u**0.8) * ends
+    thick = (0.0035 + 0.0015 * np.sin(np.pi * u)) * np.sqrt(ends)
+    res["dog.visceral.spleen"] = curved_plate(path_s, np.maximum(width, 0.0015), np.maximum(thick, 0.001), [1.0, 0.0, 0.0], 0.004)
 
     # Large intestine: cecum and ascending colon on the right, transverse colon
     # cranial to the root of the mesentery, descending colon on the left, then

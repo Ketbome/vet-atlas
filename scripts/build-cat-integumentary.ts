@@ -22,7 +22,12 @@
  *      the muscles (3 mm clearance), then Taubin-smoothed;
  *   4. a final push-out moves the surface (head excluded) past the bones and
  *      muscles still outside, spread smoothly over the mesh;
- *   5. everything below the floor is clamped to y = 0.
+ *   5. everything below the floor is clamped to y = 0;
+ *   6. the widened head carries the globes out against the orbital
+ *      ligament: each moves the least it needs to clear the orbit by its
+ *      radius, and the eyelids follow (blended over 2 cm). The eyes get a
+ *      slit pupil, amber iris and sclera as vertex colours over the baked
+ *      occlusion.
  *
  * Source frame: arbitrary units (about 1.7x life size), Y up, floor at y=0,
  * animal faces +Z, left side +X. Output: atlas frame (metres, faces -Z,
@@ -33,7 +38,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { Matrix4, Quaternion, Vector3 } from "three";
 import { meshKey } from "../lib/content/mesh";
-import { bake, createModel, download, merge, mirror, pca, points, readAtlas, readPrims, smoothNormals, type Geometry } from "./lib/glb";
+import { bake, createModel, download, io, merge, mirror, pca, points, readAtlas, readPrims, smoothNormals, type Geometry } from "./lib/glb";
 
 const OUT = path.join(process.cwd(), "public", "models", "cat", "integumentary.glb");
 const SKELETON = path.join(process.cwd(), "public", "models", "cat", "skeletal.glb");
@@ -50,8 +55,10 @@ const flip = new Matrix4().makeRotationY(Math.PI);
 // The body is split in two primitives (16-bit indices); welded back into one surface.
 const body = weld(bake(await readPrims(file, (n) => n === "Object_4" || n === "Object_5"), flip));
 const clawsLeft = keepSide(bake(await readPrims(file, (n) => n === "Object_7"), flip));
-// Eyeball (globe) and Pupil (cornea and iris).
+// Eyeball (globe) and Pupil (cornea and iris); the cornea alone gives the
+// direction of gaze for the iris colours.
 const eyesLeft = keepSide(bake(await readPrims(file, (n) => n === "Object_9" || n === "Object_17"), flip));
+const corneaLeft = bake(await readPrims(file, (n) => n === "Object_17"), flip);
 
 // Landmarks on the sculpt after the flip (left side, x < 0), read off
 // cross-sections of the mesh. Joint centres are inside the limb.
@@ -392,6 +399,21 @@ taubin(skin, (v) => {
 const claws: Geometry = { position: warp(clawsLeft.position), index: clawsLeft.index };
 const eyes: Geometry = { position: eyesLeft.position.slice(), index: eyesLeft.index };
 for (let i = 0; i < eyes.position.length; i += 3) v3(eyes.position[i], eyes.position[i + 1], eyes.position[i + 2]).applyMatrix4(headMap).toArray(eyes.position, i);
+// The head is widened to clear the zygomatic arch, which carries the globes
+// out against the orbital ligament: each globe moves the least it needs to
+// clear the bone of the orbit by its radius, and the eyelids go with it.
+const eyeAt = S.eye.clone().applyMatrix4(headMap);
+const eyeAxis = mean(points(corneaLeft).filter((p) => p.x < 0)).applyMatrix4(headMap).sub(eyeAt).normalize();
+const globe = points(eyesLeft).filter((p) => p.x < 0).map((p) => p.distanceTo(S.eye)).sort((x, y) => x - y);
+const eyeRadius = globe[Math.floor(globe.length / 2)] * Math.cbrt(Math.abs(headMap.determinant()));
+const orbit = points(skull).filter((p) => p.distanceTo(eyeAt) < 0.03);
+const clear = (q: Vector3) => orbit.every((p) => p.distanceToSquared(q) >= (eyeRadius * 0.95) ** 2);
+const shifts: Vector3[] = [];
+for (let x = -12; x <= 12; x++) for (let y = -12; y <= 12; y++) for (let z = -12; z <= 12; z++) shifts.push(v3(x, y, z).multiplyScalar(0.0005));
+shifts.sort((p, q) => p.length() - q.length());
+const eyeShift = shifts.find((d) => clear(eyeAt.clone().add(d))) ?? v3(0, 0, 0);
+console.log(`eyes: moved ${(eyeShift.length() * 1000).toFixed(1)} mm into the orbit`);
+for (let i = 0; i < eyes.position.length; i += 3) v3(eyes.position[i], eyes.position[i + 1], eyes.position[i + 2]).add(eyeShift).toArray(eyes.position, i);
 const warped = skin.position.slice();
 // Bone inside a claw (the ungual processes) is covered by integument too.
 const inClaw = insideTest(merge([claws, mirror(claws)]));
@@ -399,14 +421,64 @@ const inClaw = insideTest(merge([claws, mirror(claws)]));
 const pushed = pushOut(skin, contents, 0.002, inClaw, (v) => isHead(v3(body.position[v * 3], body.position[v * 3 + 1], body.position[v * 3 + 2])));
 carry(claws, warped, pushed);
 for (const g of [skin, claws]) for (let i = 1; i < g.position.length; i += 3) g.position[i] = Math.max(0, g.position[i]);
+for (let i = 0; i < skin.position.length; i += 3) {
+  const p = v3(skin.position[i], skin.position[i + 1], skin.position[i + 2]);
+  const own = p.x < 0 ? eyeAt : side(eyeAt);
+  const w = Math.max(0, 1 - p.distanceTo(own) / 0.02);
+  p.addScaledVector(p.x < 0 ? eyeShift : side(eyeShift), w * w * (3 - 2 * w)).toArray(skin.position, i);
+}
 
 const model = createModel("cat.integumentary", [0.85, 0.71, 0.61, 1]);
 model.add(meshKey("cat.integumentary.skin"), skin, 160000);
 model.add(meshKey("cat.integumentary.claws.L"), claws, 3000);
 model.add(meshKey("cat.integumentary.claws.R"), mirror(claws), 3000);
-model.add(meshKey("cat.integumentary.eyes.L"), eyes, 2000);
-model.add(meshKey("cat.integumentary.eyes.R"), mirror(eyes), 2000);
+// Split twice so the pupil and iris colours have vertices to sit on.
+const fineEyes = subdivide(subdivide(eyes));
+model.add(meshKey("cat.integumentary.eyes.L"), fineEyes);
+model.add(meshKey("cat.integumentary.eyes.R"), mirror(fineEyes));
 await model.write(OUT);
+
+// Eyes: a vertical slit pupil, an amber iris with a darker limbal ring and
+// pale sclera round it, as vertex colours over the baked occlusion (the
+// structure colour is near white so they show).
+{
+  const doc = await io.read(OUT);
+  const lin = (r: number, g: number, b: number) => [r, g, b].map((c) => c ** 2.2);
+  const pupil = lin(0.03, 0.025, 0.02);
+  const iris = lin(0.8, 0.64, 0.22);
+  const limbus = lin(0.42, 0.34, 0.12);
+  const sclera = lin(0.88, 0.84, 0.76);
+  const centre = eyeAt.clone().add(eyeShift);
+  for (const node of doc.getRoot().listNodes()) {
+    const right = node.getName() === meshKey("cat.integumentary.eyes.R");
+    if (!right && node.getName() !== meshKey("cat.integumentary.eyes.L")) continue;
+    const prim = node.getMesh()!.listPrimitives()[0];
+    const g = bake([{ prim, world: new Matrix4().fromArray(node.getWorldMatrix()) }], new Matrix4());
+    const c = right ? side(centre) : centre;
+    const a = right ? side(eyeAxis) : eyeAxis;
+    const up = v3(0, 1, 0).addScaledVector(a, -a.y).normalize();
+    const across = a.clone().cross(up);
+    const ao = prim.getAttribute("COLOR_0")!;
+    const color = new Float32Array(ao.getCount() * 3);
+    const el: number[] = [];
+    for (let v = 0; v < ao.getCount(); v++) {
+      const d = v3(g.position[v * 3], g.position[v * 3 + 1], g.position[v * 3 + 2]).sub(c).normalize();
+      const [u, w] = [d.dot(across), d.dot(up)];
+      const r = Math.hypot(u, w);
+      let tint = sclera;
+      if (d.dot(a) > 0 && (u / 0.16) ** 2 + (w / 0.44) ** 2 < 1) tint = pupil;
+      else if (d.dot(a) > 0 && r < 0.66) {
+        const k = Math.min(1, Math.max(0, (r - 0.5) / 0.16)) * 0.8 + 0.08 * Math.sin(Math.atan2(w, u) * 23);
+        tint = iris.map((x, i) => x + (limbus[i] - x) * Math.max(0, k));
+      }
+      ao.getElement(v, el);
+      for (let i = 0; i < 3; i++) color[v * 3 + i] = tint[i] * el[0];
+    }
+    prim.setAttribute("COLOR_0", doc.createAccessor().setType("VEC3").setArray(color).setBuffer(doc.getRoot().listBuffers()[0]));
+    ao.dispose();
+  }
+  await io.write(OUT, doc);
+}
 
 // ---------------------------------------------------------------- helpers
 
@@ -424,6 +496,29 @@ function weld(g: Geometry): Geometry {
     remap[i] = ids.get(key)!;
   }
   return { position: new Float32Array(position), index: g.index.map((v) => remap[v]) };
+}
+
+// Midpoint subdivision: every triangle into four.
+function subdivide(g: Geometry): Geometry {
+  const position = Array.from(g.position);
+  const mids = new Map<string, number>();
+  const mid = (a: number, b: number) => {
+    const key = a < b ? `${a},${b}` : `${b},${a}`;
+    let m = mids.get(key);
+    if (m === undefined) {
+      m = position.length / 3;
+      for (let k = 0; k < 3; k++) position.push((g.position[a * 3 + k] + g.position[b * 3 + k]) / 2);
+      mids.set(key, m);
+    }
+    return m;
+  };
+  const index: number[] = [];
+  for (let i = 0; i < g.index.length; i += 3) {
+    const [a, b, c] = [g.index[i], g.index[i + 1], g.index[i + 2]];
+    const [ab, bc, ca] = [mid(a, b), mid(b, c), mid(c, a)];
+    index.push(a, ab, ca, ab, b, bc, ca, bc, c, ab, bc, ca);
+  }
+  return { position: new Float32Array(position), index: new Uint32Array(index) };
 }
 
 function keepSide(g: Geometry): Geometry {

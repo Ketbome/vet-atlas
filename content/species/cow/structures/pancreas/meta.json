@@ -4,6 +4,7 @@
   "nav": "Pancreas",
   "region": "digestive",
   "laterality": "single",
+  "color": "#E5BE8A",
   "meshes": [
     "cow.visceral.pancreas"
   ],

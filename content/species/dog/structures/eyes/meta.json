@@ -10,7 +10,7 @@
   ],
   "fidelity": "modeled",
   "source": "lovadahn-canine-model",
-  "color": "#1E1714",
+  "color": "#EDE6DC",
   "material": "organ",
   "camera": {
     "preset": "cranial",

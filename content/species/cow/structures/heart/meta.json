@@ -4,6 +4,7 @@
   "nav": "Cor",
   "region": "cardiovascular",
   "laterality": "single",
+  "color": "#8E4535",
   "meshes": [
     "cow.visceral.heart"
   ],

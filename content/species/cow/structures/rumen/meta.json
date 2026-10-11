@@ -4,6 +4,7 @@
   "nav": "Rumen",
   "region": "digestive",
   "laterality": "single",
+  "color": "#CDA48C",
   "meshes": [
     "cow.visceral.rumen"
   ],

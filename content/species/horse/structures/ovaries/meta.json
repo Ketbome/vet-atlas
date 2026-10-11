@@ -4,6 +4,7 @@
   "nav": "Ovaria",
   "region": "genital",
   "laterality": "paired",
+  "color": "#E3BDA8",
   "meshes": [
     "horse.visceral.ovaries.L",
     "horse.visceral.ovaries.R"

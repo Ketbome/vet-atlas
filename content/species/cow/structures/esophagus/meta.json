@@ -4,6 +4,7 @@
   "nav": "Oesophagus",
   "region": "digestive",
   "laterality": "single",
+  "color": "#C9806F",
   "meshes": [
     "cow.visceral.esophagus"
   ],

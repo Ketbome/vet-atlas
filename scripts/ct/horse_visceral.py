@@ -63,7 +63,7 @@ from scipy import ndimage as ndi
 # -I leaves the script's directory off sys.path; the helpers live next door.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cat_visceral import Box, carve, frame, keep_main  # noqa: E402
-from visceral import ellipsoid, largest, merge, outward, read, ribbon, spline, tube, write  # noqa: E402
+from visceral import ellipsoid, largest, merge, outward, packed_tube, read, ribbon, spline, tube, write  # noqa: E402
 
 H = 0.006  # voxel size of the procedural organs (m)
 
@@ -353,15 +353,27 @@ def cecum(lm, taken):
     return box.surface(keep_main(m, 0.05), 1.2, 6), base
 
 
-def small_colon(lm, taken):
-    """Coiled in the left dorsal caudal abdomen, then the rectum under the
+def small_colon(lm, taken, bones):
+    """Packed into the left dorsal caudal abdomen like the jejunum (a tube
+    relaxed into the free space, not a lattice), then the rectum under the
     sacrum to the anus."""
     L = lm["L"]
-    rng = np.random.default_rng(11)
     p = lm["pecten"]
+    r = 0.034
     lo = np.array([-halfwidth(lm, L[3]) + 0.05, spine(lm, L[3]) - 0.4, L[1]])
-    hi = np.array([-0.02, spine(lm, L[3]) - 0.13, p[2] - 0.05])
-    coil = coil_path(lo, hi, 0.07, rng)
+    hi = np.array([-0.02, spine(lm, L[3]) - 0.11, p[2] - 0.05])
+    box = box_for(lo - 0.04, hi + 0.04)
+    X, Y, Z = (c.reshape(box.shape) for c in box.pts.T)
+    space = (X > lo[0]) & (X < hi[0]) & (Y > lo[1]) & (Y < hi[1]) & (Z > lo[2]) & (Z < hi[2]) & ~solid_in(box, taken + bones, 1)
+    allowed = largest(ndi.distance_transform_edt(space) * H > r * 1.05)
+    inside = box.g.lo + np.argwhere(allowed) * H
+    # From the transverse colon (cranial, near the median plane) to the
+    # pelvic inlet.
+    a = inside[np.argmin(np.linalg.norm(inside - [hi[0], hi[1], lo[2]], axis=1))]
+    b = inside[np.argmin(np.linalg.norm(inside - [hi[0], (lo[1] + hi[1]) / 2, hi[2]], axis=1))]
+    length = min(3.5, 0.35 * space.sum() * H**3 / (np.pi * r * r))
+    beads = packed_tube(allowed, box.g, a, b, length, r, seed=11)
+    coil = spline(beads[::2], 3)
     roof = np.concatenate([lm["pts"]("sacrum")] + [lm["pts"](f"vertebrae-caudal_cd{i}") for i in (1, 2, 3)])
 
     def under(z):
@@ -369,9 +381,8 @@ def small_colon(lm, taken):
         return (q[:, 1].min() if len(q) else spine(lm, z)) - 0.06
 
     rectum = spline([coil[-1]] + [np.array([0.0, under(z), z]) for z in np.linspace(p[2] - 0.02, lm["ox"][:, 2].max() + 0.02, 6)], 8)
-    box = box_for(np.minimum(lo, rectum.min(0)) - 0.06, np.maximum(hi, rectum.max(0)) + 0.06)
-    m = (box.tube(coil, 0.034) | box.tube(rectum, 0.038)) & ~solid_in(box, taken, 1)
-    return box.surface(keep_main(m, 0.05), 1.0, 6)
+    print(f"  small colon: {length:.2f} m")
+    return merge([tube(coil, r, 16), tube(rectum, 0.038, 16)])
 
 
 def small_intestine(lm, taken, pylorus, cecum_base):
@@ -399,59 +410,94 @@ def pancreas(lm):
     return ribbon(path, 0.04, 0.012, [0, 1.0, 0], 16)
 
 
+def sweep_flat(box, path, r, k):
+    """A tube along `path` of radius r, squashed to k r dorsoventrally."""
+    X, Y, Z = (c.reshape(box.shape) for c in box.pts.T)
+    m = np.zeros(box.shape, bool)
+    for q in path:
+        m |= ((X - q[0]) / r) ** 2 + ((Y - q[1]) / (k * r)) ** 2 + ((Z - q[2]) / r) ** 2 <= 1
+    return m
+
+
 def pelvic(lm):
     p = lm["pecten"]
     L = lm["L"]
     roof = lm["pts"]("sacrum")
     canal_top = roof[np.abs(roof[:, 0]) < 0.04][:, 1].min()
     bladder = ellipsoid(p + [0, 0.06, -0.05], [0.06, 0.05, 0.09], np.eye(3), 24)
-    cervix = np.array([0.0, canal_top - 0.07, p[2] + 0.08])
-    bif = np.array([0.0, canal_top - 0.05, p[2] - 0.1])
-    body = spline([cervix, (cervix + bif) / 2, bif], 6)
+    # Body: from the cervix in the pelvic canal cranially over the bladder,
+    # resting on it, a little flattened dorsoventrally.
+    on = p[1] + 0.11 + 0.032
+    cervix = np.array([0.0, min(canal_top - 0.06, on + 0.01), p[2] + 0.1])
+    bif = np.array([0.0, on + 0.005, p[2] - 0.1])
+    body = spline([cervix, (cervix + bif) / 2 + [0, -0.005, 0], bif], 8)
     horns, ovaries = [], []
     for s in (-1, 1):
-        # Straight horns running craniolaterally and a little dorsally, under the lumbar region.
+        # Horns curve craniolaterally and dorsally under the lumbar region,
+        # the ventral border convex, to the ovaries.
         ov = np.array([s * 0.11, spine(lm, L[4]) - 0.11, L[4]])
-        h = spline([bif, bif + [s * 0.04, 0.01, -0.04], (bif + ov) / 2 + [s * 0.02, -0.02, 0.0], ov + [-s * 0.01, -0.03, 0.04]], 8)
+        mid = (bif + ov) / 2
+        h = spline([bif + [0, 0, 0.02], bif + [s * 0.035, -0.008, -0.03], mid + [s * 0.04, -0.035, 0.0], ov + [-s * 0.02, -0.035, 0.035], ov + [-s * 0.012, -0.02, 0.012]], 10)
         horns.append(h)
         box = box_for(ov - 0.06, ov + 0.06, 0.002)
         m = box.ellipsoid(ov, [0.03, 0.025, 0.04]) & ~box.ellipsoid(ov + [0, -0.028, 0], [0.012, 0.01, 0.014])  # ovulation fossa
         ovaries.append(box.surface(m, 1.0, 6))
-    uterus = merge([tube(body, 0.025, 16)] + [tube(h, np.linspace(0.022, 0.012, len(h)), 14) for h in horns])
+    pts = np.concatenate([body] + horns)
+    box = box_for(pts.min(0) - 0.06, pts.max(0) + 0.06, 0.003)
+    m = sweep_flat(box, body, 0.04, 0.7)
+    for h in horns:
+        m |= box.tube(h, np.linspace(0.03, 0.017, len(h)))
+    uterus = box.surface(m & ~box.ellipsoid(p + [0, 0.06, -0.05], [0.06, 0.05, 0.09]), 1.3, 8)
     return bladder, uterus, ovaries
 
 
-def lungs(lm, cage_pts, taken, heart, mediastinal):
+def lungs(lm, cage_pts, taken, heart, mediastinal, bones):
+    """The rib cage sections from a rounded cupula at the first rib to the
+    diaphragm, smoothed along the body so they do not step from one rib space
+    to the next, less the abdominal organs, the heart, the mediastinum,
+    airways, esophagus and great vessels; edges rounded. Kept clear of the
+    bones here (carving afterwards would groove them along every rib)."""
     T = lm["T"]
     ribs = np.concatenate(list(lm["ribs"].values()))
-    lo = np.array([-lm["cage"], lm["xiphoid"][1] - 0.02, ribs[:, 2].min() - 0.01])
+    z0 = ribs[:, 2].min() + 0.01
+    lo = np.array([-lm["cage"], lm["xiphoid"][1] - 0.02, z0 - 0.03])
     hi = np.array([lm["cage"], ribs[:, 1].max(), T[18]])
     box = box_for(lo, hi)
     X, Y, Z = (c.reshape(box.shape) for c in box.pts.T)
     from scipy.spatial import ConvexHull
 
+    # Cupula: over the first rib spaces the section shrinks towards its
+    # centre, so the cranial lobes end in a rounded apex at the first rib.
+    length = T[18] - z0
     inside = np.zeros(box.shape, bool)
     zs = box.g.lo[2] + box.g.h * np.arange(box.shape[2])
     for k, z in enumerate(zs):
-        q = cage_pts[np.abs(cage_pts[:, 2] - z) < 0.03][:, :2]
+        q = cage_pts[np.abs(cage_pts[:, 2] - z) < 0.04][:, :2]
         q = np.concatenate([q, q * [-1, 1]])
-        if len(q) < 10:
+        if len(q) < 10 or z < z0:
             continue
-        eq = ConvexHull(q).equations
-        eq = eq + [0, 0, 0.018]
-        xs, ys = X[:, :, k], Y[:, :, k]
+        shrink = 0.45 + 0.55 * np.sqrt(np.clip((z - z0) / (0.1 * length), 0, 1))
+        c = np.array([0.0, (spine(lm, z) + floor(lm, z)) / 2 + 0.04])
+        eq = ConvexHull(q).equations + [0, 0, 0.03]
+        xs = c[0] + (X[:, :, k] - c[0]) / shrink
+        ys = c[1] + (Y[:, :, k] - c[1]) / shrink
         inside[:, :, k] = np.all(eq[:, 0][:, None, None] * xs + eq[:, 1][:, None, None] * ys + eq[:, 2][:, None, None] <= 0, axis=0)
     s = inside & (Y < spine(lm, Z) - 0.015) & (Y > floor(lm, Z) + 0.01)
-    s &= Z > ribs[:, 2].min() + 0.02
+    # The sections step from one rib space to the next: smooth along z.
+    s = ndi.gaussian_filter(s.astype(np.float32), (1, 1, 7)) > 0.5
     s &= Z < diaphragm(lm, Y, X) - 0.015
-    s &= ~solid_in(box, taken, 2)
-    s &= ~solid_in(box, [heart], 2)
-    s &= ~solid_in(box, mediastinal, 2)
     s &= ~((np.abs(X) < 0.06) & (Y > spine(lm, Z) - 0.045))  # vertebral bodies, longus colli
-    s &= np.abs(X + 0.01) > 0.008  # mediastinum
+    s &= np.abs(X + 0.01) > 0.01  # mediastinum
+    organs = solid_in(box, taken, 2)
+    hrt = solid_in(box, [heart], 2)
+    med = solid_in(box, mediastinal, 2) | solid_in(box, bones, 1)
+    s &= ~organs & ~hrt & ~med
+    # Rounded edges and borders, then clear of the heart and organs again.
+    s = ndi.gaussian_filter(s.astype(np.float32), 1.5) > 0.5
+    s &= ~organs & ~hrt & ~med
     return {
-        "lungs.L": box.surface(largest(s & (X < -0.01)), 1.6, 8),
-        "lungs.R": box.surface(largest(s & (X > -0.01)), 1.6, 8),
+        "lungs.L": box.surface(largest(s & (X < -0.01)), 1.6, 10),
+        "lungs.R": box.surface(largest(s & (X > -0.01)), 1.6, 10),
     }
 
 
@@ -527,7 +573,7 @@ def main(work):
     taken = [stomach, colon] + [out[f"horse.visceral.{k}"] for k in ("liver", "kidneys.R", "kidneys.L", "pancreas", "spleen")]
     out["horse.visceral.cecum"], cecum_base = cecum(lm, taken)
     taken.append(out["horse.visceral.cecum"])
-    out["horse.visceral.small-colon"] = small_colon(lm, taken)
+    out["horse.visceral.small-colon"] = small_colon(lm, taken, [m for k, m in sk.items() if "skull" not in k and "mandible" not in k])
     taken.append(out["horse.visceral.small-colon"])
     out["horse.visceral.small-intestine"] = small_intestine(lm, taken, pylorus, cecum_base)
     out["horse.visceral.urinary-bladder"], out["horse.visceral.uterus"], ovaries = pelvic(lm)
@@ -536,16 +582,16 @@ def main(work):
     print("  lungs")
     cage_pts = np.concatenate([np.concatenate(list(lm["ribs"].values())), lm["sternum"]])
     mediastinal = [out["horse.visceral.trachea"], out["horse.visceral.esophagus"], out["horse.visceral.great-vessels"]]
-    for k, m in lungs(lm, cage_pts, [stomach, out["horse.visceral.liver"], out["horse.visceral.spleen"]], heart, mediastinal).items():
+    bones = [m for k, m in sk.items() if not any(b in k for b in ("skull", "mandible"))]
+    for k, m in lungs(lm, cage_pts, [stomach, out["horse.visceral.liver"], out["horse.visceral.spleen"]], heart, mediastinal, bones).items():
         out[f"horse.visceral.{k}"] = m
 
     print("  brain")
     for k, m in brain(lm).items():
         out[f"horse.visceral.{k}"] = m
 
-    bones = [m for k, m in sk.items() if not any(b in k for b in ("skull", "mandible"))]
     for k in list(out):
-        if "brain" in k:
+        if "brain" in k or "lungs" in k or "small-colon" in k:
             continue
         out[k] = outward(carve(out[k], bones, 0.005))
     for k, m in out.items():

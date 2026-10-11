@@ -4,6 +4,7 @@
   "nav": "Intestinum crassum",
   "region": "digestive",
   "laterality": "single",
+  "color": "#CF9476",
   "meshes": [
     "cow.visceral.large-intestine"
   ],

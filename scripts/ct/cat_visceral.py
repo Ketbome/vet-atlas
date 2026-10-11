@@ -22,8 +22,8 @@ are on the +z side). Materials as used here:
 - Pancreas: by shape and position this material is the spleen (dorsal
   extremity at the fundus, body and tail down the left flank along the
   greater curvature); it is used as the spleen.
-- Stomach: stomach with the abdominal esophagus (cut off at the cardia, it
-  joins the modelled esophagus) and the descending duodenum (cut off caudal
+- Stomach: stomach with the abdominal esophagus (cut off at the cardia; it
+  is collapsed flat, so only its course guides the modelled esophagus) and the descending duodenum (cut off caudal
   to the pyloric part, it goes to the small intestine).
 - Kidneys, Bladder: as named.
 - Intestines: thin, open shells. Filled slice by slice (a voxel is inside
@@ -64,11 +64,13 @@ sternum at the 6th costal cartilage, left of the median plane), lungs (the
 rib cage sections from a rounded cupula at the first rib to the
 diaphragmatic surface of the liver, stomach and spleen, carved by the heart
 with cardiac notches, the mediastinum, airways, esophagus and great
-vessels), trachea and principal bronchi, cervical and thoracic esophagus
-(joined to the scanned abdominal part), thoracic aorta with brachiocephalic
-trunk and left subclavian artery, thoracic caudal vena cava, thyroid lobes,
-prostate and rectum (the CT colon ends at the pelvic inlet; a thin duct on
-the caudal end of the bladder is dropped).
+vessels), trachea and principal bronchi, esophagus (one tube to the cardia
+along the course of the scanned abdominal part), thoracic aorta with brachiocephalic
+trunk and left subclavian artery, thoracic caudal vena cava (on through the
+liver to the scanned one), thyroid lobes, urethra, prostate and rectum (the
+CT colon ends at the pelvic inlet; a thin duct on the caudal end of the
+bladder is dropped). The liver mask is grown by four voxels into free space
+(the registration flattens its lobes).
 """
 import itertools
 import os
@@ -615,16 +617,19 @@ def thorax(lm, sk, out, cage):
 
     # Esophagus: from the pharynx dorsal to the larynx, dorsal to the trachea, to the left of the trachea
     # in the caudal neck, dorsal to the bifurcation and ventral to the aorta
-    # in the thorax, to the scanned abdominal esophagus at the hiatus.
+    # in the thorax, then along the scanned abdominal esophagus (collapsed
+    # flat in the CT: only its course is kept) into the cardia.
     ab = out["cat.visceral.esophagus"][0]
     end = ab[ab[:, 2] < ab[:, 2].min() + 0.002].mean(0)
+    course = [ab[np.abs(ab[:, 2] - z) < 0.001].mean(0) for z in np.arange(end[2] + 0.008, ab[:, 2].max() - 0.003, 0.008)]
+    cardia = ab[ab[:, 2] > ab[:, 2].max() - 0.002].mean(0)
     r_es = 0.0027
     path_e = spline(
         [larynx + [0, 0.0075, -0.001], neck[0] + [0, -0.0035, 0], neck[1] + [-0.0015, -0.0033, 0], neck[3] + [-0.003, -0.0035, 0], neck[5] + [-0.005, -0.004, 0],
          inlet + [-0.004, 0.0078, 0.002], np.array([-0.001, spine(T[3]) - 0.007, T[3]]), carina + [0.0, 0.0074, 0],
          np.array([0.0, spine(T[7]) - 0.012, T[7]]), (np.array([0.0, spine(T[7]) - 0.012, T[7]]) + end) / 2 + [0, 0.002, 0],
-         end + [0, 0.001, -0.005], end + [0, 0, 0.001]], 10)
-    res["cat.visceral.esophagus"] = merge([out["cat.visceral.esophagus"], tube(path_e, r_es, 16)])
+         end + [0, 0.001, -0.005], end] + course + [cardia + [0, 0, 0.002]], 10)
+    res["cat.visceral.esophagus"] = tube(path_e, r_es, 16)
 
     heart, base, F, left = heart_mesh(lm, [(trachea, r_tr)] + [(b, 0.002) for b in bronchi] + [(path_e, r_es)])
     res["cat.visceral.heart"] = heart
@@ -650,7 +655,14 @@ def thorax(lm, sk, out, cage):
     start = base + F[1] * 0.002 - left * 0.006 - F[0] * 0.002
     near = liver[np.linalg.norm(liver[:, :2] - [0.004, start[1] - 0.002], axis=1) < 0.003]
     stop = near[np.argmin(near[:, 2])] - [0, 0, 0.0008]
-    cvc = spline([start, (start + stop) / 2 + [0.002, 0, 0], stop], 10)
+    # It runs on through the dorsal part of the liver to the cranial end of
+    # the scanned caudal vena cava (right of the aorta), narrowing to it.
+    right = gv[(gv[:, 0] > 0.003) & (gv[:, 2] > stop[2])]
+    head = right[right[:, 2] < right[:, 2].min() + 0.0015]
+    ring = right[np.abs(right[:, 2] - head[:, 2].mean() - 0.002) < 0.0005]
+    r_cvc = max(0.0015, np.sqrt(np.ptp(ring[:, 0]) * np.ptp(ring[:, 1])) / 2) if len(ring) > 3 else 0.002
+    head = head.mean(0)
+    cvc = spline([start, (start + stop) / 2 + [0.002, 0, 0], stop, stop + (head - stop) * 0.35 + [0, 0.004, 0], stop + (head - stop) * 0.7 + [0, 0.002, 0], head + [0, 0, 0.002]], 10)
     # The aorta and caudal vena cava leave the heart: their paths start one
     # millimetre inside its surface.
     hb = Box(heart[0].min(0) - 0.002, heart[0].max(0) + 0.002, 0.0004)
@@ -661,7 +673,8 @@ def thorax(lm, sk, out, cage):
         inside = hb.g.lookup(deep, path) & within
         return path[max(int(np.argmax(~inside)) - 1, 0) :]
 
-    vessels = [(emerge(aorta), r_ao), (bct, 0.0016), (lsa, 0.0013), (emerge(cvc), 0.003)]
+    cvc = emerge(cvc)
+    vessels = [(emerge(aorta), r_ao), (bct, 0.0016), (lsa, 0.0013), (cvc, np.interp(np.arange(len(cvc)), [0, len(cvc) * 0.45, len(cvc) - 1], [0.003, 0.003, r_cvc]))]
     res["cat.visceral.great-vessels"] = merge([out["cat.visceral.great-vessels"]] + [tube(p, r, 16) for p, r in vessels])
 
     res.update(lungs(lm, out, cage, res, base))
@@ -722,11 +735,14 @@ def lungs(lm, out, cage, res, base, h=0.0005):
 
 
 def pelvis(lm, sk, out):
-    """Rectum (the CT colon ends at the pelvic inlet): from the end of the
-    scanned colon through the dorsal part of the pelvic canal, under the
-    sacrum and first caudal vertebrae, to the anus caudal to the ischial
-    arch. Prostate: small, around the pelvic urethra just caudal to the
-    pecten, ventral to the rectum, on the pelvic floor."""
+    """Rectum (the CT colon ends at the pelvic inlet): continues the scanned
+    colon (same direction and calibre) through the dorsal part of the pelvic
+    canal, under the sacrum and first caudal vertebrae, narrowing to the
+    anus caudal to the ischial arch. Urethra: from the neck of the bladder
+    (a long preprostatic part, as in the tom) along the pelvic floor to the
+    ischial arch. Prostate: small and bilobed, on the dorsal and lateral
+    faces of the urethra just caudal to the pecten, not round its ventral
+    face."""
     ox = np.concatenate([m[0] for k, m in sk.items() if "os-coxae" in k])
     roof = np.concatenate([m[0] for k, m in sk.items() if "sacrum" in k or "vertebrae-caudal" in k])
 
@@ -735,16 +751,41 @@ def pelvis(lm, sk, out):
         return q[:, 1].min()
 
     li = out["cat.visceral.large-intestine"][0]
-    end = li[li[:, 2] > li[:, 2].max() - 0.003].mean(0)
+    zmax = li[:, 2].max()
+    end = li[li[:, 2] > zmax - 0.003].mean(0)
+    back = li[np.abs(li[:, 2] - (zmax - 0.010)) < 0.002].mean(0)
+    d = (end - back) / np.linalg.norm(end - back)
+    ring = li[np.abs(li[:, 2] - (zmax - 0.006)) < 0.0006]
+    r0 = np.clip(np.sqrt(np.ptp(ring[:, 0]) * np.ptp(ring[:, 1])) / 2, 0.003, 0.0045)
     anus_z = ox[:, 2].max() + 0.006
-    zs = np.arange(end[2] + 0.012, anus_z - 0.004, 0.01)
-    path = [end - [0, 0, 0.003]] + [np.array([0.0, ventral(roof, z) - 0.0075, z]) for z in zs]
+    zs = np.arange(end[2] + 0.014, anus_z - 0.004, 0.01)
+    path = [end - d * 0.004, end + d * 0.005] + [np.array([0.0, ventral(roof, z) - 0.0075, z]) for z in zs]
     path.append(np.array([0.0, ventral(roof, anus_z) - 0.009, anus_z]))
     rectum = spline(path, 8)
-    near = ox[np.abs(ox[:, 0]) < 0.006]
-    floor = near[near[:, 2] < lm["pecten"][2] + 0.008][:, 1].max()
-    centre = np.array([0.0, floor + 0.0055, lm["pecten"][2] + 0.006])
-    return tube(rectum, np.linspace(0.0036, 0.003, len(rectum)), 18), ellipsoid(centre, [0.0042, 0.0032, 0.0045], np.eye(3), 20)
+    u = np.linspace(0, 1, len(rectum))
+    rectum = tube(rectum, np.interp(u, [0, 0.25, 0.85, 1], [r0, 0.0034, 0.0032, 0.0026]), 18)
+
+    mid = ox[np.abs(ox[:, 0]) < 0.003]
+
+    def floor(z):
+        q = mid[np.abs(mid[:, 2] - z) < 0.002]
+        return q[:, 1].max() if len(q) else None
+
+    bl = out["cat.visceral.urinary-bladder"][0]
+    neck = bl[bl[:, 2] > bl[:, 2].max() - 0.002].mean(0) * [0, 1, 1]
+    arch = mid[mid[:, 2] > mid[:, 2].max() - 0.002]
+    arch = np.array([0.0, arch[:, 1].max(), arch[:, 2].max()])
+    r_ur = 0.0013
+    zp = lm["pecten"][2] + 0.006
+    on_floor = [np.array([0.0, floor(z) + r_ur + 0.0016, z]) for z in np.arange(zp, arch[2] - 0.002, 0.006) if floor(z) is not None]
+    urethra = spline([neck - [0, 0, 0.003], (neck + on_floor[0]) / 2 + [0, 0.001, 0]] + on_floor + [np.array([0.0, on_floor[-1][1] - 0.002, arch[2] + 0.006])], 8)
+    centre = urethra[np.argmin(np.abs(urethra[:, 2] - zp))]
+    box = Box(centre - 0.008, centre + 0.008, 0.0002)
+    m = box.ellipsoid(centre + [-0.0022, 0.001, 0], [0.0026, 0.0024, 0.004]) | box.ellipsoid(centre + [0.0022, 0.001, 0], [0.0026, 0.0024, 0.004])
+    m &= ~box.tube(urethra, r_ur + 0.0003)
+    m &= box.pts[:, 1].reshape(box.shape) > centre[1] - 0.0008
+    prostate = box.surface(largest(m), 1.0, 4)
+    return rectum, tube(urethra, r_ur, 12), prostate
 
 
 # --- main ---------------------------------------------------------------------------------
@@ -778,6 +819,12 @@ def main(work):
     masks["kidneys.L"] = masks["kidneys"] & (X < 0)
     masks["kidneys.R"] = masks["kidneys"] & (X > 0)
     del X, Z
+    # The liver lobes come out of the CT thin (the y map flattens them):
+    # grown by four voxels into the space no other organ takes.
+    others = np.zeros_like(masks["liver"])
+    for k in ("pancreas", "spleen", "stomach", "kidneys", "bladder", "vessels", "large-intestine", "small-intestine", "esophagus"):
+        others |= masks[k]
+    masks["liver"] = keep_main(ndi.binary_dilation(masks["liver"], iterations=4) & ~ndi.binary_dilation(others, iterations=2), 0.02)
     bones = [m for k, m in sk.items() if not any(b in k for b in ("skull", "mandible", "hyoid"))]
     for k, n in names.items():
         print(f"  {n}")
@@ -786,8 +833,9 @@ def main(work):
     print("  thorax")
     for k, m in thorax(lm, sk, out, cage).items():
         out[k] = carve(m, bones)
-    rectum, out["cat.visceral.prostate"] = pelvis(lm, sk, out)
+    rectum, urethra, out["cat.visceral.prostate"] = pelvis(lm, sk, out)
     out["cat.visceral.large-intestine"] = merge([out["cat.visceral.large-intestine"], carve(rectum, bones)])
+    out["cat.visceral.urinary-bladder"] = merge([out["cat.visceral.urinary-bladder"], carve(urethra, bones)])
 
     brain = read(os.path.join(work, "brain"))
     for k, m in brain_in_skull(brain, sk["cat_skeletal_skull"]).items():

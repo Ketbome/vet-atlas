@@ -4,6 +4,7 @@
   "nav": "Renes",
   "region": "urinary",
   "laterality": "paired",
+  "color": "#7A3428",
   "meshes": [
     "cow.visceral.kidneys.L",
     "cow.visceral.kidneys.R"

@@ -4,6 +4,7 @@
   "nav": "Intestinum tenue",
   "region": "digestive",
   "laterality": "single",
+  "color": "#E2A28C",
   "meshes": [
     "horse.visceral.small-intestine"
   ],

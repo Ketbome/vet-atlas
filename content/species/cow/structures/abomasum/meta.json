@@ -4,6 +4,7 @@
   "nav": "Abomasum",
   "region": "digestive",
   "laterality": "single",
+  "color": "#D58E7C",
   "meshes": [
     "cow.visceral.abomasum"
   ],

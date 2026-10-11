@@ -4,6 +4,7 @@
   "nav": "Lien",
   "region": "endocrine-lymphatic",
   "laterality": "single",
+  "color": "#6B2D46",
   "meshes": [
     "cow.visceral.spleen"
   ],

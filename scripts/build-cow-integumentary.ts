@@ -11,9 +11,12 @@
  * the direction between the ear tips onto the skull and mandible); the trunk
  * and neck follow a thin-plate-spline warp from cross-sections of the scan to
  * the bones and organs of the same sections plus the soft tissue over them.
- * Then the surface is inflated until the bones (1.2 cm; 6 mm in the distal
- * limbs), organs (1.5 cm) and, when public/models/cow/muscular.glb exists,
- * the muscles (4 mm) are inside it, and smoothed. Fidelity "modeled".
+ * The displacement of the warp is smoothed over the surface (its folds and
+ * shear go, the scan's shape stays). Then the surface is inflated until the
+ * bones (1.2 cm; 6 mm in the distal limbs), organs (1.5 cm) and, when
+ * public/models/cow/muscular.glb exists, the muscles are inside it, and
+ * smoothed. The scan's right side, compressed by its turned head, is
+ * replaced by the mirror image of the left one. Fidelity "modeled".
  *
  * - Udder: cut from the skin with the watershed of scripts/lib/segment.ts
  *   (it meets the belly and thighs in a crease). Horn: the scan's right horn
@@ -137,7 +140,7 @@ const horn = (() => {
   let top = -1;
   for (let v = 0; v < sk.nv; v++) if (P(v).z < bounds(scan).min.z + 0.4 && (top < 0 || P(v).y > P(top).y)) top = v;
   if (P(top).x < 0) throw new Error("the whole horn is expected on the right");
-  return appendage(top, 0.05, 0.3);
+  return appendage(top, 0.04, 0.3);
 })();
 console.log(`horn: ${(horn.length * 100).toFixed(0)} cm`);
 
@@ -475,7 +478,7 @@ function pushOut(position: Float32Array, index: Uint32Array, obstacles: { p: V; 
     console.log(`push-out pass ${pass}: ${bad} points closer than their clearance, worst ${(worst * 1000).toFixed(0)} mm`);
     if (bad < best.bad) best = { bad, position: position.slice() };
     if (bad === 0 || bad > best.bad * 1.15) break;
-    const amount = ring.spreadScalar(need, 30);
+    const amount = ring.spreadScalar(need, 80);
     for (let v = 0; v < n; v++) {
       const k = Math.min(amount[v], 0.008);
       for (let j = 0; j < 3; j++) position[v * 3 + j] += normal[v * 3 + j] * k;
@@ -529,26 +532,52 @@ class Sculpt {
 
 }
 
+// The warp's own error (folds where the legs leave the trunk, the shear of
+// the articulated legs) is high-frequency: the displacement from the best
+// similarity of the scan is smoothed over the surface, so the warp keeps its
+// large-scale shape and the scan keeps its own detail.
+const ring = new Sculpt(sk.I, sk.nv);
+function smoothField(d: Float32Array, iterations: number) {
+  for (let it = 0; it < iterations; it++) {
+    const next = d.slice();
+    for (let v = 0; v < sk.nv; v++) {
+      const nb = ring.nb[v];
+      for (let k = 0; k < 3; k++) {
+        let sum = 0;
+        for (const u of nb) sum += d[u * 3 + k];
+        next[v * 3 + k] = 0.5 * d[v * 3 + k] + (0.5 * sum) / nb.length;
+      }
+    }
+    d.set(next);
+  }
+}
+const base = new Float32Array(sk.nv * 3);
+{
+  const sample = allPts.map((_, v) => v).filter((v) => v % 7 === 0);
+  const m = fit(sample.map(P), sample.map((v) => v3(warped[v * 3], warped[v * 3 + 1], warped[v * 3 + 2])), true);
+  for (let v = 0; v < sk.nv; v++) P(v).applyMatrix4(m).toArray(base, v * 3);
+  const d = warped.map((x, i) => x - base[i]);
+  smoothField(d, 400);
+  for (let i = 0; i < d.length; i++) warped[i] = base[i] + d[i];
+}
+
 const obstacles: { p: V; c: number; reach?: number }[] = [];
 for (const [name, g] of bones) {
   const c = /skull|mandible/.test(name) ? 0.004 : /phalanges|meta|carpus|tarsus/.test(name) ? 0.006 : 0.012;
   for (const p of points(g, 1500)) obstacles.push({ p, c, reach: /skull/.test(name) ? 0.05 : 0.03 });
 }
 for (const [name, g] of organs) if (!/brain/.test(name)) for (const p of points(g, 1500)) obstacles.push({ p, c: 0.015 });
-for (const g of muscles.values()) for (const p of points(g, 800)) obstacles.push({ p, c: 0.004 });
+// The muscles were pulled inside the previous skin: just inside is enough.
+for (const g of muscles.values()) for (const p of points(g, 800)) obstacles.push({ p, c: 0 });
 pushOut(warped, sk.I, obstacles);
 
-// Taubin smoothing: the folds where the legs leave the trunk (strongly) and
-// the facets of the warp and push-out (everything but the head, lightly).
+// Taubin smoothing over the whole surface: the crinkles the warp leaves
+// where it bends or compresses the scan, and the bumps of the push-out.
 {
-  const ring = new Sculpt(sk.I, sk.nv);
-  const root = (v: number) => [...Object.values(legs), tail].some((a) => a.dist[v] > 0.7 * a.length && a.dist[v] < 1.3 * a.length);
-  const body = (v: number) => P(v).z > headMap.pollZ + 0.08;
-  for (let it = 0; it < 40; it++) {
+  for (let it = 0; it < 160; it++) {
     const factor = it % 2 === 0 ? 0.5 : -0.53;
     const next = warped.slice();
     for (let v = 0; v < sk.nv; v++) {
-      if (!(it < 30 ? root(v) : body(v))) continue;
       for (let k = 0; k < 3; k++) {
         let sum = 0;
         for (const u of ring.nb[v]) sum += warped[u * 3 + k];
@@ -583,8 +612,13 @@ const coronet = {
   thoracic: Math.min(...points(bone("phalanges-thoracic.L"), 4000).map((p) => p.y)) + 0.05,
   pelvic: Math.min(...points(bone("phalanges-pelvic.L"), 4000).map((p) => p.y)) + 0.05,
 };
+const band = new Float32Array(sk.nv);
 for (const [key, a] of Object.entries(legs))
-  for (let v = 0; v < sk.nv; v++) if (a.dist[v] < a.length && warped[v * 3 + 1] < coronet[key.split(".")[0] as "thoracic" | "pelvic"]) part[v] = 3;
+  for (let v = 0; v < sk.nv; v++) {
+    if (a.dist[v] >= a.length) continue;
+    band[v] = coronet[key.split(".")[0] as "thoracic" | "pelvic"];
+    if (warped[v * 3 + 1] < band[v]) part[v] = 3;
+  }
 
 // The triangles with at least two vertices passing `keep`.
 function pick(position: Float32Array, index: Uint32Array, keep: (v: number) => boolean): Geometry {
@@ -602,10 +636,89 @@ function pick(position: Float32Array, index: Uint32Array, keep: (v: number) => b
   for (const [v, j] of remap) p.set(position.subarray(v * 3, v * 3 + 3), j * 3);
   return { position: p, index: new Uint32Array(out) };
 }
-const skin = pick(warped, sk.I, (v) => part[v] === 0);
-const udder = pick(warped, sk.I, (v) => part[v] === 1);
-const hornR = pick(warped, sk.I, (v) => part[v] === 2);
-const hooves = pick(warped, sk.I, (v) => part[v] === 3);
+// Symmetry: the scan walks with its head turned to the right, so the warp
+// compresses its right side into wrinkles; the left half (smooth, and the
+// side the skeleton was modelled from) is mirrored for the right one. The
+// edge of the half is moved onto the median plane and shared by both halves.
+const sym = (() => {
+  const keep: number[] = [];
+  for (let t = 0; t < sk.I.length; t += 3) {
+    const x = warped[sk.I[t] * 3] + warped[sk.I[t + 1] * 3] + warped[sk.I[t + 2] * 3];
+    if (x <= 0) keep.push(sk.I[t], sk.I[t + 1], sk.I[t + 2]);
+  }
+  const edges = new Map<string, number>();
+  for (let t = 0; t < keep.length; t += 3)
+    for (let k = 0; k < 3; k++) {
+      const [a, b] = [keep[t + k], keep[t + ((k + 1) % 3)]].sort((p, q) => p - q);
+      edges.set(`${a},${b}`, (edges.get(`${a},${b}`) ?? 0) + 1);
+    }
+  const median = new Set<number>();
+  for (const [e, n] of edges) if (n === 1) for (const v of e.split(",")) median.add(Number(v));
+  const position = new Float32Array(sk.nv * 6);
+  position.set(warped);
+  for (const v of new Set(keep)) if (warped[v * 3] > 0) median.add(v);
+  for (const v of median) position[v * 3] = 0;
+  const twin = (v: number) => (median.has(v) ? v : v + sk.nv);
+  for (let v = 0; v < sk.nv; v++) {
+    position[(v + sk.nv) * 3] = -position[v * 3];
+    position[(v + sk.nv) * 3 + 1] = position[v * 3 + 1];
+    position[(v + sk.nv) * 3 + 2] = position[v * 3 + 2];
+  }
+  const index = new Uint32Array(keep.length * 2);
+  index.set(keep);
+  for (let t = 0; t < keep.length; t += 3) index.set([twin(keep[t]), twin(keep[t + 2]), twin(keep[t + 1])], keep.length + t);
+  // A light smoothing across the median plane, where the halves meet.
+  const ring = new Sculpt(index, sk.nv * 2);
+  for (let it = 0; it < 20; it++) {
+    const factor = it % 2 === 0 ? 0.5 : -0.53;
+    const next = position.slice();
+    for (let v = 0; v < sk.nv * 2; v++) {
+      if (Math.abs(position[v * 3]) > 0.04 || !ring.nb[v].length) continue;
+      for (let k = 0; k < 3; k++) {
+        let sum = 0;
+        for (const u of ring.nb[v]) sum += position[u * 3 + k];
+        next[v * 3 + k] += (sum / ring.nb[v].length - position[v * 3 + k]) * factor;
+      }
+    }
+    for (const v of median) next[v * 3] = 0;
+    position.set(next);
+  }
+  return { position, index, part: (v: number) => part[v % sk.nv] };
+})();
+// Coronary band: the corners of the triangles that hoof and skin share are
+// set on its plane, so the two meet in a clean ring instead of a saw edge.
+for (let t = 0; t < sym.index.length; t += 3) {
+  const tri = [sym.index[t], sym.index[t + 1], sym.index[t + 2]];
+  const parts = tri.map(sym.part);
+  if (parts.includes(3) && parts.includes(0)) for (const v of tri) sym.position[v * 3 + 1] = band[v % sk.nv];
+}
+const skin = pick(sym.position, sym.index, (v) => sym.part(v) === 0);
+const udder = pick(sym.position, sym.index, (v) => sym.part(v) === 1);
+// The horn is set on the right cornual process of the skull (the most
+// lateral point of its dorsal half): its base on the process, its axis
+// halfway between the scan's and the process's, scaled to the heifer's
+// process (the scan is an adult dairy cow).
+const hornR = (() => {
+  const ids = allPts.map((_, v) => v).filter((v) => horn.dist[v] < horn.length);
+  const at = (v: number) => P(v).applyMatrix4(headMap.m);
+  const base = mean(ids.filter((v) => horn.dist[v] > 0.85 * horn.length).map(at));
+  const axis = at(ids.reduce((a, v) => (horn.dist[v] < horn.dist[a] ? v : a))).sub(base).normalize();
+  const skull = points(bone("skull"), 20000);
+  const cy = mean(skull).y;
+  const tip = skull.filter((p) => p.y > cy).reduce((a, p) => (p.x > a.x ? p : a));
+  const out = tip.clone().sub(mean(skull.filter((p) => p.distanceTo(tip) < 0.06))).normalize();
+  const target = out.clone().add(axis).normalize();
+  console.log(`cornual process ${tip.toArray().map((x) => x.toFixed(3))}, out ${out.toArray().map((x) => x.toFixed(2))}, horn axis ${axis.toArray().map((x) => x.toFixed(2))}`);
+  const m = new Matrix4()
+    .makeTranslation(tip.x - out.x * 0.015, tip.y - out.y * 0.015, tip.z - out.z * 0.015)
+    .multiply(new Matrix4().makeRotationFromQuaternion(new Quaternion().setFromUnitVectors(axis, target)))
+    .multiply(new Matrix4().makeScale(0.65, 0.65, 0.65))
+    .multiply(new Matrix4().makeTranslation(-base.x, -base.y, -base.z));
+  const position = new Float32Array(sk.nv * 3);
+  for (let v = 0; v < sk.nv; v++) at(v).applyMatrix4(m).toArray(position, v * 3);
+  return pick(position, sk.I, (v) => part[v] === 2);
+})();
+const hooves = pick(sym.position, sym.index, (v) => sym.part(v) === 3);
 const side = (g: Geometry, sign: number) => pick(g.position, g.index, (v) => Math.sign(g.position[v * 3]) === sign);
 console.log(`skin ${skin.index.length / 3}, udder ${udder.index.length / 3}, horn ${hornR.index.length / 3}, hooves ${hooves.index.length / 3} triangles`);
 

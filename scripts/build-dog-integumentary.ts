@@ -19,12 +19,18 @@
  * Source frame: metres, Y up, floor at y=0, animal faces +Z, left side +X.
  * Output: atlas frame (faces -Z, left -X). The skin is one mesh; claws and
  * eyes are split by side and the right side is a mirrored copy of the left.
+ *
+ * Eyes: the sculpt's globes are about 36 mm across (a dog's is 21-24 mm) and
+ * bulge out of the orbit, so each is replaced by a 23 mm globe seated behind
+ * the eyelid opening (the hole in the skin): its centre lies on the axis of
+ * the opening, deep enough that the globe fills it with the cornea just proud
+ * of the lids. Vertex colours paint pupil, iris and sclera around that axis.
  */
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { Matrix4, Quaternion, Vector3 } from "three";
 import { meshKey } from "../lib/content/mesh";
-import { bake, createModel, download, merge, mirror, readAtlas, readPrims, smoothNormals, type Geometry } from "./lib/glb";
+import { bake, createModel, download, io, merge, mirror, readAtlas, readPrims, smoothNormals, type Geometry } from "./lib/glb";
 
 const OUT = path.join(process.cwd(), "public", "models", "dog", "integumentary.glb");
 const SKELETON = path.join(process.cwd(), "public", "models", "dog", "skeletal.glb");
@@ -317,14 +323,18 @@ const pushed = pushOut(skin, [...contents, skull, mandible], 0.003, (x, y, z) =>
 carry(claws, warped, pushed);
 carry(eyes, warped, pushed);
 for (const g of [skin, claws]) for (let i = 1; i < g.position.length; i += 3) g.position[i] = Math.max(0, g.position[i]);
+// Centre of the left eye: its triangles only (the vertex list holds both eyes).
+const eye = seat(skin, mean([...eyes.index].map((v) => v3(eyes.position[v * 3], eyes.position[v * 3 + 1], eyes.position[v * 3 + 2]))), 0.0115);
+const globeL = globe(eye.centre, 0.0115, eye.axis);
 
 const model = createModel("dog.integumentary", [0.85, 0.71, 0.61, 1]);
 model.add(meshKey("dog.integumentary.skin"), skin, 50000);
 model.add(meshKey("dog.integumentary.claws.L"), claws, 3000);
 model.add(meshKey("dog.integumentary.claws.R"), mirror(claws), 3000);
-model.add(meshKey("dog.integumentary.eyes.L"), eyes, 2000);
-model.add(meshKey("dog.integumentary.eyes.R"), mirror(eyes), 2000);
+model.add(meshKey("dog.integumentary.eyes.L"), globeL, 2000);
+model.add(meshKey("dog.integumentary.eyes.R"), mirror(globeL), 2000);
 await model.write(OUT);
+await paintEyes(OUT, eye.centre, eye.axis);
 
 // ---------------------------------------------------------------- helpers
 
@@ -941,6 +951,112 @@ function pushOut(g: Geometry, boneGeoms: Geometry[], clearance: number, covered:
 }
 
 // Moves each claw vertex by the push applied to the nearest skin vertex.
+// The eyelid opening of the left eye: the skin's boundary loop next to the
+// sculpt's globe. Returns where a globe of radius r sits so that its section
+// in the plane of the lids is a little wider than the opening.
+function seat(g: Geometry, near: Vector3, r: number) {
+  // Vertices are split along UV seams: count edges by welded position.
+  const ids = new Map<string, number>();
+  const weld = Array.from({ length: g.position.length / 3 }, (_, v) => {
+    const key = [0, 1, 2].map((k) => Math.round(g.position[v * 3 + k] * 1e5)).join(",");
+    if (!ids.has(key)) ids.set(key, v);
+    return ids.get(key)!;
+  });
+  const edges = new Map<string, number>();
+  const I = g.index;
+  for (let t = 0; t < I.length; t += 3)
+    for (let e = 0; e < 3; e++) {
+      const a = weld[I[t + e]];
+      const b = weld[I[t + ((e + 1) % 3)]];
+      const key = a < b ? `${a},${b}` : `${b},${a}`;
+      edges.set(key, (edges.get(key) ?? 0) + 1);
+    }
+  const rim = new Set<number>();
+  for (const [key, n] of edges) if (n === 1) for (const v of key.split(",")) rim.add(+v);
+  const pts = [...rim].map((v) => v3(g.position[v * 3], g.position[v * 3 + 1], g.position[v * 3 + 2])).filter((p) => p.distanceTo(near) < 0.03);
+  const m = mean(pts);
+  // Normal of the opening: the axis of least spread of the rim.
+  const c = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  for (const p of pts) {
+    const d = p.clone().sub(m).toArray();
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) c[i * 3 + j] += d[i] * d[j];
+  }
+  let axis = v3(1, 0, 0);
+  // Inverse power iteration on the covariance (shifted) for its smallest axis.
+  const big = c[0] + c[4] + c[8];
+  const shifted = c.map((v, i) => (i % 4 === 0 ? big - v : -v));
+  for (let k = 0; k < 50; k++) {
+    const a = axis.toArray();
+    axis = v3(shifted[0] * a[0] + shifted[1] * a[1] + shifted[2] * a[2], shifted[3] * a[0] + shifted[4] * a[1] + shifted[5] * a[2], shifted[6] * a[0] + shifted[7] * a[1] + shifted[8] * a[2]).normalize();
+  }
+  if (axis.x > 0) axis.negate(); // the left eye looks left (-X)
+  const rho = mean(pts.map((p) => v3(p.distanceTo(m), 0, 0))).x;
+  const section = Math.min(r * 0.97, rho * 1.15);
+  const depth = Math.sqrt(r * r - section * section);
+  console.log(`eye opening: ${(rho * 2000).toFixed(1)} mm across, globe ${(r * 2000).toFixed(0)} mm, ${((r - depth) * 1000).toFixed(1)} mm proud of the lids`);
+  return { centre: m.clone().addScaledVector(axis, -depth), axis };
+}
+
+// UV sphere with its poles on the visual axis, so pupil and iris edges fall on
+// rings of vertices.
+function globe(centre: Vector3, r: number, axis: Vector3): Geometry {
+  const rings = 30;
+  const segments = 32;
+  const q = new Quaternion().setFromUnitVectors(v3(0, 0, 1), axis);
+  const position: number[] = [];
+  const index: number[] = [];
+  // Denser near the front pole: the polar angle grows with the square of the ring.
+  for (let i = 0; i <= rings; i++) {
+    const theta = Math.PI * Math.pow(i / rings, 1.4);
+    for (let j = 0; j < segments; j++) {
+      const phi = (2 * Math.PI * j) / segments;
+      const p = v3(Math.sin(theta) * Math.cos(phi), Math.sin(theta) * Math.sin(phi), Math.cos(theta)).multiplyScalar(r).applyQuaternion(q).add(centre);
+      position.push(p.x, p.y, p.z);
+    }
+  }
+  for (let i = 0; i < rings; i++)
+    for (let j = 0; j < segments; j++) {
+      const a = i * segments + j;
+      const b = i * segments + ((j + 1) % segments);
+      index.push(a, a + segments, b, b, a + segments, b + segments);
+    }
+  return { position: new Float32Array(position), index: new Uint32Array(index) };
+}
+
+// Multiplies the baked occlusion of both eyes by pupil, iris and sclera
+// colours (relative to the eyes' material colour, #EDE6DC in meta.json).
+async function paintEyes(file: string, centre: Vector3, axis: Vector3) {
+  const doc = await io.read(file);
+  const sclera = [1, 1, 1];
+  const iris = [0.45, 0.29, 0.16];
+  const pupil = [0.04, 0.035, 0.03];
+  const step = (a: number, b: number, x: number) => Math.min(1, Math.max(0, (x - a) / (b - a)));
+  for (const node of doc.getRoot().listNodes()) {
+    const right = node.getName() === meshKey("dog.integumentary.eyes.R");
+    if (!right && node.getName() !== meshKey("dog.integumentary.eyes.L")) continue;
+    const c = right ? side(centre) : centre;
+    const dir = right ? side(axis) : axis;
+    const world = new Matrix4().fromArray(node.getWorldMatrix());
+    for (const prim of node.getMesh()!.listPrimitives()) {
+      const pos = prim.getAttribute("POSITION")!;
+      const col = prim.getAttribute("COLOR_0")!;
+      const p: number[] = [];
+      const ao: number[] = [];
+      for (let v = 0; v < pos.getCount(); v++) {
+        const w = v3(...(pos.getElement(v, p) as [number, number, number])).applyMatrix4(world);
+        const angle = w.sub(c).angleTo(dir);
+        // Pupil to 17 degrees, iris to 48 (the cornea's edge), soft limbus.
+        const t1 = step(0.27, 0.32, angle);
+        const t2 = step(0.8, 0.88, angle);
+        const tint = [0, 1, 2].map((k) => pupil[k] + (iris[k] - pupil[k]) * t1 + (sclera[k] - iris[k]) * t2);
+        col.getElement(v, ao);
+        col.setElement(v, [0, 1, 2].map((k) => ao[k] * tint[k]));
+      }
+    }
+  }
+  await io.write(file, doc);
+}
+
 function carry(g: Geometry, skinPos: Float32Array, push: Float32Array) {
   const near = grid(skinPos, 0.01);
   for (let i = 0; i < g.position.length; i += 3) {

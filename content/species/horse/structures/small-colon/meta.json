@@ -4,6 +4,7 @@
   "nav": "Colon descendens et rectum",
   "region": "digestive",
   "laterality": "single",
+  "color": "#DDAA90",
   "meshes": [
     "horse.visceral.small-colon"
   ],

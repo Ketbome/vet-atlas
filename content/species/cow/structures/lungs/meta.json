@@ -4,6 +4,7 @@
   "nav": "Pulmones",
   "region": "respiratory",
   "laterality": "paired",
+  "color": "#E3A3A0",
   "meshes": [
     "cow.visceral.lungs.L",
     "cow.visceral.lungs.R"

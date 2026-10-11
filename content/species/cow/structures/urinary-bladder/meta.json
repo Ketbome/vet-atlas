@@ -4,6 +4,7 @@
   "nav": "Vesica urinaria",
   "region": "urinary",
   "laterality": "single",
+  "color": "#E8C6A4",
   "meshes": [
     "cow.visceral.urinary-bladder"
   ],

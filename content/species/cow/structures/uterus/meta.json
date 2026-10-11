@@ -4,6 +4,7 @@
   "nav": "Uterus",
   "region": "genital",
   "laterality": "single",
+  "color": "#D49C98",
   "meshes": [
     "cow.visceral.uterus"
   ],

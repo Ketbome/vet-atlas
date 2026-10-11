@@ -4,6 +4,7 @@
   "nav": "Caecum",
   "region": "digestive",
   "laterality": "single",
+  "color": "#D49A80",
   "meshes": [
     "horse.visceral.cecum"
   ],

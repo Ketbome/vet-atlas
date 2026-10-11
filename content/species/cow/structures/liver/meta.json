@@ -4,6 +4,7 @@
   "nav": "Hepar",
   "region": "digestive",
   "laterality": "single",
+  "color": "#6B2A21",
   "meshes": [
     "cow.visceral.liver"
   ],

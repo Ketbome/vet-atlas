@@ -23,10 +23,10 @@
  */
 import { existsSync } from "node:fs";
 import path from "node:path";
-import { BufferAttribute, BufferGeometry, Matrix4, Quaternion, Vector3 } from "three";
+import { BufferAttribute, BufferGeometry, Matrix4, Quaternion, SphereGeometry, Vector3 } from "three";
 import { MeshBVH } from "three-mesh-bvh";
 import { meshKey } from "../lib/content/mesh";
-import { bake, bounds, components, createModel, download, fit, mean, points, readAtlas, readPrims, smoothNormals, transform, type Geometry } from "./lib/glb";
+import { bake, bounds, components, createModel, download, fit, fromThree, io, mean, points, readAtlas, readPrims, smoothNormals, transform, type Geometry } from "./lib/glb";
 import { Surface, weldSimplify } from "./lib/segment";
 
 const OUT = path.join(process.cwd(), "public", "models", "horse", "integumentary.glb");
@@ -305,7 +305,7 @@ const headMap = (() => {
   const src = [nose, chin, poll, poll.clone().add(lat), poll.clone().sub(lat)];
   const dst = [noseT, chinT, pollT, pollT.clone().add(latT), pollT.clone().sub(latT)];
   const m = fit(src, dst, true);
-  return { m, region: (p: V) => p.z < poll.z + 0.05, pollZ: poll.z, pollT };
+  return { m, region: (p: V) => p.z < poll.z + 0.05, pollZ: poll.z, pollT, noseT };
 })();
 
 // Trunk: cross-sections at stations every 4 cm from the point of the
@@ -672,13 +672,80 @@ function pick(position: Float32Array, index: Uint32Array, keep: (v: number) => b
 const skin = pick(warped, sk.I, (v) => part[v] === 0);
 console.log(`skin ${skin.index.length / 3} triangles`);
 
-// Eyes: the eyeballs move with the head (left: the one at -x).
-const eyes = eyeballs.map((g) => transform(g, headMap.m)).sort((a, b) => bounds(a).center.x - bounds(b).center.x);
+// Eyes: the eyeballs move with the head (left: the one at -x). The model's
+// eyeballs are coarse (416 triangles), so each becomes a smooth ellipsoid of
+// the same width and height whose front (the cornea) sits where the model's
+// does. The gaze is lateral and a little rostral; the pupil is a horizontal
+// oval. Pupil, iris and sclera are vertex colours (multiplying the baked
+// occlusion after the model is written).
+type Eye = { name: string; c: V; u: V; v: V; g: V; r: V };
+const eyeFrames: Eye[] = [];
+const eyes = eyeballs
+  .map((g) => transform(g, headMap.m))
+  .sort((a, b) => bounds(a).center.x - bounds(b).center.x)
+  .map((src, i) => {
+    const rostral = headMap.noseT.clone().sub(headMap.pollT).normalize();
+    const c0 = bounds(src).center;
+    const g = v3(Math.sign(c0.x), 0, 0).addScaledVector(rostral, 0.35).normalize();
+    const u = g.clone().cross(v3(0, 1, 0)).normalize();
+    const v = u.clone().cross(g).normalize();
+    const pts = points(src).map((p) => p.clone().sub(c0));
+    const span = (a: V) => [Math.min(...pts.map((p) => p.dot(a))), Math.max(...pts.map((p) => p.dot(a)))];
+    const [u0, u1] = span(u);
+    const [v0, v1] = span(v);
+    const [, g1] = span(g);
+    const r = v3((u1 - u0) / 2, (v1 - v0) / 2, 0);
+    r.z = 0.85 * (r.x + r.y) / 2;
+    const c = c0.clone().addScaledVector(u, (u0 + u1) / 2).addScaledVector(v, (v0 + v1) / 2).addScaledVector(g, g1 - r.z);
+    const basis = new Matrix4().makeBasis(u, v, g).scale(r).setPosition(c);
+    eyeFrames.push({ name: meshKey(`horse.integumentary.eyes.${i === 0 ? "L" : "R"}`), c, u, v, g, r });
+    return transform(fromThree(new SphereGeometry(1, 64, 48).rotateX(Math.PI / 2)), basis);
+  });
 if (eyes.length !== 2) throw new Error(`eyes: ${eyes.length} pieces`);
+
+// Linear RGB of a point on an eyeball.
+function eyeColour(e: Eye, p: V): [number, number, number] {
+  const d = p.clone().sub(e.c);
+  const x = d.dot(e.u) / e.r.x;
+  const y = d.dot(e.v) / e.r.y;
+  const z = d.dot(e.g) / e.r.z;
+  const ring = Math.hypot(x, y);
+  const sclera: [number, number, number] = [0.62, 0.55, 0.47];
+  if (z <= 0) return sclera;
+  const clamp = (t: number) => Math.min(1, Math.max(0, t));
+  const pupil = 1 - clamp((Math.hypot(x / 0.3, y / 0.14) - 0.85) / 0.3);
+  const iris: [number, number, number] = [0.1, 0.052, 0.024];
+  // Darker toward the limbus, then the sclera at the rim.
+  const limbus = clamp((ring - 0.5) / 0.12);
+  const out = clamp((ring - 0.66) / 0.1);
+  return iris.map((k, i) => (k * (1 - 0.35 * limbus) * (1 - out) + sclera[i] * out) * (1 - pupil) + 0.012 * pupil) as [number, number, number];
+}
 
 const model = createModel("horse.integumentary", [0.76, 0.6, 0.47, 1], 0.04);
 model.add(meshKey("horse.integumentary.skin"), skin, 70000);
 for (const key of Object.keys(legs)) model.add(meshKey(`horse.integumentary.hooves.${key}`), pick(warped, sk.I, (v) => part[v] === 1 + Object.keys(legs).indexOf(key)), 3000);
-model.add(meshKey("horse.integumentary.eyes.L"), eyes[0], 1500);
-model.add(meshKey("horse.integumentary.eyes.R"), eyes[1], 1500);
+model.add(meshKey("horse.integumentary.eyes.L"), eyes[0], 6200);
+model.add(meshKey("horse.integumentary.eyes.R"), eyes[1], 6200);
 await model.write(OUT);
+
+{
+  const doc = await io.read(OUT);
+  for (const node of doc.getRoot().listNodes()) {
+    const e = eyeFrames.find((f) => f.name === node.getName());
+    if (!e) continue;
+    const world = new Matrix4().fromArray(node.getWorldMatrix());
+    for (const prim of node.getMesh()!.listPrimitives()) {
+      const pos = prim.getAttribute("POSITION")!;
+      const col = prim.getAttribute("COLOR_0")!;
+      const p = new Vector3();
+      const a: number[] = [];
+      for (let i = 0; i < pos.getCount(); i++) {
+        p.fromArray(pos.getElement(i, a)).applyMatrix4(world);
+        const ao = col.getElement(i, [])[0];
+        col.setElement(i, eyeColour(e, p).map((k) => Math.min(1, k * ao)));
+      }
+    }
+  }
+  await io.write(OUT, doc);
+  console.log("eyes coloured");
+}

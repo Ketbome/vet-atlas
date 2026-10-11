@@ -4,6 +4,7 @@
   "nav": "Reticulum",
   "region": "digestive",
   "laterality": "single",
+  "color": "#BF8D78",
   "meshes": [
     "cow.visceral.reticulum"
   ],
