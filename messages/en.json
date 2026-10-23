@@ -35,7 +35,8 @@
     "heroHint": "Tap a bone in the model to open its entry.",
     "index": "Species index",
     "plateCaption": "Plate I — {latin}. {system}, lateral view.",
-    "layerOf": "Layer {n} of {total}"
+    "layerOf": "Layer {n} of {total}",
+    "searchAll": "Search {count} structures"
   },
   "species": {
     "systems": "Systems",

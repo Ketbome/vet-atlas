@@ -35,7 +35,8 @@
     "heroHint": "Toca un hueso del modelo para abrir su ficha.",
     "index": "Índice de especies",
     "plateCaption": "Lám. I — {latin}. {system}, vista lateral.",
-    "layerOf": "Capa {n} de {total}"
+    "layerOf": "Capa {n} de {total}",
+    "searchAll": "Buscar entre {count} estructuras"
   },
   "species": {
     "systems": "Sistemas",

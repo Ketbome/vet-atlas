@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/command";
 import { ShortcutKbd } from "./shortcut-kbd";
 
+export const OPEN_SEARCH = "atlas:open-search";
+
 export function SearchCommand({ items }: { items: SearchItem[] }) {
   const t = useTranslations("search");
   const tn = useTranslations("nav");
@@ -53,8 +55,13 @@ export function SearchCommand({ items }: { items: SearchItem[] }) {
         setOpen((o) => !o);
       }
     }
+    const show = () => setOpen(true);
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener(OPEN_SEARCH, show);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener(OPEN_SEARCH, show);
+    };
   }, []);
 
   function go(href: string) {

@@ -13,7 +13,7 @@ import { LeaderLabel } from "./leader-label";
 import { useViewerStore } from "./store";
 import { presetAngles } from "./camera";
 import { SceneBoundary } from "./scene-boundary";
-import { Orbit } from "./orbit";
+import { Orbit, Refit } from "./orbit";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { Button } from "@/components/ui/button";
 
@@ -109,6 +109,8 @@ export function Scene({ model, selected, onPick, orbit = false, solo = false }: 
       controls.current?.rotateTo(azimuth, polar, !reducedMotion);
     }
   }, [selected, frame, orbit, reducedMotion]);
+
+  const refit = useCallback(() => frame(null, false), [frame]);
 
   useEffect(() => {
     if (resetNonce > 0) frame(selected, !reducedMotion);
@@ -207,6 +209,7 @@ export function Scene({ model, selected, onPick, orbit = false, solo = false }: 
         {!solo && <ContactShadows position={[0, 0.0005, 0]} opacity={0.38} scale={2.4} blur={2.4} far={0.8} resolution={512} />}
         <CameraControls ref={controls} makeDefault minDistance={0.05} maxDistance={8} smoothTime={0.35} dollyToCursor />
         {orbit && !reducedMotion && <Orbit />}
+        {orbit && <Refit onResize={refit} />}
       </Canvas>
     </SceneBoundary>
   );

@@ -23,3 +23,12 @@ export function Orbit() {
   });
   return null;
 }
+
+// The hero's canvas can settle (fonts, layout, rotation) after the model framed
+// itself, which left the specimen small in a corner: frame again on resize.
+export function Refit({ onResize }: { onResize: () => void }) {
+  const width = useThree((s) => s.size.width);
+  const height = useThree((s) => s.size.height);
+  useEffect(onResize, [width, height, onResize]);
+  return null;
+}
