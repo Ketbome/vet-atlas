@@ -174,5 +174,12 @@
     "home": "Volver al inicio",
     "notFoundTitle": "No encontramos esa página",
     "notFoundBody": "Puede que la estructura o la patología se haya renombrado. Busca con ⌘K o vuelve al inicio."
+  },
+  "seo": {
+    "homeTitle": "Vet Atlas · Atlas interactivo de anatomía veterinaria en 3D",
+    "homeDescription": "Atlas abierto y gratuito de anatomía veterinaria en 3D para estudiantes. Explora al perro, gato, vaca y caballo hueso por hueso, músculo por músculo y órgano por órgano, con nombre latino (NAV), descripción y patologías relacionadas.",
+    "speciesTitle": "Anatomía en 3D: {species}",
+    "speciesDescription": "{species} ({latin}) en 3D interactivo: {systems}. Atlas abierto y gratuito para estudiantes de veterinaria.",
+    "systemDescription": "Explora {count} estructuras del {system} ({species}) en 3D interactivo, con nombre latino (NAV), descripción y patologías relacionadas."
   }
 }

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getSpecies, getStructuresOfSystem, loadContent, localeName, systemHref } from "@/lib/content/load";
 import { SiteFooter } from "@/components/atlas/site-footer";
+import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return loadContent().species.map((s) => ({ species: s.id }));
@@ -12,7 +13,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/[locale]/[species]">): Promise<Metadata> {
   const { locale, species } = await params;
   const sp = getSpecies(species);
-  return sp ? { title: localeName(sp.name, locale) } : {};
+  if (!sp) return {};
+  const t = await getTranslations({ locale, namespace: "seo" });
+  const name = localeName(sp.name, locale);
+  const systems = loadContent()
+    .systems.filter((s) => s.species === sp.id)
+    .sort((a, b) => a.order - b.order)
+    .map((s) => localeName(s.name, locale).toLocaleLowerCase(locale))
+    .join(", ");
+  return {
+    title: t("speciesTitle", { species: name }),
+    description: t("speciesDescription", { species: name, latin: sp.scientificName, systems }),
+    alternates: alternates(locale, `/${sp.id}`),
+  };
 }
 
 export default async function SpeciesPage({ params }: PageProps<"/[locale]/[species]">) {

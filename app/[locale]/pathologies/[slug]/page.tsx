@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BoneIcon, ExternalLinkIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { getMedia, getPathology, getSpecies, getStructure, getSystemById, loadContent, localeName, readDoc, structureHref } from "@/lib/content/load";
+import { getMedia, getPathology, getSpecies, getStructure, getSystemById, loadContent, localeName, pathologyHref, readDoc, structureHref } from "@/lib/content/load";
 import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { SiteFooter } from "@/components/atlas/site-footer";
 import { Badge } from "@/components/ui/badge";
+import { alternates } from "@/lib/seo";
 
 const REPO = "https://github.com/ketbome/vet-atlas/edit/main/content";
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/patholog
   const p = getPathology(slug);
   if (!p) return {};
   const doc = readDoc(p.dir, locale);
-  return { title: doc?.title ?? slug, description: doc?.summary };
+  return { title: doc?.title ?? slug, description: doc?.summary, alternates: alternates(locale, pathologyHref(p)) };
 }
 
 export default async function PathologyPage({ params }: PageProps<"/[locale]/pathologies/[slug]">) {

@@ -2,18 +2,31 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { getSpecies, getStructuresOfSystem, getSystem, localeName, readDoc, structureHref } from "@/lib/content/load";
+import { getSpecies, getStructuresOfSystem, getSystem, localeName, readDoc, structureHref, systemHref } from "@/lib/content/load";
 import { pathologySummaries } from "@/lib/content/view";
 import { Breadcrumb } from "@/components/atlas/breadcrumb";
 import { ShortcutKbd } from "@/components/atlas/shortcut-kbd";
 import { PathologyList } from "@/components/atlas/pathology-list";
+import { JsonLd } from "@/components/atlas/json-ld";
+import { alternates, breadcrumbLd } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/[species]/[system]">): Promise<Metadata> {
   const { locale, species, system: slug } = await params;
   const system = getSystem(species, slug);
   const sp = getSpecies(species);
   if (!system || !sp) return {};
-  return { title: `${localeName(system.name, locale)} · ${localeName(sp.name, locale)}` };
+  const t = await getTranslations({ locale, namespace: "seo" });
+  const name = localeName(system.name, locale);
+  const spName = localeName(sp.name, locale);
+  return {
+    title: `${name} · ${spName}`,
+    description: t("systemDescription", {
+      count: getStructuresOfSystem(system.id).length,
+      system: name.toLocaleLowerCase(locale),
+      species: spName.toLocaleLowerCase(locale),
+    }),
+    alternates: alternates(locale, systemHref(system)),
+  };
 }
 
 export default async function SystemPage({ params }: PageProps<"/[locale]/[species]/[system]">) {
@@ -30,6 +43,12 @@ export default async function SystemPage({ params }: PageProps<"/[locale]/[speci
 
   return (
     <div className="flex min-h-full flex-col p-4 sm:p-5 lg:p-6">
+      <JsonLd
+        data={breadcrumbLd(locale, [
+          { path: `/${sp.id}`, name: localeName(sp.name, locale) },
+          { path: systemHref(system), name: localeName(system.name, locale) },
+        ])}
+      />
       <Breadcrumb items={[{ href: `/${sp.id}`, label: localeName(sp.name, locale) }]} />
       <h1 className="mt-2 font-display text-[32px] leading-tight text-ink">{localeName(system.name, locale)}</h1>
       <p className="tabular mt-1 text-sm text-muted-foreground">

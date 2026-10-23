@@ -174,5 +174,12 @@
     "home": "Back to home",
     "notFoundTitle": "We could not find that page",
     "notFoundBody": "The structure or disease may have been renamed. Search with ⌘K or go back home."
+  },
+  "seo": {
+    "homeTitle": "Vet Atlas · Interactive 3D veterinary anatomy atlas",
+    "homeDescription": "A free, open 3D atlas of veterinary anatomy for students. Explore the dog, cat, cow and horse bone by bone, muscle by muscle and organ by organ, with Latin (NAV) names, descriptions and related diseases.",
+    "speciesTitle": "{species} anatomy in 3D",
+    "speciesDescription": "{species} ({latin}) in interactive 3D: {systems}. A free, open atlas for veterinary students.",
+    "systemDescription": "Explore {count} structures of the {species} {system} in interactive 3D, with Latin (NAV) names, descriptions and related diseases."
   }
 }

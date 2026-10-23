@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/3d/[spec
   const s = getStructure(`${species}.${system}.${structure}`);
   if (!s) return {};
   const doc = readDoc(s.dir, locale);
-  return { title: `3D · ${doc?.title ?? s.nav}`, description: doc?.summary };
+  return { title: `3D · ${doc?.title ?? s.nav}`, description: doc?.summary, robots: { index: false, follow: true } };
 }
 
 export default async function PiecePage({ params }: PageProps<"/[locale]/3d/[species]/[system]/[structure]">) {

@@ -9,8 +9,14 @@ Zod; the 3D viewer is React Three Fiber.
 ## Commands
 
 - `pnpm dev` / `pnpm build`
-- Deploy: push to `main` runs `.github/workflows/pages.yml` (`output: "export"`,
-  `NEXT_PUBLIC_BASE_PATH=/vet-atlas`). No proxy/middleware, rewrites or server features.
+- Deploy: push to `main` runs `.github/workflows/pages.yml` (`output: "export"`) to
+  https://vet-atlas.ketbome.com (`NEXT_PUBLIC_SITE_URL`; `NEXT_PUBLIC_BASE_PATH` is empty
+  with the custom domain). No proxy/middleware or server features.
+- English is the default locale at `/`, Spanish under `/es`. The export always prefixes
+  the locale, so `pnpm build` runs `scripts/flatten-locale.ts` to move `out/en` to the root
+  (leaving redirects at `/en/...`); in dev a rewrite in `next.config.ts` does the same.
+- SEO: `app/sitemap.ts`, `app/robots.ts`, `lib/seo.ts` (canonical + hreflang per page).
+  New pages need `alternates(locale, path)` in `generateMetadata`.
 - `pnpm validate` content integrity + GLB mesh names (run after touching content or models)
 - `pnpm lint`, `pnpm next typegen && pnpm typecheck`
 - `pnpm models:dog` / `models:dog-integumentary` / `models:dog-muscular` /

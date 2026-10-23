@@ -1,31 +1,14 @@
 import type { Metadata } from "next";
-import { Libre_Caslon_Display, Libre_Caslon_Text, Schibsted_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getSearchIndex, loadContent, localeName } from "@/lib/content/load";
 import { SiteHeader } from "@/components/atlas/site-header";
+import { fontVariables } from "@/components/atlas/fonts";
+import { SITE_URL, localeUrl } from "@/lib/seo";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "../globals.css";
-
-// Plate typography: Caslon for headings and Latin NAV names, as in the
-// classic anatomy atlases; a sturdy grotesk for labels and UI.
-const display = Libre_Caslon_Display({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-display",
-});
-const heading = Libre_Caslon_Text({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-heading",
-});
-const sans = Schibsted_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,9 +17,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "site" });
+  const seo = await getTranslations({ locale, namespace: "seo" });
   return {
-    title: { default: t("name"), template: `%s · ${t("name")}` },
-    description: t("tagline"),
+    metadataBase: new URL(`${SITE_URL}/`),
+    title: { default: seo("homeTitle"), template: `%s · ${t("name")}` },
+    description: seo("homeDescription"),
+    applicationName: t("name"),
+    openGraph: {
+      type: "website",
+      siteName: t("name"),
+      locale,
+      images: [{ url: `${localeUrl(locale, "/")}og.png`, width: 1200, height: 630, alt: t("tagline") }],
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 
@@ -52,7 +45,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const searchIndex = getSearchIndex(locale);
 
   return (
-    <html lang={locale} className={`${display.variable} ${heading.variable} ${sans.variable} h-full antialiased`}>
+    <html lang={locale} className={`${fontVariables} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           <TooltipProvider>

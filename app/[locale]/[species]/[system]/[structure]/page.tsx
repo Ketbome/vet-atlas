@@ -12,6 +12,8 @@ import { MediaGallery } from "@/components/atlas/media-gallery";
 import { PathologyList } from "@/components/atlas/pathology-list";
 import { StructureTabs } from "@/components/atlas/structure-tabs";
 import { Breadcrumb } from "@/components/atlas/breadcrumb";
+import { JsonLd } from "@/components/atlas/json-ld";
+import { alternates, breadcrumbLd } from "@/lib/seo";
 
 const REPO = "https://github.com/ketbome/vet-atlas/edit/main/content";
 
@@ -27,7 +29,14 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/[species
   const s = getStructure(`${species}.${system}.${structure}`);
   if (!s) return {};
   const doc = readDoc(s.dir, locale);
-  return { title: doc ? `${doc.title} (${s.nav})` : s.nav, description: doc?.summary };
+  const sp = getSpecies(species);
+  // Latin name too, unless the title already carries it ("Atlas (C1)").
+  const title = !doc ? s.nav : doc.title.toLowerCase().includes(s.nav.toLowerCase()) ? doc.title : `${doc.title} (${s.nav})`;
+  return {
+    title: sp ? `${title} · ${localeName(sp.name, locale)}` : title,
+    description: doc?.summary,
+    alternates: alternates(locale, structureHref(s)),
+  };
 }
 
 export default async function StructurePage({ params }: PageProps<"/[locale]/[species]/[system]/[structure]">) {
@@ -50,6 +59,13 @@ export default async function StructurePage({ params }: PageProps<"/[locale]/[sp
 
   return (
     <article className="p-4 sm:p-5 lg:p-6">
+      <JsonLd
+        data={breadcrumbLd(locale, [
+          { path: `/${sp.id}`, name: localeName(sp.name, locale) },
+          { path: systemHref(system), name: localeName(system.name, locale) },
+          { path: structureHref(structure), name: doc.title },
+        ])}
+      />
       <header>
         <Breadcrumb
           items={[

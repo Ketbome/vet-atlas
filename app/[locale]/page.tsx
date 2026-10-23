@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRightIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -6,6 +7,8 @@ import { buildViewerModel } from "@/lib/content/view";
 import { SiteFooter } from "@/components/atlas/site-footer";
 import { HeroViewer } from "@/components/atlas/hero-viewer";
 import { ShortcutKbd } from "@/components/atlas/shortcut-kbd";
+import { JsonLd } from "@/components/atlas/json-ld";
+import { alternates, localeUrl } from "@/lib/seo";
 
 const upcoming = [
   { id: "cow", scientificName: "Bos taurus", name: { es: "Vaca", en: "Cow" } },
@@ -16,10 +19,21 @@ function roman(n: number) {
   return ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"][n - 1] ?? String(n);
 }
 
+export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: { absolute: t("homeTitle") },
+    alternates: alternates(locale, "/"),
+  };
+}
+
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const tSite = await getTranslations("site");
+  const tSeo = await getTranslations("seo");
   const db = loadContent();
   const published = db.species.filter((s) => s.status === "published");
   // The frontispiece shows the skeleton: the base every other layer sits on.
@@ -29,6 +43,16 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: tSite("name"),
+          url: localeUrl(locale, "/"),
+          inLanguage: locale,
+          description: tSeo("homeDescription"),
+        }}
+      />
       <main id="content" className="mx-auto w-full max-w-[1180px] px-4 sm:px-6">
         <section className="grid gap-10 py-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:py-16">
           <div>
