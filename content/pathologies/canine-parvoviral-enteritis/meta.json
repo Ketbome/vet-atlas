@@ -11,14 +11,20 @@
   "references": [
     {
       "title": "Mylonakis ME, Kalli I, Rallis TS. Canine parvoviral enteritis: an update on the clinical diagnosis, treatment, and prevention. Vet Med (Auckl) 7:91-100",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6053044/",
       "year": 2016
     },
     {
       "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Canine Parvovirus Infection (Parvoviral Enteritis in Dogs)",
+      "url": "https://www.merckvetmanual.com/digestive-system/infectious-diseases-of-the-gastrointestinal-tract-in-small-animals/canine-parvovirus-infection-parvoviral-enteritis-in-dogs"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

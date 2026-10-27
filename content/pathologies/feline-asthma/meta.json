@@ -46,9 +46,37 @@
       "title": "Reinero CR, Delgado C, Spinka C, et al. Enantiomer-specific effects of albuterol on airway inflammation in healthy and asthmatic cats. Int Arch Allergy Immunol 150:43-50",
       "url": "https://pubmed.ncbi.nlm.nih.gov/19339801/",
       "year": 2009
+    },
+    {
+      "title": "Merck Veterinary Manual: Feline Bronchial Asthma",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/feline-bronchial-asthma"
+    },
+    {
+      "title": "Merck Veterinary Manual: Tracheobronchitis (Bronchitis, Bronchial Asthma) in Cats",
+      "url": "https://www.merckvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/tracheobronchitis-bronchitis-bronchial-asthma-in-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Lungworm Infection in Animals",
+      "url": "https://www.merckvetmanual.com/respiratory-system/lungworm-infection/lungworm-infection-in-animals"
+    },
+    {
+      "title": "Gareis H, Schulz B. Feline Asthma-Update on Diagnosis and Treatment Recommendations. Vet Clin North Am Small Anim Pract 56:971-993",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42320919/",
+      "year": 2026
+    },
+    {
+      "title": "D'Annunzio G, Gobbo F, Avallone G, et al. Airway Remodeling in Feline Lungs. Top Companion Anim Med 46:100587",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34624551/",
+      "year": 2022
+    },
+    {
+      "title": "Dear JD. Bacterial Pneumonia in Dogs and Cats: An Update. Vet Clin North Am Small Anim Pract 50:447-465",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7114575/",
+      "year": 2020
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

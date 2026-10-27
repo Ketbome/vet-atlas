@@ -16,9 +16,34 @@
     {
       "title": "Maggs DJ, Miller PE, Ofri R. Slatter's Fundamentals of Veterinary Ophthalmology, 6th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Nasolacrimal and Lacrimal Apparatus in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/nasolacrimal-and-lacrimal-apparatus-in-animals"
+    },
+    {
+      "title": "O'Neill DG, Yin Y, Tetas Pont R, et al. Breed and conformational predispositions for prolapsed nictitating membrane gland (PNMG) in dogs in the UK: A VetCompass study. PLoS One 17:e0260538",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8791520/",
+      "year": 2022
+    },
+    {
+      "title": "Zeng Y, Feng C, Jiang Z, et al. Genome-wide association studies with prolapsed gland of the third eyelid in dogs. Front Vet Sci 11:1520155",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804112/",
+      "year": 2025
+    },
+    {
+      "title": "Michel J, Lazard P, Vigan M, Albaric O. Treatment of prolapsed gland and cartilage deformity of the nictitating membrane with pocket technique and chondrectomy alone, or combined with a wedge conjunctivectomy: 132 dogs (1998-2018). Vet Ophthalmol 23:305-313",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31746106/",
+      "year": 2020
+    },
+    {
+      "title": "Guionnet A, Weverberg F. Surgical Correction of Prolapse of Nictitating Membrane Gland Using a Variant of the Pocket Technique: A Retrospective Study on 101 Dogs and 126 Eyes. Vet Ophthalmol 29:e70031",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40415639/",
+      "year": 2026
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

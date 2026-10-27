@@ -57,9 +57,23 @@
       "title": "Green SL, Smith LL, Vernau W, et al. Rabies in horses: 21 cases (1970-1990). J Am Vet Med Assoc 200:1133-7",
       "url": "https://pubmed.ncbi.nlm.nih.gov/1607322/",
       "year": 1992
+    },
+    {
+      "title": "Merck Veterinary Manual: Rabies in Animals",
+      "url": "https://www.merckvetmanual.com/nervous-system/rabies/rabies-in-animals"
+    },
+    {
+      "title": "World Health Organization. Rabies (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/rabies"
+    },
+    {
+      "title": "Verdes JM, de Sant'Ana FJ, Sabalsagaray MJ, et al. Calbindin D28k distribution in neurons and reactive gliosis in cerebellar cortex of natural Rabies virus-infected cattle. J Vet Diagn Invest 28:361-368",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27154319/",
+      "year": 2016
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

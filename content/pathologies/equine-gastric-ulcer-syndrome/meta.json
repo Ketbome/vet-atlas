@@ -38,9 +38,18 @@
       "title": "Luthersson N, Nielsen KH, Harris P, et al. Risk factors associated with equine gastric ulceration syndrome (EGUS) in 201 horses in Denmark. Equine Vet J 41:625-30",
       "url": "https://pubmed.ncbi.nlm.nih.gov/19927579/",
       "year": 2009
+    },
+    {
+      "title": "Merck Veterinary Manual: Gastric Ulcers in Horses",
+      "url": "https://www.merckvetmanual.com/digestive-system/gastrointestinal-ulcers-in-large-animals/gastric-ulcers-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Introduction to Digestive Disorders of Horses",
+      "url": "https://www.merckvetmanual.com/horse-owners/digestive-disorders-of-horses/introduction-to-digestive-disorders-of-horses"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

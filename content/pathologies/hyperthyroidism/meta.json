@@ -43,9 +43,38 @@
       "title": "Williams TL, Elliott J, Syme HM. Association of iatrogenic hypothyroidism with azotemia and reduced survival time in cats treated for hyperthyroidism. J Vet Intern Med 24:1086-1092",
       "url": "https://pubmed.ncbi.nlm.nih.gov/20695989/",
       "year": 2010
+    },
+    {
+      "title": "Merck Veterinary Manual: Hyperthyroidism in Animals",
+      "url": "https://www.merckvetmanual.com/endocrine-system/the-thyroid-gland/hyperthyroidism-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Overview of the Thyroid Gland in Animals",
+      "url": "https://www.merckvetmanual.com/endocrine-system/the-thyroid-gland/overview-of-the-thyroid-gland-in-animals"
+    },
+    {
+      "title": "van Zuiden B, Santarelli G, Galac S, et al. Cardiac Abnormalities in Feline Hyperthyroidism. Vet Sci 12:1115",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12737610/",
+      "year": 2025
+    },
+    {
+      "title": "Yu L, Lacorcia L, Johnstone T. Hyperthyroid cats and their kidneys: a literature review. Aust Vet J 100:415-432",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543258/",
+      "year": 2022
+    },
+    {
+      "title": "Jones B, Engdahl JN, Weiss J. Are persistent organic pollutants important in the etiology of feline hyperthyroidism? A review. Acta Vet Scand 61:45",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6777032/",
+      "year": 2019
+    },
+    {
+      "title": "Candellone A, Saettone V, Badino P, et al. Management of Feline Hyperthyroidism and the Need to Prevent Oxidative Stress: What Can We Learn from Human Research? Antioxidants (Basel) 10:1496",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8469997/",
+      "year": 2021
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

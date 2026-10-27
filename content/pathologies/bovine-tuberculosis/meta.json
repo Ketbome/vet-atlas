@@ -38,9 +38,19 @@
       "title": "Fromsa A, Willgert K, Srinivasan S, et al. BCG vaccination reduces bovine tuberculosis transmission, improving prospects for elimination. Science 383:eadl3962",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38547287/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Overview of Tuberculosis in Animals",
+      "url": "https://www.merckvetmanual.com/generalized-conditions/overview-of-tuberculosis-in-animals/overview-of-tuberculosis-in-animals"
+    },
+    {
+      "title": "WOAH Manual of Diagnostic Tests and Vaccines for Terrestrial Animals, Chapter 3.1.13: Mammalian tuberculosis (infection with Mycobacterium tuberculosis complex)",
+      "url": "https://woah.org/fileadmin/Home/eng/Health_standards/tahm/202406_Chapter_3.01.13_MAMMALIAN%20TB.pdf",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

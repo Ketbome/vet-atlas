@@ -38,9 +38,14 @@
       "title": "Feller M, Huwiler K, Stephan R, et al. Mycobacterium avium subspecies paratuberculosis and Crohn's disease: a systematic review and meta-analysis. Lancet Infect Dis 7:607-13",
       "url": "https://pubmed.ncbi.nlm.nih.gov/17714674/",
       "year": 2007
+    },
+    {
+      "title": "Merck Veterinary Manual: Paratuberculosis in Ruminants",
+      "url": "https://www.merckvetmanual.com/digestive-system/intestinal-diseases-in-ruminants/paratuberculosis-in-ruminants"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

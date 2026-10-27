@@ -20,9 +20,53 @@
     {
       "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Pneumonia in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/pneumonia-in-dogs-and-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Aspiration Pneumonia in Large Animals",
+      "url": "https://www.merckvetmanual.com/respiratory-system/aspiration-pneumonia-in-large-animals/aspiration-pneumonia-in-large-animals"
+    },
+    {
+      "title": "Dear JD. Bacterial Pneumonia in Dogs and Cats: An Update. Vet Clin North Am Small Anim Pract 50:447-465",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7114575/",
+      "year": 2020
+    },
+    {
+      "title": "Dear JD, Hulsebosch SE, Johnson LR. Recognition and Diagnosis of Underlying Disease Processes in Bacterial Pneumonia. Animals (Basel) 14:1601",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38891647/",
+      "year": 2024
+    },
+    {
+      "title": "Kogan DA, Johnson LR, Sturges BK, et al. Etiology and clinical outcome in dogs with aspiration pneumonia: 88 cases (2004-2006). J Am Vet Med Assoc 233:1748-1755",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19046034/",
+      "year": 2008
+    },
+    {
+      "title": "Kogan DA, Johnson LR, Jandrey KE, et al. Clinical, clinicopathologic, and radiographic findings in dogs with aspiration pneumonia: 88 cases (2004-2006). J Am Vet Med Assoc 233:1742-1747",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19046033/",
+      "year": 2008
+    },
+    {
+      "title": "Levy N, Ballegeer E, Koenigshof A. Clinical and radiographic findings in cats with aspiration pneumonia: retrospective evaluation of 28 cases. J Small Anim Pract 60:356-360",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30843218/",
+      "year": 2019
+    },
+    {
+      "title": "Darcy HP, Humm K, Ter Haar G. Retrospective analysis of incidence, clinical features, potential risk factors, and prognostic indicators for aspiration pneumonia in three brachycephalic dog breeds. J Am Vet Med Assoc 253:869-876",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30211637/",
+      "year": 2018
+    },
+    {
+      "title": "Mallol C, Espada Y, Lloret A, et al. Dystrophic mineralisation in chronic exogenous lipid pneumonia in cats. JFMS Open Rep 5:2055116919850255",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6537269/",
+      "year": 2019
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

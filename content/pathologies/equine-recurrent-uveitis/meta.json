@@ -42,9 +42,23 @@
       "title": "Gilger BC, Wilkie DA, Clode AB, et al. Long-term outcome after implantation of a suprachoroidal cyclosporine drug delivery device in horses with recurrent uveitis. Vet Ophthalmol 13:294-300",
       "url": "https://pubmed.ncbi.nlm.nih.gov/20840106/",
       "year": 2010
+    },
+    {
+      "title": "Merck Veterinary Manual: The Anterior Uvea in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-anterior-uvea-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Ocular Fundus in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-ocular-fundus-in-animals"
+    },
+    {
+      "title": "Wollanke B, Gerhards H, Ackermann K. Infectious Uveitis in Horses and New Insights in Its Leptospiral Biofilm-Related Pathogenesis. Microorganisms 10:387",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8875353/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

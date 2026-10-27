@@ -47,9 +47,28 @@
       "title": "Hattendorf C, Lühken R. Vectors, host range, and spatial distribution of Dirofilaria immitis and D. repens in Europe: a systematic review. Infect Dis Poverty 14:58",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40604914/",
       "year": 2025
+    },
+    {
+      "title": "Merck Veterinary Manual: Heartworm Disease in Dogs, Cats, and Ferrets",
+      "url": "https://www.merckvetmanual.com/circulatory-system/heartworm-disease/heartworm-disease-in-dogs-cats-and-ferrets"
+    },
+    {
+      "title": "American Heartworm Society. Current Canine Guidelines for the Prevention, Diagnosis, and Management of Heartworm (Dirofilaria immitis) Infection in Dogs",
+      "url": "https://d3ft8sckhnqim2.cloudfront.net/images/AHS_Canine_Guidelines_WEB_19JUN2025.pdf",
+      "year": 2024
+    },
+    {
+      "title": "American Heartworm Society. Current Feline Guidelines for the Prevention, Diagnosis, and Management of Heartworm (Dirofilaria immitis) Infection in Cats",
+      "url": "https://d3ft8sckhnqim2.cloudfront.net/images/AHS_Feline_Guidelines_WEB_19JUN2025.pdf",
+      "year": 2024
+    },
+    {
+      "title": "European Society of Dirofilariosis and Angiostrongylosis (ESDA): Guidelines",
+      "url": "https://www.esda.vet/guidelines.html"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

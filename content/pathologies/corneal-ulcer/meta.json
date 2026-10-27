@@ -56,9 +56,38 @@
       "title": "Reynolds BD, Whittaker CJ, Caruso KA, et al. Spontaneous superficial ulcerative keratitis in client-owned cats: risk factors for delayed healing, corneal sequestration, or corneal stromal vascularization. Vet Ophthalmol 29:e70260",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42669856/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: The Cornea in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-cornea-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Disorders of the Cornea in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-cornea-in-dogs"
+    },
+    {
+      "title": "Kirby P. Managing Canine Corneal Ulcers. Today's Veterinary Nurse",
+      "url": "https://todaysveterinarynurse.com/ophthalmology/managing-canine-corneal-ulcers/",
+      "year": 2021
+    },
+    {
+      "title": "Packer RM, Hendricks A, Burn CC. Impact of facial conformation on canine health: corneal ulceration. PLoS One 10:e0123827",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4430292/",
+      "year": 2015
+    },
+    {
+      "title": "O'Neill DG, Lee MM, Brodbelt DC, et al. Corneal ulcerative disease in dogs under primary veterinary care in England: epidemiology and clinical management. Canine Genet Epidemiol 4:5",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5471714/",
+      "year": 2017
+    },
+    {
+      "title": "Thiry E, Addie D, Belák S, et al. Feline herpesvirus infection. ABCD guidelines on prevention and management. J Feline Med Surg 11:547-555",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7129359/",
+      "year": 2009
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

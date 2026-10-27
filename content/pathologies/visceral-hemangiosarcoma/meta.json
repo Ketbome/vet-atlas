@@ -18,9 +18,24 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Pericardial Disease in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/circulatory-system/various-heart-diseases-in-dogs-and-cats/pericardial-disease-in-dogs-and-cats"
+    },
+    {
+      "title": "Queiroga FP, Marques AM, Gregório H, Petrucci GN. Canine Splenic Hemangiosarcoma: Biological Behavior, Clinical Challenges and Therapeutic Limitations. Animals (Basel) 16:778",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12985227/",
+      "year": 2026
+    },
+    {
+      "title": "Mincă NA, Dumbravă IC, Tudor N, et al. Review on the Clinical, Imaging, and Therapeutic Aspects of Cardiac Masses in Dog. Life (Basel) 15:1092",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12298529/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

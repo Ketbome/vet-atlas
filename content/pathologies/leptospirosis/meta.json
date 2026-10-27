@@ -96,9 +96,36 @@
       "title": "Divers TJ, Chang YF, Irby NL, et al. Leptospirosis: An important infectious disease in North American horses. Equine Vet J 51:287-292",
       "url": "https://pubmed.ncbi.nlm.nih.gov/30629756/",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Leptospirosis in Animals - Overview",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leptospirosis/leptospirosis-in-animals-overview"
+    },
+    {
+      "title": "Merck Veterinary Manual: Leptospirosis in Dogs",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leptospirosis/leptospirosis-in-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Leptospirosis in Ruminants",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leptospirosis/leptospirosis-in-ruminants"
+    },
+    {
+      "title": "Merck Veterinary Manual: Leptospirosis in Horses",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leptospirosis/leptospirosis-in-horses"
+    },
+    {
+      "title": "Ellis WA, O'Brien JJ, Bryson DG, Mackie DP. Bovine leptospirosis: some clinical features of serovar hardjo infection. Vet Rec 117:101-104",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/4049693/",
+      "year": 1985
+    },
+    {
+      "title": "Higgins RJ, Harbourne JF, Little TW, Stevens AE. Mastitis and abortion in dairy cattle associated with Leptospira of the serotype hardjo. Vet Rec 107:307-310",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7210429/",
+      "year": 1980
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -20,9 +20,29 @@
     {
       "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Mange in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/integumentary-system/mange/mange-in-dogs-and-cats"
+    },
+    {
+      "title": "Thomson P, Carreño N, Núñez A. Main mites associated with dermatopathies present in dogs and other members of the Canidae family. Open Vet J 13:131-142",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10105784/",
+      "year": 2023
+    },
+    {
+      "title": "O'Neill DG, Turgoose E, Church DB, et al. Juvenile-onset and adult-onset demodicosis in dogs in the UK: prevalence and breed associations. J Small Anim Pract 61:32-41",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7003809/",
+      "year": 2020
+    },
+    {
+      "title": "Ordeix L, Bardagí M, Scarampella F, et al. Demodex injai infestation and dorsal greasy skin and hair in eight wirehaired fox terrier dogs. Vet Dermatol 20:267-272",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19659538/",
+      "year": 2009
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
