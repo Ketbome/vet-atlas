@@ -45,7 +45,8 @@ supporting strengths, not the primary claim.
   orientation rose (anatomical views), hover sync between tree and model,
   view state in the URL, keyboard shortcuts. One-piece page at `/3d/...`.
 - Every page has an "Edit on GitHub" link that opens the right content file.
-- Content review workflow: new content is `review.status: draft`; only
+- Content review workflow: new content is `review.status: draft`; it
+  moves to `sourced` once checked against its cited references; only
   veterinary reviewers flip it to `reviewed`. The badge is visible to users.
 
 ## Capabilities and Constraints

@@ -2,10 +2,18 @@ import { z } from "zod";
 
 export const localeText = z.record(z.string(), z.string());
 
+// draft: unchecked. sourced: every claim checked against the cited references,
+// no veterinarian has signed it yet. reviewed: signed by a veterinary reviewer.
 export const reviewSchema = z.object({
-  status: z.enum(["draft", "reviewed"]),
+  status: z.enum(["draft", "sourced", "reviewed"]),
   by: z.string().optional(),
   date: z.string().optional(),
+});
+
+export const referenceSchema = z.object({
+  title: z.string(),
+  url: z.string().url().optional(),
+  year: z.number().int().optional(),
 });
 
 export const cameraPresets = [
@@ -67,6 +75,7 @@ export const structureSchema = z.object({
   pathologies: z.array(z.string()).default([]),
   media: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
+  references: z.array(referenceSchema).default([]),
   review: reviewSchema,
 });
 
@@ -86,15 +95,7 @@ export const pathologySchema = z.object({
   species: z.array(z.string()).min(1),
   structures: z.array(z.string()).min(1),
   media: z.array(z.string()).default([]),
-  references: z
-    .array(
-      z.object({
-        title: z.string(),
-        url: z.string().url().optional(),
-        year: z.number().int().optional(),
-      }),
-    )
-    .default([]),
+  references: z.array(referenceSchema).default([]),
   review: reviewSchema,
 });
 
@@ -138,5 +139,6 @@ export type Pathology = z.infer<typeof pathologySchema>;
 export type Media = z.infer<typeof mediaSchema>;
 export type Source = z.infer<typeof sourceSchema>;
 export type Frontmatter = z.infer<typeof frontmatterSchema>;
+export type Reference = z.infer<typeof referenceSchema>;
 export type CameraPreset = z.infer<typeof cameraPreset>;
 export type PathologyCategory = (typeof pathologyCategories)[number];

@@ -11,6 +11,7 @@ Full version with rationale: https://claude.ai/code/artifact/6e52485c-ab1d-4d3b-
 | 3D | One GLB per species+system, mesh name = structure id | The naming convention is the only contract between 3D and content. |
 | First species | Dog, skeletal system | Massey University's 3D Dog Bone Project is the only university-grade dog bone scan set with a licence that allows derivatives (CC BY-SA / CC BY-NC). LMU Munich turned out to be CC BY-NC-ND (checked 2026-09-13), so it cannot be used. |
 | Licenses | Code MIT, own content CC BY-SA 4.0, third-party media keep theirs | Non-commercial project, so NC sources are allowed. ND sources are not. The dog skeletal GLB mixes CC BY-SA and CC BY-NC bones, so as a whole it is effectively BY-NC-SA. |
+| Review | `draft` → `sourced` → `reviewed` | `sourced` means every claim is checked against the references listed at the end of the entry; it is not a veterinary sign-off, so only a veterinarian sets `reviewed`. Sources always show at the end of structures and pathologies. |
 | Hosting | GitHub Pages (static export, models included) | Free; no server, no proxy: `/` picks the locale client-side. |
 | Name | "Vet Atlas" is a working name | Domain will be `<name>.ketbome.com` until decided. |
 

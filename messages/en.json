@@ -127,13 +127,17 @@
     "clearFilter": "Clear filter",
     "noMatch": "Nothing matches “{query}”.",
     "illustrative": "This piece is a schematic shape, not a scan: there is no freely licensed model for this structure yet.",
-    "modelSource": "3D model of this piece"
+    "modelSource": "3D model of this piece",
+    "references": "Sources",
+    "noReferences": "No sources cited yet."
   },
   "review": {
     "draft": "Draft, not yet reviewed by a veterinarian",
     "reviewed": "Reviewed by {by}",
     "draftHelp": "Content may contain errors. It is published so the community can review it.",
-    "reviewedAnon": "Reviewed by a veterinarian"
+    "reviewedAnon": "Reviewed by a veterinarian",
+    "sourced": "Based on sources, pending veterinary review",
+    "sourcedHelp": "Every statement is checked against the references listed at the end. A veterinarian has not signed it yet."
   },
   "pathology": {
     "title": "Disease",
@@ -146,7 +150,7 @@
       "metabolic": "Metabolic",
       "inflammatory": "Inflammatory"
     },
-    "references": "References",
+    "references": "Sources",
     "affectedStructures": "Affected structures"
   },
   "media": {

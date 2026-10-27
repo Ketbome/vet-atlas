@@ -49,7 +49,7 @@ affect it and real images.
 - **Anatomical views** (lateral, dorsal, cranial…) from the orientation rose, plus isolate and explode.
 - Works on a phone, no account, no ads.
 
-All content is **draft** until a veterinarian reviews it, and every entry shows its review status. It is study material, not a substitute for diagnosis or veterinary consultation.
+Every entry shows its review status: **draft**, **based on sources** (checked against the references listed at its end) or **reviewed** by a veterinarian, and lists its sources at the end. It is study material, not a substitute for diagnosis or veterinary consultation.
 
 ## Run it locally
 

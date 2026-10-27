@@ -127,13 +127,17 @@
     "clearFilter": "Limpiar filtro",
     "noMatch": "Nada coincide con «{query}».",
     "illustrative": "Esta pieza es una forma esquemática, no un escaneo: todavía no hay un modelo con licencia libre para esta estructura.",
-    "modelSource": "Modelo 3D de esta pieza"
+    "modelSource": "Modelo 3D de esta pieza",
+    "references": "Fuentes",
+    "noReferences": "Todavía no hay fuentes citadas."
   },
   "review": {
     "draft": "Borrador sin revisión veterinaria",
     "reviewed": "Revisado por {by}",
     "draftHelp": "El contenido puede tener errores. Se publica para que la comunidad lo revise.",
-    "reviewedAnon": "Revisado por un veterinario"
+    "reviewedAnon": "Revisado por un veterinario",
+    "sourced": "Basado en fuentes, pendiente de revisión veterinaria",
+    "sourcedHelp": "Cada afirmación está contrastada con las fuentes citadas al final. Aún no la firma un veterinario."
   },
   "pathology": {
     "title": "Patología",
@@ -146,7 +150,7 @@
       "metabolic": "Metabólica",
       "inflammatory": "Inflamatoria"
     },
-    "references": "Referencias",
+    "references": "Fuentes",
     "affectedStructures": "Estructuras afectadas"
   },
   "media": {

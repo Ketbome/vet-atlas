@@ -30,7 +30,9 @@ Rules enforced by `pnpm validate` (CI runs it on every PR):
 - Every pathology, media and related id must exist.
 - Media entries need `url`, `source`, `license` and `attribution`. No
   "NoDerivs" licenses. Non-commercial (NC) is fine.
-- New entries start with `"review": { "status": "draft" }`. A reviewer with
+- New entries start with `"review": { "status": "draft" }`. Once every statement
+  is checked against the sources listed in `references`, it can move to
+  `sourced` (validation fails if `references` is empty). A reviewer with
   veterinary training flips it to `reviewed` in a follow-up PR.
 
 Pathology texts must cite references (`references` in `meta.json`).

@@ -53,7 +53,9 @@ Zod; the 3D viewer is React Three Fiber.
 ## Rules
 
 - Never add media or models without source, license and attribution. No ND licenses.
-- New content is `review.status: draft`. Only veterinary reviewers flip it.
+- New content is `review.status: draft`. It moves to `sourced` once every claim is checked
+  against the `references` it cites (shown under "Sources" at the end of the entry). Only
+  veterinary reviewers set `reviewed`.
 - Project is non-commercial; do not add ads or paid features.
 - Keep the viewer offline-capable: no assets fetched from external CDNs.
 - Docs: `docs/plan.md` (roadmap and decisions).

@@ -8,6 +8,7 @@ import { pathologySummaries } from "@/lib/content/view";
 import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
+import { References } from "@/components/atlas/references";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { PathologyList } from "@/components/atlas/pathology-list";
 import { StructureTabs } from "@/components/atlas/structure-tabs";
@@ -129,6 +130,8 @@ export default async function StructurePage({ params }: PageProps<"/[locale]/[sp
           </ul>
         </section>
       )}
+
+      <References items={structure.references} title={t("references")} emptyText={t("noReferences")} />
 
       <footer className="mt-8 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
         <span className="max-w-[60ch]">{tSite("disclaimer")}</span>

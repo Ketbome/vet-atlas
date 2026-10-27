@@ -45,6 +45,7 @@ for (const s of db.structures) {
   for (const p of s.pathologies) if (!pathologyIds.has(p)) errors.push(`structure ${s.id}: unknown pathology ${p}`);
   for (const m of s.media) if (!mediaIds.has(m)) errors.push(`structure ${s.id}: unknown media ${m}`);
   for (const r of s.related) if (!structureIds.has(r)) errors.push(`structure ${s.id}: unknown related ${r}`);
+  if (s.review.status === "sourced" && s.references.length === 0) errors.push(`structure ${s.id}: sourced without references`);
   for (const locale of ["es", "en"]) {
     if (!fs.existsSync(path.join(s.dir, `${locale}.mdx`))) warnings.push(`structure ${s.id}: missing ${locale}.mdx`);
   }
@@ -55,6 +56,7 @@ for (const p of db.pathologies) {
   for (const sp of p.species) if (!speciesIds.has(sp)) errors.push(`pathology ${p.id}: unknown species ${sp}`);
   for (const s of p.structures) if (!structureIds.has(s)) errors.push(`pathology ${p.id}: unknown structure ${s}`);
   for (const m of p.media) if (!mediaIds.has(m)) errors.push(`pathology ${p.id}: unknown media ${m}`);
+  if (p.review.status === "sourced" && p.references.length === 0) errors.push(`pathology ${p.id}: sourced without references`);
   if (path.basename(p.dir) !== p.id) errors.push(`pathology ${p.id}: folder name must be ${p.id}`);
   for (const locale of ["es", "en"]) {
     if (!fs.existsSync(path.join(p.dir, `${locale}.mdx`))) warnings.push(`pathology ${p.id}: missing ${locale}.mdx`);

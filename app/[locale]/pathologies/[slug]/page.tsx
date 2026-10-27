@@ -7,6 +7,7 @@ import { getMedia, getPathology, getSpecies, getStructure, getSystemById, loadCo
 import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
+import { References } from "@/components/atlas/references";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { SiteFooter } from "@/components/atlas/site-footer";
 import { Badge } from "@/components/ui/badge";
@@ -67,25 +68,7 @@ export default async function PathologyPage({ params }: PageProps<"/[locale]/pat
               <Doc source={doc.body} />
             </div>
 
-            {pathology.references.length > 0 && (
-              <section className="mt-10 border-t border-border pt-4">
-                <h2 className="text-sm font-semibold">{t("references")}</h2>
-                <ol className="mt-2 max-w-[68ch] list-decimal space-y-1 pl-5 text-sm text-foreground/85">
-                  {pathology.references.map((r, i) => (
-                    <li key={i}>
-                      {r.url ? (
-                        <a href={r.url} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-primary">
-                          {r.title}
-                        </a>
-                      ) : (
-                        r.title
-                      )}
-                      {r.year ? ` (${r.year})` : ""}
-                    </li>
-                  ))}
-                </ol>
-              </section>
-            )}
+            <References items={pathology.references} title={t("references")} emptyText={ts("noReferences")} />
 
             <footer className="mt-8 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
               <span className="max-w-[60ch]">{tSite("disclaimer")}</span>
