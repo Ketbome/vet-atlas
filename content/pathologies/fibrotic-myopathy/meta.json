@@ -21,9 +21,28 @@
     {
       "title": "Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell",
       "year": 2016
+    },
+    {
+      "title": "Merck Veterinary Manual: Fibrotic Myopathy in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/myopathies-in-dogs-and-cats/fibrotic-myopathy-in-dogs-and-cats"
+    },
+    {
+      "title": "University of Minnesota, Veterinary Anatomy: Carnivore dissection, Lab 07 (pelvic limb)",
+      "url": "https://vanat.ahc.umn.edu/carnLabs/Lab07/Lab07.html"
+    },
+    {
+      "title": "Birdwhistell KE, Miscioscia E, Montalbano C, et al. The hamstring stretch angle: a screening and monitoring tool for canine fibrotic myopathy. Front Vet Sci 12:1600602",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40400667/",
+      "year": 2025
+    },
+    {
+      "title": "Tsai FC, Alvarez LX. Outcome of eight working dogs with fibrotic myopathy following extracorporeal shockwave and rehabilitation therapy: a case series. Front Vet Sci 10:1258319",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38260195/",
+      "year": 2023
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

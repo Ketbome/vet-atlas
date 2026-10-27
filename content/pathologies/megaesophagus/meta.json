@@ -17,9 +17,33 @@
     {
       "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Dilatation of the Esophagus in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-esophagus-in-small-animals/dilatation-of-the-esophagus-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Congenital and Inherited Anomalies of the Esophagus in Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/congenital-and-inherited-anomalies-involving-the-digestive-system/congenital-and-inherited-anomalies-of-the-esophagus-in-animals"
+    },
+    {
+      "title": "Dos Santos RX, Waelkens J, Crawford AH, et al. Case Series of Canine Myasthenia Gravis: A Classification Approach With Consideration of Seronegative Dogs. J Vet Intern Med 39:e70113",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40298067/",
+      "year": 2025
+    },
+    {
+      "title": "Lyngby JG, Haines JM, Guess SC. Use of a videofluoroscopic feeding evaluation to guide management of dogs with congenital idiopathic megaoesophagus. Vet Med Sci 8:1434-1442",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35476311/",
+      "year": 2022
+    },
+    {
+      "title": "Ullal TV, Marks SL, Belafsky PC, et al. A Comparative Assessment of the Diagnosis of Swallowing Impairment and Gastroesophageal Reflux in Canines and Humans. Front Vet Sci 9:889331",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35754550/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

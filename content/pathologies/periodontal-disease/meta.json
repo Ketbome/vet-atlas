@@ -51,9 +51,35 @@
     {
       "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
       "year": 2020
+    },
+    {
+      "title": "Merck Veterinary Manual: Periodontal Disease in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/dentistry-in-small-animals/periodontal-disease-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Dental Disorders of Cats",
+      "url": "https://www.merckvetmanual.com/cat-owners/digestive-disorders-of-cats/dental-disorders-of-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Dental Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-disorders-of-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Tooth Resorption in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/dentistry-in-small-animals/tooth-resorption-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Endodontic Disease in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/dentistry-in-small-animals/endodontic-disease-in-small-animals"
+    },
+    {
+      "title": "Scherer E, Hetzel S, Snyder CJ. Assessment of the Role of the Mandibular First Molar Tooth in Mandibular Fracture Patterns of 29 Dogs. J Vet Dent 36:32-39",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31138050/",
+      "year": 2019
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

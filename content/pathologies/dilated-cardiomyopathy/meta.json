@@ -45,9 +45,28 @@
       "title": "Hambrook LE, Bennett PF. Effect of pimobendan on the clinical outcome and survival of cats with non-taurine responsive dilated cardiomyopathy. J Feline Med Surg 14:233-239",
       "url": "https://pubmed.ncbi.nlm.nih.gov/22412159/",
       "year": 2012
+    },
+    {
+      "title": "Merck Veterinary Manual: Dilated Cardiomyopathy in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/circulatory-system/cardiomyopathy-in-dogs-and-cats/dilated-cardiomyopathy-in-dogs-and-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Heart Failure in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/circulatory-system/heart-failure-in-dogs-and-cats/heart-failure-in-dogs-and-cats"
+    },
+    {
+      "title": "Summerfield NJ, Boswood A, O'Grady MR, et al. Efficacy of pimobendan in the prevention of congestive heart failure or sudden death in Doberman Pinschers with preclinical dilated cardiomyopathy (the PROTECT Study). J Vet Intern Med 26:1337-49",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23078651/",
+      "year": 2012
+    },
+    {
+      "title": "Mornard L, Brasileiro ACM, Marcondes-Santos M. Role of Diet as a Predisposing Factor for Dilated Cardiomyopathy in Dogs: A Narrative Review. Vet Sci 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41295744/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

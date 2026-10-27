@@ -43,9 +43,35 @@
       "title": "O'Connor AM, Hu D, Totton SC, et al. A systematic review and network meta-analysis of bacterial and viral vaccines, administered at or near arrival at the feedlot, for control of bovine respiratory disease in beef cattle. Anim Health Res Rev 20:143-162",
       "url": "https://pubmed.ncbi.nlm.nih.gov/32081122/",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Overview of Bovine Respiratory Disease Complex",
+      "url": "https://www.merckvetmanual.com/respiratory-system/bovine-respiratory-disease-complex/overview-of-bovine-respiratory-disease-complex"
+    },
+    {
+      "title": "Merck Veterinary Manual: Bacterial Pneumonia in Cattle With Bovine Respiratory Disease Complex",
+      "url": "https://www.merckvetmanual.com/respiratory-system/bovine-respiratory-disease-complex/bacterial-pneumonia-in-cattle-with-bovine-respiratory-disease-complex"
+    },
+    {
+      "title": "Merck Veterinary Manual: Viral Infections Associated With Bovine Respiratory Disease Complex in Cattle",
+      "url": "https://www.merckvetmanual.com/respiratory-system/bovine-respiratory-disease-complex/viral-infections-associated-with-bovine-respiratory-disease-complex-in-cattle"
+    },
+    {
+      "title": "Merck Veterinary Manual: Enzootic Pneumonia of Calves",
+      "url": "https://www.merckvetmanual.com/respiratory-system/infectious-respiratory-system-diseases-in-cattle/enzootic-pneumonia-of-calves"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Respiratory System in Animals",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-system-introduction/the-respiratory-system-in-animals"
+    },
+    {
+      "title": "Pierson RE, Kainer RA. Clinical classification of pneumonias in cattle. The Bovine Practitioner",
+      "url": "https://bovine-ojs-tamu.tdl.org/bovine/article/view/1922/1914",
+      "year": 1980
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

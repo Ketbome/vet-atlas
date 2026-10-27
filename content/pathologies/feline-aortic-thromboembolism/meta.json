@@ -47,9 +47,24 @@
       "title": "Guillaumin J, DeFrancesco TC, Scansen BA, et al. Bilateral lysis of aortic saddle thrombus with early tissue plasminogen activator (BLASTT): a prospective, randomized, placebo-controlled study in feline acute aortic thromboembolism. J Feline Med Surg 24:e535-e545",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36350753/",
       "year": 2022
+    },
+    {
+      "title": "Merck Veterinary Manual: Arterial Thromboembolism in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/circulatory-system/various-cardiovascular-diseases-in-dogs-and-cats/arterial-thromboembolism-in-dogs-and-cats"
+    },
+    {
+      "title": "Arcuri G, Bresolin P, Guglielmini C. Treatment and Prevention of Cardiogenic Arterial Thromboembolism in the Cat: A Systematic Review. Animals (Basel) 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41463824/",
+      "year": 2025
+    },
+    {
+      "title": "Yeh NS, Shaverdian M, Li RHL. Evolving FATE: A New Lens on the Pathogenesis and Management of Feline Cardiogenic Arterial Thromboembolism. Animals (Basel) 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40509097/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

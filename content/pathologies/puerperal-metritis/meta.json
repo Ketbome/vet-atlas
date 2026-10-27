@@ -37,9 +37,32 @@
     {
       "title": "Noakes DE, Parkinson TJ, England GCW. Veterinary Reproduction and Obstetrics, 10th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Metritis in Production Animals",
+      "url": "https://www.merckvetmanual.com/reproductive-system/uterine-diseases-in-production-animals/metritis-in-production-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Endometritis in Production Animals",
+      "url": "https://www.merckvetmanual.com/reproductive-system/uterine-diseases-in-production-animals/endometritis-in-production-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Retained Fetal Membranes in Cows",
+      "url": "https://www.merckvetmanual.com/reproductive-system/retained-fetal-membranes-in-large-animals-retained-placenta/retained-fetal-membranes-in-cows"
+    },
+    {
+      "title": "Kasimanickam R, Bhowmik P, Jiang Z. Postpartum Uterine Diseases in Dairy Cattle: Integrating Microbiology, Immunology, and Reproductive Physiology. Microorganisms 14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42654991/",
+      "year": 2026
+    },
+    {
+      "title": "Kasimanickam R, Bhowmik P, Kastelic J, et al. From Infection to Infertility: Diagnostic, Therapeutic, and Molecular Perspectives on Postpartum Metritis and Endometritis in Dairy Cows. Animals (Basel) 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41096436/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

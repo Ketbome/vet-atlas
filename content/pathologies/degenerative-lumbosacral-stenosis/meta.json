@@ -21,9 +21,39 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Degenerative Diseases of the Spinal Column and Cord in Animals",
+      "url": "https://www.merckvetmanual.com/nervous-system/diseases-of-the-spinal-column-and-cord/degenerative-diseases-of-the-spinal-column-and-cord-in-animals"
+    },
+    {
+      "title": "Hernández-Guerra ÁM, Carrillo JM, Sopena JJ, et al. Platelet-Rich Plasma for the Treatment of Degenerative Lumbosacral Stenosis: A Study with Retired Working Dogs. Animals (Basel) 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34679984/",
+      "year": 2021
+    },
+    {
+      "title": "Berg JA, Saevik BK, Lingaas F, et al. Transitional lumbosacral vertebrae in black Norwegian elkhound and Brittany dogs: Clinical findings and its association with degenerative lumbosacral stenosis. Acta Vet Scand 67:10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39939978/",
+      "year": 2025
+    },
+    {
+      "title": "Goh K. Comparing clinical outcomes of dogs suffering from degenerative lumbosacral stenosis upon surgical or nonsurgical treatment. Vet Evid 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42006174/",
+      "year": 2023
+    },
+    {
+      "title": "Driver CJ, Morrison K, Sojak M, et al. Lateral full-endoscopic lumbosacral foraminotomy for foraminal stenosis in dogs: technique development and initial case series. Front Vet Sci 13:1787235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42022397/",
+      "year": 2026
+    },
+    {
+      "title": "Posporis C, Espinosa J, Pumarola M, et al. Anatomical and histological characterization of the filum terminale in dogs. Front Vet Sci 12:1650893",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40777825/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

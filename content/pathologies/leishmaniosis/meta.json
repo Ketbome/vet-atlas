@@ -46,9 +46,18 @@
       "title": "Gavgani AS, Hodjati MH, Mohite H, et al. Effect of insecticide-impregnated dog collars on incidence of zoonotic visceral leishmaniasis in Iranian children: a matched-cluster randomised trial. Lancet 360:374-9",
       "url": "https://pubmed.ncbi.nlm.nih.gov/12241778/",
       "year": 2002
+    },
+    {
+      "title": "Merck Veterinary Manual: Leishmaniosis in Dogs",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leishmaniosis/leishmaniosis-in-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Leishmaniosis in Cats",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/leishmaniosis/leishmaniosis-in-cats"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

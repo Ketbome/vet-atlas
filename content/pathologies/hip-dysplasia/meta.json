@@ -51,9 +51,29 @@
       "title": "Ball E, Uhlhorn M, Eksell P, et al. Repeatability of radiographic assessments for feline hip dysplasia suggest consensus scores in radiology are more uncertain than commonly assumed. Sci Rep 12:13916",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35978034/",
       "year": 2022
+    },
+    {
+      "title": "Merck Veterinary Manual: Hip Dysplasia in Dogs",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/arthropathies-and-related-disorders-in-small-animals/hip-dysplasia-in-dogs"
+    },
+    {
+      "title": "Schachner ER, Lopez MJ. Diagnosis, prevention, and management of canine hip dysplasia: a review. Vet Med (Auckl) 6:181-192",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30101105/",
+      "year": 2015
+    },
+    {
+      "title": "Lefort-Holguin M, Delsart A, Frézier M, et al. Osteoarthritis in cats: what we know, and mostly, what we don't know. . . yet. J Feline Med Surg 27:1098612X251347999",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40685570/",
+      "year": 2025
+    },
+    {
+      "title": "Černá P, Timmermans J, Komenda D, et al. The Prevalence of Feline Hip Dysplasia, Patellar Luxation and Lumbosacral Transitional Vertebrae in Pedigree Cats in The Czech Republic. Animals (Basel) 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34573448/",
+      "year": 2021
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

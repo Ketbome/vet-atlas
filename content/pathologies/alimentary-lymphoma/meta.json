@@ -53,9 +53,18 @@
       "title": "Bernardo Marques G, Ponce F, Beaudu-Lange C, et al. Feline high-grade and large granular lymphocyte alimentary lymphomas treated with COP- or CHOP-based chemotherapy: a multi-centric retrospective study of 57 cases. Vet Comp Oncol 22:186-197",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38356238/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Gastrointestinal Neoplasia in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/digestive-system/neoplasia-of-the-gastrointestinal-tract-in-small-animals/gastrointestinal-neoplasia-in-dogs-and-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Lymphoma in Dogs",
+      "url": "https://www.merckvetmanual.com/circulatory-system/lymphoma-in-dogs/lymphoma-in-dogs"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

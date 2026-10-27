@@ -17,9 +17,27 @@
     {
       "title": "Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Kennel Cough",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/kennel-cough"
+    },
+    {
+      "title": "Merck Veterinary Manual: Canine Influenza (Flu)",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/canine-influenza-flu"
+    },
+    {
+      "title": "Merck Veterinary Manual: Pneumonia in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/pneumonia-in-dogs-and-cats"
+    },
+    {
+      "title": "Lappin MR, Blondeau J, Boothe D, et al. Antimicrobial use Guidelines for Treatment of Respiratory Tract Disease in Dogs and Cats: Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases. J Vet Intern Med 31:279-294",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28185306/",
+      "year": 2017
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -49,9 +49,22 @@
       "title": "Kinnison T, McGilvray TA, Couëtil LL, et al. Mild-moderate equine asthma: A scoping review of evidence supporting the consensus definition. Vet J 286:105865",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35817389/",
       "year": 2022
+    },
+    {
+      "title": "Merck Veterinary Manual: Asthma in Horses",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-horses/asthma-in-horses"
+    },
+    {
+      "title": "University of Minnesota, Veterinary Anatomy: Ungulate dissection, Lab 11 (abdominal wall, heave line)",
+      "url": "https://vanat.ahc.umn.edu/ungDissect/Lab11/xLab11.html"
+    },
+    {
+      "title": "Veterinary Medicines Directorate (UK). VMGN 16: Guidance on horse medicines and horse passports",
+      "url": "https://www.gov.uk/government/publications/horse-medicines-and-horse-passports-vmgn-16"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

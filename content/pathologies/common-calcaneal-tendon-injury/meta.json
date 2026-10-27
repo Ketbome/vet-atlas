@@ -25,9 +25,35 @@
     {
       "title": "Evans HE, de Lahunta A. Miller's Anatomy of the Dog, 4th ed. Elsevier",
       "year": 2013
+    },
+    {
+      "title": "Wylie S, Piana F, Montgomery P, et al. Complications and outcomes following surgical management of common calcaneal tendon pathology in 80 dogs. Vet Surg 55:437-447",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41178525/",
+      "year": 2026
+    },
+    {
+      "title": "Pinna S, Perfetti S, Di Benedetto M, et al. A Novel Minimally Invasive Technique for Internal Tarsal Stabilization in the Management of Canine Gastrocnemius Myotendinous Lesions. Animals (Basel) 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42353394/",
+      "year": 2026
+    },
+    {
+      "title": "Abako J, Holak P, Głodek J, et al. Usefulness of Imaging Techniques in the Diagnosis of Selected Injuries and Lesions of the Canine Tarsus. A Review. Animals (Basel) 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34205353/",
+      "year": 2021
+    },
+    {
+      "title": "Beamon WL, Duffy DJ, Chang YJ, et al. Effect of calcanean bone-tunnel orientation for teno-osseous repair in a canine common calcanean tendon avulsion model. Vet Surg 51:688-696",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35277992/",
+      "year": 2022
+    },
+    {
+      "title": "Botto R, Sassaroli S, Pennasilico L, et al. Surgical Repair of Luxation of the Superficial Digital Flexor Tendon in Dogs Using a Calcaneal Chondroplastic-like Technique-Three Cases. Animals (Basel) 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37174505/",
+      "year": 2023
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -16,9 +16,25 @@
     {
       "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Ziener ML, Nødtvedt A. A treatment study of canine symmetrical onychomadesis (symmetrical lupoid onychodystrophy) comparing fish oil and cyclosporine supplementation in addition to a diet rich in omega-3 fatty acids. Acta Vet Scand 56:66",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25280860/",
+      "year": 2014
+    },
+    {
+      "title": "Wilbe M, Ziener ML, Aronsson A, et al. DLA class II alleles are associated with risk for canine symmetrical lupoid onychodystrophy [corrected](SLO). PLoS One 5:e12332",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20808798/",
+      "year": 2010
+    },
+    {
+      "title": "Gershony LC, Belanger JM, Hytönen MK, et al. Novel Locus Associated with Symmetrical Lupoid Onychodystrophy in the Bearded Collie. Genes (Basel) 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31443497/",
+      "year": 2019
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -24,9 +24,18 @@
     {
       "title": "Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Developmental Osteopathies in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/osteopathies-in-small-animals/developmental-osteopathies-in-dogs-and-cats"
+    },
+    {
+      "title": "Cornell University College of Veterinary Medicine, Riney Canine Health Center: Panosteitis in dogs",
+      "url": "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/panosteitis-dogs"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

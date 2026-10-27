@@ -48,9 +48,18 @@
       "title": "Sadiq MB, Ramanoon SZ, Syed-Hussain SS, et al. Treatment modalities for claw horn lesions and their effects on locomotion scores, gait properties, lesion progression, and nociceptive threshold in dairy cows: A systematic review. Res Vet Sci 181:105448",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39531868/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Lameness Originating in the Hoof in Cattle",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-cattle/lameness-originating-in-the-hoof-in-cattle"
+    },
+    {
+      "title": "Merck Veterinary Manual: Anatomy of the Distal Limb of a Cow",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-cattle/anatomy-of-the-distal-limb-of-a-cow"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

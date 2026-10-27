@@ -49,9 +49,14 @@
       "title": "Tasker S, Spiri AM, Hartmann K, et al. Update on treatment of feline infectious peritonitis: European Advisory Board on Cat Diseases (ABCD) guidelines. Viruses 18:452",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42043241/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Feline Infectious Peritonitis",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/feline-infectious-peritonitis/feline-infectious-peritonitis"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

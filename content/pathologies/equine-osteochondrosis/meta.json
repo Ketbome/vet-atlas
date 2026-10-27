@@ -55,9 +55,41 @@
       "title": "Van Mol B, Janssens S, Oosterlinck M, et al. Genetic factors of equine osteochondrosis and fetlock osteochondral fragments: A scoping review - Part 2. Vet J 308:106258",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39442748/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Osteochondrosis in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/developmental-orthopedic-disease-in-horses/osteochondrosis-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Osteochondrosis of the Stifle in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/disorders-of-the-stifle-in-horses/osteochondrosis-of-the-stifle-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Synovitis (Capsulitis) of the Tarsocrural Joint in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/disorders-of-the-tarsus-in-horses/synovitis-capsulitis-of-the-tarsocrural-joint-in-horses"
+    },
+    {
+      "title": "Veterinary Medicines Directorate (UK). VMGN 16: Guidance on horse medicines and horse passports",
+      "url": "https://www.gov.uk/government/publications/horse-medicines-and-horse-passports-vmgn-16"
+    },
+    {
+      "title": "Bourebaba L, Röcken M, Marycz K. Osteochondritis dissecans (OCD) in Horses - Molecular Background of its Pathogenesis and Perspectives for Progenitor Stem Cell Therapy. Stem Cell Rev Rep 15:374-390",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30796679/",
+      "year": 2019
+    },
+    {
+      "title": "Olstad K, Ekman S, Björnsdóttir S, et al. Osteochondrosis in the central and third tarsal bones of young horses. Vet Pathol 61:74-87",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37431760/",
+      "year": 2024
+    },
+    {
+      "title": "Van Cauter R, Serteyn D, Lejeune JP, et al. Evaluation of the appearance of osteochondrosis lesions by two radiographic examinations in sport horses aged from 12 to 36 months. PLoS One 18:e0286213",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37220101/",
+      "year": 2023
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
