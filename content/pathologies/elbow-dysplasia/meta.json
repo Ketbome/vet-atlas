@@ -22,9 +22,24 @@
     {
       "title": "Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Elbow Dysplasia in Dogs",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/arthropathies-and-related-disorders-in-small-animals/elbow-dysplasia-in-dogs"
+    },
+    {
+      "title": "Kubiak-Nowak D, Kiełbowicz Z, Hebel M, et al. Assessment of elbow joint incongruity as a primary cause of canine elbow dysplasia: comparative imaging analysis using CT and radiography. Life (Basel) 15:1673",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41302098/",
+      "year": 2025
+    },
+    {
+      "title": "Deboutte B, Stock E, Kromhout K, et al. Coronoid process sclerosis as a reproducible and highly heritable risk predictor of medial coronoid disease in labrador retrievers. Front Vet Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41737679/",
+      "year": 2026
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

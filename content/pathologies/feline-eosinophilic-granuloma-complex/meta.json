@@ -43,9 +43,14 @@
       "title": "King S, Favrot C, Messinger L, et al. A randomized double-blinded placebo-controlled study to evaluate an effective ciclosporin dose for the treatment of feline hypersensitivity dermatitis. Vet Dermatol 23:440-e84",
       "url": "https://pubmed.ncbi.nlm.nih.gov/22882582/",
       "year": 2012
+    },
+    {
+      "title": "Merck Veterinary Manual: Eosinophilic Skin Diseases in Cats",
+      "url": "https://www.merckvetmanual.com/integumentary-system/eosinophilic-inflammatory-skin-diseases/eosinophilic-skin-diseases-in-cats"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

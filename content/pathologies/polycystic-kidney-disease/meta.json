@@ -45,9 +45,18 @@
       "title": "Ukawa H, Kida A, Ataka K, et al. Widespread genetic testing controls inherited polycystic kidney disease while avoiding inbreeding in cats. BMC Genomics 27:716",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42316006/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Renal Anomalies in Animals",
+      "url": "https://www.merckvetmanual.com/urinary-system/congenital-and-inherited-anomalies-of-the-urinary-system/renal-anomalies-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Renal Dysfunction in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/urinary-system/noninfectious-diseases-of-the-urinary-system-in-small-animals/renal-dysfunction-in-dogs-and-cats"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

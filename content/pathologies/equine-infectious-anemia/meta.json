@@ -38,9 +38,14 @@
       "title": "Cullinane A, Quinlivan M, Nelly M, et al. Diagnosis of equine infectious anaemia during the 2006 outbreak in Ireland. Vet Rec 161:647-52",
       "url": "https://pubmed.ncbi.nlm.nih.gov/17993655/",
       "year": 2007
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Infectious Anemia",
+      "url": "https://www.merckvetmanual.com/generalized-conditions/equine-infectious-anemia/equine-infectious-anemia"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

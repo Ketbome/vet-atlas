@@ -49,9 +49,18 @@
     {
       "title": "Sykes JE. Greene's Infectious Diseases of the Dog and Cat, 5th ed. Elsevier",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Feline Leukemia Virus Disease",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/feline-leukemia-virus/feline-leukemia-virus-disease"
+    },
+    {
+      "title": "Merck Veterinary Manual (pet owner version): Feline Immunodeficiency Virus (FIV)",
+      "url": "https://www.merckvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-immunodeficiency-virus-fiv"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

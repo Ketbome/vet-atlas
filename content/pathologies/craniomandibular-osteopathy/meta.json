@@ -21,9 +21,24 @@
     {
       "title": "Verstraete FJM, Lommer MJ, Arzi B. Oral and Maxillofacial Surgery in Dogs and Cats, 2nd ed. Elsevier",
       "year": 2020
+    },
+    {
+      "title": "Merck Veterinary Manual: Developmental Osteopathies in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/osteopathies-in-small-animals/developmental-osteopathies-in-dogs-and-cats"
+    },
+    {
+      "title": "Perez Lopez LA, Almansa Ruiz JC, Steenkamp G, Holdsworth A. Computed tomographic characteristics of craniomandibular osteopathy in 20 dogs. Front Vet Sci 11:1436356",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39450407/",
+      "year": 2024
+    },
+    {
+      "title": "Letko A, Leuthard F, Jagannathan V, et al. Whole genome sequencing indicates heterogeneity of hyperostotic disorders in dogs. Genes (Basel) 11:163",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32033218/",
+      "year": 2020
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -47,9 +47,18 @@
       "title": "Miller AK, Regier PJ, Ham KM, et al. Linear and discrete foreign body small intestinal obstruction outcomes, complication risk factors, and single incision red rubber catheter technique success in cats. Vet Surg 53:1256-1265",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38969492/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Gastrointestinal Obstruction in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/surgical-problems-of-the-gastrointestinal-tract-in-small-animals/gastrointestinal-obstruction-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Esophageal Foreign Bodies in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-esophagus-in-small-animals/esophageal-foreign-bodies-in-small-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

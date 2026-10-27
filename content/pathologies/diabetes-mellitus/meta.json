@@ -48,9 +48,19 @@
       "title": "Behrend EN, Ward CR, Chukwu V, et al. Velagliflozin, a once-daily, liquid, oral SGLT2 inhibitor, is effective as a stand-alone therapy for feline diabetes mellitus: the SENSATION study. J Am Vet Med Assoc 262:1343-1353",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39142336/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Diabetes Mellitus in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/endocrine-system/the-pancreas/diabetes-mellitus-in-dogs-and-cats"
+    },
+    {
+      "title": "Waite O, Gostelow R, Wright E, et al. Frequency, risk factors, and mortality for diabetes mellitus in 1 225 130 cats under primary veterinary care in the United Kingdom in 2019. J Vet Intern Med",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40525629/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

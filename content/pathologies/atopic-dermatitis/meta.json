@@ -20,9 +20,19 @@
     {
       "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Atopic Dermatitis in Dogs",
+      "url": "https://www.merckvetmanual.com/integumentary-system/atopic-skin-conditions-in-dogs-and-cats/atopic-dermatitis-in-dogs"
+    },
+    {
+      "title": "Hensel P, Santoro D, Favrot C, Hill P, Griffin C. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res 11:196",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26260508/",
+      "year": 2015
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

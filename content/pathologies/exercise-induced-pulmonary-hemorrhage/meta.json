@@ -39,9 +39,19 @@
       "title": "Takahashi T, Hiraga A, Ohmura H, et al. Frequency of and risk factors for epistaxis associated with exercise-induced pulmonary hemorrhage in horses: 251,609 race starts (1992-1997). J Am Vet Med Assoc 218:1462-4",
       "url": "https://pubmed.ncbi.nlm.nih.gov/11345311/",
       "year": 2001
+    },
+    {
+      "title": "Merck Veterinary Manual: Exercise-Induced Pulmonary Hemorrhage in Horses",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-horses/exercise-induced-pulmonary-hemorrhage-in-horses"
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

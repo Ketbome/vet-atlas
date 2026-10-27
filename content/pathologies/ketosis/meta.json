@@ -38,9 +38,22 @@
     {
       "title": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Hyperketonemia in Cattle",
+      "url": "https://www.merckvetmanual.com/metabolic-disorders/hyperketonemia-in-cattle/hyperketonemia-in-cattle"
+    },
+    {
+      "title": "Merck Veterinary Manual: Fatty Liver Disease of Cattle",
+      "url": "https://www.merckvetmanual.com/metabolic-disorders/hepatic-lipidosis/fatty-liver-disease-of-cattle"
+    },
+    {
+      "title": "Merck Veterinary Manual: Pregnancy Toxemia in Cows",
+      "url": "https://www.merckvetmanual.com/metabolic-disorders/hepatic-lipidosis/pregnancy-toxemia-in-cows"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

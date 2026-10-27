@@ -45,9 +45,24 @@
       "title": "Gleason HE, Phillips H, McCoy AM. Influence of feline brachycephaly on respiratory, gastrointestinal, sleep, and activity abnormalities. Vet Surg 52:435-445",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36582029/",
       "year": 2023
+    },
+    {
+      "title": "Mitze S, Barrs VR, Beatty JA, Hobi S, Bęczkowski PM. Brachycephalic obstructive airway syndrome: much more than a surgical problem. Vet Q 42:213-223",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36342210/",
+      "year": 2022
+    },
+    {
+      "title": "Rahimdoust Mozhdehi N, Salari Sedigh H, Kazemi Mehrjerdi H. Surgical correction of stenotic nares using a single pedicle advancement flap technique in three brachycephalic cats. Vet Med Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37897212/",
+      "year": 2023
+    },
+    {
+      "title": "Merck Veterinary Manual: Laryngeal Disorders in Animals",
+      "url": "https://www.merckvetmanual.com/respiratory-system/laryngeal-disorders/laryngeal-disorders-in-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

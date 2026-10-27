@@ -16,9 +16,34 @@
     {
       "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual (pet owner version): Tracheal Collapse in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tracheal-collapse-in-dogs"
+    },
+    {
+      "title": "Kim MR, Kim SH, Ryu MO, et al. A retrospective study of tracheal collapse in small-breed dogs: 110 cases (2022-2024). Front Vet Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39205804/",
+      "year": 2024
+    },
+    {
+      "title": "Yangwanitset W, Huaijantug S, Tansakul M, Sakcamduang W. The agreement between radiography and fluoroscopy as diagnostic tools for tracheal collapse in dogs. Animals (Basel)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37174471/",
+      "year": 2023
+    },
+    {
+      "title": "Talavera-López J, Sáez-Mengual O, Fernández-del-Palacio MJ. Comparative study of inhaled fluticasone versus oral prednisone in 30 dogs with cough and tracheal collapse. Vet Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37756070/",
+      "year": 2023
+    },
+    {
+      "title": "Suematsu M, Minamoto T, Suematsu H, et al. Long-term outcomes of dogs with W-shaped or traditional tracheal collapse treated with a continuous extraluminal tracheal prosthesis: a retrospective study. Vet Surg 55:118-130",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41148950/",
+      "year": 2026
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

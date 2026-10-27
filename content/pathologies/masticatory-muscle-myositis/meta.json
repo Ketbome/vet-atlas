@@ -21,9 +21,19 @@
     {
       "title": "Evans HE, de Lahunta A. Miller's Anatomy of the Dog, 4th ed. Elsevier",
       "year": 2013
+    },
+    {
+      "title": "Merck Veterinary Manual: Masticatory Myositis in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/myopathies-in-dogs-and-cats/masticatory-myositis-in-dogs-and-cats"
+    },
+    {
+      "title": "Fisher R, Goldschmidt S, Knipe MF, et al. Differential causes of masticatory muscle disorders in dogs: a review of diagnosis, treatment and long-term management. Front Vet Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41743561/",
+      "year": 2026
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -52,9 +52,18 @@
       "title": "Sent U, Gössl R, Elliott J, et al. Comparison of Efficacy of Long-term Oral Treatment with Telmisartan and Benazepril in Cats with Chronic Kidney Disease. J Vet Intern Med 29:1479-1487",
       "url": "https://pubmed.ncbi.nlm.nih.gov/26474314/",
       "year": 2015
+    },
+    {
+      "title": "Merck Veterinary Manual: Renal Dysfunction in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/urinary-system/noninfectious-diseases-of-the-urinary-system-in-small-animals/renal-dysfunction-in-dogs-and-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Renal Anomalies in Animals",
+      "url": "https://www.merckvetmanual.com/urinary-system/congenital-and-inherited-anomalies-of-the-urinary-system/renal-anomalies-in-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -17,9 +17,18 @@
     {
       "title": "Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Hypothyroidism in Animals",
+      "url": "https://www.merckvetmanual.com/endocrine-system/the-thyroid-gland/hypothyroidism-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Overview of the Thyroid Gland in Animals",
+      "url": "https://www.merckvetmanual.com/endocrine-system/the-thyroid-gland/overview-of-the-thyroid-gland-in-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

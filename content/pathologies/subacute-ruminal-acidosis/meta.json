@@ -39,9 +39,22 @@
       "title": "Young JD, Morris P, Bryant TC, et al. Efficacy of tylosin phosphate for liver abscess control in feedlot cattle, by treatment duration: a Bayesian network meta-analysis supported by a randomized trial. J Vet Intern Med 40:aalaf048",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41742546/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Subacute Ruminal Acidosis in Cattle and Sheep",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-ruminant-forestomach/subacute-ruminal-acidosis-in-cattle-and-sheep"
+    },
+    {
+      "title": "Merck Veterinary Manual: Grain Overload in Ruminants",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-ruminant-forestomach/grain-overload-in-ruminants"
+    },
+    {
+      "title": "Merck Veterinary Manual: Liver Abscesses in Cattle",
+      "url": "https://www.merckvetmanual.com/digestive-system/hepatic-disease-in-large-animals/liver-abscesses-in-cattle"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
