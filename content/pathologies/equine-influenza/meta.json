@@ -38,9 +38,27 @@
       "title": "Whitlock F, Grewar J, Newton R. An epidemiological overview of the equine influenza epidemic in Great Britain during 2019. Equine Vet J 55:153-164",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36054725/",
       "year": 2023
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Influenza",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-horses/equine-influenza"
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Influenza (horse owner version)",
+      "url": "https://www.merckvetmanual.com/horse-owners/lung-and-airway-disorders-of-horses/equine-influenza"
+    },
+    {
+      "title": "WOAH Terrestrial Animal Health Code: Chapter 1.3, Diseases, infections and infestations listed by WOAH",
+      "url": "https://woah.org/fileadmin/Home/eng/Health_standards/tahc/2024/en_chapitre_oie_listed_disease.htm",
+      "year": 2024
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

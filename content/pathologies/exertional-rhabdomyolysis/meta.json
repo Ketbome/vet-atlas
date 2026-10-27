@@ -60,9 +60,22 @@
       "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Exertional Myopathies in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/myopathies-in-horses/exertional-myopathies-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Plants Causing Myopathies in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/myopathies-in-horses/plants-causing-myopathies-in-horses"
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

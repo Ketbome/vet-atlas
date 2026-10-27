@@ -44,9 +44,23 @@
       "title": "Larrieu E, Zanini F. Critical analysis of cystic echinococcosis control programs and praziquantel use in South America, 1974-2010. Rev Panam Salud Publica 31:81-7",
       "url": "https://pubmed.ncbi.nlm.nih.gov/22427169/",
       "year": 2012
+    },
+    {
+      "title": "Spickler AR. Echinococcosis. Center for Food Security and Public Health, Iowa State University",
+      "url": "https://www.cfsph.iastate.edu/Factsheets/pdfs/echinococcosis.pdf",
+      "year": 2020
+    },
+    {
+      "title": "World Health Organization: Echinococcosis (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/echinococcosis"
+    },
+    {
+      "title": "World Health Organization: Neglected tropical diseases",
+      "url": "https://www.who.int/health-topics/neglected-tropical-diseases"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

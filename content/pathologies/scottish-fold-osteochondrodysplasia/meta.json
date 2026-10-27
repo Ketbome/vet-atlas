@@ -14,10 +14,12 @@
   "references": [
     {
       "title": "Malik R, Allan GS, Howlett CR, et al. Osteochondrodysplasia in Scottish Fold cats. Aust Vet J 77:85-92",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10078353/",
       "year": 1999
     },
     {
       "title": "Takanosu M, Takanosu T, Suzuki H, Suzuki K. Incomplete dominant osteochondrodysplasia in heterozygous Scottish Fold cats. J Small Anim Pract 49:197-199",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18339089/",
       "year": 2008
     },
     {
@@ -44,9 +46,33 @@
       "title": "Ukawa H, Akashi A, Hayashi H, et al. Genetic Evidence of a Recent Decline and Crossbreed Distribution of TRPV4 c.1024G>T Variant in Domestic Cats. Anim Genet 57:e70118",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42108233/",
       "year": 2026
+    },
+    {
+      "title": "Hubler M, Volkert M, Kaser-Hotz B, Arnold S. Palliative irradiation of Scottish Fold osteochondrodysplasia. Vet Radiol Ultrasound 45:582-585",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15605854/",
+      "year": 2004
+    },
+    {
+      "title": "Nakajo T, Fujita Y, Ichinohe T, Maruo T. Combined surgical, radiation, and medical therapies for osteochondrodysplasia in a Scottish Fold cat. J Am Anim Hosp Assoc 56:175",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32182117/",
+      "year": 2020
+    },
+    {
+      "title": "Mathews KG, Koblik PD, Knoeckel MJ, et al. Resolution of lameness associated with Scottish fold osteodystrophy following bilateral ostectomies and pantarsal arthrodeses: a case report. J Am Anim Hosp Assoc 31:280-288",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7552658/",
+      "year": 1995
+    },
+    {
+      "title": "Cats Protection: Cats with folded ears",
+      "url": "https://www.cats.org.uk/extreme-traits/cats-with-folded-ears"
+    },
+    {
+      "title": "FECAVA: Belgium bans breeding and trading of cats with folded ears",
+      "url": "https://www.fecava.org/belgium-bans-breeding-and-trading-of-cats-with-folded-ears/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

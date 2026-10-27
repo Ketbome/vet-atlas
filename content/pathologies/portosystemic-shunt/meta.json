@@ -53,9 +53,24 @@
       "title": "Mohammadi S, Pahlevaninezhad N, Valavi P, et al. Neurological consequences after portosystemic shunt attenuation in cats: A meta-analysis study. Vet J 306:106150",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38838770/",
       "year": 2024
+    },
+    {
+      "title": "Konstantinidis AO, Patsikas MN, Papazoglou LG, Adamama-Moraitou KK. Congenital portosystemic shunts in dogs and cats: classification, pathophysiology, clinical presentation and diagnosis. Vet Sci 10:160",
+      "url": "https://europepmc.org/article/PMC/PMC9961057",
+      "year": 2023
+    },
+    {
+      "title": "Konstantinidis AO, Adamama-Moraitou KK, Patsikas MN, Papazoglou LG. Congenital portosystemic shunts in dogs and cats: treatment, complications and prognosis. Vet Sci 10:346",
+      "url": "https://europepmc.org/article/PMC/PMC10223741",
+      "year": 2023
+    },
+    {
+      "title": "Merck Veterinary Manual: Acquired Portosystemic Shunts in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/hepatic-diseases-of-small-animals/acquired-portosystemic-shunts-in-small-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

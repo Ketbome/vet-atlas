@@ -52,9 +52,26 @@
       "title": "Vernau KM, Kim S, Thomasy SM, et al. Doxycycline with or without famciclovir for infectious ophthalmic and respiratory disease: a prospective, randomized, masked, placebo-controlled trial in 373 kittens. J Feline Med Surg 26:1098612X241278413",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39485362/",
       "year": 2024
+    },
+    {
+      "title": "ABCD Europe: Guideline for Feline Herpesvirus infection",
+      "url": "https://www.abcdcatsvets.org/guideline-for-feline-herpesvirus-infection/"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Conjunctiva in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-conjunctiva-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Cornea in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-cornea-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Physical Examination of the Eye in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/physical-examination-of-the-eye-in-animals"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

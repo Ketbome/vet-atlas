@@ -42,9 +42,14 @@
     {
       "title": "Constable PD, Hinchcliff KW, Done SH, Grünberg W. Veterinary Medicine: A Textbook of the Diseases of Cattle, Horses, Sheep, Pigs, and Goats, 11th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Mastitis in Cattle",
+      "url": "https://www.merckvetmanual.com/reproductive-system/mastitis-in-large-animals/mastitis-in-cattle"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

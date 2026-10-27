@@ -59,9 +59,36 @@
       "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Tendinitis in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/tendon-and-ligament-disorders-in-horses/tendinitis-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Tendon Disorders in Animals",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/musculoskeletal-system-introduction/tendon-disorders-in-animals"
+    },
+    {
+      "title": "WikiVet: Stay Apparatus - Horse Anatomy",
+      "url": "https://en.wikivet.net/Stay_Apparatus_-_Horse_Anatomy"
+    },
+    {
+      "title": "Shojaee A. Equine tendon mechanical behaviour: prospects for repair and regeneration applications. Vet Med Sci 9:2053-2069",
+      "url": "https://europepmc.org/article/PMC/PMC10508504",
+      "year": 2023
+    },
+    {
+      "title": "Guest DJ, Birch HL, Thorpe CT. A review of the equine suspensory ligament: injury prone yet understudied. Equine Vet J 57:1167-1182",
+      "url": "https://europepmc.org/article/PMC/PMC12326920",
+      "year": 2025
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -43,9 +43,27 @@
       "title": "Burns CG, Bergh MS, McLoughlin MA. Surgical and nonsurgical treatment of peritoneopericardial diaphragmatic hernia in dogs and cats: 58 cases (1999-2008). J Am Vet Med Assoc 242:643-650",
       "url": "https://pubmed.ncbi.nlm.nih.gov/23402411/",
       "year": 2013
+    },
+    {
+      "title": "Merck Veterinary Manual: Diaphragmatic Hernia in Animals",
+      "url": "https://www.merckvetmanual.com/respiratory-system/diaphragmatic-hernia/diaphragmatic-hernia-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Diaphragmatic Hernia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/diaphragmatic-hernia-in-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Diaphragmatic Hernia in Cats",
+      "url": "https://www.merckvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/diaphragmatic-hernia-in-cats"
+    },
+    {
+      "title": "International Committee on Veterinary Gross Anatomical Nomenclature. Nomina Anatomica Veterinaria, 6th ed. World Association of Veterinary Anatomists",
+      "url": "https://www.wava-amav.org/wava-documents.html",
+      "year": 2017
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

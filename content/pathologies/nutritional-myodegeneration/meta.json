@@ -35,9 +35,14 @@
       "title": "Swecker WS Jr, Hunter KH, Shanklin RK, et al. Parenteral selenium and vitamin E supplementation of weaned beef calves. J Vet Intern Med 22:443-449",
       "url": "https://pubmed.ncbi.nlm.nih.gov/18346143/",
       "year": 2008
+    },
+    {
+      "title": "Merck Veterinary Manual: Nutritional Myopathies in Ruminants and Pigs",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/myopathies-in-ruminants-and-pigs/nutritional-myopathies-in-ruminants-and-pigs"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

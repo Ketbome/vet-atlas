@@ -17,9 +17,31 @@
     {
       "title": "Fossum TW. Small Animal Surgery, 5th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Benign Prostatic Hyperplasia in Dogs",
+      "url": "https://www.merckvetmanual.com/reproductive-system/prostatic-diseases-in-small-animals/benign-prostatic-hyperplasia-in-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Prostatic Diseases in Small Animals",
+      "url": "https://www.merckvetmanual.com/reproductive-system/prostatic-diseases-in-small-animals/prostatic-diseases-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Neoplasms of the Prostate in Dogs",
+      "url": "https://www.merckvetmanual.com/reproductive-system/prostatic-diseases-in-small-animals/neoplasms-of-the-prostate-in-dogs"
+    },
+    {
+      "title": "Merck Veterinary Manual: Reproductive Disorders of Male Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/reproductive-disorders-of-male-dogs"
+    },
+    {
+      "title": "Posastiuc FP, Constantin NT, Domain G, et al. A systematic review of medical treatments for benign prostatic hyperplasia in dogs: evaluating strategies for reproductive function preservation. Vet Sci 12:70",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11768428/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

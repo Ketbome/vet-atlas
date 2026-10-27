@@ -38,9 +38,28 @@
       "title": "Bascuñán A, Thieman Mankin KM, Saunders AB, et al. Patent ductus arteriosus in cats (Felis catus): 50 cases (2000-2015). J Vet Cardiol 19:35-43",
       "url": "https://pubmed.ncbi.nlm.nih.gov/27919727/",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Cardiac Shunts in Animals",
+      "url": "https://www.merckvetmanual.com/circulatory-system/congenital-and-inherited-anomalies-of-the-cardiovascular-system/cardiac-shunts-in-animals"
+    },
+    {
+      "title": "American College of Veterinary Surgeons: Patent Ductus Arteriosus (PDA) in Small Animals",
+      "url": "https://www.acvs.org/small-animal/patent-ductus-arteriosus/"
+    },
+    {
+      "title": "Heart. In: Langley-Hobbs SJ, Demetriou JL, Ladlow JF (eds). Feline Soft Tissue and General Surgery, pp. 557-567. Elsevier (free full text)",
+      "url": "https://europepmc.org/article/PMC/PMC7149910",
+      "year": 2013
+    },
+    {
+      "title": "Ozai Y, Uemura A, Tanaka R, et al. Clip ligation for treatment of patent ductus arteriosus occlusion in three cats. J Vet Sci 23:e39",
+      "url": "https://europepmc.org/article/PMC/PMC9346534",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
