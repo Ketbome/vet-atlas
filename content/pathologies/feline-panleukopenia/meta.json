@@ -45,9 +45,19 @@
       "title": "Stone AE, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg 22:813-830",
       "url": "https://pubmed.ncbi.nlm.nih.gov/32845224/",
       "year": 2020
+    },
+    {
+      "title": "Merck Veterinary Manual: Feline Panleukopenia",
+      "url": "https://www.merckvetmanual.com/digestive-system/infectious-diseases-of-the-gastrointestinal-tract-in-small-animals/feline-panleukopenia"
+    },
+    {
+      "title": "WSAVA: 2024 Guidelines for the Vaccination of Dogs and Cats, Executive Summary",
+      "url": "https://wsava.org/wp-content/uploads/2024/05/2024-Guidelines-for-the-Vaccination-of-Dogs-and-Cats.pdf",
+      "year": 2024
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -45,9 +45,28 @@
       "title": "Schweizer M, Stalder H, Haslebacher A, et al. Eradication of Bovine Viral Diarrhoea (BVD) in Cattle in Switzerland: Lessons Taught by the Complex Biology of the Virus. Front Vet Sci 8:702730",
       "url": "https://pubmed.ncbi.nlm.nih.gov/34557540/",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Bovine Viral Diarrhea and Mucosal Disease Complex",
+      "url": "https://www.merckvetmanual.com/infectious-diseases/bovine-viral-diarrhea/bovine-viral-diarrhea-and-mucosal-disease-complex"
+    },
+    {
+      "title": "Merck Veterinary Manual: Congenital and Inherited Cerebellar Disorders in Large Animals",
+      "url": "https://www.merckvetmanual.com/nervous-system/congenital-and-inherited-anomalies-of-the-nervous-system-in-large-animals/congenital-and-inherited-cerebellar-disorders-in-large-animals"
+    },
+    {
+      "title": "Moennig V, Becher P. Control of Bovine Viral Diarrhea. Pathogens 7:29",
+      "year": 2018,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5874755/"
+    },
+    {
+      "title": "Bovine viral diarrhea virus: An updated American College of Veterinary Internal Medicine consensus statement with focus on virus biology, hosts, immunosuppression, and vaccination",
+      "year": 2020,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7517858/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

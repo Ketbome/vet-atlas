@@ -33,9 +33,14 @@
       "title": "Clarke LL, Hawkins IK, Rissi DR. Central nervous system diseases of cattle in Georgia, 2001-2017. J Vet Diagn Invest 31:588-593",
       "url": "https://pubmed.ncbi.nlm.nih.gov/31179896/",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Polioencephalomalacia in Ruminants",
+      "url": "https://www.merckvetmanual.com/nervous-system/polioencephalomalacia/polioencephalomalacia-in-ruminants"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

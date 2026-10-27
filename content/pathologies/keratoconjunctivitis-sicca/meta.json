@@ -16,9 +16,47 @@
     {
       "title": "Maggs DJ, Miller PE, Ofri R. Slatter's Fundamentals of Veterinary Ophthalmology, 6th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Nasolacrimal and Lacrimal Apparatus in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/nasolacrimal-and-lacrimal-apparatus-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Tear Stimulants and Immunosuppressants in Animals",
+      "url": "https://www.merckvetmanual.com/pharmacology/systemic-pharmacotherapeutics-of-the-eye/tear-stimulants-and-immunosuppressants-in-animals"
+    },
+    {
+      "title": "Cummings School of Veterinary Medicine (Tufts): Severe Keratoconjunctivitis Sicca Accompanied by Ipsilateral Xeromycteria",
+      "url": "https://vet.tufts.edu/news-events/news/severe-keratoconjunctivitis-sicca-accompanied-ipsilateral-xeromycteria"
+    },
+    {
+      "title": "Keratoconjunctivitis sicca in intact Aksaray Malakli breed dogs: Evaluation of 50 cases",
+      "year": 2025,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12488534/"
+    },
+    {
+      "title": "Retrospective cohort study on the development of keratoconjunctivitis sicca in dogs treated with trimethoprim sulfonamide: a VetCompass Australia study",
+      "year": 2026,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12881963/"
+    },
+    {
+      "title": "Risk Factors for Radiation-Induced Keratoconjunctivitis Sicca in Dogs Treated with Hypofractionated Intensity-Modulated Radiation Therapy for Intranasal Tumors",
+      "year": 2025,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12345480/"
+    },
+    {
+      "title": "Tear Protein Alteration in Dogs with Keratoconjunctivitis Sicca",
+      "year": 2026,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12837657/"
+    },
+    {
+      "title": "Ultrasound of the Lacrimal Gland in Healthy Shih Tzu Dogs and with Dry Eye Disease",
+      "year": 2024,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11419838/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

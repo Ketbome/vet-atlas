@@ -29,9 +29,14 @@
       "title": "Gadberry S, Lalman D, White F, et al. Meta-analysis of the effects of monensin on growth and bloat of cattle on pasture. Transl Anim Sci 6:txac031",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35475114/",
       "year": 2022
+    },
+    {
+      "title": "Merck Veterinary Manual: Bloat in Ruminants",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-ruminant-forestomach/bloat-in-ruminants"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

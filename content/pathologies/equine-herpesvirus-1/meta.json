@@ -49,9 +49,27 @@
       "title": "Maxwell LK, Bentz BG, Gilliam LL, et al. Efficacy of the early administration of valacyclovir hydrochloride for the treatment of neuropathogenic equine herpesvirus type-1 infection in horses. Am J Vet Res 78:1126-1139",
       "url": "https://pubmed.ncbi.nlm.nih.gov/28945127/",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Herpesvirus Infection",
+      "url": "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-horses/equine-herpesvirus-infection"
+    },
+    {
+      "title": "Merck Veterinary Manual: Abortion in Horses",
+      "url": "https://www.merckvetmanual.com/reproductive-system/abortion-in-large-animals/abortion-in-horses"
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
+    },
+    {
+      "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
+      "year": 2021
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

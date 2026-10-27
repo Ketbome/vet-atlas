@@ -43,9 +43,26 @@
       "title": "Carr EA, Théon AP, Madewell BR, et al. Bovine papillomavirus DNA in neoplastic and nonneoplastic tissues obtained from horses with and without sarcoids in the western United States. Am J Vet Res 62:741-4",
       "url": "https://pubmed.ncbi.nlm.nih.gov/11341396/",
       "year": 2001
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Sarcoids",
+      "url": "https://www.merckvetmanual.com/integumentary-system/tumors-of-the-skin-and-soft-tissues/equine-sarcoids"
+    },
+    {
+      "title": "Merck Veterinary Manual: Ocular Neoplasia in Horses",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/neoplasia-of-the-eye-and-associated-structures/ocular-neoplasia-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: Tumors of the Skin in Horses",
+      "url": "https://www.merckvetmanual.com/horse-owners/skin-disorders-of-horses/tumors-of-the-skin-in-horses"
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

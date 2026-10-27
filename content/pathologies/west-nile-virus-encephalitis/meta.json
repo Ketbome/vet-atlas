@@ -37,9 +37,35 @@
       "title": "Bowen RA, Bosco-Lauth A, Syvrud K, et al. Protection of horses from West Nile virus Lineage 2 challenge following immunization with a whole, inactivated WNV lineage 1 vaccine. Vaccine 32:5455-9",
       "url": "https://pubmed.ncbi.nlm.nih.gov/25131745/",
       "year": 2014
+    },
+    {
+      "title": "Merck Veterinary Manual (Horse Owners): West Nile Encephalomyelitis in Horses",
+      "url": "https://www.merckvetmanual.com/horse-owners/brain-spinal-cord-and-nerve-disorders-of-horses/west-nile-encephalomyelitis-in-horses"
+    },
+    {
+      "title": "Washington Animal Disease Diagnostic Laboratory: Diagnosis and testing for West Nile fever (West Nile encephalitis) in horses",
+      "url": "https://waddl.vetmed.wsu.edu/2022/11/10/diagnosis-and-testing-for-west-nile-fever-west-nile-encephalitis-in-horses/"
+    },
+    {
+      "title": "Texas A&M Veterinary Medical Diagnostic Laboratory: West Nile Virus: Diagnostic Guidance for Veterinarians",
+      "url": "https://tvmdl.tamu.edu/education-library/west-nile-virus-diagnostic-guidance-for-veterinarians/"
+    },
+    {
+      "title": "Canadian Food Inspection Agency: West Nile virus",
+      "url": "https://inspection.canada.ca/en/animal-health/terrestrial-animals/diseases/immediately-notifiable/west-nile-virus"
+    },
+    {
+      "title": "Bunning ML, Bowen RA, Cropp CB, et al. Experimental infection of horses with West Nile virus. Emerg Infect Dis 8(4)",
+      "year": 2002,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3393377/"
+    },
+    {
+      "title": "Regulation (EU) 2019/6 on veterinary medicinal products, Article 112 (equine species declared not intended for slaughter)",
+      "url": "https://www.legislation.gov.uk/eur/2019/6/article/112"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

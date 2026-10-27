@@ -25,9 +25,33 @@
     {
       "title": "American College of Veterinary Surgeons: Cranial cruciate ligament disease",
       "url": "https://www.acvs.org/small-animal/cranial-cruciate-ligament-disease"
+    },
+    {
+      "title": "Merck Veterinary Manual: Joint Trauma in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/arthropathies-and-related-disorders-in-small-animals/joint-trauma-in-dogs-and-cats"
+    },
+    {
+      "title": "dvm360: Canine CCL injury: diagnosis and surgical decision making (Proceedings)",
+      "url": "https://www.dvm360.com/view/canine-ccl-injury-diagnosis-and-surgical-decision-making-proceedings"
+    },
+    {
+      "title": "Spinella G, Arcamone G, Valentini S. Cranial Cruciate Ligament Rupture in Dogs: Review on Biomechanics, Etiopathogenetic Factors and Rehabilitation. Vet Sci 8:186",
+      "year": 2021,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8472898/"
+    },
+    {
+      "title": "Thermographic Evaluation of the Stifle Region in Dogs with a Rupture of the Cranial Cruciate Ligament. Animals 15:2317",
+      "year": 2025,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12345753/"
+    },
+    {
+      "title": "Arthroscopy in specific joint pathologies of dogs and potential for application in wildlife species",
+      "year": 2026,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13655556/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

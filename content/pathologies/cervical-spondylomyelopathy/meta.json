@@ -72,9 +72,47 @@
       "title": "Strootmann T, Peter VG, Körner J. Radiographic Prevalence of Anatomical Variations of the Ventral Lamina of the Sixth Cervical Vertebra, C6/C7 Articular Process Joint Modelling and Competition Outcomes in Warmblood Sport Horses. Animals (Basel) 16:424",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41681407/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Degenerative Diseases of the Spinal Column and Cord in Animals",
+      "url": "https://www.merckvetmanual.com/nervous-system/diseases-of-the-spinal-column-and-cord/degenerative-diseases-of-the-spinal-column-and-cord-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Congenital and Inherited Anomalies of the Musculoskeletal System in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/congenital-and-inherited-anomalies-of-the-musculoskeletal-system/congenital-and-inherited-anomalies-of-the-musculoskeletal-system-in-horses"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Neurologic Examination of Animals",
+      "url": "https://www.merckvetmanual.com/nervous-system/the-neurologic-examination/the-neurologic-examination-of-animals"
+    },
+    {
+      "title": "Bonelli MA, da Costa RC. Magnetic resonance imaging and neurologic characterization of combined osseous- and disc-associated cervical spondylomyelopathy in dogs. J Vet Intern Med",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10365061/"
+    },
+    {
+      "title": "Kinematic Magnetic Resonance Imaging for Evaluation of Disc-Associated Cervical Spondylomyelopathy in Doberman Pinschers. J Vet Intern Med",
+      "year": 2016,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5089627/"
+    },
+    {
+      "title": "Falzone C, Tranquillo V, Gasparinetti N. Comparison of Two Surgical Techniques for the Treatment of Canine Disc Associated-Cervical Spondylomyelopathy. Front Vet Sci",
+      "year": 2022,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9251543/"
+    },
+    {
+      "title": "Rusbridge C, Wheeler SJ, Torrington AM, et al. Comparison of two surgical techniques for the management of cervical spondylomyelopathy in dobermanns. J Small Anim Pract 39:425-31",
+      "year": 1998,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9791829/"
+    },
+    {
+      "title": "Cone beam computed tomographic myelography in horses with cervical vertebral compressive myelopathy",
+      "year": 2026,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13244182/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

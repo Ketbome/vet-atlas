@@ -47,9 +47,14 @@
       "title": "Boulay G, Francoz D, Doré E, et al. Preoperative cow-side lactatemia measurement predicts negative outcome in Holstein dairy cattle with right abomasal disorders. J Dairy Sci 97:212-21",
       "url": "https://pubmed.ncbi.nlm.nih.gov/24183688/",
       "year": 2014
+    },
+    {
+      "title": "Merck Veterinary Manual: Abomasal Displacement and Volvulus in Cattle",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-abomasum-in-cattle/abomasal-displacement-and-volvulus-in-cattle"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

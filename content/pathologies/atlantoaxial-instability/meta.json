@@ -21,9 +21,38 @@
     {
       "title": "de Lahunta A, Glass E, Kent M. de Lahunta's Veterinary Neuroanatomy and Clinical Neurology, 5th ed. Elsevier",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Congenital and Inherited Spinal Cord Disorders in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/nervous-system/congenital-and-inherited-anomalies-of-the-nervous-system-in-small-animals/congenital-and-inherited-spinal-cord-disorders-in-dogs-and-cats"
+    },
+    {
+      "title": "American College of Veterinary Surgeons: Atlantoaxial Instability",
+      "url": "https://www.acvs.org/small-animal/a-a-luxation/"
+    },
+    {
+      "title": "Evaluation of a Novel Dorsal-Cemented Technique for Atlantoaxial Stabilisation in 12 Dogs. Life (Basel) 11:1039",
+      "year": 2021,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8539997/"
+    },
+    {
+      "title": "Magnetic resonance imaging characteristics of atlanto-axial subluxation in 42 dogs: Analysis of joint cavity size, subluxation distance, and craniocervical junction anomalies",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10576573/"
+    },
+    {
+      "title": "Case report: Atlantoaxial instability and subluxation in a dog with Ehlers–Danlos syndrome",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10436340/"
+    },
+    {
+      "title": "Congenital and Breed-Associated Vertebral Anomalies in Dogs and Cats: Developmental Anatomy, Genetic Determinants, and Biological Significance",
+      "year": 2026,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13608376/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

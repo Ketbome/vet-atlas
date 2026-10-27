@@ -18,9 +18,24 @@
     {
       "title": "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier",
       "year": 2013
+    },
+    {
+      "title": "Merck Veterinary Manual: Gastric Dilation and Volvulus in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/surgical-problems-of-the-gastrointestinal-tract-in-small-animals/gastric-dilation-and-volvulus-in-small-animals"
+    },
+    {
+      "title": "Cell-Free DNA, High-Mobility Group Box-1, and Procalcitonin Concentrations in Dogs With Gastric Dilatation-Volvulus Syndrome",
+      "year": 2018,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5900424/"
+    },
+    {
+      "title": "Comparison of postoperative pain and inflammation reaction in dogs undergoing preventive laparoscopic-assisted and incisional gastropexy",
+      "year": 2017,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5627322/"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
