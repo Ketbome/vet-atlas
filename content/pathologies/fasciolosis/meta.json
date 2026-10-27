@@ -37,9 +37,37 @@
       "title": "Kelley JM, Elliott TP, Beddoe T, et al. Current Threat of Triclabendazole Resistance in Fasciola hepatica. Trends Parasitol 32:458-469",
       "url": "https://pubmed.ncbi.nlm.nih.gov/27049013/",
       "year": 2016
+    },
+    {
+      "title": "Merck Veterinary Manual: Fasciola hepatica in Ruminants",
+      "url": "https://www.merckvetmanual.com/digestive-system/fluke-infections-in-ruminants/fasciola-hepatica-in-ruminants"
+    },
+    {
+      "title": "Merck Veterinary Manual: Fasciola gigantica in Ruminants",
+      "url": "https://www.merckvetmanual.com/digestive-system/fluke-infections-in-ruminants/fasciola-gigantica-in-ruminants"
+    },
+    {
+      "title": "WikiVet: Liver - Anatomy & Physiology",
+      "url": "https://en.wikivet.net/Liver_-_Anatomy_%26_Physiology"
+    },
+    {
+      "title": "Beesley NJ, Caminade C, Charlier J, et al. Fasciola and fasciolosis in ruminants in Europe: Identifying research needs. Transbound Emerg Dis 65 Suppl 1:199-216",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6190748/",
+      "year": 2018
+    },
+    {
+      "title": "Cwiklinski K, O'Neill SM, Donnelly S, et al. A prospective view of animal and human Fasciolosis. Parasite Immunol 38:558-568",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5053257/",
+      "year": 2016
+    },
+    {
+      "title": "Ciui S, Morar A, Tîrziu E, et al. Causes of Post-Mortem Carcass and Organ Condemnations and Economic Loss Assessment in a Cattle Slaughterhouse. Animals (Basel) 13:3339",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10648126/",
+      "year": 2023
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

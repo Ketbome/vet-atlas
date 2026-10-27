@@ -46,9 +46,22 @@
       "title": "Grossman RM, Sumner JP, Lopez DJ, et al. Evaluation of outcomes following subtotal colectomy for the treatment of idiopathic megacolon in cats. J Am Vet Med Assoc 259:1292-1299",
       "url": "https://pubmed.ncbi.nlm.nih.gov/34727062/",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Constipation, Obstipation, and Megacolon in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-large-intestine-in-small-animals/constipation-obstipation-and-megacolon-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Disorders of Micturition in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/urinary-system/noninfectious-diseases-of-the-urinary-system-in-small-animals/disorders-of-micturition-in-dogs-and-cats"
+    },
+    {
+      "title": "WikiVet: Pelvis - Anatomy & Physiology",
+      "url": "https://en.wikivet.net/Pelvis_-_Anatomy_%26_Physiology"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

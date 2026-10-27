@@ -16,9 +16,38 @@
     {
       "title": "Piermattei DL, Flo GL, DeCamp CE. Brinker, Piermattei and Flo's Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders",
       "year": 2006
+    },
+    {
+      "title": "Merck Veterinary Manual: Muscular Trauma in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-small-animals/muscular-trauma-in-dogs-and-cats"
+    },
+    {
+      "title": "IMAIOS vet-Anatomy: Infraspinatus muscle",
+      "url": "https://www.imaios.cn/en/vet-anatomy/anatomical-structures/infraspinatus-muscle-11077964016"
+    },
+    {
+      "title": "Devor M, Sørby R. Fibrotic contracture of the canine infraspinatus muscle: pathophysiology and prevention by early surgical intervention. Vet Comp Orthop Traumatol 19:117-121",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16810356/",
+      "year": 2006
+    },
+    {
+      "title": "Franch J, Bertran J, Remolins G, et al. Simultaneous bilateral contracture of the infraspinatus muscle. Vet Comp Orthop Traumatol 22:249-252",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19448877/",
+      "year": 2009
+    },
+    {
+      "title": "Orellana-James NG, Ginja MM, Regueiro M, et al. Sub-acute and chronic MRI findings in bilateral canine fibrotic contracture of the infraspinatus muscle. J Small Anim Pract 54:428-431",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23656382/",
+      "year": 2013
+    },
+    {
+      "title": "Dillon EA, Anderson LJ, Jones BR. Infraspinatus muscle contracture in a working dog. N Z Vet J 37:32-34",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16031505/",
+      "year": 1989
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

@@ -34,9 +34,19 @@
       "title": "Saeedi-Moghaddam F, Mohammaditabar M, Mozhgani SH. Bovine leukemia virus (BLV) and risk of breast cancer; a systematic review and meta-analysis. Retrovirology 21:20",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39623467/",
       "year": 2024
+    },
+    {
+      "title": "Merck Veterinary Manual: Bovine Leukosis",
+      "url": "https://www.merckvetmanual.com/generalized-conditions/bovine-leukosis/bovine-leukosis"
+    },
+    {
+      "title": "WOAH Manual of Diagnostic Tests and Vaccines for Terrestrial Animals, chapter 3.4.9: Enzootic bovine leukosis",
+      "url": "https://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.04.09_EBL.pdf",
+      "year": 2018
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

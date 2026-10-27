@@ -20,9 +20,19 @@
     {
       "title": "Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier",
       "year": 2017
+    },
+    {
+      "title": "Merck Veterinary Manual: Pyoderma in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/integumentary-system/pyoderma/pyoderma-in-dogs-and-cats"
+    },
+    {
+      "title": "Loeffler A, Cain CL, Ferrer L, et al. Antimicrobial use guidelines for canine pyoderma by the International Society for Companion Animal Infectious Diseases (ISCAID). Vet Dermatol 36:234-282",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12058580/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

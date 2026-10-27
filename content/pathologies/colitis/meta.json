@@ -21,6 +21,7 @@
     },
     {
       "title": "Gookin JL, Hanrahan K, Levy MG. The conundrum of feline trichomonosis: the more we learn the 'trickier' it gets. J Feline Med Surg 19:261-274",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11119535/",
       "year": 2017
     },
     {
@@ -52,9 +53,42 @@
       "title": "Kathrani A, Church DB, Brodbelt DC, et al. The use of hydrolysed diets for vomiting and/or diarrhoea in cats in primary veterinary practice. J Small Anim Pract 61:723-731",
       "url": "https://pubmed.ncbi.nlm.nih.gov/32895973/",
       "year": 2020
+    },
+    {
+      "title": "Merck Veterinary Manual: Colitis in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-large-intestine-in-small-animals/colitis-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Chronic Enteropathies in Small Animals",
+      "url": "https://www.merckvetmanual.com/digestive-system/diseases-of-the-small-intestine-in-small-animals/chronic-enteropathies-in-small-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: Gastrointestinal Neoplasia in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/digestive-system/neoplasia-of-the-gastrointestinal-tract-in-small-animals/gastrointestinal-neoplasia-in-dogs-and-cats"
+    },
+    {
+      "title": "Langlois DK, Koenigshof AM, Mani R. Metronidazole treatment of acute diarrhea in dogs: A randomized double blinded placebo-controlled clinical trial. J Vet Intern Med 34:98-104",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6979100/",
+      "year": 2020
+    },
+    {
+      "title": "Lappin MR, Zug A, Hovenga C, et al. Efficacy of feeding a diet containing a high concentration of mixed fiber sources for management of acute large bowel diarrhea in dogs in shelters. J Vet Intern Med 36:488-492",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8965269/",
+      "year": 2022
+    },
+    {
+      "title": "Dogan B, Zhang S, Kalla SE, et al. Molecular and Phenotypic Characterization of Escherichia coli Associated with Granulomatous Colitis of Boxer Dogs. Antibiotics (Basel) 9:E540",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7559917/",
+      "year": 2020
+    },
+    {
+      "title": "Fritsch DA, Wernimont SM, Jackson MI, et al. A prospective multicenter study of the efficacy of a fiber-supplemented dietary intervention in dogs with chronic large bowel diarrhea. BMC Vet Res 18:244",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9229818/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

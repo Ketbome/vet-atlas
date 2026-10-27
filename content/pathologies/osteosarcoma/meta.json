@@ -59,9 +59,19 @@
       "title": "Kimura S, Lubelski J, Wood CJ, et al. Diagnosis and clinical outcome of cats with primary appendicular bone tumors: 76 cases. J Am Vet Med Assoc 264:1005-1013",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41962564/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Bone Tumors in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/osteopathies-in-small-animals/bone-tumors-in-dogs-and-cats"
+    },
+    {
+      "title": "Polton G, Borrego JF, Clemente-Vicario F, et al. Osteosarcoma of the appendicular skeleton in dogs: consensus and guidelines. Front Vet Sci 12:1633593",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12498955/",
+      "year": 2025
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

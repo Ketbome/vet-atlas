@@ -43,9 +43,39 @@
     {
       "title": "Noakes DE, Parkinson TJ, England GCW. Veterinary Reproduction and Obstetrics, 10th ed. Elsevier",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Cystic Ovary Disease and Cystic Corpus Luteum in Cows",
+      "url": "https://www.merckvetmanual.com/reproductive-system/cystic-ovary-disease/cystic-ovary-disease-and-cystic-corpus-luteum-in-cows"
+    },
+    {
+      "title": "Merck Veterinary Manual: Follicular Cystic Ovary Disease in Cows",
+      "url": "https://www.merckvetmanual.com/reproductive-system/cystic-ovary-disease/follicular-cystic-ovary-disease-in-cows"
+    },
+    {
+      "title": "Merck Veterinary Manual: Luteal Cystic Ovary Disease in Cows",
+      "url": "https://www.merckvetmanual.com/reproductive-system/cystic-ovary-disease/luteal-cystic-ovary-disease-in-cows"
+    },
+    {
+      "title": "Merck Veterinary Manual: Cystic Ovary Disease as a Herd Problem",
+      "url": "https://www.merckvetmanual.com/reproductive-system/cystic-ovary-disease/cystic-ovary-disease-herd-problem"
+    },
+    {
+      "title": "Merck Veterinary Manual: Pyometra in Production Animals",
+      "url": "https://www.merckvetmanual.com/reproductive-system/uterine-diseases-in-production-animals/pyometra-in-production-animals"
+    },
+    {
+      "title": "WikiVet: Ovary - Anatomy & Physiology",
+      "url": "https://en.wikivet.net/Ovary_-_Anatomy_%26_Physiology"
+    },
+    {
+      "title": "BorŞ SI, BorŞ A. Ovarian cysts, an anovulatory condition in dairy cattle. J Vet Med Sci 82:1515-1522",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7653308/",
+      "year": 2020
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

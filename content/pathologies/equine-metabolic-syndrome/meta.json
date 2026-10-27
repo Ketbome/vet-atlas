@@ -44,9 +44,23 @@
       "title": "Karikoski NP, Horn I, McGowan TW, et al. The prevalence of endocrinopathic laminitis among horses presented for laminitis at a first-opinion/referral equine hospital. Domest Anim Endocrinol 41:111-7",
       "url": "https://pubmed.ncbi.nlm.nih.gov/21696910/",
       "year": 2011
+    },
+    {
+      "title": "Merck Veterinary Manual: Equine Metabolic Syndrome",
+      "url": "https://www.merckvetmanual.com/metabolic-disorders/equine-metabolic-syndrome/equine-metabolic-syndrome"
+    },
+    {
+      "title": "Merck Veterinary Manual: Laminitis in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/disorders-of-the-foot-in-horses/laminitis-in-horses"
+    },
+    {
+      "title": "Schnepf A, Bienert-Zeit A, Ertugrul H, et al. Antimicrobial Usage in Horses: The Use of Electronic Data, Data Curation, and First Results. Front Vet Sci 7:216",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7200993/",
+      "year": 2020
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

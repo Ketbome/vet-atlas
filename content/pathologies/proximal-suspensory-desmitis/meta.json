@@ -49,9 +49,33 @@
       "title": "Commission Implementing Regulation (EU) 2021/963 on the identification and registration of equine animals and establishing model identification documents for those animals",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj",
       "year": 2021
+    },
+    {
+      "title": "Merck Veterinary Manual: Suspensory Desmitis in Horses",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/tendon-and-ligament-disorders-in-horses/suspensory-desmitis-in-horses"
+    },
+    {
+      "title": "WikiVet: Stay Apparatus - Horse Anatomy",
+      "url": "https://en.wikivet.net/Stay_Apparatus_-_Horse_Anatomy"
+    },
+    {
+      "title": "Maleas G, Mageed M. Effectiveness of Platelet-Rich Plasma and Bone Marrow Aspirate Concentrate as Treatments for Chronic Hindlimb Proximal Suspensory Desmopathy. Front Vet Sci 8:678453",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8253571/",
+      "year": 2021
+    },
+    {
+      "title": "van Veggel E, Selberg K, van der Velde-Hoogelander B, et al. Magnetic Resonance Imaging Findings of the Proximal Metacarpal Region in Warmblood Horses: 36 Lame and 26 Control Limbs (2015-2021). Front Vet Sci 8:714423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8388851/",
+      "year": 2021
+    },
+    {
+      "title": "Schnepf A, Bienert-Zeit A, Ertugrul H, et al. Antimicrobial Usage in Horses: The Use of Electronic Data, Data Curation, and First Results. Front Vet Sci 7:216",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7200993/",
+      "year": 2020
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

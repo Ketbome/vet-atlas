@@ -49,9 +49,33 @@
       "title": "Rubinos C, Meeson RL. Traumatic physeal fractures in cats: a review of 36 cases (2010-2020). J Feline Med Surg 24:98-106",
       "url": "https://pubmed.ncbi.nlm.nih.gov/33847538/",
       "year": 2022
+    },
+    {
+      "title": "Merck Veterinary Manual: Bone Fractures in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/osteopathies-in-small-animals/bone-fractures-in-dogs-and-cats"
+    },
+    {
+      "title": "Merck Veterinary Manual: Muscular Trauma in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-small-animals/muscular-trauma-in-dogs-and-cats"
+    },
+    {
+      "title": "Roberts VJ, Meeson RL. Feline Femoral Fracture Fixation: What are the options?. J Feline Med Surg 24:442-463",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11104039/",
+      "year": 2022
+    },
+    {
+      "title": "Lafuente P. Young, male neutered, obese, lame? Non-traumatic fractures of the femoral head and neck. J Feline Med Surg 13:498-507",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11107975/",
+      "year": 2011
+    },
+    {
+      "title": "Lucas KDA, Kassab S, Souza RG, et al. Three-dimensional models of physeal fractures in the femur for the teaching of veterinary medicine. Acta Cir Bras 39:e395424",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11299386/",
+      "year": 2024
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

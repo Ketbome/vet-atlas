@@ -35,9 +35,19 @@
       "title": "Kruger JM, Lulich JP, MacLeay J, et al. Comparison of foods with differing nutritional profiles for long-term management of acute nonobstructive idiopathic cystitis in cats. JAVMA 247:508-517",
       "url": "https://pubmed.ncbi.nlm.nih.gov/26295556/",
       "year": 2015
+    },
+    {
+      "title": "Merck Veterinary Manual: Lower Urinary Tract Disease in Cats",
+      "url": "https://www.merckvetmanual.com/urinary-system/noninfectious-diseases-of-the-urinary-system-in-small-animals/lower-urinary-tract-disease-in-cats"
+    },
+    {
+      "title": "He C, Fan K, Hao Z, et al. Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review. Front Vet Sci 9:900847",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9257190/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

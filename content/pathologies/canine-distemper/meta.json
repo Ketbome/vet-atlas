@@ -41,9 +41,41 @@
       "title": "Angwenyi SKS, Rooney NJ, Eisler MC. Are Domestic Dogs (Canis familiaris) the Family Scapegoats? A Systematic Review of Canine Distemper Virus in African Wildlife, 1978-2021. J Wildl Dis 61:1-16",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39603253/",
       "year": 2025
+    },
+    {
+      "title": "Merck Veterinary Manual: Canine Distemper",
+      "url": "https://www.merckvetmanual.com/generalized-conditions/canine-distemper/canine-distemper"
+    },
+    {
+      "title": "Merck Veterinary Manual: Nasolacrimal and Lacrimal Apparatus in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/nasolacrimal-and-lacrimal-apparatus-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Ocular Fundus in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-ocular-fundus-in-animals"
+    },
+    {
+      "title": "Merck Veterinary Manual: The Optic Nerve in Animals",
+      "url": "https://www.merckvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-optic-nerve-in-animals"
+    },
+    {
+      "title": "Rendon-Marin S, da Fontoura Budaszewski R, Canal CW, et al. Tropism and molecular pathogenesis of canine distemper virus. Virol J 16:30",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6407191/",
+      "year": 2019
+    },
+    {
+      "title": "Carvalho OV, Botelho CV, Ferreira CG, et al. Immunopathogenic and neurological mechanisms of canine distemper virus. Adv Virol 2012:163860",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3501799/",
+      "year": 2012
+    },
+    {
+      "title": "Wilkes RP. Canine Distemper Virus in Endangered Species: Species Jump, Clinical Variations, and Vaccination. Pathogens 12:57",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9862170/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

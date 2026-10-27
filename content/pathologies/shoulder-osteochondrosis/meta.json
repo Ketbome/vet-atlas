@@ -21,9 +21,27 @@
     {
       "title": "Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
       "year": 2018
+    },
+    {
+      "title": "Merck Veterinary Manual: Osteochondrosis in Dogs",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/arthropathies-and-related-disorders-in-small-animals/osteochondrosis-in-dogs"
+    },
+    {
+      "title": "American College of Veterinary Surgeons: Osteochondrosis of the Shoulder",
+      "url": "https://www.acvs.org/small-animal/osteochondrosis-of-the-shoulder"
+    },
+    {
+      "title": "Merck Veterinary Manual: Muscular Trauma in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-small-animals/muscular-trauma-in-dogs-and-cats"
+    },
+    {
+      "title": "Allan G, Davies S. Radiographic signs of joint disease in dogs and cats. In: Thrall DE, Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7152260/",
+      "year": 2018
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

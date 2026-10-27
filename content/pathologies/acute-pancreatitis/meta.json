@@ -52,9 +52,32 @@
       "title": "Wu YA, Lidbury JA, Sinha S, et al. Randomized open-label clinical trial comparing prednisolone and cyclosporine with a nonrandomized active control for treating presumed chronic pancreatitis in cats. J Vet Intern Med 39:e70163",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40577334/",
       "year": 2025
+    },
+    {
+      "title": "Merck Veterinary Manual: Pancreatitis in Dogs and Cats",
+      "url": "https://www.merckvetmanual.com/digestive-system/the-exocrine-pancreas/pancreatitis-in-dogs-and-cats"
+    },
+    {
+      "title": "Cridge H, Lim SY, Algül H, Steiner JM. New insights into the etiology, risk factors, and pathogenesis of pancreatitis in dogs: potential impacts on clinical practice. J Vet Intern Med 36:847-864",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9151489/",
+      "year": 2022
+    },
+    {
+      "title": "Cridge H, Twedt DC, Marolf AJ, Sharkey LC, Steiner JM. Advances in the diagnosis of acute pancreatitis in dogs. J Vet Intern Med 35:2572-2587",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8692219/",
+      "year": 2021
+    },
+    {
+      "title": "IMAIOS vet-Anatomy: Pancreas",
+      "url": "https://www.imaios.cn/en/vet-anatomy/anatomical-structures/pancreas-11078085080"
+    },
+    {
+      "title": "WikiVet: Pancreas - Anatomy & Physiology",
+      "url": "https://en.wikivet.net/Pancreas_-_Anatomy_%26_Physiology"
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

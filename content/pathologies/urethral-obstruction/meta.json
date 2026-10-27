@@ -82,9 +82,19 @@
       "title": "Skinner VJ, Zhong M, Hall EJ, et al. Azotaemia and outcomes in male cats with initial and recurrent urethral obstruction: a multicentre, retrospective study of 601 cats (2020-2024). J Feline Med Surg 28:1098612X261457846",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42187200/",
       "year": 2026
+    },
+    {
+      "title": "Merck Veterinary Manual: Nutrition in Disease Management in Small Animals",
+      "url": "https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutrition-in-disease-management-in-small-animals"
+    },
+    {
+      "title": "He C, Fan K, Hao Z, et al. Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review. Front Vet Sci 9:900847",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9257190/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }

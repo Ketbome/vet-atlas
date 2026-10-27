@@ -38,9 +38,39 @@
       "title": "Jacobs C, Beninger C, Hazlewood GS, et al. Effect of footbath protocols for prevention and treatment of digital dermatitis in dairy cattle: A systematic review and network meta-analysis. Prev Vet Med 164:56-71",
       "url": "https://pubmed.ncbi.nlm.nih.gov/30771895/",
       "year": 2019
+    },
+    {
+      "title": "Merck Veterinary Manual: Lameness Originating in the Hoof in Cattle",
+      "url": "https://www.merckvetmanual.com/musculoskeletal-system/lameness-in-cattle/lameness-originating-in-the-hoof-in-cattle"
+    },
+    {
+      "title": "Palmer MA, O'Connell NE. Digital Dermatitis in Dairy Cows: A Review of Risk Factors and Potential Sources of Between-Animal Variation in Susceptibility. Animals (Basel) 5:512-535",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4598691/",
+      "year": 2015
+    },
+    {
+      "title": "Wilson-Welder JH, Alt DP, Nally JE. Digital Dermatitis in Cattle: Current Bacterial and Immunological Findings. Animals (Basel) 5:1114-1135",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4693204/",
+      "year": 2015
+    },
+    {
+      "title": "Wilson-Welder JH, Alt DP, Nally JE. The etiology of digital dermatitis in ruminants: recent perspectives. Vet Med (Auckl) 6:155-164",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6070020/",
+      "year": 2015
+    },
+    {
+      "title": "Afonso JS, Oikonomou G, Carter S, et al. Diagnosis of Bovine Digital Dermatitis: Exploring the Usefulness of Indirect ELISA. Front Vet Sci 8:728691",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8591176/",
+      "year": 2021
+    },
+    {
+      "title": "Alsaaod M, Jensen TK, Miglinci L, et al. Proof of an optimized salicylic acid paste-based treatment concept of ulcerative M2-stage digital dermatitis lesions in 21 dairy cows. PLoS One 17:e0269521",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9182225/",
+      "year": 2022
     }
   ],
   "review": {
-    "status": "draft"
+    "status": "sourced",
+    "date": "2026-10-27"
   }
 }
