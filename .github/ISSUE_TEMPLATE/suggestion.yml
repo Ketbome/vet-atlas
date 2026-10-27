@@ -1,0 +1,28 @@
+name: Suggestion / Sugerencia
+description: An idea to make the atlas more useful for studying. / Una idea para que el atlas sirva más para estudiar.
+labels: [suggestion]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea / Tu idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: How would it help you study? / ¿Cómo te ayudaría a estudiar?
+      description: e.g. a course, an exam, a lab. / ej. un ramo, una prueba, un práctico.
+  - type: input
+    id: page
+    attributes:
+      label: Page (optional) / Página (opcional)
+  - type: dropdown
+    id: who
+    attributes:
+      label: You are / Eres
+      options:
+        - Student / Estudiante
+        - Veterinarian / Veterinario(a)
+        - Teacher / Docente
+        - Other / Otro

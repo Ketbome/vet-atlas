@@ -5,6 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import type { SearchItem } from "@/lib/content/load";
 import { SearchCommand } from "./search-command";
 import { LocaleSwitch } from "./locale-switch";
+import { FeedbackButton } from "./feedback-button";
 import { Logo } from "./logo";
 import { cn } from "@/lib/utils";
 
@@ -57,6 +58,7 @@ export function SiteHeader({ species, searchIndex }: Props) {
           <SearchCommand items={searchIndex} />
         </div>
 
+        <FeedbackButton />
         <LocaleSwitch />
         <a
           href="https://github.com/ketbome/vet-atlas"

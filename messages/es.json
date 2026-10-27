@@ -186,5 +186,21 @@
     "speciesTitle": "Anatomía en 3D: {species}",
     "speciesDescription": "{species} ({latin}) en 3D interactivo: {systems}. Atlas abierto y gratuito para estudiantes de veterinaria.",
     "systemDescription": "Explora {count} estructuras del {system} ({species}) en 3D interactivo, con nombre latino (NAV), descripción y patologías relacionadas."
+  },
+  "feedback": {
+    "label": "Comentarios",
+    "intro": "Abre un formulario corto en GitHub (requiere cuenta gratis). La página en que estás queda rellenada.",
+    "content-error": {
+      "title": "Algo está mal",
+      "hint": "Un error o algo confuso en una ficha"
+    },
+    "usability": {
+      "title": "Difícil de usar",
+      "hint": "Confuso, difícil de encontrar o no funciona en tu equipo"
+    },
+    "suggestion": {
+      "title": "Sugerencia",
+      "hint": "Una idea para que sirva más para estudiar"
+    }
   }
 }

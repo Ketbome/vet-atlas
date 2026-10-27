@@ -1,0 +1,33 @@
+name: Content error / Error de contenido
+description: Something in an entry is wrong or unclear. / Algo en una ficha está mal o no se entiende.
+labels: [content]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page / Página
+      description: Link to the entry. / Link de la ficha.
+      placeholder: https://vet-atlas.ketbome.com/es/...
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong / Qué está mal
+      description: Copy the sentence if you can. / Si puedes, copia la frase.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say / Qué debería decir
+      description: A reference helps a lot (book, paper, link). / Una fuente ayuda mucho (libro, paper, link).
+  - type: dropdown
+    id: who
+    attributes:
+      label: You are / Eres
+      options:
+        - Student / Estudiante
+        - Veterinarian / Veterinario(a)
+        - Teacher / Docente
+        - Other / Otro

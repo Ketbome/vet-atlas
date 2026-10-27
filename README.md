@@ -13,7 +13,7 @@ affect it and real images.
 [![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-b8892f)](LICENSE-CONTENT.md)
 [![Pages](https://github.com/Ketbome/vet-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/Ketbome/vet-atlas/actions/workflows/pages.yml)
 
-[Open the atlas](https://vet-atlas.ketbome.com) · [En español](https://vet-atlas.ketbome.com/es/) · [Report an error](https://github.com/Ketbome/vet-atlas/issues/new) · [Contribute](CONTRIBUTING.md)
+[Open the atlas](https://vet-atlas.ketbome.com) · [En español](https://vet-atlas.ketbome.com/es/) · [Send feedback](https://github.com/Ketbome/vet-atlas/issues/new/choose) · [Contribute](CONTRIBUTING.md)
 
 </div>
 

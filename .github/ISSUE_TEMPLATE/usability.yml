@@ -1,0 +1,43 @@
+name: Hard to use / Difícil de usar
+description: Something was confusing, hard to find, or did not work on your device. / Algo fue confuso, difícil de encontrar o no funcionó en tu equipo.
+labels: [ux]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page / Página
+      placeholder: https://vet-atlas.ketbome.com/es/...
+  - type: textarea
+    id: trying
+    attributes:
+      label: What were you trying to do? / ¿Qué intentabas hacer?
+      placeholder: e.g. find the femur of the horse / ej. encontrar el fémur del caballo
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened? / ¿Qué pasó?
+      description: Where did you get stuck or what did you expect instead? / ¿Dónde te trabaste o qué esperabas que pasara?
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device / Dispositivo
+      options:
+        - Phone / Celular
+        - Tablet
+        - Laptop / Notebook
+        - Desktop / PC de escritorio
+  - type: input
+    id: browser
+    attributes:
+      label: Browser (optional) / Navegador (opcional)
+      placeholder: Chrome, Safari, Firefox...
+  - type: checkboxes
+    id: accessibility
+    attributes:
+      label: Accessibility / Accesibilidad
+      options:
+        - label: This is about readability, contrast, keyboard or screen reader use. / Es sobre legibilidad, contraste, teclado o lector de pantalla.
