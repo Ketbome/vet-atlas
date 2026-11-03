@@ -20,7 +20,11 @@ export function LayerModel({ system, opacity }: Props) {
   const { clone, materials } = useMemo(() => {
     const clone = scene.clone();
     const materials: MeshPhysicalMaterial[] = [];
+    // The cached scene keeps what its own viewer did to it (a piece view or
+    // isolate hides meshes, explode moves them): the clone starts whole.
     clone.traverse((obj) => {
+      obj.visible = true;
+      if (obj.userData.home) obj.position.copy(obj.userData.home);
       if (!(obj instanceof Mesh)) return;
       const kind = system.meshMaterials[obj.name] ?? system.material;
       const material = tissueMaterial(kind, system.meshColors[obj.name] ?? system.color, obj.geometry.hasAttribute("color"));

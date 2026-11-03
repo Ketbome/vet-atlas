@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import type { ViewerModel } from "@/components/viewer/types";
+import { useViewerStore } from "@/components/viewer/store";
 
 const Scene = dynamic(() => import("@/components/viewer/scene").then((m) => m.Scene), { ssr: false });
 
@@ -12,6 +13,9 @@ const Scene = dynamic(() => import("@/components/viewer/scene").then((m) => m.Sc
 export function HeroViewer({ model, caption }: { model: ViewerModel; caption: string }) {
   const t = useTranslations("home");
   const router = useRouter();
+  // The viewer store outlives the atlas pages: coming back home from another
+  // system left this layer hidden or exploded.
+  useEffect(() => useViewerStore.getState().reset(model.systemId, model.systems), [model.systemId, model.systems]);
   const onPick = useCallback(
     (id: string) => {
       const s = model.structures.find((x) => x.id === id);
