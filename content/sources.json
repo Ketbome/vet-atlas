@@ -259,7 +259,19 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Photogrammetry (model by Kees Zwaan) of the mounted skeleton of a heifer of 1.5-2 years, withers 1.07 m, found at Wijk aan Zee in 1970 (collection Huis van Hilde, PNH 11492-01). License checked 2026-10-10 via the Sketchfab API. The scan is one fused surface with the stand and support wires; scripts/build-cow-skeletal.ts cuts it into bones with a seeded watershed along the joint creases, keeps the left side and the median bones and mirrors the right side. The mount lacks the carpus and metacarpus of both thoracic limbs, most of the tail and part of the sternum, and its ribs are broken: ribs 1-3 and 10-13, sternebrae 6-7, the xiphoid and caudal vertebrae 3-18 are modeled. Because of the share-alike licence the skeletal GLB is CC BY-SA 4.0."
+    "notes": "Photogrammetry (model by Kees Zwaan) of the mounted skeleton of a heifer of 1.5-2 years, withers 1.07 m, found at Wijk aan Zee in 1970 (collection Huis van Hilde, PNH 11492-01). License checked 2026-10-10 via the Sketchfab API. The scan is one fused surface with the stand and support wires; scripts/build-cow-skeletal.ts cuts it into bones with a seeded watershed along the joint creases, keeps the left side and the median bones and mirrors the right side. The mount lacks the carpus and metacarpus of both thoracic limbs, most of the tail and part of the sternum, and its ribs are broken: ribs 1-3 and 10-13, sternebrae 6-7, the xiphoid and caudal vertebrae 3-18 are modeled, and the carpus comes from elk scans. Because of the share-alike licence the skeletal GLB is CC BY-SA 4.0."
+  },
+  {
+    "id": "wesleyan-elk-carpals",
+    "name": "Elk carpal bones (specimen KB18 03) by Wesleyan University (Sketchfab)",
+    "url": "https://sketchfab.com/wesUdigital",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Artec Space Spider scans (Fletcher Levy and Andres Angeles Paredes, 2021) of the six loose carpal bones of one elk (Cervus canadensis): radial, intermediate, ulnar, accessory, second and third (fused) and fourth carpal. Sketchfab models 0a376da41613401aadaf86fd94a0cf61, 99ad6566cd7a481ca6c25e86dd3aec7e, 6471c73e6d6049f5a92a5279ef9f5ef1, f8d403e4063b4637a6a041287a01228a, 848d4b3f74894c8988e775a25a23dc13 and 24c2ff873b23442bbc4e668a37c36e35. License checked 2026-11-02 via the Sketchfab API. Elk and cattle share the ruminant carpal formula; scripts/build-cow-skeletal.ts orients each bone by hand from its articular and rough faces, packs them into two rows with the accessory palmar to the ulnar carpal and scales the set to the gap between the heifer's radius and metacarpus (fidelity \"modeled\")."
   },
   {
     "id": "prinma-cow-metacarpus",
@@ -271,7 +283,7 @@
       "commercial": true,
       "derivatives": true
     },
-    "notes": "Scan of an adult ox metacarpus (19th century, Cuarto Real de Santo Domingo, Granada) with age-related exostoses on the dorsal face of the distal end. License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-skeletal.ts scales it to 0.88 of the heifer's metatarsus and sets it between the modeled carpus and the digits."
+    "notes": "Scan of an adult ox metacarpus (19th century, Cuarto Real de Santo Domingo, Granada) with age-related exostoses on the dorsal face of the distal end. License checked 2026-10-10 via the Sketchfab API. scripts/build-cow-skeletal.ts scales it to 0.88 of the heifer's metatarsus and sets it between the carpus and the digits."
   },
   {
     "id": "ovc-bovine-stomach",

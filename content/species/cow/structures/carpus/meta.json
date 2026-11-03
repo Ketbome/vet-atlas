@@ -8,7 +8,8 @@
     "cow.skeletal.carpus.L",
     "cow.skeletal.carpus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
+  "source": "wesleyan-elk-carpals",
   "camera": {
     "preset": "lateral-left",
     "zoom": 2.2

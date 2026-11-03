@@ -9,7 +9,11 @@
  * - "Metacarpo de vaca/buey - VIRTARMED" by PRINMA (Universidad de Granada),
  *   Sketchfab, CC BY 4.0: the metacarpus, missing on both sides of the mount.
  *   An adult draught ox; scaled to the heifer.
- * - Modeled here: the carpus (missing from the mount; illustrative), the ribs
+ * - The six carpal bones of an elk (Cervus canadensis, specimen KB18 03) by
+ *   Wesleyan University, Sketchfab, CC BY 4.0: Artec scans of the loose bones.
+ *   Elk and cattle share the ruminant carpal formula; arranged here into a
+ *   carpus and scaled to the heifer (missing from the mount; "modeled").
+ * - Modeled here: the ribs
  *   (the mount's are broken: 13 per side rebuilt from its complete ones,
  *   "modeled") and the costal cartilages.
  *
@@ -25,10 +29,10 @@
  * named with meshKey().
  */
 import path from "node:path";
-import { Matrix4, Quaternion, Vector3 } from "three";
-import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
+import { BufferAttribute, BufferGeometry, Matrix4, Quaternion, Vector3 } from "three";
+import { MeshBVH } from "three-mesh-bvh";
 import { meshKey } from "../lib/content/mesh";
-import { bake, bounds, capsule, components, createModel, download, fromThree, mean, merge, mirror, pca, points, readPrims, sphere, transform, type Geometry } from "./lib/glb";
+import { bake, bounds, capsule, components, createModel, download, mean, merge, mirror, pca, points, readPrims, sphere, transform, type Geometry } from "./lib/glb";
 import { Surface, offAxis, weldSimplify, type Pick } from "./lib/segment";
 
 const OUT = path.join(process.cwd(), "public", "models", "cow", "skeletal.glb");
@@ -38,6 +42,14 @@ const MOUNT_LENGTH = 1.63;
 const sources = {
   mount: { uid: "f35da42a9d0243d483b437646985f757", file: "hilde-young-cow-skeleton.glb" },
   metacarpus: { uid: "3ca7725a74d349d5bdc585c5fdf6075e", file: "prinma-cow-metacarpus-granada.glb" },
+};
+const elk = {
+  radial: "0a376da41613401aadaf86fd94a0cf61",
+  intermediate: "99ad6566cd7a481ca6c25e86dd3aec7e",
+  ulnar: "6471c73e6d6049f5a92a5279ef9f5ef1",
+  accessory: "f8d403e4063b4637a6a041287a01228a",
+  c23: "848d4b3f74894c8988e775a25a23dc13",
+  c4: "24c2ff873b23442bbc4e668a37c36e35",
 };
 
 type V = Vector3;
@@ -359,10 +371,80 @@ const span = (g: Geometry, dir: V) => {
   return Math.max(...ds) - Math.min(...ds);
 };
 
+const shift = (g: Geometry, x: number, y: number, z: number) => transform(g, new Matrix4().makeTranslation(x, y, z));
+
+// Slides `a` along `dir` until it comes within `gap` of `b`.
+function contact(a: Geometry, b: Geometry, dir: V, gap = 0.0012) {
+  const geometry = new BufferGeometry();
+  geometry.setAttribute("position", new BufferAttribute(b.position, 3));
+  geometry.setIndex(new BufferAttribute(b.index, 1));
+  const bvh = new MeshBVH(geometry);
+  const hit = { point: new Vector3(), distance: 0, faceIndex: 0 };
+  const ps = points(a, 1500);
+  const dist = (s: number) => {
+    let min = Infinity;
+    for (const p of ps) min = Math.min(min, bvh.closestPointToPoint(p.clone().addScaledVector(dir, s), hit)!.distance);
+    return min;
+  };
+  let s = 0;
+  while (dist(s + 0.001) > gap && s < 0.4) s += 0.001;
+  let [lo, hi] = [s, s + 0.001];
+  for (let i = 0; i < 12; i++) [lo, hi] = dist((lo + hi) / 2) > gap ? [(lo + hi) / 2, hi] : [lo, (lo + hi) / 2];
+  return shift(a, dir.x * lo, dir.y * lo, dir.z * lo);
+}
+
+// Carpus from the elk scans: the carpal formula of cattle (radial,
+// intermediate, ulnar and accessory; fused second and third, and fourth),
+// in millimetres and arbitrary poses. Each bone is turned by its principal
+// axes (dorsal and proximal read off its articular and rough faces; all from
+// one left carpus) and slid into contact with its neighbours: distal row
+// side by side, proximal bones beside each other and lowered onto it, the
+// accessory palmar to the ulnar carpal.
+async function carpus() {
+  // Signed principal axis (0 = longest) that points dorsal, and proximal.
+  type Axis = [0 | 1 | 2, 1 | -1];
+  const pose: Record<keyof typeof elk, [Axis, Axis]> = {
+    radial: [[0, -1], [1, 1]],
+    intermediate: [[0, -1], [1, 1]],
+    ulnar: [[1, 1], [0, -1]],
+    accessory: [[0, -1], [1, 1]],
+    c23: [[0, 1], [2, -1]],
+    c4: [[0, 1], [2, 1]],
+  };
+  const turned = new Map<string, Geometry>();
+  for (const [name, uid] of Object.entries(elk) as [keyof typeof elk, string][]) {
+    const g = bake(await readPrims(await download({ uid, file: `wesu-elk-${name}-carpal.glb` })), new Matrix4().makeScale(0.001, 0.001, 0.001));
+    const { center, axes } = pca(points(g, 6000));
+    const [[di, ds], [pi, ps]] = pose[name];
+    const dorsal = axes[di].clone().multiplyScalar(ds);
+    const proximal = axes[pi].clone().multiplyScalar(ps);
+    const from = new Matrix4().makeBasis(dorsal, proximal, dorsal.clone().cross(proximal));
+    // Dorsal is -Z, proximal +Y and so medial of the left limb +X.
+    const to = new Matrix4().makeBasis(new Vector3(0, 0, -1), new Vector3(0, 1, 0), new Vector3(1, 0, 0));
+    turned.set(name, transform(g, to.multiply(from.transpose()).multiply(new Matrix4().makeTranslation(-center.x, -center.y, -center.z))));
+  }
+  // Dorsal faces flush at z = 0; `x` puts the bone's medial (or lateral) side there.
+  const set = (name: string, x: number, y: number, medial: boolean) => {
+    const b = bounds(turned.get(name)!);
+    return shift(turned.get(name)!, x - (medial ? b.max.x : b.min.x), y - b.min.y, -b.min.z);
+  };
+  const c23 = set("c23", 0, 0, false);
+  const c4 = contact(set("c4", -0.05, 0, true), c23, new Vector3(1, 0, 0));
+  const distal = merge([c23, c4]);
+  const radial = set("radial", 0.004, 0.08, false);
+  const intermediate = contact(set("intermediate", -0.05, 0.08, true), radial, new Vector3(1, 0, 0));
+  const ulnar = contact(set("ulnar", -0.08, 0.08, true), intermediate, new Vector3(1, 0, 0));
+  const proximal = [radial, intermediate, ulnar].map((g) => contact(g, distal, new Vector3(0, -1, 0)));
+  const u = bounds(proximal[2]);
+  const a = bounds(turned.get("accessory")!);
+  const accessory = contact(shift(turned.get("accessory")!, u.center.x - a.center.x - 0.002, u.center.y - a.center.y + 0.003, u.max.z + 0.05 - a.min.z), proximal[2], new Vector3(0, 0, -1));
+  return { rows: merge([...proximal, distal]), all: merge([...proximal, accessory, distal]) };
+}
+
 // Floor: the sole of the pelvic digits.
 const floorY = bounds(left.get("phalanges-pelvic")!).min.y;
 
-// Thoracic limb below the radius, vertical: carpus (modeled), metacarpus
+// Thoracic limb below the radius, vertical: carpus (elk scans), metacarpus
 // (scan) and digits (the mount's right ones, mirrored). The digits keep the
 // pose they hang in (sole flat) and sit on the floor. The mount sets the
 // limb about 4 cm low (the radius ends 25 cm above the floor, leaving 10 cm
@@ -400,28 +482,23 @@ const floorY = bounds(left.get("phalanges-pelvic")!).min.y;
   const crown = end(digits, new Vector3(0, 1, 0), 0.03);
   left.set("phalanges-thoracic", transform(digits, new Matrix4().makeTranslation(condyles.x - crown.x, 0, condyles.z - crown.z)));
 
-  // Carpus: proximal row of three bones (radial, intermediate, ulnar) and the
-  // accessory carpal projecting palmarly on the lateral side; distal row of
-  // the fused second and third carpal and the fourth. Rounded blocks.
-  const row = CARPUS / 2 - gap;
-  const block = (x: number, y: number, z: number, sx: number, sy: number, sz: number) => {
-    const geometry = new RoundedBoxGeometry(sx, sy, sz, 3, Math.min(sx, sy, sz) * 0.35);
-    geometry.translate(wrist.x + x, wrist.y - gap + y, wrist.z + z);
-    return fromThree(geometry);
-  };
-  const w = width / 3;
-  const d = width * 0.7;
-  left.set(
-    "carpus",
-    merge([
-      block(w, -row / 2, 0, w - gap, row, d),
-      block(0, -row / 2, 0, w - gap, row, d * 1.05),
-      block(-w, -row / 2, 0, w - gap, row, d * 0.95),
-      block(-w * 1.05, -row * 0.45, d * 0.75, w * 0.7, row * 1.15, d * 0.55),
-      block(w * 0.75, -row * 1.5 - gap, 0, w * 1.5 - gap, row, d),
-      block(-w * 0.75, -row * 1.5 - gap, 0, w * 1.5 - gap, row, d * 0.95),
-    ]),
-  );
+  // Carpus: the six scanned elk carpals (see carpus()), scaled to fill the
+  // space between radius and metacarpus and centred under the wrist.
+  {
+    const asm = await carpus();
+    const b = bounds(asm.rows);
+    const k = CARPUS / b.size.y;
+    console.log(`carpus: elk assembly ${(b.size.x * 1000).toFixed(0)} mm wide -> ${(b.size.x * k * 100).toFixed(1)} cm (radius ${(width * 100).toFixed(1)} cm)`);
+    const place = new Matrix4()
+      .makeTranslation(wrist.x, wrist.y - gap - CARPUS, wrist.z)
+      .multiply(new Matrix4().makeScale(k, k, k))
+      .multiply(new Matrix4().makeTranslation(-b.center.x, -b.min.y, -b.center.z));
+    // The rows are uneven: settle it halfway down to the metacarpus, so the
+    // joint spaces above and below match.
+    const placed = transform(asm.all, place);
+    const settled = contact(placed, metacarpus, down);
+    left.set("carpus", shift(placed, 0, (bounds(settled).min.y - bounds(placed).min.y) / 2, 0));
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -709,7 +786,8 @@ ribs.forEach((r, i) => {
   model.add(meshKey(`cow.skeletal.ribs.${i + 1}.R`), mirror(r.g), 3000);
 });
 for (const [key, g] of left) {
-  model.add(meshKey(`cow.skeletal.${key}.L`), g, 9000);
-  model.add(meshKey(`cow.skeletal.${key}.R`), mirror(g), 9000);
+  const tris = key === "carpus" ? 18000 : 9000;
+  model.add(meshKey(`cow.skeletal.${key}.L`), g, tris);
+  model.add(meshKey(`cow.skeletal.${key}.R`), mirror(g), tris);
 }
 await model.write(OUT);

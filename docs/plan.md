@@ -116,7 +116,8 @@ structures). Media and Source carry license and attribution. IDs are
   procedural organs. LMU Munich has good loose cat bones, but ND: ask too.
 - Cow: Huis van Hilde "Skelet jonge koe" (Sketchfab, CC BY-SA, mounted heifer,
   fused scan; it lacks the carpus and metacarpus, most of the tail and its ribs are
-  broken); PRINMA metacarpus (CC BY); OVCanatomy "Bovine Rumen" (CC BY, the whole
+  broken); PRINMA metacarpus (CC BY); Wesleyan University elk carpals (CC BY, six
+  loose scanned bones, arranged into the cow carpus); OVCanatomy "Bovine Rumen" (CC BY, the whole
   stomach); Visible Heart Lab "Whole Cow Heart Fixed" (CC BY); Thunk3D "Cow" (CC BY,
   sculpt scan). Also usable later: FU Berlin bovine pelvis, MRI PAS and UNLV cow
   skulls, RISD metatarsus (all CC BY), the ETH 1889 SOMSO bull model (CC BY). LMU
