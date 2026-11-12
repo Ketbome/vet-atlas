@@ -9,6 +9,7 @@ import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
 import { References } from "@/components/atlas/references";
+import { Essentials } from "@/components/atlas/essentials";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { PathologyList } from "@/components/atlas/pathology-list";
 import { StructureTabs } from "@/components/atlas/structure-tabs";
@@ -104,6 +105,7 @@ export default async function StructurePage({ params }: PageProps<"/[locale]/[sp
           </p>
         )}
         {doc.fallback && <p className="mt-2 rounded-md bg-muted px-2.5 py-1.5 text-xs text-muted-foreground">{t("untranslated")}</p>}
+        <Essentials items={doc.keyPoints} title={t("essentials")} />
       </header>
 
       <StructureTabs

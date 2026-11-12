@@ -68,6 +68,39 @@ structures). Media and Source carry license and attribution. IDs are
   cervical spondylomyelopathy. Everything is draft.
 - _Remaining from phase 1:_ R2 hosting, domain, analytics without cookies,
   veterinary reviewer for `reviewed` status.
+- **Next: readable content.** Entries read like reference text (376–2534 words per
+  pathology, ~94k words across structures per locale). Students should get the
+  essentials first and dig in only if they want:
+  - `keyPoints` in the frontmatter: 3–5 short lines with what to remember for the exam,
+    not a repeat of `summary`. One `**key term**` per line is drawn highlighted. Shown as
+    the numbered "Essentials" box above the body. Key points only restate claims already
+    in the body, so a `sourced` entry stays `sourced`.
+  - Plainer, sober prose: short sentences, one idea per paragraph, lists for
+    signs/tests/treatment. No glosses for terms a vet student knows, no "X: y" reveals.
+    Same claims, same references.
+  - Long secondary sections ("Key studies", species sections) in `<details>`.
+  - Pilot done (2026-11-03): chronic kidney disease and dog femur. Next: roll out by
+    species.
+  - Pilot on one pathology and one structure, then roll out by species.
+- **Next: interactive study tools** (in this order; all static and offline, no backend):
+  1. Section planes: median, sagittal, transverse and dorsal cuts with three.js
+     `clippingPlanes`, a draggable gizmo (drei `PivotControls`) and a solid cap on the
+     cut (stencil). Plane state in the URL so a teacher can share a cut. GLBs are
+     hollow shells, so the cap is flat colour until CT volumes exist (step 4).
+  2. Virtual radiograph: a shader that renders the skeleton like an X-ray plate by
+     thickness traversed, to practise projections (lateral, VD, obliques). No new data.
+  3. Landmarks: `landmarks` per structure (3D point + NAV name: foramina, processes,
+     tuberosities) shown as pins on zoom, and an "identify it" quiz (localStorage).
+     Mostly content work.
+  4. CT synced to the section plane: the CT slice drawn on the cut, from a
+     `Data3DTexture` loaded on demand, with bone/soft tissue windows. Start with the
+     greyhound pelvic limb CT already in `scripts/ct/`. No Cornerstone/DICOM.
+  5. Deep-zoom histology: tiled slides (`vips dzsave` → DZI) in OpenSeadragon (new
+     dependency, BSD-3) with toggleable annotations, opened from the selected
+     structure. Needs R2 hosting first (slides are hundreds of MB) and whole-slide
+     sources (check what Ohio State publishes).
+  6. Guided lessons: files under `content/` with steps (camera, layers, cut, selection
+     + text), built on the view state the URL already carries.
 - **Phase 2 (weeks 7–14)**: joints, skull types from oVert, 20+ pathologies
   with radiographs/histology, Portuguese, veterinary review of the new systems,
   call for contributors in vet schools.

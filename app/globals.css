@@ -188,6 +188,43 @@
 .doc em { font-family: var(--font-heading); font-style: italic; }
 .doc a { color: inherit; text-decoration: underline; text-decoration-color: var(--mark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .doc p { text-wrap: pretty; }
+/* Opt-in detail: key studies, species sections. */
+.doc details { margin-top: 1.6em; border-top: 1px solid var(--border); }
+.doc details:last-child { border-bottom: 1px solid var(--border); }
+.doc details[open] { padding-bottom: 1em; }
+.doc details > * + * { margin-top: 0.75em; }
+.doc summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7em 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+.doc summary::-webkit-details-marker { display: none; }
+.doc summary:hover { text-decoration: underline; text-decoration-color: var(--mark); }
+.doc summary:focus-visible { outline-offset: 2px; }
+/* Drawn plus that closes to a minus. */
+.doc summary::after {
+  content: "";
+  flex: none;
+  align-self: center;
+  width: 10px;
+  height: 10px;
+  color: var(--muted-foreground);
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  transition: background-size 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.doc details[open] > summary::after { background-size: 100% 1.5px, 1.5px 0; }
+.doc details > summary + * { margin-top: 0.25em; }
 
 /* Latin NAV names are always the atlas italic. */
 .nav-latin { font-family: var(--font-heading); font-style: italic; letter-spacing: 0; }

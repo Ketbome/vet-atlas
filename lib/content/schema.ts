@@ -130,6 +130,7 @@ export const sourceSchema = z.object({
 export const frontmatterSchema = z.object({
   title: z.string(),
   summary: z.string(),
+  keyPoints: z.array(z.string()).min(3).max(5).optional(),
 });
 
 export type Species = z.infer<typeof speciesSchema>;

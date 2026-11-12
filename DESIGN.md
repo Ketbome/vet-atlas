@@ -93,7 +93,7 @@ Uncoated plate paper and sepia printing ink, warmed toward hue 55–85, with a g
 
 ### Primary
 - **Ochre Mark** (ochre-mark, focus ring ochre-ring; graphite-mark in dark): the marker pen of the atlas. Selected rose view, active header tab and structure tab underline, the leader-line dot, text-selection wash, caret, focus rings, link underlines and hover underlines on index rows. In the scene the selection is an ochre rim light on the silhouette of the selected tissue (ochre-rim-3d) and hover tints tissue 20% toward it.
-- **Ochre Wash** (ochre-wash with ochre-wash-ink): the active row of the structure tree and the "Studying" tag of the current layer.
+- **Ochre Wash** (ochre-wash with ochre-wash-ink): the active row of the structure tree and the "Studying" tag of the current layer. Also the highlighter stroke on the key terms of the "Essentials" box (`**term**` in `keyPoints`), the one place where it marks text, as a student's highlighter would.
 
 ### Secondary
 - **Eosin** (eosin, eosin-soft; graphite-eosin in dark): pathology only. Pathology tags, the pathology badge on its page and the pathology icon in search.
@@ -191,6 +191,9 @@ Figures carry an italic Caslon caption ("Plate I — …"); indexes are roman-nu
 
 ### Brand Mark
 The lateral silhouette of the atlas's own scanned dog skull and mandible, traced by `scripts/build-brand.ts` from `public/models/dog/skeletal.glb` into `mark-path.ts`, `app/icon.svg` and `app/apple-icon.png`. `Logo`: bone (page ground) on a sepia-ink tile, 32px in the header beside the Caslon Display wordmark. `Mark`: bare skull in `currentColor`, used in the footer at 80% ink. Regenerate with `pnpm brand`; never hand-draw or substitute a generic glyph.
+
+### Essentials Box
+Above the body of structure and pathology pages: a plate-card box with hairline border, "Essentials" in Caslon Text 20px, then the 3–5 `keyPoints` as a numbered list (Caslon italic faded numerals, Grotesk 16px body) with each key term on an ochre-wash highlighter stroke. Long secondary sections of the body fold into `<details>` rows styled like an h2 with a drawn plus/minus.
 
 ### Tags and Notices
 Pathology tags are eosin on eosin-soft. Draft review and placeholder/illustrative notices are faded ink on plate-muted; they stay visible.

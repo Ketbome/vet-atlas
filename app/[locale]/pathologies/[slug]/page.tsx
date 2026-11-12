@@ -8,6 +8,7 @@ import type { Media } from "@/lib/content/schema";
 import { Doc } from "@/components/atlas/mdx";
 import { ReviewBadge } from "@/components/atlas/review-badge";
 import { References } from "@/components/atlas/references";
+import { Essentials } from "@/components/atlas/essentials";
 import { MediaGallery } from "@/components/atlas/media-gallery";
 import { SiteFooter } from "@/components/atlas/site-footer";
 import { Badge } from "@/components/ui/badge";
@@ -63,6 +64,7 @@ export default async function PathologyPage({ params }: PageProps<"/[locale]/pat
               <ReviewBadge review={pathology.review} />
             </div>
             {doc.fallback && <p className="mt-2 rounded-md bg-muted px-2.5 py-1.5 text-xs text-muted-foreground">{ts("untranslated")}</p>}
+            <Essentials items={doc.keyPoints} title={ts("essentials")} />
 
             <div className="mt-8 max-w-[68ch]">
               <Doc source={doc.body} />

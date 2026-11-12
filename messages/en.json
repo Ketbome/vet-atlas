@@ -108,6 +108,7 @@
   },
   "structure": {
     "nav": "Nomina Anatomica Veterinaria",
+    "essentials": "Essentials",
     "description": "Description",
     "pathologies": "Diseases",
     "media": "Images",
