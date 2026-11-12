@@ -8,9 +8,9 @@
     "dog.muscular.semimembranosus.L",
     "dog.muscular.semimembranosus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#95342B",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "caudal",
     "zoom": 1.5

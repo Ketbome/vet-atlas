@@ -17,7 +17,8 @@ import { MeshBVH } from "three-mesh-bvh";
 export const CACHE_DIR = path.join(process.cwd(), ".cache", "models");
 
 export type Vec = [number, number, number];
-export type Geometry = { position: Float32Array<ArrayBuffer>; index: Uint32Array<ArrayBuffer> };
+// `fibre` (optional, muscles): per vertex fibre direction xyz and tendon weight w, written as _FIBRE.
+export type Geometry = { position: Float32Array<ArrayBuffer>; index: Uint32Array<ArrayBuffer>; fibre?: Float32Array<ArrayBuffer> };
 export type Prim = { prim: Primitive; world: Matrix4 };
 
 await Promise.all([MeshoptSimplifier.ready, MeshoptEncoder.ready]);
@@ -87,7 +88,9 @@ export function mirror(g: Geometry): Geometry {
   for (let i = 0; i < position.length; i += 3) position[i] *= -1;
   const index = g.index.slice();
   for (let i = 0; i < index.length; i += 3) [index[i + 1], index[i + 2]] = [index[i + 2], index[i + 1]];
-  return { position, index };
+  const fibre = g.fibre?.slice();
+  if (fibre) for (let i = 0; i < fibre.length; i += 4) fibre[i] *= -1;
+  return { position, index, fibre };
 }
 
 export function transform(g: Geometry, m: Matrix4): Geometry {
@@ -292,6 +295,7 @@ export function createModel(sceneName: string, color: [number, number, number, n
     const position = doc.createAccessor().setType("VEC3").setArray(g.position).setBuffer(buffer);
     const index = doc.createAccessor().setType("SCALAR").setArray(g.index).setBuffer(buffer);
     const prim = doc.createPrimitive().setAttribute("POSITION", position).setIndices(index).setMaterial(material);
+    if (g.fibre) prim.setAttribute("_FIBRE", doc.createAccessor().setType("VEC4").setArray(g.fibre).setBuffer(buffer));
     if (tris) {
       weldPrimitive(prim);
       const count = prim.getIndices()!.getCount() / 3;

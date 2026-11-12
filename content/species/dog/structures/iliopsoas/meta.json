@@ -1,0 +1,31 @@
+{
+  "id": "dog.muscular.iliopsoas",
+  "system": "dog.muscular",
+  "nav": "M. iliopsoas",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.iliopsoas.L",
+    "dog.muscular.iliopsoas.R"
+  ],
+  "fidelity": "scan",
+  "color": "#B0503F",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.vertebrae-lumbar",
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.pectineus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

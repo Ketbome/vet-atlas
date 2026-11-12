@@ -10,9 +10,9 @@
     "dog.muscular.sartorius.caudal.L",
     "dog.muscular.sartorius.caudal.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#BA5A48",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.5

@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.flexor-digitorum-profundus-pelvic",
+  "system": "dog.muscular",
+  "nav": "M. flexor digitorum profundus (membri pelvini)",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.flexor-digitorum-profundus-pelvic.lateral.L",
+    "dog.muscular.flexor-digitorum-profundus-pelvic.lateral.R",
+    "dog.muscular.flexor-digitorum-profundus-pelvic.medial.L",
+    "dog.muscular.flexor-digitorum-profundus-pelvic.medial.R"
+  ],
+  "fidelity": "scan",
+  "color": "#A0402F",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.tibia",
+    "dog.skeletal.fibula",
+    "dog.skeletal.phalanges-pelvic",
+    "dog.muscular.flexor-digitorum-superficialis-pelvic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

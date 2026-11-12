@@ -44,7 +44,7 @@ export function Model({ system, meshToStructure, selected, onSceneReady, solo = 
       obj.userData.structureId = meshToStructure[obj.name] ?? null;
       const color = system.meshColors[obj.name] ?? system.color;
       const kind = system.meshMaterials[obj.name] ?? system.material;
-      obj.material = tissueMaterial(kind, color, obj.geometry.hasAttribute("color"));
+      obj.material = tissueMaterial(kind, color, obj.geometry.hasAttribute("color"), obj.geometry.hasAttribute("_fibre"));
       obj.userData.skin = kind === "skin";
       obj.userData.base = new Color(color);
       obj.userData.home ??= obj.position.clone();

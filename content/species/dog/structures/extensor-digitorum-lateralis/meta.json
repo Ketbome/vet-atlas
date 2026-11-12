@@ -1,0 +1,31 @@
+{
+  "id": "dog.muscular.extensor-digitorum-lateralis",
+  "system": "dog.muscular",
+  "nav": "M. extensor digitorum lateralis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.extensor-digitorum-lateralis.L",
+    "dog.muscular.extensor-digitorum-lateralis.R"
+  ],
+  "fidelity": "scan",
+  "color": "#AA4739",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.fibula",
+    "dog.skeletal.phalanges-pelvic",
+    "dog.muscular.fibularis-longus",
+    "dog.muscular.extensor-digitorum-longus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

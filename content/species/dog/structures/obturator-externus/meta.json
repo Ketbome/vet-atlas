@@ -1,0 +1,29 @@
+{
+  "id": "dog.muscular.obturator-externus",
+  "system": "dog.muscular",
+  "nav": "M. obturatorius externus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.obturator-externus.L",
+    "dog.muscular.obturator-externus.R"
+  ],
+  "fidelity": "scan",
+  "color": "#9E4235",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.obturator-internus",
+    "dog.muscular.quadratus-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

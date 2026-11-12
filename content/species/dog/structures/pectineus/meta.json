@@ -1,0 +1,33 @@
+{
+  "id": "dog.muscular.pectineus",
+  "system": "dog.muscular",
+  "nav": "M. pectineus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.pectineus.L",
+    "dog.muscular.pectineus.R"
+  ],
+  "fidelity": "scan",
+  "color": "#B65A47",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.6
+  },
+  "pathologies": [
+    "hip-dysplasia"
+  ],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.adductor",
+    "dog.muscular.gracilis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

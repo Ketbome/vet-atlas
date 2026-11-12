@@ -1,0 +1,30 @@
+{
+  "id": "dog.muscular.popliteus",
+  "system": "dog.muscular",
+  "nav": "M. popliteus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.popliteus.L",
+    "dog.muscular.popliteus.R"
+  ],
+  "fidelity": "scan",
+  "color": "#9B3F33",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.femur",
+    "dog.skeletal.tibia",
+    "dog.muscular.gastrocnemius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -8,9 +8,9 @@
     "dog.muscular.tibialis-cranialis.L",
     "dog.muscular.tibialis-cranialis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#B1493B",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

@@ -1,0 +1,29 @@
+{
+  "id": "dog.muscular.gemelli",
+  "system": "dog.muscular",
+  "nav": "Mm. gemelli",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gemelli.L",
+    "dog.muscular.gemelli.R"
+  ],
+  "fidelity": "scan",
+  "color": "#AC4D3D",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.obturator-internus",
+    "dog.muscular.quadratus-femoris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

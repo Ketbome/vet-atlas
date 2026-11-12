@@ -1,0 +1,32 @@
+{
+  "id": "dog.muscular.adductor",
+  "system": "dog.muscular",
+  "nav": "M. adductor",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.adductor.L",
+    "dog.muscular.adductor.R"
+  ],
+  "fidelity": "scan",
+  "color": "#A44536",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-pelvic-limb-muscles-medial-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.gracilis",
+    "dog.muscular.pectineus",
+    "dog.muscular.semimembranosus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

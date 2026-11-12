@@ -8,9 +8,9 @@
     "dog.muscular.flexor-digitorum-superficialis-pelvic.L",
     "dog.muscular.flexor-digitorum-superficialis-pelvic.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#A5433A",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "caudal",
     "zoom": 1.8

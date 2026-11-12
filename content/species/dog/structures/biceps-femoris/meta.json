@@ -5,14 +5,12 @@
   "region": "pelvic-limb",
   "laterality": "paired",
   "meshes": [
-    "dog.muscular.biceps-femoris.cranial.L",
-    "dog.muscular.biceps-femoris.cranial.R",
-    "dog.muscular.biceps-femoris.caudal.L",
-    "dog.muscular.biceps-femoris.caudal.R"
+    "dog.muscular.biceps-femoris.L",
+    "dog.muscular.biceps-femoris.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#A23D33",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.5

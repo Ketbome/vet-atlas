@@ -45,6 +45,7 @@ import path from "node:path";
 import { Vector3 } from "three";
 import { meshKey } from "../lib/content/mesh";
 import { createModel, merge, mirror, readAtlas, smoothNormals, sphere, type Geometry } from "./lib/glb";
+import { greyhoundHindlimb } from "./lib/greyhound-hindlimb";
 
 const SKELETON = path.join(process.cwd(), "public", "models", "dog", "skeletal.glb");
 const VISCERA = path.join(process.cwd(), "public", "models", "dog", "visceral.glb");
@@ -608,9 +609,11 @@ function arcTheta(i: number | string, th0: number, arc: number, sign = 1) {
 
 // ---------------------------------------------------------------- geometry
 
-// `reach`: per vertex, how deep below it another muscle still counts as inside
-// (slab outer faces: their thickness; inner faces are not obstacles).
-type Mesh = { pos: V[]; tri: number[]; reach?: number[] };
+// `fibre`: per vertex, direction of the muscle fibres; `tendon`: 0 in the
+// fleshy belly, 1 where it thins into tendon or aponeurosis. `section`: vertices
+// with the same id (a slab's two faces at one grid point) are pushed out
+// together, so a thin sheet slides off instead of folding; tubes flatten.
+type Mesh = { pos: V[]; tri: number[]; fibre?: V[]; tendon?: number[]; section?: number[] };
 
 // Closed slab over a grid of base points grid[u][v]; the outer face is pushed
 // along the surface normal (oriented by `out`) by the thickness at (u, v).
@@ -628,13 +631,25 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
     return n;
   };
   let sign = 0;
-  const reach: number[] = [];
+  const fibre: V[] = [];
+  const tendon: number[] = [];
+  const section: number[] = [];
+  // Tendinous where the slab thins along its length (its middle line).
+  const mid = Array.from({ length: nu }, (_, u) => thick(u / (nu - 1), 0.5));
+  const peak = Math.max(...mid);
+  const along = (u: number, v: number) =>
+    grid[Math.min(u + 1, nu - 1)][v]
+      .clone()
+      .sub(grid[Math.max(u - 1, 0)][v])
+      .normalize();
   for (let u = 0; u < nu; u++)
     for (let v = 0; v < nv; v++) {
       const n = normal(u, v);
       const t = Math.max(thick(u / (nu - 1), v / (nv - 1)), 0.0006);
       pos.push(grid[u][v].clone().addScaledVector(n, t));
-      reach.push(t + 0.003);
+      fibre.push(along(u, v));
+      tendon.push(1 - smoothstep(0.3, 0.6, mid[u] / peak));
+      section.push(u * nv + v);
       if (u < nu - 1 && v < nv - 1) {
         const du = grid[u + 1][v].clone().sub(grid[u][v]);
         const dv = grid[u][v + 1].clone().sub(grid[u][v]);
@@ -644,7 +659,9 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
   for (let u = 0; u < nu; u++)
     for (let v = 0; v < nv; v++) {
       pos.push(grid[u][v].clone());
-      reach.push(-1);
+      fibre.push(along(u, v));
+      tendon.push(1 - smoothstep(0.3, 0.6, mid[u] / peak));
+      section.push(u * nv + v);
     }
   const O = (u: number, v: number) => u * nv + v;
   const I = (u: number, v: number) => nu * nv + u * nv + v;
@@ -664,7 +681,7 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
     tri.push(O(...a), I(...a), O(...b), O(...b), I(...a), I(...b));
   }
   if (sign < 0) for (let k = 0; k < tri.length; k += 3) [tri[k + 1], tri[k + 2]] = [tri[k + 2], tri[k + 1]];
-  return { pos, tri, reach };
+  return { pos, tri, fibre, tendon, section };
 }
 
 // Grid from fibres: every fibre is a list of control points (same count); each
@@ -704,6 +721,12 @@ function tube({ pts, w, t, face = AXES.lat, n = 40, ring = 18, square = 1 }: Tub
   const c = spline(pts, n);
   const pos: V[] = [];
   const tri: number[] = [];
+  const fibre: V[] = [];
+  const tendon: number[] = [];
+  // Tendinous where the cross-section shrinks to under ~half the belly's.
+  const size = (s: number) => Math.sqrt(Math.max(prof(w, s), 0.0015) * Math.max(prof(t, s), 0.0015));
+  const peak = Math.max(...Array.from({ length: n }, (_, j) => size(j / (n - 1))));
+  const tend = (s: number) => 1 - smoothstep(0.3, 0.6, size(s) / peak);
   let lastN: V | undefined;
   for (let j = 0; j < n; j++) {
     const s = j / (n - 1);
@@ -730,6 +753,8 @@ function tube({ pts, w, t, face = AXES.lat, n = 40, ring = 18, square = 1 }: Tub
           .addScaledVector(b, hw * Math.sign(cs) * Math.pow(Math.abs(cs), e))
           .addScaledVector(nn, ht * Math.sign(sn) * Math.pow(Math.abs(sn), e)),
       );
+      fibre.push(tan.clone());
+      tendon.push(tend(s));
     }
   }
   for (let j = 0; j < n - 1; j++)
@@ -740,6 +765,8 @@ function tube({ pts, w, t, face = AXES.lat, n = 40, ring = 18, square = 1 }: Tub
     }
   const s0 = pos.length;
   pos.push(c[0].clone(), c[n - 1].clone());
+  fibre.push(fibre[0].clone(), fibre[fibre.length - 1].clone());
+  tendon.push(tend(0), tend(1));
   for (let k = 0; k < ring; k++) {
     tri.push(s0, k, (k + 1) % ring);
     tri.push(s0 + 1, (n - 1) * ring + ((k + 1) % ring), (n - 1) * ring + k);
@@ -749,7 +776,7 @@ function tube({ pts, w, t, face = AXES.lat, n = 40, ring = 18, square = 1 }: Tub
   const [a, b, d] = [pos[tri[mid * 6]], pos[tri[mid * 6 + 1]], pos[tri[mid * 6 + 2]]];
   const fn = new Vector3().crossVectors(b.clone().sub(a), d.clone().sub(a));
   if (fn.dot(a.clone().sub(c[Math.floor(n / 2)])) < 0) for (let k = 0; k < tri.length; k += 3) [tri[k + 1], tri[k + 2]] = [tri[k + 2], tri[k + 1]];
-  return { pos, tri };
+  return { pos, tri, fibre, tendon };
 }
 
 // ---------------------------------------------------------------- collisions
@@ -844,12 +871,15 @@ function relax(m: Mesh, iterations: number) {
 }
 
 const join = (...parts: Mesh[]): Mesh => {
-  const out: Mesh = { pos: [], tri: [], reach: [] };
+  const out: Mesh = { pos: [], tri: [], fibre: [], tendon: [], section: [] };
   for (const m of parts) {
     const off = out.pos.length;
+    const next = out.section!.length ? Math.max(...out.section!) + 1 : 0;
+    out.section!.push(...(m.section ?? m.pos.map((_, i) => i)).map((id) => id + next));
     out.pos.push(...m.pos);
     out.tri.push(...m.tri.map((t) => t + off));
-    out.reach!.push(...(m.reach ?? m.pos.map(() => Infinity)));
+    out.fibre!.push(...(m.fibre ?? m.pos.map(() => new Vector3())));
+    out.tendon!.push(...(m.tendon ?? m.pos.map(() => 0)));
   }
   return out;
 };
@@ -857,12 +887,180 @@ const join = (...parts: Mesh[]): Mesh => {
 const toGeometry = (m: Mesh): Geometry => {
   const position = new Float32Array(m.pos.length * 3);
   m.pos.forEach((p, i) => p.toArray(position, i * 3));
-  return { position, index: new Uint32Array(m.tri) };
+  const fibre = new Float32Array(m.pos.length * 4);
+  m.pos.forEach((_, i) => {
+    m.fibre?.[i].toArray(fibre, i * 4);
+    fibre[i * 4 + 3] = m.tendon?.[i] ?? 0;
+  });
+  return { position, index: new Uint32Array(m.tri), fibre };
 };
+
+// Built muscles as 1.5 mm voxels labelled by owner. A new muscle is pushed out
+// along the signed distance to them, however deep it went in (a nearest-vertex
+// test only sees surfaces within a cell or two).
+const VOX = 0.0015;
+
+// Voxel keys inside a closed mesh, by ray parity along x.
+function voxels(m: Mesh) {
+  const rows = new Map<number, number[]>();
+  for (let k = 0; k < m.tri.length; k += 3) {
+    const [a, b, c] = [m.pos[m.tri[k]], m.pos[m.tri[k + 1]], m.pos[m.tri[k + 2]]];
+    const d = (b.y - a.y) * (c.z - a.z) - (b.z - a.z) * (c.y - a.y);
+    if (Math.abs(d) < 1e-14) continue;
+    const y0 = Math.ceil(Math.min(a.y, b.y, c.y) / VOX - 0.5);
+    const y1 = Math.floor(Math.max(a.y, b.y, c.y) / VOX - 0.5);
+    const z0 = Math.ceil(Math.min(a.z, b.z, c.z) / VOX - 0.5);
+    const z1 = Math.floor(Math.max(a.z, b.z, c.z) / VOX - 0.5);
+    for (let yi = y0; yi <= y1; yi++)
+      for (let zi = z0; zi <= z1; zi++) {
+        const [py, pz] = [(yi + 0.5) * VOX, (zi + 0.5) * VOX];
+        const u = ((py - a.y) * (c.z - a.z) - (pz - a.z) * (c.y - a.y)) / d;
+        const v = ((b.y - a.y) * (pz - a.z) - (b.z - a.z) * (py - a.y)) / d;
+        if (u < 0 || v < 0 || u + v > 1) continue;
+        const row = (yi + 1024) * 2048 + zi + 1024;
+        const xs = rows.get(row) ?? rows.set(row, []).get(row)!;
+        xs.push(a.x + u * (b.x - a.x) + v * (c.x - a.x));
+      }
+  }
+  const out: number[] = [];
+  for (const [row, xs] of rows) {
+    xs.sort((p, q) => p - q);
+    for (let i = 0; i + 1 < xs.length; i += 2)
+      for (let xi = Math.ceil(xs[i] / VOX - 0.5); xi <= Math.floor(xs[i + 1] / VOX - 0.5); xi++) out.push((xi + 1024) * 2048 * 2048 + row);
+  }
+  return out;
+}
+
+// Squared Euclidean distance transform in voxel units (Felzenszwalb &
+// Huttenlocher), in place: f is 0 at the sources and huge elsewhere.
+function edt(f: Float64Array, dims: [number, number, number]) {
+  const strides = [1, dims[0], dims[0] * dims[1]];
+  const n = Math.max(...dims);
+  const [g, d, z] = [new Float64Array(n), new Float64Array(n), new Float64Array(n + 1)];
+  const v = new Int32Array(n);
+  for (let axis = 0; axis < 3; axis++) {
+    const [len, s] = [dims[axis], strides[axis]];
+    const [a1, a2] = [0, 1, 2].filter((a) => a !== axis);
+    for (let i = 0; i < dims[a1]; i++)
+      for (let j = 0; j < dims[a2]; j++) {
+        const base = i * strides[a1] + j * strides[a2];
+        for (let q = 0; q < len; q++) g[q] = f[base + q * s];
+        let k = 0;
+        v[0] = 0;
+        z[0] = -Infinity;
+        z[1] = Infinity;
+        const cross = (q: number, r: number) => (g[q] + q * q - (g[r] + r * r)) / (2 * q - 2 * r);
+        for (let q = 1; q < len; q++) {
+          let sx = cross(q, v[k]);
+          while (sx <= z[k]) sx = cross(q, v[--k]);
+          v[++k] = q;
+          z[k] = sx;
+          z[k + 1] = Infinity;
+        }
+        k = 0;
+        for (let q = 0; q < len; q++) {
+          while (z[k + 1] < q) k++;
+          d[q] = (q - v[k]) ** 2 + g[v[k]];
+        }
+        for (let q = 0; q < len; q++) f[base + q * s] = d[q];
+      }
+  }
+}
+
+class Volume {
+  owner = new Map<number, number>();
+  names: string[] = [];
+  size: number[] = [];
+  shared = new Map<string, number>();
+  add(name: string, m: Mesh, skip: (owner: string) => boolean) {
+    const id = this.names.push(name) - 1;
+    const keys = voxels(m);
+    this.size.push(keys.length);
+    for (const k of keys) {
+      const o = this.owner.get(k);
+      if (o === undefined) this.owner.set(k, id);
+      else if (!skip(this.names[o])) this.shared.set(`${o} ${id}`, (this.shared.get(`${o} ${id}`) ?? 0) + 1);
+    }
+  }
+  // Pushes points closer than `clear` to (or inside) the muscles not skipped
+  // out along the gradient of the signed distance to them.
+  push(m: Mesh, clear: number, skip: (owner: string) => boolean, rounds = 1) {
+    const pts = m.pos;
+    const box = boxOf(pts);
+    const pad = 16;
+    const lo = [box.min.x, box.min.y, box.min.z].map((x) => Math.floor(x / VOX - 0.5) - pad);
+    const hi = [box.max.x, box.max.y, box.max.z].map((x) => Math.ceil(x / VOX - 0.5) + pad);
+    const dims = [0, 1, 2].map((a) => hi[a] - lo[a] + 1) as [number, number, number];
+    const total = dims[0] * dims[1] * dims[2];
+    const inside = new Uint8Array(total);
+    const keep = this.names.map((n) => !skip(n));
+    for (const [k, o] of this.owner) {
+      if (!keep[o]) continue;
+      const x = Math.floor(k / 2048 / 2048) - 1024 - lo[0];
+      const y = (Math.floor(k / 2048) % 2048) - 1024 - lo[1];
+      const z = (k % 2048) - 1024 - lo[2];
+      if (x >= 0 && y >= 0 && z >= 0 && x < dims[0] && y < dims[1] && z < dims[2]) inside[x + dims[0] * (y + dims[1] * z)] = 1;
+    }
+    if (!inside.includes(1)) return;
+    const din = new Float64Array(total);
+    const dout = new Float64Array(total);
+    for (let i = 0; i < total; i++) [din[i], dout[i]] = inside[i] ? [1e12, 0] : [0, 1e12];
+    edt(din, dims);
+    edt(dout, dims);
+    const sd = new Float32Array(total);
+    for (let i = 0; i < total; i++) sd[i] = (inside[i] ? 0.5 - Math.sqrt(din[i]) : Math.sqrt(dout[i]) - 0.5) * VOX;
+    const at = (x: number, y: number, z: number) => {
+      const g = [x, y, z].map((c, a) => Math.min(dims[a] - 1.001, Math.max(0, c / VOX - 0.5 - lo[a])));
+      const i = g.map(Math.floor);
+      const f = g.map((c, a) => c - i[a]);
+      let out = 0;
+      for (let c = 0; c < 8; c++) {
+        const [dx, dy, dz] = [c & 1, (c >> 1) & 1, (c >> 2) & 1];
+        const w = (dx ? f[0] : 1 - f[0]) * (dy ? f[1] : 1 - f[1]) * (dz ? f[2] : 1 - f[2]);
+        out += w * sd[i[0] + dx + dims[0] * (i[1] + dy + dims[1] * (i[2] + dz))];
+      }
+      return out;
+    };
+    const section = m.section ?? pts.map((_, i) => i);
+    for (let r = 0; r < rounds; r++) {
+      const move = new Map<number, V>();
+      const nrm = smoothNormals(toGeometry(m).position, m.tri);
+      pts.forEach((p, i) => {
+        const d = at(p.x, p.y, p.z);
+        if (d >= clear) return;
+        const grad = vec(at(p.x + VOX, p.y, p.z) - at(p.x - VOX, p.y, p.z), at(p.x, p.y + VOX, p.z) - at(p.x, p.y - VOX, p.z), at(p.x, p.y, p.z + VOX) - at(p.x, p.y, p.z - VOX));
+        if (grad.lengthSq() < 1e-14) return;
+        grad.normalize();
+        // Dent inward (along the muscle's own inner normal) rather than slip
+        // round the obstacle, which would wrap the muscle about it.
+        const inward = vec(-nrm[i * 3], -nrm[i * 3 + 1], -nrm[i * 3 + 2]);
+        const cos = inward.dot(grad);
+        const step = cos > 0.3 ? inward.multiplyScalar((clear - d) / cos) : grad.multiplyScalar(clear - d);
+        const best = move.get(section[i]);
+        if (!best || step.lengthSq() > best.lengthSq()) move.set(section[i], step);
+      });
+      pts.forEach((p, i) => {
+        const step = move.get(section[i]);
+        if (step) p.add(step);
+      });
+    }
+  }
+  // Pairs still sharing more than `frac` of the smaller one's volume.
+  report(frac: number) {
+    const cc = VOX ** 3 * 1e6;
+    return [...this.shared]
+      .map(([pair, n]) => {
+        const [a, b] = pair.split(" ").map(Number);
+        return { a: this.names[a], b: this.names[b], cm3: n * cc, frac: n / Math.min(this.size[a], this.size[b]) };
+      })
+      .filter((r) => r.frac > frac)
+      .sort((p, q) => q.cm3 - p.cm3);
+  }
+}
 
 const bones = new Obstacles();
 for (const [name, g] of atlas) if (!isRight(name)) bones.add(name, g.position, g.index);
-const muscles = new Obstacles();
+const muscles = new Volume();
 // Skin (integumentary.glb, when present) with inward normals: muscle vertices
 // up to 6 mm outside it are pulled 2 mm inside, as a last step. Larger
 // protrusions mean the two models disagree and are left for a person to judge.
@@ -959,7 +1157,6 @@ const tLat = ortho(AXES.lat, tibia.ax);
 const tCr = ortho(AXES.cra, tibia.ax);
 const tDir = (cr: number, lat: number) => tCr.clone().multiplyScalar(cr).addScaledVector(tLat, lat).normalize();
 const tibialTuberosity = tibia.surf(0.08, tDir(1, 0));
-const medTibia = (t: number, off = 0) => tibia.surf(t, tDir(0.3, -1), off);
 const hock = tibia.b.clone();
 // Calcaneal tuber; a schematic tarsus capsule has none, so then 20 mm caudal to the distal tibia.
 const calcaneus = (() => {
@@ -1051,6 +1248,7 @@ type Part = {
   ignore?: string[]; // mesh ids (prefixes) of built muscles not to push out of
   smooth?: number;
   single?: boolean; // midline structure: no mirrored copy
+  scan?: boolean; // scanned shape: added to the layers as it is, never pushed
 };
 const parts: Part[] = [];
 const muscle = (p: Part) => parts.push(p);
@@ -1294,6 +1492,10 @@ muscle({
       const w = v < 0.4 ? 1 - 0.5 * (v / 0.4) : 0.45 * (1 - (v - 0.4) / 0.6);
       const ins = scapMedial(0.14, w, 0.002);
       const mid = drape(lerp(origin, ins, 0.5), 0.003);
+      // Medial to the blade: the body surface can pass lateral to it, and the
+      // push out of bone would then carry the muscle onto the lateral face.
+      const lat = mid.clone().sub(ins).dot(scapN);
+      if (lat > -0.006) mid.addScaledVector(scapN, -0.006 - lat);
       fibres.push([origin, mid, ins]);
     }
     const grid = fibreGrid(fibres, 18, 36).map((row) => row);
@@ -1426,9 +1628,9 @@ muscle({
   make: () =>
     tube({
       pts: [
-        humerus.surf(0.16, hDir(-0.6, 1), 0.003),
-        humerus.surf(0.45, hDir(-0.5, 1), 0.012),
-        humerus.surf(0.75, hDir(-1, 0.8), 0.014),
+        humerus.surf(0.16, hDir(-0.6, 1), 0.006),
+        humerus.surf(0.45, hDir(-0.7, 1), 0.02),
+        humerus.surf(0.75, hDir(-1, 0.8), 0.019),
         olecranonTop.clone().add(vec(-0.006, -0.004, 0)),
       ],
       w: P(0.01, 0.028, 0.022, 0.008),
@@ -1680,301 +1882,47 @@ muscle({
 
 // Pelvic limb -----------------------------------------------------------
 
-const sacral = (i: number) => {
-  // Lateral border of the sacrum; beyond S3 extrapolated along the first caudal vertebrae.
-  const k = Math.min(i, I("s3"));
-  const p = column(k).add(column(I("s3")).sub(column(I("s2"))).multiplyScalar(Math.max(0, i - I("s3"))));
-  p.x = -0.016;
-  p.y = topAt(k) - 0.008 - Math.max(0, i - I("s3")) * 0.006;
-  return p;
-};
-const sacrotuberous = (v: number) => lerp(sacral(I("s3") + 0.6), ischialTuber, v);
 const digitsHind = centroid(points(required("phalanges-pelvic")));
-const fd = (cr: number, lat: number) => fDir(cr, lat);
-// Point in the thigh at level t of the femur, `cr` metres cranial (negative: caudal) and `lat` lateral of its axis.
-const thigh = (t: number, cr: number, lat: number) => femur.at(t).addScaledVector(fCr, cr).addScaledVector(fLat, lat);
 
-muscle({
-  id: `${M}.gluteus-medius`,
-  make: () =>
-    tube({
-      pts: [
-        iliacCrest.clone().add(vec(-0.004, 0, 0.006)),
-        coxae.surf(0.2, { lat: 1, dor: 0.25 }, 0.007),
-        coxae.surf(0.4, { lat: 1, dor: 0.3 }, 0.01),
-        greaterTrochanter.clone().add(vec(0, 0.004, 0.002)),
-      ],
-      w: P(0.026, 0.04, 0.034, 0.014),
-      t: P(0.008, 0.016, 0.016, 0.008),
-      face: dir({ lat: 1, dor: 0.4 }),
-    }),
-});
-
-const quad = (pts: V[], w: Profile, t: Profile, face: V) => tube({ pts, w, t, face });
-muscle({
-  id: `${M}.quadriceps-femoris.vastus-medialis`,
-  make: () =>
-    quad(
-      [femur.surf(0.14, fd(0.3, -1), 0.003), femur.surf(0.5, fd(0.6, -1), 0.01), femur.surf(0.85, fd(0.9, -0.6), 0.008), patellaC.clone().add(vec(0.008, 0.01, 0))],
-      P(0.016, 0.03, 0.026, 0.012),
-      P(0.008, 0.018, 0.016, 0.006),
-      fd(0, -1),
-    ),
-});
-muscle({
-  id: `${M}.quadriceps-femoris.vastus-lateralis`,
-  make: () =>
-    quad(
-      [femur.surf(0.1, fd(0.3, 1), 0.003), femur.surf(0.45, fd(0.6, 1), 0.012), femur.surf(0.82, fd(1, 0.6), 0.008), patellaC.clone().add(vec(-0.006, 0.012, 0))],
-      P(0.02, 0.036, 0.028, 0.012),
-      P(0.01, 0.02, 0.016, 0.006),
-      fd(0, 1),
-    ),
-});
-muscle({
-  id: `${M}.quadriceps-femoris.rectus-femoris`,
-  make: () =>
-    quad(
-      [
-        lerp(femoralHead, tuberCoxae, 0.3).add(vec(-0.004, -0.004, 0)),
-        femur.surf(0.2, fd(1, 0.1), 0.016),
-        femur.surf(0.55, fd(1, 0.1), 0.02),
-        patellaC.clone().add(vec(0, 0.014, -0.004)),
-      ],
-      P(0.01, 0.024, 0.026, 0.012),
-      P(0.007, 0.02, 0.02, 0.007),
-      fd(1, 0),
-    ),
-});
-
-muscle({
-  id: `${M}.semimembranosus`,
-  make: () =>
-    tube({
-      pts: [
-        ischialTuber.clone().add(vec(0.006, -0.006, 0)),
-        thigh(0.45, -0.045, -0.018),
-        thigh(0.82, -0.03, -0.02),
-        medCondyle.clone().addScaledVector(fd(-1, 0), 0.004),
-        medTibia(0.06, 0.002),
-      ],
-      w: P(0.02, 0.036, 0.03, 0.016, 0.006),
-      t: P(0.014, 0.028, 0.024, 0.012, 0.005),
-      face: AXES.med,
-    }),
-});
-
-muscle({
-  id: `${M}.gastrocnemius.lateral`,
-  make: () =>
-    tube({
-      pts: [
-        latSupracondylar.clone().addScaledVector(fd(-1, 0), 0.003),
-        tibia.surf(0.25, tDir(-1, 0.5), 0.026),
-        tibia.surf(0.55, tDir(-1, 0.2), 0.014),
-        tibia.surf(0.85, tDir(-1, 0), 0.01),
-        calcaneus.clone().add(vec(0, 0.004, 0)),
-      ],
-      w: P(0.014, 0.026, 0.016, 0.008, 0.006),
-      t: P(0.012, 0.022, 0.012, 0.005, 0.005),
-      face: tLat,
-    }),
-});
-muscle({
-  id: `${M}.gastrocnemius.medial`,
-  make: () =>
-    tube({
-      pts: [
-        medSupracondylar.clone().addScaledVector(fd(-1, 0), 0.003),
-        tibia.surf(0.25, tDir(-1, -0.5), 0.026),
-        tibia.surf(0.55, tDir(-1, -0.2), 0.014),
-        tibia.surf(0.85, tDir(-1, 0), 0.01),
-        calcaneus.clone().add(vec(0.002, 0.004, 0)),
-      ],
-      w: P(0.014, 0.026, 0.016, 0.008, 0.006),
-      t: P(0.012, 0.022, 0.012, 0.005, 0.005),
-      face: tLat,
-    }),
-});
-// Its tendon twists around the gastrocnemius tendon and caps the calcaneal tuber.
-muscle({
-  id: `${M}.flexor-digitorum-superficialis-pelvic`,
-  ignore: [`${M}.gastrocnemius`],
-  make: () =>
-    tube({
-      pts: [
-        lerp(latSupracondylar, medSupracondylar, 0.35).addScaledVector(fd(-1, 0), 0.006),
-        tibia.surf(0.3, tDir(-1, 0), 0.03),
-        tibia.surf(0.7, tDir(-1, 0), 0.02),
-        calcaneus.clone().add(vec(0, 0.008, 0.006)),
-        metatarsus.surf(0.4, { cau: 1 }, 0.005),
-        mtDistal.clone().add(vec(0, 0, 0.006)),
-        digitsHind.clone().add(vec(0, -0.002, -0.004)),
-      ],
-      w: [
-        [0, 0.008],
-        [0.15, 0.014],
-        [0.3, 0.008],
-        [0.45, 0.006],
-        [1, 0.005],
-      ],
-      t: [
-        [0, 0.008],
-        [0.15, 0.012],
-        [0.3, 0.005],
-        [0.45, 0.003],
-        [1, 0.003],
-      ],
-      face: tLat,
-    }),
-});
-muscle({
-  id: `${M}.tibialis-cranialis`,
-  make: () =>
-    tube({
-      pts: [
-        tibia.surf(0.06, tDir(0.6, 1), 0.003),
-        tibia.surf(0.3, tDir(1, 0.6), 0.012),
-        tibia.surf(0.7, tDir(1, 0.3), 0.006),
-        tibia.surf(0.97, tDir(1, -0.4), 0.004),
-        mtDorsal(0.08, 0.6),
-      ],
-      w: P(0.01, 0.018, 0.012, 0.005, 0.004),
-      t: P(0.008, 0.015, 0.008, 0.004, 0.003),
-      face: tLat,
-    }),
-});
-
-muscle({
-  id: `${M}.sartorius.cranial`,
-  make: () =>
-    tube({
-      pts: [
-        iliacCrest.clone().add(vec(0, -0.004, -0.004)),
-        lerp(tuberCoxae, femur.surf(0.25, fd(1, -0.2), 0.03), 0.6),
-        femur.surf(0.5, fd(1, -0.3), 0.028),
-        femur.surf(0.85, fd(0.8, -0.6), 0.016),
-        patellaC.clone().add(vec(0.008, 0.004, 0)),
-      ],
-      w: P(0.012, 0.018, 0.018, 0.014, 0.008),
-      t: P(0.004, 0.006, 0.006, 0.005, 0.003),
-      face: fd(0.7, -0.7),
-    }),
-});
-muscle({
-  id: `${M}.sartorius.caudal`,
-  make: () =>
-    tube({
-      pts: [tuberCoxae.clone().add(vec(0, -0.006, 0.004)), femur.surf(0.3, fd(0.4, -1), 0.03), femur.surf(0.7, fd(0, -1), 0.026), medTibia(0.15, 0.004)],
-      w: P(0.01, 0.018, 0.016, 0.008),
-      t: P(0.004, 0.006, 0.006, 0.003),
-      face: fd(0, -1),
-    }),
-});
-
-muscle({
-  id: `${M}.gracilis`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = symphysis.clone().add(vec(-0.004, -0.004, -0.012 + 0.05 * v));
-      const m = femur.surf(0.5, fd(-0.3 - 0.6 * v, -1), 0.032 + 0.012 * v);
-      const e = medTibia(0.18 + 0.12 * v, 0.006);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 22, 10), taper((u) => 0.003 + 0.003 * Math.sin(Math.PI * u), { u: 0.03, v: 0.1 }), fixed({ med: 1 }));
-  },
-});
-
-muscle({
-  id: `${M}.semitendinosus`,
-  make: () =>
-    tube({
-      pts: [
-        ischialTuber.clone().add(vec(-0.002, -0.006, 0.004)),
-        thigh(0.45, -0.058, 0.0),
-        thigh(0.82, -0.042, -0.012),
-        tibia.surf(0.15, tDir(-0.4, -1), 0.012),
-        medTibia(0.3, 0.003),
-      ],
-      w: P(0.016, 0.03, 0.026, 0.012, 0.006),
-      t: P(0.014, 0.024, 0.02, 0.009, 0.004),
-      face: AXES.lat,
-    }),
-});
-
-muscle({
-  id: `${M}.gluteus-superficialis`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = sacral(I("s1") + 0.5 + 2.6 * v);
-      const e = thirdTrochanter.clone().addScaledVector(femur.ax, (v - 0.5) * 0.008).addScaledVector(fLat, 0.003);
-      const m = lerp(o, e, 0.5).addScaledVector(fLat, 0.016);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 16, 10), taper((u) => 0.003 + 0.005 * Math.sin(Math.PI * u), { u: 0, v: 0.12 }), fixed({ lat: 1, dor: 0.3 }));
-  },
-});
-
-muscle({
-  id: `${M}.tensor-fasciae-latae`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = tuberCoxae.clone().add(vec(-0.003, -0.004 * v, 0.022 * v));
-      const e = femur.surf(0.42, fd(1 - 1.1 * v, 0.8), 0.024 + 0.006 * v);
-      const m = lerp(o, e, 0.5).addScaledVector(fLat, 0.012);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 16, 10), taper((u) => 0.002 + 0.004 * Math.sin(Math.PI * Math.min(1, u * 1.4)), { u: 0.03, v: 0.1 }), fixed({ lat: 1 }));
-  },
-});
-
-// Biceps femoris: one fan from the sacrotuberous ligament and ischiatic
-// tuberosity to the patella, patellar ligament, tibial crest and crural
-// fascia; drawn as its cranial and caudal parts. The caudal part continues as
-// a tarsal tendon to the calcaneal tuber.
-function bicepsFibre(v: number) {
-  const o = sacrotuberous(0.35 + 0.65 * v).add(vec(-0.006, 0, 0));
-  const ins =
-    v < 0.3
-      ? lerp(patellaC.clone().add(vec(-0.01, 0.008, 0)), lerp(patellaC, tibialTuberosity, 0.7).add(vec(-0.008, 0, 0)), v / 0.3)
-      : v < 0.65
-        ? tibia.surf(0.08 + 0.3 * ((v - 0.3) / 0.35), tDir(0.6, 1), 0.006)
-        : tibia.surf(0.38 + 0.12 * ((v - 0.65) / 0.35), tDir(-0.4 - 0.6 * ((v - 0.65) / 0.35), 1), 0.008);
-  const mid = thigh(0.5, 0.012 - 0.06 * v, 0.024 + 0.004 * Math.sin(Math.PI * v));
-  const knee = thigh(0.88, 0.012 - 0.045 * v, 0.02);
-  return [o, mid, knee, ins];
-}
-const bicepsPart = (v0: number, v1: number, nv: number) => {
-  const fibres = Array.from({ length: nv }, (_, k) => bicepsFibre(v0 + ((v1 - v0) * k) / (nv - 1)));
-  return slab(
-    fibreGrid(fibres, 26, nv * 2),
-    taper((u) => 0.004 + 0.008 * Math.sin(Math.PI * Math.min(1, u * 1.15)), { u: 0.03, v: 0.1 }, 0.5),
-    fixed({ lat: 1 }),
-  );
+// Scanned bellies (scripts/lib/greyhound-hindlimb.ts) are kept as they are:
+// built first and never pushed, so procedural muscles make room for them.
+// The scan stops at the tarsus; distal tendons are drawn from the end of
+// the belly nearest to their first landmark.
+const scanned = await greyhoundHindlimb(atlas);
+const fromScan = (id: string): Mesh => {
+  const g = scanned.get(meshKey(`${id}.L`))!;
+  const pos = points(g);
+  return {
+    pos,
+    tri: [...g.index],
+    fibre: pos.map((_, i) => vec(g.fibre![i * 4], g.fibre![i * 4 + 1], g.fibre![i * 4 + 2])),
+    tendon: pos.map((_, i) => g.fibre![i * 4 + 3]),
+  };
 };
-muscle({ id: `${M}.biceps-femoris.cranial`, make: () => bicepsPart(0, 0.6, 7) });
-muscle({
-  id: `${M}.biceps-femoris.caudal`,
-  make: () =>
-    join(
-      bicepsPart(0.6, 1, 5),
-      tube({
-        pts: [tibia.surf(0.42, tDir(-1, 0.8), 0.01), tibia.surf(0.7, tDir(-1, 0.4), 0.014), calcaneus.clone().add(vec(-0.004, 0.006, 0))],
-        w: P(0.006, 0.004, 0.003),
-        t: P(0.002, 0.002, 0.002),
-        ring: 8,
-      }),
-    ),
-});
+const withTendon = (belly: Mesh, path: V[], r = 0.0035): Mesh => {
+  const start = belly.pos.reduce((a, b) => (b.distanceToSquared(path[0]) < a.distanceToSquared(path[0]) ? b : a));
+  const cord = tube({ pts: [start.clone(), ...path], w: P(r * 1.6, r), t: P(r, r * 0.8), ring: 10, n: 30 });
+  return join(belly, { ...cord, tendon: cord.pos.map(() => 1) });
+};
+const tendons: Record<string, V[]> = {
+  "gastrocnemius.lateral": [calcaneus.clone().add(vec(0, 0.004, 0))],
+  "gastrocnemius.medial": [calcaneus.clone().add(vec(0.002, 0.004, 0))],
+  "flexor-digitorum-superficialis-pelvic": [
+    calcaneus.clone().add(vec(0, 0.008, 0.006)),
+    metatarsus.surf(0.4, { cau: 1 }, 0.005),
+    mtDistal.clone().add(vec(0, 0, 0.006)),
+    digitsHind.clone().add(vec(0, -0.002, -0.004)),
+  ],
+  "tibialis-cranialis": [tibia.surf(0.97, tDir(1, -0.4), 0.004), mtDorsal(0.08, 0.6)],
+  "extensor-digitorum-longus": [tibia.surf(0.97, tDir(1, 0), 0.004), mtDorsal(0.5, 0.5), digitsHind.clone().add(vec(0, 0.006, -0.008))],
+  "flexor-digitorum-profundus-pelvic.lateral": [metatarsus.surf(0.15, { cau: 1 }, 0.003), metatarsus.surf(0.6, { cau: 1 }, 0.003), digitsHind.clone().add(vec(0, -0.004, 0))],
+  "flexor-digitorum-profundus-pelvic.medial": [metatarsus.surf(0.15, { cau: 1, med: 0.5 }, 0.003), metatarsus.surf(0.6, { cau: 1 }, 0.003)],
+};
+for (const key of scanned.keys()) {
+  const id = key.replace(/^dog_muscular_/, "").replace(/_L$/, "").replace(/_/g, ".");
+  const path = tendons[id];
+  muscle({ id: `${M}.${id}`, scan: true, make: () => (path ? withTendon(fromScan(`${M}.${id}`), path) : fromScan(`${M}.${id}`)) });
+}
 
 // Head and neck ----------------------------------------------------------
 
@@ -2042,26 +1990,27 @@ console.log(
 );
 const model = createModel("dog.muscular", [0.69, 0.41, 0.36, 1]);
 let total = 0;
-for (const part of parts) {
+for (const part of [...parts.filter((p) => p.scan), ...parts.filter((p) => !p.scan)]) {
   const m = part.make();
   const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x));
   const layer = part.layer !== false;
-  if (part.bones !== false || layer) {
+  if (!part.scan && (part.bones !== false || layer)) {
     for (let k = 0; k < 3; k++) {
       if (part.bones !== false) bones.push(m.pos, 0.0015);
-      if (layer) muscles.push(m.pos, 0.001, skip);
+      if (layer) muscles.push(m, 0.001, skip, 2);
       relax(m, part.smooth ?? 2);
     }
     if (part.bones !== false) bones.push(m.pos, 0.001);
-    if (layer) muscles.push(m.pos, 0.0006, skip);
+    if (layer) muscles.push(m, 0.0006, skip, 2);
   }
-  if (skin && layer) {
+  if (skin && layer && !part.scan) {
     skin.push(m.pos, 0.002);
     relax(m, 2);
     skin.push(m.pos, 0.002);
+    muscles.push(m, 0.0006, skip, 3);
   }
   const g = toGeometry(m);
-  if (layer) muscles.add(part.id, g.position, g.index, m.reach);
+  if (layer) muscles.add(part.id, m, skip);
   total += g.index.length / 3;
   if (part.single) model.add(meshKey(part.id), g);
   else {
@@ -2070,6 +2019,7 @@ for (const part of parts) {
   }
 }
 console.log(`left-side and midline triangles: ${total}`);
+for (const r of muscles.report(0.02)) console.warn(`overlap: ${r.a} x ${r.b} ${r.cm3.toFixed(1)} cm3 (${(r.frac * 100).toFixed(0)}%)`);
 if (DEBUG) {
   for (const [name, p] of debugMarks) model.add(meshKey(`debug.mark.${name}`), sphere(p.toArray() as [number, number, number], 0.004));
   await model.write(path.join(process.cwd(), ".cache", "agent-out", "muscular-debug.glb"));

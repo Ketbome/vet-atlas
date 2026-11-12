@@ -1,0 +1,29 @@
+{
+  "id": "dog.muscular.quadratus-femoris",
+  "system": "dog.muscular",
+  "nav": "M. quadratus femoris",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.quadratus-femoris.L",
+    "dog.muscular.quadratus-femoris.R"
+  ],
+  "fidelity": "scan",
+  "color": "#A24434",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "caudal",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.gemelli",
+    "dog.muscular.obturator-externus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

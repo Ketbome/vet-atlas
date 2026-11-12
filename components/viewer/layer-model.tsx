@@ -27,7 +27,7 @@ export function LayerModel({ system, opacity }: Props) {
       if (obj.userData.home) obj.position.copy(obj.userData.home);
       if (!(obj instanceof Mesh)) return;
       const kind = system.meshMaterials[obj.name] ?? system.material;
-      const material = tissueMaterial(kind, system.meshColors[obj.name] ?? system.color, obj.geometry.hasAttribute("color"));
+      const material = tissueMaterial(kind, system.meshColors[obj.name] ?? system.color, obj.geometry.hasAttribute("color"), obj.geometry.hasAttribute("_fibre"));
       obj.userData.skin = kind === "skin";
       obj.material = material;
       obj.userData.structureId = system.meshStructure[obj.name] ?? null;

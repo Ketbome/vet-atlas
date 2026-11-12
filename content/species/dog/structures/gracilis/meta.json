@@ -8,9 +8,9 @@
     "dog.muscular.gracilis.L",
     "dog.muscular.gracilis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#B95646",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "caudal",
     "zoom": 1.5

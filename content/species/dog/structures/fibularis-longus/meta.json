@@ -1,0 +1,31 @@
+{
+  "id": "dog.muscular.fibularis-longus",
+  "system": "dog.muscular",
+  "nav": "M. fibularis longus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.fibularis-longus.L",
+    "dog.muscular.fibularis-longus.R"
+  ],
+  "fidelity": "scan",
+  "color": "#B0493B",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-superficial-muscles-sisson-01"
+  ],
+  "related": [
+    "dog.skeletal.tibia",
+    "dog.skeletal.fibula",
+    "dog.skeletal.tarsus",
+    "dog.muscular.extensor-digitorum-lateralis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

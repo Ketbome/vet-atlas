@@ -1,0 +1,30 @@
+{
+  "id": "dog.muscular.gluteus-profundus",
+  "system": "dog.muscular",
+  "nav": "M. gluteus profundus",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "dog.muscular.gluteus-profundus.L",
+    "dog.muscular.gluteus-profundus.R"
+  ],
+  "fidelity": "scan",
+  "color": "#A94A3C",
+  "source": "hutchinson-greyhound-hindlimb",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-dog-skeletal-muscle-histo-01"
+  ],
+  "related": [
+    "dog.skeletal.os-coxae",
+    "dog.skeletal.femur",
+    "dog.muscular.gluteus-medius"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

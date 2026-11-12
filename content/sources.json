@@ -166,6 +166,18 @@
     "notes": "DICOM CT of one greyhound pelvis and pelvic limb (three series). Bone surfaces extracted by scripts/ct/greyhound_hindlimb.py (threshold, watershed, marching cubes), scaled to the Massey skeleton and registered on its tibia, femur and hip bone by scripts/build-dog-skeletal.ts. Used for the patella, tarsus, metatarsus, pelvic phalanges, sacrum and caudal vertebrae."
   },
   {
+    "id": "hutchinson-greyhound-hindlimb",
+    "name": "Reconstructed 3D anatomy of greyhound hindlimb, John Hutchinson (Royal Veterinary College), figshare",
+    "url": "https://doi.org/10.6084/m9.figshare.7240529.v2",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Pelvic limb muscles segmented in Mimics from the CT of the same greyhound (greyhound-pelvic-limb-ct) and exported as STL, published with Ellis, Rankin & Hutchinson (2018), Frontiers in Bioengineering and Biotechnology 6:162, doi:10.3389/fbioe.2018.00162. License checked 2026-11-03 via the figshare API. scripts/lib/greyhound-hindlimb.ts registers each limb segment of the CT onto the dog skeleton (rigid + scale per segment, blended across the joints), decimates the muscles and moves them along. Bellies only: distal tendons were not segmented."
+  },
+  {
     "id": "scan-the-world-dog-front-leg",
     "name": "Front leg of a dog, Scan the World (MyMiniFactory), Zenodo record 21487908",
     "url": "https://zenodo.org/records/21487908",

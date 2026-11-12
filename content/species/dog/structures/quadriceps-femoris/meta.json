@@ -10,11 +10,13 @@
     "dog.muscular.quadriceps-femoris.vastus-lateralis.L",
     "dog.muscular.quadriceps-femoris.vastus-lateralis.R",
     "dog.muscular.quadriceps-femoris.vastus-medialis.L",
-    "dog.muscular.quadriceps-femoris.vastus-medialis.R"
+    "dog.muscular.quadriceps-femoris.vastus-medialis.R",
+    "dog.muscular.quadriceps-femoris.vastus-intermedius.L",
+    "dog.muscular.quadriceps-femoris.vastus-intermedius.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "scan",
   "color": "#A6402F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "hutchinson-greyhound-hindlimb",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6
