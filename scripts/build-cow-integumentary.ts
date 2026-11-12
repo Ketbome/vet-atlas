@@ -9,18 +9,24 @@
  * (found from their tips by geodesic distance) onto the bones' joint centres
  * and caudal vertebrae; the head moves as one piece (muzzle, chin, poll and
  * the direction between the ear tips onto the skull and mandible); the trunk
- * and neck follow a thin-plate-spline warp from cross-sections of the scan to
- * the bones and organs of the same sections plus the soft tissue over them.
- * The displacement of the warp is smoothed over the surface (its folds and
- * shear go, the scan's shape stays). Then the surface is inflated until the
- * bones (1.2 cm; 6 mm in the distal limbs), organs (1.5 cm) and, when
+ * and neck follow a smoothing thin-plate-spline warp from cross-sections of
+ * the scan to the bones and organs of the same sections plus the soft tissue
+ * over them. The neck behind the head and the tail root are faired, the
+ * warp's folds relaxed and the neck centred on the median plane. The scan's
+ * right side, compressed by its turned head, is replaced by the mirror image
+ * of the left one. Then the surface is inflated until the bones (1.2 cm;
+ * 6 mm in the distal limbs; not the skull), organs (1.5 cm) and, when
  * public/models/cow/muscular.glb exists, the muscles are inside it, and
- * smoothed. The scan's right side, compressed by its turned head, is
- * replaced by the mirror image of the left one. Fidelity "modeled".
+ * smoothed. Fidelity "modeled".
+ *
+ * The muscles are pulled inside the skin by scripts/build-cow-muscular.ts,
+ * so a deformed skin is copied into them and back: after a change here,
+ * rebuild skin, muscles and skin again.
  *
  * - Udder: cut from the skin with the watershed of scripts/lib/segment.ts
  *   (it meets the belly and thighs in a crease). Horn: the scan's right horn
- *   (the left one is a stump), mirrored for the left.
+ *   (the left one is a stump), mirrored for the left; each on its own
+ *   cornual process.
  * - Hooves: the scan's feet below the coronary band (5 cm above the sole of
  *   the distal phalanges). The scan does not split the claws, so there is no
  *   interdigital cleft and no dewclaws. Illustrative.
@@ -98,6 +104,7 @@ function appendage(tip: number, width: number, maxLength = 1.2) {
     if (k < maxLength / 0.01) (bins[k] ??= []).push(P(v));
   }
   const line: V[] = [];
+  const radius: number[] = [];
   let length = 0;
   for (const [k, bin] of bins.entries()) {
     if (!bin?.length) break;
@@ -105,9 +112,10 @@ function appendage(tip: number, width: number, maxLength = 1.2) {
     const spread = Math.max(...bin.map((p) => p.distanceTo(c)));
     if (k > 3 && spread > width) break;
     line.push(c);
+    radius.push(spread);
     length = (k + 1) * 0.01;
   }
-  return { line, length, dist };
+  return { line, radius, length, dist };
 }
 
 // Hooves: the lowest vertex of each foot. The cow walks, so two feet are
@@ -204,26 +212,37 @@ function frames(line: V[], hint: V) {
   for (let i = 1; i < line.length; i++) n.push(n[i - 1].clone().applyQuaternion(new Quaternion().setFromUnitVectors(t[i - 1], t[i])));
   return line.map((_, i) => ({ t: t[i], n: n[i], b: t[i].clone().cross(n[i]) }));
 }
-const N_AXIS = 60;
 // Moves the vertices of an appendage from its source centreline onto a target
-// one: each vertex keeps its offset in the frame of its nearest centreline
-// point (radial offsets scaled by `radial`).
+// one: each vertex keeps its offset in the frame of its centreline point
+// (radial offsets scaled by `radial`). The point is the vertex's bin of
+// geodesic distance from the tip, not the nearest one: the scan's legs are
+// bent, and the nearest point jumps across the bend and slices the leg.
 function articulate(part: ReturnType<typeof appendage>, target: V[], hint: V, radial: number) {
-  const src = resample(part.line, N_AXIS);
-  const dst = resample(target, N_AXIS);
+  // The bin centroids zigzag: smoothed, or the frames twist along them.
+  let src = part.line;
+  for (let it = 0; it < 10; it++) src = src.map((p, i) => (i === 0 || i === src.length - 1 ? p : src[i - 1].clone().add(p).add(src[i + 1]).divideScalar(3)));
+  // Each bin keeps its share of the length on the target.
+  const s = [0];
+  for (let i = 1; i < src.length; i++) s.push(s[i - 1] + src[i].distanceTo(src[i - 1]));
+  const along = resample(target, 400);
+  const total = lengthOf(target);
+  const dst = s.map((x) => along[Math.round((x / s.at(-1)!) * 399)]);
   const fs = frames(src, hint);
   const fd = frames(dst, hint);
-  const stretch = lengthOf(dst) / lengthOf(src);
+  const stretch = total / s.at(-1)!;
   const out = new Map<number, V>();
+  const place = (p: V, i: number) => {
+    const o = p.clone().sub(src[i]);
+    const f = fs[i];
+    const g = fd[i];
+    return dst[i].clone().addScaledVector(g.t, o.dot(f.t) * stretch).addScaledVector(g.n, o.dot(f.n) * radial).addScaledVector(g.b, o.dot(f.b) * radial);
+  };
   for (let v = 0; v < sk.nv; v++) {
     if (part.dist[v] >= part.length) continue;
+    const x = Math.min(src.length - 1, Math.max(0, part.dist[v] / 0.01 - 0.5));
+    const i = Math.min(src.length - 2, Math.floor(x));
     const p = P(v);
-    let best = 0;
-    for (let i = 1; i < N_AXIS; i++) if (p.distanceToSquared(src[i]) < p.distanceToSquared(src[best])) best = i;
-    const o = p.clone().sub(src[best]);
-    const f = fs[best];
-    const g = fd[best];
-    out.set(v, dst[best].clone().addScaledVector(g.t, o.dot(f.t) * stretch).addScaledVector(g.n, o.dot(f.n) * radial).addScaledVector(g.b, o.dot(f.b) * radial));
+    out.set(v, place(p, i).lerp(place(p, i + 1), Math.min(1, x - i)));
   }
   return out;
 }
@@ -242,9 +261,12 @@ for (const [key, part] of Object.entries(legs)) {
   let axis = legAxis[limb].map((p) => (sideKey === "R" ? p.clone().setX(-p.x) : p.clone()));
   axis = cut(axis, part.length * K);
   const m = articulate(part, axis, v3(0, 0, -1), K);
+  // The geodesic band of the leg's top reaches over the brisket, the
+  // shoulder and the thigh: only the leg itself moves with it.
   for (const [v, p] of m) {
+    if (!inLeg(part, v)) continue;
     const f = part.dist[v] / part.length;
-    moved.set(v, { p, w: Math.min(1, Math.max(0, (1 - f) / 0.12)) });
+    moved.set(v, { p, w: Math.min(1, Math.max(0, (1 - f) / 0.35)) });
   }
 }
 {
@@ -252,12 +274,27 @@ for (const [key, part] of Object.entries(legs)) {
   const axis = [...tailAxis];
   const last = axis.at(-1)!.clone().sub(axis.at(-2)!).normalize();
   axis.push(axis.at(-1)!.clone().addScaledVector(last, 0.12));
-  const m = articulate({ ...tail, line: [...tail.line].reverse(), dist: tail.dist }, axis, v3(1, 0, 0), K * 0.9);
+  const m = articulate(tail, axis.reverse(), v3(1, 0, 0), K * 0.9);
   for (const [v, p] of m) moved.set(v, { p, w: Math.min(1, Math.max(0, (1 - tail.dist[v] / tail.length) / 0.25)) });
 }
 // ---------------------------------------------------------------- head and trunk
 
-const inPart = (v: number) => [...Object.values(legs), tail].some((a) => a.dist[v] < a.length);
+// Leg vertices are those of the geodesic band near the leg's centreline (the
+// band also reaches over the brisket, the chest and the thighs).
+function inLeg(a: ReturnType<typeof appendage>, v: number) {
+  if (a.dist[v] >= a.length) return false;
+  const p = P(v);
+  let best = 0;
+  for (let i = 1; i < a.line.length; i++) if (p.distanceToSquared(a.line[i]) < p.distanceToSquared(a.line[best])) best = i;
+  // Below the carpus and hock the whole band is leg; the top bins spread
+  // over the trunk: their radius is capped at 1.5 times the leg's median.
+  if (a.line[best].y < 0.25) return true;
+  const median = [...a.radius].sort((x, y) => x - y)[a.radius.length >> 1];
+  return p.distanceTo(a.line[best]) < Math.min(a.radius[best], median * 1.5) * 1.3 + 0.01;
+}
+const legVerts = new Uint8Array(sk.nv);
+for (const a of Object.values(legs)) for (let v = 0; v < sk.nv; v++) if (inLeg(a, v)) legVerts[v] = 1;
+const inPart = (v: number) => legVerts[v] === 1 || tail.dist[v] < tail.length;
 
 // Head: a similarity from the muzzle, chin, poll and the direction between
 // the ear tips (the scan turns its head to the right).
@@ -295,6 +332,9 @@ const stifleT = legAxis.pelvic[3].z;
 const elbowS = mean([legs["thoracic.L"].line.at(-1)!, legs["thoracic.R"].line.at(-1)!]).z;
 const stifleS = mean([legs["pelvic.L"].line.at(-1)!, legs["pelvic.R"].line.at(-1)!]).z;
 const inner = [...[...bones].filter(([n]) => !/skull|mandible|caudal|phalanges|meta|carpus|tarsus/.test(n)), ...organs].map(([, g]) => points(g, 3000)).flat();
+// The ventral outline comes from the trunk alone (the forearms and legs reach
+// far below the brisket and belly).
+const core = [...[...bones].filter(([n]) => /vertebrae-(thoracic|lumbar)|sacrum|ribs|sternum|os-coxae/.test(n)), ...organs].map(([, g]) => points(g, 3000)).flat();
 const trunkPts = allPts.filter((_, v) => !inPart(v) && !headMap.region(P(v)));
 const frontT = Math.min(...points(bone("humerus.L"), 3000).map((p) => p.z)) - 0.03;
 const rearT = Math.max(...points(bone("os-coxae.L"), 3000).map((p) => p.z)) + 0.02;
@@ -319,9 +359,13 @@ for (let zt = frontT; zt <= rearT + 1e-6; zt += 0.04) {
   if (src.length < 50 || dst.length < 20) continue;
   const top = src.reduce((a, p) => (p.y > a.y ? p : a));
   const cx = mean(src).x;
-  const bottom = src.filter((p) => Math.abs(p.x - cx) < 0.06).reduce((a, p) => (p.y < a.y ? p : a));
+  // Ventral midline: the forelegs stand close to the brisket, so it is
+  // taken from every vertex of the median strip, legs included (they never
+  // reach the median plane).
+  const strip = allPts.filter((p) => Math.abs(p.z - zs) < 0.01 && Math.abs(p.x - cx) < 0.015 && p.y > 0.2);
+  const bottom = (strip.length ? strip : src.filter((p) => Math.abs(p.x - cx) < 0.06)).reduce((a, p) => (p.y < a.y ? p : a));
   const dTop = Math.max(Math.max(...dst.map((p) => p.y)) + 0.035, zt < withers.z ? nape(zt) : -Infinity);
-  const dBottom = Math.min(...dst.map((p) => p.y)) - 0.04;
+  const dBottom = Math.min(...core.filter((p) => Math.abs(p.z - zt) < 0.015).map((p) => p.y)) - 0.04;
   const dHalf = Math.max(...dst.map((p) => Math.abs(p.x))) + 0.03;
   pairs.push([top, v3(0, dTop, zt)]);
   // The udder hangs between the hind legs: no ventral landmark there.
@@ -347,7 +391,7 @@ for (let zt = frontT; zt <= rearT + 1e-6; zt += 0.04) {
   const mand = points(bone("mandible"), 6000);
   const throatT = mand.reduce((a, p) => (p.z > a.z ? p : a)).clone().setX(0).add(v3(0, -0.05, 0.02));
   const brisketT = bottomT.clone();
-  const skullHalf = Math.max(...points(bone("skull"), 6000).map((p) => Math.abs(p.x))) * 0.6;
+  const skullHalf = Math.max(...points(bone("skull"), 6000).map((p) => Math.abs(p.x))) * 0.9;
   const z0 = headMap.pollZ + 0.06;
   const z1 = Math.min(topS.z, bottomS.z) - 0.02;
   for (let u = 0; u <= 1.001; u += 0.2) {
@@ -426,14 +470,14 @@ function tps(list: [V, V][], lambda: number) {
   };
 }
 
-// Final position: the head moved rigidly (fading into the warp over 8 cm
+// Final position: the head moved rigidly (fading into the warp over 20 cm
 // behind the poll), the legs and tail articulated (fading into the warp near
 // their roots), the rest warped.
-const warp = tps(pairs, 0.002);
+const warp = tps(pairs, -0.03);
 const warped = new Float32Array(sk.nv * 3);
 for (let v = 0; v < sk.nv; v++) {
   const p = P(v);
-  const h = Math.min(1, Math.max(0, (headMap.pollZ + 0.08 - p.z) / 0.08));
+  const h = Math.min(1, Math.max(0, (headMap.pollZ + 0.2 - p.z) / 0.2));
   let q = h > 0 ? p.clone().applyMatrix4(headMap.m) : warp(p);
   if (h > 0 && h < 1) q = warp(p).lerp(q, h * h * (3 - 2 * h));
   const a = moved.get(v);
@@ -478,7 +522,7 @@ function pushOut(position: Float32Array, index: Uint32Array, obstacles: { p: V; 
     console.log(`push-out pass ${pass}: ${bad} points closer than their clearance, worst ${(worst * 1000).toFixed(0)} mm`);
     if (bad < best.bad) best = { bad, position: position.slice() };
     if (bad === 0 || bad > best.bad * 1.15) break;
-    const amount = ring.spreadScalar(need, 80);
+    const amount = ring.spreadScalar(need, 30);
     for (let v = 0; v < n; v++) {
       const k = Math.min(amount[v], 0.008);
       for (let j = 0; j < 3; j++) position[v * 3 + j] += normal[v * 3 + j] * k;
@@ -514,6 +558,28 @@ class Sculpt {
     }
     return f;
   }
+  // Bi-Laplacian fairing of the vertices `ids` (the rest stay): they meet
+  // their surroundings without a crease.
+  fair(position: Float32Array, ids: number[], iterations: number, after?: (p: Float32Array) => void) {
+    const lap = (f: Float32Array) => {
+      const out = new Float32Array(f.length);
+      for (let v = 0; v < this.nb.length; v++) {
+        const nb = this.nb[v];
+        if (!nb.length) continue;
+        for (let k = 0; k < 3; k++) {
+          let sum = 0;
+          for (const u of nb) sum += f[u * 3 + k];
+          out[v * 3 + k] = sum / nb.length - f[v * 3 + k];
+        }
+      }
+      return out;
+    };
+    for (let it = 0; it < iterations; it++) {
+      const l2 = lap(lap(position));
+      for (const v of ids) for (let k = 0; k < 3; k++) position[v * 3 + k] -= 0.2 * l2[v * 3 + k];
+      after?.(position);
+    }
+  }
   // Averages a scalar field over the rings, never below what each vertex needs.
   spreadScalar(need: Float32Array, iterations: number) {
     let f = need.slice();
@@ -532,59 +598,160 @@ class Sculpt {
 
 }
 
-// The warp's own error (folds where the legs leave the trunk, the shear of
-// the articulated legs) is high-frequency: the displacement from the best
-// similarity of the scan is smoothed over the surface, so the warp keeps its
-// large-scale shape and the scan keeps its own detail.
 const ring = new Sculpt(sk.I, sk.nv);
-function smoothField(d: Float32Array, iterations: number) {
-  for (let it = 0; it < iterations; it++) {
-    const next = d.slice();
-    for (let v = 0; v < sk.nv; v++) {
-      const nb = ring.nb[v];
-      for (let k = 0; k < 3; k++) {
-        let sum = 0;
-        for (const u of nb) sum += d[u * 3 + k];
-        next[v * 3 + k] = 0.5 * d[v * 3 + k] + (0.5 * sum) / nb.length;
-      }
-    }
-    d.set(next);
+// The scan's skin folds into a collar behind the turned head, and the head
+// and neck meet in a step; the raised tail leaves a crease at its root: both
+// bands are faired.
+{
+  const neck = (v: number) => P(v).z > headMap.pollZ + 0.03 && P(v).z < headMap.pollZ + 0.28;
+  const root = (v: number) => tail.dist[v] > 0.6 * tail.length && tail.dist[v] < 1.6 * tail.length;
+  ring.fair(warped, allPts.map((_, v) => v).filter((v) => neck(v) || root(v)), 400);
+}
+// Folds of the warp (where the legs and the tail leave the trunk, and behind
+// the head): triangles turned against their neighbours, plus 2 rings around
+// them, are relaxed towards their neighbours' average before the push-out.
+{
+  const area = (t: number) => {
+    const [a, b, c] = [sk.I[t], sk.I[t + 1], sk.I[t + 2]].map((v) => v3(warped[v * 3], warped[v * 3 + 1], warped[v * 3 + 2]));
+    return b.clone().sub(a).cross(c.clone().sub(a));
+  };
+  const normal = ring.smoothVectors(smoothNormals(warped, sk.I), 4);
+  const bad = new Uint8Array(sk.nv);
+  for (let t = 0; t < sk.I.length; t += 3) {
+    const tri = [sk.I[t], sk.I[t + 1], sk.I[t + 2]];
+    const avg = tri.reduce((acc, v) => acc.add(v3(normal[v * 3], normal[v * 3 + 1], normal[v * 3 + 2])), v3(0, 0, 0));
+    if (area(t).dot(avg) < 0 && tri.every((v) => P(v).z > headMap.pollZ + 0.06)) for (const v of tri) bad[v] = 1;
   }
-}
-const base = new Float32Array(sk.nv * 3);
-{
-  const sample = allPts.map((_, v) => v).filter((v) => v % 7 === 0);
-  const m = fit(sample.map(P), sample.map((v) => v3(warped[v * 3], warped[v * 3 + 1], warped[v * 3 + 2])), true);
-  for (let v = 0; v < sk.nv; v++) P(v).applyMatrix4(m).toArray(base, v * 3);
-  const d = warped.map((x, i) => x - base[i]);
-  smoothField(d, 400);
-  for (let i = 0; i < d.length; i++) warped[i] = base[i] + d[i];
-}
-
-const obstacles: { p: V; c: number; reach?: number }[] = [];
-for (const [name, g] of bones) {
-  const c = /skull|mandible/.test(name) ? 0.004 : /phalanges|meta|carpus|tarsus/.test(name) ? 0.006 : 0.012;
-  for (const p of points(g, 1500)) obstacles.push({ p, c, reach: /skull/.test(name) ? 0.05 : 0.03 });
-}
-for (const [name, g] of organs) if (!/brain/.test(name)) for (const p of points(g, 1500)) obstacles.push({ p, c: 0.015 });
-// The muscles were pulled inside the previous skin: just inside is enough.
-for (const g of muscles.values()) for (const p of points(g, 800)) obstacles.push({ p, c: 0 });
-pushOut(warped, sk.I, obstacles);
-
-// Taubin smoothing over the whole surface: the crinkles the warp leaves
-// where it bends or compresses the scan, and the bumps of the push-out.
-{
-  for (let it = 0; it < 160; it++) {
-    const factor = it % 2 === 0 ? 0.5 : -0.53;
+  for (let r = 0; r < 2; r++) {
+    const grow = bad.slice();
+    for (let v = 0; v < sk.nv; v++) if (bad[v]) for (const u of ring.nb[v]) grow[u] = 1;
+    bad.set(grow);
+  }
+  let count = 0;
+  for (let v = 0; v < sk.nv; v++) count += bad[v];
+  console.log(`folds: ${count} vertices relaxed`);
+  for (let it = 0; it < 60; it++) {
     const next = warped.slice();
     for (let v = 0; v < sk.nv; v++) {
+      if (!bad[v]) continue;
       for (let k = 0; k < 3; k++) {
         let sum = 0;
         for (const u of ring.nb[v]) sum += warped[u * 3 + k];
-        next[v * 3 + k] += (sum / ring.nb[v].length - warped[v * 3 + k]) * factor;
+        next[v * 3 + k] = sum / ring.nb[v].length;
       }
     }
     warped.set(next);
+  }
+}
+
+const obstacles: { p: V; c: number; reach?: number }[] = [];
+// The head keeps the scan's shape: no skull (pushing the skin over it
+// crumples the poll; only the cornual processes, under the horns, and a few
+// millimetres of the poll are left outside).
+for (const [name, g] of bones) {
+  if (/skull/.test(name)) continue;
+  const c = /mandible/.test(name) ? 0.004 : /phalanges|meta|carpus|tarsus/.test(name) ? 0.006 : 0.012;
+  for (const p of points(g, 1500)) obstacles.push({ p, c, reach: /mandible/.test(name) ? 0.015 : 0.03 });
+}
+for (const [name, g] of organs) if (!/brain/.test(name)) for (const p of points(g, 1500)) obstacles.push({ p, c: 0.015 });
+// The muscles were pulled inside the previous skin: just inside is enough.
+for (const [name, g] of muscles) if (!/masseter|temporalis/.test(name)) for (const p of points(g, 800)) obstacles.push({ p, c: 0 });
+// The scan's neck bends to the right, so the warp leaves its dorsal outline
+// off the median plane (and the mirrored halves would meet in a ridge): each
+// 2 cm slab between the poll and the point of the shoulder is shifted so the
+// top of its dorsal outline lies on the plane.
+{
+  const slab = (z: number) => Math.floor(z / 0.02);
+  const z0 = headMap.pollT.z + 0.04;
+  const tops = new Map<number, { y: number; x: number }[]>();
+  for (let v = 0; v < sk.nv; v++) {
+    const [x, y, z] = [warped[v * 3], warped[v * 3 + 1], warped[v * 3 + 2]];
+    if (z > z0 && z < frontT) (tops.get(slab(z)) ?? tops.set(slab(z), []).get(slab(z))!).push({ x, y });
+  }
+  const raw = new Map<number, number>();
+  for (const [k, ps] of tops) {
+    const top = Math.max(...ps.map((p) => p.y));
+    raw.set(k, mean(ps.filter((p) => p.y > top - 0.005).map((p) => v3(p.x, 0, 0))).x);
+  }
+  const offset = (k: number) => {
+    const near = [-2, -1, 0, 1, 2].map((d) => raw.get(k + d)).filter((x) => x !== undefined);
+    return near.reduce((a, x) => a + x, 0) / near.length;
+  };
+  console.log(`neck offsets ${[...raw.keys()].sort((a, b) => a - b).map((k) => (offset(k) * 100).toFixed(1)).join(" ")} cm`);
+  for (let v = 0; v < sk.nv; v++) {
+    const z = warped[v * 3 + 2];
+    const w = Math.min(1, Math.max(0, (frontT - z) / 0.1, 0), Math.max(0, (z - z0 + 0.03) / 0.03));
+    if (w > 0) warped[v * 3] -= offset(slab(Math.min(z, frontT - 0.01))) * w * w * (3 - 2 * w);
+  }
+}
+// Symmetry: the scan walks with its head turned to the right, so the warp
+// compresses its right side into wrinkles; the left half (smooth, and the
+// side the skeleton was modelled from) is mirrored for the right one. The
+// edge of the half is moved onto the median plane and shared by both halves.
+// Done before the push-out, which then also clears the median structures.
+const sym = (() => {
+  const keep: number[] = [];
+  for (let t = 0; t < sk.I.length; t += 3) {
+    const x = warped[sk.I[t] * 3] + warped[sk.I[t + 1] * 3] + warped[sk.I[t + 2] * 3];
+    if (x <= 0) keep.push(sk.I[t], sk.I[t + 1], sk.I[t + 2]);
+  }
+  const edges = new Map<string, number>();
+  for (let t = 0; t < keep.length; t += 3)
+    for (let k = 0; k < 3; k++) {
+      const [a, b] = [keep[t + k], keep[t + ((k + 1) % 3)]].sort((p, q) => p - q);
+      edges.set(`${a},${b}`, (edges.get(`${a},${b}`) ?? 0) + 1);
+    }
+  const median = new Set<number>();
+  for (const [e, n] of edges) if (n === 1) for (const v of e.split(",")) median.add(Number(v));
+  const position = new Float32Array(sk.nv * 6);
+  position.set(warped);
+  for (const v of new Set(keep)) if (warped[v * 3] > 0) median.add(v);
+  for (const v of median) position[v * 3] = 0;
+  const twin = (v: number) => (median.has(v) ? v : v + sk.nv);
+  for (let v = 0; v < sk.nv; v++) {
+    position[(v + sk.nv) * 3] = -position[v * 3];
+    position[(v + sk.nv) * 3 + 1] = position[v * 3 + 1];
+    position[(v + sk.nv) * 3 + 2] = position[v * 3 + 2];
+  }
+  const index = new Uint32Array(keep.length * 2);
+  index.set(keep);
+  for (let t = 0; t < keep.length; t += 3) index.set([twin(keep[t]), twin(keep[t + 2]), twin(keep[t + 1])], keep.length + t);
+  // The halves meet in a crease where the left one's edge is not square to
+  // the median plane: faired across it.
+  const ring = new Sculpt(index, sk.nv * 2);
+  const flatten = (p: Float32Array) => {
+    for (const v of median) p[v * 3] = 0;
+  };
+  // Widest along the neck, where the scan bends.
+  const neck = (v: number) => P(v % sk.nv).z > headMap.pollZ + 0.03 && position[v * 3 + 2] < withers.z;
+  const ids: number[] = [];
+  for (let v = 0; v < sk.nv * 2; v++) if (Math.abs(position[v * 3]) < (neck(v) ? 0.1 : 0.05)) ids.push(v);
+  ring.fair(position, ids, 300, flatten);
+  return { position, index, ring, flatten };
+})();
+pushOut(sym.position, sym.index, obstacles);
+sym.flatten(sym.position);
+
+// Taubin smoothing: the folds where the legs and tail leave the trunk and
+// the neck the head (strongly), then the facets of the warp and push-out
+// (everything but the head, lightly).
+{
+  const root = (v: number) => [...Object.values(legs), tail].some((a) => a.dist[v] > 0.7 * a.length && a.dist[v] < 1.3 * a.length) || Math.abs(P(v).z - headMap.pollZ - 0.08) < 0.08;
+  const body = (v: number) => P(v).z > headMap.pollZ + 0.04;
+  const { position, ring } = sym;
+  for (let it = 0; it < 60; it++) {
+    const factor = it % 2 === 0 ? 0.5 : -0.53;
+    const next = position.slice();
+    for (let v = 0; v < sk.nv * 2; v++) {
+      if (!ring.nb[v].length || !(it < 40 ? root(v % sk.nv) : body(v % sk.nv))) continue;
+      for (let k = 0; k < 3; k++) {
+        let sum = 0;
+        for (const u of ring.nb[v]) sum += position[u * 3 + k];
+        next[v * 3 + k] += (sum / ring.nb[v].length - position[v * 3 + k]) * factor;
+      }
+    }
+    sym.flatten(next);
+    position.set(next);
   }
 }
 
@@ -617,7 +784,7 @@ for (const [key, a] of Object.entries(legs))
   for (let v = 0; v < sk.nv; v++) {
     if (a.dist[v] >= a.length) continue;
     band[v] = coronet[key.split(".")[0] as "thoracic" | "pelvic"];
-    if (warped[v * 3 + 1] < band[v]) part[v] = 3;
+    if (sym.position[v * 3 + 1] < band[v]) part[v] = 3;
   }
 
 // The triangles with at least two vertices passing `keep`.
@@ -636,97 +803,59 @@ function pick(position: Float32Array, index: Uint32Array, keep: (v: number) => b
   for (const [v, j] of remap) p.set(position.subarray(v * 3, v * 3 + 3), j * 3);
   return { position: p, index: new Uint32Array(out) };
 }
-// Symmetry: the scan walks with its head turned to the right, so the warp
-// compresses its right side into wrinkles; the left half (smooth, and the
-// side the skeleton was modelled from) is mirrored for the right one. The
-// edge of the half is moved onto the median plane and shared by both halves.
-const sym = (() => {
-  const keep: number[] = [];
-  for (let t = 0; t < sk.I.length; t += 3) {
-    const x = warped[sk.I[t] * 3] + warped[sk.I[t + 1] * 3] + warped[sk.I[t + 2] * 3];
-    if (x <= 0) keep.push(sk.I[t], sk.I[t + 1], sk.I[t + 2]);
-  }
-  const edges = new Map<string, number>();
-  for (let t = 0; t < keep.length; t += 3)
-    for (let k = 0; k < 3; k++) {
-      const [a, b] = [keep[t + k], keep[t + ((k + 1) % 3)]].sort((p, q) => p - q);
-      edges.set(`${a},${b}`, (edges.get(`${a},${b}`) ?? 0) + 1);
-    }
-  const median = new Set<number>();
-  for (const [e, n] of edges) if (n === 1) for (const v of e.split(",")) median.add(Number(v));
-  const position = new Float32Array(sk.nv * 6);
-  position.set(warped);
-  for (const v of new Set(keep)) if (warped[v * 3] > 0) median.add(v);
-  for (const v of median) position[v * 3] = 0;
-  const twin = (v: number) => (median.has(v) ? v : v + sk.nv);
-  for (let v = 0; v < sk.nv; v++) {
-    position[(v + sk.nv) * 3] = -position[v * 3];
-    position[(v + sk.nv) * 3 + 1] = position[v * 3 + 1];
-    position[(v + sk.nv) * 3 + 2] = position[v * 3 + 2];
-  }
-  const index = new Uint32Array(keep.length * 2);
-  index.set(keep);
-  for (let t = 0; t < keep.length; t += 3) index.set([twin(keep[t]), twin(keep[t + 2]), twin(keep[t + 1])], keep.length + t);
-  // A light smoothing across the median plane, where the halves meet.
-  const ring = new Sculpt(index, sk.nv * 2);
-  for (let it = 0; it < 20; it++) {
-    const factor = it % 2 === 0 ? 0.5 : -0.53;
-    const next = position.slice();
-    for (let v = 0; v < sk.nv * 2; v++) {
-      if (Math.abs(position[v * 3]) > 0.04 || !ring.nb[v].length) continue;
-      for (let k = 0; k < 3; k++) {
-        let sum = 0;
-        for (const u of ring.nb[v]) sum += position[u * 3 + k];
-        next[v * 3 + k] += (sum / ring.nb[v].length - position[v * 3 + k]) * factor;
-      }
-    }
-    for (const v of median) next[v * 3] = 0;
-    position.set(next);
-  }
-  return { position, index, part: (v: number) => part[v % sk.nv] };
-})();
+const symPart = (v: number) => part[v % sk.nv];
 // Coronary band: the corners of the triangles that hoof and skin share are
 // set on its plane, so the two meet in a clean ring instead of a saw edge.
 for (let t = 0; t < sym.index.length; t += 3) {
   const tri = [sym.index[t], sym.index[t + 1], sym.index[t + 2]];
-  const parts = tri.map(sym.part);
+  const parts = tri.map(symPart);
   if (parts.includes(3) && parts.includes(0)) for (const v of tri) sym.position[v * 3 + 1] = band[v % sk.nv];
 }
-const skin = pick(sym.position, sym.index, (v) => sym.part(v) === 0);
-const udder = pick(sym.position, sym.index, (v) => sym.part(v) === 1);
-// The horn is set on the right cornual process of the skull (the most
-// lateral point of its dorsal half): its base on the process, its axis
+const skin = pick(sym.position, sym.index, (v) => symPart(v) === 0);
+const udder = pick(sym.position, sym.index, (v) => symPart(v) === 1);
+// Cornual processes: the most lateral points of the dorsal half of the skull
+// (the fused scan's skull is not symmetric, so each side has its own).
+const cornual = (() => {
+  const skull = points(bone("skull"), 20000);
+  const cy = mean(skull).y;
+  const top = skull.filter((p) => p.y > cy);
+  return [-1, 1].map((sign) => {
+    const tip = top.reduce((a, p) => (p.x * sign > a.x * sign ? p : a));
+    return { tip, out: tip.clone().sub(mean(skull.filter((p) => p.distanceTo(tip) < 0.06))).normalize() };
+  });
+})();
+// Each horn is set on its cornual process: its base on the process, its axis
 // halfway between the scan's and the process's, scaled to the heifer's
-// process (the scan is an adult dairy cow).
-const hornR = (() => {
+// process (the scan is an adult dairy cow). The left one is the scan's right
+// horn mirrored.
+const horns = cornual.map(({ tip, out }, i) => {
   const ids = allPts.map((_, v) => v).filter((v) => horn.dist[v] < horn.length);
   const at = (v: number) => P(v).applyMatrix4(headMap.m);
   const base = mean(ids.filter((v) => horn.dist[v] > 0.85 * horn.length).map(at));
   const axis = at(ids.reduce((a, v) => (horn.dist[v] < horn.dist[a] ? v : a))).sub(base).normalize();
-  const skull = points(bone("skull"), 20000);
-  const cy = mean(skull).y;
-  const tip = skull.filter((p) => p.y > cy).reduce((a, p) => (p.x > a.x ? p : a));
-  const out = tip.clone().sub(mean(skull.filter((p) => p.distanceTo(tip) < 0.06))).normalize();
-  const target = out.clone().add(axis).normalize();
+  // Built on the right side; the left process is mirrored onto it and back.
+  const [t, o] = i === 0 ? [tip.clone().setX(-tip.x), out.clone().setX(-out.x)] : [tip, out];
+  const target = o.clone().add(axis).normalize();
   console.log(`cornual process ${tip.toArray().map((x) => x.toFixed(3))}, out ${out.toArray().map((x) => x.toFixed(2))}, horn axis ${axis.toArray().map((x) => x.toFixed(2))}`);
   const m = new Matrix4()
-    .makeTranslation(tip.x - out.x * 0.015, tip.y - out.y * 0.015, tip.z - out.z * 0.015)
+    .makeTranslation(t.x - o.x * 0.015, t.y - o.y * 0.015, t.z - o.z * 0.015)
     .multiply(new Matrix4().makeRotationFromQuaternion(new Quaternion().setFromUnitVectors(axis, target)))
-    .multiply(new Matrix4().makeScale(0.65, 0.65, 0.65))
+    .multiply(new Matrix4().makeScale(0.85, 0.85, 0.85))
     .multiply(new Matrix4().makeTranslation(-base.x, -base.y, -base.z));
   const position = new Float32Array(sk.nv * 3);
   for (let v = 0; v < sk.nv; v++) at(v).applyMatrix4(m).toArray(position, v * 3);
-  return pick(position, sk.I, (v) => part[v] === 2);
-})();
-const hooves = pick(sym.position, sym.index, (v) => sym.part(v) === 3);
+  const g = pick(position, sk.I, (v) => part[v] === 2);
+  return i === 0 ? mirror(g) : g;
+});
+const hooves = pick(sym.position, sym.index, (v) => symPart(v) === 3);
 const side = (g: Geometry, sign: number) => pick(g.position, g.index, (v) => Math.sign(g.position[v * 3]) === sign);
-console.log(`skin ${skin.index.length / 3}, udder ${udder.index.length / 3}, horn ${hornR.index.length / 3}, hooves ${hooves.index.length / 3} triangles`);
+console.log(`skin ${skin.index.length / 3}, udder ${udder.index.length / 3}, horn ${horns[1].index.length / 3}, hooves ${hooves.index.length / 3} triangles`);
 
 const model = createModel("cow.integumentary", [0.76, 0.6, 0.47, 1], 0.04);
 model.add(meshKey("cow.integumentary.skin"), skin, 60000);
 model.add(meshKey("cow.integumentary.udder"), udder, 8000);
-model.add(meshKey("cow.integumentary.horns.R"), hornR, 3000);
-model.add(meshKey("cow.integumentary.horns.L"), mirror(hornR), 3000);
+model.add(meshKey("cow.integumentary.horns.R"), horns[1], 3000);
+model.add(meshKey("cow.integumentary.horns.L"), horns[0], 3000);
 model.add(meshKey("cow.integumentary.hooves.L"), side(hooves, -1), 6000);
 model.add(meshKey("cow.integumentary.hooves.R"), side(hooves, 1), 6000);
 await model.write(OUT);
