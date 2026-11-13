@@ -613,7 +613,8 @@ function arcTheta(i: number | string, th0: number, arc: number, sign = 1) {
 // fleshy belly, 1 where it thins into tendon or aponeurosis. `section`: vertices
 // with the same id (a slab's two faces at one grid point) are pushed out
 // together, so a thin sheet slides off instead of folding; tubes flatten.
-type Mesh = { pos: V[]; tri: number[]; fibre?: V[]; tendon?: number[]; section?: number[] };
+// `base`: a slab's deep face, which lies on what is beneath it.
+type Mesh = { pos: V[]; tri: number[]; fibre?: V[]; tendon?: number[]; section?: number[]; base?: boolean[] };
 
 // Closed slab over a grid of base points grid[u][v]; the outer face is pushed
 // along the surface normal (oriented by `out`) by the thickness at (u, v).
@@ -681,7 +682,7 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
     tri.push(O(...a), I(...a), O(...b), O(...b), I(...a), I(...b));
   }
   if (sign < 0) for (let k = 0; k < tri.length; k += 3) [tri[k + 1], tri[k + 2]] = [tri[k + 2], tri[k + 1]];
-  return { pos, tri, fibre, tendon, section };
+  return { pos, tri, fibre, tendon, section, base: pos.map((_, i) => i >= nu * nv) };
 }
 
 // Grid from fibres: every fibre is a list of control points (same count); each
@@ -871,7 +872,7 @@ function relax(m: Mesh, iterations: number) {
 }
 
 const join = (...parts: Mesh[]): Mesh => {
-  const out: Mesh = { pos: [], tri: [], fibre: [], tendon: [], section: [] };
+  const out: Mesh = { pos: [], tri: [], fibre: [], tendon: [], section: [], base: [] };
   for (const m of parts) {
     const off = out.pos.length;
     const next = out.section!.length ? Math.max(...out.section!) + 1 : 0;
@@ -880,24 +881,29 @@ const join = (...parts: Mesh[]): Mesh => {
     out.tri.push(...m.tri.map((t) => t + off));
     out.fibre!.push(...(m.fibre ?? m.pos.map(() => new Vector3())));
     out.tendon!.push(...(m.tendon ?? m.pos.map(() => 0)));
+    out.base!.push(...(m.base ?? m.pos.map(() => false)));
   }
   return out;
 };
 
-// Grows or shrinks a muscle along its normals until its volume is `cm3`.
-function calibrate(m: Mesh, cm3: number) {
-  for (let it = 0; it < 4; it++) {
+// Grows or shrinks a muscle along its normals until its volume is `cm3`:
+// only the fleshy belly moves (tendon and aponeurosis keep their thickness),
+// and a slab only on its outer face.
+function calibrate(m: Mesh, cm3: number, grow?: V) {
+  const w0 = m.pos.map((_, i) => (m.base?.[i] ? 0 : 1 - (m.tendon?.[i] ?? 0)));
+  for (let it = 0; it < 5; it++) {
     const vol = voxels(m).length * VOX ** 3 * 1e6;
     if (Math.abs(vol / cm3 - 1) < 0.04) break;
-    const g = toGeometry(m);
-    const nrm = smoothNormals(g.position, m.tri);
+    const nrm = smoothNormals(toGeometry(m).position, m.tri);
+    const w = w0.map((x, i) => (grow ? x * Math.max(0, grow.x * nrm[i * 3] + grow.y * nrm[i * 3 + 1] + grow.z * nrm[i * 3 + 2]) : x));
     let area = 0;
     for (let k = 0; k < m.tri.length; k += 3) {
       const [a, b, c] = [m.pos[m.tri[k]], m.pos[m.tri[k + 1]], m.pos[m.tri[k + 2]]];
-      area += new Vector3().crossVectors(b.clone().sub(a), c.clone().sub(a)).length() / 2;
+      area += (new Vector3().crossVectors(b.clone().sub(a), c.clone().sub(a)).length() / 2) * ((w[m.tri[k]] + w[m.tri[k + 1]] + w[m.tri[k + 2]]) / 3);
     }
+    if (area < 1e-6) break;
     const d = Math.min(0.008, Math.max(-0.002, ((cm3 - vol) * 1e-6) / area));
-    m.pos.forEach((p, i) => p.add(vec(nrm[i * 3], nrm[i * 3 + 1], nrm[i * 3 + 2]).multiplyScalar(d)));
+    m.pos.forEach((p, i) => p.add(vec(nrm[i * 3], nrm[i * 3 + 1], nrm[i * 3 + 2]).multiplyScalar(d * w[i])));
     relax(m, 1);
   }
 }
@@ -1266,8 +1272,9 @@ type Part = {
   ignore?: string[]; // mesh ids (prefixes) of built muscles not to push out of
   smooth?: number;
   single?: boolean; // midline structure: no mirrored copy
-  scan?: boolean; // scanned shape: added to the layers as it is, never pushed
+  scan?: boolean; // scanned shape: only dented where it overlaps another scanned one
   mass?: number; // greyhound muscle mass in g (MASS): sets the volume of procedural muscles
+  grow?: V; // grow toward this side only when matching the volume
 };
 const parts: Part[] = [];
 const muscle = (p: Part) => parts.push({ mass: MASS[p.id.slice("dog.muscular.".length)], ...p });
@@ -1611,8 +1618,8 @@ function fossa(border: (t: number, off?: number) => V, end: V, depth: number, ex
     ring: 20,
   });
 }
-muscle({ id: `${M}.supraspinatus`, make: () => fossa(scapCranial, greaterTubercle.clone().addScaledVector(hCr, 0.002), 0.02, 0.012) });
-muscle({ id: `${M}.infraspinatus`, make: () => fossa(scapCaudal, humerus.surf(0.08, hDir(0.2, 1), 0.002), 0.016, 0.004) });
+muscle({ id: `${M}.supraspinatus`, grow: scapN, make: () => fossa(scapCranial, greaterTubercle.clone().addScaledVector(hCr, 0.002), 0.02, 0.012) });
+muscle({ id: `${M}.infraspinatus`, grow: scapN, make: () => fossa(scapCaudal, humerus.surf(0.08, hDir(0.2, 1), 0.002), 0.016, 0.004) });
 
 muscle({
   id: `${M}.brachialis`,
@@ -1809,8 +1816,9 @@ muscle({
     for (let k = 0; k < nf; k++) {
       const v = k / (nf - 1);
       const i = I("t2") + (I("t11") - I("t2")) * v;
-      const o = body(i, Math.PI - 0.04, 0.003);
-      const side = body(I("t2") + (i - I("t2")) * 0.35, 2.45 - 0.2 * v, 0.004);
+      // Over the rectus abdominis, which reaches the first costal cartilages.
+      const o = body(i, Math.PI - 0.04, 0.006);
+      const side = body(I("t2") + (i - I("t2")) * 0.35, 2.45 - 0.2 * v, 0.006);
       const arm = humerus.surf(0.3 - 0.1 * v, hDir(0.2, -1), 0.006);
       const ins = lerp(greaterTubercle.clone().addScaledVector(hCr, 0.004), lesserTubercle.clone().addScaledVector(hLat, -0.003), 0.3 + 0.7 * v);
       fibres.push([o, side, arm, ins]);
@@ -1826,7 +1834,8 @@ muscle({
     for (let k = 0; k < nf; k++) {
       const v = k / (nf - 1);
       const o = body(I("t1") + 0.4 + 2.2 * v, Math.PI - 0.04, 0.004);
-      const ins = v < 0.75 ? humerus.surf(0.15 + 0.7 * (v / 0.75), hDir(1, -0.4), 0.004) : radius.surf(0.05 + 0.25 * ((v - 0.75) / 0.25), rDir(0.2, -1), 0.004);
+      // Crest of the greater tubercle, lateral to the biceps.
+      const ins = v < 0.75 ? humerus.surf(0.15 + 0.7 * (v / 0.75), hDir(1, 0.35), 0.003) : radius.surf(0.05 + 0.25 * ((v - 0.75) / 0.25), rDir(0.2, -1), 0.004);
       const mid = lerp(o, ins, 0.5).add(vec(0, -0.008, -0.004));
       fibres.push([o, mid, ins]);
     }
@@ -1940,8 +1949,9 @@ muscle({
 
 const digitsHind = centroid(points(required("phalanges-pelvic")));
 
-// Scanned bellies (scripts/lib/greyhound-hindlimb.ts) are kept as they are:
-// built first and never pushed, so procedural muscles make room for them.
+// Scanned bellies (scripts/lib/greyhound-hindlimb.ts) keep their shape: built
+// first and only dented where two of them overlap, so procedural muscles make
+// room for them.
 // The scan stops at the tarsus; distal tendons are drawn from the end of
 // the belly nearest to their first landmark.
 const scanned = await greyhoundHindlimb(atlas);
@@ -2056,11 +2066,14 @@ for (const part of [...parts.filter((p) => p.scan), ...parts.filter((p) => !p.sc
       perGram = r.sort((a, b) => a - b)[Math.floor(r.length / 2)];
       console.log(`volume per greyhound gram: ${perGram.toFixed(3)} cm3 (median of ${r.length} scanned muscles)`);
     }
-    calibrate(m, part.mass * perGram);
+    calibrate(m, part.mass * perGram, part.grow);
   }
   const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x));
   const layer = part.layer !== false;
-  if (!part.scan && (part.bones !== false || layer)) {
+  if (part.scan) {
+    muscles.push(m, 0.0004, skip, 3);
+    relax(m, 1);
+  } else if (part.bones !== false || layer) {
     for (let k = 0; k < 3; k++) {
       if (part.bones !== false) bones.push(m.pos, 0.0015);
       if (layer) muscles.push(m, 0.001, skip, 2);
