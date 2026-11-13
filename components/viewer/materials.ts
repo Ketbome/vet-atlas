@@ -58,11 +58,11 @@ const FIBRE_SURFACE = `{
     normal = normalize(abs(det) * normal - grad);
     diffuseColor.rgb *= mix(0.78, 1.1, mix(h, 0.5, tendon));
   }
-  vec3 pearl = vec3(0.72, 0.66, 0.56);
+  vec3 pearl = vec3(0.56, 0.51, 0.45);
   #ifdef USE_COLOR
   pearl *= vColor.rgb;
   #endif
-  diffuseColor.rgb = mix(diffuseColor.rgb, pearl, tendon);
+  diffuseColor.rgb = mix(diffuseColor.rgb, pearl, tendon * 0.85);
   roughnessFactor = mix(roughnessFactor, 0.5, tendon);
 }
 #include <lights_physical_fragment>`;

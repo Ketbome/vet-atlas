@@ -130,9 +130,16 @@ structures). Media and Source carry license and attribution. IDs are
 - LMU Munich vetanatMunich (Sketchfab): CC BY-NC-ND, not usable. Ask them for
   permission before considering it.
 - Vetanat UZH (Sketchfab): not downloadable. Same: ask for permission.
-- Muscles: no openly licensed dog muscle models exist (rechecked 2026-10-08);
-  ours are procedural. Candidates needing permission: Vetanat UZH plastinates,
-  William Ryerson forelimb musculature, UNSA-VF, LMU Munich.
+- Muscles: the only open dog muscle scan is Hutchinson's greyhound hindlimb
+  (figshare 7240529, CC BY 4.0, ~30 bellies segmented from the same CT): since
+  2026-11-03 the dog's pelvic limb muscles come from it (`scripts/lib/greyhound-hindlimb.ts`,
+  distal tendons procedural). Head, neck, trunk and thoracic limb stay procedural
+  (survey 2026-11-03: nothing open). Candidates needing permission: MorphoSource
+  *Lycaon* diceCT head with segmented masticatory muscles (Heather F. Smith),
+  Vetanat UZH plastinates, William Ryerson forelimb musculature, UNSA-VF, LMU Munich.
+  Sizing references with open tables: Williams et al. 2008 greyhound fore- and
+  hindlimb (PMID 19034998, 18657259), Sharir et al. 2006 neck (PMID 16533316),
+  Webster et al. 2014 epaxials (PMID 24917310).
 - LMU Munich manubrium sterni (CC BY) and VetAgro Sup Lyon hyoid + larynx
   plastinate (CC BY): integrated 2026-09-13, placed by hand in
   `scripts/build-dog-skeletal.ts`.

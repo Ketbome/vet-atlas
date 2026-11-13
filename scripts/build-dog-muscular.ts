@@ -648,7 +648,7 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
       const t = Math.max(thick(u / (nu - 1), v / (nv - 1)), 0.0006);
       pos.push(grid[u][v].clone().addScaledVector(n, t));
       fibre.push(along(u, v));
-      tendon.push(1 - smoothstep(0.3, 0.6, mid[u] / peak));
+      tendon.push(1 - smoothstep(0.15, 0.35, mid[u] / peak));
       section.push(u * nv + v);
       if (u < nu - 1 && v < nv - 1) {
         const du = grid[u + 1][v].clone().sub(grid[u][v]);
@@ -660,7 +660,7 @@ function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) 
     for (let v = 0; v < nv; v++) {
       pos.push(grid[u][v].clone());
       fibre.push(along(u, v));
-      tendon.push(1 - smoothstep(0.3, 0.6, mid[u] / peak));
+      tendon.push(1 - smoothstep(0.15, 0.35, mid[u] / peak));
       section.push(u * nv + v);
     }
   const O = (u: number, v: number) => u * nv + v;
@@ -883,6 +883,24 @@ const join = (...parts: Mesh[]): Mesh => {
   }
   return out;
 };
+
+// Grows or shrinks a muscle along its normals until its volume is `cm3`.
+function calibrate(m: Mesh, cm3: number) {
+  for (let it = 0; it < 4; it++) {
+    const vol = voxels(m).length * VOX ** 3 * 1e6;
+    if (Math.abs(vol / cm3 - 1) < 0.04) break;
+    const g = toGeometry(m);
+    const nrm = smoothNormals(g.position, m.tri);
+    let area = 0;
+    for (let k = 0; k < m.tri.length; k += 3) {
+      const [a, b, c] = [m.pos[m.tri[k]], m.pos[m.tri[k + 1]], m.pos[m.tri[k + 2]]];
+      area += new Vector3().crossVectors(b.clone().sub(a), c.clone().sub(a)).length() / 2;
+    }
+    const d = Math.min(0.008, Math.max(-0.002, ((cm3 - vol) * 1e-6) / area));
+    m.pos.forEach((p, i) => p.add(vec(nrm[i * 3], nrm[i * 3 + 1], nrm[i * 3 + 2]).multiplyScalar(d)));
+    relax(m, 1);
+  }
+}
 
 const toGeometry = (m: Mesh): Geometry => {
   const position = new Float32Array(m.pos.length * 3);
@@ -1249,13 +1267,51 @@ type Part = {
   smooth?: number;
   single?: boolean; // midline structure: no mirrored copy
   scan?: boolean; // scanned shape: added to the layers as it is, never pushed
+  mass?: number; // greyhound muscle mass in g (MASS): sets the volume of procedural muscles
 };
 const parts: Part[] = [];
-const muscle = (p: Part) => parts.push(p);
+const muscle = (p: Part) => parts.push({ mass: MASS[p.id.slice("dog.muscular.".length)], ...p });
 
 // ---------------------------------------------------------------- muscles
 
 const M = "dog.muscular";
+// Mean muscle masses (g) of ~31 kg greyhounds: Williams et al. 2008, J Anat
+// 213:361-372 (pelvic limb, PMID 18657259) and 213:373-382 (thoracic limb,
+// PMID 19034998). The scanned pelvic limb gives the ratio of our volumes to
+// these masses; procedural muscles are grown or shrunk to it.
+const MASS: Record<string, number> = {
+  "gluteus-medius": 120,
+  "biceps-femoris": 485,
+  semimembranosus: 170,
+  semitendinosus: 196,
+  adductor: 270,
+  gracilis: 160,
+  "quadriceps-femoris.vastus-lateralis": 137,
+  "quadriceps-femoris.vastus-medialis": 101,
+  "quadriceps-femoris.vastus-intermedius": 71.6,
+  "quadriceps-femoris.rectus-femoris": 267,
+  "gastrocnemius.lateral": 40.9,
+  "gastrocnemius.medial": 45.1,
+  "tibialis-cranialis": 25.2,
+  trapezius: 38.5 + 58.8,
+  "serratus-ventralis": 157 + 120,
+  omotransversarius: 56.8,
+  "latissimus-dorsi": 325,
+  "pectorales.profundus": 400,
+  "pectorales.superficiales": 48.8 + 94.8,
+  supraspinatus: 150,
+  infraspinatus: 114,
+  "deltoideus.acromial": 28.7,
+  "deltoideus.scapular": 49.9,
+  "biceps-brachii": 54.1,
+  brachialis: 23.9,
+  "triceps-brachii.lateral": 129,
+  "triceps-brachii.long": 341,
+  "triceps-brachii.medial": 81.9 + 42.1,
+  "extensor-carpi-radialis": 33.3,
+  "extensor-digitorum-communis": 11.9,
+  "flexor-carpi-ulnaris": 26.4,
+};
 // Evenly spaced profile knots: P(a, b, c) -> [[0, a], [0.5, b], [1, c]].
 const P = (...v: number[]): Profile => v.map((x, k) => [k / (v.length - 1), x]);
 // Outward hint for slabs on the trunk and neck: away from the nearest point of the column.
@@ -1990,8 +2046,18 @@ console.log(
 );
 const model = createModel("dog.muscular", [0.69, 0.41, 0.36, 1]);
 let total = 0;
+// cm3 of our muscle per g of greyhound muscle, median over the scanned ones.
+let perGram = 0;
 for (const part of [...parts.filter((p) => p.scan), ...parts.filter((p) => !p.scan)]) {
   const m = part.make();
+  if (!part.scan && part.mass) {
+    if (!perGram) {
+      const r = parts.filter((p) => p.scan && p.mass).map((p) => (muscles.size[muscles.names.indexOf(p.id)] * VOX ** 3 * 1e6) / p.mass!);
+      perGram = r.sort((a, b) => a - b)[Math.floor(r.length / 2)];
+      console.log(`volume per greyhound gram: ${perGram.toFixed(3)} cm3 (median of ${r.length} scanned muscles)`);
+    }
+    calibrate(m, part.mass * perGram);
+  }
   const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x));
   const layer = part.layer !== false;
   if (!part.scan && (part.bones !== false || layer)) {
