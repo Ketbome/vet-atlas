@@ -1,32 +1,32 @@
 /**
- * Builds public/models/cat/muscular.glb: procedural, illustrative cat muscles
- * shaped on the bones of public/models/cat/skeletal.glb (build that first).
- * Adapted from scripts/build-dog-muscular.ts; same 34 muscles.
+ * Builds public/models/cat/muscular.glb on the bones of
+ * public/models/cat/skeletal.glb (build that first).
  *
- * No openly licensed cat muscle models exist, so every muscle is modelled from
- * its anatomy. Origins and insertions are landmarks measured on the bone
- * meshes (extreme points, points at a fraction along a bone's long axis,
- * offsets in the bone's local frame). Limb muscles are tubes lofted along a
- * Catmull-Rom curve through origin, via-points and insertion, with an
- * elliptical cross-section whose width and thickness follow the muscle's
- * shape. Flat muscles are slabs; trunk and neck sheets lie on a parametric
- * body surface fitted to the vertebrae, ribs, sternum and pelvis. Vertices
- * that fall inside a bone or an already built (deeper) muscle are pushed out,
- * so muscles are built from deep to superficial.
+ * Most muscles are sculpted: "Feline Ecorche Dec" by westerly (CC BY 4.0),
+ * split, labelled and placed on our skeleton by scripts/lib/feline-ecorche.ts
+ * (fidelity "modeled"). They keep their shape and are only dented where two
+ * of them overlap.
+ *
+ * Procedural, illustrative muscles fill what the écorché lacks: the
+ * diaphragm, the omotransversarius and the vastus medialis (adapted from
+ * scripts/build-dog-muscular.ts). Origins and insertions are landmarks
+ * measured on the bone meshes (extreme points, points at a fraction along a
+ * bone's long axis, offsets in the bone's local frame); the omotransversarius
+ * and vastus medialis are tubes lofted along a Catmull-Rom curve through them,
+ * the diaphragm a slab on a parametric body surface fitted to the vertebrae,
+ * ribs, sternum and pelvis. Vertices that fall inside a bone or an already
+ * built muscle are pushed out.
  *
  * The bones are read scaled to the size of the dog (SCALE) and the muscles
- * scaled back on output, so offsets and thicknesses below are in that frame.
- * Feline differences from the dog:
- * - The head is carried low and flexed: head landmarks use a frame along the
- *   skull; the temporalis is large and fills the temporal fossa.
- * - The brachiocephalicus runs over the vestigial clavicle (not an obstacle).
- * - The biceps femoris arises from the ischiatic tuberosity only (no
- *   sacrotuberous ligament); the sartorius is one broad sheet.
- * - The trunk wall hugs the caudally slanted ribs.
+ * scaled back on output, so offsets, thicknesses, clearances and the voxel
+ * size of the overlap passes are in that frame; the sculpted muscles are
+ * placed at the cat's size and grown into it too. The head is carried low and
+ * flexed, so head landmarks use a frame along the skull.
  *
  * Other systems are read when present: the diaphragm is fitted between the
- * liver and the heart of visceral.glb, and vertices up to 6 mm (dog frame)
- * outside the skin of integumentary.glb are pulled inside it.
+ * liver and the heart of visceral.glb, and vertices of procedural muscles up
+ * to 6 mm (dog frame) outside the skin of integumentary.glb are pulled inside
+ * it.
  *
  * --debug writes .cache/agent-out/cat-muscular-debug.glb instead, adding the
  * body surface, the landmarks and every tube's control points as small spheres.
@@ -38,97 +38,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { Matrix4, Vector3 } from "three";
 import { meshKey } from "../lib/content/mesh";
-import { createModel, merge, mirror, readAtlas, smoothNormals, sphere, transform, type Geometry } from "./lib/glb";
+import { felineEcorche } from "./lib/feline-ecorche";
+import { createModel, merge, mirror, readAtlas, sphere, transform, type Geometry } from "./lib/glb";
+import { AXES, Obstacles, Volume, boxOf, dir, lerp, prof, relax, slab, smoothstep, toGeometry, tube as baseTube, vec, type Dir, type Mesh, type Profile, type Tube, type V } from "./lib/muscle";
 
 const SKELETON = path.join(process.cwd(), "public", "models", "cat", "skeletal.glb");
 const VISCERA = path.join(process.cwd(), "public", "models", "cat", "visceral.glb");
 const OUT = path.join(process.cwd(), "public", "models", "cat", "muscular.glb");
 const DEBUG = process.argv.includes("--debug");
-
-type V = Vector3;
-type Profile = [number, number][];
-
-const vec = (x: number, y: number, z: number) => new Vector3(x, y, z);
-const AXES = {
-  lat: vec(-1, 0, 0),
-  med: vec(1, 0, 0),
-  cra: vec(0, 0, -1),
-  cau: vec(0, 0, 1),
-  dor: vec(0, 1, 0),
-  ven: vec(0, -1, 0),
-};
-type Dir = Partial<Record<keyof typeof AXES, number>>;
-// Anatomical direction on the left side, e.g. dir({ cau: 1, lat: 0.5 }).
-function dir(d: Dir) {
-  const out = new Vector3();
-  for (const [k, w] of Object.entries(d)) out.addScaledVector(AXES[k as keyof typeof AXES], w);
-  return out.normalize();
-}
-const lerp = (a: V, b: V, t: number) => a.clone().lerp(b, t);
-const smoothstep = (a: number, b: number, x: number) => {
-  const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
-  return t * t * (3 - 2 * t);
-};
-
-// Smooth 1D interpolation through knots [x, y] (cubic Hermite, Catmull-Rom tangents).
-function prof(p: Profile, x: number) {
-  if (x <= p[0][0]) return p[0][1];
-  const n = p.length - 1;
-  if (x >= p[n][0]) return p[n][1];
-  let k = 0;
-  while (p[k + 1][0] < x) k++;
-  const [x0, y0] = p[k];
-  const [x1, y1] = p[k + 1];
-  const h = x1 - x0;
-  const m0 = k > 0 ? ((y1 - p[k - 1][1]) / (x1 - p[k - 1][0])) * h : y1 - y0;
-  const m1 = k + 2 <= n ? ((p[k + 2][1] - y0) / (p[k + 2][0] - x0)) * h : y1 - y0;
-  const t = (x - x0) / h;
-  const t2 = t * t;
-  const t3 = t2 * t;
-  return (2 * t3 - 3 * t2 + 1) * y0 + (t3 - 2 * t2 + t) * m0 + (-2 * t3 + 3 * t2) * y1 + (t3 - t2) * m1;
-}
-
-// Catmull-Rom curve through `pts`, resampled to n points evenly spaced by arc length.
-function spline(pts: V[], n: number): V[] {
-  if (pts.length === 2) return Array.from({ length: n }, (_, i) => lerp(pts[0], pts[1], i / (n - 1)));
-  const ext = [
-    pts[0].clone().multiplyScalar(2).sub(pts[1]),
-    ...pts,
-    pts[pts.length - 1]
-      .clone()
-      .multiplyScalar(2)
-      .sub(pts[pts.length - 2]),
-  ];
-  const dense: V[] = [];
-  for (let s = 1; s < ext.length - 2; s++) {
-    const [p0, p1, p2, p3] = [ext[s - 1], ext[s], ext[s + 1], ext[s + 2]];
-    for (let k = 0; k < 24; k++) {
-      const t = k / 24;
-      const t2 = t * t;
-      const t3 = t2 * t;
-      dense.push(
-        new Vector3()
-          .addScaledVector(p0, -0.5 * t3 + t2 - 0.5 * t)
-          .addScaledVector(p1, 1.5 * t3 - 2.5 * t2 + 1)
-          .addScaledVector(p2, -1.5 * t3 + 2 * t2 + 0.5 * t)
-          .addScaledVector(p3, 0.5 * t3 - 0.5 * t2),
-      );
-    }
-  }
-  dense.push(pts[pts.length - 1].clone());
-  const acc = [0];
-  for (let i = 1; i < dense.length; i++) acc.push(acc[i - 1] + dense[i].distanceTo(dense[i - 1]));
-  const total = acc[acc.length - 1];
-  const out: V[] = [];
-  let j = 0;
-  for (let i = 0; i < n; i++) {
-    const target = (total * i) / (n - 1);
-    while (j < acc.length - 2 && acc[j + 1] < target) j++;
-    const f = (target - acc[j]) / (acc[j + 1] - acc[j] || 1);
-    out.push(lerp(dense[j], dense[j + 1], Math.min(1, Math.max(0, f))));
-  }
-  return out;
-}
 
 // ---------------------------------------------------------------- skeleton
 
@@ -304,22 +221,12 @@ const mandible = (() => {
 const tarsus = new Bone(required("tarsus"), down);
 const metatarsus = new Bone(required("metatarsus"), down);
 const patella = points(required("patella"));
-const manubrium = points(required("sternum.s1"));
 const ribPts = points(required("ribs")).filter((p) => p.x < 0);
 const sternum = points(required("sternum"));
 const carpusP = points(required("carpus"));
 const metacarpus = new Bone(required("metacarpus"), down);
 const phalangesThoracic = points(required("phalanges-thoracic"));
 
-const boxOf = (pts: V[]) => {
-  const min = vec(Infinity, Infinity, Infinity);
-  const max = vec(-Infinity, -Infinity, -Infinity);
-  for (const p of pts) {
-    min.min(p);
-    max.max(p);
-  }
-  return { min, max, center: lerp(min, max, 0.5) };
-};
 const centroid = (pts: V[]) => pts.reduce((c, p) => c.add(p), new Vector3()).divideScalar(pts.length);
 const argmax = (pts: V[], d: Dir | V) => {
   const dv = d instanceof Vector3 ? d : dir(d);
@@ -521,302 +428,10 @@ function body(i: number | string, th: number, off = 0): V {
   return p.addScaledVector(n, off);
 }
 
-// Body coordinates (i, th) of the surface point nearest to p (left side).
-function bodyCoords(p: V): [number, number] {
-  const q = vec(-Math.abs(p.x), p.y, p.z);
-  let best: [number, number] = [0, 0];
-  let bestD = Infinity;
-  const test = (i: number, th: number) => {
-    if (i < 0 || i > idx("s3") || th < 0 || th > Math.PI) return;
-    const d = body(i, th).distanceToSquared(q);
-    if (d < bestD) {
-      bestD = d;
-      best = [i, th];
-    }
-  };
-  for (let i = 0; i <= idx("s3"); i += 0.5) for (let th = 0; th <= Math.PI; th += Math.PI / 24) test(i, th);
-  for (const step of [0.25, 0.1, 0.04, 0.015]) {
-    const [i0, t0] = best;
-    for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) test(i0 + a * step, t0 + b * step * 0.5);
-  }
-  return best;
-}
-// Projects p onto the body surface, `off` outward.
-const drape = (p: V, off = 0) => body(...bodyCoords(p), off);
-
-// Angle reached when walking `arc` metres along the body surface from th0 (toward dorsal if sign < 0).
-function arcTheta(i: number | string, th0: number, arc: number, sign = 1) {
-  let th = th0;
-  let len = 0;
-  let prev = body(i, th);
-  while (len < arc && th > 0 && th < Math.PI) {
-    th += sign * 0.005;
-    const p = body(i, th);
-    len += p.distanceTo(prev);
-    prev = p;
-  }
-  return th;
-}
-
-// ---------------------------------------------------------------- geometry
-
-// `reach`: per vertex, how deep below it another muscle still counts as inside
-// (slab outer faces: their thickness; inner faces are not obstacles).
-type Mesh = { pos: V[]; tri: number[]; reach?: number[] };
-
-// Closed slab over a grid of base points grid[u][v]; the outer face is pushed
-// along the surface normal (oriented by `out`) by the thickness at (u, v).
-function slab(grid: V[][], thick: (u: number, v: number) => number, out: (p: V) => V): Mesh {
-  const nu = grid.length;
-  const nv = grid[0].length;
-  const pos: V[] = [];
-  const normal = (u: number, v: number) => {
-    const du = grid[Math.min(u + 1, nu - 1)][v].clone().sub(grid[Math.max(u - 1, 0)][v]);
-    const dv = grid[u][Math.min(v + 1, nv - 1)].clone().sub(grid[u][Math.max(v - 1, 0)]);
-    const n = new Vector3().crossVectors(du, dv);
-    if (n.lengthSq() < 1e-14) n.copy(out(grid[u][v]));
-    n.normalize();
-    if (n.dot(out(grid[u][v])) < 0) n.negate();
-    return n;
-  };
-  let sign = 0;
-  const reach: number[] = [];
-  for (let u = 0; u < nu; u++)
-    for (let v = 0; v < nv; v++) {
-      const n = normal(u, v);
-      const t = Math.max(thick(u / (nu - 1), v / (nv - 1)), 0.0006);
-      pos.push(grid[u][v].clone().addScaledVector(n, t));
-      reach.push(t + 0.003);
-      if (u < nu - 1 && v < nv - 1) {
-        const du = grid[u + 1][v].clone().sub(grid[u][v]);
-        const dv = grid[u][v + 1].clone().sub(grid[u][v]);
-        sign += new Vector3().crossVectors(du, dv).dot(n);
-      }
-    }
-  for (let u = 0; u < nu; u++)
-    for (let v = 0; v < nv; v++) {
-      pos.push(grid[u][v].clone());
-      reach.push(-1);
-    }
-  const O = (u: number, v: number) => u * nv + v;
-  const I = (u: number, v: number) => nu * nv + u * nv + v;
-  const tri: number[] = [];
-  for (let u = 0; u < nu - 1; u++)
-    for (let v = 0; v < nv - 1; v++) {
-      tri.push(O(u, v), O(u + 1, v), O(u + 1, v + 1), O(u, v), O(u + 1, v + 1), O(u, v + 1));
-      tri.push(I(u, v), I(u + 1, v + 1), I(u + 1, v), I(u, v), I(u, v + 1), I(u + 1, v + 1));
-    }
-  const loop: [number, number][] = [];
-  for (let u = 0; u < nu - 1; u++) loop.push([u, 0]);
-  for (let v = 0; v < nv - 1; v++) loop.push([nu - 1, v]);
-  for (let u = nu - 1; u > 0; u--) loop.push([u, nv - 1]);
-  for (let v = nv - 1; v > 0; v--) loop.push([0, v]);
-  for (let k = 0; k < loop.length; k++) {
-    const [a, b] = [loop[k], loop[(k + 1) % loop.length]];
-    tri.push(O(...a), I(...a), O(...b), O(...b), I(...a), I(...b));
-  }
-  if (sign < 0) for (let k = 0; k < tri.length; k += 3) [tri[k + 1], tri[k + 2]] = [tri[k + 2], tri[k + 1]];
-  return { pos, tri, reach };
-}
-
-// Grid from fibres: every fibre is a list of control points (same count); each
-// is splined along u, then the fibres are splined across v.
-function fibreGrid(fibres: V[][], nu: number, nv: number): V[][] {
-  const along = fibres.map((f) => spline(f, nu));
-  return Array.from({ length: nu }, (_, u) =>
-    spline(
-      along.map((f) => f[u]),
-      nv,
-    ),
-  );
-}
-
-type Edge = { u?: number; v?: number };
-// Thickness taper toward the borders of a slab: t * (floor + (1 - floor) * ramp).
-function taper(t: (u: number, v: number) => number, edge: Edge = {}, floor = 0.3) {
-  const eu = edge.u ?? 0.12;
-  const ev = edge.v ?? 0.12;
-  return (u: number, v: number) => {
-    const r = Math.min(eu ? smoothstep(0, eu, Math.min(u, 1 - u)) : 1, ev ? smoothstep(0, ev, Math.min(v, 1 - v)) : 1);
-    return t(u, v) * (floor + (1 - floor) * Math.sqrt(r));
-  };
-}
-
-type Tube = {
-  pts: V[];
-  w: Profile; // width (across the flat face) along s in [0, 1], metres
-  t: Profile; // thickness (along `face`)
-  face?: V | ((s: number) => V);
-  n?: number;
-  ring?: number;
-  square?: number; // superellipse exponent factor, < 1 squarer
-};
-
-function tube({ pts, w, t, face = AXES.lat, n = 40, ring = 18, square = 1 }: Tube): Mesh {
-  if (DEBUG) pts.forEach((p, k) => mark(`${building}.${k}`, p));
-  const c = spline(pts, n);
-  const pos: V[] = [];
-  const tri: number[] = [];
-  let lastN: V | undefined;
-  for (let j = 0; j < n; j++) {
-    const s = j / (n - 1);
-    const tan = c[Math.min(j + 1, n - 1)]
-      .clone()
-      .sub(c[Math.max(j - 1, 0)])
-      .normalize();
-    const f = (typeof face === "function" ? face(s) : face).clone();
-    let nn = f.addScaledVector(tan, -f.dot(tan));
-    if (nn.lengthSq() < 1e-8) nn = lastN!.clone();
-    nn.normalize();
-    lastN = nn;
-    const b = new Vector3().crossVectors(tan, nn);
-    const hw = Math.max(prof(w, s), 0.0015) / 2;
-    const ht = Math.max(prof(t, s), 0.0015) / 2;
-    for (let k = 0; k < ring; k++) {
-      const phi = (2 * Math.PI * k) / ring;
-      const cs = Math.cos(phi);
-      const sn = Math.sin(phi);
-      const e = 2 / (2 + (1 - square) * 2);
-      pos.push(
-        c[j]
-          .clone()
-          .addScaledVector(b, hw * Math.sign(cs) * Math.pow(Math.abs(cs), e))
-          .addScaledVector(nn, ht * Math.sign(sn) * Math.pow(Math.abs(sn), e)),
-      );
-    }
-  }
-  for (let j = 0; j < n - 1; j++)
-    for (let k = 0; k < ring; k++) {
-      const a = j * ring + k;
-      const b = j * ring + ((k + 1) % ring);
-      tri.push(a, a + ring, b, b, a + ring, b + ring);
-    }
-  const s0 = pos.length;
-  pos.push(c[0].clone(), c[n - 1].clone());
-  for (let k = 0; k < ring; k++) {
-    tri.push(s0, k, (k + 1) % ring);
-    tri.push(s0 + 1, (n - 1) * ring + ((k + 1) % ring), (n - 1) * ring + k);
-  }
-  // Orient outward.
-  const mid = Math.floor(n / 2) * ring;
-  const [a, b, d] = [pos[tri[mid * 6]], pos[tri[mid * 6 + 1]], pos[tri[mid * 6 + 2]]];
-  const fn = new Vector3().crossVectors(b.clone().sub(a), d.clone().sub(a));
-  if (fn.dot(a.clone().sub(c[Math.floor(n / 2)])) < 0) for (let k = 0; k < tri.length; k += 3) [tri[k + 1], tri[k + 2]] = [tri[k + 2], tri[k + 1]];
-  return { pos, tri };
-}
-
-// ---------------------------------------------------------------- collisions
-
-// Vertices with normals in a spatial hash, to push muscle vertices out of them.
-class Obstacles {
-  constructor(public cell = 0.008) {}
-  map = new Map<string, number[]>();
-  p: V[] = [];
-  n: V[] = [];
-  owner: string[] = [];
-  reach: number[] = [];
-  key(x: number, y: number, z: number) {
-    return `${Math.floor(x / this.cell)},${Math.floor(y / this.cell)},${Math.floor(z / this.cell)}`;
-  }
-  add(name: string, pos: ArrayLike<number>, index: ArrayLike<number>, reach?: number[]) {
-    const nrm = smoothNormals(pos, index);
-    for (let i = 0; i < pos.length; i += 3) {
-      if (reach && reach[i / 3] < 0) continue;
-      const id = this.p.length;
-      this.reach.push(reach ? reach[i / 3] : Infinity);
-      this.p.push(vec(pos[i], pos[i + 1], pos[i + 2]));
-      this.n.push(vec(nrm[i], nrm[i + 1], nrm[i + 2]));
-      this.owner.push(name);
-      const k = this.key(pos[i], pos[i + 1], pos[i + 2]);
-      const list = this.map.get(k);
-      if (list) list.push(id);
-      else this.map.set(k, [id]);
-    }
-  }
-  nearest(p: V, skip: (owner: string) => boolean) {
-    let best = -1;
-    let bestD = Infinity;
-    const cx = Math.floor(p.x / this.cell);
-    const cy = Math.floor(p.y / this.cell);
-    const cz = Math.floor(p.z / this.cell);
-    for (let dx = -1; dx <= 1; dx++)
-      for (let dy = -1; dy <= 1; dy++)
-        for (let dz = -1; dz <= 1; dz++) {
-          const list = this.map.get(`${cx + dx},${cy + dy},${cz + dz}`);
-          if (!list) continue;
-          for (const id of list) {
-            const d = this.p[id].distanceToSquared(p);
-            if (d < bestD && !skip(this.owner[id])) {
-              bestD = d;
-              best = id;
-            }
-          }
-        }
-    return best;
-  }
-  // Moves points that are inside (or closer than `clear` to) the obstacle surface.
-  push(pts: V[], clear: number, skip: (owner: string) => boolean = () => false) {
-    let moved = 0;
-    for (const p of pts) {
-      const id = this.nearest(p, skip);
-      if (id < 0) continue;
-      const d = p.clone().sub(this.p[id]).dot(this.n[id]);
-      if (d < clear && d > -this.reach[id]) {
-        p.addScaledVector(this.n[id], clear - d);
-        moved++;
-      }
-    }
-    return moved;
-  }
-}
-
-function neighbours(m: Mesh) {
-  const nb = m.pos.map(() => new Set<number>());
-  for (let k = 0; k < m.tri.length; k += 3) {
-    const [a, b, c] = [m.tri[k], m.tri[k + 1], m.tri[k + 2]];
-    nb[a].add(b).add(c);
-    nb[b].add(a).add(c);
-    nb[c].add(a).add(b);
-  }
-  return nb.map((s) => [...s]);
-}
-
-// Taubin smoothing (no shrinkage).
-function relax(m: Mesh, iterations: number) {
-  const nb = neighbours(m);
-  for (let it = 0; it < iterations; it++)
-    for (const f of [0.5, -0.53]) {
-      const next = m.pos.map((p, i) => {
-        const avg = new Vector3();
-        for (const j of nb[i]) avg.add(m.pos[j]);
-        avg.divideScalar(nb[i].length || 1);
-        return p.clone().lerp(avg, f);
-      });
-      m.pos.forEach((p, i) => p.copy(next[i]));
-    }
-}
-
-const join = (...parts: Mesh[]): Mesh => {
-  const out: Mesh = { pos: [], tri: [], reach: [] };
-  for (const m of parts) {
-    const off = out.pos.length;
-    out.pos.push(...m.pos);
-    out.tri.push(...m.tri.map((t) => t + off));
-    out.reach!.push(...(m.reach ?? m.pos.map(() => Infinity)));
-  }
-  return out;
-};
-
-const toGeometry = (m: Mesh): Geometry => {
-  const position = new Float32Array(m.pos.length * 3);
-  m.pos.forEach((p, i) => p.toArray(position, i * 3));
-  return { position, index: new Uint32Array(m.tri) };
-};
-
 const bones = new Obstacles();
 // The clavicle floats inside the brachiocephalicus: not an obstacle.
 for (const [name, g] of atlas) if (!isRight(name) && !name.includes("clavicle")) bones.add(name, g.position, g.index);
-const muscles = new Obstacles();
+const muscles = new Volume();
 // Skin (integumentary.glb, when present) with inward normals: muscle vertices
 // up to 6 mm outside it are pulled 2 mm inside, as a last step. Larger
 // protrusions mean the two models disagree and are left for a person to judge.
@@ -849,16 +464,6 @@ const scapCr = (() => {
 const spine = (t: number, off = 0) => scapula.surf(t, scapN, off);
 const scapCranial = (t: number, off = 0) => scapula.surf(t, scapCr, off);
 const scapCaudal = (t: number, off = 0) => scapula.surf(t, scapCr.clone().negate(), off);
-const scapMedial = (t: number, w: number, off = 0) => {
-  // Point on the medial face at level t, w from caudal (0) to cranial (1) border.
-  const p = lerp(scapCaudal(t), scapCranial(t), w);
-  return scapula
-    .ext(scapN.clone().negate(), t - 0.04, t + 0.04)
-    .sub(p)
-    .projectOnVector(scapN)
-    .add(p)
-    .addScaledVector(scapN, -off);
-};
 const glenoid = scapula.b.clone();
 const supraglenoid = scapula.ext(scapCr.clone().add(scapula.ax), 0.8, 1);
 // Acromion: distal end of the spine, the most lateral point near the glenoid.
@@ -884,10 +489,6 @@ const carpus = centroid(carpusP);
 const mcProximal = metacarpus.at(0.1);
 const mcDistal = metacarpus.at(0.95);
 const digitsFore = centroid(phalangesThoracic);
-// Dorsal surface of the forepaw, where the extensor tendons run.
-const carpusDorsal = (med = 0) => argmax(carpusP, { cra: 1, med }).add(vec(0, 0, -0.002));
-const mcDorsal = (t: number, med = 0) => metacarpus.surf(t, { cra: 1, dor: 0.3, med }, 0.002);
-const toesDorsal = argmax(phalangesThoracic, { cra: 1, dor: 0.8 }).add(vec(0, 0.002, 0.006));
 const accessoryCarpal = argmax(carpusP, { cau: 1, lat: 0.3 });
 
 const tuberCoxae = coxae.ext({ cra: 1, ven: 0.6, lat: 0.4 });
@@ -911,10 +512,8 @@ const tLat = ortho(AXES.lat, tibia.ax);
 const tCr = ortho(AXES.cra, tibia.ax);
 const tDir = (cr: number, lat: number) => tCr.clone().multiplyScalar(cr).addScaledVector(tLat, lat).normalize();
 const tibialTuberosity = tibia.surf(0.08, tDir(1, 0));
-const medTibia = (t: number, off = 0) => tibia.surf(t, tDir(0.3, -1), off);
 const hock = tibia.b.clone();
 const calcaneus = tarsus.ext({ cau: 1, dor: 0.5 });
-const mtDorsal = (t: number, med = 0) => metatarsus.surf(t, { cra: 1, dor: 0.3, med }, 0.002);
 const mtProximal = metatarsus.at(0.1);
 const mtDistal = metatarsus.at(0.95);
 
@@ -941,12 +540,6 @@ const mastoid = argmax(
 );
 const nuchalCrest = skull.ext(hdir({ cau: 1, dor: 0.8 }));
 const zygomaticArch = (t: number) => skull.surf(t, { lat: 1 });
-// Lateral wall of the braincase (medial to the zygomatic arch) at level t.
-const braincase = (t: number, off = 0) => {
-  const half = -zygomaticArch(t).x;
-  const wall = skull.p.filter((p) => Math.abs(skull.t(p) - t) < 0.03 && p.x < 0 && p.x > -0.62 * half);
-  return argmax(wall, hdir({ lat: 1, dor: 0.3 })).addScaledVector(hdir({ lat: 1, dor: 0.3 }), off);
-};
 
 for (const [n, p] of Object.entries({
   glenoid,
@@ -1008,9 +601,15 @@ type Part = {
   ignore?: string[]; // mesh ids (prefixes) of built muscles not to push out of
   smooth?: number;
   single?: boolean; // midline structure: no mirrored copy
+  scan?: boolean; // sculpted shape: only thinned where it runs into another sculpted one
 };
 const parts: Part[] = [];
 let building = "";
+// Tubes also mark their control points in --debug.
+const tube = (t: Tube) => {
+  if (DEBUG) t.pts.forEach((p, k) => mark(`${building}.${k}`, p));
+  return baseTube(t);
+};
 const muscle = (p: Part) => parts.push(p);
 
 // ---------------------------------------------------------------- muscles
@@ -1018,54 +617,7 @@ const muscle = (p: Part) => parts.push(p);
 const M = "cat.muscular";
 // Evenly spaced profile knots: P(a, b, c) -> [[0, a], [0.5, b], [1, c]].
 const P = (...v: number[]): Profile => v.map((x, k) => [k / (v.length - 1), x]);
-// Outward hint for slabs on the trunk and neck: away from the nearest point of the column.
-const radial = (p: V) => {
-  let best = stations[0].c;
-  for (const s of stations) if (s.c.distanceToSquared(p) < best.distanceToSquared(p)) best = s.c;
-  return p.clone().sub(best);
-};
-const away = (c: V) => (p: V) => p.clone().sub(c);
 const fixed = (d: Dir) => () => dir(d);
-
-// Tip of the left transverse process at a (fractional) cervical position;
-// estimated on the body surface where the vertebra mesh is missing.
-const transverse = (i: number) => {
-  const tip = (k: number) => {
-    return argmax(points(vertebraMesh(LABELS[k])!), { lat: 1, ven: 0.3 });
-  };
-  const k = Math.min(Math.floor(i), idx("c7") - 1);
-  return lerp(tip(k), tip(k + 1), i - k);
-};
-// Lateral surface of rib k (fractional) at `frac` of its height from the
-// ventral end; estimated on the body surface where the rib mesh is missing.
-const ribPoint = (k: number, frac: number) => {
-  const at = (n: number) => {
-    const pts = points(required(`ribs.${n}`));
-    const b = boxOf(pts);
-    const y = b.min.y + (b.max.y - b.min.y) * frac;
-    return argmax(
-      pts.filter((p) => Math.abs(p.y - y) < 0.01),
-      { lat: 1 },
-    ).add(vec(-0.002, 0, 0));
-  };
-  const n = Math.min(Math.floor(k), 12);
-  return lerp(at(n), at(n + 1), k - n);
-};
-
-// Slab on the body: u along the column from i0 to i1, v from th0(i) to th1(i);
-// `off` lifts the base off the body surface.
-function bodySlab(o: { i: [number, number]; th0: Profile; th1: Profile; thick: (u: number, v: number) => number; off?: number; nu?: number; nv?: number }) {
-  const nu = o.nu ?? 40;
-  const nv = o.nv ?? 16;
-  const grid: V[][] = [];
-  for (let a = 0; a < nu; a++) {
-    const i = o.i[0] + ((o.i[1] - o.i[0]) * a) / (nu - 1);
-    const t0 = prof(o.th0, i);
-    const t1 = prof(o.th1, i);
-    grid.push(Array.from({ length: nv }, (_, b) => body(i, t0 + ((t1 - t0) * b) / (nv - 1), o.off ?? 0)));
-  }
-  return slab(grid, o.thick, radial);
-}
 
 const I = idx;
 
@@ -1100,6 +652,8 @@ muscle({
   id: `${M}.diaphragm`,
   single: true,
   bones: false,
+  // Inside the trunk wall: not pushed out through the sculpted muscles.
+  ignore: [M],
   make: () => {
     const nr = 14;
     const nphi = 48;
@@ -1143,529 +697,33 @@ muscle({
   },
 });
 
-// Epaxial muscles (iliocostalis, longissimus, transversospinalis) as one mass
-// dorsolateral to the vertebral column, from the ilium to the axis.
-const epaxDepth: Profile = [
-  [I("c2"), 0.024],
-  [I("c4"), 0.04],
-  [I("c6"), 0.034],
-  [I("t1"), 0.018],
-  [I("t10"), 0.016],
-  [I("l3"), 0.024],
-  [I("l7"), 0.022],
-  [I("s2"), 0.012],
-];
-muscle({
-  id: `${M}.epaxial`,
-  bones: false,
-  make: () => {
-    const nu = 56;
-    const nv = 14;
-    const i0 = I("c2");
-    const i1 = I("s2");
-    const th1: Profile = [
-      [I("c2"), 1.0],
-      [I("c5"), 1.1],
-      [I("t1"), 0.9],
-      [I("t12"), 0.88],
-      [I("l4"), 0.95],
-      [I("s2"), 0.8],
-    ];
-    const grid: V[][] = [];
-    for (let a = 0; a < nu; a++) {
-      const i = i0 + ((i1 - i0) * a) / (nu - 1);
-      const d = prof(epaxDepth, i);
-      const t1 = prof(th1, i);
-      // Deep face: moved toward the vertebral column (a normal offset would fold over the dorsal ridge).
-      const col = section(i).col;
-      grid.push(
-        Array.from({ length: nv }, (_, b) => {
-          const p = body(i, 0.05 + ((t1 - 0.05) * b) / (nv - 1));
-          return p.lerp(col, Math.min(d / p.distanceTo(col), 0.8));
-        }),
-      );
-    }
-    return slab(
-      grid,
-      (u, v) => prof(epaxDepth, i0 + (i1 - i0) * u) * (1 - 0.6 * smoothstep(0.5, 1, v)) * (0.35 + 0.65 * smoothstep(0, 0.08, Math.min(u, 1 - u))) + 0.001,
-      radial,
-    );
-  },
-});
-
-// Rectus abdominis: either side of the linea alba, from the first costal
-// cartilage and sternum to the pecten of the pubis.
-const rectusWidth: Profile = [
-  [I("t1"), 0.012],
-  [I("t6"), 0.022],
-  [I("l1"), 0.036],
-  [I("l5"), 0.032],
-  [I("s3"), 0.012],
-];
-const rectusEdge = (i: number) => arcTheta(i, Math.PI - 0.02, prof(rectusWidth, i), -1);
-muscle({
-  id: `${M}.rectus-abdominis`,
-  make: () => {
-    const nu = 48;
-    const nv = 8;
-    const i0 = I("t1") + 0.3;
-    const i1 = I("s3");
-    const grid: V[][] = [];
-    for (let a = 0; a < nu; a++) {
-      const i = i0 + ((i1 - i0) * a) / (nu - 1);
-      const t1 = rectusEdge(i);
-      grid.push(Array.from({ length: nv }, (_, b) => body(i, Math.PI - 0.02 + ((t1 - Math.PI + 0.02) * b) / (nv - 1), 0.0005)));
-    }
-    const thick: Profile = [
-      [0, 0.0015],
-      [0.25, 0.002],
-      [0.45, 0.0045],
-      [0.85, 0.004],
-      [1, 0.003],
-    ];
-    return slab(
-      grid,
-      taper((u) => prof(thick, u), { u: 0.04, v: 0.25 }, 0.4),
-      radial,
-    );
-  },
-});
-
-// Serratus ventralis: fan from the transverse processes of C3-C7 and the
-// first 7-8 ribs to the facies serrata on the medial scapula.
-muscle({
-  id: `${M}.serratus-ventralis`,
-  make: () => {
-    const nf = 16;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      let origin: V;
-      if (v < 0.4) {
-        origin = transverse(I("c3") + (I("c7") - I("c3")) * (v / 0.4));
-      } else {
-        origin = ribPoint(1 + 7 * ((v - 0.4) / 0.6), 0.3);
-      }
-      const w = v < 0.4 ? 1 - 0.5 * (v / 0.4) : 0.45 * (1 - (v - 0.4) / 0.6);
-      const ins = scapMedial(0.14, w, 0.002);
-      const mid = drape(lerp(origin, ins, 0.5), 0.003);
-      fibres.push([origin, mid, ins]);
-    }
-    const grid = fibreGrid(fibres, 18, 36).map((row) => row);
-    // Grid is [u along fibre][v across]; slab expects the same.
-    return slab(
-      grid,
-      taper((u, v) => (v < 0.4 ? 0.007 : 0.008) * (0.5 + 0.5 * Math.sin(Math.PI * Math.min(1, u * 1.2))), { u: 0.05, v: 0.05 }, 0.5),
-      radial,
-    );
-  },
-});
-
-// External abdominal oblique: costal digitations from ribs 4/5-13, lumbar part
-// from the thoracolumbar fascia; fibres caudoventral; drawn up to the lateral
-// border of the rectus (its aponeurosis continues to the linea alba).
-muscle({
-  id: `${M}.obliquus-externus-abdominis`,
-  make: () =>
-    bodySlab({
-      i: [I("t5"), I("s3") - 0.3],
-      th0: [
-        [I("t5"), 1.75],
-        [I("t9"), 1.45],
-        [I("t13"), 1.2],
-        [I("l3"), 1.1],
-        [I("l6"), 1.15],
-        [I("s1"), 1.9],
-        [I("s3"), 2.7],
-      ],
-      th1: [
-        [I("t5"), 1.8],
-        [I("t7"), 2.2],
-        [I("t10"), 2.6],
-        [I("l1"), 2.75],
-        [I("l6"), 2.8],
-        [I("s3"), 2.75],
-      ],
-      off: 0.001,
-      nu: 48,
-      nv: 14,
-      thick: taper((u, v) => 0.0045 - 0.0028 * smoothstep(0.55, 1, v), { u: 0.04, v: 0.08 }, 0.4),
-    }),
-});
-
 // Thoracic limb ----------------------------------------------------------
 
-// Supraspinatus and infraspinatus fill the fossae on either side of the spine.
-function fossa(border: (t: number, off?: number) => V, end: V, depth: number, extra: number) {
-  const ts = [0.03, 0.25, 0.5, 0.72];
-  const pts = ts.map((t) => lerp(spine(t), border(t), 0.5).addScaledVector(scapN, depth * 0.35));
-  const widths = ts.map((t) => spine(t).distanceTo(border(t)) + extra);
-  return tube({
-    pts: [...pts, end],
-    w: [...ts.map((t, k) => [k / 4.6, widths[k]] as [number, number]), [0.88, 0.016], [1, 0.008]],
-    t: P(depth * 0.6, depth, depth, depth * 0.8, 0.008),
-    face: scapN,
-    ring: 20,
-  });
-}
-muscle({ id: `${M}.supraspinatus`, make: () => fossa(scapCranial, greaterTubercle.clone().addScaledVector(hCr, 0.002), 0.02, 0.012) });
-muscle({ id: `${M}.infraspinatus`, make: () => fossa(scapCaudal, humerus.surf(0.08, hDir(0.2, 1), 0.002), 0.016, 0.004) });
-
-muscle({
-  id: `${M}.brachialis`,
-  make: () =>
-    tube({
-      pts: [
-        humerus.surf(0.14, hDir(-1, 0.5), 0.002),
-        humerus.surf(0.4, hDir(-0.2, 1), 0.006),
-        humerus.surf(0.72, hDir(0.7, 0.7), 0.007),
-        humerus.surf(0.95, hDir(1, 0), 0.006),
-        radius.surf(0.1, rDir(0.3, -1), 0.002),
-      ],
-      w: P(0.006, 0.016, 0.018, 0.012, 0.006),
-      t: P(0.005, 0.011, 0.011, 0.008, 0.004),
-    }),
-});
-
-muscle({
-  id: `${M}.biceps-brachii`,
-  make: () =>
-    tube({
-      pts: [
-        supraglenoid,
-        humerus.surf(0.04, hDir(1, -0.3), 0.004),
-        humerus.surf(0.4, hDir(1, -0.5), 0.009),
-        humerus.surf(0.85, hDir(0.6, -1), 0.007),
-        radialTuberosity.clone().addScaledVector(rDir(0, -1), 0.002),
-      ],
-      w: P(0.004, 0.008, 0.016, 0.014, 0.005),
-      t: P(0.004, 0.007, 0.014, 0.011, 0.004),
-      face: AXES.med,
-    }),
-});
-
-const olecranonTop = olecranon.clone().add(vec(0, 0.002, 0.002));
-muscle({
-  id: `${M}.triceps-brachii.medial`,
-  make: () =>
-    tube({
-      pts: [humerus.surf(0.3, hDir(-0.3, -1), 0.003), humerus.surf(0.62, hDir(-0.7, -1), 0.008), olecranonTop.clone().add(vec(0.006, -0.004, 0))],
-      w: P(0.008, 0.018, 0.008),
-      t: P(0.006, 0.012, 0.005),
-      face: AXES.med,
-    }),
-});
-// Long head: broad origin on the caudal border of the scapula, filling the
-// angle between scapula and humerus down to the olecranon.
-muscle({
-  id: `${M}.triceps-brachii.long`,
-  make: () => {
-    const nf = 9;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = scapCaudal(0.92 - 0.5 * v, 0.002).add(vec(0.012, 0, 0));
-      const m = humerus.surf(0.5, hDir(-1, 0), 0.006 + 0.032 * v).add(vec(0.012, 0, 0));
-      const e = olecranonTop.clone().add(vec(0.01, 0, 0.003 * v));
-      fibres.push([o, m, e]);
-    }
-    return slab(
-      fibreGrid(fibres, 24, 12),
-      (u, v) => (0.006 + 0.022 * Math.sin(Math.PI * Math.min(1, u * 1.15)) ** 0.7) * (0.55 + 0.45 * Math.sin(Math.PI * v)),
-      fixed({ lat: 1 }),
-    );
-  },
-});
-muscle({
-  id: `${M}.triceps-brachii.lateral`,
-  make: () =>
-    tube({
-      pts: [
-        humerus.surf(0.16, hDir(-0.6, 1), 0.003),
-        humerus.surf(0.45, hDir(-0.5, 1), 0.012),
-        humerus.surf(0.75, hDir(-1, 0.8), 0.014),
-        olecranonTop.clone().add(vec(-0.006, -0.004, 0)),
-      ],
-      w: P(0.01, 0.028, 0.022, 0.008),
-      t: P(0.004, 0.012, 0.011, 0.005),
-      face: AXES.lat,
-    }),
-});
-
-muscle({
-  id: `${M}.extensor-carpi-radialis`,
-  make: () =>
-    tube({
-      pts: [
-        humerus.surf(0.76, hDir(0.2, 1), 0.003),
-        humerus.surf(0.97, hDir(1, 0.6), 0.008),
-        radius.surf(0.28, rDir(1, 0.1), 0.009),
-        radius.surf(0.62, rDir(1, 0), 0.005),
-        radius.surf(0.97, rDir(1, -0.2), 0.003),
-        carpusDorsal(0.4),
-        mcDorsal(0.12, 0.5),
-      ],
-      w: [
-        [0, 0.01],
-        [0.25, 0.02],
-        [0.45, 0.016],
-        [0.62, 0.006],
-        [1, 0.004],
-      ],
-      t: [
-        [0, 0.008],
-        [0.25, 0.015],
-        [0.45, 0.01],
-        [0.62, 0.003],
-        [1, 0.0025],
-      ],
-      face: rDir(1, 0),
-    }),
-});
-muscle({
-  id: `${M}.extensor-digitorum-communis`,
-  make: () =>
-    tube({
-      pts: [
-        latEpicondyle.clone().addScaledVector(hCr, 0.004),
-        radius.surf(0.3, rDir(0.6, 1), 0.007),
-        radius.surf(0.68, rDir(0.8, 0.6), 0.004),
-        radius.surf(0.97, rDir(1, 0.3), 0.003),
-        carpusDorsal(),
-        mcDorsal(0.5),
-        mcDorsal(0.95),
-        toesDorsal,
-      ],
-      w: [
-        [0, 0.008],
-        [0.2, 0.016],
-        [0.42, 0.012],
-        [0.55, 0.006],
-        [1, 0.006],
-      ],
-      t: [
-        [0, 0.006],
-        [0.2, 0.011],
-        [0.42, 0.007],
-        [0.55, 0.0025],
-        [1, 0.0025],
-      ],
-      face: rDir(0.5, 1),
-    }),
-});
-muscle({
-  id: `${M}.flexor-carpi-ulnaris`,
-  make: () =>
-    tube({
-      pts: [
-        lerp(medEpicondyle, olecranon, 0.55).addScaledVector(rDir(0, -1), 0.004),
-        ulna.surf(0.35, { cau: 1, med: 0.4 }, 0.008),
-        ulna.surf(0.7, { cau: 1, med: 0.2 }, 0.006),
-        accessoryCarpal.clone().add(vec(0, 0.004, 0.002)),
-      ],
-      w: P(0.012, 0.016, 0.01, 0.005),
-      t: P(0.008, 0.011, 0.007, 0.004),
-      face: AXES.cau,
-    }),
-});
-
-muscle({
-  id: `${M}.deltoideus.scapular`,
-  make: () => {
-    const nf = 9;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      // Aponeurotic origin along the spine; the belly fans over the infraspinatus.
-      const o = spine(0.62 - 0.5 * v, 0.003);
-      const mid = lerp(spine(0.5), scapCaudal(0.5), 0.1 + 0.75 * v).addScaledVector(scapN, 0.022);
-      const ins = deltoidTuberosity.clone().addScaledVector(humerus.ax, (v - 0.5) * 0.008).addScaledVector(hLat, 0.003);
-      fibres.push([o, mid, ins]);
-    }
-    return slab(fibreGrid(fibres, 20, 12), taper((u) => 0.002 + 0.006 * Math.sin(Math.PI * u), { u: 0, v: 0.15 }), away(scapula.at(0.5).addScaledVector(scapN, -0.05)));
-  },
-});
-muscle({
-  id: `${M}.deltoideus.acromial`,
-  make: () =>
-    tube({
-      pts: [acromion.clone().addScaledVector(scapN, 0.002), humerus.surf(0.15, hDir(0.2, 1), 0.012), deltoidTuberosity.clone().addScaledVector(hLat, 0.003)],
-      w: P(0.01, 0.018, 0.008),
-      t: P(0.006, 0.011, 0.005),
-    }),
-});
-
-// Pectorals: deep (ascending) from the sternum to the tubercles of the
-// humerus; superficial (descending and transverse) from the manubrium and
-// first sternebrae to the crest of the greater tubercle and the forearm fascia.
-muscle({
-  id: `${M}.pectorales.profundus`,
-  make: () => {
-    const nf = 12;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const i = I("t2") + (I("t11") - I("t2")) * v;
-      const o = body(i, Math.PI - 0.04, 0.003);
-      const side = body(I("t2") + (i - I("t2")) * 0.35, 2.45 - 0.2 * v, 0.004);
-      const arm = humerus.surf(0.3 - 0.1 * v, hDir(0.2, -1), 0.006);
-      const ins = lerp(greaterTubercle.clone().addScaledVector(hCr, 0.004), lesserTubercle.clone().addScaledVector(hLat, -0.003), 0.3 + 0.7 * v);
-      fibres.push([o, side, arm, ins]);
-    }
-    return slab(fibreGrid(fibres, 24, 14), taper((u) => 0.004 + 0.006 * smoothstep(0, 0.6, u) - 0.004 * smoothstep(0.85, 1, u), { u: 0.02, v: 0.1 }), (p) => radial(p).add(vec(0, -0.5, 0)));
-  },
-});
-muscle({
-  id: `${M}.pectorales.superficiales`,
-  make: () => {
-    const nf = 9;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = body(I("t1") + 0.4 + 2.2 * v, Math.PI - 0.04, 0.004);
-      const ins = v < 0.75 ? humerus.surf(0.15 + 0.7 * (v / 0.75), hDir(1, -0.4), 0.004) : radius.surf(0.05 + 0.25 * ((v - 0.75) / 0.25), rDir(0.2, -1), 0.004);
-      const mid = lerp(o, ins, 0.5).add(vec(0, -0.008, -0.004));
-      fibres.push([o, mid, ins]);
-    }
-    return slab(fibreGrid(fibres, 18, 12), taper((u) => 0.003 + 0.003 * Math.sin(Math.PI * u), { u: 0.02, v: 0.1 }), (p) => radial(p).add(vec(0, -0.3, -0.5)));
-  },
-});
-
-// Latissimus dorsi: from the thoracolumbar fascia (spinous processes of the
-// caudal thoracic and lumbar vertebrae) and last ribs, converging
-// cranioventrally behind the triceps to the teres major tuberosity.
-muscle({
-  id: `${M}.latissimus-dorsi`,
-  // Passes medial to the long head of the triceps to reach the humerus.
-  ignore: [`${M}.triceps-brachii`],
-  make: () => {
-    const nf = 14;
-    const fibres: V[][] = [];
-    const ax = I("t4");
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const io = I("t6") + (I("l4") - I("t6")) * v;
-      const o = body(io, 0.12, 0.003);
-      const a = body(io + (ax - io) * 0.35, 0.95 + 0.25 * v, 0.004);
-      const b = body(io + (ax - io) * 0.72, 1.35 + 0.15 * v, 0.005);
-      const x = body(ax + 0.8 * v, 1.7 + 0.05 * v, 0.006);
-      const ins = teresTuberosity.clone().addScaledVector(humerus.ax, (v - 0.5) * 0.01).addScaledVector(hLat, -0.003);
-      fibres.push([o, a, b, x, ins]);
-    }
-    return slab(
-      fibreGrid(fibres, 30, 16),
-      taper((u) => 0.0015 + 0.004 * smoothstep(0.2, 0.45, u) + 0.002 * smoothstep(0.6, 0.85, u), { u: 0.02, v: 0.06 }),
-      radial,
-    );
-  },
-});
-
-// Trapezius: cervical part from the median raphe of the neck, thoracic part
-// from the supraspinous ligament, both to the spine of the scapula.
-muscle({
-  id: `${M}.trapezius`,
-  make: () => {
-    const nf = 16;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = body(I("c3") + (I("t9") - I("c3")) * v, 0.02, 0.003);
-      const t = prof(
-        [
-          [0, 0.6],
-          [0.45, 0.04],
-          [1, 0.2],
-        ],
-        v,
-      );
-      const ins = spine(t, 0.002);
-      const mid = drape(lerp(o, ins, 0.5), 0.014);
-      fibres.push([o, mid, ins]);
-    }
-    return slab(fibreGrid(fibres, 16, 24), taper(() => 0.0025, { u: 0.04, v: 0.04 }), radial);
-  },
-});
-
-// Omotransversarius: acromion and distal spine of the scapula to the wing of the atlas.
+// Omotransversarius (not in the écorché): acromion and distal spine of the
+// scapula to the wing of the atlas.
 const atlasWing = (() => {
   const g = skel("atlas")!;
   return argmax(points(g), { lat: 1, cau: 0.3 });
 })();
 muscle({
   id: `${M}.omotransversarius`,
+  // The sculpted neck muscles leave it no room: it stays under them (through
+  // the deep ones) rather than being pushed out over them.
+  ignore: [M],
   make: () =>
     tube({
-      pts: [spine(0.78, 0.003), body(I("c6"), 1.45, 0.01), body(I("c4"), 1.35, 0.008), atlasWing.clone().add(vec(-0.002, 0, 0))],
-      w: P(0.024, 0.02, 0.016, 0.01),
-      t: P(0.003, 0.005, 0.005, 0.004),
+      pts: [spine(0.78, 0.003), lerp(spine(0.78), atlasWing, 0.5).add(vec(0.006, 0, 0)), atlasWing.clone().add(vec(-0.002, 0, 0))],
+      w: P(0.024, 0.018, 0.01),
+      t: P(0.003, 0.005, 0.004),
       face: (s) => (s < 0.15 ? scapN : AXES.lat),
     }),
 });
 
-// Brachiocephalicus: the cat keeps a vestigial clavicle inside it, the
-// boundary between the cleidobrachialis (to the distal humerus and ulna) and
-// the cleidocephalicus (cleidocervicalis to the dorsal raphe of the neck,
-// cleidomastoideus to the mastoid process).
-const clavicle = points(required("clavicle"));
-const clavicular = lerp(centroid(clavicle), argmax(clavicle, { lat: 1 }), 0.4);
-muscle({
-  id: `${M}.brachiocephalicus.cleidobrachialis`,
-  make: () =>
-    tube({
-      pts: [clavicular, humerus.surf(0.35, hDir(1, 0.2), 0.012), humerus.surf(0.7, hDir(1, -0.3), 0.008), humerus.surf(0.88, hDir(0.6, -1), 0.004)],
-      w: P(0.024, 0.02, 0.012, 0.006),
-      t: P(0.008, 0.008, 0.006, 0.003),
-      face: hCr,
-    }),
-});
-muscle({
-  id: `${M}.brachiocephalicus.cleidocephalicus`,
-  make: () => {
-    const nf = 10;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = clavicular.clone().addScaledVector(hUp, (v - 0.5) * 0.02);
-      const a = body(I("c6"), 2.0 - 0.6 * v, 0.008);
-      const b = body(I("c4"), 1.9 - 1.3 * v, 0.008);
-      const end = v < 0.25 ? mastoid.clone().add(vec(-0.004, 0, 0)) : body(I("c2") + 0.6 * (1 - v), 0.04 + 1.0 * (1 - v), 0.004);
-      fibres.push([o, a, b, end]);
-    }
-    return slab(fibreGrid(fibres, 22, 14), taper(() => 0.004, { u: 0.03, v: 0.08 }), radial);
-  },
-});
-
 // Pelvic limb -----------------------------------------------------------
 
-const sacral = (i: number) => {
-  // Lateral border of the sacrum; beyond S3 extrapolated along the first caudal vertebrae.
-  const k = Math.min(i, I("s3"));
-  const p = column(k).add(column(I("s3")).sub(column(I("s2"))).multiplyScalar(Math.max(0, i - I("s3"))));
-  p.x = -0.016;
-  p.y = topAt(k) - 0.008 - Math.max(0, i - I("s3")) * 0.006;
-  return p;
-};
-const digitsHind = centroid(points(required("phalanges-pelvic")));
 const fd = (cr: number, lat: number) => fDir(cr, lat);
-// Point in the thigh at level t of the femur, `cr` metres cranial (negative: caudal) and `lat` lateral of its axis.
-const thigh = (t: number, cr: number, lat: number) => femur.at(t).addScaledVector(fCr, cr).addScaledVector(fLat, lat);
 
-muscle({
-  id: `${M}.gluteus-medius`,
-  make: () =>
-    tube({
-      pts: [
-        iliacCrest.clone().add(vec(-0.004, 0, 0.006)),
-        coxae.surf(0.2, { lat: 1, dor: 0.25 }, 0.007),
-        coxae.surf(0.4, { lat: 1, dor: 0.3 }, 0.01),
-        greaterTrochanter.clone().add(vec(0, 0.004, 0.002)),
-      ],
-      w: P(0.026, 0.04, 0.034, 0.014),
-      t: P(0.008, 0.016, 0.016, 0.008),
-      face: dir({ lat: 1, dor: 0.4 }),
-    }),
-});
-
+// Vastus medialis: not in the écorché (deep to the sartorius and adductor).
 const quad = (pts: V[], w: Profile, t: Profile, face: V) => tube({ pts, w, t, face });
 muscle({
   id: `${M}.quadriceps-femoris.vastus-medialis`,
@@ -1677,310 +735,32 @@ muscle({
       fd(0, -1),
     ),
 });
-muscle({
-  id: `${M}.quadriceps-femoris.vastus-lateralis`,
-  make: () =>
-    quad(
-      [femur.surf(0.1, fd(0.3, 1), 0.003), femur.surf(0.45, fd(0.6, 1), 0.012), femur.surf(0.82, fd(1, 0.6), 0.008), patellaC.clone().add(vec(-0.006, 0.012, 0))],
-      P(0.02, 0.036, 0.028, 0.012),
-      P(0.01, 0.02, 0.016, 0.006),
-      fd(0, 1),
-    ),
-});
-muscle({
-  id: `${M}.quadriceps-femoris.rectus-femoris`,
-  make: () =>
-    quad(
-      [
-        lerp(femoralHead, tuberCoxae, 0.3).add(vec(-0.004, -0.004, 0)),
-        femur.surf(0.2, fd(1, 0.1), 0.016),
-        femur.surf(0.55, fd(1, 0.1), 0.02),
-        patellaC.clone().add(vec(0, 0.014, -0.004)),
-      ],
-      P(0.01, 0.024, 0.026, 0.012),
-      P(0.007, 0.02, 0.02, 0.007),
-      fd(1, 0),
-    ),
-});
 
-muscle({
-  id: `${M}.semimembranosus`,
-  make: () =>
-    tube({
-      pts: [
-        ischialTuber.clone().add(vec(0.006, -0.006, 0)),
-        thigh(0.45, -0.045, -0.018),
-        thigh(0.82, -0.03, -0.02),
-        medCondyle.clone().addScaledVector(fd(-1, 0), 0.004),
-        medTibia(0.06, 0.002),
-      ],
-      w: P(0.02, 0.036, 0.03, 0.016, 0.006),
-      t: P(0.014, 0.028, 0.024, 0.012, 0.005),
-      face: AXES.med,
-    }),
-});
+// Sculpted muscles ------------------------------------------------------
 
-muscle({
-  id: `${M}.gastrocnemius.lateral`,
-  make: () =>
-    tube({
-      pts: [
-        latSupracondylar.clone().addScaledVector(fd(-1, 0), 0.003),
-        tibia.surf(0.25, tDir(-1, 0.5), 0.026),
-        tibia.surf(0.55, tDir(-1, 0.2), 0.014),
-        tibia.surf(0.85, tDir(-1, 0), 0.01),
-        calcaneus.clone().add(vec(0, 0.004, 0)),
-      ],
-      w: P(0.014, 0.026, 0.016, 0.008, 0.006),
-      t: P(0.012, 0.022, 0.012, 0.005, 0.005),
-      face: tLat,
-    }),
-});
-muscle({
-  id: `${M}.gastrocnemius.medial`,
-  make: () =>
-    tube({
-      pts: [
-        medSupracondylar.clone().addScaledVector(fd(-1, 0), 0.003),
-        tibia.surf(0.25, tDir(-1, -0.5), 0.026),
-        tibia.surf(0.55, tDir(-1, -0.2), 0.014),
-        tibia.surf(0.85, tDir(-1, 0), 0.01),
-        calcaneus.clone().add(vec(0.002, 0.004, 0)),
-      ],
-      w: P(0.014, 0.026, 0.016, 0.008, 0.006),
-      t: P(0.012, 0.022, 0.012, 0.005, 0.005),
-      face: tLat,
-    }),
-});
-// Its tendon twists around the gastrocnemius tendon and caps the calcaneal tuber.
-muscle({
-  id: `${M}.flexor-digitorum-superficialis-pelvic`,
-  ignore: [`${M}.gastrocnemius`],
-  make: () =>
-    tube({
-      pts: [
-        lerp(latSupracondylar, medSupracondylar, 0.35).addScaledVector(fd(-1, 0), 0.006),
-        tibia.surf(0.3, tDir(-1, 0), 0.03),
-        tibia.surf(0.7, tDir(-1, 0), 0.02),
-        calcaneus.clone().add(vec(0, 0.005, 0.002)),
-        metatarsus.surf(0.4, { cau: 1 }, 0.005),
-        mtDistal.clone().add(vec(0, 0, 0.006)),
-        digitsHind.clone().add(vec(0, -0.002, -0.004)),
-      ],
-      w: [
-        [0, 0.008],
-        [0.15, 0.014],
-        [0.3, 0.008],
-        [0.45, 0.006],
-        [1, 0.005],
-      ],
-      t: [
-        [0, 0.008],
-        [0.15, 0.012],
-        [0.3, 0.005],
-        [0.45, 0.003],
-        [1, 0.003],
-      ],
-      face: tLat,
-    }),
-});
-muscle({
-  id: `${M}.tibialis-cranialis`,
-  make: () =>
-    tube({
-      pts: [
-        tibia.surf(0.06, tDir(0.6, 1), 0.003),
-        tibia.surf(0.3, tDir(1, 0.6), 0.012),
-        tibia.surf(0.7, tDir(1, 0.3), 0.006),
-        tibia.surf(0.97, tDir(1, -0.4), 0.004),
-        mtDorsal(0.08, 0.6),
-      ],
-      w: P(0.01, 0.018, 0.012, 0.005, 0.004),
-      t: P(0.008, 0.015, 0.008, 0.004, 0.003),
-      face: tLat,
-    }),
-});
-
-// Sartorius: in the cat one broad sheet (the dog's two parts) from the iliac
-// crest and the cranial ventral iliac spine over the cranial border and the
-// cranial half of the medial thigh, to the patella and the medial tibia.
-muscle({
-  id: `${M}.sartorius`,
-  make: () => {
-    const nf = 9;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = lerp(iliacCrest.clone().add(vec(0, -0.004, -0.004)), tuberCoxae.clone().add(vec(0, -0.006, 0.004)), v);
-      const a = lerp(tuberCoxae, femur.surf(0.25, fd(1 - 0.6 * v, -0.2 - 0.8 * v), 0.03), 0.6);
-      const b = femur.surf(0.55, fd(1 - 0.9 * v, -0.3 - 0.7 * v), 0.028);
-      const c = femur.surf(0.85, fd(0.8 - 0.8 * v, -0.6 - 0.4 * v), 0.018);
-      const e = lerp(patellaC.clone().add(vec(0.008, 0.004, 0)), medTibia(0.15, 0.004), v);
-      fibres.push([o, a, b, c, e]);
-    }
-    return slab(fibreGrid(fibres, 24, 14), taper((u) => 0.003 + 0.0035 * Math.sin(Math.PI * u), { u: 0.03, v: 0.1 }), (p) => p.clone().sub(femur.at(0.5)));
-  },
-});
-
-muscle({
-  id: `${M}.gracilis`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = symphysis.clone().add(vec(-0.004, -0.004, -0.012 + 0.05 * v));
-      const m = femur.surf(0.5, fd(-0.3 - 0.6 * v, -1), 0.032 + 0.012 * v);
-      const e = medTibia(0.18 + 0.12 * v, 0.006);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 22, 10), taper((u) => 0.003 + 0.003 * Math.sin(Math.PI * u), { u: 0.03, v: 0.1 }), fixed({ med: 1 }));
-  },
-});
-
-muscle({
-  id: `${M}.semitendinosus`,
-  make: () =>
-    tube({
-      pts: [
-        ischialTuber.clone().add(vec(-0.002, -0.006, 0.004)),
-        thigh(0.45, -0.058, 0.0),
-        thigh(0.82, -0.042, -0.012),
-        tibia.surf(0.15, tDir(-0.4, -1), 0.012),
-        medTibia(0.3, 0.003),
-      ],
-      w: P(0.016, 0.03, 0.026, 0.012, 0.006),
-      t: P(0.014, 0.024, 0.02, 0.009, 0.004),
-      face: AXES.lat,
-    }),
-});
-
-muscle({
-  id: `${M}.gluteus-superficialis`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = sacral(I("s1") + 0.5 + 2.6 * v);
-      const e = thirdTrochanter.clone().addScaledVector(femur.ax, (v - 0.5) * 0.008).addScaledVector(fLat, 0.003);
-      const m = lerp(o, e, 0.5).addScaledVector(fLat, 0.016);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 16, 10), taper((u) => 0.003 + 0.005 * Math.sin(Math.PI * u), { u: 0, v: 0.12 }), fixed({ lat: 1, dor: 0.3 }));
-  },
-});
-
-muscle({
-  id: `${M}.tensor-fasciae-latae`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = tuberCoxae.clone().add(vec(-0.003, -0.004 * v, 0.022 * v));
-      const e = femur.surf(0.42, fd(1 - 1.1 * v, 0.8), 0.024 + 0.006 * v);
-      const m = lerp(o, e, 0.5).addScaledVector(fLat, 0.012);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 16, 10), taper((u) => 0.002 + 0.004 * Math.sin(Math.PI * Math.min(1, u * 1.4)), { u: 0.03, v: 0.1 }), fixed({ lat: 1 }));
-  },
-});
-
-// Biceps femoris: one fan from the ischiatic tuberosity (the cat has no
-// sacrotuberous ligament) to the patella, patellar ligament, tibial crest and crural
-// fascia; drawn as its cranial and caudal parts. The caudal part continues as
-// a tarsal tendon to the calcaneal tuber.
-function bicepsFibre(v: number) {
-  const o = ischialTuber.clone().add(vec(-0.006, 0.012 * (1 - v), -0.014 * (1 - v)));
-  const ins =
-    v < 0.3
-      ? lerp(patellaC.clone().add(vec(-0.01, 0.008, 0)), lerp(patellaC, tibialTuberosity, 0.7).add(vec(-0.008, 0, 0)), v / 0.3)
-      : v < 0.65
-        ? tibia.surf(0.08 + 0.3 * ((v - 0.3) / 0.35), tDir(0.6, 1), 0.006)
-        : tibia.surf(0.38 + 0.12 * ((v - 0.65) / 0.35), tDir(-0.4 - 0.6 * ((v - 0.65) / 0.35), 1), 0.008);
-  const mid = thigh(0.5, 0.012 - 0.06 * v, 0.024 + 0.004 * Math.sin(Math.PI * v));
-  const knee = thigh(0.88, 0.012 - 0.045 * v, 0.02);
-  return [o, mid, knee, ins];
+// Écorché muscles (scripts/lib/feline-ecorche.ts) keep their shape: built
+// first, from deep to superficial, each thinned from inside where its hidden
+// side runs into the ones before (Volume.peel); the procedural muscles make
+// room for them. Read at the cat's size and grown into this frame.
+const sculpted = await felineEcorche(await readAtlas(SKELETON));
+for (const [key, g] of sculpted) {
+  const id = key.replace(/^cat_muscular_/, "").replace(/_L$/, "").replace(/_/g, ".");
+  muscle({
+    id: `${M}.${id}`,
+    scan: true,
+    make: () => {
+      const grown = transform(g, grow);
+      const pos = points(grown);
+      return {
+        pos,
+        tri: [...grown.index],
+        fibre: pos.map((_, i) => vec(grown.fibre![i * 4], grown.fibre![i * 4 + 1], grown.fibre![i * 4 + 2])),
+        tendon: pos.map((_, i) => grown.fibre![i * 4 + 3]),
+      };
+    },
+  });
 }
-const bicepsPart = (v0: number, v1: number, nv: number) => {
-  const fibres = Array.from({ length: nv }, (_, k) => bicepsFibre(v0 + ((v1 - v0) * k) / (nv - 1)));
-  return slab(
-    fibreGrid(fibres, 26, nv * 2),
-    taper((u) => 0.004 + 0.008 * Math.sin(Math.PI * Math.min(1, u * 1.15)), { u: 0.03, v: 0.1 }, 0.5),
-    fixed({ lat: 1 }),
-  );
-};
-muscle({ id: `${M}.biceps-femoris.cranial`, make: () => bicepsPart(0, 0.6, 7) });
-muscle({
-  id: `${M}.biceps-femoris.caudal`,
-  make: () =>
-    join(
-      bicepsPart(0.6, 1, 5),
-      tube({
-        pts: [tibia.surf(0.42, tDir(-1, 0.8), 0.01), tibia.surf(0.7, tDir(-1, 0.4), 0.014), calcaneus.clone().add(vec(-0.002, 0.004, 0))],
-        w: P(0.006, 0.004, 0.003),
-        t: P(0.002, 0.002, 0.002),
-        ring: 8,
-      }),
-    ),
-});
 
-// Head and neck ----------------------------------------------------------
-
-// Temporalis: large in the cat, filling the temporal fossa from the
-// temporal lines and the lateral wall of the braincase to the coronoid
-// process, medial to the zygomatic arch.
-muscle({
-  id: `${M}.temporalis`,
-  smooth: 4,
-  make: () => {
-    const nf = 10;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = skull.surf(0.56 + 0.4 * v, hdir({ dor: 1, lat: 0.4 + 0.3 * v }), 0.004);
-      const m = braincase(0.6 + 0.3 * v, 0.01);
-      const e = coronoid.clone().addScaledVector(skull.ax, (v - 0.5) * 0.008);
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 16, 14), taper((u) => 0.004 + 0.012 * Math.sin(Math.PI * Math.min(1, u * 1.1)), { u: 0.03, v: 0.1 }), away(skull.at(0.75)));
-  },
-});
-// Masseter: ventral border of the zygomatic arch to the masseteric fossa and
-// the angle of the mandible.
-muscle({
-  id: `${M}.masseter`,
-  make: () => {
-    const nf = 8;
-    const fibres: V[][] = [];
-    for (let k = 0; k < nf; k++) {
-      const v = k / (nf - 1);
-      const o = zygomaticArch(0.32 + 0.3 * v).addScaledVector(headD, -0.004);
-      const e = mandible.surf(0.66 + 0.26 * v, hdir({ lat: 1, ven: 0.8 }), 0.002);
-      const m = lerp(o, e, 0.5).add(vec(-0.005, 0, 0));
-      fibres.push([o, m, e]);
-    }
-    return slab(fibreGrid(fibres, 14, 12), taper((u) => 0.004 + 0.007 * Math.sin(Math.PI * u), { u: 0.02, v: 0.1 }), fixed({ lat: 1 }));
-  },
-});
-
-muscle({
-  id: `${M}.sternocephalicus`,
-  make: () =>
-    tube({
-      pts: [
-        argmax(manubrium, { cra: 1 }).add(vec(-0.006, 0, 0)),
-        body(I("c6"), 2.55, 0.006),
-        body(I("c4"), 2.25, 0.008),
-        body(I("c2"), 1.95, 0.006),
-        mastoid.clone().add(vec(-0.004, 0, 0)),
-      ],
-      w: P(0.012, 0.018, 0.018, 0.016, 0.01),
-      t: P(0.006, 0.008, 0.008, 0.007, 0.005),
-      face: dir({ lat: 1, cra: 0.8 }),
-    }),
-});
 
 // --debug: also draw the body surface and the landmarks, and write to .cache/agent-out instead.
 if (DEBUG) {
@@ -1995,27 +775,31 @@ if (DEBUG) {
 
 const model = createModel("cat.muscular", [0.69, 0.41, 0.36, 1]);
 let total = 0;
-for (const part of parts) {
+for (const part of [...parts.filter((p) => p.scan), ...parts.filter((p) => !p.scan)]) {
   building = part.id;
   const m = part.make();
   const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x));
   const layer = part.layer !== false;
-  if (part.bones !== false || layer) {
+  if (part.scan) {
+    muscles.peel(m, skip);
+    relax(m, 1);
+  } else if (part.bones !== false || layer) {
     for (let k = 0; k < 3; k++) {
       if (part.bones !== false) bones.push(m.pos, 0.0015);
-      if (layer) muscles.push(m.pos, 0.001, skip);
+      if (layer) muscles.push(m, 0.001, skip, 2);
       relax(m, part.smooth ?? 2);
     }
     if (part.bones !== false) bones.push(m.pos, 0.001);
-    if (layer) muscles.push(m.pos, 0.0006, skip);
+    if (layer) muscles.push(m, 0.0006, skip, 2);
   }
-  if (skin && layer) {
+  if (skin && layer && !part.scan) {
     skin.push(m.pos, 0.002);
     relax(m, 2);
     skin.push(m.pos, 0.002);
+    muscles.push(m, 0.0006, skip, 3);
   }
   const g = toGeometry(m);
-  if (layer) muscles.add(part.id, g.position, g.index, m.reach);
+  if (layer) muscles.add(part.id, m, skip);
   const out = transform(g, shrink);
   total += g.index.length / 3;
   if (part.single) model.add(meshKey(part.id), out);
@@ -2025,6 +809,7 @@ for (const part of parts) {
   }
 }
 console.log(`left-side and midline triangles: ${total}`);
+for (const r of muscles.report(0.02)) console.warn(`overlap: ${r.a} x ${r.b} ${(r.cm3 / SCALE ** 3).toFixed(1)} cm3 (${(r.frac * 100).toFixed(0)}%)`);
 if (DEBUG) {
   for (const [name, p] of debugMarks) model.add(meshKey(`debug.mark.${name}`), transform(sphere(p.toArray() as [number, number, number], 0.004), shrink));
   await model.write(path.join(process.cwd(), ".cache", "agent-out", "cat-muscular-debug.glb"));

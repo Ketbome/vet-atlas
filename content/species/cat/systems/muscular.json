@@ -9,7 +9,7 @@
   "status": "published",
   "model": {
     "file": "/models/cat/muscular.glb",
-    "source": "vet-atlas-procedural-muscles",
+    "source": "westerly-feline-ecorche",
     "placeholder": false
   },
   "color": "#A3433A",

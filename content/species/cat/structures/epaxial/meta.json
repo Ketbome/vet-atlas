@@ -8,9 +8,9 @@
     "cat.muscular.epaxial.L",
     "cat.muscular.epaxial.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#963630",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "dorsal",
     "zoom": 1.1

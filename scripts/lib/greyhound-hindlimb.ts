@@ -28,10 +28,11 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { BufferAttribute, BufferGeometry, DoubleSide, Matrix4, Ray, Vector3 } from "three";
+import { BufferAttribute, BufferGeometry, Matrix4, Vector3 } from "three";
 import { MeshBVH } from "three-mesh-bvh";
 import { meshKey } from "../../lib/content/mesh";
-import { CACHE_DIR, components, download, mean, merge, pca, pcaStarts, points, register, smoothNormals, transform, type Geometry } from "./glb";
+import { CACHE_DIR, components, download, mean, merge, pca, pcaStarts, points, register, transform, type Geometry } from "./glb";
+import { fibres } from "./muscle";
 import { weldSimplify } from "./segment";
 
 const ZIP = { url: "https://ndownloader.figshare.com/files/13368233", file: "greyhound-hindlimb-mimics.zip" };
@@ -259,32 +260,4 @@ export async function greyhoundHindlimb(skeleton: Map<string, Geometry>): Promis
     out.set(meshKey(id), { position, index: g.index, fibre: fibres(position, g.index, dirs) });
   }
   return out;
-}
-
-// Per vertex: fibre direction (the muscle's long axis, carried by the blend
-// and laid on the surface) and a tendon weight from local thickness (1 where
-// the muscle is under 15 % of its median thickness, 0 above 40 %).
-function fibres(position: Float32Array<ArrayBuffer>, index: Uint32Array<ArrayBuffer>, dirs: Float32Array) {
-  const count = position.length / 3;
-  const normal = smoothNormals(position, index);
-  const tree = bvh({ position, index });
-  const ray = new Ray();
-  const thick = new Float32Array(count);
-  const [p, n, d] = [new Vector3(), new Vector3(), new Vector3()];
-  for (let v = 0; v < count; v++) {
-    n.fromArray(normal, v * 3);
-    ray.origin.fromArray(position, v * 3).addScaledVector(n, -1e-4);
-    ray.direction.copy(n).negate();
-    thick[v] = tree.raycastFirst(ray, DoubleSide)?.distance ?? 0;
-  }
-  const median = Float32Array.from(thick).sort()[Math.floor(count / 2)];
-  const fibre = new Float32Array(count * 4);
-  for (let v = 0; v < count; v++) {
-    n.fromArray(normal, v * 3);
-    d.fromArray(dirs, v * 3);
-    p.copy(d).addScaledVector(n, -d.dot(n));
-    (p.lengthSq() > 1e-12 ? p.normalize() : p.copy(d)).toArray(fibre, v * 4);
-    fibre[v * 4 + 3] = Math.min(1, Math.max(0, (0.4 * median - thick[v]) / (0.25 * median)));
-  }
-  return fibre;
 }

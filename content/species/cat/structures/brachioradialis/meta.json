@@ -1,0 +1,31 @@
+{
+  "id": "cat.muscular.brachioradialis",
+  "system": "cat.muscular",
+  "nav": "M. brachioradialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.brachioradialis.L",
+    "cat.muscular.brachioradialis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#B24E40",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.radius",
+    "cat.muscular.extensor-carpi-radialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

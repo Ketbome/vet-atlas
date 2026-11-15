@@ -151,6 +151,12 @@ structures). Media and Source carry license and attribution. IDs are
   RISD Nature Lab cat skull and mandible (Sketchfab, CC BY, Artec scans); Lova Dahn
   "Cat Model" (CC BY); pixelbeaker "Normal Feline Anatomy – Digestive System" (CC BY,
   CT); Cornell feline DTI atlas (CC0). No open cat heart, lung or muscle scans exist.
+  Muscles (2026-11-15): westerly "Feline Ecorche Dec" (CC BY, sculpt after Goldfinger,
+  same author and frame as the skeleton), labelled by position in
+  `scripts/lib/feline-ecorche.ts`; diaphragm, vastus medialis and omotransversarius
+  stay procedural. Forelimb masses for sizing: Rahmati et al. 2025 (PMID 39705066);
+  whole-body tables in Cuff et al. 2016 (PMID 27074986, 27080703), supplement needs
+  a manual download.
 - MorphoSource Felis catus CT (3D Anatomy Studios, whole-body microCT): Standard
   agreement, needs permission. Would replace the sculpted skeleton and the
   procedural organs. LMU Munich has good loose cat bones, but ND: ask too.

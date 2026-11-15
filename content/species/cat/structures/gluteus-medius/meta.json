@@ -8,9 +8,9 @@
     "cat.muscular.gluteus-medius.L",
     "cat.muscular.gluteus-medius.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A13B31",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

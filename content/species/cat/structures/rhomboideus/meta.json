@@ -1,0 +1,31 @@
+{
+  "id": "cat.muscular.rhomboideus",
+  "system": "cat.muscular",
+  "nav": "M. rhomboideus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.rhomboideus.L",
+    "cat.muscular.rhomboideus.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A8473C",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 1.6
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-shoulder-neck-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.scapula",
+    "cat.skeletal.skull",
+    "cat.muscular.trapezius",
+    "cat.muscular.serratus-ventralis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

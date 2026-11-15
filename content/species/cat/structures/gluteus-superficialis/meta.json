@@ -8,9 +8,9 @@
     "cat.muscular.gluteus-superficialis.L",
     "cat.muscular.gluteus-superficialis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B6503F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

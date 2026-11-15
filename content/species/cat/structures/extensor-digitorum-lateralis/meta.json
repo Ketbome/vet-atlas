@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.extensor-digitorum-lateralis",
+  "system": "cat.muscular",
+  "nav": "M. extensor digitorum lateralis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.extensor-digitorum-lateralis.L",
+    "cat.muscular.extensor-digitorum-lateralis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A8473C",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.8
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.phalanges-thoracic",
+    "cat.muscular.extensor-digitorum-communis",
+    "cat.muscular.extensor-carpi-ulnaris"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

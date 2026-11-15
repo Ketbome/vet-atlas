@@ -1,0 +1,29 @@
+{
+  "id": "cat.muscular.digastricus",
+  "system": "cat.muscular",
+  "nav": "M. digastricus",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.digastricus.L",
+    "cat.muscular.digastricus.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A8473C",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.skull",
+    "cat.skeletal.mandible",
+    "cat.muscular.masseter",
+    "cat.muscular.mylohyoideus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

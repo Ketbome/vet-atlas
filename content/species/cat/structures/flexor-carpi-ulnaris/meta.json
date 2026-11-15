@@ -8,9 +8,9 @@
     "cat.muscular.flexor-carpi-ulnaris.L",
     "cat.muscular.flexor-carpi-ulnaris.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A84236",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "caudal",
     "zoom": 1.6

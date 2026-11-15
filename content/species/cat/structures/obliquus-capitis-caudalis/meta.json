@@ -1,0 +1,29 @@
+{
+  "id": "cat.muscular.obliquus-capitis-caudalis",
+  "system": "cat.muscular",
+  "nav": "M. obliquus capitis caudalis",
+  "region": "neck",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.obliquus-capitis-caudalis.L",
+    "cat.muscular.obliquus-capitis-caudalis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A44036",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.axis",
+    "cat.skeletal.atlas",
+    "cat.muscular.obliquus-capitis-cranialis",
+    "cat.muscular.rectus-capitis-dorsalis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

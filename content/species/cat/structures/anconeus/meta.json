@@ -1,0 +1,30 @@
+{
+  "id": "cat.muscular.anconeus",
+  "system": "cat.muscular",
+  "nav": "M. anconeus",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.anconeus.L",
+    "cat.muscular.anconeus.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A44036",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.2
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-arm-muscles-wilder-01"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.ulna",
+    "cat.muscular.triceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

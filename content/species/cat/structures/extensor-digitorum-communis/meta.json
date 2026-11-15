@@ -8,9 +8,9 @@
     "cat.muscular.extensor-digitorum-communis.L",
     "cat.muscular.extensor-digitorum-communis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#9C392F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6
@@ -25,7 +25,8 @@
     "cat.skeletal.humerus",
     "cat.skeletal.radius",
     "cat.skeletal.phalanges-thoracic",
-    "cat.muscular.extensor-carpi-radialis"
+    "cat.muscular.extensor-carpi-radialis",
+    "cat.muscular.extensor-digitorum-lateralis"
   ],
   "review": {
     "status": "draft"

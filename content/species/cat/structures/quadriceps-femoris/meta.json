@@ -12,9 +12,9 @@
     "cat.muscular.quadriceps-femoris.vastus-medialis.L",
     "cat.muscular.quadriceps-femoris.vastus-medialis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A6402F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6

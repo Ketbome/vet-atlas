@@ -8,9 +8,9 @@
     "cat.muscular.rectus-abdominis.L",
     "cat.muscular.rectus-abdominis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#9F3B32",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "ventral",
     "zoom": 1.2

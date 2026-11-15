@@ -8,9 +8,9 @@
     "cat.muscular.latissimus-dorsi.L",
     "cat.muscular.latissimus-dorsi.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B8584A",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.3

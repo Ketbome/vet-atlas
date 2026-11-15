@@ -8,9 +8,9 @@
     "cat.muscular.masseter.L",
     "cat.muscular.masseter.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B04A3A",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 2.4

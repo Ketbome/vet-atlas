@@ -8,9 +8,9 @@
     "cat.muscular.tensor-fasciae-latae.L",
     "cat.muscular.tensor-fasciae-latae.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B85A47",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

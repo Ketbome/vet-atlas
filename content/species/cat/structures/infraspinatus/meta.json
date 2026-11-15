@@ -8,9 +8,9 @@
     "cat.muscular.infraspinatus.L",
     "cat.muscular.infraspinatus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#973329",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 2.0

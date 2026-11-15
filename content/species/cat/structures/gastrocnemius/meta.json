@@ -5,14 +5,12 @@
   "region": "pelvic-limb",
   "laterality": "paired",
   "meshes": [
-    "cat.muscular.gastrocnemius.lateral.L",
-    "cat.muscular.gastrocnemius.lateral.R",
-    "cat.muscular.gastrocnemius.medial.L",
-    "cat.muscular.gastrocnemius.medial.R"
+    "cat.muscular.gastrocnemius.L",
+    "cat.muscular.gastrocnemius.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#9D382E",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8
@@ -30,7 +28,8 @@
     "cat.skeletal.tarsus",
     "cat.muscular.flexor-digitorum-superficialis-pelvic",
     "cat.muscular.biceps-femoris",
-    "cat.muscular.tibialis-cranialis"
+    "cat.muscular.tibialis-cranialis",
+    "cat.muscular.soleus"
   ],
   "review": {
     "status": "draft"

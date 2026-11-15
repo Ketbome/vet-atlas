@@ -1,0 +1,31 @@
+{
+  "id": "cat.muscular.adductor",
+  "system": "cat.muscular",
+  "nav": "M. adductor",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.adductor.L",
+    "cat.muscular.adductor.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A44536",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 1.5
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-medial-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.femur",
+    "cat.muscular.gracilis",
+    "cat.muscular.semimembranosus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

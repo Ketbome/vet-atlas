@@ -8,9 +8,9 @@
     "cat.muscular.obliquus-externus-abdominis.L",
     "cat.muscular.obliquus-externus-abdominis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B65649",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.2

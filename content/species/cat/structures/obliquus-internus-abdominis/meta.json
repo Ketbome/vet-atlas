@@ -1,0 +1,29 @@
+{
+  "id": "cat.muscular.obliquus-internus-abdominis",
+  "system": "cat.muscular",
+  "nav": "M. obliquus internus abdominis",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.obliquus-internus-abdominis.L",
+    "cat.muscular.obliquus-internus-abdominis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A5413A",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.os-coxae",
+    "cat.skeletal.ribs",
+    "cat.muscular.obliquus-externus-abdominis",
+    "cat.muscular.rectus-abdominis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

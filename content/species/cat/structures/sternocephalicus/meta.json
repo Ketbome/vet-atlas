@@ -8,9 +8,9 @@
     "cat.muscular.sternocephalicus.L",
     "cat.muscular.sternocephalicus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A2392F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

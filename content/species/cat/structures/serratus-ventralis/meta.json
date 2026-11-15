@@ -8,9 +8,9 @@
     "cat.muscular.serratus-ventralis.L",
     "cat.muscular.serratus-ventralis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A9473C",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.4

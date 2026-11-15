@@ -1,0 +1,28 @@
+{
+  "id": "cat.muscular.mylohyoideus",
+  "system": "cat.muscular",
+  "nav": "M. mylohyoideus",
+  "region": "head",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.mylohyoideus.L",
+    "cat.muscular.mylohyoideus.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#AD4B3E",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 2.4
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.mandible",
+    "cat.skeletal.hyoid",
+    "cat.muscular.digastricus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

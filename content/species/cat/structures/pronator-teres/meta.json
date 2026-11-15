@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.pronator-teres",
+  "system": "cat.muscular",
+  "nav": "M. pronator teres",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.pronator-teres.L",
+    "cat.muscular.pronator-teres.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#AD4B3E",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-02"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.radius",
+    "cat.muscular.flexor-carpi-radialis",
+    "cat.muscular.biceps-brachii"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

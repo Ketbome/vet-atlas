@@ -5,14 +5,12 @@
   "region": "pelvic-limb",
   "laterality": "paired",
   "meshes": [
-    "cat.muscular.biceps-femoris.cranial.L",
-    "cat.muscular.biceps-femoris.cranial.R",
-    "cat.muscular.biceps-femoris.caudal.L",
-    "cat.muscular.biceps-femoris.caudal.R"
+    "cat.muscular.biceps-femoris.L",
+    "cat.muscular.biceps-femoris.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A23D33",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.5
@@ -28,7 +26,8 @@
     "cat.skeletal.patella",
     "cat.skeletal.tibia",
     "cat.muscular.semitendinosus",
-    "cat.muscular.gastrocnemius"
+    "cat.muscular.gastrocnemius",
+    "cat.muscular.caudofemoralis"
   ],
   "review": {
     "status": "draft"

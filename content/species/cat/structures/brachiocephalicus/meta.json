@@ -10,9 +10,9 @@
     "cat.muscular.brachiocephalicus.cleidocephalicus.L",
     "cat.muscular.brachiocephalicus.cleidocephalicus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A8402F",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6

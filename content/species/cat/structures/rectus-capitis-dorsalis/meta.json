@@ -1,0 +1,29 @@
+{
+  "id": "cat.muscular.rectus-capitis-dorsalis",
+  "system": "cat.muscular",
+  "nav": "M. rectus capitis dorsalis",
+  "region": "neck",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.rectus-capitis-dorsalis.L",
+    "cat.muscular.rectus-capitis-dorsalis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#9C3A31",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "dorsal",
+    "zoom": 2.6
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.axis",
+    "cat.skeletal.atlas",
+    "cat.skeletal.skull",
+    "cat.muscular.obliquus-capitis-caudalis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

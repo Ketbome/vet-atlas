@@ -8,9 +8,9 @@
     "cat.muscular.tibialis-cranialis.L",
     "cat.muscular.tibialis-cranialis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B1493B",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.8

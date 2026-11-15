@@ -10,9 +10,9 @@
     "cat.muscular.deltoideus.acromial.L",
     "cat.muscular.deltoideus.acromial.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#A13A30",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 2.0

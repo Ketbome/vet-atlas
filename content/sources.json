@@ -214,6 +214,18 @@
     "notes": "Complete feline skeleton sculpted in ZBrush from reference (not a scan), with every bone as a separate shell. License checked 2026-10-09 via the Sketchfab API. scripts/build-cat-skeletal.ts splits it into bones, rescales it to a domestic cat and replaces its skull and mandible with RISD scans (fidelity \"modeled\")."
   },
   {
+    "id": "westerly-feline-ecorche",
+    "name": "\"Feline Ecorche Dec\" by westerly (Sketchfab)",
+    "url": "https://sketchfab.com/3d-models/feline-ecorche-dec-4c08824eb4914ff4b6e71b4dc2ba080e",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "conditions": {
+      "commercial": true,
+      "derivatives": true
+    },
+    "notes": "Feline écorché sculpted in ZBrush after Goldfinger's \"Animal Anatomy for Artists\" (a sculpt, not a scan), by the author of \"Feline Skeleton Dec\" and in the same frame; the author describes it as rough and notes that a few minor deep muscles are missing. Every muscle is a separate shell. License checked 2026-11-15 via the Sketchfab API. scripts/lib/feline-ecorche.ts labels the shells, places them on the cat skeleton and splits shells that join the left and right muscle (fidelity \"modeled\")."
+  },
+  {
     "id": "risd-nature-lab",
     "name": "Edna Lawrence Nature Lab, Rhode Island School of Design (RISD Nature Lab on Sketchfab)",
     "url": "https://sketchfab.com/risdnaturelab",

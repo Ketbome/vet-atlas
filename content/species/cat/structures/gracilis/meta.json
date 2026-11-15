@@ -8,9 +8,9 @@
     "cat.muscular.gracilis.L",
     "cat.muscular.gracilis.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B95646",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "caudal",
     "zoom": 1.5
@@ -24,7 +24,8 @@
     "cat.skeletal.tibia",
     "cat.muscular.semitendinosus",
     "cat.muscular.semimembranosus",
-    "cat.muscular.sartorius"
+    "cat.muscular.sartorius",
+    "cat.muscular.adductor"
   ],
   "review": {
     "status": "draft"

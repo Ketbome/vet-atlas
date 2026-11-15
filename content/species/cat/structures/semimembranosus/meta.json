@@ -8,9 +8,9 @@
     "cat.muscular.semimembranosus.L",
     "cat.muscular.semimembranosus.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#95342B",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "caudal",
     "zoom": 1.5

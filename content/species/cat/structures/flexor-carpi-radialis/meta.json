@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.flexor-carpi-radialis",
+  "system": "cat.muscular",
+  "nav": "M. flexor carpi radialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.flexor-carpi-radialis.L",
+    "cat.muscular.flexor-carpi-radialis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A5413A",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-02"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.metacarpus",
+    "cat.muscular.pronator-teres",
+    "cat.muscular.flexor-digitorum-superficialis-thoracic"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

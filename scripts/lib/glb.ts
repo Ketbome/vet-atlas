@@ -11,7 +11,7 @@ import { Document, NodeIO, type Accessor, type Primitive } from "@gltf-transform
 import { ALL_EXTENSIONS, EXTMeshoptCompression } from "@gltf-transform/extensions";
 import { quantize, simplifyPrimitive, weldPrimitive } from "@gltf-transform/functions";
 import { MeshoptDecoder, MeshoptEncoder, MeshoptSimplifier } from "meshoptimizer";
-import { BufferAttribute, BufferGeometry, CapsuleGeometry, DoubleSide, Matrix4, Quaternion, Ray, SphereGeometry, Vector3 } from "three";
+import { BufferAttribute, BufferGeometry, CapsuleGeometry, DoubleSide, Matrix3, Matrix4, Quaternion, Ray, SphereGeometry, Vector3 } from "three";
 import { MeshBVH } from "three-mesh-bvh";
 
 export const CACHE_DIR = path.join(process.cwd(), ".cache", "models");
@@ -103,7 +103,15 @@ export function transform(g: Geometry, m: Matrix4): Geometry {
   const index = g.index.slice();
   // A negative determinant flips winding.
   if (m.determinant() < 0) for (let i = 0; i < index.length; i += 3) [index[i + 1], index[i + 2]] = [index[i + 2], index[i + 1]];
-  return { position, index };
+  const fibre = g.fibre?.slice();
+  if (fibre) {
+    const r = new Matrix3().setFromMatrix4(m);
+    for (let i = 0; i < fibre.length; i += 4) {
+      v.fromArray(fibre, i);
+      if (v.lengthSq() > 0) v.applyMatrix3(r).normalize().toArray(fibre, i);
+    }
+  }
+  return { position, index, fibre };
 }
 
 export function merge(parts: Geometry[]): Geometry {

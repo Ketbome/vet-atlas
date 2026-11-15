@@ -1,0 +1,30 @@
+{
+  "id": "cat.muscular.fibularis-brevis",
+  "system": "cat.muscular",
+  "nav": "M. fibularis brevis",
+  "region": "pelvic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.fibularis-brevis.L",
+    "cat.muscular.fibularis-brevis.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A5413A",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-deep-thigh-muscles-mivart-01"
+  ],
+  "related": [
+    "cat.skeletal.fibula",
+    "cat.skeletal.metatarsus",
+    "cat.muscular.fibularis-longus"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

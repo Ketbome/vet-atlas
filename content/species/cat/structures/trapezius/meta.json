@@ -5,12 +5,14 @@
   "region": "thoracic-limb",
   "laterality": "paired",
   "meshes": [
-    "cat.muscular.trapezius.L",
-    "cat.muscular.trapezius.R"
+    "cat.muscular.trapezius.cervical.L",
+    "cat.muscular.trapezius.cervical.R",
+    "cat.muscular.trapezius.thoracic.L",
+    "cat.muscular.trapezius.thoracic.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#B24B3E",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.6
@@ -27,7 +29,8 @@
     "cat.skeletal.vertebrae-thoracic",
     "cat.muscular.omotransversarius",
     "cat.muscular.latissimus-dorsi",
-    "cat.muscular.brachiocephalicus"
+    "cat.muscular.brachiocephalicus",
+    "cat.muscular.rhomboideus"
   ],
   "review": {
     "status": "draft"

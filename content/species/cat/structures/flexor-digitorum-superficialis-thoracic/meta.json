@@ -1,0 +1,32 @@
+{
+  "id": "cat.muscular.flexor-digitorum-superficialis-thoracic",
+  "system": "cat.muscular",
+  "nav": "M. flexor digitorum superficialis",
+  "region": "thoracic-limb",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.flexor-digitorum-superficialis-thoracic.L",
+    "cat.muscular.flexor-digitorum-superficialis-thoracic.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#A44036",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "ventral",
+    "zoom": 2.0
+  },
+  "pathologies": [],
+  "media": [
+    "wm-cat-forelimb-muscles-mivart-01",
+    "wm-cat-arm-muscles-wilder-02"
+  ],
+  "related": [
+    "cat.skeletal.humerus",
+    "cat.skeletal.phalanges-thoracic",
+    "cat.muscular.flexor-carpi-ulnaris",
+    "cat.muscular.flexor-carpi-radialis"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

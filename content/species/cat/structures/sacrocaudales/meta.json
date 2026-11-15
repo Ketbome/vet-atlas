@@ -1,0 +1,28 @@
+{
+  "id": "cat.muscular.sacrocaudales",
+  "system": "cat.muscular",
+  "nav": "Mm. sacrocaudales",
+  "region": "trunk",
+  "laterality": "paired",
+  "meshes": [
+    "cat.muscular.sacrocaudales.L",
+    "cat.muscular.sacrocaudales.R"
+  ],
+  "fidelity": "modeled",
+  "color": "#9E3E34",
+  "source": "westerly-feline-ecorche",
+  "camera": {
+    "preset": "lateral-left",
+    "zoom": 1.2
+  },
+  "pathologies": [],
+  "media": [],
+  "related": [
+    "cat.skeletal.sacrum",
+    "cat.skeletal.vertebrae-caudal",
+    "cat.muscular.epaxial"
+  ],
+  "review": {
+    "status": "draft"
+  }
+}

@@ -8,9 +8,9 @@
     "cat.muscular.sartorius.L",
     "cat.muscular.sartorius.R"
   ],
-  "fidelity": "illustrative",
+  "fidelity": "modeled",
   "color": "#BA5A48",
-  "source": "vet-atlas-procedural-muscles",
+  "source": "westerly-feline-ecorche",
   "camera": {
     "preset": "lateral-left",
     "zoom": 1.5
