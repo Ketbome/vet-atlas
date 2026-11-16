@@ -36,11 +36,12 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { Matrix4, Vector3 } from "three";
+import { BufferAttribute, BufferGeometry, DoubleSide, Matrix4, Ray, Vector3 } from "three";
+import { MeshBVH } from "three-mesh-bvh";
 import { meshKey } from "../lib/content/mesh";
 import { felineEcorche } from "./lib/feline-ecorche";
-import { createModel, merge, mirror, readAtlas, sphere, transform, type Geometry } from "./lib/glb";
-import { AXES, Obstacles, Volume, boxOf, dir, lerp, prof, relax, slab, smoothstep, toGeometry, tube as baseTube, vec, type Dir, type Mesh, type Profile, type Tube, type V } from "./lib/muscle";
+import { createModel, merge, mirror, readAtlas, smoothNormals, sphere, transform, type Geometry } from "./lib/glb";
+import { AXES, Obstacles, VOX, Volume, boxOf, dir, lerp, prof, relax, slab, smoothstep, toGeometry, tube as baseTube, vec, voxels, type Dir, type Mesh, type Profile, type Tube, type V } from "./lib/muscle";
 
 const SKELETON = path.join(process.cwd(), "public", "models", "cat", "skeletal.glb");
 const VISCERA = path.join(process.cwd(), "public", "models", "cat", "visceral.glb");
@@ -742,25 +743,82 @@ muscle({
 // first, from deep to superficial, each thinned from inside where its hidden
 // side runs into the ones before (Volume.peel); the procedural muscles make
 // room for them. Read at the cat's size and grown into this frame.
+// The hidden sides of the sculpted shells run into each other. No single
+// deep-to-superficial order fits (the gastrocnemius is subcutaneous distally
+// but lies under the biceps femoris at the stifle), so every overlapping pair
+// is settled where it meets: of the two, the one reaching closer to the skin
+// there is superficial, and its deep face (normals away from the skin) is
+// carved to lie on the other (Volume.peel). Parts of one structure are left
+// alone: they are shown and selected together.
 const sculpted = await felineEcorche(await readAtlas(SKELETON));
-for (const [key, g] of sculpted) {
-  const id = key.replace(/^cat_muscular_/, "").replace(/_L$/, "").replace(/_/g, ".");
-  muscle({
-    id: `${M}.${id}`,
-    scan: true,
-    make: () => {
-      const grown = transform(g, grow);
-      const pos = points(grown);
-      return {
+const tree = (position: Float32Array, index: ArrayLike<number>) => {
+  const geometry = new BufferGeometry();
+  geometry.setAttribute("position", new BufferAttribute(position, 3));
+  geometry.setIndex(new BufferAttribute(Uint32Array.from(index), 1));
+  return new MeshBVH(geometry);
+};
+const skinTree = await (async () => {
+  const g = fs.existsSync(SKIN) ? (await readScaled(SKIN)).get(meshKey("cat.integumentary.skin")) : undefined;
+  return g && tree(g.position, g.index);
+})();
+const shells = new Map(
+  [...sculpted].map(([key, g]): [string, Mesh] => {
+    const grown = transform(g, grow);
+    const pos = points(grown);
+    const id = `${M}.${key.replace(/^cat_muscular_/, "").replace(/_L$/, "").replace(/_/g, ".")}`;
+    return [
+      id,
+      {
         pos,
         tri: [...grown.index],
         fibre: pos.map((_, i) => vec(grown.fibre![i * 4], grown.fibre![i * 4 + 1], grown.fibre![i * 4 + 2])),
         tendon: pos.map((_, i) => grown.fibre![i * 4 + 3]),
-      };
-    },
-  });
+      },
+    ];
+  }),
+);
+if (skinTree) {
+  const whole = (id: string) => id.split(".").slice(0, 3).join(".");
+  const hit = { point: new Vector3(), distance: 0, faceIndex: 0 };
+  const ray = new Ray();
+  // Distance from p (inside m) toward the nearest skin to where m ends.
+  const reachOut = (m: Mesh, p: V) => {
+    skinTree.closestPointToPoint(p, hit);
+    ray.origin.copy(p);
+    ray.direction.copy(hit.point).sub(p).normalize();
+    const hits = tree(toGeometry(m).position, m.tri).raycast(ray, DoubleSide);
+    return hits.length ? Math.max(...hits.map((h) => h.distance)) : 0;
+  };
+  const ids = [...shells.keys()];
+  const keys = new Map(ids.map((id) => [id, new Set(voxels(shells.get(id)!))]));
+  const pairs: [string, string, V[]][] = [];
+  for (let a = 0; a < ids.length; a++)
+    for (let b = a + 1; b < ids.length; b++) {
+      if (whole(ids[a]) === whole(ids[b])) continue;
+      const [ka, kb] = [keys.get(ids[a])!, keys.get(ids[b])!];
+      const shared: V[] = [];
+      for (const k of ka.size < kb.size ? ka : kb)
+        if ((ka.size < kb.size ? kb : ka).has(k))
+          shared.push(vec(Math.floor(k / 2048 / 2048) - 1024 + 0.5, (Math.floor(k / 2048) % 2048) - 1024 + 0.5, (k % 2048) - 1024 + 0.5).multiplyScalar(VOX));
+      if (shared.length > 40) pairs.push([ids[a], ids[b], shared.filter((_, k) => k % Math.ceil(shared.length / 25) === 0)]);
+    }
+  for (const [a, b, sample] of pairs) {
+    // Each shared voxel votes for the muscle that runs on further toward the skin.
+    const votes = sample.reduce((n, c) => n + Math.sign(reachOut(shells.get(a)!, c) - reachOut(shells.get(b)!, c)), 0);
+    const [outer, inner] = votes >= 0 ? [a, b] : [b, a];
+    const m = shells.get(outer)!;
+    const nrm = smoothNormals(toGeometry(m).position, m.tri);
+    const deep = m.pos.map((p, i) => {
+      skinTree.closestPointToPoint(p, hit);
+      return hit.point.sub(p).dot(vec(nrm[i * 3], nrm[i * 3 + 1], nrm[i * 3 + 2])) < 0;
+    });
+    const under = new Volume();
+    under.add(inner, shells.get(inner)!, () => false);
+    under.peel(m, () => false, 0.02, deep);
+    relax(m, 1);
+  }
 }
-
+for (const [id, m] of shells) muscle({ id, scan: true, make: () => m });
 
 // --debug: also draw the body surface and the landmarks, and write to .cache/agent-out instead.
 if (DEBUG) {
@@ -778,12 +836,12 @@ let total = 0;
 for (const part of [...parts.filter((p) => p.scan), ...parts.filter((p) => !p.scan)]) {
   building = part.id;
   const m = part.make();
-  const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x));
+  // Parts of one sculpted structure (e.g. the two trapezius parts) may share
+  // their hidden sides: they are shown and selected together.
+  const whole = part.id.split(".").slice(0, 3).join(".");
+  const skip = (owner: string) => (part.ignore ?? []).some((x) => owner.startsWith(x)) || (!!part.scan && owner.startsWith(`${whole}.`));
   const layer = part.layer !== false;
-  if (part.scan) {
-    muscles.peel(m, skip);
-    relax(m, 1);
-  } else if (part.bones !== false || layer) {
+  if (!part.scan && (part.bones !== false || layer)) {
     for (let k = 0; k < 3; k++) {
       if (part.bones !== false) bones.push(m.pos, 0.0015);
       if (layer) muscles.push(m, 0.001, skip, 2);

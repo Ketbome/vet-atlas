@@ -554,7 +554,12 @@ export class Volume {
   // muscle is thinned to lie on the deeper ones instead of being pushed
   // through or round them; shallower contacts are left as they are (thin
   // sheets would crumple on the voxel steps).
-  peel(m: Mesh, skip: (owner: string) => boolean, reach = 0.02) {
+  //
+  // With `inner` (per vertex: on the muscle's deep face), deep-face points
+  // just outside a muscle that lies within this one's thickness are carved
+  // too: they move past it, so a superficial muscle no longer encloses a
+  // deeper one it covers.
+  peel(m: Mesh, skip: (owner: string) => boolean, reach = 0.02, inner?: boolean[]) {
     const at = this.field(m.pos, skip);
     if (!at) return;
     const g = toGeometry(m);
@@ -565,16 +570,20 @@ export class Volume {
     const self = new MeshBVH(geometry);
     const ray = new Ray();
     m.pos.forEach((p, i) => {
-      if (at(p.x, p.y, p.z) >= -VOX) return;
+      const d = at(p.x, p.y, p.z);
+      if (d >= -VOX && !(inner?.[i] && d < 2 * VOX)) return;
       ray.direction.set(-nrm[i * 3], -nrm[i * 3 + 1], -nrm[i * 3 + 2]);
       ray.origin.copy(p).addScaledVector(ray.direction, 1e-4);
       const limit = Math.min(reach, (self.raycastFirst(ray, DoubleSide)?.distance ?? reach) - 0.0005);
+      let entered = d < 0;
       for (let s = VOX / 2; s <= limit; s += VOX / 2) {
         const q = p.clone().addScaledVector(ray.direction, s);
-        if (at(q.x, q.y, q.z) >= 0) {
+        const e = at(q.x, q.y, q.z);
+        if (e < 0) entered = true;
+        else if (entered) {
           p.copy(q);
           return;
-        }
+        } else if (s > 2 * VOX) return;
       }
     });
   }
